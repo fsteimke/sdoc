@@ -795,7 +795,8 @@
 
    </sect2>
 
-   <sect2 os="sles;osuse" xml:id="Software-Selections-stage2-packs">
+    <!-- FSt: added sled in sect2/@os attribute -->
+   <sect2 os="sled;sles;osuse" xml:id="Software-Selections-stage2-packs">
     <title>Installing packages in stage 2</title>
     <para>
      To install packages after the reboot during stage two, you can

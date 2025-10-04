@@ -407,7 +407,8 @@
   </itemizedlist>
  </sect2>
 
- <sect2 xml:id="CreateProfile-firewall-example">
+ <!-- FSt: Added sect2/@os attribute -->
+ <sect2 xml:id="CreateProfile-firewall-example" os="sles;osuse;slemicro">
   <title>A full example</title>
   <para>
    A full example of the firewall section, including general and zone specific

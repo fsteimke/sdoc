@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect2
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<!-- Only include this file in openSUSE documentation. For SLE, there are
+better supported methods. -->
+
+<sect2 version="5.0" xml:id="sec-update-zypper"
+ xmlns="http://docbook.org/ns/docbook"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Distribution upgrade with &zypper;</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+  </dm:docmanager>
+ </info>
+ <para>
+  With the <command>zypper</command> command line utility you can upgrade to
+  the next version of the distribution. Most importantly, you can initiate
+  the system upgrade process from within the running system.
+ </para>
+ <para>
+  This feature is attractive for advanced users who want to run remote
+  upgrades or upgrades on many similarly configured systems.
+ </para>
+ <sect3 xml:id="sec-update-zypper-prep">
+  <title>Preparing the upgrade with &zypper;</title>
+  <para>
+   To avoid unexpected errors during the upgrade process using
+   <command>zypper</command>, minimize risky constellations.
+  </para>
+  <itemizedlist mark="bullet" spacing="normal">
+   <listitem>
+    <para>
+     Quit as many applications and stop unneeded services as possible and
+     log out all regular users.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Disable third-party repositories before starting the upgrade, or lower
+     the priority of these repositories to make sure packages from the
+     default system repositories will get preference. Enable them again
+     after the upgrade and edit their version string to match the version
+     number of the distribution of the upgraded now running system.
+    </para>
+   </listitem>
+  </itemizedlist>
+ </sect3>
+ <sect3 xml:id="sec-update-zypper-proc">
+  <title>The upgrade procedure</title>
+  <warning>
+   <title>Check your system backup</title>
+   <para>
+    Before actually starting the upgrade procedure, check that your system
+    backup is up-to-date and restorable. This is especially important
+    because you need to enter many of the following steps manually.
+   </para>
+  </warning>
+  <para>
+   The program <command>zypper</command> supports long and short command
+   names. For example, you can abbreviate <command>zypper install</command>
+   as <command>zypper in</command>. In the following text, the short
+   variants are used.
+  </para>
+  <procedure>
+   <step>
+    <para>
+     Run the online update to make sure the software management stack is
+     up-to-date:
+    </para>
+<screen>&prompt.sudo;zypper patch</screen>
+   </step>
+   <step>
+    <para>
+     Configure the repositories you want to use as update sources. Getting
+     this right is crucial.
+     The <replaceable>NAME</replaceable> of the repositories used in the following steps may vary
+     depending on the customization of your OS. For more info, refer to <xref linkend="sec-zypper-instrepo"/>)
+    </para>
+    <para>
+     To view your current repositories, enter:
+    </para>
+<screen>&prompt.user;zypper --releasever=&productnumber-leaprepo; lr -u</screen>
+   </step>
+   <step>
+    <para>
+     In the result of the previous command, check the last column (<guimenu>URL</guimenu>). All
+     repository links should contain <literal>&productnumber-leaprepo;</literal> as version number.
+     If this is not the case, the version number is missing or hard-coded in the repository
+     definition file under <filename>/etc/zypp/repos.d/</filename>. To fix this, proceed as follows:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       Decide whether the repository is still needed. If not, delete it:
+      </para>
+<screen>&prompt.sudo;zypper rr <replaceable>NAME</replaceable></screen>
+      <para>
+       Delete all repositories you no longer need.
+      </para>
+     </step>
+     <step>
+      <para>
+       For third-party repositories without a version number, check with the repository provider
+       whether &productname; &productnumber; is supported. If so, keep the repository. If not,
+       delete it as described above.
+      </para>
+     </step>
+     <step>
+      <para>
+       All remaining repositories you want to keep need to be updated to the new version. To allow
+       for future updates without repository modifications, replace the hard-coded version number
+       with the variable <varname>$releasever</varname>. If <literal>15.3</literal> is hard-coded,
+       run:
+      </para>
+<screen>&prompt.sudo;sed -i 's/15.3/$releasever/' /etc/zypp/repos.d/*.repo</screen>
+      <para>
+       Repeat this step for every hard-coded version number.
+      </para>
+      <para>
+       Use your browser to check whether the new repository URL is correct. If not, a new version of
+       the repository may not exist yet. Deactivate the repository and try again later.
+      </para>
+<screen>&prompt.sudo;zypper mr -d <replaceable>NAME</replaceable></screen>
+      <para>
+       Packages from deactivated repositories will not be removed if all dependencies are still
+       fulfilled.
+      </para>
+     </step>
+    </substeps>
+   </step>
+   <step>
+    <para>
+     Finally, check the current repository configuration again
+    </para>
+<screen>&prompt.sudo;zypper --releasever=&productnumber-leaprepo; lr -u</screen>
+    <para>
+     All repositories should now point to a <literal>&productnumber-leaprepo;</literal>
+     version (except for third-party repositories without versioning that
+     support new releases). Repositories still pointing to an old version
+     should at least be disabled (the column <guimenu>Enabled</guimenu>
+     needs to show <literal>No</literal>).
+    </para>
+   </step>
+   <step>
+    <para>
+     Update the repository metadata by running:
+    </para>
+<screen>&prompt.sudo;zypper --releasever=&productnumber-leaprepo; ref</screen>
+   </step>
+   <step>
+    <para>
+     Start the distribution upgrade that will lift your system to
+     the new version:
+    </para>
+<screen>&prompt.sudo;zypper --releasever=&productnumber-leaprepo; dup</screen>
+    <para>
+     Depending on the software selection, you may need to approve one or more
+     licenses. Check the output of the command. If everything is OK, approve
+     with <guimenu>y</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Finally, restart your machine to boot into the new &productname; version:
+    </para>
+<screen>&prompt.sudo;shutdown -r now</screen>
+   </step>
+  </procedure>
+  <para>
+   You can upgrade your system by using <command>zypper dup</command>.
+   When using this command, take the following into account:</para>
+  <itemizedlist>
+   <listitem>
+     <para>
+     If you are using <command>zypper dup</command> and there is not enough disk
+      space available, the upgrade fails. In this case, use
+      <option>--pkg-cache-dir <replaceable>DIR</replaceable></option> to set an
+      alternative package cache directory.
+      </para>
+    </listitem>
+    <listitem>
+    <para>
+      All packages with unresolved dependencies will be removed. Packages
+      installed from disabled repositories are kept as long as their
+      dependencies are satisfied. Packages that are no longer available in the
+      repositories are considered orphaned. Such packages are uninstalled if
+      their dependencies cannot be satisfied. If they can be satisfied, such
+      packages stay installed.
+    </para>
+    </listitem>
+   <listitem>
+     <para>
+      <command>zypper dup</command> ensures that all installed packages come
+      from one of the available repositories. It does not consider the version
+      or architecture, but prevents changing the vendor of the installed
+      packages by default, using the <option>--no-allow-vendor-change</option>
+      option. If you have third-party repositories enabled, some repositories
+      may break during the upgrade. In this case, use
+      <option>--allow-vendor-change</option> instead.
+     </para>
+   </listitem>
+  </itemizedlist>
+ </sect3>
+</sect2>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha-lxc2libvirt">
+ <title>Migration from &lxc; to <systemitem>libvirt-lxc</systemitem></title>
+ <info>
+      <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+        <dm:bugtracker>
+        </dm:bugtracker>
+      </dm:docmanager>
+    </info>
+    <para>
+  Since <phrase os="sles;sled">&sls; 12</phrase><phrase os="osuse">&opensuse;
+  Leap</phrase>, &lxc; is integrated into &libvirt; library. This decision has
+  several advantages over using &lxc; as a separate solution&mdash;such as a
+  unified approach with other virtualization solutions or independence on the
+  kernel used. This chapter describes steps needed to migrate an existing &lxc;
+  environment for use with the &libvirt; library.
+ </para>
+ <sect1 xml:id="lxc2libvirt-host">
+  <title>Host migration</title>
+
+  <para>
+   The migration itself has two phases. You first need to migrate the host,
+   then the &lxc; containers. After that, you can run the original containers
+   as &vmguest;s in the &libvirt; environment.
+  </para>
+
+  <procedure>
+   <title>Host migration</title>
+   <step>
+    <para>
+     Upgrade the host to <phrase os="sles;sled">&sls; &product-ga;</phrase><phrase
+      os="osuse">&opensuse; Leap &product-ga;</phrase> using the official DVD media.
+    </para>
+   </step>
+   <step>
+    <para>
+     After the upgrade, install the
+     <systemitem>libvirt-daemon-lxc</systemitem> and
+     <systemitem>libvirt-daemon-config-network</systemitem> packages.
+    </para>
+   </step>
+   <step>
+    <para>
+     Create a &libvirt; XML configuration
+     <filename>lxc_container.xml</filename> from the existing container
+     <literal>lxc_container</literal>:
+    </para>
+<screen>&prompt.sudo;virt-lxc-convert /etc/lxc/lxc_container/config &gt; lxc_container.xml</screen>
+   </step>
+   <step>
+    <para>
+     Check if the network configuration on the host is the same as in the
+     container configuration file, and fix it if needed.
+    </para>
+   </step>
+   <step>
+    <para>
+     Check the <filename>lxc_container.xml</filename> file for any weird or
+     missing configuration. Note that some &lxc; configuration options
+     cannot be mapped to &libvirt; configuration. Although the conversion
+     should usually be fine, check <xref linkend="lxc-diff"/> for more
+     details.
+    </para>
+   </step>
+   <step>
+    <para>
+     Define the container in &libvirt; based on the created XML
+     definition:
+    </para>
+<screen>&prompt.sudo;virsh -c lxc:/// define lxc_container.xml</screen>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 xml:id="lxc2libvirt-container">
+  <title>Container migration</title>
+
+  <para>
+   After the host is migrated, the &lxc; container in &libvirt; will not
+   boot. It needs to be migrated to
+   <phrase os="sles;sled">&sls; &product-ga;</phrase><phrase os="osuse">&opensuse; Leap &product-ga;</phrase>
+   as well to get everything working.
+  </para>
+
+  <procedure>
+   <title>Container migration</title>
+   <step>
+    <para>
+     The <filename>baseproduct</filename> file is missing (and
+     <command>zypper</command> keeps complaining about it). Create the
+     relevant symbolic link:
+    </para>
+<screen>&prompt.root;ROOTFS=/var/lib/lxc/lxc_container/rootfs
+&prompt.root;ln -s $ROOTFS/etc/products.d/SUSE_SLES.prod $ROOTFS/etc/products.d/baseproduct</screen>
+   </step>
+   <step>
+    <para>
+     Add the DVD repository. Note that you need to replace the DVD device
+     with the one attached to your container:
+    </para>
+<screen os="sles;sled">&prompt.root;zypper --root $ROOTFS ar \
+cd:///?devices=/dev/dvd SLES15-0</screen>
+   </step>
+   <step>
+    <para>
+     Disable or remove previous repositories:
+    </para>
+<screen>&prompt.root;zypper --root $ROOTFS lr
+  | Alias                       | Name                         | Enabled | Refresh
+--+-----------------------------+------------------------------+---------+--------
+1 | SLES12                      | SLES12                       | Yes     | No
+2 | SUSE-[...]-Server-12-SP3 38 | SUSE-[...]-Server-12-SP3 138 | Yes     | No
+
+&prompt.root;zypper --root $ROOTFS rr 2</screen>
+
+<screen os="osuse">&prompt.root;zypper --root $ROOTFS ar \
+cd:///?devices=/dev/dvd "openSUSE 15"</screen>
+   </step>
+   <step>
+    <para>
+     Disable or remove previous repositories:
+    </para>
+<screen>&prompt.root;zypper --root $ROOTFS lr
+  | Alias                       | Name                         | Enabled | Refresh
+--+-----------------------------+------------------------------+---------+--------
+1 | openSUSE 42.3 Main          | openSUSE 42.3 Main           | Yes     | No
+2 | openSUSE 42.3 Update        | openSUSE 42.3 Update         | Yes     | No
+
+&prompt.root;zypper --root $ROOTFS rr 2</screen>
+   </step>
+   <step>
+    <para>
+     Upgrade the container:
+    </para>
+<screen>&prompt.root;zypper --root $ROOTFS dup</screen>
+   </step>
+   <step>
+    <para>
+     Install the <emphasis>Minimal</emphasis> pattern to make sure
+     everything required is installed:
+    </para>
+<screen>&prompt.root;zypper --root $ROOTFS in -t pattern Minimal</screen>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 xml:id="lxc2libvirt-start">
+  <title>Starting the container</title>
+
+  <para>
+   After the host and container migration is complete, the container can be
+   started:
+  </para>
+
+<screen>&prompt.root;virsh -c lxc:/// start lxc_container</screen>
+
+  <para>
+   If you need to get a console to view the logging messages produced by the
+   container, run:
+  </para>
+
+<screen>&prompt.root;virsh -c lxc:/// console lxc_container</screen>
+ </sect1>
+</chapter>

@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>NVIDIA Virtual GPU for KVM Guests | SLES 15 SP7</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
+<meta name="dcterms.modified" content="2025-06-17"/><meta name="dcterms.created" content="2025-06-17"/><meta name="title" content="NVIDIA Virtual GPU for KVM Guests | SLES 15 SP7"/>
+<meta name="description" content="How to configure the NVIDIA Virtual GPU (vGPU) for KVM guests"/>
+<meta name="product-name" content="SUSE Linux Enterprise Server"/>
+<meta name="product-number" content="15 SP7"/>
+<meta name="book-title" content="NVIDIA Virtual GPU for KVM Guests"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="taroth@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="PUBLIC SUSE Linux Enterprise Server 15 SP7"/>
+<meta name="publisher" content="SUSE"/><link rel="canonical" href="https://documentation.suse.com/sles/15-SP7/single-html/SLES-nvidia-vgpu/index.html"/>
+<meta property="og:url" content="https://documentation.suse.com/sles/15-SP7/single-html/SLES-nvidia-vgpu/index.html"/>
+<meta property="og:image" content="https://documentation.suse.com/sles/15-SP7/single-html/SLES-nvidia-vgpu/https://documentation.suse.com/sles/15-SP7/single-html/SLES-nvidia-vgpu/document.jpg"/>
+<meta name="generator" content="DAPS 4.0.beta12 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.95.21 (based on DocBook XSL Stylesheets 1.79.2)"/>
+<meta property="og:title" content="NVIDIA Virtual GPU for KVM Guests"/>
+<meta property="og:description" content="Configure NVIDIA vGPU for KVM guests"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://documentation.suse.com/sles/15-SP7/single-html/SLES-nvidia-vgpu/document.jpg"/>
+<meta name="twitter:title" content="NVIDIA Virtual GPU for KVM Guests"/>
+<meta name="twitter:description" content="Configure NVIDIA vGPU for KVM guests"/>
+<meta name="twitter:site" content="@SUSE"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Products &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "NVIDIA Virtual GPU for KVM Guests",
+  
+    "description": "How to configure the NVIDIA Virtual GPU (vGPU) for KVM guests",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+    "dateModified": "2025-06-17T00:00+02:00",
+      
+    "datePublished": "2025-06-17T00:00+02:00",
+      
+
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Virtualization"
+      }
+    ],
+  
+    "mentions": [
+      
+      { "@type": "SoftwareApplication",
+        "name": "SUSE Linux Enterprise Server",
+        "softwareVersion": "15 SP7",
+        "applicationCategory": "Operating System",
+        "operatingSystem": "Linux"
+      }
+      
+    ],
+    
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link type="text/css" rel="preload" as="style" onload="this.rel='stylesheet'" href="https://documentation.suse.com/docserv/res/fonts/suse/suse.css"/><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.js" type="text/javascript"> </script><script>hljs.highlightAll();</script><script type="text/javascript">
+if (window.location.protocol.toLowerCase() != 'file:') {
+  var externalScript1 = document.createElement("script");
+  externalScript1.src = "/docserv/res/extra.js";
+  document.head.appendChild(externalScript1);
+}
+      </script><meta name="edit-url" content="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml"/><!--SUSE Header head--><script type="module">
+     import { defineCustomElements, setAssetPath } from 'https://d12w0ryu9hjsx8.cloudfront.net/shared-header/1.5/shared-header.esm.js';
+     defineCustomElements();
+     setAssetPath("https://d12w0ryu9hjsx8.cloudfront.net/shared-header/1.5/assets");
+   </script>
+</head><body class="single normal offline js-off"><shared-header language="en" languages="{      &quot;en&quot;: { &quot;label&quot;: &quot;English&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/en-us/&quot; },      &quot;de&quot;: { &quot;label&quot;: &quot;Deutsch&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/de-de/&quot; },      &quot;fr&quot;: { &quot;label&quot;: &quot;Français&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/fr-fr/&quot; },      &quot;es&quot;: { &quot;label&quot;: &quot;Español&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/es-es/&quot; },      &quot;zh_CN&quot;: { &quot;label&quot;: &quot;中文&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/zh-cn/&quot; },      &quot;pt_BR&quot;: { &quot;label&quot;: &quot;Português Brasileiro&quot;, &quot;url&quot;: &quot;https://documentation.suse.com/pt-br/&quot; }     }"> </shared-header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb overview-link" href="https://documentation.suse.com/" title="documentation.suse.com">documentation.suse.com</a><span> / </span><a class="crumb" href="#article-nvidia-vgpu">NVIDIA Virtual GPU for KVM Guests</a></div><div class="docsurvey-wrapper"><a class="survey-link" href="https://suselinux.fra1.qualtrics.com/jfe/form/SV_bEiGZbUNzLD8Tcy">Documentation survey</a></div></div><main id="_content"><nav class="side-toc placebo" id="_side-toc-overall"> </nav><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-nvidia-vgpu" data-id-title="NVIDIA Virtual GPU for KVM Guests"><div class="titlepage"><div><div class="big-version-info"><span class="productname"><span class="productname"><span class="phrase">SUSE Linux Enterprise Server</span></span></span> <span class="productnumber"><span class="productnumber"><span class="phrase">15 SP7</span></span></span></div><div><div class="title-container"><h1 class="title">NVIDIA Virtual GPU for KVM Guests <a title="Permalink" class="permalink" href="#article-nvidia-vgpu">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div><div class="date"><span class="imprint-label">Publication Date: </span>
+    September 25, 2025
+
+   </div><div><div class="titlepage-revhistory"><a aria-label="Revision History: NVIDIA Virtual GPU for KVM Guests" hreflang="en" href="rh-article-nvidia-vgpu.html" target="_blank">Revision History: NVIDIA Virtual GPU for KVM Guests</a></div></div></div></div><section class="sect1" id="configure-nvidia-vgpu-introduction" data-id-title="Introduction"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">1 </span><span class="title-name">Introduction</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-introduction">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+      NVIDIA virtual GPU (vGPU) is a graphics virtualization solution that provides multiple
+      virtual machines (VMs) simultaneous access to one physical Graphics Processing Unit (GPU) on
+      the VM Host Server. This article refers to the Volta and Ampere GPU architecture.
+    </p></section><section class="sect1" id="configure-nvidia-vgpu-configuring-host" data-id-title="Configuring vGPU manager in VM Host Server"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Configuring vGPU manager in VM Host Server</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-configuring-host">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-verify-host" data-id-title="Prepare VM Host Server environment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">Prepare VM Host Server environment</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-verify-host">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Verify that you have a compatible server and GPU cards. Check specifications for
+            details:
+          </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+                <a class="link" href="https://docs.nvidia.com/grid/gpus-supported-by-vgpu.html" target="_blank">https://docs.nvidia.com/grid/gpus-supported-by-vgpu.html</a>
+              </p></li><li class="listitem"><p>
+                <a class="link" href="https://docs.nvidia.com/grid/index.html" target="_blank">https://docs.nvidia.com/grid/index.html</a>
+              </p></li></ul></div></li><li class="step"><p>
+            Verify that VM Host Server is SUSE Linux Enterprise Server 15 SP3 or newer:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cat /etc/issue
+Welcome to SUSE Linux Enterprise Server 15 SP3  (x86_64) - Kernel \r (\l).</pre></div></li><li class="step"><p>
+            Get the vGPU drivers from NVIDIA. To get the software, please follow the steps at
+            <a class="link" href="https://docs.nvidia.com/grid/latest/grid-software-quick-start-guide/index.html#redeeming-pak-and-downloading-grid-software" target="_blank">https://docs.nvidia.com/grid/latest/grid-software-quick-start-guide/index.html#redeeming-pak-and-downloading-grid-software</a>.
+            For example, to install vGPU 13.0, you need the following files:
+          </p><div class="verbatim-wrap"><pre class="screen">NVIDIA-Linux-x86_64-470.63-vgpu-kvm.run  # vGPU manager for the VM host
+NVIDIA-Linux-x86_64-470.63.01-grid.run   # vGPU driver for the VM guest</pre></div></li><li class="step"><p>
+            If you are using Ampere architecture GPU cards, verify that VM Host Server supports
+            VT-D/IOMMU and SR-IOV technologies, and that they are enabled in BIOS.
+          </p></li><li class="step"><p>
+            Enable IOMMU. Verify that it is included in the boot command line:
+          </p><div class="verbatim-wrap"><pre class="screen">cat /proc/cmdline
+BOOT_IMAGE=/boot/vmlinuz-default [...] intel_iommu=on [...]</pre></div><p>
+            If not, add the following line to <code class="filename">/etc/default/grub</code>.
+          </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+                For Intel CPUs:
+              </p><div class="verbatim-wrap"><pre class="screen">GRUB_CMDLINE_LINUX="intel_iommu=on"</pre></div><p>
+                For AMD CPUs:
+              </p><div class="verbatim-wrap"><pre class="screen">GRUB_CMDLINE_LINUX="amd_iommu=on"</pre></div></li></ul></div><p>
+            Then generate new GRUB 2 configuration file and reboot:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> grub2-mkconfig -o /boot/grub2/grub.cfg
+<code class="prompt user">&gt; </code><code class="command">sudo</code> systemctl reboot</pre></div><div id="id-1.13.7.4.2.2.5.7" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><div class="admon-title">Tip</div><p>
+              You can verify that IOMMU is loaded by running the following command:
+            </p><div class="verbatim-wrap"><pre class="screen">sudo dmesg | grep -e IOMMU</pre></div></div></li><li class="step"><p>
+            Enable SR-IOV. Refer to
+            <a class="link" href="https://docs.nvidia.com/grid/13.0/grid-vgpu-user-guide/index.html#vgpu-types-tesla-v100-pcie" target="_blank">https://docs.nvidia.com/grid/13.0/grid-vgpu-user-guide/index.html#vgpu-types-tesla-v100-pcie</a>
+            for useful information.
+          </p></li><li class="step"><p>
+            Disable the nouveau kernel module by adding the following line it to the top of the
+            <code class="filename">/etc/modprobe.d/50-blacklist.conf</code> file:
+          </p><div class="verbatim-wrap"><pre class="screen">blacklist nouveau</pre></div></li></ol></div></div></section><section class="sect2" id="remove-conflicting-nvidia-drivers" data-id-title="Remove conflicting and pre-installed NVIDIA drivers"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">Remove conflicting and pre-installed NVIDIA drivers</span></span> <a title="Permalink" class="permalink" href="#remove-conflicting-nvidia-drivers">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        On a fresh installation of SUSE Linux Enterprise Server <span class="productnumber"><span class="phrase">15 SP7</span></span>, the open-source NVIDIA desktop driver
+        such as <code class="filename">nvidia-open-driver-G06-signed-kmp-default</code> is often
+        automatically installed if an NVIDIA GPU is detected. This pre-installed driver can
+        conflict with the installation of the proprietary NVIDIA vGPU driver. The conflict can
+        lead to errors during the build process of the vGPU kernel modules and/or issues with the
+        correct driver being loaded, preventing the vGPU functionality from working correctly. This
+        section describes how to identify and remove conflicting drivers before proceeding with the
+        NVIDIA vGPU driver installation.
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Check for pre-installed NVIDIA drivers that can potentially conflict with the vGPU
+            driver that you want to install.
+          </p><ol type="a" class="substeps"><li class="step"><p>
+                Check for the presence of automatically installed open source NVIDIA driver.
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">zypper info nvidia-open-driver-G06-signed-kmp-default</code></pre></div><div id="id-1.13.7.4.3.3.1.2.1.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+                  If the package is <span><em class="emphasis"> not installed</em></span>, you can skip the rest of
+                  this section and proceed to
+                  <a class="xref" href="#configure-nvidia-vgpu-kvm-driver" title="2.3. Install the NVIDIA KVM driver">Section 2.3, “Install the NVIDIA KVM driver”</a>. However, if it is
+                  <span><em class="emphasis">installed</em></span>, perform the rest of the steps to uninstall
+                  conflicting drivers and clean up any residues.
+                </p></div></li><li class="step"><p>
+                List all installed NVIDIA-related packages to identify any other potential
+                conflicts:
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">zypper search --installed-only nvidia*</code></pre></div><p>
+                Look for any packages that might conflict with the vGPU driver, such as other
+                desktop driver versions.
+              </p></li></ol></li><li class="step"><p>
+            Remove the conflicting NVIDIA drivers.
+          </p><ol type="a" class="substeps"><li class="step"><p>
+                Remove the open source NVIDIA driver that is automatically installed.
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code>  <code class="command">zypper remove nvidia-open-driver-G06-signed-kmp-default</code></pre></div></li><li class="step"><p>
+                If you identified other conflicting packages in the previous step, remove them
+                similarly.
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> <code class="command">zypper remove <em class="replaceable">CONFLICTING-NVIDIA-PACKAGE</em> <em class="replaceable">CONFLICTING-NVIDIA-PACKAGE</em></code></pre></div></li></ol></li><li class="step"><p>
+            Uninstall any manually installed proprietary NVIDIA drivers that you have installed
+            using <code class="filename">.run</code> files downloaded from NVIDIA's Web site.
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> <code class="command"><em class="replaceable">/PATH/TO/NVIDIA-Linux-x86_64-XXX.XX.XX.run</em> --uninstall</code></pre></div></li><li class="step"><p>
+            <span><em class="emphasis">OPTIONAL but RECOMMENDED:</em></span> Sometimes, driver installations can
+            leave behind configuration files. To ensure a clean state, remove any potentially
+            conflicting configuration files.
+          </p><div id="id-1.13.7.4.3.3.4.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
+              Remove driver configuration files only when you are absolutely sure that it relates
+              to a potentially conflicting NVIDIA driver that you have already uninstalled.
+            </p></div><ol type="a" class="substeps"><li class="step"><p>
+                Search for NVIDIA-related configuration directories.
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> <code class="command">find /etc/ -name "*nvidia*"</code></pre></div></li><li class="step"><p>
+                Remove the directories related to conflicting uninstalled NVIDIA drivers.
+              </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> <code class="command">rm -rf /etc/<em class="replaceable">CONFLICTING/NVIDIA/DIRECTORY</em></code></pre></div></li></ol></li><li class="step"><p>
+            Manually load the <code class="literal">nvidia-modprobe</code> utility before attempting the vGPU
+            driver installation:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> <code class="command">modprobe nvidia-modprobe</code></pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-kvm-driver" data-id-title="Install the NVIDIA KVM driver"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">Install the NVIDIA KVM driver</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-kvm-driver">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Exit from the graphical mode:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> init 3</pre></div></li><li class="step"><p>
+            Install <span class="package">kernel-default-devel</span> and <span class="package">gcc</span> packages and
+            their dependencies:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> zypper in kernel-default-devel gcc</pre></div></li><li class="step"><p>
+            Download the vGPU software from the NVIDIA portal. Make the NVIDIA vGPU driver
+            executable and run it:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>chmod +x NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run
+<code class="prompt user">&gt; </code><code class="command">sudo</code> ./NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run</pre></div><p>
+            You can find detailed information about the installation process in the log file
+            <code class="filename">/var/log/nvidia-installer.log</code>
+          </p><div id="id-1.13.7.4.4.2.3.4" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><div class="admon-title">Tip</div><p>
+              To enable dynamic kernel-module support, and thus have the module rebuilt
+              automatically when a new kernel is installed, add the <code class="option">--dkms</code> option:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> ./NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run --dkms</pre></div></div></li><li class="step"><p>
+            When the driver installation is finished, reboot the system:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> systemctl reboot</pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-verify-driver-installation" data-id-title="Verify the driver installation"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.4 </span><span class="title-name">Verify the driver installation</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-verify-driver-installation">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Verify loaded kernel modules:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>lsmod | grep nvidia
+nvidia_vgpu_vfio       49152  9
+nvidia              14393344  229 nvidia_vgpu_vfio
+mdev                   20480  2 vfio_mdev,nvidia_vgpu_vfio
+vfio                   32768  6 vfio_mdev,nvidia_vgpu_vfio,vfio_iommu_type1</pre></div><p>
+            The modules containing the <code class="literal">vfio</code> string are required dependencies.
+          </p></li><li class="step"><p>
+            Print the GPU device status with the <code class="command">nvidia-smi</code> command. The output
+            should be similar to the following one:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63       Driver Version: 470.63       CUDA Version: N/A      |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A40          Off  | 00000000:31:00.0 Off |                    0 |
+|  0%   46C    P0    39W / 300W |      0MiB / 45634MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
+            Check the sysfs file system. For Volta and earlier GPU cards, new directory
+            <code class="filename">mdev_supported_types</code> is added, for example:
+          </p><div class="verbatim-wrap"><pre class="screen">cd /sys/bus/pci/devices/00000000\:31\:00.0/mdev_supported_types</pre></div><p>
+            For Ampere GPU cards, the directory gets created automatically for each virtual
+            function after SR-IOV is enabled.
+          </p></li></ol></div></div></section></section><section class="sect1" id="configure-nvidia-vgpu-passthrough" data-id-title="Creating a vGPU device"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Creating a vGPU device</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-passthrough-without-sriov" data-id-title="Create a legacy vGPU device without support for SR-IOV"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">Create a legacy vGPU device without support for SR-IOV</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-without-sriov">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        All the NVIDIA Volta and earlier architecture GPUs work in this mode.
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Obtain the Bus/Device/Function (BDF) numbers of the host GPU device:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>lspci | grep NVIDIA
+84:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe 16GB] (rev a1)</pre></div></li><li class="step"><p>
+            Check for the mdev supported devices and detailed information:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>ls /sys/bus/pci/devices/0000:84:00.0/mdev_supported_types/
+nvidia-105  nvidia-106  nvidia-107  nvidia-108  nvidia-109  nvidia-110 [...]</pre></div><p>
+            The map of vGPU mdev devices and their type is as follows:
+          </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+                nvidia-105 to nvidia-109: 1Q 2Q 4Q 8Q 16Q
+              </p></li><li class="listitem"><p>
+                nvidia-110 to nvidia-114: 1A 2A 4A 8A 16A
+              </p></li><li class="listitem"><p>
+                nvidia-115, nvidia-163, nvidia-217, nvidia-247: 1B 2B 2B4 1B4
+              </p></li><li class="listitem"><p>
+                nvidia-299 to nvidia-301: 4C 8C 16C
+              </p></li></ul></div><p>
+            Refer to
+            <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#vgpu-types-tesla-v100-pcie" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#vgpu-types-tesla-v100-pcie</a>
+            for more details.
+          </p></li><li class="step"><p>
+            Inspect a vGPU device:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cd /sys/bus/pci/devices/0000:03:00.0/mdev_supported_types/
+<code class="prompt user">&gt; </code>ls nvidia-105
+<code class="prompt user">&gt; </code>cat nvidia-105/description
+num_heads=2, frl_config=60, framebuffer=1024M, max_resolution=4096x2160, max_instance=16
+<code class="prompt user">&gt; </code>cat nvidia-105/name
+GRID V100-1Q</pre></div></li><li class="step"><p>
+            Generate a unique ID and create an mdev device based on it:
+          </p><div class="verbatim-wrap"><pre class="screen">      <code class="prompt user">&gt; </code>uuidgen
+      4f3b6e47-0baa-4900-b0b1-284c1ecc192f
+      <code class="prompt user">&gt; </code><code class="command">sudo</code> echo "4f3b6e47-0baa-4900-b0b1-284c1ecc192f" &gt; nvidia-105/create</pre></div></li><li class="step"><p>
+            Verify the new mdev device. You can inspect the content of the
+            <code class="filename">/sys/bus/mdev/devices</code> directory:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cd /sys/bus/mdev/devices
+<code class="prompt user">&gt; </code>ls -l
+lrwxrwxrwx 1 root root 0 Aug 30 23:03 86380ffb-8f13-4685-9c48-0e0f4e65fb87 \
+ -&gt; ../../../devices/pci0000:80/0000:80:02.0/0000:84:00.0/86380ffb-8f13-4685-9c48-0e0f4e65fb87
+lrwxrwxrwx 1 root root 0 Aug 30 23:03 86380ffb-8f13-4685-9c48-0e0f4e65fb88 \
+ -&gt; ../../../devices/pci0000:80/0000:80:02.0/0000:84:00.0/86380ffb-8f13-4685-9c48-0e0f4e65fb88
+lrwxrwxrwx 1 root root 0 Aug 30 23:03 86380ffb-8f13-4685-9c48-0e0f4e65fb89 \
+ -&gt; ../../../devices/pci0000:80/0000:80:02.0/0000:84:00.0/86380ffb-8f13-4685-9c48-0e0f4e65fb89
+lrwxrwxrwx 1 root root 0 Aug 30 23:03 86380ffb-8f13-4685-9c48-0e0f4e65fb90 \
+ -&gt; ../../../devices/pci0000:80/0000:80:02.0/0000:84:00.0/86380ffb-8f13-4685-9c48-0e0f4e65fb90</pre></div><p>
+            Or you can use the <code class="command">mdevctl</code> command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> mdevctl list
+86380ffb-8f13-4685-9c48-0e0f4e65fb90 0000:84:00.0 nvidia-299
+86380ffb-8f13-4685-9c48-0e0f4e65fb89 0000:84:00.0 nvidia-299
+86380ffb-8f13-4685-9c48-0e0f4e65fb87 0000:84:00.0 nvidia-299
+86380ffb-8f13-4685-9c48-0e0f4e65fb88 0000:84:00.0 nvidia-299</pre></div></li><li class="step"><p>
+            Query the new vGPU device capability:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi vgpu -q
+GPU 00000000:84:00.0
+Active vGPUs                      : 1
+vGPU ID                           : 3251634323
+   VM UUID                       : ee7b7a4b-388a-4357-a425-5318b2c65b3f
+   VM Name                       : sle15sp3
+   vGPU Name                     : GRID V100-4C
+   vGPU Type                     : 299
+   vGPU UUID                     : d471c7f2-0a53-11ec-afd3-38b06df18e37
+   MDEV UUID                     : 86380ffb-8f13-4685-9c48-0e0f4e65fb87
+   Guest Driver Version          : 460.91.03
+   License Status                : Licensed
+   GPU Instance ID               : N/A
+   Accounting Mode               : Disabled
+   ECC Mode                      : N/A
+   Accounting Buffer Size        : 4000
+   Frame Rate Limit              : N/A
+   FB Memory Usage
+       Total                     : 4096 MiB
+       Used                      : 161 MiB
+       Free                      : 3935 MiB
+   Utilization
+       Gpu                       : 0 %
+       Memory                    : 0 %
+       Encoder                   : 0 %
+       Decoder                   : 0 %
+   Encoder Stats
+       Active Sessions           : 0
+       Average FPS               : 0
+       Average Latency           : 0
+   FBC Stats
+       Active Sessions           : 0
+       Average FPS               : 0
+       Average Latency           : 0</pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-passthrough-with-sriov" data-id-title="Create a vGPU device with support for SR-IOV"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Create a vGPU device with support for SR-IOV</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-with-sriov">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        All NVIDIA Ampere and newer architecture GPUs work in this mode.
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Obtain the Bus/Device/Function (BDF) numbers of the host GPU device:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>lspci | grep NVIDIA
+b1:00.0 3D controller: NVIDIA Corporation GA100 [A100 PCIe 40GB] (rev a1)</pre></div></li><li class="step"><p>
+            Enable virtual functions:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> /usr/lib/nvidia/sriov-manage -e 00:b1:0000.0</pre></div><div id="id-1.13.7.5.3.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+              This configuration is not persistent and must be re-enabled after the host reboot.
+            </p></div></li><li class="step"><p>
+            Obtain the Bus/Domain/Function (BDF) of virtual functions on the GPU:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>ls -l /sys/bus/pci/devices/0000:b1:00.0/ | grep virtfn
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn0 -&gt; ../0000:b1:00.4
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn1 -&gt; ../0000:b1:00.5
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn10 -&gt; ../0000:b1:01.6
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn11 -&gt; ../0000:b1:01.7
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn12 -&gt; ../0000:b1:02.0
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn13 -&gt; ../0000:b1:02.1
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn14 -&gt; ../0000:b1:02.2
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn15 -&gt; ../0000:b1:02.3
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn2 -&gt; ../0000:b1:00.6
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn3 -&gt; ../0000:b1:00.7
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn4 -&gt; ../0000:b1:01.0
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn5 -&gt; ../0000:b1:01.1
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn6 -&gt; ../0000:b1:01.2
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn7 -&gt; ../0000:b1:01.3
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn8 -&gt; ../0000:b1:01.4
+lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn9 -&gt; ../0000:b1:01.5</pre></div></li><li class="step"><p>
+            <span><em class="emphasis">Create a vGPU device.</em></span> Select the virtual function (VF) that you
+            want to use to create the vGPU device and assign it a unique ID.
+          </p><div id="id-1.13.7.5.3.3.4.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
+              Each VF can only create one vGPU instance. To create more vGPU instances, you need to
+              use a different VF.
+            </p></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cd /sys/bus/pci/devices/0000:b1:00.0/virtfn1/mdev_supported_types
+<code class="prompt user">&gt; </code>for i in *; do echo "$i" $(cat $i/name) available: $(cat $i/avail*); done
+nvidia-468 GRID A100-4C available: 0
+nvidia-469 GRID A100-5C available: 0
+nvidia-470 GRID A100-8C available: 0
+nvidia-471 GRID A100-10C available: 1
+nvidia-472 GRID A100-20C available: 0
+nvidia-473 GRID A100-40C available: 0
+nvidia-474 GRID A100-1-5C available: 0
+nvidia-475 GRID A100-2-10C available: 0
+nvidia-476 GRID A100-3-20C available: 0
+nvidia-477 GRID A100-4-20C available: 0
+nvidia-478 GRID A100-7-40C available: 0
+nvidia-479 GRID A100-1-5CME available: 0
+<code class="prompt user">&gt; </code>uuidgen
+f715f63c-0d00-4007-9c5a-b07b0c6c05de
+<code class="prompt user">&gt; </code><code class="command">sudo</code> echo "f715f63c-0d00-4007-9c5a-b07b0c6c05de" &gt; nvidia-471/create
+<code class="prompt user">&gt; </code><code class="command">sudo</code> dmesg | tail
+[...]
+[ 3218.491843] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: Adding to iommu group 322
+[ 3218.499700] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: MDEV: group_id = 322
+[ 3599.608540] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: Removing from iommu group 322
+[ 3599.616753] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: MDEV: detaching iommu
+[ 3626.345530] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: Adding to iommu group 322
+[ 3626.353383] vfio_mdev f715f63c-0d00-4007-9c5a-b07b0c6c05de: MDEV: group_id = 322</pre></div></li><li class="step"><p>
+            Verify the new vGPU device:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cd /sys/bus/mdev/devices/
+<code class="prompt user">&gt; </code>ls
+f715f63c-0d00-4007-9c5a-b07b0c6c05de</pre></div></li><li class="step"><p>
+            Query the new vGPU device capability:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi vgpu -q
+GPU 00000000:B1:00.0
+Active vGPUs                      : 1
+vGPU ID                           : 3251634265
+  VM UUID                       : b0d9f0c6-a6c2-463e-967b-06cb206415b6
+  VM Name                       : sles15sp2-gehc-vm1
+  vGPU Name                     : GRID A100-10C
+  vGPU Type                     : 471
+  vGPU UUID                     : 444f610c-1b08-11ec-9554-ebd10788ee14
+  MDEV UUID                     : f715f63c-0d00-4007-9c5a-b07b0c6c05de
+  Guest Driver Version          : N/A
+  License Status                : N/A
+  GPU Instance ID               : N/A
+  Accounting Mode               : N/A
+  ECC Mode                      : Disabled
+  Accounting Buffer Size        : 4000
+  Frame Rate Limit              : N/A
+  FB Memory Usage
+      Total                     : 10240 MiB
+      Used                      : 0 MiB
+      Free                      : 10240 MiB
+  Utilization
+      Gpu                       : 0 %
+      Memory                    : 0 %
+      Encoder                   : 0 %
+      Decoder                   : 0 %
+  Encoder Stats
+      Active Sessions           : 0
+      Average FPS               : 0
+      Average Latency           : 0
+  FBC Stats
+      Active Sessions           : 0
+      Average FPS               : 0
+      Average Latency           : 0</pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-passthrough-mig-backed" data-id-title="Creating a MIG-backed vGPU"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Creating a MIG-backed vGPU</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-mig-backed">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.13.7.5.4.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
+          SR-IOV must be enabled to create vGPUs and assign them to guest VMs.
+        </p></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Enable MIG mode for a GPU:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi -i 0 -mig 1
+Enabled MIG Mode for GPU 00000000:B1:00.0
+All done.</pre></div></li><li class="step"><p>
+            Query the GPU instance profile:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi mig -lgip
++-----------------------------------------------------------------------------+
+| GPU instance profiles:                                                      |
+| GPU   Name             ID    Instances   Memory     P2P    SM    DEC   ENC  |
+|                              Free/Total   GiB              CE    JPEG  OFA  |
+|=============================================================================|
+|   0  MIG 1g.5gb        19     7/7        4.75       No     14     0     0   |
+|                                                             1     0     0   |
++-----------------------------------------------------------------------------+
+|   0  MIG 1g.5gb+me     20     1/1        4.75       No     14     1     0   |
+|                                                             1     1     1   |
++-----------------------------------------------------------------------------+
+|   0  MIG 2g.10gb       14     3/3        9.75       No     28     1     0   |
+|                                                             2     0     0   |
++-----------------------------------------------------------------------------+
+|   0  MIG 3g.20gb        9     2/2        19.62      No     42     2     0   |
+|                                                             3     0     0   |
++-----------------------------------------------------------------------------+
+|   0  MIG 4g.20gb        5     1/1        19.62      No     56     2     0   |
+|                                                             4     0     0   |
++-----------------------------------------------------------------------------+
+|   0  MIG 7g.40gb        0     1/1        39.50      No     98     5     0   |
+|                                                             7     1     1   |
++-----------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
+            Create a GPU instance specifying '5' as a GPU profile instance ID and optionally create
+            a Compute Instance on it, either on the host server or within the guest:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi mig -cgi 5
+Successfully created GPU instance ID  1 on GPU  0 using profile MIG 4g.20gb (ID  5)
+<code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi mig -cci -gi 1
+Successfully created compute instance ID  0 on GPU  0 GPU instance ID  1 using profile MIG 4g.20gb (ID  3)</pre></div></li><li class="step"><p>
+            Verify the GPU instance:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi
+Tue Sep 21 11:19:36 2021
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63       Driver Version: 470.63       CUDA Version: N/A      |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100-PCI...  On   | 00000000:B1:00.0 Off |                   On |
+| N/A   38C    P0    38W / 250W |      0MiB / 40536MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0    1   0   0  |      0MiB / 20096MiB | 56      0 |  4   0    2    0    0 |
+|                  |      0MiB / 32767MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
+            Use the MIG instance. You can use the instance directly with the UUID—for
+            example, assign it to a container or CUDA process.
+          </p><p>
+            You can also create a vGPU on top of it and assign it to a VM guest. The procedure is
+            the same as for the vGPU with SR-IOV support. Refer to
+            <a class="xref" href="#configure-nvidia-vgpu-passthrough-with-sriov" title="3.2. Create a vGPU device with support for SR-IOV">Section 3.2, “Create a vGPU device with support for SR-IOV”</a>.
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi -L
+GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-ee14e29d-dd5b-2e8e-eeaf-9d3debd10788)
+ MIG 4g.20gb     Device  0: (UUID: MIG-fed03f85-fd95-581b-837f-d582496d0260)</pre></div></li></ol></div></div></section></section><section class="sect1" id="configure-nvidia-vgpu-passthrough-vm" data-id-title="Assign the vGPU device to a VM Guest"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Assign the vGPU device to a VM Guest</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-vm">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-passthrough-to-vm-libvirt" data-id-title="Assign by libvirt"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name">Assign by <code class="systemitem">libvirt</code></span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-to-vm-libvirt">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Create a <code class="systemitem">libvirt</code>-based virtual machine (VM) with UEFI support and a normal VGA
+            display.
+          </p></li><li class="step"><p>
+            Edit the VM's configuration by running <code class="command">virsh edit
+            <em class="replaceable">VM-NAME</em></code>.
+          </p></li><li class="step"><p>
+            Add the new mdev device with the unique ID you used when creating the vGPU device to
+            the &lt;devices/&gt; section.
+          </p><div id="id-1.13.7.6.2.2.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+              If you are using Q-series, use <code class="literal">display='on'</code> instead.
+            </p></div><div class="verbatim-wrap"><pre class="screen">&lt;hostdev mode='subsystem' type='mdev' managed='no' model='vfio-pci' display='off'&gt;
+  &lt;source&gt;
+    &lt;address uuid='4f3b6e47-0baa-4900-b0b1-284c1ecc192f'/&gt;
+  &lt;/source&gt;
+  &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x0a' function='0x0'/&gt;
+&lt;/hostdev&gt;</pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-passthrough-to-vm-qemu" data-id-title="Assign by QEMU"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name">Assign by QEMU</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-to-vm-qemu">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Add the following device to the QEMU command line. Use the unique ID that you used when
+        creating the vGPU device:
+      </p><div class="verbatim-wrap"><pre class="screen">-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/4f3b6e47-0baa-4900-b0b1-284c1ecc192f</pre></div></section></section><section class="sect1" id="configure-nvidia-vgpu-configure-guest" data-id-title="Configuring vGPU in VM Guest"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Configuring vGPU in VM Guest</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-configure-guest">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-passthrough-to-vm" data-id-title="Prepare the VM Guest"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Prepare the VM Guest</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-passthrough-to-vm">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+            During VM Guest installation, disable secure boot, enable the SSH service, and select
+            <code class="literal">wicked</code> for networking.
+          </p></li><li class="listitem"><p>
+            Disable the <code class="literal">nouveau</code> video driver. Edit the file
+            <code class="filename">/etc/modprobe.d/50-blacklist.conf</code> and add the following line to
+            its upper section:
+          </p><div class="verbatim-wrap"><pre class="screen">blacklist nouveau</pre></div><div id="id-1.13.7.7.2.2.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
+              Disabling <code class="literal">nouveau</code> works after you re-generate the initrd image
+              with dracut, and then reboot the VM Guest.
+            </p></div></li></ul></div></section><section class="sect2" id="configure-nvidia-vgpu-configure-guest-install-driver" data-id-title="Install the vGPU driver in the VM Guest"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Install the vGPU driver in the VM Guest</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-configure-guest-install-driver">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            Install the following packages and their dependencies:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> zypper install kernel-default-devel libglvnd-devel</pre></div></li><li class="step"><p>
+            Download the vGPU software from the NVIDIA portal. Make the NVIDIA vGPU driver
+            executable and run it:
+          </p><div class="verbatim-wrap"><pre class="screen">      <code class="prompt user">&gt; </code>chmod +x NVIDIA-Linux-x86_64-470.63.01-grid.run
+      <code class="prompt user">&gt; </code><code class="command">sudo</code> ./NVIDIA-Linux-x86_64-470.63.01-grid.run</pre></div><div id="id-1.13.7.7.3.2.2.3" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><div class="admon-title">Tip</div><p>
+              To enable dynamic kernel module support to get the module rebuilt automatically when
+              a new kernel is installed, add the <code class="option">--dkms</code> option:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> ./NVIDIA-Linux-x86_64-470.63.01-grid.run --dkms</pre></div></div></li><li class="step"><p>
+            During driver installation, select to run the <code class="command">nvidia-xconfig</code>
+            utility.
+          </p></li><li class="step"><p>
+            Verify the driver installation by checking the output of the
+            <code class="command">nvidia-smi</code> command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63.01    Driver Version: 470.63.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GRID A100-10C       On   | 00000000:07:00.0 Off |                    0 |
+| N/A   N/A    P0    N/A /  N/A |    930MiB / 10235MiB |      0%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+</pre></div></li></ol></div></div></section></section><section class="sect1" id="configure-nvidia-vgpu-licensing" data-id-title="Licensing vGPU in the VM Guest"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Licensing vGPU in the VM Guest</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-licensing">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+          Create the configuration file <code class="filename">/etc/nvidia/gridd.conf</code> based on
+          <code class="filename">/etc/nvidia/gridd.conf.template</code>.
+        </p></li><li class="step"><ol type="a" class="substeps"><li class="step"><p>
+              For licenses that are served from the NVIDIA License System, update the following
+              options:
+            </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.13.7.8.2.2.1.1.2.1"><span class="term">FeatureType</span></dt><dd><p>
+                    For GPU passthrough, set <code class="option">FeatureType</code> to <code class="literal">4</code>
+                    for computing and <code class="literal">2</code> for graphic purposes. In case of a
+                    virtual GPU, whatever vGPU type is created via <code class="command">mdev</code>
+                    determines the feature set that is enabled in VM Guest.
+                  </p></dd><dt id="id-1.13.7.8.2.2.1.1.2.2"><span class="term">ClientConfigTokenPath</span></dt><dd><p>
+                    Optional: To store the client configuration token in a custom location, add the
+                    <code class="option">ClientConfigTokenPath</code> configuration parameter on a new line as
+                    <code class="option">ClientConfigTokenPath="<em class="replaceable">PATH_TO_TOKEN</em>"</code>.
+                    By default, the client searches for the client configuration token in the
+                    <code class="filename">/etc/nvidia/ClientConfigToken/</code> directory.
+                  </p><p>
+                    Copy the client configuration token to the directory in which you want to store
+                    it.
+                  </p></dd></dl></div></li><li class="step"><p>
+              For licenses that are served from the legacy NVIDIA vGPU software license server,
+              update the following options:
+            </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.13.7.8.2.2.1.2.2.1"><span class="term">ServerAddress</span></dt><dd><p>
+                    Add your license server IP address.
+                  </p></dd><dt id="id-1.13.7.8.2.2.1.2.2.2"><span class="term">ServerPort</span></dt><dd><p>
+                    Use the default "7070" or the port configured during the server setup.
+                  </p></dd><dt id="id-1.13.7.8.2.2.1.2.2.3"><span class="term">FeatureType</span></dt><dd><p>
+                    For GPU passthrough, set <code class="option">FeatureType</code> to <code class="literal">4</code>
+                    for computing and <code class="literal">2</code> for graphic purposes. In case of a
+                    virtual GPU, whatever vGPU type is created via <code class="command">mdev</code>
+                    determines the feature set that is enabled in VM Guest.
+                  </p></dd></dl></div></li></ol></li><li class="step"><p>
+          Restart the <code class="systemitem">nvidia-gridd</code> service:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> systemctl restart nvidia-gridd.service</pre></div></li><li class="step"><p>
+          Inspect the log file for possible errors:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> grep gridd /var/log/messages
+[...]
+Aug 5 15:40:06 localhost nvidia-gridd: Started (4293)
+Aug 5 15:40:24 localhost nvidia-gridd: License acquired successfully.</pre></div></li></ol></div></div></section><section class="sect1" id="configure-nvidia-vgpu-xorg" data-id-title="Configuring a graphics mode"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Configuring a graphics mode</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-xorg">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-xorg-create" data-id-title="Create or update the /etc/X11/xorg.conf file"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Create or update the <code class="filename">/etc/X11/xorg.conf</code> file</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-xorg-create">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+            If there is no <code class="filename">/etc/X11/xorg.conf</code> on the VM Guest, run the
+            <code class="command">nvidia-xconfig</code> utility.
+          </p></li><li class="step"><p>
+            Query the GPU device for detailed information:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>nvidia-xconfig --query-gpu-info
+Number of GPUs: 1
+
+GPU #0:
+Name      : GRID V100-16Q
+UUID      : GPU-089f39ad-01cb-11ec-89dc-da10f5778138
+PCI BusID : PCI:0:10:0
+
+Number of Display Devices: 0</pre></div></li><li class="step"><p>
+            Add GPU's BusID to <code class="filename">/etc/X11/xorg.conf</code>, for example:
+          </p><div class="verbatim-wrap"><pre class="screen">Section "Device"
+Identifier "Device0"
+Driver "nvidia"
+BusID "PCI:0:10:0"
+VendorName "NVIDIA Corporation"
+EndSection</pre></div></li></ol></div></div></section><section class="sect2" id="configure-nvidia-vgpu-xorg-verify" data-id-title="Verify the graphics mode"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2 </span><span class="title-name">Verify the graphics mode</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-xorg-verify">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Verify the following:
+      </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+            A graphic desktop is booted correctly.
+          </p></li><li class="listitem"><p>
+            The 'X' process of a running X-server is running in GPU:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63.01    Driver Version: 470.63.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GRID V100-4C        On   | 00000000:00:0A.0 Off |                  N/A |
+| N/A   N/A    P0    N/A /  N/A |    468MiB /  4096MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1921      G   /usr/bin/X                         76MiB |
+|    0   N/A  N/A      1957      G   /usr/bin/gnome-shell               87MiB |
++-----------------------------------------------------------------------------+</pre></div></li></ul></div></section><section class="sect2" id="configure-nvidia-vgpu-vnc" data-id-title="Remote display"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3 </span><span class="title-name">Remote display</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-vnc">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        You need to install and configure the VNC server package <span class="package">x11vnc</span> inside
+        the VM Guest, and start it with the following command:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> x11vnc -display :0 -auth /run/user/1000/gdm/Xauthority -forever -shared -ncache -bg -usepw -geometry 1900x1080</pre></div><p>
+        You can use <code class="command">virt-manager</code> or <code class="command">virt-viewer</code> to display
+        the graphical output of a VM Guest.
+      </p><div id="id-1.13.7.9.4.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
+          For a <code class="systemitem">libvirt</code>-based VM Guest, verify that its XML configuration includes
+          <code class="literal">display=on</code> as suggested in
+          <a class="xref" href="#configure-nvidia-vgpu-passthrough-to-vm-libvirt" title="4.1. Assign by libvirt">Section 4.1, “Assign by <code class="systemitem">libvirt</code>”</a>.
+        </p></div></section></section><section class="sect1" id="configure-nvidia-vgpu-compute" data-id-title="Configuring compute mode"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">Configuring compute mode</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-compute">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+          Download and install the CUDA toolkit. You can find it at
+          <a class="link" href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=SLES&amp;target_version=15&amp;target_type=runfile_local" target="_blank">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=SLES&amp;target_version=15&amp;target_type=runfile_local</a>.
+        </p></li><li class="step"><p>
+          Download CUDA samples from <a class="link" href="https://github.com/nvidia/cuda-samples" target="_blank">https://github.com/nvidia/cuda-samples</a>.
+        </p></li><li class="step"><p>
+          Run CUDA sampling example:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>cd <em class="replaceable">YOUR_GIT_CLONE_LOCATION</em>/cuda-samples/Samples/0_Introduction/clock
+<code class="prompt user">&gt; </code> make
+/usr/local/cuda/bin/nvcc -ccbin g++ -I../../common/inc  -m64    --threads 0 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_37,code=sm_37 -gencode
+[...]
+mkdir -p ../../bin/x86_64/linux/release
+cp clock ../../bin/x86_64/linux/release
+<code class="prompt user">&gt; </code>./clock
+CUDA Clock sample
+GPU Device 0: "Volta" with compute capability 7.0
+Average clocks/block = 2820.718750</pre></div></li></ol></div></div></section><section class="sect1" id="configure-nvidia-vgpu-additional" data-id-title="Additional tasks"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9 </span><span class="title-name">Additional tasks</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+      This section introduces additional procedures that may be helpful after you have configured
+      your vGPU.
+    </p><section class="sect2" id="configure-nvidia-vgpu-additional-ftl" data-id-title="Disabling Frame Rate Limiter"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.1 </span><span class="title-name">Disabling Frame Rate Limiter</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-ftl">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Frame Rate Limiter (FRL) is enabled by default. It limits the vGPU to a fixed frame rate,
+        for example, 60fps. If you experience a bad graphic display, you may need to disable FRL,
+        for example:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> echo "frame_rate_limiter=0" &gt; /sys/bus/mdev/devices/86380ffb-8f13-4685-9c48-0e0f4e65fb87/nvidia/vgpu_params</pre></div></section><section class="sect2" id="configure-nvidia-vgpu-additional-ecc" data-id-title="Enabling/Disabling Error Correcting Code (ECC)"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.2 </span><span class="title-name">Enabling/Disabling Error Correcting Code (ECC)</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-ecc">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Since the NVIDIA Pascal architecture, NVIDIA GPU Cards support ECC memory to improve
+        data integrity. ECC is also supported by software since NVIDIA vGPU 9.0.
+      </p><p>
+        To enable ECC:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi –e 1
+<code class="prompt user">&gt; </code>nvidia-smi -q
+Ecc Mode
+   Current                           : Enabled
+   Pending                           : Enabled</pre></div><p>
+        To disable ECC:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code><code class="command">sudo</code> nvidia-smi –e 0</pre></div></section><section class="sect2" id="configure-nvidia-vgpu-additional-vmanager-blank" data-id-title="Black screen in Virt-manager"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.3 </span><span class="title-name">Black screen in Virt-manager</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-vmanager-blank">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        If you see only a black screen in Virt-manager, press
+        <span class="keycap">Alt</span><span class="key-connector">–</span><span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">2</span>
+        from Virt-manager viewer. You should be able to get in the display again.
+      </p></section><section class="sect2" id="configure-nvidia-vgpu-additional-vmanager-vnc-blank" data-id-title="Black screen in VNC client when using a non-QEMU VNC server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.4 </span><span class="title-name">Black screen in VNC client when using a non-QEMU VNC server</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-vmanager-vnc-blank">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Use the xvnc server.
+      </p></section><section class="sect2" id="configure-nvidia-vgpu-additional-noveau-kernel-panic" data-id-title="Kernel panic occurs because the Nouveau and NVIDIA drivers compete on GPU resources"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.5 </span><span class="title-name">Kernel panic occurs because the Nouveau and NVIDIA drivers compete on GPU resources</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-noveau-kernel-panic">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        The boot messages looks as follows:
+      </p><div class="verbatim-wrap"><pre class="screen">[ 16.742439] Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[ 16.742441] RIP: 0010:__pci_enable_msi_range+0x3a9/0x3f0
+[ 16.742443] Code: 76 60 49 8d 56 50 48 89 df e8 73 f6 fc ff e9 3b fe ff ff 31 f6 48 89 df e8 64 73 fd ff e9 d6 fe ff ff 44 89 fd e9 1a ff ff ff &lt;0f&gt; 0b bd ea ff ff ff e9 0e ff ff ff bd ea ff ff ff e9 04 ff f
+f ff
+[ 16.742444] RSP: 0018:ffffb04bc052fb28 EFLAGS: 00010202
+[ 16.742445] RAX: 0000000000000010 RBX: ffff9e93a85bc000 RCX: 0000000000000001
+[ 16.742457] RDX: 0000000000000000 RSI: 0000000000000001 RDI: ffff9e93a85bc000
+[ 16.742458] RBP: ffff9e93a2550800 R08: 0000000000000002 R09: ffffb04bc052fb1c
+[ 16.742459] R10: 0000000000000050 R11: 0000000000000020 R12: ffff9e93a2550800
+[ 16.742459] R13: 0000000000000001 R14: ffff9e93a2550ac8 R15: 0000000000000001
+[ 16.742460] FS: 00007f9f26889740(0000) GS:ffff9e93bfdc0000(0000) knlGS:0000000000000000
+[ 16.742461] CS: 0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 16.742462] CR2: 00000000008aeb90 CR3: 0000000286470003 CR4: 0000000000170ee0
+[ 16.742465] Call Trace:
+[ 16.742503] ? __pci_find_next_cap_ttl+0x93/0xd0
+[ 16.742505] pci_enable_msi+0x16/0x30
+[ 16.743039] nv_init_msi+0x1a/0xf0 [nvidia]
+[ 16.743154] nv_open_device+0x81b/0x890 [nvidia]
+[ 16.743248] nvidia_open+0x2f7/0x4d0 [nvidia]
+[ 16.743256] ? kobj_lookup+0x113/0x160
+[ 16.743354] nvidia_frontend_open+0x53/0x90 [nvidia]
+[ 16.743361] chrdev_open+0xc4/0x1a0
+[ 16.743370] ? cdev_put.part.2+0x20/0x20
+[ 16.743374] do_dentry_open+0x204/0x3a0
+[ 16.743378] path_openat+0x2fc/0x1520
+[ 16.743382] ? unlazy_walk+0x32/0xa0
+[ 16.743383] ? terminate_walk+0x8c/0x100
+[ 16.743385] do_filp_open+0x9b/0x110
+[ 16.743387] ? chown_common+0xf7/0x1c0
+[ 16.743390] ? kmem_cache_alloc+0x18a/0x270
+[ 16.743392] ? do_sys_open+0x1bd/0x260
+[ 16.743394] do_sys_open+0x1bd/0x260
+[ 16.743400] do_syscall_64+0x5b/0x1e0
+[ 16.743409] entry_SYSCALL_64_after_hwframe+0x44/0xa9
+[ 16.743418] RIP: 0033:0x7f9f2593961d
+[ 16.743420] Code: f0 25 00 00 41 00 3d 00 00 41 00 74 48 64 8b 04 25 18 00 00 00 85 c0 75 64 89 f2 b8 01 01 00 00 48 89 fe bf 9c ff ff ff 0f 05 &lt;48&gt; 3d 00 f0 ff ff 0f 87 97 00 00 00 48 8b 4c 24 28 64 48 33 0
+c 25
+[ 16.743420] RSP: 002b:00007ffcfa214930 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+[ 16.743422] RAX: ffffffffffffffda RBX: 00007ffcfa214c30 RCX: 00007f9f2593961d
+[ 16.743422] RDX: 0000000000080002 RSI: 00007ffcfa2149b0 RDI: 00000000ffffff9c
+[ 16.743423] RBP: 00007ffcfa2149b0 R08: 0000000000000000 R09: 0000000000000000
+[ 16.743424] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+[ 16.743424] R13: 00007ffcfa214abc R14: 0000000000925ae0 R15: 0000000000000000
+[ 16.743426] ---[ end trace 8bf4d15315659a3e ]---
+[ 16.743431] NVRM: GPU 0000:00:0a.0: Failed to enable MSI; falling back to PCIe virtual-wire interrupts.</pre></div><p>
+        Make sure to run <code class="command">mkintrd</code> and reboot after disabling the Nouveau driver.
+        Refer to <a class="xref" href="#configure-nvidia-vgpu-passthrough-to-vm" title="5.1. Prepare the VM Guest">Section 5.1, “Prepare the VM Guest”</a>.
+      </p></section><section class="sect2" id="configure-nvidia-vgpu-additional-nvidia-bug" data-id-title="Filing an NVIDIA vGPU bug"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.6 </span><span class="title-name">Filing an NVIDIA vGPU bug</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-nvidia-bug">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        While filing an NVIDIA vGPU-related bug report to us, please attach the vGPU
+        configuration data <code class="filename">nvidia-bug-report.log.gz</code> collected by the
+        <code class="command">nvidia-bug-report.sh</code> utility. Make sure you cover both VM Host Server and
+        VM Guest.
+      </p></section><section class="sect2" id="configure-nvidia-vgpu-additional-license-server" data-id-title="Configuring a License Server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.7 </span><span class="title-name">Configuring a License Server</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-additional-license-server">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Refer to
+        <a class="link" href="https://docs.nvidia.com/grid/ls/latest/grid-license-server-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/ls/latest/grid-license-server-user-guide/index.html</a>.
+      </p></section></section><section class="sect1" id="configure-nvidia-vgpu-more-info" data-id-title="For more information"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">10 </span><span class="title-name">For more information</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-more-info">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+      NVIDIA has an extensive documentation on vGPU. Refer to
+      <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html</a> for
+      details.
+    </p></section><section class="sect1" id="configure-nvidia-vgpu-background" data-id-title="NVIDIA virtual GPU background"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">11 </span><span class="title-name">NVIDIA virtual GPU background</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-background">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="configure-nvidia-vgpu-architecture" data-id-title="NVIDIA GPU architectures"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.1 </span><span class="title-name">NVIDIA GPU architectures</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-architecture">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        There are two types of GPU architectures:
+      </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.13.7.13.2.3.1"><span class="term">Time-sliced vGPU architecture</span></dt><dd><p>
+              Introduced on GPUs that are based on the NVIDIA Ampere GPU architecture. Only
+              Ampere GPU cards can support MIG-backed vGPU.
+            </p><div class="figure" id="id-1.13.7.13.2.3.1.2.2"><div class="figure-contents"><div class="mediaobject"><a href="images/nvidia-vgpu-time-sliced.png"><img src="images/nvidia-vgpu-time-sliced.png" width="75%" alt="Time-sliced architecture (source: )" title="Time-sliced architecture (source: )"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 1: </span><span class="title-name">Time-sliced architecture (source: <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html</a>) </span></span><a title="Permalink" class="permalink" href="#id-1.13.7.13.2.3.1.2.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></dd><dt id="id-1.13.7.13.2.3.2"><span class="term">Multi-Instance GPU (MIG) vGPU architecture</span></dt><dd><p>
+              All GPU cards support time-sliced vGPU. To do so, Ampere GPU cards use the Single
+              Root I/O Virtualization (SR-IOV) mechanism, while Volta and the earlier GPU cards use
+              the mediated device mechanism. Volta and the earlier architecture are based on
+              mediated device mechanism. These two mechanisms are transparent to a VM. However,
+              they need different configurations from the host side.
+            </p><div class="figure" id="id-1.13.7.13.2.3.2.2.2"><div class="figure-contents"><div class="mediaobject"><a href="images/nvidia-vgpu-mig-backed.png"><img src="images/nvidia-vgpu-mig-backed.png" width="75%" alt="MIG-backed architecture (source: )" title="MIG-backed architecture (source: )"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 2: </span><span class="title-name">MIG-backed architecture (source: <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html</a>) </span></span><a title="Permalink" class="permalink" href="#id-1.13.7.13.2.3.2.2.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></dd></dl></div></section><section class="sect2" id="configure-nvidia-vgpu-vgpu-types" data-id-title="vGPU types"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.2 </span><span class="title-name">vGPU types</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-vgpu-types">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        Each physical GPU can support several different types of vGPUs. vGPU types have a fixed
+        amount of framebuffer, the number of supported display heads, and maximum resolutions.
+        NVIDIA has four types of vGPUs: A, B, C and Q-series. SUSE currently supports Q and
+        C-series.
+      </p><div class="table" id="id-1.13.7.13.3.3" data-id-title="vGPU types"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 1: </span><span class="title-name">vGPU types </span></span><a title="Permalink" class="permalink" href="#id-1.13.7.13.3.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="text-align: left; " class="c1"/><col style="text-align: left; " class="c2"/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+                <p>
+                  vGPU series
+                </p>
+              </th><th style="text-align: left; border-bottom: 1px solid ; ">
+                <p>
+                  Optimal workload
+                </p>
+              </th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+                <p>
+                  Q-series
+                </p>
+              </td><td style="text-align: left; border-bottom: 1px solid ; ">
+                <p>
+                  Virtual workstations for creative and technical professionals who require the
+                  performance and features of the NVIDIA Quadro technology.
+                </p>
+              </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+                <p>
+                  C-series
+                </p>
+              </td><td style="text-align: left; border-bottom: 1px solid ; ">
+                <p>
+                  Compute-intensive server workloads, for example, artificial intelligence (AI),
+                  deep learning, or high-performance computing (HPC).
+                </p>
+              </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+                <p>
+                  B-series
+                </p>
+              </td><td style="text-align: left; border-bottom: 1px solid ; ">
+                <p>
+                  Virtual desktops for business professionals and knowledge workers.
+                </p>
+              </td></tr><tr><td style="text-align: left; border-right: 1px solid ; ">
+                <p>
+                  A-series
+                </p>
+              </td><td style="text-align: left; ">
+                <p>
+                  Application streaming or session-based solutions for virtual applications users.
+                </p>
+              </td></tr></tbody></table></div></div></section><section class="sect2" id="configure-nvidia-vgpu-valid-configurations" data-id-title="Valid vGPU configurations on a single GPU"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.3 </span><span class="title-name">Valid vGPU configurations on a single GPU</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-valid-configurations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect3" id="configure-nvidia-vgpu-valid-configurations-time-sliced" data-id-title="Time-sliced vGPU configurations"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">11.3.1 </span><span class="title-name">Time-sliced vGPU configurations</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-valid-configurations-time-sliced">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+          For time-sliced vGPUs, all vGPUs types must be the same:
+        </p><div class="figure" id="id-1.13.7.13.4.2.3"><div class="figure-contents"><div class="mediaobject"><a href="images/nvidia-vgpus-supported.png"><img src="images/nvidia-vgpus-supported.png" width="75%" alt="Example time-sliced vGPU configurations on NVIDIA Tesla M60 (source: )" title="Example time-sliced vGPU configurations on NVIDIA Tesla M60 (source: )"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 3: </span><span class="title-name">Example time-sliced vGPU configurations on NVIDIA Tesla M60 (source: <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html</a>) </span></span><a title="Permalink" class="permalink" href="#id-1.13.7.13.4.2.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></section><section class="sect3" id="configure-nvidia-vgpu-valid-configurations-mig-backed" data-id-title="MIG-backed vGPU configurations"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">11.3.2 </span><span class="title-name">MIG-backed vGPU configurations</span></span> <a title="Permalink" class="permalink" href="#configure-nvidia-vgpu-valid-configurations-mig-backed">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+          For MIG-backed vGPUs, vGPUs can be both homogeneous and mixed-type:
+        </p><div class="figure" id="id-1.13.7.13.4.3.3"><div class="figure-contents"><div class="mediaobject"><a href="images/nvidia-vgpus-supported2.png"><img src="images/nvidia-vgpus-supported2.png" width="75%" alt="Example MIG-backed vGPU configurations on NVIDIA A100 PCIe 40 GB (source: )" title="Example MIG-backed vGPU configurations on NVIDIA A100 PCIe 40 GB (source: )"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 4: </span><span class="title-name">Example MIG-backed vGPU configurations on NVIDIA A100 PCIe 40 GB (source: <a class="link" href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html" target="_blank">https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html</a>) </span></span><a title="Permalink" class="permalink" href="#id-1.13.7.13.4.3.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/art-nvidia-vgpu.xml" title="Edit source document"> </a></div></div></div></section></section></section><div class="legal-section"><section class="sect1" id="id-1.13.7.14" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">12 </span><span class="title-name">GNU Free Documentation License</span></span> <a title="Permalink" class="permalink" href="#id-1.13.7.14">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-sle/edit/main/xml/common_license_gfdl1.2.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin St,
+  Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy and
+  distribute verbatim copies of this license document, but changing it is not
+  allowed.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.4"><span class="name">
+    0. PREAMBLE
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.4">#</a></h5></div><p>
+  The purpose of this License is to make a manual, textbook, or other
+  functional and useful document "free" in the sense of freedom: to assure
+  everyone the effective freedom to copy and redistribute it, with or without
+  modifying it, either commercially or non-commercially. Secondarily, this
+  License preserves for the author and publisher a way to get credit for their
+  work, while not being considered responsible for modifications made by
+  others.
+ </p><p>
+  This License is a kind of "copyleft", which means that derivative works of
+  the document must themselves be free in the same sense. It complements the
+  GNU General Public License, which is a copyleft license designed for free
+  software.
+ </p><p>
+  We have designed this License to use it for manuals for free software,
+  because free software needs free documentation: a free program should come
+  with manuals providing the same freedoms that the software does. But this
+  License is not limited to software manuals; it can be used for any textual
+  work, regardless of subject matter or whether it is published as a printed
+  book. We recommend this License principally for works whose purpose is
+  instruction or reference.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.8"><span class="name">
+    1. APPLICABILITY AND DEFINITIONS
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.8">#</a></h5></div><p>
+  This License applies to any manual or other work, in any medium, that
+  contains a notice placed by the copyright holder saying it can be distributed
+  under the terms of this License. Such a notice grants a world-wide,
+  royalty-free license, unlimited in duration, to use that work under the
+  conditions stated herein. The "Document", below, refers to any such manual or
+  work. Any member of the public is a licensee, and is addressed as "you". You
+  accept the license if you copy, modify or distribute the work in a way
+  requiring permission under copyright law.
+ </p><p>
+  A "Modified Version" of the Document means any work containing the Document
+  or a portion of it, either copied verbatim, or with modifications and/or
+  translated into another language.
+ </p><p>
+  A "Secondary Section" is a named appendix or a front-matter section of the
+  Document that deals exclusively with the relationship of the publishers or
+  authors of the Document to the Document's overall subject (or to related
+  matters) and contains nothing that could fall directly within that overall
+  subject. (Thus, if the Document is in part a textbook of mathematics, a
+  Secondary Section may not explain any mathematics.) The relationship could be
+  a matter of historical connection with the subject or with related matters,
+  or of legal, commercial, philosophical, ethical or political position
+  regarding them.
+ </p><p>
+  The "Invariant Sections" are certain Secondary Sections whose titles are
+  designated, as being those of Invariant Sections, in the notice that says
+  that the Document is released under this License. If a section does not fit
+  the above definition of Secondary then it is not allowed to be designated as
+  Invariant. The Document may contain zero Invariant Sections. If the Document
+  does not identify any Invariant Sections then there are none.
+ </p><p>
+  The "Cover Texts" are certain short passages of text that are listed, as
+  Front-Cover Texts or Back-Cover Texts, in the notice that says that the
+  Document is released under this License. A Front-Cover Text may be at most 5
+  words, and a Back-Cover Text may be at most 25 words.
+ </p><p>
+  A "Transparent" copy of the Document means a machine-readable copy,
+  represented in a format whose specification is available to the general
+  public, that is suitable for revising the document straightforwardly with
+  generic text editors or (for images composed of pixels) generic paint
+  programs or (for drawings) some widely available drawing editor, and that is
+  suitable for input to text formatters or for automatic translation to a
+  variety of formats suitable for input to text formatters. A copy made in an
+  otherwise Transparent file format whose markup, or absence of markup, has
+  been arranged to thwart or discourage subsequent modification by readers is
+  not Transparent. An image format is not Transparent if used for any
+  substantial amount of text. A copy that is not "Transparent" is called
+  "Opaque".
+ </p><p>
+  Examples of suitable formats for Transparent copies include plain ASCII
+  without markup, Texinfo input format, LaTeX input format, SGML or XML using a
+  publicly available DTD, and standard-conforming simple HTML, PostScript or
+  PDF designed for human modification. Examples of transparent image formats
+  include PNG, XCF and JPG. Opaque formats include proprietary formats that can
+  be read and edited only by proprietary word processors, SGML or XML for which
+  the DTD and/or processing tools are not generally available, and the
+  machine-generated HTML, PostScript or PDF produced by some word processors
+  for output purposes only.
+ </p><p>
+  The "Title Page" means, for a printed book, the title page itself, plus such
+  following pages as are needed to hold, legibly, the material this License
+  requires to appear in the title page. For works in formats which do not have
+  any title page as such, "Title Page" means the text near the most prominent
+  appearance of the work's title, preceding the beginning of the body of the
+  text.
+ </p><p>
+  A section "Entitled XYZ" means a named subunit of the Document whose title
+  either is precisely XYZ or contains XYZ in parentheses following text that
+  translates XYZ in another language. (Here XYZ stands for a specific section
+  name mentioned below, such as "Acknowledgements", "Dedications",
+  "Endorsements", or "History".) To "Preserve the Title" of such a section when
+  you modify the Document means that it remains a section "Entitled XYZ"
+  according to this definition.
+ </p><p>
+  The Document may include Warranty Disclaimers next to the notice which states
+  that this License applies to the Document. These Warranty Disclaimers are
+  considered to be included by reference in this License, but only as regards
+  disclaiming warranties: any other implication that these Warranty Disclaimers
+  may have is void and has no effect on the meaning of this License.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.19"><span class="name">
+    2. VERBATIM COPYING
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.19">#</a></h5></div><p>
+  You may copy and distribute the Document in any medium, either commercially
+  or non-commercially, provided that this License, the copyright notices, and
+  the license notice saying this License applies to the Document are reproduced
+  in all copies, and that you add no other conditions whatsoever to those of
+  this License. You may not use technical measures to obstruct or control the
+  reading or further copying of the copies you make or distribute. However, you
+  may accept compensation in exchange for copies. If you distribute a large
+  enough number of copies you must also follow the conditions in section 3.
+ </p><p>
+  You may also lend copies, under the same conditions stated above, and you may
+  publicly display copies.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.22"><span class="name">
+    3. COPYING IN QUANTITY
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.22">#</a></h5></div><p>
+  If you publish printed copies (or copies in media that commonly have printed
+  covers) of the Document, numbering more than 100, and the Document's license
+  notice requires Cover Texts, you must enclose the copies in covers that
+  carry, clearly and legibly, all these Cover Texts: Front-Cover Texts on the
+  front cover, and Back-Cover Texts on the back cover. Both covers must also
+  clearly and legibly identify you as the publisher of these copies. The front
+  cover must present the full title with all words of the title equally
+  prominent and visible. You may add other material on the covers in addition.
+  Copying with changes limited to the covers, as long as they preserve the
+  title of the Document and satisfy these conditions, can be treated as
+  verbatim copying in other respects.
+ </p><p>
+  If the required texts for either cover are too voluminous to fit legibly, you
+  should put the first ones listed (as many as fit reasonably) on the actual
+  cover, and continue the rest onto adjacent pages.
+ </p><p>
+  If you publish or distribute Opaque copies of the Document numbering more
+  than 100, you must either include a machine-readable Transparent copy along
+  with each Opaque copy, or state in or with each Opaque copy a
+  computer-network location from which the general network-using public has
+  access to download using public-standard network protocols a complete
+  Transparent copy of the Document, free of added material. If you use the
+  latter option, you must take reasonably prudent steps, when you begin
+  distribution of Opaque copies in quantity, to ensure that this Transparent
+  copy will remain thus accessible at the stated location until at least one
+  year after the last time you distribute an Opaque copy (directly or through
+  your agents or retailers) of that edition to the public.
+ </p><p>
+  It is requested, but not required, that you contact the authors of the
+  Document well before redistributing any large number of copies, to give them
+  a chance to provide you with an updated version of the Document.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.27"><span class="name">
+    4. MODIFICATIONS
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.27">#</a></h5></div><p>
+  You may copy and distribute a Modified Version of the Document under the
+  conditions of sections 2 and 3 above, provided that you release the Modified
+  Version under precisely this License, with the Modified Version filling the
+  role of the Document, thus licensing distribution and modification of the
+  Modified Version to whoever possesses a copy of it. In addition, you must do
+  these things in the Modified Version:
+ </p><div class="orderedlist"><ol class="orderedlist" type="A"><li class="listitem"><p>
+    Use in the Title Page (and on the covers, if any) a title distinct from
+    that of the Document, and from those of previous versions (which should, if
+    there were any, be listed in the History section of the Document). You may
+    use the same title as a previous version if the original publisher of that
+    version gives permission.
+   </p></li><li class="listitem"><p>
+    List on the Title Page, as authors, one or more persons or entities
+    responsible for authorship of the modifications in the Modified Version,
+    together with at least five of the principal authors of the Document (all
+    of its principal authors, if it has fewer than five), unless they release
+    you from this requirement.
+   </p></li><li class="listitem"><p>
+    State on the Title page the name of the publisher of the Modified Version,
+    as the publisher.
+   </p></li><li class="listitem"><p>
+    Preserve all the copyright notices of the Document.
+   </p></li><li class="listitem"><p>
+    Add an appropriate copyright notice for your modifications adjacent to the
+    other copyright notices.
+   </p></li><li class="listitem"><p>
+    Include, immediately after the copyright notices, a license notice giving
+    the public permission to use the Modified Version under the terms of this
+    License, in the form shown in the Addendum below.
+   </p></li><li class="listitem"><p>
+    Preserve in that license notice the full lists of Invariant Sections and
+    required Cover Texts given in the Document's license notice.
+   </p></li><li class="listitem"><p>
+    Include an unaltered copy of this License.
+   </p></li><li class="listitem"><p>
+    Preserve the section Entitled "History", Preserve its Title, and add to it
+    an item stating at least the title, year, new authors, and publisher of the
+    Modified Version as given on the Title Page. If there is no section
+    Entitled "History" in the Document, create one stating the title, year,
+    authors, and publisher of the Document as given on its Title Page, then add
+    an item describing the Modified Version as stated in the previous sentence.
+   </p></li><li class="listitem"><p>
+    Preserve the network location, if any, given in the Document for public
+    access to a Transparent copy of the Document, and likewise the network
+    locations given in the Document for previous versions it was based on.
+    These may be placed in the "History" section. You may omit a network
+    location for a work that was published at least four years before the
+    Document itself, or if the original publisher of the version it refers to
+    gives permission.
+   </p></li><li class="listitem"><p>
+    For any section Entitled "Acknowledgements" or "Dedications", Preserve the
+    Title of the section, and preserve in the section all the substance and
+    tone of each of the contributor acknowledgements and/or dedications given
+    therein.
+   </p></li><li class="listitem"><p>
+    Preserve all the Invariant Sections of the Document, unaltered in their
+    text and in their titles. Section numbers or the equivalent are not
+    considered part of the section titles.
+   </p></li><li class="listitem"><p>
+    Delete any section Entitled "Endorsements". Such a section may not be
+    included in the Modified Version.
+   </p></li><li class="listitem"><p>
+    Do not retitle any existing section to be Entitled "Endorsements" or to
+    conflict in title with any Invariant Section.
+   </p></li><li class="listitem"><p>
+    Preserve any Warranty Disclaimers.
+   </p></li></ol></div><p>
+  If the Modified Version includes new front-matter sections or appendices that
+  qualify as Secondary Sections and contain no material copied from the
+  Document, you may at your option designate some or all of these sections as
+  invariant. To do this, add their titles to the list of Invariant Sections in
+  the Modified Version's license notice. These titles must be distinct from any
+  other section titles.
+ </p><p>
+  You may add a section Entitled "Endorsements", provided it contains nothing
+  but endorsements of your Modified Version by various parties--for example,
+  statements of peer review or that the text has been approved by an
+  organization as the authoritative definition of a standard.
+ </p><p>
+  You may add a passage of up to five words as a Front-Cover Text, and a
+  passage of up to 25 words as a Back-Cover Text, to the end of the list of
+  Cover Texts in the Modified Version. Only one passage of Front-Cover Text and
+  one of Back-Cover Text may be added by (or through arrangements made by) any
+  one entity. If the Document already includes a cover text for the same cover,
+  previously added by you or by arrangement made by the same entity you are
+  acting on behalf of, you may not add another; but you may replace the old
+  one, on explicit permission from the previous publisher that added the old
+  one.
+ </p><p>
+  The author(s) and publisher(s) of the Document do not by this License give
+  permission to use their names for publicity for or to assert or imply
+  endorsement of any Modified Version.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.34"><span class="name">
+    5. COMBINING DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.34">#</a></h5></div><p>
+  You may combine the Document with other documents released under this
+  License, under the terms defined in section 4 above for modified versions,
+  provided that you include in the combination all of the Invariant Sections of
+  all of the original documents, unmodified, and list them all as Invariant
+  Sections of your combined work in its license notice, and that you preserve
+  all their Warranty Disclaimers.
+ </p><p>
+  The combined work need only contain one copy of this License, and multiple
+  identical Invariant Sections may be replaced with a single copy. If there are
+  multiple Invariant Sections with the same name but different contents, make
+  the title of each such section unique by adding at the end of it, in
+  parentheses, the name of the original author or publisher of that section if
+  known, or else a unique number. Make the same adjustment to the section
+  titles in the list of Invariant Sections in the license notice of the
+  combined work.
+ </p><p>
+  In the combination, you must combine any sections Entitled "History" in the
+  various original documents, forming one section Entitled "History"; likewise
+  combine any sections Entitled "Acknowledgements", and any sections Entitled
+  "Dedications". You must delete all sections Entitled "Endorsements".
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.38"><span class="name">
+    6. COLLECTIONS OF DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.38">#</a></h5></div><p>
+  You may make a collection consisting of the Document and other documents
+  released under this License, and replace the individual copies of this
+  License in the various documents with a single copy that is included in the
+  collection, provided that you follow the rules of this License for verbatim
+  copying of each of the documents in all other respects.
+ </p><p>
+  You may extract a single document from such a collection, and distribute it
+  individually under this License, provided you insert a copy of this License
+  into the extracted document, and follow this License in all other respects
+  regarding verbatim copying of that document.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.41"><span class="name">
+    7. AGGREGATION WITH INDEPENDENT WORKS
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.41">#</a></h5></div><p>
+  A compilation of the Document or its derivatives with other separate and
+  independent documents or works, in or on a volume of a storage or
+  distribution medium, is called an "aggregate" if the copyright resulting from
+  the compilation is not used to limit the legal rights of the compilation's
+  users beyond what the individual works permit. When the Document is included
+  in an aggregate, this License does not apply to the other works in the
+  aggregate which are not themselves derivative works of the Document.
+ </p><p>
+  If the Cover Text requirement of section 3 is applicable to these copies of
+  the Document, then if the Document is less than one half of the entire
+  aggregate, the Document's Cover Texts may be placed on covers that bracket
+  the Document within the aggregate, or the electronic equivalent of covers if
+  the Document is in electronic form. Otherwise they must appear on printed
+  covers that bracket the whole aggregate.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.44"><span class="name">
+    8. TRANSLATION
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.44">#</a></h5></div><p>
+  Translation is considered a kind of modification, so you may distribute
+  translations of the Document under the terms of section 4. Replacing
+  Invariant Sections with translations requires special permission from their
+  copyright holders, but you may include translations of some or all Invariant
+  Sections in addition to the original versions of these Invariant Sections.
+  You may include a translation of this License, and all the license notices in
+  the Document, and any Warranty Disclaimers, provided that you also include
+  the original English version of this License and the original versions of
+  those notices and disclaimers. In case of a disagreement between the
+  translation and the original version of this License or a notice or
+  disclaimer, the original version will prevail.
+ </p><p>
+  If a section in the Document is Entitled "Acknowledgements", "Dedications",
+  or "History", the requirement (section 4) to Preserve its Title (section 1)
+  will typically require changing the actual title.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.47"><span class="name">
+    9. TERMINATION
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.47">#</a></h5></div><p>
+  You may not copy, modify, sublicense, or distribute the Document except as
+  expressly provided for under this License. Any other attempt to copy, modify,
+  sublicense or distribute the Document is void, and will automatically
+  terminate your rights under this License. However, parties who have received
+  copies, or rights, from you under this License will not have their licenses
+  terminated so long as such parties remain in full compliance.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.49"><span class="name">
+    10. FUTURE REVISIONS OF THIS LICENSE
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.49">#</a></h5></div><p>
+  The Free Software Foundation may publish new, revised versions of the GNU
+  Free Documentation License from time to time. Such new versions will be
+  similar in spirit to the present version, but may differ in detail to address
+  new problems or concerns. See
+  <a class="link" href="https://www.gnu.org/copyleft/" target="_blank">https://www.gnu.org/copyleft/</a>.
+ </p><p>
+  Each version of the License is given a distinguishing version number. If the
+  Document specifies that a particular numbered version of this License "or any
+  later version" applies to it, you have the option of following the terms and
+  conditions either of that specified version or of any later version that has
+  been published (not as a draft) by the Free Software Foundation. If the
+  Document does not specify a version number of this License, you may choose
+  any version ever published (not as a draft) by the Free Software Foundation.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.13.7.14.52"><span class="name">
+    ADDENDUM: How to use this License for your documents
+  </span><a title="Permalink" class="permalink" href="#id-1.13.7.14.52">#</a></h5></div><div class="verbatim-wrap"><pre class="screen">Copyright (c) YEAR YOUR NAME.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled “GNU
+Free Documentation License”.</pre></div><p>
+  If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+  replace the “with...Texts.” line with this:
+ </p><div class="verbatim-wrap"><pre class="screen">with the Invariant Sections being LIST THEIR TITLES, with the
+Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></div><p>
+  If you have Invariant Sections without Cover Texts, or some other combination
+  of the three, merge those two alternatives to suit the situation.
+ </p><p>
+  If your document contains nontrivial examples of program code, we recommend
+  releasing these examples in parallel under your choice of free software
+  license, such as the GNU General Public License, to permit their use in free
+  software.
+ </p></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="#configure-nvidia-vgpu-introduction"><span class="title-number">1 </span><span class="title-name">Introduction</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-configuring-host"><span class="title-number">2 </span><span class="title-name">Configuring vGPU manager in VM Host Server</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-passthrough"><span class="title-number">3 </span><span class="title-name">Creating a vGPU device</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-passthrough-vm"><span class="title-number">4 </span><span class="title-name">Assign the vGPU device to a VM Guest</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-configure-guest"><span class="title-number">5 </span><span class="title-name">Configuring vGPU in VM Guest</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-licensing"><span class="title-number">6 </span><span class="title-name">Licensing vGPU in the VM Guest</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-xorg"><span class="title-number">7 </span><span class="title-name">Configuring a graphics mode</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-compute"><span class="title-number">8 </span><span class="title-name">Configuring compute mode</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-additional"><span class="title-number">9 </span><span class="title-name">Additional tasks</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-more-info"><span class="title-number">10 </span><span class="title-name">For more information</span></a></span></li><li><span class="sect1"><a href="#configure-nvidia-vgpu-background"><span class="title-number">11 </span><span class="title-name">NVIDIA virtual GPU background</span></a></span></li><li><span class="sect1"><a href="#id-1.13.7.14"><span class="title-number">12 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside><div class="docsurvey-wrapper"><a class="survey-link" href="https://suselinux.fra1.qualtrics.com/jfe/form/SV_bEiGZbUNzLD8Tcy">Documentation survey</a></div></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE  2025</span></div></div></footer>
+<script type="text/javascript" src="static/js/language-switcher.js"> </script></body></html>

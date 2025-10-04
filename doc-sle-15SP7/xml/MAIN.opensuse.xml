@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
+                 type="text/xml"
+                 title="Profiling step"?>
+<!DOCTYPE set
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+<set version="5.2" xml:lang="en" xml:id="set-opensuse"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+<?dbhtml filename="index.html"?>
+<title>&productname; Documentation</title>
+ <info>
+  <productname>&productname;</productname>
+  <productname role="abbrev">&productnameshort;</productname>
+  <productnumber>&productnumber;</productnumber>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker>
+    <dm:url>https://bugzilla.opensuse.org/enter_bug.cgi</dm:url>
+    <dm:product>openSUSE Distribution</dm:product>
+    <!-- <dm:component>Documentation</dm:component> -->
+    <dm:component>Documentation</dm:component>
+    <dm:version>Leap 15.4</dm:version>
+    <dm:assignee>fs@suse.com</dm:assignee>
+   </dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+   <dm:editurl>https://github.com/SUSE/doc-sle/edit/main/xml/</dm:editurl>
+  </dm:docmanager>
+ </info>
+    <!-- Start-Up -->
+ <xi:include href="book_startup-opensuse.xml"/>
+<!-- Reference -->
+ <xi:include href="book_reference-opensuse.xml"/>
+<!-- GNOME User Guide -->
+ <xi:include href="book_gnome-user.xml"/>
+<!-- Security Guide -->
+ <xi:include href="book_security.xml"/>
+<!-- Tuning Guide -->
+ <xi:include href="book_tuning.xml"/>
+<!-- KVM Guide -->
+ <xi:include href="book_virtualization.xml"/>
+<!-- AutoYaST -->
+ <xi:include href="book_autoyast.xml"/>
+</set>

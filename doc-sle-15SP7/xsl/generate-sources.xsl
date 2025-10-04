@@ -6,8 +6,8 @@
   xmlns:err="http://www.w3.org/2005/xqt-errors"
   xmlns:math="http://www.w3.org/2005/xpath-functions/math"
   xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-  xpath-default-namespace="http://docbook.org/ns/docbook" exclude-result-prefixes="xs math its xd"
-  version="3.0">
+  xpath-default-namespace="http://docbook.org/ns/docbook"
+  exclude-result-prefixes="xs math its dm xd" version="3.0">
 
   <xd:doc scope="stylesheet">
     <xd:desc>
@@ -28,34 +28,111 @@
   <xsl:param name="profile-arch">x86_64;zseries;power;aarch64</xsl:param>
   <xsl:param name="profile-condition">suse-product</xsl:param>
 
-  <!-- remove SUSE specific Elements and attributes ========================================== -->
+  <xsl:param name="docbook-version">5.2</xsl:param>
 
-  <xsl:template match="dm:* | its:* | @dm:* | @its:*"/>
+  <xd:doc>
+    <xd:desc>
+      <xd:p>remove SUSE specific Elements and attributes, comments and some PIs</xd:p>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="
+      dm:* | its:* | @dm:* | @its:*
+      | comment()
+      | processing-instruction('xml-stylesheet')
+      | processing-instruction('xml-model')
+      | processing-instruction('dbhtml')
+      | processing-instruction('filename')"/>
+
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Remove empty elements</xd:p>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="para | info | phrase | productname | textobject">
+    <xsl:where-populated>
+      <xsl:copy>
+        <xsl:apply-templates select="@*, node()"/>
+      </xsl:copy>
+    </xsl:where-populated>
+  </xsl:template>
+
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Change DocBook version Attribute</xd:p>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="@version" as="attribute(version)">
+    <xsl:attribute name="version" select="$docbook-version"/>
+  </xsl:template>
+
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Remove @xml:base Attribute. If it indicates a new file, add a PI:</xd:p>
+      <xd:ul>
+        <xd:li><xd:b>file: </xd:b>If it represents a file which will be written and included</xd:li>
+        <xd:li><xd:b>include: </xd:b>If it represents a file which will only be included, since it
+          war already written before</xd:li>
+      </xd:ul>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="*[@xml:base ne parent::*/@xml:base]" as="node()+">
+    <xsl:variable name="base" as="xs:string" select="tokenize(@xml:base, '/')[last()]"/>
+    <xsl:variable name="instruction" as="xs:string" select="
+        if (exists(preceding::*[tokenize(@xml:base, '/') eq $base])) then
+          'include'
+        else
+          'file'"/>
+    <xsl:copy copy-namespaces="no">
+      <xsl:apply-templates select="@* except @xml:base"/>
+      <xsl:processing-instruction name="{$instruction}" select="tokenize(@xml:base, '/')[last()]"/>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Images ================================================================================= -->
+
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Change imamgeobject/@role to @outputformat. See Table 2.1 Common DocBook effectivity
+        attributes in xslTNG Reference</xd:p>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="imageobject[@role = ('fo', 'html')]" as="element(imageobject)">
+    <xsl:copy copy-namespaces="no">
+      <xsl:choose>
+        <xsl:when test="@role eq 'fo'">
+          <xsl:attribute name="outputformat" select="'print'"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="outputformat" select="'online'"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="@* except @role, *"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="@fileref" as="attribute(fileref)">
+    <xsl:attribute name="fileref" select="'media/' || ."/>
+  </xsl:template>
+
 
   <!-- effectivity attributes and profiling =================================================== -->
 
   <xsl:template match="*[@os | @arch | @condition]" as="element()?" priority="10">
-    <xsl:variable name="os" as="xs:boolean" select="
-        if (@os) then
-          tokenize(@os, ';') = tokenize($profile-os, ';')
-        else
-          true()"/>
-    <xsl:variable name="arch" as="xs:boolean" select="
-        if (@arch) then
-          tokenize(@arch, ';') = tokenize($profile-arch, ';')
-        else
-          true()"/>
-    <xsl:variable name="condition" as="xs:boolean" select="
-        if (@condition) then
-          tokenize(@condition, ';') = tokenize($profile-condition, ';')
-        else
-          true()"/>
+    <xsl:variable name="os" as="xs:boolean"
+      select="tokenize(@os, ';') = tokenize($profile-os, ';') or not(@os)"/>
+    <xsl:variable name="arch" as="xs:boolean"
+      select="tokenize(@arch, ';') = tokenize($profile-arch, ';') or not(@arch)"/>
+    <xsl:variable name="condition" as="xs:boolean"
+      select="tokenize(@condition, ';') = tokenize($profile-condition, ';') or not(@condition)"/>
     <xsl:if test="$os and $arch and $condition">
-      <xsl:next-match/>
+      <xsl:copy copy-namespaces="no">
+        <xsl:apply-templates select="@* except (@os | @arch | @condition), node()"/>
+      </xsl:copy>
     </xsl:if>
   </xsl:template>
 
-  <!-- text() Normalisierung ================================================================== -->
+  <!-- text() Normalization =================================================================== -->
 
   <xd:doc>
     <xd:desc>
@@ -69,7 +146,7 @@
       | screen/text() | screenco//text()
       | screenshot//text()
       | synopsis//text()" as="text()" priority="10">
-    <xsl:copy/>
+    <xsl:copy copy-namespaces="no"/>
   </xsl:template>
 
   <xd:doc>

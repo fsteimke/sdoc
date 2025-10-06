@@ -948,8 +948,9 @@
       </table>
       <informaltable frame="none" rowsep="0" colsep="0">
         <tgroup cols="2" align="left">
-          <colspec colwidth=".5in" />
-          <colspec colwidth="100%" />
+          <!-- FST: changed from '.5in', '100%' -->
+          <colspec colwidth="15mm" />
+          <colspec colwidth="155mm" />
           <tbody>
             <row>
               <entry><phrase role="color:suse-jungle-green">✓</phrase>
@@ -1314,8 +1315,9 @@
       </table>
       <informaltable frame="none" rowsep="0" colsep="0">
         <tgroup cols="2" align="left">
-          <colspec colwidth=".5in" />
-          <colspec colwidth="100%" />
+          <!-- FST: changed from '.5in', '100%' -->
+          <colspec colwidth="15mm" />
+          <colspec colwidth="155mm" />
           <tbody>
             <row>
               <entry><phrase role="color:suse-jungle-green">✓</phrase></entry>
@@ -1684,8 +1686,9 @@
       </table>
       <informaltable frame="none" rowsep="0" colsep="0">
         <tgroup cols="2" align="left">
-          <colspec colname="c1" colwidth=".5in" />
-          <colspec colname="c2" colwidth="100%" />
+          <!-- FST: changed from '.5in', '100%' -->
+          <colspec colwidth="15mm" />
+          <colspec colwidth="155mm" />
           <tbody>
             <row>
               <entry><phrase role="color:suse-jungle-green">✓</phrase>

@@ -24,7 +24,7 @@
     <xsl:try>
       <xsl:result-document href="{$href-absolute}" format="xml">
         <xsl:copy>
-          <xsl:apply-templates select="@*, *"/>
+          <xsl:apply-templates select="@*, * | comment()"/>
         </xsl:copy>
       </xsl:result-document>
       <xsl:element name="xi:include">

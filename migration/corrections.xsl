@@ -11,4 +11,8 @@
   
   <xsl:template match="textobject"/>
   
+  <xsl:template match="tgroup/colspec/@colwidth[matches(.,'%$')]" as="attribute(colwidth)">
+    <xsl:attribute name="colwidth" select="replace(.,'%','*')"/>
+  </xsl:template>
+  
 </xsl:stylesheet>

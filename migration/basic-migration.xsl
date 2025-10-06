@@ -85,8 +85,8 @@
     <xd:desc>
       <xd:p>Change <xd:i>imageobject/@role</xd:i> (which is <xd:i>fo</xd:i> or <xd:i>html</xd:i>) to
           <xd:i>@outputformat</xd:i>.</xd:p>
-      <xd:p> For applicable values <xd:i>print</xd:i> and <xd:i>online</xd:i> see Table 2.1 Common
-        DocBook effectivity attributes in xslTNG Reference</xd:p>
+      <xd:p>Applicable values are <xd:i>print</xd:i> and <xd:i>screen</xd:i> (for the latter see the
+        default value in <xd:i>params.xsl</xd:i></xd:p>
     </xd:desc>
   </xd:doc>
   <xsl:template match="imageobject[@role = ('fo', 'html')]" as="element(imageobject)">
@@ -96,7 +96,7 @@
           <xsl:attribute name="outputformat" select="'print'"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:attribute name="outputformat" select="'online'"/>
+          <xsl:attribute name="outputformat" select="'screen'"/>
         </xsl:otherwise>
       </xsl:choose>
       <xsl:apply-templates select="@* except @role, *"/>

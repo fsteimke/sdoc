@@ -22,6 +22,13 @@
   <xsl:template match="phrase[not(@*)]" as="node()*" priority="10">
     <xsl:apply-templates select="node()"/>
   </xsl:template>
+  
+  <!-- Don't delete empty entry element -->
+  <xsl:template match="entry" as="element(entry)" priority="10">
+    <xsl:copy>
+      <xsl:apply-templates select="@*, node()"/>
+    </xsl:copy>
+  </xsl:template>
 
   <xsl:template match="*" as="element()*">
     <xsl:variable name="attributes" as="attribute()*">

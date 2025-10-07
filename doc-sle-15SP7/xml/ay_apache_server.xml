@@ -386,17 +386,13 @@
           List of host <literal>Listen</literal> settings
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>PORT</term>
 <listitem><para>
-          PORT
-         </para><para>
           port address
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>ADDRESS</term>
 <listitem><para>
-          ADDRESS
-         </para><para>
           Network address. All addresses will be taken if this entry is empty.
          </para></listitem>
 </varlistentry>
@@ -407,17 +403,13 @@
           List of Hosts configuration
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>Key</term>
 <listitem><para>
-          KEY
-         </para><para>
           Host name; <literal>&lt;KEY&gt;main&lt;/KEY&gt;</literal> defines the main hosts,
           for example <literal>&lt;KEY&gt;192.168.43.2/secondserver.suse.de&lt;/KEY&gt;</literal></para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>VALUE</term>
 <listitem><para>
-          VALUE
-         </para><para>
           List of different values describing the host.
          </para></listitem>
 </varlistentry>
@@ -428,24 +420,18 @@
           Module list. Only user-defined modules need to be described.
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>name</term>
 <listitem><para>
-          name
-         </para><para>
          Module name
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>userdefined</term>
 <listitem><para>
-          userdefined
-         </para><para>
           For historical reasons, it is always set to <literal>true</literal>.
          </para></listitem>
 </varlistentry>
-  <varlistentry><term/>
+  <varlistentry><term>change</term>
 <listitem><para>
-          change
-         </para><para>
           For historical reasons, it is always set to <literal>enable</literal>.
          </para></listitem>
 </varlistentry>

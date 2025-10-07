@@ -87,7 +87,7 @@ systemd-journald.service - Journal Service
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term></term>
+    <term>-?-</term>
     <listitem>
      <para>
       Prints the messages and jumps to the end of the journal, so that the

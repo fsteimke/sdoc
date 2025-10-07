@@ -173,9 +173,9 @@
     <p:variable name="basename" as="xs:string" select="tokenize($fileref,'/')[last()]"/>
     <p:variable name="type" select="tokenize($fileref,'\.')[last()]"/>
     <p:variable name="source"
-      select="string-join(('file:/c:/Users/Frank.Steimke/sdoc','doc-sle-15SP7/images/src',$type,$basename),'/')"/>
+      select="string-join(($original-dir,'images/src',$type,$basename),'/')"/>
     <p:variable name="dest" as="xs:string"
-      select="string-join(('file:/c:/Users/Frank.Steimke/sdoc','src',$fileref),'/')"/>
+      select="string-join(($output-dir,$fileref),'/')"/>
     <p:try>
       <p:file-copy href="{$source}" target="{$dest}"/>
       <p:catch>

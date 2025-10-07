@@ -313,10 +313,10 @@ systemd=true</screen>
           <tbody>
             <row>
               <entry colname="1">
-                <formalpara>
-                  <title>Starting</title>
-                  <para/>
-                </formalpara>
+                
+                  <para>Starting</para>
+                  
+                
               </entry>
               <entry colname="2">
 <screen>start</screen>
@@ -327,10 +327,10 @@ systemd=true</screen>
             </row>
             <row>
               <entry colname="1">
-                <formalpara>
-                  <title>Stopping</title>
-                  <para/>
-                </formalpara>
+                
+                  <para>Stopping</para>
+                  
+                
               </entry>
               <entry colname="2">
 <screen>stop</screen>
@@ -525,10 +525,10 @@ systemd=true</screen>
             <tbody>
               <row>
                 <entry colname="1">
-                  <formalpara>
-                    <title>Enabling</title>
-                    <para/>
-                  </formalpara>
+                  
+                    <para>Enabling</para>
+                    
+                  
                 </entry>
                 <entry colname="2">
                   <para>
@@ -547,10 +547,10 @@ systemd=true</screen>
               </row>
               <row>
                 <entry colname="1">
-                  <formalpara>
-                    <title>Disabling</title>
-                    <para/>
-                  </formalpara>
+                  
+                    <para>Disabling</para>
+                    
+                  
                 </entry>
                 <entry colname="2">
                   <para>

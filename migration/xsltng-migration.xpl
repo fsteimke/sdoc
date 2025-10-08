@@ -42,7 +42,7 @@
   <p:group name="load-modular-docbook">
     <p:documentation xmlns="http://www.w3.org/1999/xhtml">
       <p>Input file is modular DocBook using <em>xi:include</em> mechanism. The <em>xml:base</em>
-        attribute is needed because we want to retain the file structure for the generetad
+        attribute is important, because we want to retain the file structure for the generetad
         sources.</p>
     </p:documentation>
     <p:output port="result" primary="true"/>
@@ -58,6 +58,7 @@
       <ol>
         <li><p>Correction of errors in the DocBook sources</p></li>
         <li><p>Check profiling parameters against effectivity attribute</p></li>
+        <p><li>Remove empty elements and useless <em>phrase</em> elements, leftover from profiling</li></p>
         <li><p>Normalize text nodes, except within linespecific environment</p></li>
       </ol>
     </p:documentation>
@@ -85,13 +86,6 @@
       <p:documentation xmlns="http://www.w3.org/1999/xhtml">
         <p>Basic migration steps to prepare for xslTNG Stylesheets</p></p:documentation>
       <p:with-input port="stylesheet" href="basic-migration.xsl"/>
-    </p:xslt>
-
-    <p:xslt>
-      <p:documentation xmlns="http://www.w3.org/1999/xhtml">
-        <p>Clean up profiled DOcBook sources <em>(after some fragments are filtered out because of
-            their effectivity attributes)</em>.</p></p:documentation>
-      <p:with-input port="stylesheet" href="remaining-tasks.xsl"/>
     </p:xslt>
 
   </p:group>

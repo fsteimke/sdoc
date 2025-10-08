@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="CreateProfile-Firstboot">
+   <title>Firstboot workflow</title>
+   <info/>
+   <para>The YaST firstboot utility (YaST Initial System Configuration), which runs after the installation is completed, lets you configure the freshly installed system. On the first boot after the installation, users are guided through a series of steps that allow for easier configuration of a system. YaST firstboot does not run by default and needs to be configured to run.</para>
+   <example>
+      <title>Enabling firstboot workflow</title>
+      <screen>
+      &lt;firstboot&gt;
+        &lt;firstboot_enabled config:type="boolean"&gt;true&lt;/firstboot_enabled&gt;
+      &lt;/firstboot&gt;
+    </screen>
+   </example>
+</sect1>

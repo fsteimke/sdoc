@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-x86-prep-installation-methods">
+   <title>Installation methods</title>
+   <!--
+  taroth 2019-07-31: CAVE - same section content is used in
+  deployment_prep_aarch64_boot.xml
+  -->
+   <info/>
+   <para>You can choose the desired installation method by booting the setup with one of the options listed in <xref linkend="sec-x86-media"/>. To enable the additional installation methods, refer to <xref linkend="sec-boot-parameters-list-remote-access"/>. For information about how to use remote installation methods, refer to <xref linkend="cha-remote-installation"/>.</para>
+   <para>A brief overview of the different methods:</para>
+   <variablelist>
+      <varlistentry>
+         <term>Local with monitor and keyboard</term>
+         <listitem>
+            <para>This is the method most frequently used to install <phrase role="productname">SUSE Linux Enterprise Server</phrase>. This also requires very little preparation but needs a lot of direct interaction.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Remote via SSH</term>
+         <listitem>
+            <para>You can perform installation via SSH either in text mode or use X-forwarding for a graphical installation. For details, refer to <xref linkend="sec-remote-installation-monitor-ssh"/>.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Remote via serial console</term>
+         <listitem>
+            <para>For this installation method, you need a second computer connected via a <emphasis>null modem</emphasis> cable to the target computer. The installation is done in text mode. For details, refer to <xref linkend="sec-remote-installation-monitor-serial"/>.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Remote via VNC</term>
+         <listitem>
+            <para>Use this method to perform the installation using a graphical interface without direct access to the target machine. For details, refer to <xref linkend="sec-remote-installation-monitor-vnc"/>.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Automatic via AutoYaST</term>
+         <listitem>
+            <para>To install <phrase role="productname">SUSE Linux Enterprise Server</phrase> on several computers with similar hardware, it is recommended you perform the installation using AutoYaST. In this case, start by installing one <phrase role="productname">SUSE Linux Enterprise Server</phrase> and use it to create the necessary AutoYaST configuration files. For details, refer to <xref linkend="book-autoyast"/>.</para>
+         </listitem>
+      </varlistentry>
+   </variablelist>
+</sect1>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-qemu-overview">
+   <title>QEMU overview</title>
+   <info/>
+   <para>QEMU is a fast, cross-platform open source machine emulator which can emulate many hardware architectures. QEMU lets you run a complete unmodified operating system (VM Guest) on top of your existing system (VM Host Server). You can also use QEMU for debugging purposes—you can easily stop your running virtual machine, inspect its state, and save and restore it later.</para>
+   <para>QEMU mainly consists of the following parts:</para>
+   <itemizedlist mark="bullet" spacing="normal">
+      <listitem>
+         <para>Processor emulator.</para>
+      </listitem>
+      <listitem>
+         <para>Emulated devices, such as graphic card, network card, hard disks, or mouse.</para>
+      </listitem>
+      <listitem>
+         <para>Generic devices used to connect the emulated devices to the related host devices.</para>
+      </listitem>
+      <listitem>
+         <para>Debugger.</para>
+      </listitem>
+      <listitem>
+         <para>User interface used to interact with the emulator.</para>
+      </listitem>
+   </itemizedlist>
+   <para>QEMU is central to KVM and Xen Virtualization, where it provides the general machine emulation. Xen's usage of QEMU is partially hidden from the user, while KVM's usage exposes most QEMU features transparently. If the VM Guest hardware architecture is the same as the VM Host Server's architecture, QEMU can use the KVM acceleration (SUSE only supports QEMU with the KVM acceleration loaded).</para>
+   <para>Apart from providing a core virtualization infrastructure and processor-specific drivers, QEMU also provides an architecture-specific user space program for managing VM Guests. Depending on the architecture this program is one of:</para>
+   <itemizedlist mark="bullet" spacing="normal">
+      <listitem>
+         <para>
+            <command>qemu-system-i386</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <command>qemu-system-s390x</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <command>qemu-system-x86_64</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <command>qemu-system-aarch64</command>
+         </para>
+      </listitem>
+   </itemizedlist>
+   <para>In the following this command is called <command>qemu-system-<replaceable>ARCH</replaceable>
+      </command>; in examples the <command>qemu-system-x86_64</command> command is used.</para>
+</chapter>

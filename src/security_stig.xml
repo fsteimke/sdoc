@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-security-stig">
+   <info>
+      <title>Hardening SUSE Linux Enterprise with STIG</title>
+   </info>
+   <para>STIG stands for <literal>Security Technical Implementation Guide</literal>. The <orgname>Defense Information Systems Agency (DISA)</orgname> organization, which is a parent agency of the United States <orgname>Department of Defense (DoD)</orgname>, approves and publishes <systemitem>Security Technical Implementation Guides (STIGs)</systemitem> and updates them every 90 days.</para>
+   <para>When a Security Technical Implementation Guide is implemented for a system, the system is hardened. The goals are to minimize attacks and to prevent system access (both physically and via a network) and to define processes for maintenance (applying software updates) and vulnerability patching. Security Technical Implementation Guides can also cover configuration settings, for example, for operating systems, routers, databases, firewall rules, domain name servers and switches.</para>
+   <para>For information on how to harden a SUSE Linux Enterprise system with STIG, see <link xlink:href="https://documentation.suse.com/compliance/all/html/SLES-stig/article-stig.html"/>.</para>
+</chapter>

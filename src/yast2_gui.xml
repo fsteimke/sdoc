@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-yast-gui">
+   <title>Using YaST</title>
+   <info/>
+   <para>YaST is a <phrase role="productname">SUSE Linux Enterprise Server</phrase> tool that provides a graphical interface for all essential installation and system configuration tasks. Whether you need to update packages, configure a printer, modify firewall settings, set up an FTP server, or partition a hard disk—you can do it using YaST. Written in Ruby, YaST features an extensible architecture that makes it possible to add new functionality via modules.</para>
+   <para>Additional information about YaST is available on the project's official Web site at <link xlink:href="https://yast.opensuse.org/"/>.</para>
+   <sect1 xml:id="sec-yast2-gui">
+      <title>YaST interface overview</title>
+      <para>YaST has two graphical interfaces: one for use with graphical desktop environments like KDE and GNOME, and an ncurses-based pseudo-graphical interface for use on systems without an X server (see <xref linkend="cha-yast-text"/>).</para>
+      <para>In the graphical version of YaST, all modules in YaST are grouped by category, and the navigation sidebar allows you to quickly access modules in the desired category. The search field at the top makes it possible to find modules by their names. To find a specific module, enter its name into the search field, and you should see the modules that match the entered string as you type.</para>
+      <important>
+         <title>List of installed YaST modules</title>
+         <para>The list of installed modules for the ncurses-based and GUI version of YaST may differ. Before starting any YaST module, verify that it is installed for the version of YaST that you are using.</para>
+      </important>
+   </sect1>
+   <sect1 xml:id="sec-yast-gui-key-combination">
+      <title>Useful key combinations</title>
+      <para>The graphical version of YaST supports keyboard shortcuts</para>
+      <variablelist>
+         <varlistentry>
+            <term>
+               <keycap>Print Screen</keycap>
+            </term>
+            <listitem>
+               <para>Take and save a screenshot. It may not work on certain desktop environments.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="shift"/>
+                  <keycap>F4</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Enable and disable the color palette optimized for visually impaired users.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="shift"/>
+                  <keycap>F7</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Enable/disable logging of debug messages.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="shift"/>
+                  <keycap>F8</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Open a file dialog to save log files to a user-defined location.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>D</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Send a DebugEvent. YaST modules can react to this by executing special debugging actions. The result depends on the specific YaST module.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>M</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Start and stop macro recorder.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>P</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Replay macro.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>S</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Show stylesheet editor.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>T</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Dump widget tree to the log file.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>X</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Open a terminal window (xterm). Useful for installation process via VNC.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="shift"/>
+                  <keycap function="alt"/>
+                  <keycap>Y</keycap>
+               </keycombo>
+            </term>
+            <listitem>
+               <para>Show widget tree browser.</para>
+            </listitem>
+         </varlistentry>
+      </variablelist>
+   </sect1>
+</chapter>

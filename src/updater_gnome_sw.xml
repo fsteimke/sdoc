@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-updater-gnomesw">
+   <title>Updating packages with <guimenu>GNOME Software</guimenu>
+   </title>
+   <info/>
+   <para>In addition to the GNOME <guimenu>Package Updater</guimenu>, GNOME provides <guimenu>GNOME Software</guimenu> which has the following functionality:</para>
+   <itemizedlist>
+      <listitem>
+         <para>Install, update, and remove software delivered as an RPM via PackageKit</para>
+      </listitem>
+      <listitem>
+         <para>Install, update, and remove software delivered as a Flatpak</para>
+      </listitem>
+      <listitem>
+         <para>Install, update, and remove GNOME shell extensions (<link xlink:href="https://extensions.gnome.org"/>)</para>
+      </listitem>
+      <listitem>
+         <para>Update firmware for hardware devices using <emphasis>Linux Vendor Firmware Service</emphasis> (LVFS, <link xlink:href="https://fwupd.org"/>)</para>
+      </listitem>
+   </itemizedlist>
+   <para>
+      <guimenu>GNOME Software</guimenu> also provides screenshots, ratings, and reviews for software.</para>
+   <figure>
+      <title>
+         <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
+      <mediaobject>
+         <imageobject outputformat="print">
+            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+         </imageobject>
+         <imageobject outputformat="screen">
+            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+         </imageobject>
+      </mediaobject>
+   </figure>
+   <para>
+      <guimenu>GNOME Software</guimenu> has the following differences to other tools provided on <phrase role="productname">SUSE Linux Enterprise Server</phrase>:</para>
+   <itemizedlist>
+      <listitem>
+         <para>Unlike YaST or Zypper, for installing software packaged as an RPM, <guimenu>GNOME Software</guimenu> is restricted to software that provides AppStream metadata. This includes most desktop applications.</para>
+      </listitem>
+      <listitem>
+         <para>While the GNOME <guimenu>Package Updater</guimenu> updates packages within the running system (forcing you to restart the respective applications), <guimenu>GNOME Software</guimenu> downloads the updates and applies them after reboot.</para>
+      </listitem>
+   </itemizedlist>
+</sect1>

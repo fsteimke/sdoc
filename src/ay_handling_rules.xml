@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appendix xmlns="http://docbook.org/ns/docbook"
+          xmlns:its="http://www.w3.org/2005/11/its"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="5.2"
+          xml:id="handlingrules">
+   <title>Handling rules</title>
+   <info/>
+   <para>The following figure illustrates how rules are handled and the processes of retrieval and merge.</para>
+   <figure xml:id="rulesflow">
+      <title>Rules retrieval process</title>
+      <mediaobject>
+         <imageobject outputformat="screen">
+            <imagedata fileref="media/rules_flow.png"/>
+         </imageobject>
+         <imageobject outputformat="print">
+            <imagedata fileref="media/rules_flow.png" width="75%"/>
+         </imageobject>
+      </mediaobject>
+   </figure>
+</appendix>

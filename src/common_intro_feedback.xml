@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       xml:lang="en"
+       version="5.2">
+   <title>Improving the documentation</title>
+   <info/>
+   <para>Your feedback and contributions to this documentation are welcome. The following channels for giving feedback are available:</para>
+   <variablelist>
+      <varlistentry>
+         <term>Service requests and support</term>
+         <listitem>
+            <para>For services and support options available for your product, see <link xlink:href="https://www.suse.com/support/"/>.</para>
+            <para>To open a service request, you need a SUSE subscription registered at SUSE Customer Center. Go to <link xlink:href="https://scc.suse.com/support/requests"/>, log in, and click <guimenu>Create New</guimenu>.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Bug reports</term>
+         <listitem>
+            <para>Report issues with the documentation at <link xlink:href="https://bugzilla.suse.com/"/>.</para>
+            <para>To simplify this process, click the <guimenu>Report an issue</guimenu> icon next to a headline in the HTML version of this document. This preselects the right product and category in Bugzilla and adds a link to the current section. You can start typing your bug report right away.</para>
+            <para>A Bugzilla account is required.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Contributions</term>
+         <listitem>
+            <para>To contribute to this documentation, click the <guimenu>Edit source document</guimenu> icon next to a headline in the HTML version of this document. This will take you to the source code on GitHub, where you can open a pull request.</para>
+            <para>A GitHub account is required.</para>
+            <note>
+               <title>
+                  <guimenu>Edit source document</guimenu> only available for English</title>
+               <para>The <guimenu>Edit source document</guimenu> icons are only available for the English version of each document. For all other languages, use the <guimenu>Report an issue</guimenu> icons instead.</para>
+            </note>
+            <para>For more information about the documentation environment used for this documentation, see the repository's README.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>Mail</term>
+         <listitem>
+            <para>You can also report errors and send feedback concerning the documentation to <email>doc-team@suse.com</email>. Include the document title, the product version, and the publication date of the document. Additionally, include the relevant section number and title (or provide the URL) and provide a concise description of the problem.</para>
+         </listitem>
+      </varlistentry>
+   </variablelist>
+</sect1>

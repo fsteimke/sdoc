@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-adm-sudo">
+   <title>
+      <command>sudo</command> basics</title>
+   <info/>
+   <para>Running certain commands requires root privileges. However, for security reasons and to avoid mistakes, it is not recommended to log in as <systemitem class="username">root</systemitem>. A safer approach is to log in as a regular user, and then use <command>sudo</command> to run commands with elevated privileges.</para>
+   <para>On <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <command>sudo</command> is configured to work similarly to <command>su</command>. However, <command>sudo</command> provides a flexible mechanism that allows users to run commands with privileges of any other user. This can be used to assign roles with specific privileges to certain users and groups. For example, it is possible to allow members of the group <systemitem class="groupname">users</systemitem> to run a command with the privileges of user <systemitem class="username">wilber</systemitem>. Access to the command can be further restricted by disallowing any command options. While su always requires the <systemitem class="username">root</systemitem> password for authentication with PAM, <command>sudo</command> can be configured to authenticate with your own credentials. This means that the users do not need to share the <systemitem class="username">root</systemitem> password, which improves security.</para>
+   <sect1 xml:id="sec-adm-sudo-usage">
+      <title>Basic <command>sudo</command> usage</title>
+      <para>The following chapter provides an introduction to basic usage of <command>sudo</command>.</para>
+      <sect2 xml:id="sec-adm-sudo-usage-cmd">
+         <title>Running a single command</title>
+         <para>As a regular user, you can run any command as <systemitem class="username">root</systemitem> by adding <command>sudo</command> before it. This prompts you to provide the root password. If authenticated successfully, this runs the command as <systemitem class="username">root</systemitem>:</para>
+         <screen><prompt>&gt;</prompt><command>id -un</command><co xml:id="co-sudo-usage-id"/>
+tux
+<prompt>&gt;</prompt><command>sudo</command><command>id -un</command>
+root's password:<co xml:id="co-sudo-usage-pw"/>
+root
+<prompt>&gt;</prompt><command>id -un</command>
+tux<co xml:id="co-sudo-usage-after"/><prompt>&gt;</prompt><command>sudo</command><command>id -un</command><co xml:id="co-sudo-usage-nopw"/>
+root
+</screen>
+         <calloutlist>
+            <callout arearefs="co-sudo-usage-id">
+               <para>The <command>id -un</command> command prints the login name of the current user.</para>
+            </callout>
+            <callout arearefs="co-sudo-usage-pw">
+               <para>The password is not shown during input, neither as clear text nor as masking characters.</para>
+            </callout>
+            <callout arearefs="co-sudo-usage-after">
+               <para>Only commands that start with <command>sudo</command> run with elevated privileges.</para>
+            </callout>
+            <callout arearefs="co-sudo-usage-nopw">
+               <para>The elevated privileges persist for a certain period of time, so you do not need to provide the <systemitem class="username">root</systemitem> password again.</para>
+            </callout>
+         </calloutlist>
+         <tip>
+            <title>I/O redirection</title>
+            <para>When using <command>sudo</command>, I/O redirection does not work:</para>
+            <screen><prompt>&gt;</prompt><command>sudo</command> echo s &gt; /proc/sysrq-trigger
+bash: /proc/sysrq-trigger: Permission denied
+<prompt>&gt;</prompt><command>sudo</command> cat &lt; /proc/1/maps
+bash: /proc/1/maps: Permission denied
+</screen>
+            <para>In the example above, only the <command>echo</command> and <command>cat</command> commands run with elevated privileges. The redirection is done by the user's shell with user privileges. To perform redirection with elevated privileges, either start a shell as in <xref linkend="sec-sudo-shell"/> or use the <command>dd</command> utility:</para>
+            <screen>
+echo s | sudo dd of=/proc/sysrq-trigger
+sudo dd if=/proc/1/maps | cat <!-- TODO: Better example! --></screen>
+         </tip>
+      </sect2>
+      <sect2 xml:id="sec-sudo-shell">
+         <title>Starting a shell</title>
+         <para>Using <command>sudo</command> every time to run a command with elevated privileges is not always practical. While you can use the <command>sudo bash</command> command, it is recommended to use one of the built-in mechanisms to start a shell:</para>
+         <variablelist>
+            <varlistentry>
+               <term>
+                  <literal>sudo -s (&lt;command&gt;)</literal>
+               </term>
+               <listitem>
+                  <para>Starts a shell specified by the <envar>SHELL</envar> environment variable or the target user's default shell. If a command is specified, it is passed to the shell (with the <option>-c</option> option). Otherwise the shell runs in interactive mode.</para>
+                  <screen><prompt>tux:~ &gt;</prompt>sudo -s
+root's password:
+<prompt>root:/home/tux #</prompt>exit
+<prompt>tux:~ &gt;</prompt></screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>sudo -i (&lt;command&gt;)</literal>
+               </term>
+               <listitem>
+                  <para>Similar to <option>-s</option>, but starts the shell as a login shell. This means that the shell's start-up files (<filename>.profile</filename> etc.) are processed, and the current working directory is set to the target user's home directory.</para>
+                  <screen><prompt>tux:~ &gt;</prompt>sudo -i
+root's password:
+<prompt>root:~ #</prompt>exit
+<prompt>tux:~ &gt;</prompt></screen>
+               </listitem>
+            </varlistentry>
+         </variablelist>
+         <tip>
+            <title>Environment variables</title>
+            <para>By default, <command>sudo</command> does not propagate environment variables. This behavior can be changed using the <literal>env_reset</literal> option (see <xref linkend="tab-adm-sudo-options"/>).</para>
+         </tip>
+      </sect2>
+   </sect1>
+   <sect1 xml:id="sec-sudo-conf">
+      <title>Configuring <command>sudo</command>
+      </title>
+      <para>
+         <command>sudo</command> provides a wide range on configurable options.</para>
+      <note>
+         <title>Locked yourself out of sudo</title>
+         <para>If you accidentally locked yourself out of <command>sudo</command>, use <command>su -</command> and the <systemitem class="username">root</systemitem> password to start a root shell. To fix the error, run <command>visudo</command>.</para>
+      </note>
+      <!-- 2024-02-09 tbazant: importing smartdoc content
+    <sect2 xml:id="sec-sudo-conf-edit">
+      <title>Editing the configuration files</title>
+      <para>
+        The main policy configuration file for &sudo; is
+        <filename>/etc/sudoers</filename>. As it is possible to lock yourself
+        out of the system if the file is malformed, it is strongly recommended
+        to use <command>visudo</command> for editing. It prevents editing
+        conflicts and checks for syntax errors before saving the modifications.
+      </para>
+      <para>
+        You can use another editor instead of vi by setting the
+        <envar>EDITOR</envar> environment variable, for example:
+      </para>
+<screen>sudo EDITOR=<replaceable>/usr/bin/nano</replaceable> visudo</screen>
+      <para>
+        Keep in mind that the <filename>/etc/sudoers</filename> file is
+        supplied by the system packages, and modifications done directly in the
+        file may break updates. Therefore, it is recommended to put custom
+        configuration into files in the <filename>/etc/sudoers.d/</filename>
+        directory. Use the following command to create or edit a file:
+      </para>
+<screen>sudo visudo -f /etc/sudoers.d/<replaceable>NAME</replaceable></screen>
+      <para>
+        The command bellow opens the file using a different editor (in this
+        case, <command>nano</command>):
+      </para>
+<screen>sudo EDITOR=<replaceable>/usr/bin/nano</replaceable> visudo -f /etc/sudoers.d/<replaceable>NAME</replaceable></screen>
+      <note>
+        <title>Ignored files in <filename>/etc/sudoers.d</filename></title>
+        <para>
+          The <literal>#includedir</literal> directive in
+          <filename>/etc/sudoers</filename> ignores files that end with the
+          <literal>~</literal> (tilde) character or contain the
+          <literal>.</literal> (dot) character.
+        </para>
+      </note>
+      <para>
+        For more information on the <command>visudo</command> command, run
+        <command>man 8 visudo</command>.
+      </para>
+    </sect2>
+    -->
+      <warning>
+         <title>Example configurations are for demonstration purposes only</title>
+         <para>The example rules outlined below are purely for demonstration purposes. Use them to understand the general syntax of <command>sudo</command> configuration files. Do not use them in real-world setups, because they do not reflect the complexity of these environments.</para>
+      </warning>
+      <sect2 xml:id="sudo-creating-custom-configuration-bp">
+         <title>
+            <command>sudo</command> configuration best practices</title>
+         <para>Before you start, here are a few ground rules for maintaining <command>sudo</command> configurations:</para>
+         <variablelist>
+            <varlistentry>
+               <term>Always use <command>visudo</command> to edit <command>sudo</command> configuration files</term>
+               <listitem>
+                  <para>Any changes to the <command>sudo</command> configuration should be done using the <command>visudo</command> command. <command>visudo</command> is a tailor-made tool that allows you to edit the <command>sudo</command> configuration files and runs basic syntax checks, making sure that the configuration remains intact and functional. A faulty <command>sudo</command> configuration can result in a user being locked out of their own system.</para>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>Always create custom configurations under <filename>/etc/sudoers.d/</filename>
+               </term>
+               <listitem>
+                  <para>Custom configurations must reside under <filename>/etc/sudoers.d/</filename> to be pulled in by <command>sudo</command>. Settings in the custom configuration files take precedence over the ones in the default configuration in <filename>/etc/sudoers</filename>.</para>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>Always mind the order in which configurations are read</term>
+               <listitem>
+                  <para>To make sure the custom configurations are read in the correct order, prefix them with numbers. Use leading zeroes to establish the order in which the files are read. For example, <filename>01_myfirstconfig</filename> is parsed before <filename>10_myotherconfig</filename>. If a directive has been set in a file that is read before another file that contains conflicting information, the last-read directive is applied.</para>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>Always use descriptive file names</term>
+               <listitem>
+                  <para>Use file names that hint at what the configuration file does. This helps you keep track of what your <command>sudo</command> setup is supposed to do.</para>
+               </listitem>
+            </varlistentry>
+         </variablelist>
+      </sect2>
+      <sect2 xml:id="sudo-creating-custom-config-single-user">
+         <title>Create a user-specific configuration file</title>
+         <para>Create a <command>sudo</command> configuration file that allows a normal user (<systemitem class="username">tux</systemitem>) to use the <command>useradd</command> command with their own password instead of the <systemitem class="username">root</systemitem> password.</para>
+         <example xml:id="ex-sudo-custom-config-user">
+            <title>Create a user-specific configuration file</title>
+            <procedure>
+               <step>
+                  <para>As system administrator (<systemitem class="username">root</systemitem>), create a custom configuration file that holds the new user-specific directives by starting <command>visudo</command>. Use both numbering and a descriptive name:</para>
+                  <screen><prompt role="root">#</prompt><command>visudo -f /etc/sudoers.d/02_usermanagement</command></screen>
+               </step>
+               <step>
+                  <para>Create a rule that allows <systemitem class="username">tux</systemitem> to execute the <command>/usr/sbin/useradd</command> binary in the entire environment that this <command>sudo</command> configuration is applied to:</para>
+                  <screen>
+  tux<co xml:id="co-who"/> ALL<co xml:id="co-where"/> = /usr/sbin/useradd<co xml:id="co-what"/></screen>
+                  <calloutlist>
+                     <callout arearefs="co-who">
+                        <para>Specify the user or group. List users by name or <literal>#UID</literal>, and groups by <literal>%GROUPNAME</literal>. Separate multiple items with commas. To negate entries, use <literal>!</literal>.</para>
+                     </callout>
+                     <callout arearefs="co-where">
+                        <para>Specify one or several (separated by commas) hosts. Use (fully qualified) host names or IP addresses. Add <literal>ALL</literal> to enforce this setting globally across all hosts. Use <literal>!</literal> for negations.</para>
+                     </callout>
+                     <callout arearefs="co-what">
+                        <para>Specify one or several executables (separated by commas). When specifying them, make sure to mind the following rules:</para>
+                        <variablelist>
+                           <varlistentry>
+                              <term>
+                                 <command>/usr/sbin/useradd</command>
+                              </term>
+                              <listitem>
+                                 <para>Without any additional options added, this allows the execution of every possible <command>useradd</command> command.</para>
+                              </listitem>
+                           </varlistentry>
+                           <varlistentry>
+                              <term>
+                                 <command>/usr/sbin/useradd -c</command>
+                              </term>
+                              <listitem>
+                                 <para>If you explicitly specify an option, then that option is the only one that is allowed. Nothing else would be available to the user you specified above.</para>
+                              </listitem>
+                           </varlistentry>
+                           <varlistentry>
+                              <term>
+                                 <command>/usr/sbin/useradd ""</command>
+                              </term>
+                              <listitem>
+                                 <para>This would just let the user invoke a mere <command>useradd</command> without any option at all.</para>
+                              </listitem>
+                           </varlistentry>
+                        </variablelist>
+                        <para>In the example above, you would want to either allow all options and subcommands or limit them to a few for security reasons, but forbidding a user from specifying any option at all would be pointless in this context.</para>
+                     </callout>
+                  </calloutlist>
+               </step>
+               <step>
+                  <para>To let the user use their own password instead of the <systemitem class="username">root</systemitem> password, add the following line:</para>
+                  <screen>Defaults:tux !targetpw
+            </screen>
+                  <para>When active, this flag requires the user to enter the password of the target user, that is, <systemitem class="username">root</systemitem>. This flag is enabled by default on any <phrase role="productname">SUSE Linux Enterprise Server</phrase> system. Negate it using <literal>!</literal> to require the user to just enter their own password instead of the <systemitem class="username">root</systemitem> password.</para>
+               </step>
+               <step>
+                  <para>Save the configuration, leave the editor and open a second shell to test whether <command>sudo</command> honors your new configuration.</para>
+               </step>
+            </procedure>
+         </example>
+      </sect2>
+      <sect2 xml:id="sudo-creating-custom-config-group">
+         <title>Create custom configurations by grouping items</title>
+         <para>Modify the configuration from <xref linkend="ex-sudo-custom-config-user"/> so that a group of named users can run the <command>useradd</command> command without the need for the <systemitem class="username">root</systemitem> password. Also, add the <command>usermod</command> and <command>userdel</command> to the list of commands available to this group.</para>
+         <example xml:id="ex-sudo-custom-config-group">
+            <title>Create custom configurations by grouping items</title>
+            <procedure>
+               <step>
+                  <para>To modify the example configuration, open it as system administrator with <command>visudo</command>:</para>
+                  <screen><prompt role="root">#</prompt><command>visudo /etc/sudoers.d/02_usermanagement</command></screen>
+               </step>
+               <step>
+                  <para>Add more users to the rule in a comma-separated list:</para>
+                  <screen>tux, wilber ALL = /usr/sbin/useradd
+            </screen>
+               </step>
+               <step>
+                  <para>To allow the listed users to execute a list of commands, specify the commands as a comma-separated list:</para>
+                  <screen>tux, wilber ALL = /usr/sbin/useradd, /usr/sbin/usermod, /usr/sbin/userdel
+            </screen>
+               </step>
+               <step>
+                  <para>To let the listed users use their own password instead of the <systemitem class="username">root</systemitem> password, add the following line:</para>
+                  <screen>Defaults:tux, wilber !targetpw
+            </screen>
+                  <para>When active, this flag requires the listed users to enter the password of the target user, that is, <systemitem class="username">root</systemitem>. This flag is enabled by default on any <phrase role="productname">SUSE Linux Enterprise Server</phrase> system. Negate it using <literal>!</literal> to require the listed users to just enter their own password instead of the <systemitem class="username">root</systemitem> password.</para>
+               </step>
+               <step>
+                  <para>Save the configuration, leave the editor and open a second shell to test whether <command>sudo</command> honors your new configuration.</para>
+               </step>
+            </procedure>
+         </example>
+      </sect2>
+      <sect2 xml:id="sudo-creating-custom-config-aliases">
+         <title>Simplify configurations by applying aliases</title>
+         <para>Use aliases to simplify your custom configuration from <xref linkend="ex-sudo-custom-config-group"/> even further. Grouping items helps to a certain extent, but using global aliases for users, commands and hosts is the most efficient way to keep a clean and lean <command>sudo</command> configuration.</para>
+         <para>Using aliases and groups instead of lists is a much better way to address changes in your setup. Should a user leave, just remove them from the global <literal>User_Alias</literal> declaration in your alias declaration file instead of scouring all the separate custom configuration files. The same procedure applies for any other type of alias (<literal>Host_Alias</literal>, <literal>Cmnd_Alias</literal> and <literal>Runas_Alias</literal>).</para>
+         <example xml:id="ex-sudo-custom-config-alias">
+            <title>Simplify configurations by applying aliases</title>
+            <procedure>
+               <step>
+                  <para>Create a new file to hold your global alias definitions:</para>
+                  <screen><prompt role="root">#</prompt><command>visudo /etc/sudoers.d/01_aliases</command></screen>
+               </step>
+               <step>
+                  <para>Add the following line to create the <literal>TEAMLEADERS</literal> alias:</para>
+                  <screen>User_Alias    TEAMLEADERS = tux, wilber
+            </screen>
+               </step>
+               <step>
+                  <para>Add the following line to create the <literal>USERMANAGEMENT</literal> alias:</para>
+                  <screen>Cmnd_Alias    USERMANAGEMENT = /usr/sbin/useradd, /usr/sbin/usermod, /usr/sbin/userdel
+            </screen>
+               </step>
+               <step>
+                  <para>Save your changes and exit <command>visudo</command>.</para>
+               </step>
+               <step>
+                  <para>As system administrator, start <command>visudo</command> to edit the example configuration file:</para>
+                  <screen><prompt role="root">#</prompt><command>visudo -f /etc/sudoers.d/02_usermanagement</command></screen>
+               </step>
+               <step>
+                  <para>Delete the previous rule and replace it with the following rule that uses the aliases you have just defined above:</para>
+                  <screen>TEAMLEADERS ALL = USERMANAGEMENT
+            </screen>
+               </step>
+               <step>
+                  <para>To let all the users defined by <literal>User_Alias</literal> use their own password instead of the <systemitem class="username">root</systemitem> password, add the following line:</para>
+                  <screen>Defaults:TEAMLEADERS !targetpw</screen>
+               </step>
+               <step>
+                  <para>Save the configuration, leave the editor and open a second shell to test whether <command>sudo</command> honors your new configuration.</para>
+               </step>
+            </procedure>
+         </example>
+      </sect2>
+      <sect2 xml:id="sec-sudo-conf-syntax">
+         <title>Basic sudoers configuration syntax</title>
+         <para>The sudoers configuration files contain two types of options: strings and flags. While strings can contain any value, flags can be turned either ON or OFF. The most important syntax constructs for sudoers configuration files are as follows:</para>
+         <screen>
+# Everything on a line after # is ignored <co xml:id="co-sudo-syntax-comment"/>
+Defaults !insults # Disable the insults flag <co xml:id="co-sudo-syntax-flag"/>
+Defaults env_keep += "DISPLAY HOME" # Add DISPLAY and HOME to env_keep
+tux ALL = NOPASSWD: /usr/bin/frobnicate, PASSWD: /usr/bin/journalctl <co xml:id="co-sudo-syntax-rule"/></screen>
+         <calloutlist>
+            <callout arearefs="co-sudo-syntax-comment">
+               <para>There are two exceptions: <literal>#include</literal> and <literal>#includedir</literal> are regular commands.</para>
+            </callout>
+            <callout arearefs="co-sudo-syntax-flag">
+               <para>Remove the <literal>!</literal> character to set the desired flag to ON.</para>
+            </callout>
+            <callout arearefs="co-sudo-syntax-rule">
+               <para>See <xref linkend="sec-sudo-conf-rule"/>.</para>
+            </callout>
+         </calloutlist>
+         <variablelist xml:id="tab-adm-sudo-options">
+            <title>Useful flags and options</title>
+            <varlistentry>
+               <term>
+                  <literal>targetpw</literal>
+               </term>
+               <listitem>
+                  <para>This flag controls whether the invoking user is required to enter the password of the target user (ON) (for example <systemitem class="username">root</systemitem>) or the invoking user (OFF).</para>
+                  <screen>Defaults targetpw # Turn targetpw flag ON</screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>rootpw</literal>
+               </term>
+               <listitem>
+                  <para>If set, <command>sudo</command> prompts for the <systemitem class="username">root</systemitem> password. The default is OFF.</para>
+                  <screen>Defaults !rootpw # Turn rootpw flag OFF</screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>env_reset</literal>
+               </term>
+               <listitem>
+                  <para>If set, <command>sudo</command> constructs a minimal environment with <envar>TERM</envar>, <envar>PATH</envar>, <envar>HOME</envar>, <envar>MAIL</envar>, <envar>SHELL</envar>, <envar>LOGNAME</envar>, <envar>USER</envar>, <envar>USERNAME</envar>, and <envar>SUDO_*</envar>. Additionally, variables listed in <literal>env_keep</literal> are imported from the calling environment. The default is ON.</para>
+                  <screen>Defaults env_reset # Turn env_reset flag ON</screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>env_keep</literal>
+               </term>
+               <listitem>
+                  <para>List of environment variables to keep when the <literal>env_reset</literal> flag is ON.</para>
+                  <screen>
+# Set env_keep to contain EDITOR and PROMPT
+Defaults env_keep = "EDITOR PROMPT"
+Defaults env_keep += "JRE_HOME" # Add JRE_HOME
+Defaults env_keep -= "JRE_HOME" # Remove JRE_HOME
+</screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>env_delete</literal>
+               </term>
+               <listitem>
+                  <para>List of environment variables to remove when the <literal>env_reset</literal> flag is OFF.</para>
+                  <screen>
+# Set env_delete to contain EDITOR and PROMPT
+Defaults env_delete = "EDITOR PROMPT"
+Defaults env_delete += "JRE_HOME" # Add JRE_HOME
+Defaults env_delete -= "JRE_HOME" # Remove JRE_HOME
+</screen>
+               </listitem>
+            </varlistentry>
+         </variablelist>
+         <para>The <literal>Defaults</literal> token can also be used to create aliases for a collection of users, hosts, and commands. Furthermore, it is possible to apply an option only to a specific set of users.</para>
+         <para>For detailed information about the sudoers configuration files, consult <command>man 5 sudoers</command>.</para>
+      </sect2>
+      <sect2 xml:id="sec-sudo-conf-rule">
+         <title>Basic sudoers rules</title>
+         <para>Each rule follows the following scheme (<literal>[]</literal> marks optional parts):</para>
+         <screen>
+#Who      Where         As whom      Tag                What
+User_List Host_List = [(User_List)] [NOPASSWD:|PASSWD:] Cmnd_List
+</screen>
+         <variablelist>
+            <title>sudoers rule syntax</title>
+            <varlistentry>
+               <term>
+                  <literal>User_List</literal>
+               </term>
+               <listitem>
+                  <para>One or several (separated by comma) identifiers: either a user name, a group in the format <literal>%GROUPNAME</literal>, or a user ID in the format <literal>#UID</literal>. Negation can be specified with the <literal>!</literal> prefix.</para>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>Host_List</literal>
+               </term>
+               <listitem>
+                  <para>One or several (separated by comma) identifiers: either a (fully qualified) host name or an IP address. Negation can be specified with the <literal>!</literal> prefix. <literal>ALL</literal> is a common choice for <literal>Host_List</literal>.</para>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>NOPASSWD:|PASSWD:</literal>
+               </term>
+               <listitem>
+                  <para>The user is not prompted for a password when running commands matching <literal>Cmd_List</literal> after <literal>NOPASSWD:</literal>.</para>
+                  <para>
+                     <literal>PASSWD</literal> is the default. It only needs to be specified when both <literal>PASSWD</literal> and <literal>NOPASSWD</literal> are on the same line:</para>
+                  <screen>tux ALL = PASSWD: /usr/bin/foo, NOPASSWD: /usr/bin/bar</screen>
+               </listitem>
+            </varlistentry>
+            <varlistentry>
+               <term>
+                  <literal>Cmnd_List</literal>
+               </term>
+               <listitem>
+                  <para>One or several (separated by comma) specifiers: a path to an executable, followed by an optional allowed argument.</para>
+                  <screen>
+/usr/bin/foo     # Anything allowed
+/usr/bin/foo bar # Only "/usr/bin/foo bar" allowed
+/usr/bin/foo ""  # No arguments allowed
+</screen>
+               </listitem>
+            </varlistentry>
+         </variablelist>
+         <para>
+            <literal>ALL</literal> can be used as <literal>User_List</literal>, <literal>Host_List</literal>, and <literal>Cmnd_List</literal>.</para>
+         <para>A rule that allows <systemitem class="username">tux</systemitem> to run all commands as root without entering a password:</para>
+         <screen>tux ALL = NOPASSWD: ALL</screen>
+         <para>A rule that allows <systemitem class="username">tux</systemitem> to run <command>systemctl restart apache2</command>:</para>
+         <screen>tux ALL = /usr/bin/systemctl restart apache2</screen>
+         <para>A rule that allows <systemitem class="username">tux</systemitem> to run <command>wall</command> as <systemitem>admin</systemitem> with no arguments:</para>
+         <screen>tux ALL = (admin) /usr/bin/wall ""</screen>
+         <warning>
+            <title>Unsafe rules</title>
+            <para>
+               <emphasis>Do not</emphasis> use rules like <literal>ALL ALL = ALL</literal> without <literal>Defaults targetpw</literal>. Otherwise anyone can run commands as <systemitem class="username">root</systemitem>.</para>
+         </warning>
+         <important>
+            <title>Winbind and sudo</title>
+            <para>When specifying the group name in the <filename>sudoers</filename> file, make sure that you use the NetBIOS domain name instead of the realm, for example:</para>
+            <screen><replaceable>%DOMAIN</replaceable>\\<replaceable>GROUP_NAME</replaceable> ALL = (ALL) ALL</screen>
+            <para>Keep in mind that when using winbindd, the format also depends on the <option>winbind separator</option> option in the <filename>smb.conf</filename> file. By default, it is <literal>\</literal>. If it is changed, for example, to <literal>+</literal>, then the account format in the <filename>sudoers</filename> file must be <literal>DOMAIN+GROUP_NAME</literal>.</para>
+         </important>
+      </sect2>
+   </sect1>
+   <sect1 xml:id="sec-sudo-usecases-xorg">
+      <title>Using <command>sudo</command> with X.Org applications</title>
+      <para>Starting graphical applications with <command>sudo</command> normally results in the following error:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command> xterm
+xterm: Xt error: Can't open display: %s
+xterm: DISPLAY is not set
+</screen>
+      <para>A simple workaround is to use xhost to temporarily allow the root user to access the local user's X session. This is done using the following command:</para>
+      <screen>xhost si:localuser:root</screen>
+      <para>The command below removes the granted access:</para>
+      <screen>xhost -si:localuser:root</screen>
+      <warning>
+         <title>Potential security issue</title>
+         <para>Running graphical applications with root privileges has security implications. It is recommended to enable root access for a graphical application only as an exception. It is also recommended to revoke the granted root access as soon as the graphical application is closed.</para>
+      </warning>
+   </sect1>
+   <sect1 xml:id="sec-adm-sudo-moreinfo">
+      <title>More information</title>
+      <para>The <command>sudo --help</command> command offers a brief overview of the available command line options, while the <command>man sudoers</command> command provides detailed information about <filename>sudoers</filename> and its configuration.</para>
+   </sect1>
+</chapter>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xmlns="http://docbook.org/ns/docbook"
+     xmlns:its="http://www.w3.org/2005/11/its"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="5.2"
+     xml:lang="en"
+     xml:id="set-sleds"><!--                                                                       --><!--                                                                       --><!-- ##################################################################### --><!-- Common Books                                                          --><!--                                                                       --><!-- Admin and Installation Guide --><!-- Deployment Guide --><!-- GNOME User Guide --><!-- AutoYaST Guide --><!-- Security Guide --><!-- System Analysis and Tuning Guide --><!--                                                                       --><!--                                                                       --><!-- ##################################################################### --><!-- SLES Books                                                            --><!--                                                                       --><!-- Storage --><!-- Virtualization --><!-- Containers --><!-- ##################################################################### --><!-- Quick Starts                                                          --><!--                                                                       -->
+   <title>
+      <phrase role="productname">SUSE Linux Enterprise Server</phrase> Documentation</title>
+   <info>
+      <productname>
+         <phrase role="productname">SUSE Linux Enterprise Server</phrase>
+      </productname>
+      <productname role="abbrev">
+         <phrase role="productname">SLES</phrase>
+      </productname>
+      <productnumber>
+         <phrase role="productnumber">15 SP7</phrase>
+      </productnumber>
+      <!--
+   <meta name="task" its:translate="no">
+   <phrase></phrase>
+  </meta>
+  -->
+      <meta name="series">Product Documentation</meta>
+      <!-- authors by lastname in alphabetical order -->
+      <xi:include href="common_authors.xml"/>
+   </info>
+   <!--                                                                       -->
+   <!--                                                                       -->
+   <!-- ##################################################################### -->
+   <!-- Common Books                                                          -->
+   <!--                                                                       -->
+   <!-- Admin and Installation Guide -->
+   <!-- ##################################################################### -->
+   <!-- Administration Guide                                                  -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_administration.xml"/>
+   <!-- Deployment Guide -->
+   <!-- ##################################################################### -->
+   <!-- SLE Deployment Guide                                                  -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_deployment.xml"/>
+   <!-- Deployment Guide -->
+   <!-- ##################################################################### -->
+   <!-- SLE Deployment Guide                                                  -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_upgrade.xml"/>
+   <!-- GNOME User Guide -->
+   <!-- ##################################################################### -->
+   <!-- GNOME  User Guide                                                     -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_gnome-user.xml"/>
+   <!-- AutoYaST Guide -->
+   <xi:include href="book_autoyast.xml"/>
+   <!-- Security Guide -->
+   <!-- ##################################################################### -->
+   <!-- Security Guide                                                        -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_security.xml"/>
+   <!-- System Analysis and Tuning Guide -->
+   <!-- ##################################################################### -->
+   <!-- SLE System Analysis and Tuning Guide                                  -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_tuning.xml"/>
+   <!-- RMT -->
+   <xi:include href="book_rmt.xml"/>
+   <!--                                                                       -->
+   <!--                                                                       -->
+   <!-- ##################################################################### -->
+   <!-- SLES Books                                                            -->
+   <!--                                                                       -->
+   <!-- Storage -->
+   <!-- ##################################################################### -->
+   <!-- SLES Storage Guide                                                    -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_storage.xml"/>
+   <!-- Virtualization -->
+   <!-- ##################################################################### -->
+   <!-- Virtualization                                                        -->
+   <!-- ##################################################################### -->
+   <xi:include href="book_virtualization.xml"/>
+   <!-- ##################################################################### -->
+   <!-- Quick Starts                                                            -->
+   <!--                                                                       -->
+   <book version="5.2" xml:lang="en" xml:id="book-quick-start">
+      <info>
+         <title>Quick Start Guides</title>
+         <productname>
+            <phrase role="productname">SUSE Linux Enterprise Server</phrase>
+         </productname>
+         <productnumber>
+            <phrase role="productnumber">15 SP7</phrase>
+         </productnumber>
+         <date><?dbtimestamp format="B d, Y"?></date>
+         <!-- This file is part of the project https://github.com/openSUSE/doc-kit -->
+         <!-- DO NOT EDIT THIS FILE DOWNSTREAM. IT MAY BE OVERWRITTEN BY AN UPDATE. -->
+         <xi:include href="common_copyright_gfdl.xml"/>
+      </info>
+      <xi:include href="art_installation-sleds.xml"/>
+      <xi:include href="art_modules.xml"/>
+      <xi:include href="art_virtualization-best-practices.xml"/>
+      <xi:include href="art-kubevirt.xml"/>
+      <xi:include href="art_amd-sev.xml"/>
+      <xi:include href="art-nvidia-vgpu.xml"/>
+      <xi:include href="art_raspberry-pi.xml"/>
+      <!-- This file is part of the project https://github.com/openSUSE/doc-kit -->
+      <!-- DO NOT EDIT THIS FILE DOWNSTREAM. IT MAY BE OVERWRITTEN BY AN UPDATE. -->
+      <xi:include href="common_legal.xml"/>
+   </book>
+</set>

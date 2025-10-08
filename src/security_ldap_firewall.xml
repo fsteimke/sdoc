@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-security-ldap-firewall">
+   <info>
+      <title>Firewall configuration</title>
+   </info>
+   <para>The default TCP ports for 389 Directory Server are 389 and 636. TCP 389 is for unencrypted connections, and STARTTLS. 636 is for encrypted connections over TLS.</para>
+   <para>
+      <systemitem class="daemon">firewalld</systemitem> is the default firewall manager for <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The following rules activate the <literal>ldap</literal> and <literal>ldaps</literal> firewall services:</para>
+   <screen><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --add-service=ldap --zone=<replaceable>internal</replaceable></command><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --add-service=ldaps --zone=<replaceable>internal</replaceable></command><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --runtime-to-permanent</command></screen>
+   <para>Replace the zone with the appropriate zone for your server. See <xref linkend="sec-security-ldap-server-ca"/> for information on securing your connections with TLS, and <xref linkend="sec-security-firewall-fw"/> to learn about <systemitem class="daemon">firewalld</systemitem>.</para>
+</sect1>

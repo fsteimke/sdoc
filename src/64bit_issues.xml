@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-64bit">
+   <title>32-bit and 64-bit applications in a 64-bit system environment</title>
+   <info/>
+   <para>
+      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> is available for several 64-bit platforms. The developers have not ported all 32-bit applications to 64-bit systems. This chapter offers a brief overview of 32-bit support implementation on 64-bit <phrase role="productname">SUSE Linux Enterprise Server</phrase> platforms.</para>
+   <para>
+      <phrase role="productname">SUSE Linux Enterprise Server</phrase> for the 64-bit platforms POWER, IBM Z and AMD64/Intel 64 is designed so that existing 32-bit applications run in the 64-bit environment <quote>out-of-the-box.</quote> The corresponding 32-bit platforms are POWER for POWER, and x86 for AMD64/Intel 64. This support means that you can continue to use your preferred 32-bit applications without waiting for a corresponding 64-bit port to become available. The current POWER system runs most applications in 32-bit mode, but you can run 64-bit applications.</para>
+   <note>
+      <title>No support for building 32-bit applications</title>
+      <para>
+         <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not support compilation of 32-bit applications. It only offers runtime support for 32-bit binaries.</para>
+   </note>
+   <sect1 xml:id="sec-64bit-runt">
+      <title>Runtime support</title>
+      <important>
+         <title>Conflicts between application versions</title>
+         <para>If an application is available for both 32-bit and 64-bit environments, installing both versions may cause problems. In such cases, decide on one version to install to avoid potential runtime errors.</para>
+         <para>An exception to this rule is PAM (pluggable authentication modules). <phrase role="productname">SUSE Linux Enterprise Server</phrase> uses PAM in the authentication process as a layer that mediates between user and application. Always install both PAM versions on 64-bit operating systems that also run 32-bit applications.</para>
+      </important>
+      <para>For correct execution, every application requires a range of libraries. Because the names are identical for the 32-bit and 64-bit versions of these libraries, they must be differentiated from each other in another way.</para>
+      <para>To retain compatibility with 32-bit versions, 64-bit and 32-bit libraries are stored in the same location. The 32-bit version of <filename>libc.so.6</filename> is located under <filename>/lib/libc.so.6</filename> in both 32-bit and 64-bit environments.</para>
+      <para>All 64-bit libraries and object files are located in directories called <filename>lib64</filename>. The 64-bit object files normally found under <filename>/lib</filename> and <filename>/usr/lib</filename> are now found under <filename>/lib64</filename> and <filename>/usr/lib64</filename>. This means that space is available for 32-bit libraries under <filename>/lib</filename> and <filename>/usr/lib</filename>, so the file name for both versions can remain unchanged.</para>
+      <para>If the data content of 32-bit subdirectories under <filename>/lib</filename> does not depend on word size, they are not moved. This scheme conforms to LSB (Linux Standards Base) and FHS (Filesystem Hierarchy Standard).</para>
+   </sect1>
+   <sect1 xml:id="sec-64bit-kernel">
+      <title>Kernel specifications</title>
+      <para>The 64-bit kernels for AMD64/Intel 64, POWER and IBM Z offer both a 64-bit and a 32-bit kernel ABI (application binary interface). The latter is identical to the ABI for the corresponding 32-bit kernel. This means that communication between both 32-bit and 64-bit applications with 64-bit kernels are identical.</para>
+      <para>The 32-bit system call emulation for 64-bit kernels does not support all the APIs used by system programs. This depends on the platform. For this reason, few applications, like <command>lspci</command>, must be compiled on non-POWER platforms as 64-bit programs to function properly. On IBM Z, not all ioctls are available in the 32-bit kernel ABI.</para>
+      <para>A 64-bit kernel can only load 64-bit kernel modules. You must compile 64-bit modules specifically for 64-bit kernels. It is not possible to use 32-bit kernel modules with 64-bit kernels.</para>
+      <tip>
+         <title>Kernel-loadable modules</title>
+         <para>Certain applications require separate kernel-loadable modules. If you intend to use a 32-bit application in a 64-bit system environment, contact the provider of the application and SUSE. Make sure that the 64-bit version of the kernel-loadable module and the 32-bit compiled version of the kernel API are available for this module.</para>
+      </tip>
+   </sect1>
+</chapter>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-zseries-prep-secure-boot">
+   <title>Secure boot</title>
+   <info/>
+   <para>For the secure boot functionality to work on an IBM Z system, the following conditions must be met.</para>
+   <itemizedlist>
+      <listitem>
+         <para>The machine must be z15 T01, z15 T02, LinuxONE III LT1, LinuxONE III LT2, or a later model.</para>
+      </listitem>
+      <listitem>
+         <para>Enable secure boot on LPAR where Linux is installed. This system can serve as a KVM hypervisor. However, KVM virtual machines cannot have the secure boot enabled.</para>
+      </listitem>
+      <listitem>
+         <para>You must use SCSI (FCP) disks (secure boot is not supported on DASD).</para>
+      </listitem>
+   </itemizedlist>
+   <note>
+      <title>Hardware migration</title>
+      <para>In case you migrate to a different machine (for example, from z13 to z15), ensure that the LPAR on the target machine has the secure boot state of the system on its disk.</para>
+   </note>
+   <para>Changing the secure boot state must be performed according to the following procedure.</para>
+   <procedure>
+      <title>Changing secure boot state</title>
+      <step>
+         <para>For a new installation, add the attribute <literal>SUSE_SECURE_BOOT=1</literal> to <filename>/etc/default/grub</filename>. If you are performing an update, add <literal>SUSE_SECURE_BOOT=auto</literal> instead.</para>
+      </step>
+      <step>
+         <para>Call the <command>grub2-install</command> command to regenerate grub parameters.</para>
+      </step>
+      <step>
+         <para>Shut down the system.</para>
+      </step>
+      <step>
+         <para>Change the configuration of the LPAR (enable or disable secure boot).</para>
+      </step>
+      <step>
+         <para>Boot the system.</para>
+      </step>
+   </procedure>
+   <note>
+      <title>Secure boot on HMC</title>
+      <para>The system on the disk configured with the <literal>secure=1</literal> parameter can be booted on z15 HMC as long as the firmware supports the new on-disk format (which is always the case on z15).</para>
+   </note>
+</sect1>

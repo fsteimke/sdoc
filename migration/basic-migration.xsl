@@ -226,5 +226,19 @@
     </xsl:attribute>
   </xsl:template>
   
+  <!-- Set mark at start and end of para elements which apply to particular architecture === -->
+  <xsl:template match="para[@arch]" as="element(para)">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <phrase role="arch-start">
+        <xsl:value-of select="@arch || '&#x202f;▶'"/>
+      </phrase>
+      <xsl:apply-templates select="node()"/>
+      <phrase role="arch-end">
+        <xsl:text>◀</xsl:text>
+      </phrase>
+    </xsl:copy>
+  </xsl:template>
+  
 
 </xsl:stylesheet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-kiso">
+   <title>Installation on hardware not supported at release</title>
+   <info>
+      <abstract>
+         <para>With some newer hardware, the installation medium of <phrase role="productname">SUSE Linux Enterprise Server</phrase> cannot boot. This can be the case when the hardware did not exist at the time of the release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. For such a situation SUSE provides <emphasis>Kernel Update ISO</emphasis> (<emphasis>kISO</emphasis>) images. This chapter describes how to use the kernel update to install <phrase role="productname">SUSE Linux Enterprise Server</phrase> on current hardware.</para>
+      </abstract>
+   </info>
+   <sect1 xml:id="sec-kiso-download">
+      <title>Download kernel update</title>
+      <para>
+         <emphasis>Kernel Update ISO</emphasis> images are available on the SUSE SolidDriver home page. Use <link xlink:href="https://drivers.suse.com"/> to search for bootable ISO images for your vendor and operating system version.</para>
+      <para>You can download the full ISO image or only the <literal>initrd</literal> and <literal>linux</literal> files. The ISO usually needs to be copied to a USB flash drive or burned to a DVD. The <literal>initrd</literal> and <literal>linux</literal> files can be used for a PXE boot. For details about booting via PXE, see <xref linkend="cha-deployment-prep-pxe"/>.</para>
+   </sect1>
+   <sect1 xml:id="sec-kiso-boot">
+      <title>Boot kernel update</title>
+      <para>To use the kernel update, boot from the USB flash drive or via PXE. When the <literal>linux</literal> and the <literal>initrd</literal> are loaded, you will be asked to insert the installation medium.</para>
+      <para>You can use the boot parameters described in <xref linkend="cha-boot-parameters"/>. This allows using other installation sources than the installation USB flash drive.</para>
+   </sect1>
+</chapter>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-rmt-tools-systemd">
+   <info>
+      <title>RMT <systemitem class="daemon">systemd</systemitem> commands</title>
+   </info>
+   <para>You can manage RMT-related services with the standard <systemitem class="daemon">systemd</systemitem> commands. The RMT server has the following services and timers:</para>
+   <variablelist>
+      <varlistentry>
+         <term>
+            <command>rmt-server.target</command>
+         </term>
+         <listitem>
+            <para>A <systemitem class="daemon">systemd</systemitem> target that starts all required RMT components.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>
+            <command>rmt-server.service</command>
+         </term>
+         <listitem>
+            <para>The RMT server.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>
+            <command>rmt-server-migration.service</command>
+         </term>
+         <listitem>
+            <para>This service migrates the database to the newest schema, if required. There is no need to manually interact with this service.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>
+            <command>rmt-server-sync.timer</command>
+         </term>
+         <listitem>
+            <para>This timer is responsible for periodically synchronizing all repository product data from the SUSE Customer Center.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>
+            <command>rmt-server-mirror.timer</command>
+         </term>
+         <listitem>
+            <para>This timer is responsible for periodically synchronizing all RPMs from the SUSE Customer Center.</para>
+         </listitem>
+      </varlistentry>
+   </variablelist>
+   <para>Use <command>systemctl</command> to manage the RMT services and timers.</para>
+</sect1>

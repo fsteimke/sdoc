@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-rmt-tools">
+   <title>RMT tools and configuration files</title>
+   <info/>
+   <para>This chapter describes the most important scripts, configuration files and certificates shipped with RMT.</para>
+   <para>The <command>rmt-cli</command> command and its sub-commands are used to manage the mirroring of repositories, registration of clients, and reporting. <systemitem class="daemon">systemd</systemitem> is used for starting, stopping, restarting the RMT service and for checking its status.</para>
+   <para>The basic configuration for RMT is stored in the <filename>/etc/rmt.conf</filename>.</para>
+   <xi:include href="rmt_rmt-cli.xml"/>
+   <xi:include href="rmt_systemd.xml"/>
+   <xi:include href="rmt_config_files.xml"/>
+</chapter>

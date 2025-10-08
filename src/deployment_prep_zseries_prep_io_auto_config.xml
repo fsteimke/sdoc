@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-zseries-prep-io-auto-config">
+   <title>I/O device auto-configuration on IBM Z systems</title>
+   <info/>
+   <para>I/O device auto-configuration is a mechanism that allows users to specify IDs and settings of I/O devices that should be automatically enabled in Linux. This information is specified for an LPAR via an HMC running in DPM (Dynamic Partition Manager) mode.</para>
+   <note>
+      <para>The I/O device auto-configuration functionality is available on systems with the DPM running. DPM runs by default on LinuxONE machines. For IBM Z, this functionality must be ordered.</para>
+   </note>
+   <para>In <command>linuxrc</command>, the <parameter>DeviceAutoConfig</parameter> parameter controls the use of I/O device auto-configuration data for IBM Z systems.</para>
+   <variablelist>
+      <varlistentry>
+         <term>DeviceAutoConfig=0</term>
+         <listitem>
+            <para>If set to <literal>0</literal>, auto-configuration is disabled.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>DeviceAutoConfig=1</term>
+         <listitem>
+            <para>If set to <literal>1</literal>, existing auto-config data are applied.</para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>DeviceAutoConfig=2 (default)</term>
+         <listitem>
+            <para>If set to <literal>2</literal> (the default), a dialog is shown if auto-config data are present. The user is asked whether to apply them.</para>
+         </listitem>
+      </varlistentry>
+   </variablelist>
+   <para>If device auto-config is disabled by the user, the kernel parameter <parameter>rd.zdev=no-auto</parameter> is added to the boot options of the target system.</para>
+   <para>To enable I/O auto-configuration using YaST, run the <command>yast2 system_settings</command> command, switch to the <guimenu>Kernel Settings</guimenu> section, and enable the <guimenu>Enable I/O device auto-configuration</guimenu> option.</para>
+   <para>To disable I/O auto-configuration in an AutoYaST profile, add the following kernel parameter in the <literal>append</literal> section of the global boot loader options. For example:</para>
+   <screen>
+&lt;bootloader&gt;
+  &lt;global&gt;
+    &lt;append&gt;rd.zdev=no-auto&lt;/append&gt;
+  &lt;/global&gt;
+&lt;/bootloader&gt;</screen>
+   <para>For more context on the AutoYaST boot loader options, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
+      <xref linkend="CreateProfile-Bootloader" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>During installation, the status of the auto-configuration setting is displayed in the <guimenu>Device Settings</guimenu> section of the <guimenu>Installation Settings</guimenu> screen.</para>
+</sect2>

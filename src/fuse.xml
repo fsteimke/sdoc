@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-fuse"><!--
+   ## Available modules in openSUSE
+   # zypper search fuse
+fuse             | User space File System
+fuse-devel       | Development package for FUSE (user space file system) modules
+fuseiso          | FUSE module to mount CD-ROM images with ISO9660 file systems in them
+fusepod          | FUSEPod is a virtual user space file system that mounts your iPod
+fusesmb          | SMB for FUSE
+gvfs-fuse        | VFS functionality for GLib
+libconfuse-devel | The development files for libconfuse
+libconfuse0      | A configuration file parser library
+libfuse2         | Library of FUSE, the User space File System for GNU/Linux and BSD
+  -->
+   <title>Accessing file systems with FUSE</title>
+   <info>
+      <abstract>
+         <para>FUSE is the acronym for <emphasis>Filesystem in Userspace</emphasis>. This means you can configure and mount a file system as an unprivileged user. Normally, you need to be <systemitem class="username">root</systemitem> for this task. FUSE alone is a kernel module. Combined with plug-ins, it allows you to extend FUSE to access almost all file systems like remote SSH connections, ISO images, and more.</para>
+      </abstract>
+   </info>
+   <!--
+   ## Available modules in openSUSE
+   # zypper search fuse
+fuse             | User space File System
+fuse-devel       | Development package for FUSE (user space file system) modules
+fuseiso          | FUSE module to mount CD-ROM images with ISO9660 file systems in them
+fusepod          | FUSEPod is a virtual user-space file system that mounts your iPod
+fusesmb          | SMB for FUSE
+gvfs-fuse        | VFS functionality for GLib
+libconfuse-devel | The development files for libconfuse
+libconfuse0      | A configuration file parser library
+libfuse2         | Library of FUSE, the User space File System for GNU/Linux and BSD
+  -->
+   <sect1 xml:id="sec-fuse-config">
+      <title>Configuring FUSE</title>
+      <para>Before you can use FUSE, you need to install the package <systemitem class="resource">fuse</systemitem>. Depending which file system you want to use, you need additional plug-ins available as separate packages.</para>
+      <para>Generally you do not need to configure FUSE. However, it is a good idea to create a directory where all your mount points are combined. For example, you can create a directory <filename>~/mounts</filename> and insert your subdirectories for your different file systems there.</para>
+   </sect1>
+   <sect1 xml:id="sec-fuse-ntfs">
+      <title>Mounting an NTFS partition</title>
+      <para>NTFS, the <emphasis>New Technology File System</emphasis>, is the default file system of Windows. Since under normal circumstances the unprivileged user cannot mount NTFS block devices using the external FUSE library, the process of mounting a Windows partition described below requires root privileges. Mounting NTFS partitions is supported on SUSE Linux Enterprise Server and SUSE Linux Enterprise Desktop with SUSE Linux Enterprise Workstation Extension only.</para>
+      <procedure>
+         <step>
+            <para>Become <systemitem class="username">root</systemitem> and install the package <systemitem class="resource">ntfs-3g</systemitem>. It is available in SUSE Linux Enterprise Workstation Extension.</para>
+         </step>
+         <step>
+            <para>Create a directory that is to be used as a mount point, for example, <filename>~/mounts/windows</filename>.</para>
+         </step>
+         <step>
+            <para>Find out which Windows partition you need. Use YaST and start the partitioner module to see which partition belongs to Windows, but do not modify anything. Alternatively, become <systemitem class="username">root</systemitem> and execute <command>/sbin/fdisk</command>
+               <option>-l</option>. Look for partitions with a partition type of <literal>HPFS/NTFS</literal>.</para>
+         </step>
+         <step>
+            <para>Mount the partition in read-write mode. Replace the placeholder <replaceable>DEVICE</replaceable> with your respective Windows partition:</para>
+            <screen><prompt>&gt;</prompt>ntfs-3g /dev/<replaceable>DEVICE</replaceable><replaceable>MOUNT POINT</replaceable></screen>
+            <para>To use your Windows partition in read-only mode, append <option>-o ro</option>:</para>
+            <screen><prompt>&gt;</prompt>ntfs-3g /dev/<replaceable>DEVICE</replaceable><replaceable>MOUNT POINT</replaceable> -o ro</screen>
+            <para>The command <command>ntfs-3g</command> uses the current user (UID) and group (GID) to mount the given device. To set the write permissions to a different user, use the command <command>id</command>
+               <option>USER</option> to get the output of the UID and GID values. Set it with:</para>
+            <screen><prompt role="root">#</prompt>id tux
+uid=1000(tux) gid=100(users) groups=100(users),16(dialout),33(video)
+ntfs-3g /dev/<replaceable>DEVICE</replaceable><replaceable>MOUNT POINT</replaceable> -o uid=1000,gid=100</screen>
+            <para>Find additional options in the man page.</para>
+         </step>
+      </procedure>
+      <para>To unmount the resource, run <command>fusermount -u</command>
+         <replaceable>MOUNT POINT</replaceable>.</para>
+   </sect1>
+   <sect1 xml:id="sec-fuse-moreinfo">
+      <title>More information</title>
+      <para>For more information, see the home page of FUSE at <link xlink:href="https://github.com/libfuse/libfuse"/>.</para>
+   </sect1>
+</chapter>

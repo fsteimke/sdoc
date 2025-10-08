@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-gui-desktop">
+   <title>Graphical user interface</title>
+   <info>
+      <abstract>
+         <para>
+            <phrase role="productname">SUSE Linux Enterprise Server</phrase> includes the X.org server and the GNOME desktop. This chapter describes the configuration of the graphical user interface for all users.</para>
+      </abstract>
+   </info>
+   <sect1 xml:id="sec-gui-desktop-xorg">
+      <title>X Window System</title>
+      <para>The X.org server is the de facto standard for implementing the X11 protocol. X is network-based, enabling applications started on one host to be displayed on another host connected over any kind of network (LAN or Internet).</para>
+      <para>The X Window System needs no configuration in most cases. The hardware is dynamically detected during X start-up. The use of <filename>xorg.conf</filename> is therefore deprecated. If you still need to specify custom options to change the way X behaves, you can still do so by modifying configuration files under <filename>/etc/X11/xorg.conf.d/</filename>.</para>
+      <tip>
+         <title>IBM Z: configuring the graphical user interface</title>
+         <para>IBM Z does not have any input or output devices supported by X.Org. Therefore, none of the configuration procedures described in this section apply. More relevant information for IBM Z can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
+            <xref linkend="cha-zseries" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      </tip>
+      <para>Install the package <systemitem class="resource">xorg-docs</systemitem> to get more in-depth information about X11. <command>man 5 xorg.conf</command> tells you more about the format of the manual configuration (if needed). More information on the X11 development can be found on the project's home page at <link xlink:href="https://www.x.org"/>.</para>
+      <para>Drivers are found in <systemitem>xf86-video-*</systemitem> packages, for example <systemitem>xf86-video-ati</systemitem>. Many of the drivers delivered with these packages are described in detail in the related manual page. For example, if you use the <literal>ati</literal> driver, find more information about this driver in <command>man 4 ati</command>.</para>
+      <para>Information about third-party drivers is available in <filename>/usr/share/doc/packages/&lt;package_name&gt;</filename>. For example, the documentation of <systemitem class="resource">x11-video-nvidiaG03</systemitem> is available in <filename>/usr/share/doc/packages/x11-video-nvidiaG04</filename> after the package was installed.</para>
+      <para>Install the package <systemitem class="resource">xrdp</systemitem> on a server and use RDP client software to access the server via the remote desktop protocol.</para>
+   </sect1>
+   <xi:include href="x11_fonts.xml"/>
+   <sect1 xml:id="sec-gui-desktop-gnome">
+      <title>GNOME configuration for administrators</title>
+      <sect2 xml:id="sec-gui-desktop-gnome-dconf">
+         <title>The <literal>dconf</literal> system</title>
+         <para>Configuration of the GNOME desktop is managed with <literal>dconf</literal>. It is a hierarchically structured database or registry that allows users to modify their personal settings, and system administrators to set default or mandatory values for all users. <literal>dconf</literal> replaces the <literal>gconf</literal> system of GNOME 2.</para>
+         <para>Use <command>dconf-editor</command> to view the <literal>dconf</literal> options with a graphical user interface. Use <command>dconf</command> to access and modify configuration options with the command line.</para>
+         <para>The GNOME <literal>Tweaks</literal> tool provides an easy-to-use user interface for additional configuration options beyond the normal GNOME configuration. The tool can be started from the GNOME application menu or from the command line with <command>gnome-tweak-tool</command>.</para>
+      </sect2>
+      <sect2 xml:id="sec-gui-desktop-gnome-global">
+         <title>System-wide configuration</title>
+         <para>Global <literal>dconf</literal> configuration parameters can be set in the <filename>/etc/dconf/db/</filename> directory. This includes the configuration for GDM or locking certain configuration options for users.</para>
+         <para>Use the following procedure as an example to create a system-wide configuration:</para>
+         <procedure>
+            <step>
+               <para>Create a new directory that ends with a <literal>.d</literal> in <filename>/etc/dconf/db/</filename>. This directory can contain an arbitrary amount of text files with configuration options. For this example, create the file <filename>/etc/dconf/db/network.d/00-proxy</filename> with the following content:</para>
+               <screen># This is a comment
+[system/proxy/http]
+host='10.0.0.1'
+enabled=true</screen>
+            </step>
+            <step>
+               <para>Parse the new configuration directives into the dconf database format:</para>
+               <screen><prompt>&gt;</prompt><command>sudo</command><command>dconf update</command></screen>
+            </step>
+            <step>
+               <para>Add the new <literal>network</literal> configuration database to the default user profile, by creating the file <filename>/etc/dconf/profile/user</filename>. Then add the following content:</para>
+               <screen>system-db:network</screen>
+               <para>The file <filename>/etc/dconf/profile/user</filename> is a GNOME default. Other profiles can be defined in the environment variable <literal>DCONF_PROFILE</literal>.</para>
+            </step>
+            <step>
+               <para>Optional: to lock the proxy configuration for users, create the file <filename>/etc/dconf/db/network/locks/proxy</filename>. Then add a line to this file with the keys that may not be changed:</para>
+               <screen>/system/proxy/http/host
+/system/proxy/http/enabled</screen>
+            </step>
+         </procedure>
+         <para>You can use the graphical <command>dconf-editor</command> to create a profile with one user and then use <command>dconf dump /</command> to list all configuration options. The configuration options can then be stored in a global profile.</para>
+         <para>A detailed description of the global configuration is available at <link xlink:href="https://wiki.gnome.org/Projects/dconf/SystemAdministrators"/>.</para>
+      </sect2>
+      <sect2 xml:id="sec-gui-desktop-gnome-more-info">
+         <title>More information</title>
+         <para>For more information, see <link xlink:href="https://help.gnome.org/admin/"/>.</para>
+      </sect2>
+   </sect1>
+   <sect1 xml:id="sec-gui-desktop-suse-prime">
+      <title>Switching between Intel and NVIDIA Optimus GPUs with SUSE Prime</title>
+      <para>SUSE Prime is a tool for switching between onboard Intel graphical processing units (GPUs) and NVIDIA GPUs equipped with NVIDIA's switchable graphics Optimus technology. Optimus provides a mechanism for easily switching between an onboard Intel GPU and a discrete NVIDIA GPU. This is designed for running a laptop in a power-saving mode or at maximum performance: use the Intel GPU to save power, and the NVIDIA GPU for 3D applications.</para>
+      <para>SUSE Prime works only on systems running X11, not Wayland. If your system runs Wayland, you must disable it and fall back to X11 to use SUSE Prime (see <xref linkend="sec-gui-desktop-suse-prime-prereqs"/>).</para>
+      <sect2 xml:id="sec-gui-desktop-suse-prime-prereqs">
+         <title>Prerequisites</title>
+         <para>There must not be a <filename>/etc/X11/xorg.conf</filename> file, and no configuration files with active <literal>ServerLayout</literal>, <literal>Device</literal>, or <literal>Screen</literal> sections in the <filename>/etc/X11/xorg.conf.d</filename> directory.</para>
+         <para>SUSE Prime works only with X11. Use the <command>loginctl</command> command to see if your system is using X11 or Wayland:</para>
+         <screen><prompt>&gt;</prompt>loginctl
+   SESSION        UID USER             SEAT             TTY             
+         2       1000 tux             seat0               
+<prompt>&gt;</prompt>loginctl show-session 2|grep Type
+Type=x11
+</screen>
+         <para>If your system uses Wayland, disable it by editing <filename>/etc/gdm/custom.conf</filename> and un-commenting <literal>WaylandEnable=false</literal>. Then reboot.</para>
+      </sect2>
+      <sect2 xml:id="sec-gui-desktop-suse-prime-install">
+         <title>Installing and using SUSE Prime</title>
+         <para>Your NVIDIA graphics card should already be installed and working. If it is not, see <xref linkend="sec-gui-desktop-install-nvidia"/>.</para>
+         <para>Install the <package>suse-prime</package> package:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> zypper install suse-prime</screen>
+         <para>To switch your GPU run one of the following commands, then log out and log back in:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> prime-select intel
+<prompt>&gt;</prompt><command>sudo</command> prime-select intel2
+<prompt>&gt;</prompt><command>sudo</command> prime-select nvidia
+</screen>
+         <para>Use the <command>intel</command> driver when it is the modesetting driver. <command>intel2</command> is for systems that use the <package>xf86-video-intel</package> driver. You can get this information by installing and running <package>inxi</package>:</para>
+         <screen><prompt>&gt;</prompt>inxi -G
+Graphics: Device-1: Intel Xeon E3-1200 v3/4th Gen Core Processor Integrated Graphics Controller
+          Display Server: x11(X.org 1.20.1 ) drivers: modesetting (unloaded: fbdev, vesa)
+          Resolution: 1920x1080@60.00hz
+          OpenGL: renderer: Mesa DRI Intel Haswell Desktop version: 4.5 Mesa 18.2.8
+      </screen>
+         <para>Which GPU is currently active?</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> /usr/sbin/prime-select get-current
+Driver configured: intel
+</screen>
+      </sect2>
+      <sect2 xml:id="sec-gui-desktop-install-nvidia">
+         <title>Installing NVIDIA drivers</title>
+         <para>If you need to identify your NVIDIA card so you know which driver to use, run the following command:</para>
+         <screen><prompt>&gt;</prompt>/sbin/lspci | grep VGA  
+</screen>
+         <para>Follow these steps to install the drivers with Zypper.</para>
+         <para>List the available driver packages:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> zypper se nvidia
+</screen>
+         <para>Then install the drivers for your NVIDIA graphics card:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> zypper se <replaceable>packagename</replaceable></screen>
+      </sect2>
+   </sect1>
+</chapter>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="sec-kvm-managing-clock">
+   <title>VM Guest clock settings</title>
+   <info>
+      <abstract>
+         <para>Keeping the correct time in a VM Guest is one of the more difficult aspects of virtualization. Keeping the correct time is especially important for network applications and is also a prerequisite to do a live migration of a VM Guest.</para>
+      </abstract>
+   </info>
+   <tip>
+      <title>Timekeeping on the VM Host Server</title>
+      <para>It is strongly recommended to ensure the VM Host Server keeps the correct time as well, for example, by using NTP (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
+         <xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/> for more information).</para>
+   </tip>
+   <sect1 xml:id="sec-kvm-managing-clock-kvm">
+      <title>KVM: using <systemitem>kvm_clock</systemitem>
+      </title>
+      <para>KVM provides a paravirtualized clock which is supported via the <systemitem>kvm_clock</systemitem> driver. It is strongly recommended to use <systemitem>kvm_clock</systemitem>.</para>
+      <para>Use the following command inside a VM Guest running Linux to check whether the driver <systemitem>kvm_clock</systemitem> has been loaded:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command> dmesg | grep kvm-clock
+[    0.000000] kvm-clock: cpu 0, msr 0:7d3a81, boot clock
+[    0.000000] kvm-clock: cpu 0, msr 0:1206a81, primary cpu clock
+[    0.012000] kvm-clock: cpu 1, msr 0:1306a81, secondary cpu clock
+[    0.160082] Switching to clocksource kvm-clock</screen>
+      <para>To check which clock source is currently used, run the following command in the VM Guest. It should output <literal>kvm-clock</literal>:</para>
+      <screen><prompt>&gt;</prompt>cat /sys/devices/system/clocksource/clocksource0/current_clocksource</screen>
+      <important>
+         <title>
+            <literal>kvm-clock</literal> and NTP</title>
+         <!-- bsc#994806 -->
+         <para>When using <literal>kvm-clock</literal>, it is recommended to use NTP in the VM Guest, as well. Using NTP on the VM Host Server is also recommended.</para>
+      </important>
+      <sect2 xml:id="sec-kvm-managing-clock-other">
+         <title>Other timekeeping methods</title>
+         <para>The paravirtualized <literal>kvm-clock</literal> is currently not for Windows* operating systems. For Windows*, use the <literal>Windows Time Service Tools</literal> for time synchronization.</para>
+      </sect2>
+   </sect1>
+   <sect1 xml:id="sec-xen-guests-suse-time">
+      <title>Xen virtual machine clock settings</title>
+      <para>With Xen 4, the independent wallclock setting <filename>/proc/sys/xen/independent_wallclock</filename> used for time synchronization between Xen host and guest was removed. A new configuration option <option>tsc_mode</option> was introduced. It specifies a method of using the <emphasis>time stamp counter</emphasis> to synchronize the guest time with the Xen server. Its default value 0 handles the most hardware and software environments.</para>
+      <para>For more details on <option>tsc_mode</option>, see the <literal>xen-tscmode</literal> man page (<command>man 7 xen-tscmode</command>).</para>
+   </sect1>
+</chapter>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="rmt-overview">
+   <title>Overview</title>
+   <info/>
+   <para>The Repository Mirroring Tool (RMT) for SUSE Linux Enterprise <phrase role="productnumber">15 SP7</phrase> allows enterprise customers to optimize the management of SUSE Linux Enterprise software updates and subscription entitlements. It establishes a proxy system for SUSE® Customer Center with repositories and registration targets. This helps you to centrally manage software updates within a firewall on a per-system basis, while maintaining your corporate security policies and regulatory compliance.</para>
+   <para>RMT allows you to provision updates for all your devices running a product based on SUSE Linux Enterprise. By downloading these updates once and distributing them throughout the enterprise, you can set more restrictive firewall policies. This also reduces bandwidth usage, as there is no need to download the same updates for each device. RMT is fully supported and available as a download for customers with an active SUSE Linux Enterprise product subscription.</para>
+   <para>Repository Mirroring Tool provides functionality that can be useful in many situations, including the following:</para>
+   <itemizedlist>
+      <listitem>
+         <para>You want to update SUSE Linux Enterprise servers.</para>
+      </listitem>
+      <listitem>
+         <para>Not all machines in your environment can be connected to SUSE Customer Center to register and retrieve updates for bandwidth or security reasons.</para>
+      </listitem>
+      <listitem>
+         <para>There are SUSE Linux Enterprise hosts that are restricted and difficult to update without putting in place a custom update management solution.</para>
+      </listitem>
+      <listitem>
+         <para>You need to integrate additional external or internal repositories.</para>
+      </listitem>
+   </itemizedlist>
+   <figure>
+      <title>RMT</title>
+      <mediaobject>
+         <imageobject outputformat="print">
+            <imagedata fileref="media/rmt_schema.png" width="70%"/>
+         </imageobject>
+         <imageobject outputformat="screen">
+            <imagedata fileref="media/rmt_schema.png" width="70%"/>
+         </imageobject>
+      </mediaobject>
+   </figure>
+   <para>RMT replaces SMT (Subscription Management Tool) which was used for SLE 11 and SLE 12. For a feature comparison between RMT and SMT, see <xref linkend="sec-rmt-migrate-notes-features"/>.</para>
+</chapter>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-tools-intro">
+   <title>Virtualization tools</title>
+   <info>
+      <abstract>
+         <para>
+            <systemitem class="library">libvirt</systemitem> is a library that provides a common API for managing popular virtualization solutions, among them KVM and Xen. The library provides a normalized management API for these virtualization solutions, allowing a stable, cross-hypervisor interface for higher-level management tools. The library also provides APIs for management of virtual networks and storage on the VM Host Server. The configuration of each VM Guest is stored in an XML file.</para>
+         <para>With <systemitem class="library">libvirt</systemitem>, you can also manage your VM Guests remotely. It supports TLS encryption, x509 certificates and authentication with SASL. This enables managing VM Host Servers centrally from a single workstation, alleviating the need to access each VM Host Server individually.</para>
+         <para>Using the <systemitem class="library">libvirt</systemitem>-based tools is the recommended way of managing VM Guests. Interoperability between <systemitem class="library">libvirt</systemitem> and <systemitem class="library">libvirt</systemitem>-based applications has been tested and is an essential part of SUSE's support stance.</para>
+      </abstract>
+   </info>
+   <sect1 xml:id="sec-tools-intro-console">
+      <title>Virtualization console tools</title>
+      <para>
+         <systemitem class="library">libvirt</systemitem> includes several command-line utilities to manage virtual machines. The most important ones are:</para>
+      <variablelist>
+         <varlistentry>
+            <term>
+               <command>virsh</command> (Package: <package>libvirt-client</package>)</term>
+            <listitem>
+               <para>A command-line tool to manage VM Guests with similar functionality as the Virtual Machine Manager. <command>virsh</command> allows you to change a VM Guest's status, set up new guests and devices, or edit existing configurations. <command>virsh</command> is also useful to script VM Guest management operations.</para>
+               <para>
+                  <command>virsh</command> takes the first argument as a command and further arguments as options to this command:</para>
+               <screen>virsh [-c <replaceable>URI</replaceable>] <replaceable>COMMAND</replaceable><replaceable>DOMAIN-ID</replaceable> [OPTIONS]</screen>
+               <para>Like <command>zypper</command>, <command>virsh</command> can also be called without a command. In this case, it starts a shell waiting for your commands. This mode is useful when having to run subsequent commands:</para>
+               <screen>~&gt; virsh -c qemu+ssh://wilber@mercury.example.com/system
+Enter passphrase for key '/home/wilber/.ssh/id_rsa':
+Welcome to virsh, the virtualization interactive terminal.
+
+Type:  'help' for help with commands
+       'quit' to quit
+
+virsh # hostname
+mercury.example.com</screen>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>virt-install</command> (Package: <package>virt-install</package>)</term>
+            <listitem>
+               <para>A command-line tool for creating new VM Guests using the <systemitem class="library">libvirt</systemitem> library. It supports graphical installations via VNC or <xref linkend="gloss-vt-acronym-spice"/> protocols. Given suitable command-line arguments, <command>virt-install</command> can run unattended. This allows for easy automation of guest installs. <command>virt-install</command> is the default installation tool used by the Virtual Machine Manager.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>remote-viewer</command> (Package: <package>virt-viewer</package>)</term>
+            <listitem>
+               <para>A simple viewer of a remote desktop. It supports SPICE and VNC protocols.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>virt-clone</command> (Package: <package>virt-install</package>)</term>
+            <listitem>
+               <para>A tool for cloning existing virtual machine images using the <systemitem class="library">libvirt</systemitem> hypervisor management library.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>virt-host-validate</command> (Package: <package>libvirt-client</package>)</term>
+            <listitem>
+               <para>A tool that validates whether the host is configured in a suitable way to run <systemitem class="library">libvirt</systemitem> hypervisor drivers.</para>
+            </listitem>
+         </varlistentry>
+      </variablelist>
+   </sect1>
+   <sect1 xml:id="sec-tools-intro-gui">
+      <title>Virtualization GUI tools</title>
+      <para>The following libvirt-based graphical tools are available on <phrase role="productname">SUSE Linux Enterprise Server</phrase>. All tools are provided by packages carrying the tool's name.</para>
+      <variablelist>
+         <varlistentry>
+            <term>Virtual Machine Manager (package: <package>virt-manager</package>)</term>
+            <listitem>
+               <para>The Virtual Machine Manager is a desktop tool for managing VM Guests. It provides the ability to control the lifecycle of existing machines (start/shutdown, pause/resume, save/restore) and create new VM Guests. It allows managing multiple types of storage and virtual networks. It provides access to the graphical console of VM Guests with a built-in VNC viewer and can be used to view performance statistics. <command>virt-manager</command> supports connecting to a local <systemitem class="daemon">libvirtd</systemitem>, managing a local VM Host Server, or a remote <systemitem class="daemon">libvirtd</systemitem> managing a remote VM Host Server.</para>
+               <informalfigure>
+                  <mediaobject>
+                     <imageobject outputformat="print">
+                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
+                     </imageobject>
+                     <imageobject outputformat="screen">
+                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
+                     </imageobject>
+                  </mediaobject>
+               </informalfigure>
+               <para>To start the Virtual Machine Manager, enter <command>virt-manager</command> at the command prompt.</para>
+               <note>
+                  <para>To disable automatic USB device redirection for VM Guest using spice, either launch <command>virt-manager</command> with the <option>--spice-disable-auto-usbredir</option> parameter or run the following command to persistently change the default behavior:</para>
+                  <screen><prompt>&gt;</prompt>dconf write /org/virt-manager/virt-manager/console/auto-redirect false</screen>
+               </note>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>virt-viewer</command> (Package: <package>virt-viewer</package>)</term>
+            <listitem>
+               <para>A viewer for the graphical console of a VM Guest. It uses SPICE (configured by default on the VM Guest) or VNC protocols and supports TLS and x509 certificates. VM Guests can be accessed by name, ID or UUID. If the guest is not already running, the viewer can be told to wait until the guest starts, before attempting to connect to the console. <command>virt-viewer</command> is not installed by default and is available after installing the package <systemitem class="resource">virt-viewer</systemitem>.</para>
+               <note>
+                  <para>To disable automatic USB device redirection for VM Guest using spice, add an empty filter using the <option>--spice-usbredir-auto-redirect-filter=''</option> parameter.</para>
+               </note>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>
+               <command>yast2 vm</command> (Package: <package>yast2-vm</package>)</term>
+            <listitem>
+               <para>A YaST module that simplifies the installation of virtualization tools and can set up a network bridge:</para>
+               <informalfigure pgwide="0">
+                  <mediaobject>
+                     <imageobject outputformat="print">
+                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
+                     </imageobject>
+                     <imageobject outputformat="screen">
+                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
+                     </imageobject>
+                  </mediaobject>
+               </informalfigure>
+            </listitem>
+         </varlistentry>
+      </variablelist>
+   </sect1>
+</chapter>

@@ -1,0 +1,97 @@
+:root {
+    --nominal-page-width: 170mm;
+    --body-font-size: 11pt;
+    --body-font-family: Arial, Segoe;
+    --lineheight: 160%;
+    --text-align: justify;
+
+    --on-warning-color: black;
+    --warning-color: white;
+    --warning-border-style: none;
+    --warning-border-color: red;
+
+    --on-important-color: black;
+    --important-color: white;
+    --important-border-style: none;
+    --important-border-color: red;
+
+    --on-note-color: #404040;
+    --note-color: white;
+    --note-border-style: none;
+    --note-border-color: blue;
+
+    --pre-font-size: 10pt;
+    --pre-background-color: #E3F8F1;
+
+    --suse-fg: #008657;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: var(--suse-fg);
+}
+
+/* pre ========================================================================================= */
+pre code {
+    color: #2020A0;
+}
+
+.command {
+    color: black;
+    font-weight: bold;
+}
+
+
+.systemitem.username,
+.package {
+    font-family: monospace
+}
+
+.keycap {
+    font-family: monospace;
+    background-color: #DEDFE0;
+}
+
+.keycombo > span::after {
+    content: '—';
+    color:blue;
+    background-color: white;
+}
+.keycombo > span:last-child::after {
+    content: ''
+}
+
+.guimenu {
+    font-style: italic
+}
+.menuchoice > .guimenu::after {
+    content: ' > '
+}
+.menuchoice > .guimenu:last-child::after {
+    content: none
+}
+
+
+.arch-start,
+.arch-end {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 1px;
+    border-radius: 6px;
+}
+
+.icon {
+    text-align: left
+}
+
+.compact .icon {
+    transform:scale(0.7)
+}
+
+.xref,
+.document-xref {font-style:italic}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-upgrade-finish">
+   <title>Finishing the upgrade</title>
+   <info>
+      <abstract>
+         <para>After the upgrade, you need to perform some additional tasks. The following chapter guides you through these steps.</para>
+      </abstract>
+   </info>
+   <sect1 xml:id="sec-upgrade-finish-old-packages">
+      <title>Check for old packages</title>
+      <para>Use <command>zypper packages</command> to check for orphaned and unneeded packages.</para>
+      <para>Orphaned Packages are no longer available in any of the configured package repositories. They can no longer get updated and become unsupported.</para>
+      <para>For a list of orphaned packages, run:</para>
+      <screen><prompt>&gt;</prompt><command>zypper packages --orphaned</command></screen>
+      <para>Unneeded packages are dependencies of packages that have been installed either explicitly by the user or implicitly as part a pattern or product, and that have been removed in the meantime. They are usually no longer needed and should be removed, too.</para>
+      <para>For a list of unneeded packages, run:</para>
+      <screen><prompt>&gt;</prompt><command>zypper packages --unneeded</command></screen>
+      <tip>
+         <para>To avoid unneeded packages, use <command>zypper rm</command> with the <option>--clean-deps</option> option or YaST with <menuchoice>
+               <guimenu>Options</guimenu>
+               <guimenu>Clean up when deleting packages</guimenu>
+            </menuchoice> enabled.</para>
+      </tip>
+      <para>You can combine both lists into one:</para>
+      <screen><prompt>&gt;</prompt><command>zypper packages --orphaned --unneeded</command></screen>
+      <para>Use these lists to determine which packages are still needed and which can be safely removed.</para>
+      <warning>
+         <title>Do not remove packages you need</title>
+         <para>If packages are renamed or removed from a pattern or product, <command>zypper</command> may no longer consider them explicitly installed and mark them as unneeded, even though they are still crucial for your installation.</para>
+         <para>Carefully review the list of packages you are removing.</para>
+      </warning>
+      <para>To remove all orphaned and unneeded packages with a single command, run:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper rm $(zypper --no-refresh packages --orphaned --unneeded | gawk '{print $5}' | tail -n +5)</command></screen>
+      <para>Exclude a single package or pattern from being uninstalled:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper rm $(zypper --no-refresh packages --orphaned --unneeded | gawk '{print $5}' | tail -n +5 | grep -v <replaceable>PACKAGE_TO_EXCLUDE</replaceable>)</command></screen>
+      <para>Exclude multiple packages defined in a text file, separated by a newline:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper rm $(zypper --no-refresh packages --orphaned --unneeded | gawk '{print $5}' | tail -n +5 | grep -v -f <replaceable>/PACKAGES/TO/KEEP.txt</replaceable>)</command></screen>
+   </sect1>
+   <sect1 xml:id="sec-uggrade-finish-config-files">
+      <title>Review your configuration files</title>
+      <para>Check for any <filename>*.rpmnew</filename> and <filename>*.rpmsave</filename> files. When an upgrade includes changes to a default configuration file that has been altered after package installation, instead of overwriting the file, one of these file types is created. While <filename>*.rpmnew</filename> contains the new default configuration and leaves your altered file untouched, <filename>*.rpmsave</filename> is a copy of your altered configuration that has been replaced by the new default file.</para>
+      <para>If you find any of these files, examine their content and merge desirable changes. You do not need to search the whole file system, only the <filename>/etc</filename> directory. Use the following command:</para>
+      <screen><prompt>&gt;</prompt><command>find /etc/ -name "*.rpmnew" -o -name "*.rpmsave"</command></screen>
+   </sect1>
+   <!-- SLE-23641 -->
+   <sect1 xml:id="sec-upgrade-finish-python3">
+      <title>Enable the <literal>Python 3</literal> module</title>
+      <para>
+         <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 uses Python 3.6 by default. Python 3.9 was added in <phrase role="productname">SLES</phrase> 15 SP3 as a more recent alternative. This version is no longer supported as of <phrase role="productname">SLES</phrase> 15 SP4. Instead, recent Python versions with important updates and security fixes are available through the <literal>Python 3</literal> module.</para>
+      <para>If you installed Python 3.9 under <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP3, enable the <literal>Python 3</literal> module with:</para>
+      <screen><prompt>&gt;</prompt><command>sudo</command><command>SUSEConnect -p sle-module-python3/15.7/<replaceable>x86_64</replaceable></command>.</screen>
+      <para>Alternatively, you can return to the default Python version by removing 3.9 with <command>zypper remove -u python39</command>.</para>
+   </sect1>
+   <sect1 xml:id="sec-upgrade-finish-xfs4">
+      <title>Reformat XFS v4 devices</title>
+      <para>
+         <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the <quote>on-disk format</quote> (v5) of the XFS file system. The main advantages of this format are automatic checksums of all XFS metadata, file type support, and support for a larger number of access control lists for a file.</para>
+      <para>Note that this format is not supported by SUSE Linux Enterprise kernels older than version 3.12, by <literal>xfsprogs</literal> older than version 3.2.0, and GRUB 2 versions released before SUSE Linux Enterprise 12.</para>
+      <important>
+         <title>V4 is deprecated</title>
+         <para>XFS is deprecating file systems with the V4 format. This file system format was created by the command:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command> mkfs.xfs -m crc=0 <replaceable>DEVICE</replaceable></screen>
+         <para>The format was used in SLE 11 and older releases, and it currently creates a warning message by <command>dmesg</command>:</para>
+         <screen>Deprecated V4 format (crc=0) will not be supported after September 2030</screen>
+         <para>If you see the message above in the output of the <command>dmesg</command> command, it is recommended that you update your file system to the V5 format:</para>
+         <procedure>
+            <step>
+               <para>Back up your data to another device.</para>
+            </step>
+            <step>
+               <para>Create the file system on the device.</para>
+               <screen><prompt>&gt;</prompt><command>sudo</command> mkfs.xfs -m crc=1 <replaceable>DEVICE</replaceable></screen>
+            </step>
+            <step>
+               <para>Restore the data from the backup on the updated device.</para>
+            </step>
+         </procedure>
+      </important>
+   </sect1>
+</chapter>

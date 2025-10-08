@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appendix xmlns="http://docbook.org/ns/docbook"
+          xmlns:its="http://www.w3.org/2005/11/its"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="5.2"
+          xml:id="cha-xmtoxl"><!-- xen2libvirt --><!-- xm vs xl --><!-- external ref --><!-- savin xen to xm -->
+   <title>XM, XL toolstacks, and the <systemitem class="library">libvirt</systemitem> framework</title>
+   <info/>
+   <sect1 xml:id="sec-xmtoxl-intro">
+      <title>Xen toolstacks</title>
+      <para>Since the early Xen 2.x releases, <command>xend</command> has been the de facto toolstack for managing Xen installations. In Xen 4.1, a new toolstack called libxenlight (also known as libxl) was introduced with technology preview status. libxl is a small, low-level library written in C. It has been designed to provide a simple API for all client toolstacks (<link xlink:href="https://wiki.xen.org/wiki/XAPI">XAPI</link>, <systemitem class="library">libvirt</systemitem>, xl). In Xen 4.2, libxl was promoted to supported status and <command>xend</command> was marked deprecated. <command>xend</command> has been included in the Xen 4.3 and 4.4 series to give users enough time to convert their tooling to libxl. It has been removed from the upstream Xen project and is no longer provided starting with the Xen 4.5 series and <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 SP1.</para>
+      <para>Although SLES 11 SP3 contains Xen 4.2, SUSE retained the <command>xend</command> toolstack since making such an invasive change in a service pack would be too disruptive for SUSE Linux Enterprise customers. However, SLES 12 provides a suitable opportunity to move to the new libxl toolstack and remove the deprecated, unmaintained <command>xend</command> stack. Starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 SP1, <command>xend</command> is no longer supported.</para>
+      <para>One of the major differences between <command>xend</command> and libxl is that the former is stateful, while the latter is stateless. With <command>xend</command>, all client applications such as <command>xm</command> and <systemitem class="library">libvirt</systemitem> see the same system state. <command>xend</command> maintains the state for the entire Xen host. In libxl, client applications such as <command>xl</command> or <systemitem class="library">libvirt</systemitem> must maintain state. Thus domains created with <command>xl</command> are not visible or known to other libxl applications such as <systemitem class="library">libvirt</systemitem>. Generally, it is discouraged to mix and match libxl applications and is preferred that a single libxl application be used to manage a Xen host. In <phrase role="productname">SUSE Linux Enterprise Server</phrase>, we recommend using <systemitem class="library">libvirt</systemitem> to manage Xen hosts. This allows management of the Xen system through <systemitem class="library">libvirt</systemitem> applications such as <command>virt-manager</command>, <command>virt-install</command>, <command>virt-viewer</command>, libguestfs, etc. If <command>xl</command> is used to manage the Xen host, any virtual machines under its management are not accessible to <systemitem class="library">libvirt</systemitem>. Hence, they are not accessible to any of the <systemitem class="library">libvirt</systemitem> applications.</para>
+      <sect2 xml:id="sec-xmtoxl-upgrade">
+         <title>Upgrading from xend/xm to xl/libxl</title>
+         <para>The <command>xl</command> application, along with its configuration format (see <command>man xl.cfg</command>), was designed to be backward-compatible with the <command>xm</command> application and its configuration format (see <command>man xm.cfg</command>). Existing <command>xm</command> configuration should be usable with <command>xl</command>. Since libxl is stateless, and <command>xl</command> does not support the notion of managed domains, SUSE recommends using <systemitem class="library">libvirt</systemitem> to manage Xen hosts. SUSE has provided a tool called <command>xen2libvirt</command>, which provides a simple mechanism to import domains previously managed by <command>xend</command> into <systemitem class="library">libvirt</systemitem>. See <xref linkend="xen-xen2libvirt"/> for more information on <command>xen2libvirt</command>.</para>
+      </sect2>
+      <sect2 xml:id="sec-xmltoxl-design">
+         <title>XL design</title>
+         <para>The basic structure of every <command>xl</command> command is:</para>
+         <screen><command>xl subcommand</command><option>OPTIONS</option><replaceable>DOMAIN</replaceable></screen>
+         <para>
+            <replaceable>DOMAIN</replaceable> is the numeric domain ID, or the domain name (which is internally translated to the domain ID), and <replaceable>OPTIONS</replaceable> are subcommand specific options.</para>
+         <para>Although xl/libxl was designed to be backward-compatible with xm/xend, there are a few differences that should be noted:</para>
+         <itemizedlist mark="bullet" spacing="normal">
+            <listitem>
+               <para>Managed or persistent domains. <systemitem class="library">libvirt</systemitem> now provides this functionality.</para>
+            </listitem>
+            <listitem>
+               <para>xl/libxl does not support Python code in the domain configuration files.</para>
+            </listitem>
+            <listitem>
+               <para>xl/libxl does not support creating domains from SXP format configuration files (<command>xm</command>
+                  <option>create</option> -F).</para>
+            </listitem>
+            <listitem>
+               <para>xl/libxl does not support sharing storage across DomU's via <command>w!</command> in domain configuration files.</para>
+            </listitem>
+         </itemizedlist>
+         <para>xl/libxl is new and under heavy development, hence a few features are still missing with regard to the xm/xend toolstack:</para>
+         <itemizedlist mark="bullet" spacing="normal">
+            <listitem>
+               <para>SCSI LUN/Host pass-through (PVSCSI)</para>
+            </listitem>
+            <listitem>
+               <para>USB pass-through (PVUSB)</para>
+            </listitem>
+            <listitem>
+               <para>Direct Kernel Boot for fully virtualized Linux guests for Xen</para>
+            </listitem>
+         </itemizedlist>
+      </sect2>
+      <sect2 xml:id="sec-xmtoxl-checklist">
+         <title>Checklist before upgrade</title>
+         <para>Before upgrading a SLES 11 SP4 Xen host to SLES 15:</para>
+         <itemizedlist mark="bullet" spacing="normal">
+            <listitem>
+               <para>You must remove any Python code from your xm domain configuration files.</para>
+            </listitem>
+            <listitem>
+               <para>It is recommended to capture the libvirt domain XML from all existing virtual machines using <command>virsh</command>
+                  <option>dumpxml</option>
+                  <replaceable>DOMAIN_NAME</replaceable>
+                  <replaceable>DOMAIN_NAME.xml</replaceable>.</para>
+            </listitem>
+            <listitem>
+               <para>It is recommended to do a backup of <filename>/etc/xen/xend-config.sxp</filename> and <filename>/boot/grub/menu.lst</filename> files to keep references of previous parameters used for Xen.</para>
+            </listitem>
+         </itemizedlist>
+         <note>
+            <para>Currently, live migrating virtual machines running on a SLES 11 SP4 Xen host to a SLES 15 Xen host is not supported. The <command>xend</command> and libxl toolstacks are not runtime-compatible. Virtual machine downtime is required to move the virtual machines.</para>
+         </note>
+      </sect2>
+   </sect1>
+   <!-- xen2libvirt -->
+   <xi:include href="xm_vs_xl_xen2libvirt.xml"/>
+   <!-- xm vs xl -->
+   <!--
+ aginies: 20140824: TODO
+ - fill missing help in task column
+ - more example could be usefull
+ - (-) and (+) are still there: even if table are usefull, this help
+   to quickly see if the option was removed or added
+-->
+   <xi:include href="xm_vs_xl.xml"/>
+   <!-- external ref -->
+   <xi:include href="xm_vs_xl_links.xml"/>
+   <!-- savin xen to xm -->
+   <sect1 xml:id="sec-libvirt-managing-export-Xen-xm">
+      <title>Saving a Xen guest configuration in an <command>xm</command> compatible format</title>
+      <para>Although <command>xl</command> is now the current toolkit for managing Xen guests (apart from the preferred <systemitem class="library">libvirt</systemitem>), you may need to export the guest configuration to the previously used <command>xm</command> format. To do this, follow these steps:</para>
+      <procedure>
+         <step>
+            <para>First export the guest configuration to a file:</para>
+            <screen><prompt>&gt;</prompt>virsh dumpxml guest_id &gt; guest_cfg.xml</screen>
+         </step>
+         <step>
+            <para>Then convert the configuration to the <command>xm</command> format:</para>
+            <screen><prompt>&gt;</prompt>virsh domxml-to-native xen-xm guest_cfg.xml &gt; guest_xm_cfg</screen>
+         </step>
+      </procedure>
+   </sect1>
+</appendix>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook"
+       xmlns:its="http://www.w3.org/2005/11/its"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="5.2"
+       xml:id="sec-bootproblem-aarch64">
+   <title>Dealing with boot and installation problems</title>
+   <info/>
+   <para>Although <phrase role="productname">SUSE® Linux Enterprise Server</phrase> undergoes an extensive test program, problems may occasionally occur during boot or installation.</para>
+   <sect2 xml:id="sec-bootproblem-aarch64-boot">
+      <title>Boot problems</title>
+      <para>Boot problems may prevent the YaST installer from starting on your system. Another symptom is failure to boot after the installation has been completed.</para>
+      <variablelist>
+         <varlistentry>
+            <term>Machine boots the installed system instead of the installation medium</term>
+            <listitem>
+               <para>Change the boot sequence in your machine's BIOS. Refer to the documentation supplied with your hardware for further information.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>The system hangs</term>
+            <listitem>
+               <para>Change the console on your system so that the kernel outputs are visible. Be sure to check the last few lines of output. This is normally done by pressing <keycombo>
+                     <keycap function="control"/>
+                     <keycap function="alt"/>
+                     <keycap>F10</keycap>
+                  </keycombo>. If you cannot resolve the problem, consult the <phrase role="productname">SUSE Linux Enterprise Server</phrase> support staff. To log all system messages at boot time, use a serial connection as described in <xref linkend="sec-x86-prep-installation-methods"/>.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>Boot disk</term>
+            <listitem>
+               <para>The boot disk is a useful interim solution for boot issues. If you have difficulties setting the other configurations, or if you want to postpone the decision regarding the final boot mechanism, use a boot disk. For more details on creating boot disks, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
+                  <xref linkend="vle-grub2-mkrescue" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            </listitem>
+         </varlistentry>
+      </variablelist>
+   </sect2>
+   <sect2 xml:id="sec-bootproblem-aarch64-install">
+      <title>Problems installing</title>
+      <para>If an unexpected problem occurs during installation, information is needed to determine the cause of the problem. Use the following directions to help with troubleshooting:</para>
+      <itemizedlist mark="bullet" spacing="normal">
+         <listitem>
+            <para>Check the outputs on the various consoles. You can switch consoles with the key combination <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="alt"/>
+                  <keycap>Fn</keycap>
+               </keycombo>. For example, obtain a shell in which to execute various commands by pressing <keycombo>
+                  <keycap function="control"/>
+                  <keycap function="alt"/>
+                  <keycap>F2</keycap>
+               </keycombo>.</para>
+         </listitem>
+         <listitem>
+            <para>Try launching the installation with <quote>Safe Settings</quote> (press <keycap>F5</keycap> on the installation screen and choose <guimenu>Safe Settings</guimenu>). If the installation works without problems in this case, there is an incompatibility that causes either <systemitem>ACPI</systemitem> or <systemitem>APIC</systemitem> to fail. In some cases, a firmware update fixes this problem.</para>
+         </listitem>
+         <listitem>
+            <para>Check the system messages on a console in the installation system by entering the command <command>dmesg -T</command>.</para>
+         </listitem>
+      </itemizedlist>
+   </sect2>
+   <sect2 xml:id="sec-bootproblem-aarch64-redirect">
+      <title>Initiating installation instead of booting</title>
+      <para>The default option in the boot menu of the installation medium for <phrase role="productname">SUSE Linux Enterprise Server</phrase> boots the machine into the already installed system. To initiate the installation process instead, choose one of the available installation options in the boot menu.</para>
+   </sect2>
+</sect1>

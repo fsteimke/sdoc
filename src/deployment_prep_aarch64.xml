@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-aarch64">
+   <title>Installation on AArch64</title>
+   <info>
+      <abstract>
+         <para>This chapter describes the steps necessary to prepare for the installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase> on AArch64 computers. It introduces the steps required to prepare for various installation methods. The list of hardware requirements provides an overview of systems supported by SUSE Linux Enterprise Server. Find information about available installation methods and several common known problems. Also learn how to control the installation, provide installation media, and boot with regular methods.</para>
+      </abstract>
+   </info>
+   <remark>Review the chapter for SLE Micro</remark>
+   <xi:include href="deployment_prep_aarch64_nsysreqs.xml"/>
+   <xi:include href="deployment_prep_aarch64_choose.xml"/>
+   <xi:include href="deployment_prep_aarch64_boot.xml"/>
+   <xi:include href="deployment_prep_aarch64_media.xml"/>
+   <xi:include href="aarch64_inst_problem.xml"/>
+   <xi:include href="deployment_prep_aarch64_raspi.xml"/>
+</chapter>

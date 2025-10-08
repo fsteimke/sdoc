@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+         xmlns:its="http://www.w3.org/2005/11/its"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2"
+         xml:id="cha-security-auth"><!-- ============================================================ --><!-- ============================================================ --><!-- ============================================================ -->
+   <title>Setting up authentication clients using YaST</title>
+   <info>
+      <abstract>
+         <para>Whereas Kerberos is used for authentication, LDAP is used for authorization and identification. Both can work together. For more information about LDAP, see <xref linkend="cha-security-ldap"/>, and about Kerberos, see <xref linkend="cha-security-kerberos"/>.</para>
+      </abstract>
+   </info>
+   <sect1 xml:id="sec-security-auth-yast-client">
+      <title>Configuring an authentication client with YaST</title>
+      <para>YaST allows setting up authentication to clients using different modules:</para>
+      <itemizedlist version="5.2">
+         <listitem>
+            <formalpara>
+               <title>
+                  <guimenu>User logon management</guimenu>
+               </title>
+               <para>Use both an identity service (usually LDAP) and a user authentication service (usually Kerberos). This option is based on SSSD and in the majority of cases is best suited for joining Active Directory domains.</para>
+            </formalpara>
+            <para>This module is described in <xref linkend="sec-security-ad-sssd"/>.</para>
+         </listitem>
+         <listitem>
+            <formalpara>
+               <title>
+                  <guimenu>Windows domain membership</guimenu>
+               </title>
+               <para>Join an Active Directory (which entails use of Kerberos and LDAP). This option is based on <command>winbind</command> and is best suited for joining an Active Directory domain if support for NTLM or cross-forest trusts is necessary.</para>
+            </formalpara>
+            <para>This module is described in <xref linkend="sec-security-ad-winbind"/>.</para>
+         </listitem>
+         <!-- commenting out, may be removed because of changes to 389ds and
+Kerberos. cschroder, 16-12-2020
+ <listitem>
+  <formalpara>
+   <title><guimenu>LDAP and Kerberos authentication</guimenu></title>
+   <para>
+    Allows setting up LDAP identities and Kerberos authentication
+    independently from each other and provides fewer options. While this
+    module also uses SSSD, it is not as well suited for connecting to &ad;
+    as the previous two options.
+   </para>
+  </formalpara>
+  <para>
+   This module is described in:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     LDAP: <xref linkend="sec-security-ldap-yast-client" os="sles;osuse"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &krb;: <xref linkend="sec-security-kerberos-yast-client"/>
+    </para>
+ </listitem>
+  </itemizedlist>
+ </listitem>-->
+      </itemizedlist>
+   </sect1>
+   <sect1 xml:id="sec-security-auth-sssd">
+      <title>SSSD</title>
+      <para>Two of the YaST modules are based on SSSD: <guimenu>User Logon Management</guimenu> and <guimenu>LDAP and Kerberos Authentication</guimenu>.</para>
+      <para>SSSD stands for System Security Services Daemon. SSSD talks to remote directory services that provide user data and provides authentication methods, such as LDAP, Kerberos, or Active Directory (AD). It also provides an NSS (Name Service Switch) and PAM (Pluggable Authentication Module) interface.</para>
+      <para>SSSD can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable.</para>
+      <sect2 xml:id="sec-security-auth-sssd-status">
+         <title>Checking the status</title>
+         <para>After running one of the YaST authentication modules, you can check whether SSSD is running with:</para>
+         <screen><prompt role="root">#</prompt><command>systemctl status sssd</command>
+sssd.service - System Security Services Daemon
+   Loaded: loaded (/usr/lib/systemd/system/sssd.service; enabled)
+   Active: active (running) since Thu 2015-10-23 11:03:43 CEST; 5s ago
+   [...]</screen>
+      </sect2>
+      <sect2 xml:id="sec-security-auth-sssd-cache">
+         <title>Caching</title>
+         <para>To allow logging in when the authentication back-end is unavailable, SSSD uses its cache even if it was invalidated. This happens until the back-end is available again.</para>
+         <para>To invalidate the cache, run <command>sss_cache -E</command> (the command <command>sss_cache</command> is part of the package <package>sssd-tools</package>).</para>
+         <para>To remove the SSSD cache, run:</para>
+         <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl stop sssd</command><prompt>&gt;</prompt><command>sudo</command><command>rm -f /var/lib/sss/db/*</command><prompt>&gt;</prompt><command>sudo</command><command>systemctl start sssd</command></screen>
+      </sect2>
+   </sect1>
+</chapter>

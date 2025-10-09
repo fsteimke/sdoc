@@ -57,10 +57,10 @@ have a connection to the private portion of the Platform key.--></para>
                <title>Secure boot support</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="70%"/>
+                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="70%"/>
+                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -75,10 +75,10 @@ even pursue both in parallel. -->
             <title>UEFI: secure boot process</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="50%"/>
+                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="46%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="80%"/>
+                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -104,8 +104,7 @@ even pursue both in parallel. -->
          <para>UEFI key lists are of the first type, as this allows online updating, adding and blacklisting of keys, drivers and firmware fingerprints. It is the second type of variable, the <quote>Boot Services Only Variable</quote>, that helps to implement Secure Boot in a secure and open source-friendly manner, and thus compatible with GPLv3.</para>
          <para>SUSE starts with <systemitem>shim</systemitem>—a small and simple EFI boot loader signed by SUSE and Microsoft.</para>
          <para>This allows <systemitem>shim</systemitem> to load and execute.</para>
-         <para>
-            <systemitem>shim</systemitem> then goes on to verify that the boot loader it wants to load is trusted. <!-- ??? It will not use the SUSE KEK nor the
+         <para><systemitem>shim</systemitem> then goes on to verify that the boot loader it wants to load is trusted. <!-- ??? It will not use the SUSE KEK nor the
 Microsoft certificate for this. --> In a default situation <systemitem>shim</systemitem> will use an independent SUSE certificate embedded in its body. In addition, <systemitem>shim</systemitem> will allow to <quote>enroll</quote> additional keys, overriding the default SUSE key. In the following, we call them <quote>Machine Owner Keys</quote> or MOKs for short.</para>
          <para>Next the boot loader will verify and then boot the kernel, and the kernel will do the same on the modules.</para>
       </sect2>
@@ -140,8 +139,7 @@ Microsoft certificate for this. --> In a default situation <systemitem>shim</sys
                <screen><prompt>&gt;</prompt>pk12util -d . -i cert.p12</screen>
             </step>
             <step>
-               <para>
-                  <quote>Bless</quote> the kernel with the new signature using <command>pesign</command>:</para>
+               <para><quote>Bless</quote> the kernel with the new signature using <command>pesign</command>:</para>
                <screen><prompt>&gt;</prompt>pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \
   -o vmlinuz.signed -s</screen>
             </step>
@@ -310,8 +308,7 @@ MOK
                <para>PCI BAR access through sysfs is not possible.</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>custom_method</literal> in ACPI is not available.</para>
+               <para><literal>custom_method</literal> in ACPI is not available.</para>
             </listitem>
             <listitem>
                <para>debugfs for asus-wmi module is not available.</para>
@@ -339,32 +336,24 @@ media that will boot on both legacy architectures and UEFI platforms.
       <title>More information</title>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://uefi.org"/> — UEFI home page where you can find the current UEFI specifications.</para>
+            <para><link xlink:href="https://uefi.org"/> — UEFI home page where you can find the current UEFI specifications.</para>
          </listitem>
          <listitem>
             <para>Blog posts by Olaf Kirch and Vojtěch Pavlík (the chapter above is heavily based on these posts):</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>
-                     <link xlink:href="https://www.suse.com/c/uefi-secure-boot-plan/"/>
-                  </para>
+                  <para><link xlink:href="https://www.suse.com/c/uefi-secure-boot-plan/"/></para>
                </listitem>
                <listitem>
-                  <para>
-                     <link xlink:href="https://www.suse.com/c/uefi-secure-boot-overview/"/>
-                  </para>
+                  <para><link xlink:href="https://www.suse.com/c/uefi-secure-boot-overview/"/></para>
                </listitem>
                <listitem>
-                  <para>
-                     <link xlink:href="https://www.suse.com/c/uefi-secure-boot-details/"/>
-                  </para>
+                  <para><link xlink:href="https://www.suse.com/c/uefi-secure-boot-details/"/></para>
                </listitem>
             </itemizedlist>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://en.opensuse.org/openSUSE:UEFI"/> —UEFI with openSUSE.</para>
+            <para><link xlink:href="https://en.opensuse.org/openSUSE:UEFI"/> —UEFI with openSUSE.</para>
          </listitem>
       </itemizedlist>
    </sect1>

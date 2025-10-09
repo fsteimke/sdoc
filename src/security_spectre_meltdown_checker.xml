@@ -8,10 +8,8 @@
    <title>Spectre/Meltdown checker</title>
    <info>
       <abstract>
-         <para>
-            <command>spectre-meltdown-checker</command> is a shell script to test if your system is vulnerable to the several speculative execution vulnerabilities that are in nearly all CPUs manufactured in the past 20 years. This is a hardware flaw that potentially allows an attacker to read all data on the system. On cloud computing services, where multiple virtual machines are on a single physical host, an attacker can gain access to all virtual machines. Fixing these vulnerabilities requires redesigning and replacing CPUs. Until this happens, there are several software patches that mitigate these vulnerabilities. If you have kept your SUSE systems updated, all these patches should already be installed.</para>
-         <para>
-            <command>spectre-meltdown-checker</command> generates a detailed report. It is impossible to guarantee that your system is secure, but it shows you which mitigations are in place, and potential vulnerabilities.</para>
+         <para><command>spectre-meltdown-checker</command> is a shell script to test if your system is vulnerable to the several speculative execution vulnerabilities that are in nearly all CPUs manufactured in the past 20 years. This is a hardware flaw that potentially allows an attacker to read all data on the system. On cloud computing services, where multiple virtual machines are on a single physical host, an attacker can gain access to all virtual machines. Fixing these vulnerabilities requires redesigning and replacing CPUs. Until this happens, there are several software patches that mitigate these vulnerabilities. If you have kept your SUSE systems updated, all these patches should already be installed.</para>
+         <para><command>spectre-meltdown-checker</command> generates a detailed report. It is impossible to guarantee that your system is secure, but it shows you which mitigations are in place, and potential vulnerabilities.</para>
       </abstract>
    </info>
    <sect1 xml:id="sec-spectre-meltdown-options">
@@ -26,15 +24,14 @@
          <title>Output from spectre-meltdown-checker</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/spectre-meltdown.png" width="80%"/>
+               <imagedata fileref="media/spectre-meltdown.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/spectre-meltdown.png" width="100%"/>
+               <imagedata fileref="media/spectre-meltdown.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>
-      <para>
-         <command>spectre-meltdown-checker.sh --help</command> lists all options. It is useful to pipe plain text output, with no colors, to a file:</para>
+      <para><command>spectre-meltdown-checker.sh --help</command> lists all options. It is useful to pipe plain text output, with no colors, to a file:</para>
       <screen><prompt role="root">#</prompt>spectre-meltdown-checker.sh --no-color| tee <replaceable>filename.txt</replaceable></screen>
       <para>The previous examples are on a running system, which is the default. You may also run <command>spectre-meltdown-checker</command> offline by specifying the paths to the kernel, config and System.map files:</para>
       <screen><prompt role="root">#</prompt>cd /boot
@@ -48,8 +45,7 @@
          <varlistentry>
             <term>--verbose, -v</term>
             <listitem>
-               <para>Increase verbosity; repeat for more verbosity, for example <command>-v -v -v</command>
-               </para>
+               <para>Increase verbosity; repeat for more verbosity, for example <command>-v -v -v</command></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -67,8 +63,7 @@
       </variablelist>
       <important>
          <title>--disclaimer option</title>
-         <para>
-            <command>spectre-meltdown-checker.sh --disclaimer</command> provides important information about what the script does, and does not do.</para>
+         <para><command>spectre-meltdown-checker.sh --disclaimer</command> provides important information about what the script does, and does not do.</para>
       </important>
    </sect1>
    <sect1 xml:id="sec-spectre-meltdown-resources">
@@ -76,21 +71,16 @@
       <para>For more information, see the following references:</para>
       <itemizedlist>
          <listitem>
-            <para>SUSE Knowledge Base article #7022937, <citetitle>Security Vulnerability: Spectre Variant 4 (Speculative Store Bypass) aka CVE-2018-3639</citetitle>: <link xlink:href="https://www.suse.com/support/kb/doc/?id=7022937"/>
-            </para>
+            <para>SUSE Knowledge Base article #7022937, <citetitle>Security Vulnerability: Spectre Variant 4 (Speculative Store Bypass) aka CVE-2018-3639</citetitle>: <link xlink:href="https://www.suse.com/support/kb/doc/?id=7022937"/></para>
          </listitem>
          <listitem>
-            <para>
-               <citetitle>speed47/spectre-meltdown-checker</citetitle> source code on GitHub, with detailed references to relevant Common Vulnerabilities and Exposures (CVE): <link xlink:href="https://github.com/speed47/spectre-meltdown-checker"/>
-            </para>
+            <para><citetitle>speed47/spectre-meltdown-checker</citetitle> source code on GitHub, with detailed references to relevant Common Vulnerabilities and Exposures (CVE): <link xlink:href="https://github.com/speed47/spectre-meltdown-checker"/></para>
          </listitem>
          <listitem>
-            <para>SUSE Blog article, <citetitle>Meltdown and Spectre Performance</citetitle>: <link xlink:href="https://www.suse.com/c/meltdown-spectre-performance/"/>
-            </para>
+            <para>SUSE Blog article, <citetitle>Meltdown and Spectre Performance</citetitle>: <link xlink:href="https://www.suse.com/c/meltdown-spectre-performance/"/></para>
          </listitem>
          <listitem>
-            <para>SUSE Knowledge Base article #7022512, providing information on architectures, CVEs, and mitigations: <link xlink:href="https://www.suse.com/support/kb/doc/?id=7022512"/>
-            </para>
+            <para>SUSE Knowledge Base article #7022512, providing information on architectures, CVEs, and mitigations: <link xlink:href="https://www.suse.com/support/kb/doc/?id=7022512"/></para>
          </listitem>
       </itemizedlist>
    </sect1>

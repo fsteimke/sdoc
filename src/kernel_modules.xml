@@ -22,8 +22,7 @@ fuse                  106496  3
 nfsv3                  45056  1
 nfs_acl                16384  1 nfsv3</screen>
       <para>The output is divided into three columns. The <literal>Module</literal> column lists the names of the loaded modules, while the <literal>Size</literal> column displays the size of each module. The <literal>Used by</literal> column shows the number of referring modules and their names. This list may be incomplete.</para>
-      <para>To view detailed information about a specific kernel module, use the <command>modinfo <replaceable>MODULE_NAME</replaceable>
-         </command> command, where <replaceable>MODULE_NAME</replaceable> is the name of the desired kernel module. The <command>modinfo</command> binary resides in the <filename>/sbin</filename> directory that is not in the user's PATH environment variable. This means that you must specify the full path to the binary when running <command>modinfo</command> command as a regular user:</para>
+      <para>To view detailed information about a specific kernel module, use the <command>modinfo <replaceable>MODULE_NAME</replaceable></command> command, where <replaceable>MODULE_NAME</replaceable> is the name of the desired kernel module. The <command>modinfo</command> binary resides in the <filename>/sbin</filename> directory that is not in the user's PATH environment variable. This means that you must specify the full path to the binary when running <command>modinfo</command> command as a regular user:</para>
       <screen><prompt>&gt;</prompt>/sbin/modinfo kvm
 filename:       /lib/modules/6.4.0-150700.38-default/kernel/arch/x86/kvm/kvm.ko.zst
 license:        GPL
@@ -69,15 +68,10 @@ echo "blacklist nouveau" &gt;&gt; /etc/modprobe.d/60-blacklist-nouveau.conf
 reboot</screen>
          <para>To disable a kernel module temporarily only, blacklist it on-the-fly during the boot. To do this, press the <keycap>E</keycap> key when you see the boot screen. This drops you into a minimal editor that allows you to modify boot parameters. Locate the line that looks as follows:</para>
          <screen>linux /boot/vmlinuz...splash= silent quiet showopts</screen>
-         <para>Add the <command>modprobe.blacklist=<replaceable>MODULE_NAME</replaceable>
-            </command> command to the end of the line. For example:</para>
+         <para>Add the <command>modprobe.blacklist=<replaceable>MODULE_NAME</replaceable></command> command to the end of the line. For example:</para>
          <screen>linux /boot/vmlinuz...splash= silent quiet showopts modprobe.blacklist=nouveau</screen>
-         <para>Press <keycap>F10</keycap> or <keycombo>
-               <keycap function="control"/>
-               <keycap>X</keycap>
-            </keycombo> to boot with the specified configuration.</para>
-         <para>To blacklist a kernel module permanently via GRUB, open the <filename>/etc/default/grub</filename> file for editing, and add the <command>modprobe.blacklist=<replaceable>MODULE_NAME</replaceable>
-            </command> option to the <command>GRUB_CMDLINE_LINUX</command> command. Then run the <command>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</command> command to enable the changes.</para>
+         <para>Press <keycap>F10</keycap> or <keycombo><keycap function="control"/><keycap>X</keycap></keycombo> to boot with the specified configuration.</para>
+         <para>To blacklist a kernel module permanently via GRUB, open the <filename>/etc/default/grub</filename> file for editing, and add the <command>modprobe.blacklist=<replaceable>MODULE_NAME</replaceable></command> option to the <command>GRUB_CMDLINE_LINUX</command> command. Then run the <command>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</command> command to enable the changes.</para>
       </sect2>
    </sect1>
 </chapter>

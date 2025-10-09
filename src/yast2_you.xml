@@ -8,10 +8,7 @@
    <title>YaST online update</title>
    <info/>
    <para>SUSE offers a continuous stream of software security updates for your product. By default, the update applet is used to keep your system up to date. Refer to <xref linkend="sec-updater"/> for further information on the update applet. This chapter covers the alternative tool for updating software packages: YaST Online Update.</para>
-   <para>The current patches for <phrase role="productname">SUSE® Linux Enterprise Server</phrase> are available from an update software repository. If you have registered your product during the installation, an update repository is already configured. If you have not registered <phrase role="productname">SUSE Linux Enterprise Server</phrase>, you can do so by starting the <guimenu>Product Registration</guimenu> in YaST. Alternatively, you can manually add an update repository from a source you trust. To add or remove repositories, start the Repository Manager with <menuchoice>
-         <guimenu>Software</guimenu>
-         <guimenu>Software Repositories</guimenu>
-      </menuchoice> in YaST. Learn more about the Repository Manager in <xref linkend="sec-yast-software-instsource"/>.</para>
+   <para>The current patches for <phrase role="productname">SUSE® Linux Enterprise Server</phrase> are available from an update software repository. If you have registered your product during the installation, an update repository is already configured. If you have not registered <phrase role="productname">SUSE Linux Enterprise Server</phrase>, you can do so by starting the <guimenu>Product Registration</guimenu> in YaST. Alternatively, you can manually add an update repository from a source you trust. To add or remove repositories, start the Repository Manager with <menuchoice><guimenu>Software</guimenu><guimenu>Software Repositories</guimenu></menuchoice> in YaST. Learn more about the Repository Manager in <xref linkend="sec-yast-software-instsource"/>.</para>
    <note>
       <title>Error on accessing the update catalog</title>
       <para>If you are not able to access the update catalog, this may happen because of an expired subscription. Normally, <phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with a one-year or three-year subscription, during which you have access to the update catalog. This access will be denied after the subscription ends.</para>
@@ -44,19 +41,16 @@
    </variablelist>
    <sect1 xml:id="sec-onlineupdate-you-overview">
       <title>The online update dialog</title>
-      <para>To open the YaST <guimenu>Online Update</guimenu> dialog, start YaST and select <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Online Update</guimenu>
-         </menuchoice>. Alternatively, start it from the command line with <command>yast2 online_update</command>.</para>
+      <para>To open the YaST <guimenu>Online Update</guimenu> dialog, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Online Update</guimenu></menuchoice>. Alternatively, start it from the command line with <command>yast2 online_update</command>.</para>
       <para>The <guimenu>Online Update</guimenu> window consists of four sections.</para>
       <figure>
          <title>YaST online update</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_you.png" width="75%"/>
+               <imagedata fileref="media/yast2_you.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_you.png" width="75%"/>
+               <imagedata fileref="media/yast2_you.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -86,10 +80,7 @@
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>Each list entry in the <guimenu>Summary</guimenu> section consists of a symbol and the patch name. For an overview of the possible symbols and their meaning, press <keycombo>
-            <keycap function="shift"/>
-            <keycap>F1</keycap>
-         </keycombo>. Actions required by <literal>Security</literal> and <literal>Recommended</literal> patches are automatically preset. These actions are <guimenu>Autoinstall</guimenu>, <guimenu>Autoupdate</guimenu> and <guimenu>Autodelete</guimenu>.</para>
+      <para>Each list entry in the <guimenu>Summary</guimenu> section consists of a symbol and the patch name. For an overview of the possible symbols and their meaning, press <keycombo><keycap function="shift"/><keycap>F1</keycap></keycombo>. Actions required by <literal>Security</literal> and <literal>Recommended</literal> patches are automatically preset. These actions are <guimenu>Autoinstall</guimenu>, <guimenu>Autoupdate</guimenu> and <guimenu>Autodelete</guimenu>.</para>
       <para>If you install an up-to-date package from a repository other than the update repository, the requirements of a patch for this package may be fulfilled with this installation. In this case, a check mark is displayed in front of the patch summary. The patch is visible in the list until you mark it for installation. This does not install the patch (because the package already is up to date), but mark the patch as having been installed.</para>
       <para>Select an entry in the <guimenu>Summary</guimenu> section to view a short <guimenu>Patch Description</guimenu> at the bottom left corner of the dialog. The upper right section lists the packages included in the selected patch (a patch can consist of several packages). Click an entry in the upper right section to view details about the respective package that is included in the patch.</para>
    </sect1>
@@ -100,10 +91,7 @@
       <procedure>
          <title>Applying patches with YaST online update</title>
          <step>
-            <para>Start YaST and select <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Online Update</guimenu>
-               </menuchoice>.</para>
+            <para>Start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Online Update</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>To automatically apply all new patches (except <literal>optional</literal> ones) that are currently available for your system, click <guimenu>Apply</guimenu> or <guimenu>Accept</guimenu>.</para>
@@ -141,10 +129,10 @@
          <title>Viewing retracted patches and history</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
+               <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
+               <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -158,21 +146,15 @@
       <procedure>
          <title>Configuring the automatic online update</title>
          <step>
-            <para>After installation, start YaST and select <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Online Update</guimenu>
-               </menuchoice>. Choose <menuchoice>
-                  <guimenu>Configuration</guimenu>
-                  <guimenu>Online Update</guimenu>
-               </menuchoice>. If the <package>yast2-online-update-configuration</package> is not installed, you will be prompted to do that.</para>
+            <para>After installation, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Online Update</guimenu></menuchoice>. Choose <menuchoice><guimenu>Configuration</guimenu><guimenu>Online Update</guimenu></menuchoice>. If the <package>yast2-online-update-configuration</package> is not installed, you will be prompted to do that.</para>
             <figure>
                <title>YaST online update configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
+                     <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
+                     <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -199,28 +181,22 @@
             <para>To filter the patches by category (such as security or recommended), check <guimenu>Filter by Category</guimenu> and add the appropriate patch categories from the list. Only patches of the selected categories will be installed. It is a good practice to enable only automatic <guimenu>Security</guimenu> updates, and to manually review all others. Patching is normally reliable, but you may wish to test non-security patches, and roll them back if you encounter any problems.</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <guimenu>Packagemanager and YaST</guimenu> supply patches for package management and YaST features and modules.</para>
+                  <para><guimenu>Packagemanager and YaST</guimenu> supply patches for package management and YaST features and modules.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Security</guimenu> patches provide crucial updates and bugfixes.</para>
+                  <para><guimenu>Security</guimenu> patches provide crucial updates and bugfixes.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Recommended</guimenu> patches are optional bugfixes and enhancements.</para>
+                  <para><guimenu>Recommended</guimenu> patches are optional bugfixes and enhancements.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Optional</guimenu> are new packages.</para>
+                  <para><guimenu>Optional</guimenu> are new packages.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Other</guimenu> is equivalent to miscellaneous.</para>
+                  <para><guimenu>Other</guimenu> is equivalent to miscellaneous.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Document</guimenu> is unused.</para>
+                  <para><guimenu>Document</guimenu> is unused.</para>
                </listitem>
             </itemizedlist>
          </step>

@@ -17,18 +17,15 @@
    <sect1 xml:id="sec-ntp-yast">
       <title>Configuring an NTP client with YaST</title>
       <para>The NTP daemon (<systemitem class="daemon">chronyd</systemitem>) coming with the <systemitem>chrony</systemitem> package is preset to use the local computer hardware clock as a time reference. The precision of the hardware clock heavily depends on its time source. For example, an atomic clock or GPS receiver is a precise time source, while a common RTC chip is not a reliable time source. YaST simplifies the configuration of an NTP client.</para>
-      <para>In the YaST NTP client configuration (<menuchoice>
-            <guimenu>Network Services</guimenu>
-            <guimenu>NTP Configuration</guimenu>
-         </menuchoice>) window, you can specify when to start the NTP daemon, the type of the configuration source, and add custom time servers.</para>
+      <para>In the YaST NTP client configuration (<menuchoice><guimenu>Network Services</guimenu><guimenu>NTP Configuration</guimenu></menuchoice>) window, you can specify when to start the NTP daemon, the type of the configuration source, and add custom time servers.</para>
       <figure>
          <title>NTP configuration window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/ntp_client.png" width="70%"/>
+               <imagedata fileref="media/ntp_client.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/ntp_client.png" width="70%"/>
+               <imagedata fileref="media/ntp_client.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -74,10 +71,10 @@
             <title>Adding a time server</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/ntp_client_serveradd.png" width="70%"/>
+                  <imagedata fileref="media/ntp_client_serveradd.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/ntp_client_serveradd.png" width="70%"/>
+                  <imagedata fileref="media/ntp_client_serveradd.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -103,8 +100,7 @@
    <!-- =============================================================== -->
    <sect1 xml:id="sec-net-xntp-netconf">
       <title>Manually configuring NTP in the network</title>
-      <para>
-         <systemitem class="resource">chrony</systemitem> reads its configuration from the <filename>/etc/chrony.conf</filename> file. To keep the computer clock synchronized, you need to tell <systemitem class="resource">chrony</systemitem> what time servers to use. You can use specific server names or IP addresses, for example:</para>
+      <para><systemitem class="resource">chrony</systemitem> reads its configuration from the <filename>/etc/chrony.conf</filename> file. To keep the computer clock synchronized, you need to tell <systemitem class="resource">chrony</systemitem> what time servers to use. You can use specific server names or IP addresses, for example:</para>
       <screen>0.suse.pool.ntp.org
 1.suse.pool.ntp.org
 2.suse.pool.ntp.org
@@ -244,12 +240,10 @@ chronyc&gt; activity
       <title>Dynamic time synchronization at runtime</title>
       <!-- For reference see fate#306288 -->
       <para>Although <systemitem class="daemon">chronyd</systemitem> starts up normally on a system that boots without a network connection, the tool cannot resolve the DNS names of the time servers specified in the configuration file.</para>
-      <para>
-         <systemitem class="daemon">chronyd</systemitem> keeps trying to resolve the time server names specified by the <option>server</option>, <option>pool</option>, and <option>peer</option> directives in an increasing time interval until it succeeds.</para>
+      <para><systemitem class="daemon">chronyd</systemitem> keeps trying to resolve the time server names specified by the <option>server</option>, <option>pool</option>, and <option>peer</option> directives in an increasing time interval until it succeeds.</para>
       <para>If the time server will not be reachable when <systemitem class="daemon">chronyd</systemitem> is started, you can specify the <option>offline</option> option:</para>
       <screen>server <replaceable>server_address</replaceable> offline</screen>
-      <para>
-         <systemitem class="daemon">chronyd</systemitem> does not try to poll the server until it is enabled using the following command:</para>
+      <para><systemitem class="daemon">chronyd</systemitem> does not try to poll the server until it is enabled using the following command:</para>
       <screen><prompt role="root">#</prompt>chronyc online <replaceable>server_address</replaceable></screen>
       <para>When the <option>auto_offline</option> option is set, <systemitem class="daemon">chronyd</systemitem> assumes that the time server has gone offline when two requests have been sent to it without receiving a response. This option avoids the need to run the <literal>offline</literal> command from <command>chronyc</command> when disconnecting the network link.</para>
    </sect1>
@@ -281,7 +275,7 @@ refclock PHC /dev/ptp1:nocrossts poll 3 pps</screen>
       </itemizedlist>
       <para>For more information on individual drivers' options, see <command>man 8 chrony.conf</command>.</para>
    </sect1>
-   <sect1 xml:id="sec-net-xntp-etr">
+   <sect1 xml:id="sec-net-xntp-etr" arch="zseries">
       <title>Clock synchronization to an external time reference (ETR)</title>
       <!-- taken from bnc#341392; also see fate#301693 -->
       <para>Support for clock synchronization to an external time reference (ETR) is available. The external time reference sends an oscillator signal and a synchronization signal every 2**20 (2 to the power of 20) microseconds to keep TOD clocks of all connected servers synchronized.</para>

@@ -14,29 +14,20 @@
       <title>GUI-based guest installation</title>
       <tip>
          <title>Changing default options for new virtual machines</title>
-         <para>You can change default values that are applied when creating new virtual machines. For example, to set UEFI as the default firmware type for new virtual machines, select <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Preferences</guimenu>
-            </menuchoice> from Virtual Machine Manager's main menu, click <guimenu>New VM</guimenu> and set <guimenu>UEFI</guimenu> as the firmware default.</para>
+         <para>You can change default values that are applied when creating new virtual machines. For example, to set UEFI as the default firmware type for new virtual machines, select <menuchoice><guimenu>Edit</guimenu><guimenu>Preferences</guimenu></menuchoice> from Virtual Machine Manager's main menu, click <guimenu>New VM</guimenu> and set <guimenu>UEFI</guimenu> as the firmware default.</para>
          <figure>
             <title>Specifying default options for new VMs</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/default-vm-options.png" width="50%"/>
+                  <imagedata fileref="media/default-vm-options.png" width="46%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/default-vm-options.png" width="50%"/>
+                  <imagedata fileref="media/default-vm-options.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </figure>
       </tip>
-      <para>The <guimenu>New VM</guimenu> wizard helps you through the steps required to create a virtual machine and install its operating system. To start it, open the Virtual Machine Manager and select <menuchoice>
-            <guimenu>File</guimenu>
-            <guimenu>New Virtual Machine</guimenu>
-         </menuchoice>. Alternatively, start YaST and select <menuchoice>
-            <guimenu>Virtualization</guimenu>
-            <guimenu>Create Virtual Machines</guimenu>
-         </menuchoice>.</para>
+      <para>The <guimenu>New VM</guimenu> wizard helps you through the steps required to create a virtual machine and install its operating system. To start it, open the Virtual Machine Manager and select <menuchoice><guimenu>File</guimenu><guimenu>New Virtual Machine</guimenu></menuchoice>. Alternatively, start YaST and select <menuchoice><guimenu>Virtualization</guimenu><guimenu>Create Virtual Machines</guimenu></menuchoice>.</para>
       <procedure>
          <step>
             <para>Start the <guimenu>New VM</guimenu> wizard either from YaST or Virtual Machine Manager.</para>
@@ -115,28 +106,13 @@
       </procedure>
       <tip xml:id="tip-libvirt-inst-vmm-sticky">
          <title>Passing key combinations to virtual machines</title>
-         <para>The installation starts in a Virtual Machine Manager console window. Certain key combinations, such as <keycombo>
-               <keycap function="control"/>
-               <keycap function="alt"/>
-               <keycap>F1</keycap>
-            </keycombo>, are recognized by the VM Host Server but are not passed to the virtual machine. To bypass the VM Host Server, Virtual Machine Manager provides the <quote>sticky key</quote> functionality. Pressing <keycap function="control"/>, <keycap function="alt"/>, or <keycap function="shift"/> three times makes the key sticky, then you can press the remaining keys to pass the combination to the virtual machine.</para>
-         <para>For example, to pass <keycombo>
-               <keycap function="control"/>
-               <keycap function="alt"/>
-               <keycap>F2</keycap>
-            </keycombo> to a Linux virtual machine, press <keycap function="control"/> three times, then press <keycombo>
-               <keycap function="alt"/>
-               <keycap>F2</keycap>
-            </keycombo>. You can also press <keycap function="alt"/> three times, then press <keycombo>
-               <keycap function="control"/>
-               <keycap>F2</keycap>
-            </keycombo>.</para>
+         <para>The installation starts in a Virtual Machine Manager console window. Certain key combinations, such as <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo>, are recognized by the VM Host Server but are not passed to the virtual machine. To bypass the VM Host Server, Virtual Machine Manager provides the <quote>sticky key</quote> functionality. Pressing <keycap function="control"/>, <keycap function="alt"/>, or <keycap function="shift"/> three times makes the key sticky, then you can press the remaining keys to pass the combination to the virtual machine.</para>
+         <para>For example, to pass <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F2</keycap></keycombo> to a Linux virtual machine, press <keycap function="control"/> three times, then press <keycombo><keycap function="alt"/><keycap>F2</keycap></keycombo>. You can also press <keycap function="alt"/> three times, then press <keycombo><keycap function="control"/><keycap>F2</keycap></keycombo>.</para>
          <para>The sticky key functionality is available in the Virtual Machine Manager during and after installing a VM Guest.</para>
       </tip>
       <sect2 xml:id="tip-libvirt-inst-vmm-pxe">
          <title>Configuring the virtual machine for PXE boot</title>
-         <para>PXE boot enables your virtual machine to boot from the installation media via the network, instead of from a physical medium or an installation disk image. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="cha-deployment-prep-pxe" xrefstyle="%label &#34;%c&#34;"/> for more details about setting up a PXE boot environment.</para>
+         <para>PXE boot enables your virtual machine to boot from the installation media via the network, instead of from a physical medium or an installation disk image. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-deployment-prep-pxe" xrefstyle="%label &#34;%c&#34;"/> for more details about setting up a PXE boot environment.</para>
          <para>To let your VM boot from a PXE server, follow these steps:</para>
          <procedure>
             <step>
@@ -182,29 +158,21 @@
    <sect1 xml:id="sec-libvirt-inst-virt-install">
       <title>Installing from the command line with <command>virt-install</command>
       </title>
-      <para>
-         <command>virt-install</command> is a command-line tool that helps you create new virtual machines using the <systemitem class="library">libvirt</systemitem> library. It is useful if you cannot use the graphical user interface, or need to automatize the process of creating virtual machines.</para>
-      <para>
-         <command>virt-install</command> is a complex script with a lot of command line switches. The following are required. For more information, see the man page of <command>virt-install</command> (1).</para>
+      <para><command>virt-install</command> is a command-line tool that helps you create new virtual machines using the <systemitem class="library">libvirt</systemitem> library. It is useful if you cannot use the graphical user interface, or need to automatize the process of creating virtual machines.</para>
+      <para><command>virt-install</command> is a complex script with a lot of command line switches. The following are required. For more information, see the man page of <command>virt-install</command> (1).</para>
       <variablelist>
          <varlistentry>
             <term>General options</term>
             <listitem>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <option>--name <replaceable>VM_GUEST_NAME</replaceable>
-                        </option>: Specify the name of the new virtual machine. The name must be unique across all guests known to the hypervisor on the same connection. It is used to create and name the guest’s configuration file and you can access the guest with this name from <command>virsh</command>. Alphanumeric and <literal>_-.:+</literal> characters are allowed.</para>
+                     <para><option>--name <replaceable>VM_GUEST_NAME</replaceable></option>: Specify the name of the new virtual machine. The name must be unique across all guests known to the hypervisor on the same connection. It is used to create and name the guest’s configuration file and you can access the guest with this name from <command>virsh</command>. Alphanumeric and <literal>_-.:+</literal> characters are allowed.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <option>--memory <replaceable>REQUIRED_MEMORY</replaceable>
-                        </option>: Specify the amount of memory to allocate for the new virtual machine in megabytes.</para>
+                     <para><option>--memory <replaceable>REQUIRED_MEMORY</replaceable></option>: Specify the amount of memory to allocate for the new virtual machine in megabytes.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <option>--vcpus <replaceable>NUMBER_OF_CPUS</replaceable>
-                        </option>: Specify the number of virtual CPUs. For best performance, the number of virtual processors should be less than or equal to the number of physical processors.</para>
+                     <para><option>--vcpus <replaceable>NUMBER_OF_CPUS</replaceable></option>: Specify the number of virtual CPUs. For best performance, the number of virtual processors should be less than or equal to the number of physical processors.</para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -214,17 +182,13 @@
             <listitem>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <option>--paravirt</option>: set up a paravirtualized guest. This is the default if the VM Host Server supports paravirtualization and full virtualization.</para>
+                     <para><option>--paravirt</option>: set up a paravirtualized guest. This is the default if the VM Host Server supports paravirtualization and full virtualization.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <option>--hvm</option>: set up a fully virtualized guest.</para>
+                     <para><option>--hvm</option>: set up a fully virtualized guest.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <option>--virt-type <replaceable>HYPERVISOR</replaceable>
-                        </option>: Specify the hypervisor. Supported values are <literal>kvm</literal> or <literal>xen</literal>.</para>
+                     <para><option>--virt-type <replaceable>HYPERVISOR</replaceable></option>: Specify the hypervisor. Supported values are <literal>kvm</literal> or <literal>xen</literal>.</para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -232,8 +196,7 @@
          <varlistentry>
             <term>Guest storage</term>
             <listitem>
-               <para>Specify one of <option>--disk</option>, <option>--filesystem</option> or <option>--nodisks</option> the type of the storage for the new virtual machine. For example, <option>--disk size=10</option> creates 10 GB disk in the default image location for the hypervisor and uses it for the VM Guest. <option>--filesystem <replaceable>/export/path/on/vmhost</replaceable>
-                  </option> specifies the directory on the VM Host Server to be exported to the guest. And <option>--nodisks</option> sets up a VM Guest without a local storage (good for Live CDs).</para>
+               <para>Specify one of <option>--disk</option>, <option>--filesystem</option> or <option>--nodisks</option> the type of the storage for the new virtual machine. For example, <option>--disk size=10</option> creates 10 GB disk in the default image location for the hypervisor and uses it for the VM Guest. <option>--filesystem <replaceable>/export/path/on/vmhost</replaceable></option> specifies the directory on the VM Host Server to be exported to the guest. And <option>--nodisks</option> sets up a VM Guest without a local storage (good for Live CDs).</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -245,20 +208,16 @@
          <varlistentry>
             <term>Accessing the installation</term>
             <listitem>
-               <para>Use the <option>--graphics <replaceable>VALUE</replaceable>
-                  </option> option to specify how to access the installation. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the values <literal>vnc</literal> or <literal>none</literal>.</para>
-               <para>If using VNC, <command>virt-install</command> tries to launch <command>virt-viewer</command>. If it is not installed or cannot be run, connect to the VM Guest manually with your preferred viewer. To explicitly prevent <command>virt-install</command> from launching the viewer, use <option>--noautoconsole</option>. To define a password for accessing the VNC session, use the following syntax: <option>--graphics vnc,password=<replaceable>PASSWORD</replaceable>
-                  </option>.</para>
+               <para>Use the <option>--graphics <replaceable>VALUE</replaceable></option> option to specify how to access the installation. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the values <literal>vnc</literal> or <literal>none</literal>.</para>
+               <para>If using VNC, <command>virt-install</command> tries to launch <command>virt-viewer</command>. If it is not installed or cannot be run, connect to the VM Guest manually with your preferred viewer. To explicitly prevent <command>virt-install</command> from launching the viewer, use <option>--noautoconsole</option>. To define a password for accessing the VNC session, use the following syntax: <option>--graphics vnc,password=<replaceable>PASSWORD</replaceable></option>.</para>
                <para>In case you are using <option>--graphics none</option>, you can access the VM Guest through operating system supported services, such as SSH or VNC. Refer to the operating system installation manual on how to set up these services in the installation system.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Passing kernel and initrd files</term>
             <listitem>
-               <para>It is possible to directly specify the Kernel and Initrd of the installer, for example, from a network source. To set up a network source, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                  <xref linkend="sec-deployment-instserver-http" xrefstyle="%label &#34;%c&#34;"/>.</para>
-               <para>To pass additional boot parameters, use the <option>--extra-args</option> option. This can be used to specify a network configuration. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                  <xref linkend="cha-boot-parameters" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>It is possible to directly specify the Kernel and Initrd of the installer, for example, from a network source. To set up a network source, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-deployment-instserver-http" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>To pass additional boot parameters, use the <option>--extra-args</option> option. This can be used to specify a network configuration. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-boot-parameters" xrefstyle="%label &#34;%c&#34;"/>.</para>
                <example>
                   <title>Loading kernel and initrd from HTTP server</title>
                   <screen><prompt role="root">#</prompt><command>virt-install</command> --location "http://example.tld/REPOSITORY/DVD1/" \
@@ -268,7 +227,7 @@
                </example>
             </listitem>
          </varlistentry>
-         <varlistentry>
+         <varlistentry arch="x86_64">
             <term>Enabling the console</term>
             <listitem>
                <para>By default, the console is not enabled for new virtual machines installed using <command>virt-install</command>. To enable it, use <option>--extra-args="console=ttyS0 textmode=1"</option> as in the following example:</para>
@@ -318,8 +277,7 @@
       <sect2 xml:id="cha-kvm-inst-virtman-advanced-uefi">
          <title>Advanced UEFI configuration</title>
          <para>The UEFI firmware used by virtual machines is provided by <emphasis>OVMF</emphasis> (<emphasis>Open Virtual Machine Firmware</emphasis>). The <package>qemu-ovmf-x86_64</package> package contains firmwares for AMD64/Intel 64 VM Guests. Firmwares for AArch64 VM Guests are provided by the <package>qemu-uefi-aarch64</package> package. Both packages contain several firmwares, each supporting a different set of features and capabilities. The packages also include JSON firmware descriptor files, which describe the features and capabilities of individual firmwares.</para>
-         <para>
-            <systemitem class="library">libvirt</systemitem> supports two methods of selecting virtual machine UEFI firmware: automatic and manual. With automatic selection, <systemitem class="library">libvirt</systemitem> will select a firmware based on an optional set of features specified by the user. If no explicit features are specified, <systemitem class="library">libvirt</systemitem> will select a firmware with secure boot enabled and Microsoft keys enrolled. When using manual selection, the full path of the firmware and any optional settings must be explicitly specified. Users can reference the JSON descriptor files to find a firmware that satisfies their requirements.</para>
+         <para><systemitem class="library">libvirt</systemitem> supports two methods of selecting virtual machine UEFI firmware: automatic and manual. With automatic selection, <systemitem class="library">libvirt</systemitem> will select a firmware based on an optional set of features specified by the user. If no explicit features are specified, <systemitem class="library">libvirt</systemitem> will select a firmware with secure boot enabled and Microsoft keys enrolled. When using manual selection, the full path of the firmware and any optional settings must be explicitly specified. Users can reference the JSON descriptor files to find a firmware that satisfies their requirements.</para>
          <tip>
             <para>The directory <filename>/usr/share/qemu/firmware</filename> contains all the JSON files used by <systemitem class="library">libvirt</systemitem>. This file gives you detailed information about the firmwares, including the capabilities of the features.</para>
          </tip>
@@ -337,8 +295,7 @@
 --boot loader=/usr/share/qemu/ovmf-x86_64-smm-code.bin,loader.readonly=yes,loader.type=pflash,loader.secure=yes,nvram.template=/usr/share/qemu/ovmf-x86_64-smm-vars.bin \
 --os-variant sle15sp5</screen>
          <note>
-            <para>
-               <systemitem class="library">libvirt</systemitem> cannot modify any characteristics of the UEFI firmwares. For example, it cannot disable UEFI Secure Boot in a firmware that has UEFI Secure Boot enabled, even when specifying <emphasis>loader.secure=no</emphasis>. <systemitem class="library">libvirt</systemitem> will ensure the specified firmware can satisfy any specified features. For example, it will reject configuration that disables secure boot with <emphasis>loader.secure=no</emphasis>, but specifies a firmware that has UEFI Secure Boot enabled.</para>
+            <para><systemitem class="library">libvirt</systemitem> cannot modify any characteristics of the UEFI firmwares. For example, it cannot disable UEFI Secure Boot in a firmware that has UEFI Secure Boot enabled, even when specifying <emphasis>loader.secure=no</emphasis>. <systemitem class="library">libvirt</systemitem> will ensure the specified firmware can satisfy any specified features. For example, it will reject configuration that disables secure boot with <emphasis>loader.secure=no</emphasis>, but specifies a firmware that has UEFI Secure Boot enabled.</para>
          </note>
          <para>The <package>qemu-ovmf-x86_64</package> package contains several UEFI firmware images. For example, the following subset supports SMM, UEFI Secure Boot, and has either Microsoft, openSUSE or SUSE UEFI CA keys enrolled:</para>
          <screen><prompt role="root">#</prompt><command>rpm -ql qemu-ovmf-x86_64</command>
@@ -389,10 +346,7 @@
       <sect2 xml:id="cha-kvm-inst-virtman-advanced-addons">
          <title>Including add-on products in the installation</title>
          <para>Certain operating systems, such as <phrase role="productname">SUSE Linux Enterprise Server</phrase>, offer to include add-on products in the installation process. If the add-on product installation source is provided via SUSE Customer Center, no special VM Guest configuration is needed. If it is provided via CD/DVD or ISO image, it is necessary to provide the VM Guest installation system with both the standard installation medium image and the image of the add-on product.</para>
-         <para>If you are using the GUI-based installation, select <guimenu>Customize Configuration Before Install</guimenu> in the last step of the wizard and add the add-on product ISO image via <menuchoice>
-               <guimenu>Add Hardware</guimenu>
-               <guimenu>Storage</guimenu>
-            </menuchoice>. Specify the path to the image and set the <guimenu>Device Type</guimenu> to <guimenu>CD-ROM</guimenu>.</para>
+         <para>If you are using the GUI-based installation, select <guimenu>Customize Configuration Before Install</guimenu> in the last step of the wizard and add the add-on product ISO image via <menuchoice><guimenu>Add Hardware</guimenu><guimenu>Storage</guimenu></menuchoice>. Specify the path to the image and set the <guimenu>Device Type</guimenu> to <guimenu>CD-ROM</guimenu>.</para>
          <para>If you are installing from the command line, you need to set up the virtual CD/DVD drives with the <option>--disk</option> parameter rather than with <option>--cdrom</option>. The device that is specified first is used for booting. The following example installs SUSE Linux Enterprise Server 15 together with SUSE Enterprise Storage extension:</para>
          <screen><prompt>&gt;</prompt>virt-install \
  --name sles15+storage \

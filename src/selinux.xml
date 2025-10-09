@@ -26,9 +26,7 @@
       <title>Why use SELinux?</title>
       <para>SELinux was developed as an additional Linux security solution that uses the security framework in the Linux kernel. The purpose was to allow for a more granular security policy that goes beyond the standard Discretionary Access Controls (DAC), the traditional file permissions of owner/group/world, and read/write/execute.</para>
       <para>An example explains why a solution such as SELinux (or its counterpart AppArmor) is needed:</para>
-      <para>
-         <quote>One morning, I found out that my server was hacked. The server was running a fully patched <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation. A firewall was configured on it and no unnecessary services were offered by this server. Further analysis revealed that the hacker had come in through a vulnerable PHP script that was a part of one of the Apache virtual hosts that were running on this server. The intruder had managed to get access to a shell, using the <systemitem class="username">wwwrun</systemitem> account that was used by the Apache Web server. As this <systemitem class="username">wwwrun</systemitem> user, the intruder had created several scripts in the <filename>/var/tmp</filename> and the <filename>/tmp</filename> directories, which were a part of a botnet that was launching a Distributed Denial of Service attack against several servers.</quote>
-      </para>
+      <para><quote>One morning, I found out that my server was hacked. The server was running a fully patched <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation. A firewall was configured on it and no unnecessary services were offered by this server. Further analysis revealed that the hacker had come in through a vulnerable PHP script that was a part of one of the Apache virtual hosts that were running on this server. The intruder had managed to get access to a shell, using the <systemitem class="username">wwwrun</systemitem> account that was used by the Apache Web server. As this <systemitem class="username">wwwrun</systemitem> user, the intruder had created several scripts in the <filename>/var/tmp</filename> and the <filename>/tmp</filename> directories, which were a part of a botnet that was launching a Distributed Denial of Service attack against several servers.</quote></para>
       <para>The interesting thing about this hack is that it occurred on a server where nothing was really wrong. All file permissions were set correctly, but the intruder still managed to get into the system. This example demonstrates that in certain cases, additional security is needed.</para>
       <!--
   <para>
@@ -71,8 +69,7 @@
   </para> -->
       <sect2 xml:id="sec-selinux-support">
          <title>Support status</title>
-         <para>The SELinux framework is supported on <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>. <phrase role="productname">SLES</phrase> offers all binaries and libraries you need to use SELinux on your server.</para>
+         <para>The SELinux framework is supported on <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>. <phrase role="productname">SLES</phrase> offers all binaries and libraries you need to use SELinux on your server.</para>
          <para>A policy is not included, and you must build your own. Third-party policies are not supported. See <xref linkend="sec-selinux-install"/> and <xref linkend="sec-selinux-getpolicy"/> for information on installing an openSUSE policy for testing.</para>
       </sect2>
       <sect2 xml:id="sec-selinux-component">
@@ -138,8 +135,7 @@ system_u:object_r:var_t var</screen>
    </sect1>
    <sect1 xml:id="sec-selinux-getpolicy">
       <title>Installing an SELinux policy</title>
-      <para>The policy is an essential component of SELinux. <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase> does <emphasis>not</emphasis> include a default policy, and you must build a policy that is customized for your installation. SELinux policies should be customized for your particular needs. Contact SUSE consulting services for assistance. We recommend <literal>slemicro</literal> for customers and partners who are looking for a containerized or virtualized host with full SELinux support, including a supported policy.</para>
+      <para>The policy is an essential component of SELinux. <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> does <emphasis>not</emphasis> include a default policy, and you must build a policy that is customized for your installation. SELinux policies should be customized for your particular needs. Contact SUSE consulting services for assistance. We recommend <literal>slemicro</literal> for customers and partners who are looking for a containerized or virtualized host with full SELinux support, including a supported policy.</para>
       <para>For <emphasis>testing</emphasis> purposes you can obtain policies from <link xlink:href="https://download.opensuse.org/repositories/security:/SELinux_legacy/"/>. This provides repositories for <phrase role="productname">SUSE Linux Enterprise Server</phrase> with several additional packages, including policies.</para>
       <procedure>
          <step>
@@ -390,8 +386,7 @@ SELinux fcontext                                   type               Context
                <para>Use a text editor to create the file <filename>/web/index.html</filename> that contains the text welcome to my Web site.</para>
             </step>
             <step>
-               <para>Open the file <filename>/etc/apache2/default-server.conf</filename> with an editor, and change the DocumentRoot line to <literal>DocumentRoot /web</literal>
-               </para>
+               <para>Open the file <filename>/etc/apache2/default-server.conf</filename> with an editor, and change the DocumentRoot line to <literal>DocumentRoot /web</literal></para>
             </step>
             <step>
                <para>Start the Apache Web server:</para>
@@ -588,8 +583,7 @@ type=AVC msg=audit(1348173901.309:300): avc:  denied  { append } for  pid=1316</
             <term>
                <literal>type=AVC</literal>:</term>
             <listitem>
-               <para>every SELinux-related audit log line starts with the type identification <literal>type=AVC</literal>
-               </para>
+               <para>every SELinux-related audit log line starts with the type identification <literal>type=AVC</literal></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -670,8 +664,7 @@ scontext=system_u:system_r:syslogd_t tcontext=system_u:object_r:apmd_log_t tclas
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>To find out which specific rule has denied access, you can use <command>audit2allow -a</command> to show the enforcing rules from all events that were logged to the <filename>audit.log</filename> file, or <command>audit2allow -i <replaceable>FILENAME</replaceable>
-         </command> to show it for messages that you have stored in a specific file:</para>
+      <para>To find out which specific rule has denied access, you can use <command>audit2allow -a</command> to show the enforcing rules from all events that were logged to the <filename>audit.log</filename> file, or <command>audit2allow -i <replaceable>FILENAME</replaceable></command> to show it for messages that you have stored in a specific file:</para>
       <example>
          <title>Viewing which lines deny access</title>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>audit2allow -i testfile</command>

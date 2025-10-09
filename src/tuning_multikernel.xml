@@ -8,8 +8,7 @@
    <title>Installing multiple kernel versions</title>
    <info>
       <abstract>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the parallel installation of multiple kernel versions. When installing a second kernel, a boot entry and an initrd are automatically created, so no further manual configuration is needed. When rebooting the machine, the newly added kernel is available as an additional boot parameter.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the parallel installation of multiple kernel versions. When installing a second kernel, a boot entry and an initrd are automatically created, so no further manual configuration is needed. When rebooting the machine, the newly added kernel is available as an additional boot parameter.</para>
          <para>Using this functionality, you can safely test kernel updates while being able to always fall back to the proven former kernel. To do this, do not use the update tools (such as the YaST Online Update or the updater applet), but instead follow the process described in this chapter.</para>
       </abstract>
    </info>
@@ -153,25 +152,18 @@
       <para>You can install or remove multiple kernels with YaST:</para>
       <procedure>
          <step>
-            <para>Start YaST and open the software manager via <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice>.</para>
+            <para>Start YaST and open the software manager via <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>.</para>
          </step>
          <step>
-            <para>List all packages capable of providing multiple versions by choosing <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Package Classification</guimenu>
-                  <guimenu>Multiversion Packages</guimenu>
-               </menuchoice>.</para>
+            <para>List all packages capable of providing multiple versions by choosing <menuchoice><guimenu>View</guimenu><guimenu>Package Classification</guimenu><guimenu>Multiversion Packages</guimenu></menuchoice>.</para>
             <figure>
                <title>The YaST software manager: multiversion view</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
+                     <imagedata fileref="media/yast2_sw_multiversion.png" width="82%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
+                     <imagedata fileref="media/yast2_sw_multiversion.png" width="82%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -245,8 +237,7 @@ i  | kernel-firmware-usb-network             | package | 20240201-150600.1.1    
             <screen><prompt>&gt;</prompt><command>sudo</command> zypper in kernel-default-6.4.0-150600.9.2</screen>
          </step>
          <step>
-            <para>When uninstalling a kernel, use the commands <command>zypper se -si 'kernel*'</command> to list all kernels installed and <command>zypper rm</command>
-               <replaceable>PACKAGENAME-VERSION</replaceable> to remove the package.</para>
+            <para>When uninstalling a kernel, use the commands <command>zypper se -si 'kernel*'</command> to list all kernels installed and <command>zypper rm</command><replaceable>PACKAGENAME-VERSION</replaceable> to remove the package.</para>
          </step>
       </procedure>
    </sect1>

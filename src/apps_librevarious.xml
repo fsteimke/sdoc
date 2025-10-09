@@ -10,24 +10,16 @@
    <para>Besides LibreOffice Writer and LibreOffice Calc, LibreOffice also includes the following modules:</para>
    <itemizedlist>
       <listitem>
-         <para>
-            <productname>Impress</productname>
-         </para>
+         <para><productname>Impress</productname></para>
       </listitem>
       <listitem>
-         <para>
-            <productname>Base</productname>
-         </para>
+         <para><productname>Base</productname></para>
       </listitem>
       <listitem>
-         <para>
-            <productname>Draw</productname>
-         </para>
+         <para><productname>Draw</productname></para>
       </listitem>
       <listitem>
-         <para>
-            <productname>Math</productname>
-         </para>
+         <para><productname>Math</productname></para>
       </listitem>
    </itemizedlist>
    <para>With these, you can create presentations, design databases, draw up graphics and diagrams and create mathematical formulas.</para>
@@ -58,17 +50,13 @@
          </variablelist>
          <sect3 xml:id="sec-lo-various-impress-master-create">
             <title>Creating a master slide</title>
-            <para>
-               <productname>Impress</productname> comes with a collection of pre-formatted master pages. To customize presentations further, create your own slide masters.</para>
+            <para><productname>Impress</productname> comes with a collection of pre-formatted master pages. To customize presentations further, create your own slide masters.</para>
             <procedure>
                <step>
                   <para>Start <productname>Impress</productname> with an existing presentation or create a new one as described in <xref linkend="sec-lo-various-impress-create"/>.</para>
                </step>
                <step>
-                  <para>Click <menuchoice>
-                        <guimenu>View</guimenu>
-                        <guimenu>Master Slide</guimenu>
-                     </menuchoice>.</para>
+                  <para>Click <menuchoice><guimenu>View</guimenu><guimenu>Master Slide</guimenu></menuchoice>.</para>
                   <para>This opens the current master slide in <guimenu>Master View</guimenu>. The <guimenu>Master View</guimenu> toolbar appears.</para>
                </step>
                <step>
@@ -79,10 +67,7 @@
                   <para>Master view allows editing outline styles by directly formatting the sample text on the slide.</para>
                </step>
                <step>
-                  <para>To finish editing master slides, in the <guimenu>Master View</guimenu> toolbar, click <guimenu>Close Master View</guimenu>. Alternatively, choose <menuchoice>
-                        <guimenu>View</guimenu>
-                        <guimenu>Normal</guimenu>
-                     </menuchoice>.</para>
+                  <para>To finish editing master slides, in the <guimenu>Master View</guimenu> toolbar, click <guimenu>Close Master View</guimenu>. Alternatively, choose <menuchoice><guimenu>View</guimenu><guimenu>Normal</guimenu></menuchoice>.</para>
                </step>
             </procedure>
             <tip>
@@ -106,10 +91,7 @@
                </step>
                <step>
                   <para>In the <emphasis>Tasks</emphasis> pane, open the <guimenu>Master Pages</guimenu> pane and click the master page you want to apply. The master slide is applied to the corresponding page or pages.</para>
-                  <para>If you do not see the <guimenu>Task Pane</guimenu>, click <menuchoice>
-                        <guimenu>View</guimenu>
-                        <guimenu>Task Pane</guimenu>
-                     </menuchoice>.</para>
+                  <para>If you do not see the <guimenu>Task Pane</guimenu>, click <menuchoice><guimenu>View</guimenu><guimenu>Task Pane</guimenu></menuchoice>.</para>
                </step>
             </procedure>
          </sect3>
@@ -123,29 +105,20 @@
       <para>It is beyond the scope of this document to detail database design with <productname>Base</productname>. Find more information in the sources listed in <xref linkend="sec-lo-oview-help"/>.</para>
       <sect2 xml:id="sec-lo-various-base-predefined">
          <title>Creating a database using predefined options</title>
-         <para>
-            <productname>Base</productname> comes with several predefined database fields to help you create a database. A wizard guides you through the steps to create a new database. The steps in this section are specific to creating an address book using predefined fields, but it should be easy to follow them to use the predefined fields for any of the built-in database options.</para>
+         <para><productname>Base</productname> comes with several predefined database fields to help you create a database. A wizard guides you through the steps to create a new database. The steps in this section are specific to creating an address book using predefined fields, but it should be easy to follow them to use the predefined fields for any of the built-in database options.</para>
          <para>The process for creating a database can be broken into several subprocesses:</para>
          <orderedlist spacing="normal">
             <listitem>
-               <para>
-                  <xref linkend="sec-lo-various-base-predefined-create" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-lo-various-base-predefined-create" xrefstyle="%c"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="sec-lo-various-base-predefined-setup" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-lo-various-base-predefined-setup" xrefstyle="%c"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="sec-lo-various-base-predefined-createform" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-lo-various-base-predefined-createform" xrefstyle="%c"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="sec-lo-various-base-predefined-modifyform" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-lo-various-base-predefined-modifyform" xrefstyle="%c"/></para>
             </listitem>
          </orderedlist>
          <sect3 xml:id="sec-lo-various-base-predefined-create">
@@ -165,10 +138,10 @@
                      <title>LibreOffice Database Wizard</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/oo-wizard-base.png" width="90%"/>
+                           <imagedata fileref="media/oo-wizard-base.png" width="82%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/oo-wizard-base.png" width="85%"/>
+                           <imagedata fileref="media/oo-wizard-base.png" width="78%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -289,23 +262,14 @@
             <para>Save the graphic.</para>
          </step>
       </procedure>
-      <para>To embed an existing Draw graphic into a LibreOffice document, select <menuchoice>
-            <guimenu>Insert</guimenu>
-            <guimenu>Object</guimenu>
-            <guimenu>OLE Object</guimenu>
-         </menuchoice>. Select <guimenu>Create from file</guimenu> and click <guimenu>Search</guimenu> to navigate to the Draw file to insert.</para>
+      <para>To embed an existing Draw graphic into a LibreOffice document, select <menuchoice><guimenu>Insert</guimenu><guimenu>Object</guimenu><guimenu>OLE Object</guimenu></menuchoice>. Select <guimenu>Create from file</guimenu> and click <guimenu>Search</guimenu> to navigate to the Draw file to insert.</para>
       <para>To be able to edit the graphic later on its own, activate <guimenu>Link to file</guimenu>.</para>
       <para>If you insert a file as an OLE object, you can edit the object later by double-clicking it.</para>
       <procedure xml:id="pro-lo-various-draw">
          <title>Opening <guimenu>Draw</guimenu> from other LibreOffice modules</title>
          <para>One particularly useful feature of <productname>Draw</productname> is the ability to open it from other LibreOffice modules, so you can create a drawing that is automatically imported into your document.</para>
          <step>
-            <para>From a LibreOffice module (for example, from <productname>Writer</productname>), click <menuchoice>
-                  <guimenu>Insert</guimenu>
-                  <guimenu>Object</guimenu>
-                  <guimenu>OLE Object</guimenu>
-                  <guimenu>LibreOffice Drawing</guimenu>
-               </menuchoice> and confirm with <guimenu>OK</guimenu>.</para>
+            <para>From a LibreOffice module (for example, from <productname>Writer</productname>), click <menuchoice><guimenu>Insert</guimenu><guimenu>Object</guimenu><guimenu>OLE Object</guimenu><guimenu>LibreOffice Drawing</guimenu></menuchoice> and confirm with <guimenu>OK</guimenu>.</para>
             <para>The user interface of <productname>Draw</productname> opens.</para>
          </step>
          <step>
@@ -332,11 +296,7 @@
             <para>Start LibreOffice Math.</para>
          </step>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>New</guimenu>
-                  <guimenu>Formula</guimenu>
-               </menuchoice>. The formula window opens.</para>
+            <para>Click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Formula</guimenu></menuchoice>. The formula window opens.</para>
          </step>
          <step>
             <para>Enter your formula in the lower part of the window. For example, the binomial theorem in LibreOffice Math syntax is:</para>
@@ -344,10 +304,7 @@
             <para>The result is displayed in the upper part of the window.</para>
          </step>
          <step>
-            <para>Use the side bar panel <guimenu>Formula Elements</guimenu> or right-click the lower part of the window to insert other terms. If you need symbols, use <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Symbols</guimenu>
-               </menuchoice> where you can find, for example, Greek or other special characters.</para>
+            <para>Use the side bar panel <guimenu>Formula Elements</guimenu> or right-click the lower part of the window to insert other terms. If you need symbols, use <menuchoice><guimenu>Tools</guimenu><guimenu>Symbols</guimenu></menuchoice> where you can find, for example, Greek or other special characters.</para>
          </step>
          <step>
             <para>Save the document.</para>
@@ -359,10 +316,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_formula.png" width="100%"/>
+               <imagedata fileref="media/oo_formula.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_formula.png" width="80%"/>
+               <imagedata fileref="media/oo_formula.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -372,11 +329,7 @@
             <para>Create a new <productname>Writer</productname> document or open an existing one.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>Insert</guimenu>
-                  <guimenu>Object</guimenu>
-                  <guimenu>OLE Object</guimenu>
-               </menuchoice> in the main menu. The <guimenu>Insert OLE Object</guimenu> window appears.</para>
+            <para>Select <menuchoice><guimenu>Insert</guimenu><guimenu>Object</guimenu><guimenu>OLE Object</guimenu></menuchoice> in the main menu. The <guimenu>Insert OLE Object</guimenu> window appears.</para>
          </step>
          <step>
             <para>Select <guimenu>Create from file</guimenu>.</para>

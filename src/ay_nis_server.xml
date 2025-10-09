@@ -115,8 +115,7 @@
          </term>
          <listitem>
             <para>YPPWD_SRCDIR - source directory for passwd data</para>
-            <para>Default: <filename>/etc</filename>
-            </para>
+            <para>Default: <filename>/etc</filename></para>
          </listitem>
       </varlistentry>
       <varlistentry>
@@ -125,8 +124,7 @@
          </term>
          <listitem>
             <para>List of allowed hosts to query the NIS server</para>
-            <para>
-               <remark>Dublin proofreader 2016-09-06: This does not make sense in the context of the sentence, however I am not sure of the intended meaning. Please revise.</remark> A host address will be allowed if network is equal to the bitwise AND of the host's address and the netmask.</para>
+            <para><remark>Dublin proofreader 2016-09-06: This does not make sense in the context of the sentence, however I am not sure of the intended meaning. Please revise.</remark> A host address will be allowed if network is equal to the bitwise AND of the host's address and the netmask.</para>
             <para>The entry with netmask 255.0.0.0 and network 127.0.0.0 must exist to allow connections from the local host.</para>
             <para>Entering netmask 0.0.0.0 and network 0.0.0.0 gives access to all hosts.</para>
          </listitem>

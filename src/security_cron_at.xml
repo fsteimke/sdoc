@@ -15,8 +15,7 @@
    </info>
    <sect1>
       <title>Restricting the <systemitem class="daemon">cron</systemitem> daemon</title>
-      <para>The <systemitem class="daemon">cron</systemitem> system is used to automatically run commands in the background at predefined times. For more information about <systemitem class="daemon">cron</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-suse-packages-cron" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>The <systemitem class="daemon">cron</systemitem> system is used to automatically run commands in the background at predefined times. For more information about <systemitem class="daemon">cron</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-suse-packages-cron" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <para>The <filename>cron.allow</filename> file specifies a list of users that are allowed to execute jobs via <systemitem class="daemon">cron</systemitem>. The file does not exist by default, so all users can create <systemitem class="daemon">cron</systemitem> jobs—except for those listed in <filename>cron.deny</filename>.</para>
       <procedure>
          <para>To prevent users except for <systemitem class="username">root</systemitem> from creating <systemitem class="daemon">cron</systemitem> jobs, perform the following steps.</para>
@@ -45,8 +44,7 @@ See crontab(1) for more information</screen>
       <note>
          <title>Switching to <systemitem class="daemon">systemd</systemitem> timer units</title>
          <para>You should also consider switching to <systemitem class="daemon">systemd</systemitem> timer units, as they allow for more powerful and reliable task execution. By default, users cannot use them to run code when they are not logged in. This limits the way users can interact with the system while not being connected to it.</para>
-         <para>For more information about <systemitem class="daemon">systemd</systemitem> timer units, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="sec-boot-systemd-timer-units" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information about <systemitem class="daemon">systemd</systemitem> timer units, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-timer-units" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </note>
    </sect1>
    <sect1>
@@ -66,10 +64,7 @@ See crontab(1) for more information</screen>
             <para>To verify, try scheduling a job as non-root user listed in <filename>at.allow</filename>:</para>
             <screen><prompt>tux &gt;</prompt><command>at 00:00</command>
 at&gt;</screen>
-            <para>Quit the <systemitem class="daemon">at</systemitem>prompt with <keycombo>
-                  <keycap function="control"/>
-                  <keycap>C</keycap>
-               </keycombo> and try the same with a user <emphasis>not</emphasis> listed in the file (or before adding them in step 2 of this procedure):</para>
+            <para>Quit the <systemitem class="daemon">at</systemitem>prompt with <keycombo><keycap function="control"/><keycap>C</keycap></keycombo> and try the same with a user <emphasis>not</emphasis> listed in the file (or before adding them in step 2 of this procedure):</para>
             <screen><prompt>wilber &gt;</prompt><command>at 00:00</command>
 You do not have permission to use at.</screen>
          </step>
@@ -77,8 +72,7 @@ You do not have permission to use at.</screen>
       <note>
          <title>Uninstalling <systemitem class="daemon">at</systemitem>
          </title>
-         <para>
-            <systemitem class="daemon">at</systemitem> is not widely used anymore. If you do not have valid use cases, consider uninstalling the daemon instead of just restricting its access.</para>
+         <para><systemitem class="daemon">at</systemitem> is not widely used anymore. If you do not have valid use cases, consider uninstalling the daemon instead of just restricting its access.</para>
       </note>
    </sect1>
 </chapter>

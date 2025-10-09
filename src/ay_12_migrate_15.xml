@@ -20,8 +20,7 @@
    </sect1>
    <sect1 xml:id="sec-ay-12vs15-software">
       <title>Software</title>
-      <para>The <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase> installation medium only contains a very minimal set of packages to install. This minimal set only provides an installation environment and does not include any server applications or advanced tools. Additional software repositories, providing more packages are offered as <quote>modules</quote> or <quote>extensions</quote>. They are provided via two alternatives:</para>
+      <para>The <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> installation medium only contains a very minimal set of packages to install. This minimal set only provides an installation environment and does not include any server applications or advanced tools. Additional software repositories, providing more packages are offered as <quote>modules</quote> or <quote>extensions</quote>. They are provided via two alternatives:</para>
       <itemizedlist>
          <listitem>
             <para>via a registration server (the SUSE Customer Center or a local SMT/RMT proxy)</para>
@@ -103,60 +102,32 @@
                </thead>
                <tbody>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>Basis-Devel</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>devel_basis</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>Basis-Devel</para></entry>
+                     <entry align="left" valign="top"><para>devel_basis</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>gnome-basic</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>gnome_basic</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>gnome-basic</para></entry>
+                     <entry align="left" valign="top"><para>gnome_basic</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>Minimal</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>enhanced_base</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>Minimal</para></entry>
+                     <entry align="left" valign="top"><para>enhanced_base</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>printing</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>print_server</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>printing</para></entry>
+                     <entry align="left" valign="top"><para>print_server</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>SDK-C-C++</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>devel_basis</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>SDK-C-C++</para></entry>
+                     <entry align="left" valign="top"><para>devel_basis</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>SDK-Doc</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>technical_writing</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>SDK-Doc</para></entry>
+                     <entry align="left" valign="top"><para>technical_writing</para></entry>
                   </row>
                   <row>
-                     <entry align="left" valign="top">
-                        <para>SDK-YaST</para>
-                     </entry>
-                     <entry align="left" valign="top">
-                        <para>devel_yast</para>
-                     </entry>
+                     <entry align="left" valign="top"><para>SDK-YaST</para></entry>
+                     <entry align="left" valign="top"><para>devel_yast</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -185,7 +156,7 @@
    <sect1 xml:id="sec-ay-12vs15-partitioning">
       <title>Partitioning</title>
       <para>The partitioning back-end previously used by YaST, <systemitem class="library">libstorage</systemitem>, has been replaced by <systemitem class="library">libstorage-ng</systemitem> which is designed to allow new capabilities that were not possible before. Despite the back-end change, the XML syntax for profiles has <emphasis>not</emphasis> changed. However, <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 comes with some general changes, which are explained below.</para>
-      <sect2 xml:id="sec-ay-12vs15-registration-partitioning-gpt">
+      <sect2 xml:id="sec-ay-12vs15-registration-partitioning-gpt" arch="x86_64">
          <title>GPT becomes the default partition type on AMD64/Intel 64</title>
          <para>On AMD64/Intel 64 systems, GPT is now the preferred partition type. However, if you prefer to retain the old behavior, you can explicitly indicate this in the profile by setting the <tag class="element">disklabel</tag> element to <literal>msdos</literal>.</para>
       </sect2>
@@ -254,118 +225,50 @@
             <colspec colnum="2" colname="2" colwidth="50*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Supported (but deprecated)</para>
-                  </entry>
-                  <entry>
-                     <para>Unsupported</para>
-                  </entry>
+                  <entry><para>Supported (but deprecated)</para></entry>
+                  <entry><para>Unsupported</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_CONFIGURATIONS_\{DMZ, EXT, INT}</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_ALLOW_FW_BROADCAST_\{DMZ, EXT, INT}</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_CONFIGURATIONS_\{DMZ, EXT, INT}</tag></para></entry>
+                  <entry><para><tag class="element">FW_ALLOW_FW_BROADCAST_\{DMZ, EXT, INT}</tag></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_DEV_\{DMZ, EXT, INT}</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_IGNORE_FW_BROADCAST_\{DMZ, EXT, INT}</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_DEV_\{DMZ, EXT, INT}</tag></para></entry>
+                  <entry><para><tag class="element">FW_IGNORE_FW_BROADCAST_\{DMZ, EXT, INT}</tag></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_LOG_DROP_ALL</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_IPSECT_TRUST</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_LOG_DROP_ALL</tag></para></entry>
+                  <entry><para><tag class="element">FW_IPSECT_TRUST</tag></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_LOG_DROP_CRIT</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_LOAD_MODULES</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_LOG_DROP_CRIT</tag></para></entry>
+                  <entry><para><tag class="element">FW_LOAD_MODULES</tag></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_MASQUERADE</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_LOG_ACCEPT_ALL</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_MASQUERADE</tag></para></entry>
+                  <entry><para><tag class="element">FW_LOG_ACCEPT_ALL</tag></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_SERVICES_\{DMZ, INT, EXT}_\{TCP, UDP, IP}</tag>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_LOG_ACCEPT_CRIT</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_SERVICES_\{DMZ, INT, EXT}_\{TCP, UDP, IP}</tag></para></entry>
+                  <entry><para><tag class="element">FW_LOG_ACCEPT_CRIT</tag></para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_PROTECT_FROM_INT</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_PROTECT_FROM_INT</tag></para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_ROUTE</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_ROUTE</tag></para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_SERVICES_\{DMZ, EXT, INT}_RPC</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_SERVICES_\{DMZ, EXT, INT}_RPC</tag></para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <tag class="element">FW_SERVICES_ACCEPT_RELATED_\{DMZ, EXT, INT}</tag>
-                     </para>
-                  </entry>
+                  <entry><para><tag class="element">FW_SERVICES_ACCEPT_RELATED_\{DMZ, EXT, INT}</tag></para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -391,91 +294,46 @@
                <colspec colnum="2" colname="2" colwidth="50*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>
-                           <systemitem class="daemon">firewalld</systemitem> (SLE 15)</para>
-                     </entry>
-                     <entry>
-                        <para>SuSEfirewall2 (SLE 12)</para>
-                     </entry>
+                     <entry><para><systemitem class="daemon">firewalld</systemitem> (SLE 15)</para></entry>
+                     <entry><para>SuSEfirewall2 (SLE 12)</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>dmz</para>
-                     </entry>
-                     <entry>
-                        <para>DMZ</para>
-                     </entry>
+                     <entry><para>dmz</para></entry>
+                     <entry><para>DMZ</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>external</para>
-                     </entry>
-                     <entry>
-                        <para>EXT with <tag class="element">FW_MASQUERADE</tag> set to <literal>yes</literal>
-                        </para>
-                     </entry>
+                     <entry><para>external</para></entry>
+                     <entry><para>EXT with <tag class="element">FW_MASQUERADE</tag> set to <literal>yes</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>public</para>
-                     </entry>
-                     <entry>
-                        <para>EXT with <tag class="element">FW_MASQUERADE</tag> set to <literal>no</literal>
-                        </para>
-                     </entry>
+                     <entry><para>public</para></entry>
+                     <entry><para>EXT with <tag class="element">FW_MASQUERADE</tag> set to <literal>no</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>internal</para>
-                     </entry>
-                     <entry>
-                        <para>INT with <tag class="element">FW_PROTECT_FROM_INT</tag> set to <literal>yes</literal>
-                        </para>
-                     </entry>
+                     <entry><para>internal</para></entry>
+                     <entry><para>INT with <tag class="element">FW_PROTECT_FROM_INT</tag> set to <literal>yes</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>trusted</para>
-                     </entry>
-                     <entry>
-                        <para>INT with <tag class="element">FW_PROTECT_FROM_INT</tag> set to <literal>no</literal>
-                        </para>
-                     </entry>
+                     <entry><para>trusted</para></entry>
+                     <entry><para>INT with <tag class="element">FW_PROTECT_FROM_INT</tag> set to <literal>no</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>block</para>
-                     </entry>
-                     <entry>
-                        <para>N/A</para>
-                     </entry>
+                     <entry><para>block</para></entry>
+                     <entry><para>N/A</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>drop</para>
-                     </entry>
-                     <entry>
-                        <para>N/A</para>
-                     </entry>
+                     <entry><para>drop</para></entry>
+                     <entry><para>N/A</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>home</para>
-                     </entry>
-                     <entry>
-                        <para>N/A</para>
-                     </entry>
+                     <entry><para>home</para></entry>
+                     <entry><para>N/A</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>work</para>
-                     </entry>
-                     <entry>
-                        <para>N/A</para>
-                     </entry>
+                     <entry><para>work</para></entry>
+                     <entry><para>N/A</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -639,15 +497,11 @@
          <para>The services definition can be added via packages in both cases:</para>
          <itemizedlist>
             <listitem>
-               <para>SuSEfirewall2 Service Definitions: <link xlink:href="https://en.opensuse.org/SuSEfirewall2/Service_Definitions_Added_via_Packages"/>
-               </para>
+               <para>SuSEfirewall2 Service Definitions: <link xlink:href="https://en.opensuse.org/SuSEfirewall2/Service_Definitions_Added_via_Packages"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="daemon">firewalld</systemitem> RPM Packaging <link xlink:href="https://en.opensuse.org/firewalld/RPM_Packaging"/>
-               </para>
-               <para>
-                  <systemitem class="daemon">firewalld</systemitem> already provides support for the majority of important services in <filename>/usr/lib/firewalld/services</filename>. Check this directory for an existing configuration before defining a new one.</para>
+               <para><systemitem class="daemon">firewalld</systemitem> RPM Packaging <link xlink:href="https://en.opensuse.org/firewalld/RPM_Packaging"/></para>
+               <para><systemitem class="daemon">firewalld</systemitem> already provides support for the majority of important services in <filename>/usr/lib/firewalld/services</filename>. Check this directory for an existing configuration before defining a new one.</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -655,14 +509,10 @@
          <title>More information</title>
          <itemizedlist>
             <listitem>
-               <para>
-                  <link xlink:href="https://documentation.suse.com/sles-12/html/SLES-all/configuration.html#CreateProfile-firewall">SuSEfirewall2/AutoYaST Documentation for SLE 12</link>
-               </para>
+               <para><link xlink:href="https://documentation.suse.com/sles-12/html/SLES-all/configuration.html#CreateProfile-firewall">SuSEfirewall2/AutoYaST Documentation for SLE 12</link></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://www.firewalld.org/documentation/">Official <systemitem class="daemon">firewalld</systemitem> Documentation</link>
-               </para>
+               <para><link xlink:href="https://www.firewalld.org/documentation/">Official <systemitem class="daemon">firewalld</systemitem> Documentation</link></para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -698,8 +548,7 @@
       <title>Upgrade</title>
       <sect2 xml:id="sec-ay-12vs15-firewall-services-upgrade">
          <title>Software</title>
-         <para>SLE 12 has two modes of evaluating which packages need to be upgraded. In <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>, upgrades are always determined by the dependency solver, equivalent to using <command>zypper dup</command>.</para>
+         <para>SLE 12 has two modes of evaluating which packages need to be upgraded. In <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>, upgrades are always determined by the dependency solver, equivalent to using <command>zypper dup</command>.</para>
          <para>This makes the option <tag class="element">only_installed_packages</tag> in the software section obsolete.</para>
       </sect2>
       <sect2 xml:id="sec-ay-12vs15-registration-upgrade">

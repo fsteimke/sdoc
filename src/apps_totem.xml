@@ -56,10 +56,10 @@
             <guimenu>GNOME Videos</guimenu> start-up window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/totem_a.png" width="75%"/>
+               <imagedata fileref="media/totem_a.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/totem_a.png" width="75%"/>
+               <imagedata fileref="media/totem_a.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -99,41 +99,11 @@
       <sect2 xml:id="sec-gnome-totem-using-play-medium">
          <title>Playing a DVD, VCD, or CD</title>
          <para>To play a DVD, VCD, or CD, insert the disc in the drive of your computer, then move the mouse pointer over the notification and press <guimenu>Open with Videos</guimenu>.</para>
-         <para>To eject a DVD, VCD, or CD, click <menuchoice>
-               <guimenu>Movie</guimenu>
-               <guimenu>Eject</guimenu>
-            </menuchoice>.</para>
-         <para>To pause a movie or song that is playing, click the <inlinemediaobject>
-               <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_pause_button.svg" width="3mm" format="SVG"/>
-               </imageobject>
-               <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_pause_button-fallback.png"
-                             width="4mm"
-                             format="PNG"/>
-               </imageobject>
-            </inlinemediaobject> button, or click <menuchoice>
-               <guimenu>Movie</guimenu>
-               <guimenu>Play/Pause</guimenu>
-            </menuchoice>. When you pause a movie or song, the statusbar displays <guimenu>Paused</guimenu> and the time elapsed on the current movie or song.</para>
-         <para>To resume playing a movie or song, click the <inlinemediaobject>
-               <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_play_button.svg" width="3mm" format="SVG"/>
-               </imageobject>
-               <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_play_button-fallback.png"
-                             width="4mm"
-                             format="PNG"/>
-               </imageobject>
-            </inlinemediaobject> button, or click <menuchoice>
-               <guimenu>Movie</guimenu>
-               <guimenu>Play/Pause</guimenu>
-            </menuchoice>.</para>
+         <para>To eject a DVD, VCD, or CD, click <menuchoice><guimenu>Movie</guimenu><guimenu>Eject</guimenu></menuchoice>.</para>
+         <para>To pause a movie or song that is playing, click the <inlinemediaobject><imageobject outputformat="print"><imagedata fileref="media/totem_pause_button.svg" width="3mm" format="SVG"/></imageobject><imageobject outputformat="screen"><imagedata fileref="media/totem_pause_button-fallback.png" width="4mm" format="PNG"/></imageobject></inlinemediaobject> button, or click <menuchoice><guimenu>Movie</guimenu><guimenu>Play/Pause</guimenu></menuchoice>. When you pause a movie or song, the statusbar displays <guimenu>Paused</guimenu> and the time elapsed on the current movie or song.</para>
+         <para>To resume playing a movie or song, click the <inlinemediaobject><imageobject outputformat="print"><imagedata fileref="media/totem_play_button.svg" width="3mm" format="SVG"/></imageobject><imageobject outputformat="screen"><imagedata fileref="media/totem_play_button-fallback.png" width="4mm" format="PNG"/></imageobject></inlinemediaobject> button, or click <menuchoice><guimenu>Movie</guimenu><guimenu>Play/Pause</guimenu></menuchoice>.</para>
          <para>To play or pause a movie, you can also press <keycap>P</keycap>.</para>
-         <para>To view properties of a movie or song, click <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Sidebar</guimenu>
-            </menuchoice> to make the sidebar appear. The dialog contains the title, artist, year, and duration of movie or song, video dimensions, codec, frame rate, and the audio bit rate.</para>
+         <para>To view properties of a movie or song, click <menuchoice><guimenu>View</guimenu><guimenu>Sidebar</guimenu></menuchoice> to make the sidebar appear. The dialog contains the title, artist, year, and duration of movie or song, video dimensions, codec, frame rate, and the audio bit rate.</para>
       </sect2>
       <!--  <sect2 xml:id="sec-gnome-totem-using-seek">
  <remark> jufa 2022-04-14: the behavior has changed, you can now use the arrow
@@ -266,10 +236,10 @@
                <guimenu>GNOME Videos</guimenu> general preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_general.png" width="55%"/>
+                  <imagedata fileref="media/totem_general.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_general.png" width="55%"/>
+                  <imagedata fileref="media/totem_general.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -300,10 +270,10 @@
                <guimenu>GNOME Videos</guimenu> display preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_display.png" width="55%"/>
+                  <imagedata fileref="media/totem_display.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_display.png" width="55%"/>
+                  <imagedata fileref="media/totem_display.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -336,10 +306,10 @@
                <guimenu>GNOME Videos</guimenu> audio preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_audio.png" width="55%"/>
+                  <imagedata fileref="media/totem_audio.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_audio.png" width="55%"/>
+                  <imagedata fileref="media/totem_audio.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>

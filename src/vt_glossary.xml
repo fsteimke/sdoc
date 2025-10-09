@@ -37,15 +37,13 @@
       <glossentry xml:id="gloss-vt-xen">
          <glossterm>Xen</glossterm>
          <glossdef>
-            <para>See <xref linkend="cha-xen-basics"/>
-            </para>
+            <para>See <xref linkend="cha-xen-basics"/></para>
          </glossdef>
       </glossentry>
       <glossentry xml:id="gloss-vt-kvm">
          <glossterm>KVM</glossterm>
          <glossdef>
-            <para>See <xref linkend="cha-kvm-intro"/>
-            </para>
+            <para>See <xref linkend="cha-kvm-intro"/></para>
          </glossdef>
       </glossentry>
       <glossentry xml:id="gloss-vt-xl">

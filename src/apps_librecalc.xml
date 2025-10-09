@@ -11,13 +11,11 @@
          <para>Learn how to work with the LibreOffice spreadsheet module.</para>
       </abstract>
    </info>
-   <para>
-      <productname>Calc</productname> is the LibreOffice spreadsheet module. Spreadsheets consist of several sheets, containing cells which can be filled with elements like text, numbers or formulas. A formula can manipulate data from other cells to generate a value for the cell in which it is inserted. <productname>Calc</productname> also allows you to define ranges, filter and sort data, and create charts from data to present it graphically. Using pivot tables, you can combine, analyze or compare larger amounts of data.</para>
+   <para><productname>Calc</productname> is the LibreOffice spreadsheet module. Spreadsheets consist of several sheets, containing cells which can be filled with elements like text, numbers or formulas. A formula can manipulate data from other cells to generate a value for the cell in which it is inserted. <productname>Calc</productname> also allows you to define ranges, filter and sort data, and create charts from data to present it graphically. Using pivot tables, you can combine, analyze or compare larger amounts of data.</para>
    <para>This chapter can only introduce very basic <productname>Calc</productname> functionality. For more information and for complete instructions, see the LibreOffice application help and the sources listed in <xref linkend="sec-lo-oview-help"/>.</para>
    <note>
       <title>VBA macros</title>
-      <para>
-         <productname>Calc</productname> can process many VBA macros in Excel documents. However, support for VBA macros is not complete. When opening an Excel spreadsheet that makes heavy use of macros, you might discover that some do not work.</para>
+      <para><productname>Calc</productname> can process many VBA macros in Excel documents. However, support for VBA macros is not complete. When opening an Excel spreadsheet that makes heavy use of macros, you might discover that some do not work.</para>
    </note>
    <sect1 xml:id="sec-lo-calc-createnew">
       <title>Creating a new document</title>
@@ -26,21 +24,13 @@
          <listitem>
             <formalpara>
                <title>From scratch</title>
-               <para>To create a new empty document, click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>New</guimenu>
-                     <guimenu>Spreadsheet</guimenu>
-                  </menuchoice>.</para>
+               <para>To create a new empty document, click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Spreadsheet</guimenu></menuchoice>.</para>
             </formalpara>
          </listitem>
          <listitem>
             <formalpara>
                <title>From a template</title>
-               <para>To use a template, click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>New</guimenu>
-                     <guimenu>Templates</guimenu>
-                  </menuchoice> and set the <guimenu>Filter</guimenu> to <guimenu>Spreadsheets</guimenu>. Choose a template from the list and proceed with <guimenu>Open</guimenu>. Note that by default, LibreOffice does not ship with predefined templates.</para>
+               <para>To use a template, click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Templates</guimenu></menuchoice> and set the <guimenu>Filter</guimenu> to <guimenu>Spreadsheets</guimenu>. Choose a template from the list and proceed with <guimenu>Open</guimenu>. Note that by default, LibreOffice does not ship with predefined templates.</para>
             </formalpara>
          </listitem>
       </itemizedlist>
@@ -128,29 +118,18 @@
       <para>Conditional formatting is a useful feature to highlight certain values in your spreadsheet. For example, define a condition and if the condition is <literal>true</literal>, a style is applied to each cell that fulfills this condition.</para>
       <note>
          <title>Enable AutoCalculate</title>
-         <para>Before you apply conditional formatting, choose <menuchoice>
-               <guimenu>Data</guimenu>
-               <guimenu>Calculate</guimenu>
-               <guimenu>AutoCalculate</guimenu>
-            </menuchoice>. You should see a check mark in front of <guimenu>AutoCalculate</guimenu>.</para>
+         <para>Before you apply conditional formatting, choose <menuchoice><guimenu>Data</guimenu><guimenu>Calculate</guimenu><guimenu>AutoCalculate</guimenu></menuchoice>. You should see a check mark in front of <guimenu>AutoCalculate</guimenu>.</para>
       </note>
       <procedure xml:id="pro-lo-calc-condformat">
          <title>Using conditional formatting</title>
          <step>
-            <para>Define a style first. This style is applied to each cell when your condition is <literal>true</literal>. Use <menuchoice>
-                  <guimenu>Styles</guimenu>
-                  <guimenu>Manage Styles</guimenu>
-               </menuchoice> or press <keycap>F11</keycap>. For more information, see <xref linkend="pro-lo-calc-createstyle"/>. Confirm with <guimenu>OK</guimenu>.</para>
+            <para>Define a style first. This style is applied to each cell when your condition is <literal>true</literal>. Use <menuchoice><guimenu>Styles</guimenu><guimenu>Manage Styles</guimenu></menuchoice> or press <keycap>F11</keycap>. For more information, see <xref linkend="pro-lo-calc-createstyle"/>. Confirm with <guimenu>OK</guimenu>.</para>
          </step>
          <step>
             <para>Select the cell range where you want to apply your condition.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>Format</guimenu>
-                  <guimenu>Conditional</guimenu>
-                  <guimenu>Condition</guimenu>
-               </menuchoice> from the menu. A dialog opens.</para>
+            <para>Select <menuchoice><guimenu>Format</guimenu><guimenu>Conditional</guimenu><guimenu>Condition</guimenu></menuchoice> from the menu. A dialog opens.</para>
          </step>
          <step>
             <para>You now see a template for a new condition. Conditions can operate in multiple modes:</para>
@@ -218,22 +197,14 @@
             <para>Select a cell range in your spreadsheet.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>Data</guimenu>
-                  <guimenu>Group and Outline</guimenu>
-                  <guimenu>Group</guimenu>
-               </menuchoice>. A dialog appears.</para>
+            <para>Select <menuchoice><guimenu>Data</guimenu><guimenu>Group and Outline</guimenu><guimenu>Group</guimenu></menuchoice>. A dialog appears.</para>
          </step>
          <step>
             <para>Decide if you want to group your selected range by rows or by columns. Confirm with <guimenu>OK</guimenu>.</para>
          </step>
       </procedure>
       <para>After grouping selected cells, a line indicating the grouped cell range appears in the upper-left margin. Fold or unfold the cell range with the <guimenu>+</guimenu> and <guimenu>–</guimenu> icons. The numbers at the top left of the margins display the depth of your groups and can be clicked too.</para>
-      <para>To ungroup a cell range, click into a cell which belongs to a group and select <menuchoice>
-            <guimenu>Data</guimenu>
-            <guimenu>Group and Outline</guimenu>
-            <guimenu>Ungroup</guimenu>
-         </menuchoice>. The line in the margin disappears. The innermost group is always deleted first.</para>
+      <para>To ungroup a cell range, click into a cell which belongs to a group and select <menuchoice><guimenu>Data</guimenu><guimenu>Group and Outline</guimenu><guimenu>Ungroup</guimenu></menuchoice>. The line in the margin disappears. The innermost group is always deleted first.</para>
    </sect1>
    <sect1 xml:id="sec-lo-calc-freezing">
       <title>Freezing rows or columns as headers</title>
@@ -246,10 +217,7 @@
             <para>Alternatively, to create a frozen area above a column, click the header of the column (<literal>A</literal>, <literal>B</literal>, <literal>C</literal>, ...).</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Freeze Rows and Columns</guimenu>
-               </menuchoice>. A dark line appears, indicating the frozen area.</para>
+            <para>Select <menuchoice><guimenu>View</guimenu><guimenu>Freeze Rows and Columns</guimenu></menuchoice>. A dark line appears, indicating the frozen area.</para>
          </step>
       </procedure>
       <para>It is also possible to freeze both rows and columns:</para>
@@ -259,10 +227,7 @@
             <para>Click into the cell to the right of the column and below the row you want to freeze. For example, if your header occupies the space from A1 to B3, click cell C4.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Freeze Rows and Columns</guimenu>
-               </menuchoice>. A dark line appears, indicating which area is frozen.</para>
+            <para>Select <menuchoice><guimenu>View</guimenu><guimenu>Freeze Rows and Columns</guimenu></menuchoice>. A dark line appears, indicating which area is frozen.</para>
          </step>
       </procedure>
       <para>To unfreeze, select <guimenu>View</guimenu> and uncheck <guimenu>Freeze Rows and Columns</guimenu>. The check mark before the menu item disappears.</para>

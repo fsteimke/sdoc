@@ -70,8 +70,7 @@ Welcome to SUSE Linux Enterprise Server 15  (x86_64) - Kernel \r (\l).
       <sect2 xml:id="gpu-passthru-enable-iommu">
          <title>Enable <xref linkend="gloss-vt-acronym-iommu"/>
          </title>
-         <para>
-            <xref linkend="gloss-vt-acronym-iommu"/> is disabled by default. You need to enable it at boot time in the <filename>/etc/default/grub</filename> configuration file.</para>
+         <para><xref linkend="gloss-vt-acronym-iommu"/> is disabled by default. You need to enable it at boot time in the <filename>/etc/default/grub</filename> configuration file.</para>
          <procedure>
             <step>
                <para>For Intel-based hosts:</para>
@@ -216,8 +215,7 @@ kvm_intel
                   <para>Because the installer needs to compile the NVIDIA driver modules, install the <package>gcc-c++</package> and <package>kernel-devel</package> packages.</para>
                </step>
                <step>
-                  <para>Disable Secure Boot on the guest, because NVIDIA's driver modules are unsigned. On SUSE distributions, you can use the YaST GRUB 2 module to disable Secure Boot. Find more information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-uefi-secboot-sle" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Disable Secure Boot on the guest, because NVIDIA's driver modules are unsigned. On SUSE distributions, you can use the YaST GRUB 2 module to disable Secure Boot. Find more information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-uefi-secboot-sle" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </step>
                <step>
                   <para>Download the driver installation script from <link xlink:href="https://www.nvidia.com/Download/index.aspx?lang=en-us"/>, make it executable and run it to complete the driver installation:</para>

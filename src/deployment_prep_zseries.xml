@@ -90,8 +90,7 @@ packagenames etc.)in all zSeries documents, because they are trademarks:
                   <replaceable>&lt;URL&gt;</replaceable>
                </term>
                <listitem>
-                  <para>Specifies a location for a file with additional options. This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. Further documentation on the Info file can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
-                     <xref linkend="invoking-autoinst-linuxrc" xrefstyle="%label &#34;%c&#34;"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify the options required to set up the network (that is, the options described in <xref linkend="sec-appdendix-parm-net"/>). Other linuxrc-specific options, such as those related to debugging, must be specified in the parmfile itself.</para>
+                  <para>Specifies a location for a file with additional options. This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. Further documentation on the Info file can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="invoking-autoinst-linuxrc" xrefstyle="%label &#34;%c&#34;"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify the options required to set up the network (that is, the options described in <xref linkend="sec-appdendix-parm-net"/>). Other linuxrc-specific options, such as those related to debugging, must be specified in the parmfile itself.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -108,8 +107,7 @@ packagenames etc.)in all zSeries documents, because they are trademarks:
          <title>Configuring the network interface</title>
          <important>
             <title>Configuring the network interface</title>
-            <para>The settings described in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-network-manconf" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The settings described in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-manconf" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </important>
          <variablelist>
             <varlistentry>
@@ -201,8 +199,7 @@ packagenames etc.)in all zSeries documents, because they are trademarks:
                <para>Interfaces <literal>ctc</literal> and <literal>escon</literal> (CTC and ESCON are no longer supported):</para>
                <screen>ReadChannel=0.0.0600
 WriteChannel=0.0.0601</screen>
-               <para>
-                  <envar>ReadChannel</envar> specifies the READ channel to use. <envar>WriteChannel</envar> specifies the WRITE channel.</para>
+               <para><envar>ReadChannel</envar> specifies the READ channel to use. <envar>WriteChannel</envar> specifies the WRITE channel.</para>
             </listitem>
             <listitem>
                <para>For the <literal>ctc</literal> interface (no longer supported), specify the protocol that should be used for this interface:</para>
@@ -212,34 +209,16 @@ WriteChannel=0.0.0601</screen>
                   <tgroup cols="2">
                      <tbody>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>0</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Compatibility mode, also for non-Linux peers other than OS/390 and z/OS (this is the default mode)</para>
-                           </entry>
+                           <entry><para><literal>0</literal></para></entry>
+                           <entry><para>Compatibility mode, also for non-Linux peers other than OS/390 and z/OS (this is the default mode)</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>1</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Extended mode</para>
-                           </entry>
+                           <entry><para><literal>1</literal></para></entry>
+                           <entry><para>Extended mode</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>2</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Compatibility mode with OS/390 and z/OS</para>
-                           </entry>
+                           <entry><para><literal>2</literal></para></entry>
+                           <entry><para>Compatibility mode with OS/390 and z/OS</para></entry>
                         </row>
                      </tbody>
                   </tgroup>
@@ -248,8 +227,7 @@ WriteChannel=0.0.0601</screen>
             <listitem>
                <para>Network device type <literal>osa</literal> with interface <literal>lcs</literal>:</para>
                <screen>ReadChannel=0.0.0124</screen>
-               <para>
-                  <envar>ReadChannel</envar> stands for the channel number used in this setup. A second port number can be derived from this by adding one to <envar>ReadChannel</envar>. <envar>Portnumber</envar> is used to specify the relative port.</para>
+               <para><envar>ReadChannel</envar> stands for the channel number used in this setup. A second port number can be derived from this by adding one to <envar>ReadChannel</envar>. <envar>Portnumber</envar> is used to specify the relative port.</para>
             </listitem>
             <listitem>
                <para>Interface <literal>iucv</literal>:</para>
@@ -280,8 +258,7 @@ DataChannel=0.0.0802</screen>
                   <command>Install=nfs://server/directory/DVD1/</command>
                </term>
                <listitem>
-                  <para>Specify the location of the installation source to use. Supported protocols are <literal>nfs</literal>, <literal>smb</literal> (Samba/CIFS), <literal>ftp</literal>, <literal>tftp</literal>
-                     <literal>http</literal>, and <literal>https</literal>.</para>
+                  <para>Specify the location of the installation source to use. Supported protocols are <literal>nfs</literal>, <literal>smb</literal> (Samba/CIFS), <literal>ftp</literal>, <literal>tftp</literal><literal>http</literal>, and <literal>https</literal>.</para>
                   <para>If an <literal>ftp</literal>, <literal>tftp</literal> or <literal>smb</literal> URL is provided, specify the user name and password. Skip credentials for anonymous or guest login.</para>
                   <screen>Install=ftp://<replaceable>USER</replaceable>:<replaceable>PASSWORD</replaceable>@<replaceable>SERVER</replaceable>/<replaceable>DIRECTORY</replaceable>/DVD1/
 Install=tftp://<replaceable>USER</replaceable>:<replaceable>PASSWORD</replaceable>@<replaceable>SERVER</replaceable>/<replaceable>DIRECTORY</replaceable>/DVD1/</screen>
@@ -362,16 +339,7 @@ vlanid=201</screen>
    <sect1 xml:id="sec-appdendix-vt220">
       <title>Using the vt220 terminal emulator</title>
       <para>Recent MicroCode Levels allow the use of an integrated vt220 terminal emulator (ASCII terminal) in addition to the standard line mode terminal. The vt220 terminal is connected to <filename>/dev/ttysclp0</filename>. The line mode terminal is connected to <filename>/dev/ttysclp_line0</filename>. For LPAR installations, the vt220 terminal emulator is activated by default.</para>
-      <para>To start the Text-based UI on HMC, log in to the HMC, and select <menuchoice>
-            <guimenu>Systems Management</guimenu>
-            <guimenu>Systems</guimenu>
-            <guimenu>
-               <replaceable>IMAGE_ID</replaceable>
-            </guimenu>
-         </menuchoice>. Select the radio button for the LPAR and select <menuchoice>
-            <guimenu>Recovery</guimenu>
-            <guimenu>Integrated ASCII Console</guimenu>
-         </menuchoice>.</para>
+      <para>To start the Text-based UI on HMC, log in to the HMC, and select <menuchoice><guimenu>Systems Management</guimenu><guimenu>Systems</guimenu><guimenu><replaceable>IMAGE_ID</replaceable></guimenu></menuchoice>. Select the radio button for the LPAR and select <menuchoice><guimenu>Recovery</guimenu><guimenu>Integrated ASCII Console</guimenu></menuchoice>.</para>
       <para>To redirect the kernel messages at boot time from the system console to the vt220 terminal, add the following entries to the <literal>parameters</literal> line in <filename>/etc/zipl.conf</filename>:</para>
       <screen>console=ttysclp0 console=ttysclp_line0</screen>
       <para>The resulting <literal>parameters</literal> line would look like the following example:</para>
@@ -448,18 +416,14 @@ vlanid=201</screen>
             </listitem>
             <listitem>
                <para>Saved Segments Planning and Administration</para>
-               <para>
-                  <link xlink:href="https://publibfp.boulder.ibm.com/epubs/pdf/hcsg4c10.pdf"/>
-               </para>
+               <para><link xlink:href="https://publibfp.boulder.ibm.com/epubs/pdf/hcsg4c10.pdf"/></para>
             </listitem>
             <listitem>
                <para>Linux on System z documentation for "Development stream"</para>
             </listitem>
             <listitem>
                <para>Introducing IBM Secure Execution for Linux, Securing the guest</para>
-               <para>
-                  <link xlink:href="https://www.ibm.com/support/knowledgecenter/linuxonibm/com.ibm.linux.z.lxse/lxse_t_secureexecution.html"/>
-               </para>
+               <para><link xlink:href="https://www.ibm.com/support/knowledgecenter/linuxonibm/com.ibm.linux.z.lxse/lxse_t_secureexecution.html"/></para>
             </listitem>
          </itemizedlist>
       </sect2>

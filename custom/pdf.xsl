@@ -10,5 +10,7 @@
   <xsl:import href="https://www.xoev.de/docbook-tng/resources/driver/pdf.xsl"/>
   
   <xsl:include href="driver-common.xsl"/>
+  
+  <xsl:param name="nominal-page-width" select="'170mm'"/>
 
 </xsl:stylesheet>

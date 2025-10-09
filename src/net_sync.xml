@@ -205,9 +205,7 @@ tux:<replaceable>PASSPHRASE</replaceable></screen>
          <varlistentry>
             <term>Rear</term>
             <listitem>
-               <para>A disaster recovery framework, see the <link xlink:href="https://documentation.suse.com/sle-ha/15/html/SLE-HA-all/cha-ha-rear.html">
-                     <citetitle>Administration Guide</citetitle> of the SUSE Linux Enterprise High Availability, chapter <citetitle>Disaster Recovery with Rear (Relax-and-Recover)</citetitle>
-                  </link>.</para>
+               <para>A disaster recovery framework, see the <link xlink:href="https://documentation.suse.com/sle-ha/15/html/SLE-HA-all/cha-ha-rear.html"><citetitle>Administration Guide</citetitle> of the SUSE Linux Enterprise High Availability, chapter <citetitle>Disaster Recovery with Rear (Relax-and-Recover)</citetitle></link>.</para>
             </listitem>
          </varlistentry>
       </variablelist>

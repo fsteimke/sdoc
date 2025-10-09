@@ -82,10 +82,7 @@ STARTMODE="hotplug"
                   <para>Ensure that IP forwarding is enabled:</para>
                   <substeps>
                      <step>
-                        <para>In YaST, go to <menuchoice>
-                              <guimenu>Network Settings</guimenu>
-                              <guimenu>Routing</guimenu>
-                           </menuchoice>.</para>
+                        <para>In YaST, go to <menuchoice><guimenu>Network Settings</guimenu><guimenu>Routing</guimenu></menuchoice>.</para>
                      </step>
                      <step>
                         <para>Enter the <guimenu>Routing</guimenu> tab and activate <guimenu>Enable IPv4 Forwarding</guimenu> and <guimenu>Enable IPv6 Forwarding</guimenu> options.</para>
@@ -155,8 +152,7 @@ net.ipv4.conf.all.proxy_arp = 1</screen>
             <para>The remaining configuration tasks must be accomplished from inside the VM Guest.</para>
             <substeps performance="required">
                <step>
-                  <para>Open a console to the VM Guest with <command>xl console</command>
-                     <replaceable>DOMAIN</replaceable> and log in.</para>
+                  <para>Open a console to the VM Guest with <command>xl console</command><replaceable>DOMAIN</replaceable> and log in.</para>
                </step>
                <step>
                   <para>Check that the guest IP is set to 192.168.1.21.</para>
@@ -180,8 +176,7 @@ default 192.168.1.20 - -
       <procedure>
          <title>Configuring a masqueraded IPv4 VM guest</title>
          <step>
-            <para>Shut down the VM Guest system with <command>xl shutdown</command>
-               <replaceable>DOMAIN</replaceable>.</para>
+            <para>Shut down the VM Guest system with <command>xl shutdown</command><replaceable>DOMAIN</replaceable>.</para>
          </step>
          <step>
             <para>Prepare the network configuration on the VM Host Server:</para>
@@ -259,8 +254,7 @@ STARTMODE="hotplug"
             <para>The remaining configuration tasks need to be accomplished from inside the VM Guest.</para>
             <substeps performance="required">
                <step>
-                  <para>Open a console to the VM Guest with <command>xl console</command>
-                     <replaceable>DOMAIN</replaceable> and log in.</para>
+                  <para>Open a console to the VM Guest with <command>xl console</command><replaceable>DOMAIN</replaceable> and log in.</para>
                </step>
                <step>
                   <para>Check whether the guest IP is set to 192.168.100.1.</para>

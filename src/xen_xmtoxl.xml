@@ -20,8 +20,7 @@
          <title>XL design</title>
          <para>The basic structure of every <command>xl</command> command is:</para>
          <screen><command>xl subcommand</command><option>OPTIONS</option><replaceable>DOMAIN</replaceable></screen>
-         <para>
-            <replaceable>DOMAIN</replaceable> is the numeric domain ID, or the domain name (which is internally translated to the domain ID), and <replaceable>OPTIONS</replaceable> are subcommand specific options.</para>
+         <para><replaceable>DOMAIN</replaceable> is the numeric domain ID, or the domain name (which is internally translated to the domain ID), and <replaceable>OPTIONS</replaceable> are subcommand specific options.</para>
          <para>Although xl/libxl was designed to be backward-compatible with xm/xend, there are a few differences that should be noted:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
@@ -31,8 +30,7 @@
                <para>xl/libxl does not support Python code in the domain configuration files.</para>
             </listitem>
             <listitem>
-               <para>xl/libxl does not support creating domains from SXP format configuration files (<command>xm</command>
-                  <option>create</option> -F).</para>
+               <para>xl/libxl does not support creating domains from SXP format configuration files (<command>xm</command><option>create</option> -F).</para>
             </listitem>
             <listitem>
                <para>xl/libxl does not support sharing storage across DomU's via <command>w!</command> in domain configuration files.</para>
@@ -59,10 +57,7 @@
                <para>You must remove any Python code from your xm domain configuration files.</para>
             </listitem>
             <listitem>
-               <para>It is recommended to capture the libvirt domain XML from all existing virtual machines using <command>virsh</command>
-                  <option>dumpxml</option>
-                  <replaceable>DOMAIN_NAME</replaceable>
-                  <replaceable>DOMAIN_NAME.xml</replaceable>.</para>
+               <para>It is recommended to capture the libvirt domain XML from all existing virtual machines using <command>virsh</command><option>dumpxml</option><replaceable>DOMAIN_NAME</replaceable><replaceable>DOMAIN_NAME.xml</replaceable>.</para>
             </listitem>
             <listitem>
                <para>It is recommended to do a backup of <filename>/etc/xen/xend-config.sxp</filename> and <filename>/boot/grub/menu.lst</filename> files to keep references of previous parameters used for Xen.</para>

@@ -20,78 +20,42 @@
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>Section</para>
-                  </entry>
-                  <entry>
-                     <para>Category</para>
-                  </entry>
+                  <entry><para>Section</para></entry>
+                  <entry><para>Category</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>1</para>
-                  </entry>
-                  <entry>
-                     <para>User commands</para>
-                  </entry>
+                  <entry><para>1</para></entry>
+                  <entry><para>User commands</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>2</para>
-                  </entry>
-                  <entry>
-                     <para>System calls</para>
-                  </entry>
+                  <entry><para>2</para></entry>
+                  <entry><para>System calls</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>3</para>
-                  </entry>
-                  <entry>
-                     <para>Library functions</para>
-                  </entry>
+                  <entry><para>3</para></entry>
+                  <entry><para>Library functions</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>4</para>
-                  </entry>
-                  <entry>
-                     <para>Device driver information</para>
-                  </entry>
+                  <entry><para>4</para></entry>
+                  <entry><para>Device driver information</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>5</para>
-                  </entry>
-                  <entry>
-                     <para>Configuration file formats</para>
-                  </entry>
+                  <entry><para>5</para></entry>
+                  <entry><para>Configuration file formats</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>6</para>
-                  </entry>
-                  <entry>
-                     <para>Games</para>
-                  </entry>
+                  <entry><para>6</para></entry>
+                  <entry><para>Games</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>7</para>
-                  </entry>
-                  <entry>
-                     <para>High level concepts</para>
-                  </entry>
+                  <entry><para>7</para></entry>
+                  <entry><para>High level concepts</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>8</para>
-                  </entry>
-                  <entry>
-                     <para>Administrator commands</para>
-                  </entry>
+                  <entry><para>8</para></entry>
+                  <entry><para>Administrator commands</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -100,104 +64,64 @@
       <para>The AppArmor man pages are:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <systemitem>aa-audit(8)</systemitem>
-            </para>
+            <para><systemitem>aa-audit(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-autodep(8)</systemitem>
-            </para>
+            <para><systemitem>aa-autodep(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-complain(8)</systemitem>
-            </para>
+            <para><systemitem>aa-complain(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-decode(8)</systemitem>
-            </para>
+            <para><systemitem>aa-decode(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-disable(8)</systemitem>
-            </para>
+            <para><systemitem>aa-disable(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-easyprof(8)</systemitem>
-            </para>
+            <para><systemitem>aa-easyprof(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-enforce(8)</systemitem>
-            </para>
+            <para><systemitem>aa-enforce(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-enxec(8)</systemitem>
-            </para>
+            <para><systemitem>aa-enxec(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-genprof(8)</systemitem>
-            </para>
+            <para><systemitem>aa-genprof(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-logprof(8)</systemitem>
-            </para>
+            <para><systemitem>aa-logprof(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-notify(8)</systemitem>
-            </para>
+            <para><systemitem>aa-notify(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-status(8)</systemitem>
-            </para>
+            <para><systemitem>aa-status(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa-unconfined(8)</systemitem>
-            </para>
+            <para><systemitem>aa-unconfined(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>aa_change_hat(8)</systemitem>
-            </para>
+            <para><systemitem>aa_change_hat(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>logprof.conf(5)</systemitem>
-            </para>
+            <para><systemitem>logprof.conf(5)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>apparmor.d(5)</systemitem>
-            </para>
+            <para><systemitem>apparmor.d(5)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>apparmor.vim(5)</systemitem>
-            </para>
+            <para><systemitem>apparmor.vim(5)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>apparmor(7)</systemitem>
-            </para>
+            <para><systemitem>apparmor(7)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>apparmor_parser(8)</systemitem>
-            </para>
+            <para><systemitem>apparmor_parser(8)</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>apparmor_status(8)</systemitem>
-            </para>
+            <para><systemitem>apparmor_status(8)</systemitem></para>
          </listitem>
       </itemizedlist>
    </sect1>
@@ -321,15 +245,11 @@ sock_type="raw" pid=30251 comm="ping"
 -->
       <sect2 xml:id="sec-apparmor-support-trouble-ex">
          <title>How to exclude certain profiles from the list of profiles used?</title>
-         <para>Run <command>aa-disable</command>
-            <option>
-               <replaceable>PROGRAMNAME</replaceable>
-            </option> to disable the profile for <replaceable>PROGRAMNAME</replaceable>. This command creates a symbolic link to the profile in <filename>/etc/apparmor.d/disable/</filename>. To reactivate the profile, delete the link, and run <command>systemctl reload apparmor</command>.</para>
+         <para>Run <command>aa-disable</command><option><replaceable>PROGRAMNAME</replaceable></option> to disable the profile for <replaceable>PROGRAMNAME</replaceable>. This command creates a symbolic link to the profile in <filename>/etc/apparmor.d/disable/</filename>. To reactivate the profile, delete the link, and run <command>systemctl reload apparmor</command>.</para>
       </sect2>
       <sect2 xml:id="sec-apparmor-support-trouble-remote">
          <title>Can I manage profiles for applications not installed on my system?</title>
-         <para>Managing profiles with AppArmor requires you to have access to the log of the system on which the application is running. So you do not need to run the application on your profile build host if you have access to the machine that runs the application. You can run the application on one system, transfer the logs (<filename>/var/log/audit.log</filename> or, if <filename>audit</filename> is not installed, <command>journalctl | grep -i apparmor &gt; path_to_logfile</command>) to your profile build host and run <command>aa-logprof -f</command>
-            <replaceable>PATH_TO_LOGFILE</replaceable>.</para>
+         <para>Managing profiles with AppArmor requires you to have access to the log of the system on which the application is running. So you do not need to run the application on your profile build host if you have access to the machine that runs the application. You can run the application on one system, transfer the logs (<filename>/var/log/audit.log</filename> or, if <filename>audit</filename> is not installed, <command>journalctl | grep -i apparmor &gt; path_to_logfile</command>) to your profile build host and run <command>aa-logprof -f</command><replaceable>PATH_TO_LOGFILE</replaceable>.</para>
       </sect2>
       <sect2 xml:id="sec-apparmor-support-trouble-syntax">
          <title>How to spot and fix AppArmor syntax errors</title>
@@ -343,10 +263,10 @@ Profile /etc/apparmor.d/usr.sbin.squid failed to load
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/aa_syncheck.png" width="60%"/>
+                  <imagedata fileref="media/aa_syncheck.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/aa_syncheck.png" width="60%"/>
+                  <imagedata fileref="media/aa_syncheck.png" width="55%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

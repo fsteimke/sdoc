@@ -208,10 +208,8 @@
          <para>AppArmor provides <literal>change_hat</literal> and <literal>change_profile</literal> rules that control domain transitioning. <literal>change_hat</literal> are specified by defining hats in a profile, while <literal>change_profile</literal> rules refer to another profile and start with the keyword <literal>change_profile</literal>:</para>
          <screen>change_profile -&gt; /usr/bin/foobar,</screen>
          <para>Both <literal>change_hat</literal> and <literal>change_profile</literal> provide for an application directed profile transition, without having to launch a separate application. <literal>change_profile</literal> provides a generic one way transition between any of the loaded profiles. <literal>change_hat</literal> provides for a returnable parent child transition where an application can switch from the parent profile to the hat profile and if it provides the correct secret key return to the parent profile at a later time.</para>
-         <para>
-            <literal>change_profile</literal> is best used in situations where an application goes through a trusted setup phase and then can lower its privilege level. Any resources mapped or opened during the start-up phase may still be accessible after the profile change, but the new profile restricts the opening of new resources, and limits certain resources opened before the switch. Specifically, memory resources are still available while capability and file resources (if they are not memory mapped) can be limited.</para>
-         <para>
-            <literal>change_hat</literal> is best used in situations where an application runs a virtual machine or an interpreter that does not provide direct access to the applications resources (for example Apache's <literal>mod_php</literal>). Since <literal>change_hat</literal> stores the return secret key in the application's memory the phase of reduced privilege should not have direct access to memory. It is also important that file access is properly separated, since the hat can restrict accesses to a file handle but does not close it. If an application does buffering and provides access to the open files with buffering, the accesses to these files might not be seen by the kernel and hence not restricted by the new profile.</para>
+         <para><literal>change_profile</literal> is best used in situations where an application goes through a trusted setup phase and then can lower its privilege level. Any resources mapped or opened during the start-up phase may still be accessible after the profile change, but the new profile restricts the opening of new resources, and limits certain resources opened before the switch. Specifically, memory resources are still available while capability and file resources (if they are not memory mapped) can be limited.</para>
+         <para><literal>change_hat</literal> is best used in situations where an application runs a virtual machine or an interpreter that does not provide direct access to the applications resources (for example Apache's <literal>mod_php</literal>). Since <literal>change_hat</literal> stores the return secret key in the application's memory the phase of reduced privilege should not have direct access to memory. It is also important that file access is properly separated, since the hat can restrict accesses to a file handle but does not close it. If an application does buffering and provides access to the open files with buffering, the accesses to these files might not be seen by the kernel and hence not restricted by the new profile.</para>
          <warning>
             <title>Safety of domain transitions</title>
             <para>The <literal>change_hat</literal> and <literal>change_profile</literal> domain transitions are less secure than a domain transition done through an exec because they do not affect a process's memory mappings, nor do they close resources that have already been opened.</para>
@@ -278,21 +276,16 @@ capability,                          # grant all capabilities
       <screen>network [[&lt;domain&gt;<co xml:id="co-apparmor-profiles-nac-dom"/>][&lt;type<co xml:id="co-apparmor-profiles-nac-type"/>&gt;][&lt;protocol<co xml:id="co-apparmor-profiles-nac-proto"/>&gt;]]</screen>
       <calloutlist>
          <callout arearefs="co-apparmor-profiles-nac-dom">
-            <para>Supported domains: <literal>inet</literal>, <literal>ax25</literal>, <literal>ipx</literal>, <literal>appletalk</literal>, <literal>netrom</literal>, <literal>bridge</literal>, <literal>x25</literal>, <literal>inet6</literal>, <literal>rose</literal>, <literal>netbeui</literal>, <literal>security</literal>, <literal>key</literal>, <literal>packet</literal>, <literal>ash</literal>, <literal>econet</literal>, <literal>atmsvc</literal>, <literal>sna</literal>, <literal>pppox</literal>, <literal>wanpipe</literal>, <literal>bluetooth</literal>, <literal>unix</literal>, <literal>atmpvc</literal>,<literal>netlink</literal>, <literal>llc</literal>, <literal>can</literal>, <literal>tipc</literal>, <literal>iucv</literal>, <literal>rxrpc</literal>, <literal>isdn</literal>, <literal>phonet</literal>, <literal>ieee802154</literal>, <literal>caif</literal>, <literal>alg</literal>, <literal>nfc</literal>, <literal>vsock</literal>
-            </para>
+            <para>Supported domains: <literal>inet</literal>, <literal>ax25</literal>, <literal>ipx</literal>, <literal>appletalk</literal>, <literal>netrom</literal>, <literal>bridge</literal>, <literal>x25</literal>, <literal>inet6</literal>, <literal>rose</literal>, <literal>netbeui</literal>, <literal>security</literal>, <literal>key</literal>, <literal>packet</literal>, <literal>ash</literal>, <literal>econet</literal>, <literal>atmsvc</literal>, <literal>sna</literal>, <literal>pppox</literal>, <literal>wanpipe</literal>, <literal>bluetooth</literal>, <literal>unix</literal>, <literal>atmpvc</literal>,<literal>netlink</literal>, <literal>llc</literal>, <literal>can</literal>, <literal>tipc</literal>, <literal>iucv</literal>, <literal>rxrpc</literal>, <literal>isdn</literal>, <literal>phonet</literal>, <literal>ieee802154</literal>, <literal>caif</literal>, <literal>alg</literal>, <literal>nfc</literal>, <literal>vsock</literal></para>
          </callout>
          <callout arearefs="co-apparmor-profiles-nac-type">
-            <para>Supported types: <literal>stream</literal>, <literal>dgram</literal>, <literal>seqpacket</literal>, <literal>rdm</literal>, <literal>raw</literal>, <literal>packet</literal>
-            </para>
+            <para>Supported types: <literal>stream</literal>, <literal>dgram</literal>, <literal>seqpacket</literal>, <literal>rdm</literal>, <literal>raw</literal>, <literal>packet</literal></para>
          </callout>
          <callout arearefs="co-apparmor-profiles-nac-proto">
-            <para>Supported protocols: <literal>tcp</literal>, <literal>udp</literal>, <literal>icmp</literal>
-            </para>
+            <para>Supported protocols: <literal>tcp</literal>, <literal>udp</literal>, <literal>icmp</literal></para>
          </callout>
       </calloutlist>
-      <para>The AppArmor tools support only family and type specification. The AppArmor module emits only <literal>network <replaceable>DOMAIN</replaceable>
-            <replaceable>TYPE</replaceable>
-         </literal> in <quote>ACCESS DENIED</quote> messages. And only these are output by the profile generation tools, both YaST and command line.</para>
+      <para>The AppArmor tools support only family and type specification. The AppArmor module emits only <literal>network <replaceable>DOMAIN</replaceable><replaceable>TYPE</replaceable></literal> in <quote>ACCESS DENIED</quote> messages. And only these are output by the profile generation tools, both YaST and command line.</para>
       <para>The following examples illustrate possible network-related rules to be used in AppArmor profiles. The syntax of the last two are not currently supported by the AppArmor tools.</para>
       <screen>network<co xml:id="co-apparmor-profiles-nac-nw"/>,
 network inet<co xml:id="co-apparmor-profiles-nac-inet"/>,
@@ -375,78 +368,32 @@ network tcp<co xml:id="co-apparmor-profiles-nac-tcp"/>,
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>*</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for any number of any characters, except <literal>/</literal>.</para>
-                     <para>Example: An arbitrary number of path elements.</para>
-                  </entry>
+                  <entry><para><literal>*</literal></para></entry>
+                  <entry><para>Substitutes for any number of any characters, except <literal>/</literal>.</para><para>Example: An arbitrary number of path elements.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>**</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for any number of characters, including <literal>/</literal>.</para>
-                     <para>Example: An arbitrary number of path elements, including entire directories.</para>
-                  </entry>
+                  <entry><para><literal>**</literal></para></entry>
+                  <entry><para>Substitutes for any number of characters, including <literal>/</literal>.</para><para>Example: An arbitrary number of path elements, including entire directories.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>?</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for any single character, except <literal>/</literal>.</para>
-                  </entry>
+                  <entry><para><literal>?</literal></para></entry>
+                  <entry><para>Substitutes for any single character, except <literal>/</literal>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>[abc]</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for the single character <literal>a</literal>, <literal>b</literal>, or <literal>c</literal>.</para>
-                     <para>Example: a rule that matches <literal>/home[01]/*/.plan</literal> allows a program to access <filename>.plan</filename> files for users in both <filename>/home0</filename> and <filename>/home1</filename>.</para>
-                  </entry>
+                  <entry><para><literal>[abc]</literal></para></entry>
+                  <entry><para>Substitutes for the single character <literal>a</literal>, <literal>b</literal>, or <literal>c</literal>.</para><para>Example: a rule that matches <literal>/home[01]/*/.plan</literal> allows a program to access <filename>.plan</filename> files for users in both <filename>/home0</filename> and <filename>/home1</filename>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>[a-c]</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for the single character <literal>a</literal>, <literal>b</literal>, or <literal>c</literal>.</para>
-                  </entry>
+                  <entry><para><literal>[a-c]</literal></para></entry>
+                  <entry><para>Substitutes for the single character <literal>a</literal>, <literal>b</literal>, or <literal>c</literal>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>{ab,cd}</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Expands to one rule to match <literal>ab</literal> and one rule to match <literal>cd</literal>.</para>
-                     <para>Example: a rule that matches <literal>/{usr,www}/pages/**</literal> grants access to Web pages in both <filename>/usr/pages</filename> and <filename>/www/pages</filename>.</para>
-                  </entry>
+                  <entry><para><literal>{ab,cd}</literal></para></entry>
+                  <entry><para>Expands to one rule to match <literal>ab</literal> and one rule to match <literal>cd</literal>.</para><para>Example: a rule that matches <literal>/{usr,www}/pages/**</literal> grants access to Web pages in both <filename>/usr/pages</filename> and <filename>/www/pages</filename>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>[^a]</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Substitutes for any character except <literal>a</literal>.</para>
-                  </entry>
+                  <entry><para><literal>[^a]</literal></para></entry>
+                  <entry><para>Substitutes for any character except <literal>a</literal>.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -458,16 +405,13 @@ network tcp<co xml:id="co-apparmor-profiles-nac-tcp"/>,
   [...]
 }</screen>
          <para>You can use multiple flags separated by a comma ',' or space ' '. There are three basic types of profile flags: mode, relative, and attach flags.</para>
-         <para>
-            <emphasis>Mode</emphasis> flag is <literal>complain</literal> (illegal accesses are allowed and logged). If it is omitted, the profile is in <literal>enforce</literal> mode (enforces the policy).</para>
+         <para><emphasis>Mode</emphasis> flag is <literal>complain</literal> (illegal accesses are allowed and logged). If it is omitted, the profile is in <literal>enforce</literal> mode (enforces the policy).</para>
          <tip>
             <para>A more flexible way of setting the whole profile into complain mode is to create a symbolic link from the profile file inside the <filename>/etc/apparmor.d/force-complain/</filename> directory.</para>
             <screen>ln -s /etc/apparmor.d/bin.ping /etc/apparmor.d/force-complain/bin.ping</screen>
          </tip>
-         <para>
-            <emphasis>Relative</emphasis> flags are <literal>chroot_relative</literal> (states that the profile is relative to the chroot instead of namespace) or <literal>namespace_relative</literal> (the default, with the path being relative to outside the chroot). They are mutually exclusive.</para>
-         <para>
-            <emphasis>Attach</emphasis> flags consist of two pairs of mutually exclusive flags: <literal>attach_disconnected</literal> or <literal>no_attach_disconnected</literal> (determine if path names resolved to be outside of the namespace are attached to the root, which means they have the '/' character at the beginning), and <literal>chroot_attach</literal> or <literal>chroot_no_attach</literal> (control path name generation when in a chroot environment while a file is accessed that is external to the chroot but within the namespace).</para>
+         <para><emphasis>Relative</emphasis> flags are <literal>chroot_relative</literal> (states that the profile is relative to the chroot instead of namespace) or <literal>namespace_relative</literal> (the default, with the path being relative to outside the chroot). They are mutually exclusive.</para>
+         <para><emphasis>Attach</emphasis> flags consist of two pairs of mutually exclusive flags: <literal>attach_disconnected</literal> or <literal>no_attach_disconnected</literal> (determine if path names resolved to be outside of the namespace are attached to the root, which means they have the '/' character at the beginning), and <literal>chroot_attach</literal> or <literal>chroot_no_attach</literal> (control path name generation when in a chroot environment while a file is accessed that is external to the chroot but within the namespace).</para>
       </sect2>
       <sect2 xml:id="sec-apparmor-profiles-glob-variables">
          <title>Using variables in profiles</title>
@@ -553,65 +497,28 @@ alias /home/ -&gt; /mnt/home/</screen>
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>r</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Read mode</para>
-                  </entry>
+                  <entry><para><literal>r</literal></para></entry>
+                  <entry><para>Read mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>w</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Write mode (mutually exclusive to <literal>a</literal>)</para>
-                  </entry>
+                  <entry><para><literal>w</literal></para></entry>
+                  <entry><para>Write mode (mutually exclusive to <literal>a</literal>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>a</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Append mode (mutually exclusive to <literal>w</literal>)</para>
-                  </entry>
+                  <entry><para><literal>a</literal></para></entry>
+                  <entry><para>Append mode (mutually exclusive to <literal>w</literal>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>k</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>File locking mode</para>
-                  </entry>
+                  <entry><para><literal>k</literal></para></entry>
+                  <entry><para>File locking mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>l</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Link mode</para>
-                  </entry>
+                  <entry><para><literal>l</literal></para></entry>
+                  <entry><para>Link mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>link <replaceable>FILE</replaceable> -&gt; <replaceable>TARGET</replaceable>
-                        </literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Link pair rule (cannot be combined with other access modes)</para>
-                  </entry>
+                  <entry><para><literal>link <replaceable>FILE</replaceable> -&gt; <replaceable>TARGET</replaceable></literal></para></entry>
+                  <entry><para>Link pair rule (cannot be combined with other access modes)</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -704,15 +611,13 @@ owner /home/*/** rw,</screen>
       <title>Mount rules</title>
       <para>AppArmor can limit mount and unmount operations, including file system types and mount flags. The rule syntax is based on the <command>mount</command> command syntax and starts with one of the keywords <literal>mount</literal>, <literal>remount</literal>, or <literal>umount</literal>. Conditions are optional and unspecified conditionals are assumed to match all entries. For example, not specifying a file system means that all file systems are matched.</para>
       <para>Conditionals can be specified by specifying conditionals with <literal>options=</literal> or <literal>options in</literal>.</para>
-      <para>
-         <literal>options=</literal> specifies conditionals that have to be met exactly. The rule</para>
+      <para><literal>options=</literal> specifies conditionals that have to be met exactly. The rule</para>
       <screen>mount options=ro /dev/foo -E /mnt/,</screen>
       <para>matches</para>
       <screen><prompt role="root">#</prompt><command>mount -o ro /dev/foo /mnt</command></screen>
       <para>but does not match</para>
       <screen><prompt role="root">#</prompt><command>mount -o ro,atime /dev/foo /mnt</command><prompt role="root">#</prompt><command>mount -o rw /dev/foo /mnt</command></screen>
-      <para>
-         <literal>options in</literal> requires that at least one of the listed mount options is used. The rule</para>
+      <para><literal>options in</literal> requires that at least one of the listed mount options is used. The rule</para>
       <screen>mount options in (ro,atime) /dev/foo -&gt; /mnt/,</screen>
       <para>matches</para>
       <screen><prompt role="root">#</prompt><command>mount -o ro /dev/foo /mnt</command><prompt role="root">#</prompt><command>mount -o ro,atime /dev/foo /mnt</command><prompt role="root">#</prompt><command>mount -o atime /dev/foo /mnt</command></screen>
@@ -813,54 +718,24 @@ signal set=(rtmin+0 rtmin+32),</screen>
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>Px</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Discrete profile execute mode</para>
-                  </entry>
+                  <entry><para><literal>Px</literal></para></entry>
+                  <entry><para>Discrete profile execute mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>Cx</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Discrete local profile execute mode</para>
-                  </entry>
+                  <entry><para><literal>Cx</literal></para></entry>
+                  <entry><para>Discrete local profile execute mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>Ux</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Unconfined execute mode</para>
-                  </entry>
+                  <entry><para><literal>Ux</literal></para></entry>
+                  <entry><para>Unconfined execute mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>ix</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Inherit execute mode</para>
-                  </entry>
+                  <entry><para><literal>ix</literal></para></entry>
+                  <entry><para>Inherit execute mode</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>m</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Allow <literal>PROT_EXEC</literal> with <command>mmap(2)</command> calls</para>
-                  </entry>
+                  <entry><para><literal>m</literal></para></entry>
+                  <entry><para>Allow <literal>PROT_EXEC</literal> with <command>mmap(2)</command> calls</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -891,8 +766,7 @@ signal set=(rtmin+0 rtmin+32),</screen>
       </sect2>
       <sect2 xml:id="sec-apparmor-profiles-exec-ix">
          <title>Inherit execute mode (ix)</title>
-         <para>
-            <literal>ix</literal> prevents the normal AppArmor domain transition on <command>execve(2)</command> when the profiled program executes the named program. Instead, the executed resource inherits the current profile.</para>
+         <para><literal>ix</literal> prevents the normal AppArmor domain transition on <command>execve(2)</command> when the profiled program executes the named program. Instead, the executed resource inherits the current profile.</para>
          <para>This mode is useful when a confined program needs to call another confined program without gaining the permissions of the target's profile or losing the permissions of the current profile. There is no version to scrub the environment because <literal>ix</literal> executions do not change privileges.</para>
          <para>Incompatible with <literal>cx</literal>, <literal>ux</literal>, and <literal>px</literal>. Implies <literal>m</literal>.</para>
       </sect2>
@@ -942,109 +816,67 @@ signal set=(rtmin+0 rtmin+32),</screen>
          <para>When choosing one of the Px, Cx or Ux execution modes, take into account that the following environment variables are removed from the environment before the child process inherits it. As a consequence, applications or processes relying on any of these variables do not work anymore if the profile applied to them carries Px, Cx or Ux flags:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <envar>GCONV_PATH</envar>
-               </para>
+               <para><envar>GCONV_PATH</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>GETCONF_DIR</envar>
-               </para>
+               <para><envar>GETCONF_DIR</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>HOSTALIASES</envar>
-               </para>
+               <para><envar>HOSTALIASES</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_AUDIT</envar>
-               </para>
+               <para><envar>LD_AUDIT</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_DEBUG</envar>
-               </para>
+               <para><envar>LD_DEBUG</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_DEBUG_OUTPUT</envar>
-               </para>
+               <para><envar>LD_DEBUG_OUTPUT</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_DYNAMIC_WEAK</envar>
-               </para>
+               <para><envar>LD_DYNAMIC_WEAK</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_LIBRARY_PATH</envar>
-               </para>
+               <para><envar>LD_LIBRARY_PATH</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_ORIGIN_PATH</envar>
-               </para>
+               <para><envar>LD_ORIGIN_PATH</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_PRELOAD</envar>
-               </para>
+               <para><envar>LD_PRELOAD</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_PROFILE</envar>
-               </para>
+               <para><envar>LD_PROFILE</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_SHOW_AUXV</envar>
-               </para>
+               <para><envar>LD_SHOW_AUXV</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LD_USE_LOAD_BIAS</envar>
-               </para>
+               <para><envar>LD_USE_LOAD_BIAS</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LOCALDOMAIN</envar>
-               </para>
+               <para><envar>LOCALDOMAIN</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>LOCPATH</envar>
-               </para>
+               <para><envar>LOCPATH</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>MALLOC_TRACE</envar>
-               </para>
+               <para><envar>MALLOC_TRACE</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>NLSPATH</envar>
-               </para>
+               <para><envar>NLSPATH</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>RESOLV_HOST_CONF</envar>
-               </para>
+               <para><envar>RESOLV_HOST_CONF</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>RES_OPTIONS</envar>
-               </para>
+               <para><envar>RES_OPTIONS</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>TMPDIR</envar>
-               </para>
+               <para><envar>TMPDIR</envar></para>
             </listitem>
             <listitem>
-               <para>
-                  <envar>TZDIR</envar>
-               </para>
+               <para><envar>TZDIR</envar></para>
             </listitem>
          </itemizedlist>
       </sect2>

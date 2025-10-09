@@ -7,8 +7,7 @@
          xml:id="cha-xen-vhost">
    <title>Setting up a virtual machine host</title>
    <info/>
-   <para>This section documents how to set up and use <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-      <phrase role="productnumber">15 SP7</phrase> as a virtual machine host.</para>
+   <para>This section documents how to set up and use <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> as a virtual machine host.</para>
    <para>The hardware requirements for the Dom0 are often the same as those for the <phrase role="productname">SUSE Linux Enterprise Server</phrase> operating system. Additional CPU, disk, memory and network resources should be added to accommodate the resource demands of all planned VM Guest systems.</para>
    <tip>
       <title>Resources</title>
@@ -19,13 +18,7 @@
     on code path 10 and later. Code path 10 products include Open Enterprise
     Server 2 Linux, &productname; 10, &sled; 10, and &opensuse; 10.x.
     </para> -->
-   <para>The virtual machine host requires several software packages and their dependencies to be installed. To install all necessary packages, run YaST <guimenu>Software Management</guimenu>, select <menuchoice>
-         <guimenu>View</guimenu>
-         <guimenu>Patterns</guimenu>
-      </menuchoice> and choose <guimenu>Xen Virtual Machine Host Server</guimenu> for installation. The installation can also be performed with YaST using the module <menuchoice>
-         <guimenu>Virtualization</guimenu>
-         <guimenu>Install Hypervisor and Tools</guimenu>
-      </menuchoice>.</para>
+   <para>The virtual machine host requires several software packages and their dependencies to be installed. To install all necessary packages, run YaST <guimenu>Software Management</guimenu>, select <menuchoice><guimenu>View</guimenu><guimenu>Patterns</guimenu></menuchoice> and choose <guimenu>Xen Virtual Machine Host Server</guimenu> for installation. The installation can also be performed with YaST using the module <menuchoice><guimenu>Virtualization</guimenu><guimenu>Install Hypervisor and Tools</guimenu></menuchoice>.</para>
    <para>After the Xen software is installed, restart the computer and, on the boot screen, choose the newly added option with the Xen kernel.</para>
    <para>Updates are available through your update channel. To be sure to have the latest updates installed, run YaST <guimenu>Online Update</guimenu> after the installation has finished.</para>
    <sect1 xml:id="sec-xen-vhost-best">
@@ -33,10 +26,7 @@
       <para>When installing and configuring the <phrase role="productname">SUSE Linux Enterprise Server</phrase> operating system on the host, be aware of the following best practices and suggestions:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>If the host should always run as Xen host, run YaST <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Boot Loader</guimenu>
-               </menuchoice> and activate the Xen boot entry as default boot section.</para>
+            <para>If the host should always run as Xen host, run YaST <menuchoice><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice> and activate the Xen boot entry as default boot section.</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
                   <para>In YaST, click <guimenu>System &gt; Boot Loader</guimenu>.</para>
@@ -83,8 +73,7 @@
                <para>At Dom0, type <command>xl info</command> to view the amount of memory that is available on the machine. Dom0's current memory allocation can be determined with the <command>xl list</command> command.</para>
             </step>
             <step>
-               <para>Edit <filename>/etc/default/grub</filename> and adjust the <option>GRUB_CMDLINE_XEN</option> option so that it includes <literal>dom0_mem=<replaceable>MEM_AMOUNT</replaceable>
-                  </literal>. Replace <replaceable>MEM_AMOUNT</replaceable> with the maximum amount of memory to allocate to Dom0. Add <command>K</command>, <command>M</command>, or <command>G</command>, to specify the size unit. For example:</para>
+               <para>Edit <filename>/etc/default/grub</filename> and adjust the <option>GRUB_CMDLINE_XEN</option> option so that it includes <literal>dom0_mem=<replaceable>MEM_AMOUNT</replaceable></literal>. Replace <replaceable>MEM_AMOUNT</replaceable> with the maximum amount of memory to allocate to Dom0. Add <command>K</command>, <command>M</command>, or <command>G</command>, to specify the size unit. For example:</para>
                <screen>GRUB_CMDLINE_XEN="dom0_mem=2G"</screen>
             </step>
             <step>
@@ -92,13 +81,11 @@
             </step>
          </procedure>
          <tip>
-            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-grub2-etc-default-grub" xrefstyle="%label &#34;%c&#34;"/> for more details about Xen-related boot configuration options.</para>
+            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-etc-default-grub" xrefstyle="%label &#34;%c&#34;"/> for more details about Xen-related boot configuration options.</para>
          </tip>
          <warning>
             <title>Xen Dom0 memory</title>
-            <para>When using the XL tool stack and the <command>dom0_mem=</command> option for the Xen hypervisor in GRUB 2 you need to disable xl <emphasis>autoballoon</emphasis> in <filename>etc/xen/xl.conf</filename>. Otherwise launching VMs fails with errors about not being able to balloon down Dom0. So add <emphasis>autoballoon=0</emphasis> to <filename>xl.conf</filename> if you have the <command>dom0_mem=</command> option specified for Xen. Also see <link xlink:href="https://wiki.xen.org/wiki/Xen_Best_Practices#Xen_dom0_dedicated_memory_and_preventing_dom0_memory_ballooning">Xen dom0 memory</link>
-            </para>
+            <para>When using the XL tool stack and the <command>dom0_mem=</command> option for the Xen hypervisor in GRUB 2 you need to disable xl <emphasis>autoballoon</emphasis> in <filename>etc/xen/xl.conf</filename>. Otherwise launching VMs fails with errors about not being able to balloon down Dom0. So add <emphasis>autoballoon=0</emphasis> to <filename>xl.conf</filename> if you have the <command>dom0_mem=</command> option specified for Xen. Also see <link xlink:href="https://wiki.xen.org/wiki/Xen_Best_Practices#Xen_dom0_dedicated_memory_and_preventing_dom0_memory_ballooning">Xen dom0 memory</link></para>
          </warning>
       </sect2>
    </sect1>
@@ -147,8 +134,7 @@ isst_if_pci: probe of 0000:fe:00.1 failed with error -5
          <title>Xen and Kdump</title>
          <para>In Xen, the hypervisor manages the memory resource. If you need to reserve system memory for a recovery kernel in Dom0, this memory needs to be reserved by the hypervisor. Thus, it is necessary to add <option>crashkernel=size</option> to the <varname>GRUB_CMDLINE_XEN_DEFAULT</varname> variable in the <filename>/etc/dfault/grub</filename> file, save it and run the following command:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> grub2-mkconfig -o /boot/grub2/grub.cfg</screen>
-         <para>For more information on the crashkernel parameter, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-            <xref linkend="sec-tuning-kexec-crashkernel" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information on the crashkernel parameter, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-tuning-kexec-crashkernel" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </note>
       <para>If the <guimenu>Xen</guimenu> option is not on the GRUB 2 menu, review the steps for installation and verify that the GRUB 2 boot loader has been updated. If the installation has been done without selecting the Xen pattern, run the YaST <guimenu>Software Management</guimenu>, select the filter <guimenu>Patterns</guimenu> and choose <guimenu>Xen Virtual Machine Host Server</guimenu> for installation.</para>
       <para>After booting the hypervisor, the Dom0 virtual machine starts and displays its graphical desktop environment. If you did not install a graphical desktop, the command line environment appears.</para>
@@ -159,10 +145,7 @@ isst_if_pci: probe of 0000:fe:00.1 failed with error -5
       <para>Before starting to install virtual guests, make sure that the system time is correct. To do this, configure NTP (Network Time Protocol) on the controlling domain:</para>
       <procedure>
          <step>
-            <para>In YaST select <menuchoice>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>NTP Configuration</guimenu>
-               </menuchoice>.</para>
+            <para>In YaST select <menuchoice><guimenu>Network Services</guimenu><guimenu>NTP Configuration</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select the option to automatically start the NTP daemon during boot. Provide the IP address of an existing NTP time server, then click <guimenu>Finish</guimenu>.</para>
@@ -288,8 +271,7 @@ pci=['yy:zz.n']</screen>
                <listitem>
                   <para>The software I/O translation buffer allocates a large chunk of low memory early in the bootstrap process. If the requests for memory exceed the size of the buffer, it may result in a hung boot process. To check if this is the case, switch to console 10 and check the output there for a message similar to</para>
                   <screen>kernel: PCI-DMA: Out of SW-IOMMU space for 32768 bytes at device 000:01:02.0</screen>
-                  <para>In this case, you need to increase the size of the <literal>swiotlb</literal>. Add <literal>swiotlb=<replaceable>VALUE</replaceable>
-                     </literal> (where <replaceable>VALUE</replaceable> is specified as the number of slab entries) on the command line of Dom0. The number can be adjusted up or down to find the optimal size for the machine.</para>
+                  <para>In this case, you need to increase the size of the <literal>swiotlb</literal>. Add <literal>swiotlb=<replaceable>VALUE</replaceable></literal> (where <replaceable>VALUE</replaceable> is specified as the number of slab entries) on the command line of Dom0. The number can be adjusted up or down to find the optimal size for the machine.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -303,19 +285,13 @@ pci=['yy:zz.n']</screen>
          <para>There are several resources on the Internet that provide interesting information about PCI Pass-Through:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <link xlink:href="https://wiki.xenproject.org/wiki/VTd_HowTo"/>
-               </para>
+               <para><link xlink:href="https://wiki.xenproject.org/wiki/VTd_HowTo"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://software.intel.com/en-us/articles/intel-virtualization-technology-for-directed-io-vt-d-enhancing-intel-platforms-for-efficient-virtualization-of-io-devices/"/>
-               </para>
+               <para><link xlink:href="https://software.intel.com/en-us/articles/intel-virtualization-technology-for-directed-io-vt-d-enhancing-intel-platforms-for-efficient-virtualization-of-io-devices/"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://support.amd.com/TechDocs/48882_IOMMU.pdf"/>
-               </para>
+               <para><link xlink:href="https://support.amd.com/TechDocs/48882_IOMMU.pdf"/></para>
             </listitem>
          </itemizedlist>
       </sect2>

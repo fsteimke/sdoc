@@ -37,10 +37,8 @@
       <sect2 xml:id="sec-libvirt-connect-auth-libvirt">
          <title>
             <systemitem class="daemon">libvirtd</systemitem> authentication</title>
-         <para>
-            <systemitem class="daemon">libvirtd</systemitem> authentication is configured in <filename>/etc/libvirt/libvirtd.conf</filename>. The configuration made here applies to all <systemitem class="library">libvirt</systemitem> tools such as the Virtual Machine Manager or <command>virsh</command>.</para>
-         <para>
-            <systemitem class="library">libvirt</systemitem> offers two sockets: a read-only socket for monitoring purposes and a read-write socket to be used for management operations. Access to both sockets can be configured independently. By default, both sockets are owned by <literal>root.root</literal>. Default access permissions on the read-write socket are restricted to the user <systemitem class="username">root</systemitem> (<literal>0700</literal>) and fully open on the read-only socket (<literal>0777</literal>).</para>
+         <para><systemitem class="daemon">libvirtd</systemitem> authentication is configured in <filename>/etc/libvirt/libvirtd.conf</filename>. The configuration made here applies to all <systemitem class="library">libvirt</systemitem> tools such as the Virtual Machine Manager or <command>virsh</command>.</para>
+         <para><systemitem class="library">libvirt</systemitem> offers two sockets: a read-only socket for monitoring purposes and a read-write socket to be used for management operations. Access to both sockets can be configured independently. By default, both sockets are owned by <literal>root.root</literal>. Default access permissions on the read-write socket are restricted to the user <systemitem class="username">root</systemitem> (<literal>0700</literal>) and fully open on the read-only socket (<literal>0777</literal>).</para>
          <para>The following instructions describe how to configure access permissions for the read-write socket. The same instructions also apply to the read-only socket. All configuration steps need to be carried out on the VM Host Server.</para>
          <note>
             <title>Default authentication settings on <phrase role="productname">SUSE Linux Enterprise Server</phrase>
@@ -134,12 +132,10 @@ auth_unix_rw = "none"<co xml:id="co-libvirt-connect-ssh-enable"/></screen>
             <para>Two policies for accessing <systemitem class="library">libvirt</systemitem>'s sockets exist:</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>
-                     <emphasis>org.libvirt.unix.monitor</emphasis>: accessing the read-only socket</para>
+                  <para><emphasis>org.libvirt.unix.monitor</emphasis>: accessing the read-only socket</para>
                </listitem>
                <listitem>
-                  <para>
-                     <emphasis>org.libvirt.unix.manage</emphasis>: accessing the read-write socket</para>
+                  <para><emphasis>org.libvirt.unix.manage</emphasis>: accessing the read-write socket</para>
                </listitem>
             </itemizedlist>
             <para>By default, the policy for accessing the read-write socket is to authenticate with the <systemitem class="username">root</systemitem> password once and grant the privilege for the current and for future sessions.</para>
@@ -222,8 +218,7 @@ auth_unix_rw = "none"<co xml:id="co-libvirt-connect-ssh-enable"/></screen>
          <para>Since access to the graphical console of a VM Guest is not controlled by <systemitem class="library">libvirt</systemitem>, but by the specific hypervisor, it is always necessary to additionally configure VNC authentication. The main configuration file is <filename>/etc/libvirt/&lt;hypervisor&gt;.conf</filename>. This section describes the QEMU/KVM hypervisor, so the target configuration file is <filename>/etc/libvirt/qemu.conf</filename>.</para>
          <note>
             <title>VNC authentication for Xen</title>
-            <para>In contrast with KVM, Xen does not yet offer VNC authentication more sophisticated than setting a password on a per-VM basis. See the <literal>&lt;graphics type='vnc'...</literal>
-               <systemitem class="library">libvirt</systemitem> configuration option below.</para>
+            <para>In contrast with KVM, Xen does not yet offer VNC authentication more sophisticated than setting a password on a per-VM basis. See the <literal>&lt;graphics type='vnc'...</literal><systemitem class="library">libvirt</systemitem> configuration option below.</para>
          </note>
          <para>Two authentication types are available: SASL and single-password authentication. If you are using SASL for <systemitem class="library">libvirt</systemitem> authentication, it is strongly recommended to use it for VNC authentication as well—it is possible to share the same database.</para>
          <para>A third method to restrict access to the VM Guest is to enable the use of TLS encryption on the VNC server. This requires the VNC clients to have access to x509 client certificates. By restricting access to these certificates, access can indirectly be controlled on the client side. Refer to <xref linkend="sec-libvirt-connect-remote-tls-vnc-client"/> for details.</para>
@@ -322,8 +317,7 @@ vnc_password = "<replaceable>PASSWORD</replaceable>"</screen>
                   <screen>&lt;graphics type='vnc' port='-1' autoport='yes'/&gt;</screen>
                </step>
                <step>
-                  <para>Add the <literal>passwd=<replaceable>PASSWORD</replaceable>
-                     </literal> attribute, save the file and exit the editor. The maximum length of the password is eight characters.</para>
+                  <para>Add the <literal>passwd=<replaceable>PASSWORD</replaceable></literal> attribute, save the file and exit the editor. The maximum length of the password is eight characters.</para>
                   <screen>&lt;graphics type='vnc' port='-1' autoport='yes' passwd='PASSWORD'/&gt;</screen>
                </step>
                <step>
@@ -336,8 +330,7 @@ vnc_password = "<replaceable>PASSWORD</replaceable>"</screen>
             </procedure>
             <warning>
                <title>Security of the VNC protocol</title>
-               <para>The VNC protocol is not considered to be safe. Although the password is sent encrypted, it may be vulnerable when an attacker can sniff both the encrypted password and the encryption key. Therefore, it is recommended to use VNC with TLS/SSL or tunneled over SSH. <command>virt-viewer</command>, Virtual Machine Manager and Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) support both methods.</para>
+               <para>The VNC protocol is not considered to be safe. Although the password is sent encrypted, it may be vulnerable when an attacker can sniff both the encrypted password and the encryption key. Therefore, it is recommended to use VNC with TLS/SSL or tunneled over SSH. <command>virt-viewer</command>, Virtual Machine Manager and Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) support both methods.</para>
             </warning>
          </sect3>
       </sect2>
@@ -449,20 +442,14 @@ dynamic_ownership = 1</screen>
          <para>To add a new connection in the Virtual Machine Manager, proceed as follows:</para>
          <procedure>
             <step>
-               <para>Choose <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>Add Connection</guimenu>
-                  </menuchoice>
-               </para>
+               <para>Choose <menuchoice><guimenu>File</guimenu><guimenu>Add Connection</guimenu></menuchoice></para>
             </step>
             <step>
                <para>Choose the host's <guimenu>Hypervisor</guimenu> (<guimenu>Xen</guimenu> or <guimenu>QEMU/KVM</guimenu>)</para>
             </step>
             <step performance="optional">
                <para>To set up a remote connection, choose <guimenu>Connect to remote host</guimenu>. For more information, see <xref linkend="sec-libvirt-connect-remote"/>.</para>
-               <para>In case of a remote connection, specify the <guimenu>Hostname</guimenu> of the remote machine in the format <literal>
-                     <replaceable>USERNAME</replaceable>@<replaceable>REMOTE _HOST</replaceable>
-                  </literal>.</para>
+               <para>In case of a remote connection, specify the <guimenu>Hostname</guimenu> of the remote machine in the format <literal><replaceable>USERNAME</replaceable>@<replaceable>REMOTE _HOST</replaceable></literal>.</para>
                <important>
                   <title>Specifying a user name</title>
                   <para>There is no need to specify a user name for TCP and TLS connections: in these cases, it is not evaluated. However, for SSH connections, specifying a user name is necessary when you want to connect as a user other than <systemitem class="username">root</systemitem>.</para>
@@ -484,11 +471,7 @@ dynamic_ownership = 1</screen>
          <title>Remote tunnel over SSH (<literal>qemu+ssh</literal> or <literal>xen+ssh</literal>)</title>
          <para>Enabling a remote connection that is tunneled over SSH on the VM Host Server only requires the ability to accept SSH connections. Make sure the SSH daemon is started (<command>systemctl status sshd</command>) and that the ports for service <systemitem class="service">SSH</systemitem> are opened in the firewall.</para>
          <para>User authentication for SSH connections can be done using traditional file user/group ownership and permissions as described in <xref linkend="sec-libvirt-connect-auth-libvirt-traditional"/>. Connecting as user tux (<literal>qemu+ssh://tuxsIVname;/system</literal> or <literal>xen+ssh://tuxsIVname;/system</literal>) works out of the box and does not require additional configuration on the <systemitem class="library">libvirt</systemitem> side.</para>
-         <para>When connecting via SSH <literal>qemu+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable>
-            </literal> or <literal>xen+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable>
-            </literal> you need to provide the password for <replaceable>USER</replaceable>. This can be avoided by copying your public key to <filename>~<replaceable>USER</replaceable>/.ssh/authorized_keys</filename> on the VM Host Server as explained in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-ssh-public-key-auth" xrefstyle="%label &#34;%c&#34;"/>. Using <command>gnome-keyring</command> on the machine from which you are connecting adds even more convenience. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-ssh-gnome-keyring" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>When connecting via SSH <literal>qemu+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> or <literal>xen+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> you need to provide the password for <replaceable>USER</replaceable>. This can be avoided by copying your public key to <filename>~<replaceable>USER</replaceable>/.ssh/authorized_keys</filename> on the VM Host Server as explained in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-ssh-public-key-auth" xrefstyle="%label &#34;%c&#34;"/>. Using <command>gnome-keyring</command> on the machine from which you are connecting adds even more convenience. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-ssh-gnome-keyring" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
       <sect2 xml:id="sec-libvirt-connect-remote-tls">
          <title>Remote TLS/SSL connection with x509 certificate (<literal>qemu+tls</literal> or <literal>xen+tls</literal>)</title>
@@ -501,8 +484,7 @@ dynamic_ownership = 1</screen>
             <important>
                <title>User authentication</title>
                <para>Using a remote TLS/SSL connection only ensures that two computers are allowed to communicate in a certain direction. Restricting access to certain users can indirectly be achieved on the client side by restricting access to the certificates. For more information, see <xref linkend="sec-libvirt-connect-remote-tls-security"/>.</para>
-               <para>
-                  <systemitem class="library">libvirt</systemitem> also supports user authentication on the server with SASL. For more information, see <xref linkend="sec-libvirt-connect-remote-tls-sasl"/>.</para>
+               <para><systemitem class="library">libvirt</systemitem> also supports user authentication on the server with SASL. For more information, see <xref linkend="sec-libvirt-connect-remote-tls-sasl"/>.</para>
             </important>
          </sect3>
          <sect3 xml:id="sec-libvirt-connect-remote-tls-server">
@@ -572,8 +554,7 @@ virsh -c xen+tls://<replaceable>mercury.example.com</replaceable>/system list --
          </sect3>
          <sect3 xml:id="sec-libvirt-connect-remote-tls-vnc">
             <title>Enabling VNC for TLS/SSL connections</title>
-            <para>Currently, VNC communication over TLS is only supported by a few tools. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> do not support TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is <command>remmina</command> (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>Currently, VNC communication over TLS is only supported by a few tools. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> do not support TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is <command>remmina</command> (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
             <sect4 xml:id="sec-libvirt-connect-remote-tls-vnc-server">
                <title>VNC over TLS/SSL: VM Host Server configuration</title>
                <para>To access the graphical console via VNC over TLS/SSL, you need to configure the VM Host Server as follows:</para>
@@ -606,8 +587,7 @@ virsh -c xen+tls://<replaceable>mercury.example.com</replaceable>/system list --
             </sect4>
             <sect4 xml:id="sec-libvirt-connect-remote-tls-vnc-client">
                <title>VNC over TLS/SSL: client configuration</title>
-               <para>The only action needed on the client side is to place the x509 client certificates in a location recognized by the client of choice. However, Virtual Machine Manager and <command>virt-viewer</command> expect the certificates in a different location. Virtual Machine Manager can either read from a system-wide location applying to all users, or from a per-user location. Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) asks for the location of certificates when initializing the connection to the remote VNC session.</para>
+               <para>The only action needed on the client side is to place the x509 client certificates in a location recognized by the client of choice. However, Virtual Machine Manager and <command>virt-viewer</command> expect the certificates in a different location. Virtual Machine Manager can either read from a system-wide location applying to all users, or from a per-user location. Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) asks for the location of certificates when initializing the connection to the remote VNC session.</para>
                <variablelist>
                   <varlistentry>
                      <term>
@@ -658,8 +638,7 @@ virsh -c xen+tls://<replaceable>mercury.example.com</replaceable>/system list --
                         </emphasis>
                      </term>
                      <listitem>
-                        <para>
-                           <command>virt-viewer</command> only accepts certificates from a system-wide location:</para>
+                        <para><command>virt-viewer</command> only accepts certificates from a system-wide location:</para>
                         <simplelist>
                            <member>
                               <filename>/etc/pki/CA/cacert.pem</filename>

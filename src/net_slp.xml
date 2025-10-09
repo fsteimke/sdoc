@@ -11,14 +11,12 @@
          <para>Configuring a network client requires detailed knowledge about services provided over the network (such as printing or LDAP, for example). To make it easier to configure such services on a network client, the <quote>service location protocol</quote> (SLP) was developed. SLP makes the availability and configuration data of selected services known to all clients in the local network. Applications that support SLP can use this information to be configured automatically.</para>
       </abstract>
    </info>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> supports installation using installation sources provided with SLP and contains many system services with integrated support for SLP. You can use SLP to provide networked clients with central functions, such as an installation server, file server, or print server on your system. Services that offer SLP support include cupsd, login, ntp, openldap2-client, postfix, rpasswd, rsyncd, saned, sshd (via fish), vnc, and ypserv.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> supports installation using installation sources provided with SLP and contains many system services with integrated support for SLP. You can use SLP to provide networked clients with central functions, such as an installation server, file server, or print server on your system. Services that offer SLP support include cupsd, login, ntp, openldap2-client, postfix, rpasswd, rsyncd, saned, sshd (via fish), vnc, and ypserv.</para>
    <para>All packages necessary to use SLP services on a network client are installed by default. However, to <emphasis>provide</emphasis> services via SLP, check that the <systemitem>openslp-server</systemitem> package is installed.</para>
    <sect1 xml:id="sec-slp-sl-fend">
       <title>The SLP front-end <command>slptool</command>
       </title>
-      <para>
-         <command>slptool</command> is a command line tool to query and register SLP services. The query functions are useful for diagnostic purposes. The most important <command>slptool</command> subcommands are listed below. <command>slptool</command> <option>--help</option> lists all available options and functions.</para>
+      <para><command>slptool</command> is a command line tool to query and register SLP services. The query functions are useful for diagnostic purposes. The most important <command>slptool</command> subcommands are listed below. <command>slptool</command> <option>--help</option> lists all available options and functions.</para>
       <variablelist>
          <varlistentry>
             <term>findsrvtypes</term>
@@ -44,8 +42,7 @@ service:ypserv</screen>
             <term>findsrvs <replaceable>SERVICE_TYPE</replaceable>
             </term>
             <listitem>
-               <para>List all servers providing <replaceable>SERVICE_TYPE</replaceable>
-               </para>
+               <para>List all servers providing <replaceable>SERVICE_TYPE</replaceable></para>
                <screen><prompt>&gt;</prompt>slptool findsrvs service:ntp
 service:ntp://ntp.example.com:123,57810
 service:ntp://ntp2.example.com:123,57810</screen>
@@ -55,8 +52,7 @@ service:ntp://ntp2.example.com:123,57810</screen>
             <term>findattrs <replaceable>SERVICE_TYPE</replaceable>//<replaceable>HOST</replaceable>
             </term>
             <listitem>
-               <para>List attributes for <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</replaceable>
-               </para>
+               <para>List attributes for <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</replaceable></para>
                <screen><prompt>&gt;</prompt>slptool findattrs service:ntp://ntp.example.com
 (owner=tux),(email=tux@example.com)</screen>
             </listitem>
@@ -73,8 +69,7 @@ service:ntp://ntp2.example.com:123,57810</screen>
             <term>deregister <replaceable>SERVICE_TYPE</replaceable>//<replaceable>host</replaceable>
             </term>
             <listitem>
-               <para>Deregisters <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</replaceable>
-               </para>
+               <para>Deregisters <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</replaceable></para>
                <screen>slptool deregister service:ntp://ntp.example.com</screen>
             </listitem>
          </varlistentry>
@@ -123,8 +118,7 @@ description=SANE scanner daemon</screen>
       </variablelist>
       <sect2 xml:id="sec-slp-sl-reg-install">
          <title>Setting up an SLP installation server</title>
-         <para>Announcing the installation data via SLP within your network makes the network installation much easier, since the installation data such as IP address of the server or the path to the installation media are automatically required via SLP query. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="cha-deployment-instserver" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>Announcing the installation data via SLP within your network makes the network installation much easier, since the installation data such as IP address of the server or the path to the installation media are automatically required via SLP query. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-deployment-instserver" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-slp-info">

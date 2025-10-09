@@ -20,47 +20,31 @@
          <listitem>
             <formalpara>
                <title>From scratch</title>
-               <para>To create a new empty document, click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>New</guimenu>
-                     <guimenu>Text Document</guimenu>
-                  </menuchoice>.</para>
+               <para>To create a new empty document, click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Text Document</guimenu></menuchoice>.</para>
             </formalpara>
          </listitem>
          <listitem>
             <formalpara>
                <title>Using a wizard</title>
-               <para>To use a standard format and predefined elements for your own documents, use a wizard. Click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>Wizards</guimenu>
-                     <guimenu>Letter</guimenu>
-                  </menuchoice> and follow the steps.</para>
+               <para>To use a standard format and predefined elements for your own documents, use a wizard. Click <menuchoice><guimenu>File</guimenu><guimenu>Wizards</guimenu><guimenu>Letter</guimenu></menuchoice> and follow the steps.</para>
             </formalpara>
          </listitem>
          <listitem>
             <formalpara>
                <title>From a template</title>
-               <para>To use a template, click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>New</guimenu>
-                     <guimenu>Templates</guimenu>
-                  </menuchoice> and open, for example, <guimenu>Modern business letter</guimenu>. From the list of text document templates, select the one that fits your needs.</para>
+               <para>To use a template, click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Templates</guimenu></menuchoice> and open, for example, <guimenu>Modern business letter</guimenu>. From the list of text document templates, select the one that fits your needs.</para>
             </formalpara>
          </listitem>
       </itemizedlist>
-      <para>For example, to create a business letter, click <menuchoice>
-            <guimenu>File</guimenu>
-            <guimenu>Wizards</guimenu>
-            <guimenu>Letter</guimenu>
-         </menuchoice>. Using the wizard, you can easily create a basic document using a standard format. A sample wizard dialog is shown in the following <xref linkend="fig-lo-writer-createnew-wizard" xrefstyle="%label"/>.</para>
+      <para>For example, to create a business letter, click <menuchoice><guimenu>File</guimenu><guimenu>Wizards</guimenu><guimenu>Letter</guimenu></menuchoice>. Using the wizard, you can easily create a basic document using a standard format. A sample wizard dialog is shown in the following <xref linkend="fig-lo-writer-createnew-wizard" xrefstyle="%label"/>.</para>
       <figure xml:id="fig-lo-writer-createnew-wizard">
          <title>A LibreOffice wizard</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo-wizard.png" width="100%"/>
+               <imagedata fileref="media/oo-wizard.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo-wizard.png" width="85%"/>
+               <imagedata fileref="media/oo-wizard.png" width="78%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -96,75 +80,37 @@
             <colspec colnum="2" colname="2" colwidth="72*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Type of Style</para>
-                  </entry>
-                  <entry>
-                     <para>Function</para>
-                  </entry>
+                  <entry><para>Type of Style</para></entry>
+                  <entry><para>Function</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Paragraph</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Applies standardized formatting to the various types of paragraphs in your document. For example, apply a paragraph style to a first-level heading to set the font and font size, spacing above and below the heading, location of the heading and other formatting specifications.</para>
-                  </entry>
+                  <entry><para><guimenu>Paragraph</guimenu></para></entry>
+                  <entry><para>Applies standardized formatting to the various types of paragraphs in your document. For example, apply a paragraph style to a first-level heading to set the font and font size, spacing above and below the heading, location of the heading and other formatting specifications.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Character</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Applies standardized formatting for types of text. For example, if you want emphasized text to appear in italics, you can create an emphasis style that italicizes selected text when you apply the style to it.</para>
-                  </entry>
+                  <entry><para><guimenu>Character</guimenu></para></entry>
+                  <entry><para>Applies standardized formatting for types of text. For example, if you want emphasized text to appear in italics, you can create an emphasis style that italicizes selected text when you apply the style to it.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Frame</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Applies standardized formatting to frames. For example, if your document uses marginal notes, you can create frames with specified borders, location and other formatting, so that all of your marginal notes have a consistent appearance.</para>
-                     <para>Frames are also used for captioning images: A frame can keep the caption and the image together. Here, you can use frame style to make sure that all your images have the same size and background color, for example.</para>
-                  </entry>
+                  <entry><para><guimenu>Frame</guimenu></para></entry>
+                  <entry><para>Applies standardized formatting to frames. For example, if your document uses marginal notes, you can create frames with specified borders, location and other formatting, so that all of your marginal notes have a consistent appearance.</para><para>Frames are also used for captioning images: A frame can keep the caption and the image together. Here, you can use frame style to make sure that all your images have the same size and background color, for example.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Page</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Applies standardized formatting to a specified type of page. For example, if every page of your document contains a header and footer except for the first page, you can use a first page style that disables headers and footers. You can also use different page styles for left and right pages so that you have bigger margins on the insides of pages and your page numbers appear on an outside corner.</para>
-                  </entry>
+                  <entry><para><guimenu>Page</guimenu></para></entry>
+                  <entry><para>Applies standardized formatting to a specified type of page. For example, if every page of your document contains a header and footer except for the first page, you can use a first page style that disables headers and footers. You can also use different page styles for left and right pages so that you have bigger margins on the insides of pages and your page numbers appear on an outside corner.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>List</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Applies standardized formatting to specified list types. For example, you can define a checklist with square check boxes and a bullet list with round bullets, then easily apply the correct style when creating your lists.</para>
-                  </entry>
+                  <entry><para><guimenu>List</guimenu></para></entry>
+                  <entry><para>Applies standardized formatting to specified list types. For example, you can define a checklist with square check boxes and a bullet list with round bullets, then easily apply the correct style when creating your lists.</para></entry>
                </row>
             </tbody>
          </tgroup>
       </table>
       <para>Direct formatting overrides any styles you have applied. For example, format a piece of text both with a character style and using the button <guimenu>Bold</guimenu>. Now, the text will be bold, no matter what is set in the style.</para>
       <para>To remove all direct formatting, first select the appropriate text, then right-click it and choose <guimenu>Clear Direct Formatting</guimenu>.</para>
-      <para>Likewise, if you manually format paragraphs using <menuchoice>
-            <guimenu>Format</guimenu>
-            <guimenu>Paragraph</guimenu>
-         </menuchoice>, you can end up with inconsistent paragraph formatting. This is especially true if you copy and paste paragraphs from other documents with different formatting. However, if you apply paragraph styles, formatting remains consistent. If you change a style, the change is automatically applied to all paragraphs formatted with that style.</para>
+      <para>Likewise, if you manually format paragraphs using <menuchoice><guimenu>Format</guimenu><guimenu>Paragraph</guimenu></menuchoice>, you can end up with inconsistent paragraph formatting. This is especially true if you copy and paste paragraphs from other documents with different formatting. However, if you apply paragraph styles, formatting remains consistent. If you change a style, the change is automatically applied to all paragraphs formatted with that style.</para>
       <sect2 xml:id="sec-lo-writer-styles-window">
          <title>The side bar panel <guimenu>Styles</guimenu>
          </title>
@@ -173,10 +119,10 @@
             <title>LibreOffice Styles panel</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/oo-stylist.png" width="40%"/>
+                  <imagedata fileref="media/oo-stylist.png" width="36%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/oo-stylist.png" width="50%"/>
+                  <imagedata fileref="media/oo-stylist.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -279,44 +225,20 @@
                      <tgroup cols="2">
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Name</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>Note</para>
-                              </entry>
+                              <entry><para><guimenu>Name</guimenu></para></entry>
+                              <entry><para>Note</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Next style</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>Note</para>
-                              </entry>
+                              <entry><para><guimenu>Next style</guimenu></para></entry>
+                              <entry><para>Note</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Inherit from</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>- None -</para>
-                              </entry>
+                              <entry><para><guimenu>Inherit from</guimenu></para></entry>
+                              <entry><para>- None -</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Category</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>Custom Styles</para>
-                              </entry>
+                              <entry><para><guimenu>Category</guimenu></para></entry>
+                              <entry><para>Custom Styles</para></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -359,44 +281,20 @@
                      <tgroup cols="2">
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Name</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>Left Content Page</para>
-                              </entry>
+                              <entry><para><guimenu>Name</guimenu></para></entry>
+                              <entry><para>Left Content Page</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Next style</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>Leave empty, will be changed later</para>
-                              </entry>
+                              <entry><para><guimenu>Next style</guimenu></para></entry>
+                              <entry><para>Leave empty, will be changed later</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Inherit from</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>not applicable</para>
-                              </entry>
+                              <entry><para><guimenu>Inherit from</guimenu></para></entry>
+                              <entry><para>not applicable</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>
-                                    <guimenu>Category</guimenu>
-                                 </para>
-                              </entry>
-                              <entry>
-                                 <para>not applicable</para>
-                              </entry>
+                              <entry><para><guimenu>Category</guimenu></para></entry>
+                              <entry><para>not applicable</para></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -447,10 +345,7 @@
       <sect2 xml:id="sec-lo-writer-largedocs-navig">
          <title>Navigating in large documents</title>
          <para>The Navigator tool displays information about the contents of a document. It also lets you quickly jump to different elements. For example, use the Navigator to get a quick overview of all images included in a document.</para>
-         <para>To open the Navigator, click <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Navigator</guimenu>
-            </menuchoice> or press <keycap>F5</keycap>. The elements listed in the Navigator vary with the document loaded in <productname>Writer</productname>.</para>
+         <para>To open the Navigator, click <menuchoice><guimenu>View</guimenu><guimenu>Navigator</guimenu></menuchoice> or press <keycap>F5</keycap>. The elements listed in the Navigator vary with the document loaded in <productname>Writer</productname>.</para>
          <para>The Navigator is also an element of the side bar: There, it can be opened using the button <guimenu>Navigator</guimenu> (a compass).</para>
          <para>Double-click an item in the Navigator to jump to that item in the document.</para>
          <figure xml:id="fig-ooo-navigator">
@@ -458,10 +353,10 @@
             </title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/oo_navigator.png" width="55%"/>
+                  <imagedata fileref="media/oo_navigator.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/oo_navigator.png" width="45%"/>
+                  <imagedata fileref="media/oo_navigator.png" width="41%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -473,17 +368,9 @@
          <procedure>
             <title>Creating a master document</title>
             <step>
-               <para>Click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>New</guimenu>
-                     <guimenu>Master Document</guimenu>
-                  </menuchoice>.</para>
+               <para>Click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Master Document</guimenu></menuchoice>.</para>
                <para>or</para>
-               <para>Open an existing document and click <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>Send</guimenu>
-                     <guimenu>Create Master Document</guimenu>
-                  </menuchoice>.</para>
+               <para>Open an existing document and click <menuchoice><guimenu>File</guimenu><guimenu>Send</guimenu><guimenu>Create Master Document</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>The <guimenu>Navigator</guimenu> window will open. In it, choose <guimenu>Insert</guimenu>, then choose <guimenu>File</guimenu>.</para>
@@ -522,11 +409,7 @@
       <procedure xml:id="pro-lo-writer-html-create">
          <title>Creating an HTML page</title>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>New</guimenu>
-                  <guimenu>HTML Document</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>HTML Document</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Press <keycap>F11</keycap> to open the panel <guimenu>Styles</guimenu>.</para>
@@ -541,10 +424,7 @@
             <para>Create your HTML page, using the styles to tag your text.</para>
          </step>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Save As</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select the location where you want to save your file and name the file. Make sure that in the bottom drop-down box, <guimenu>HTML Document</guimenu> is selected.</para>
@@ -553,14 +433,8 @@
             <para>Click <guimenu>OK</guimenu>.</para>
          </step>
       </procedure>
-      <para>To edit HTML code directly or to see the HTML code created when you edit the HTML file as a Writer document, click <menuchoice>
-            <guimenu>View</guimenu>
-            <guimenu>HTML Source</guimenu>
-         </menuchoice>. In HTML Source mode, the <guimenu>Formatting and Styles</guimenu> list is not available.</para>
+      <para>To edit HTML code directly or to see the HTML code created when you edit the HTML file as a Writer document, click <menuchoice><guimenu>View</guimenu><guimenu>HTML Source</guimenu></menuchoice>. In HTML Source mode, the <guimenu>Formatting and Styles</guimenu> list is not available.</para>
       <para>The first time you switch to <guimenu>HTML Source</guimenu> mode, you are prompted to save the file as HTML, if you have not already done so.</para>
-      <para>To switch back from <guimenu>HTML Source</guimenu> mode to Web Layout, click <menuchoice>
-            <guimenu>View</guimenu>
-            <guimenu>HTML source</guimenu>
-         </menuchoice> again.</para>
+      <para>To switch back from <guimenu>HTML Source</guimenu> mode to Web Layout, click <menuchoice><guimenu>View</guimenu><guimenu>HTML source</guimenu></menuchoice> again.</para>
    </sect1>
 </chapter>

@@ -195,8 +195,7 @@
          </term>
          <listitem>
             <para>Maximum value for a port range for passive connection replies.</para>
-            <para>
-               <literal>PassiveMode</literal> needs to be set to YES.</para>
+            <para><literal>PassiveMode</literal> needs to be set to YES.</para>
          </listitem>
       </varlistentry>
       <varlistentry>
@@ -205,8 +204,7 @@
          </term>
          <listitem>
             <para>Minimum value for a port range for passive connection replies.</para>
-            <para>
-               <literal>PassiveMode</literal> needs to be set to YES.</para>
+            <para><literal>PassiveMode</literal> needs to be set to YES.</para>
          </listitem>
       </varlistentry>
       <varlistentry>

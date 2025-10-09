@@ -61,8 +61,7 @@
                <command>operf</command>
             </term>
             <listitem>
-               <para>Profiler tool. After profiling stops, the data that is by default stored in <filename>
-                     <replaceable>CUR_DIR</replaceable>/oprofile_data/samples/current</filename> can be processed by <command>opreport</command>, for example.</para>
+               <para>Profiler tool. After profiling stops, the data that is by default stored in <filename><replaceable>CUR_DIR</replaceable>/oprofile_data/samples/current</filename> can be processed by <command>opreport</command>, for example.</para>
             </listitem>
          </varlistentry>
          <!--<varlistentry>
@@ -133,12 +132,7 @@
                </substeps>
             </step>
             <step>
-               <para>
-                  <command>operf</command> writes its data to <filename>
-                     <replaceable>CUR_DIR</replaceable>/oprofile_data/samples/current</filename>. After the <command>operf</command> command is finished (or is aborted by <keycombo>
-                     <keycap function="control"/>
-                     <keycap>C</keycap>
-                  </keycombo>), the data can be analyzed with <command>oreport</command>:</para>
+               <para><command>operf</command> writes its data to <filename><replaceable>CUR_DIR</replaceable>/oprofile_data/samples/current</filename>. After the <command>operf</command> command is finished (or is aborted by <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>), the data can be analyzed with <command>oreport</command>:</para>
                <screen><prompt role="root">#</prompt>opreport
 Overflow stats not available
 CPU: CPU with timer interrupt, speed 0 MHz (estimated)

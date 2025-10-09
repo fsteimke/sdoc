@@ -53,8 +53,7 @@
          <title>
             <literal>boot_efi?</literal>
          </title>
-         <para>
-            <literal>boot_efi?</literal> is a boolean helper that returns whether the system is booted using EFI. In the example below, the profile configures the bootloader according to the current boot mode.</para>
+         <para><literal>boot_efi?</literal> is a boolean helper that returns whether the system is booted using EFI. In the example below, the profile configures the bootloader according to the current boot mode.</para>
          <example>
             <title>Configuring the boot loader</title>
             <screen>
@@ -75,95 +74,41 @@
             <tgroup cols="3">
                <thead>
                   <row>
-                     <entry>
-                        <para>Key</para>
-                     </entry>
-                     <entry>
-                        <para>Type</para>
-                     </entry>
-                     <entry>
-                        <para>Value</para>
-                     </entry>
+                     <entry><para>Key</para></entry>
+                     <entry><para>Type</para></entry>
+                     <entry><para>Value</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:device</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Device kernel name (for example, <literal>sda</literal>).</para>
-                     </entry>
+                     <entry><para><literal>:device</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Device kernel name (for example, <literal>sda</literal>).</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:model</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Disk model</para>
-                     </entry>
+                     <entry><para><literal>:model</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Disk model</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:serial</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Serial number</para>
-                     </entry>
+                     <entry><para><literal>:serial</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Serial number</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:size</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Integer</para>
-                     </entry>
-                     <entry>
-                        <para>Disk size (is a count of disk sectors)</para>
-                     </entry>
+                     <entry><para><literal>:size</literal></para></entry>
+                     <entry><para>Integer</para></entry>
+                     <entry><para>Disk size (is a count of disk sectors)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:udev_names</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Array&lt;String&gt;</para>
-                     </entry>
-                     <entry>
-                        <para>List of disk udev names. You can use any of them to refer to the device.</para>
-                     </entry>
+                     <entry><para><literal>:udev_names</literal></para></entry>
+                     <entry><para>Array&lt;String&gt;</para></entry>
+                     <entry><para>List of disk udev names. You can use any of them to refer to the device.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:vendor</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Disk vendor's name</para>
-                     </entry>
+                     <entry><para><literal>:vendor</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Disk vendor's name</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -191,82 +136,36 @@
             <tgroup cols="3">
                <thead>
                   <row>
-                     <entry>
-                        <para>Key</para>
-                     </entry>
-                     <entry>
-                        <para>Type</para>
-                     </entry>
-                     <entry>
-                        <para>Value</para>
-                     </entry>
+                     <entry><para>Key</para></entry>
+                     <entry><para>Type</para></entry>
+                     <entry><para>Value</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:device</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Device name (for example, <literal>eth0</literal> or <literal>enp3s0</literal>)</para>
-                     </entry>
+                     <entry><para><literal>:device</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Device name (for example, <literal>eth0</literal> or <literal>enp3s0</literal>)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:mac</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>MAC address</para>
-                     </entry>
+                     <entry><para><literal>:mac</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>MAC address</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:active</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Boolean</para>
-                     </entry>
-                     <entry>
-                        <para>Whether the device is active or not</para>
-                     </entry>
+                     <entry><para><literal>:active</literal></para></entry>
+                     <entry><para>Boolean</para></entry>
+                     <entry><para>Whether the device is active or not</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:link</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Boolean</para>
-                     </entry>
-                     <entry>
-                        <para>Whether the device is connected or not</para>
-                     </entry>
+                     <entry><para><literal>:link</literal></para></entry>
+                     <entry><para>Boolean</para></entry>
+                     <entry><para>Whether the device is connected or not</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:vendor</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Disk vendor's name</para>
-                     </entry>
+                     <entry><para><literal>:vendor</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Disk vendor's name</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -296,56 +195,26 @@
             <tgroup cols="3">
                <thead>
                   <row>
-                     <entry>
-                        <para>Key</para>
-                     </entry>
-                     <entry>
-                        <para>Type</para>
-                     </entry>
-                     <entry>
-                        <para>Value</para>
-                     </entry>
+                     <entry><para>Key</para></entry>
+                     <entry><para>Type</para></entry>
+                     <entry><para>Value</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:id</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Distribution ID (for example, <literal>sles</literal>, <literal>opensuse-tumbleweed</literal>)</para>
-                     </entry>
+                     <entry><para><literal>:id</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Distribution ID (for example, <literal>sles</literal>, <literal>opensuse-tumbleweed</literal>)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:name</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Distribution name (for example, <literal>SLES</literal> or <literal>openSUSE Tumbleweed</literal>)</para>
-                     </entry>
+                     <entry><para><literal>:name</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Distribution name (for example, <literal>SLES</literal> or <literal>openSUSE Tumbleweed</literal>)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>:version</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>String</para>
-                     </entry>
-                     <entry>
-                        <para>Distribution version (for example, <literal>15.2</literal>)</para>
-                     </entry>
+                     <entry><para><literal>:version</literal></para></entry>
+                     <entry><para>String</para></entry>
+                     <entry><para>Distribution version (for example, <literal>15.2</literal>)</para></entry>
                   </row>
                </tbody>
             </tgroup>

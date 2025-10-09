@@ -27,8 +27,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
@@ -57,10 +56,8 @@
       </variablelist>
       <sect2 xml:id="art-modules-support">
          <title>Support</title>
-         <para>L3 support is generally provided for packages except for <literal>SUSE Package Hub</literal> and third-party modules. To check the support level for a package, run <command>zypper info <replaceable>PACKAGE</replaceable>
-            </command>.</para>
-         <para>
-            <literal>Long-Term Service Pack Support</literal>(LTSS) is available for most modules and extensions. For more information, refer to <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/>.</para>
+         <para>L3 support is generally provided for packages except for <literal>SUSE Package Hub</literal> and third-party modules. To check the support level for a package, run <command>zypper info <replaceable>PACKAGE</replaceable></command>.</para>
+         <para><literal>Long-Term Service Pack Support</literal>(LTSS) is available for most modules and extensions. For more information, refer to <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/>.</para>
          <para>Some modules and extensions also include <literal>Extended Service Pack Overlay Support</literal> (ESPOS), which gives you significantly more time to upgrade and/or skip a service pack completely.</para>
          <para>For more information on support and lifecycles, refer to the <link xlink:href="https://www.suse.com/support/policy/">SUSE Technical Support Policy</link> and the <link xlink:href="https://www.suse.com/support/policy-products/">Product Lifecycle Support Policies</link>. For a complete list of lifecycle dates by product, refer to the <link xlink:href="https://www.suse.com/lifecycle/">Product Support Lifecycle</link> page.</para>
       </sect2>
@@ -79,109 +76,67 @@
       -->
       <itemizedlist>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-basesystem"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-basesystem"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-certifications"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-certifications"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-confidential-computing"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-confidential-computing"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-containers"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-containers"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-desktop-applications"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-desktop-applications"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-development"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-development"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-high-availability"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-high-availability"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-high-performance-computing"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-high-performance-computing"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-legacy"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-legacy"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-live-patching"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-live-patching"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-nvidia-compute"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-nvidia-compute"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-public-cloud"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-public-cloud"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-python-3"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-python-3"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-real-time"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-real-time"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-sap-applications"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-sap-applications"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-server-applications"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-server-applications"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-suse-package-hub"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-suse-package-hub"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-systems-management"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-systems-management"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-transactional-server"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-transactional-server"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-web-scripting"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-web-scripting"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref xrefstyle="%c" linkend="art-modules-workstation"/>
-            </para>
+            <para><xref xrefstyle="%c" linkend="art-modules-workstation"/></para>
          </listitem>
       </itemizedlist>
       <para>Please note that the availability depends on the product. Not all modules and extensions are available for all products. Some modules are included in one product but also available as extension for another.</para>
@@ -190,24 +145,19 @@
          <para>This module adds a basic system on top of the Installer. It is required by all other modules and extensions. The scope of an installation that only contains the base system is comparable to the <literal>minimal</literal> system installation pattern of previous <phrase role="productname">SUSE Linux Enterprise Server</phrase> versions. This module is selected for installation by default and should not be deselected.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> None</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> Default on all products</para>
+               <para><emphasis role="bold">Availability:</emphasis> Default on all products</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended Support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended Support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Support level:</emphasis> L3</para>
+               <para><emphasis role="bold">Support level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -216,24 +166,19 @@
          <para>This module contains the FIPS certification packages.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Depends on</emphasis>: Basesystem</para>
+               <para><emphasis role="bold">Depends on</emphasis>: Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Available for:</emphasis> SLES, SLED, SLES for SAP, SUSE Linux Enterprise Real Time</para>
+               <para><emphasis role="bold">Available for:</emphasis> SLES, SLED, SLES for SAP, SUSE Linux Enterprise Real Time</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Support level:</emphasis> L3</para>
+               <para><emphasis role="bold">Support level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -251,24 +196,19 @@
          </note>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Depends on</emphasis>: Server Applications</para>
+               <para><emphasis role="bold">Depends on</emphasis>: Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Available for:</emphasis> SLES on AMD64/Intel 64</para>
+               <para><emphasis role="bold">Available for:</emphasis> SLES on AMD64/Intel 64</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> Until the release of SLE 15 SP7</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> Until the release of SLE 15 SP7</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> None</para>
+               <para><emphasis role="bold">Extended support:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Support level:</emphasis> This module is a technology preview and is not supported.</para>
+               <para><emphasis role="bold">Support level:</emphasis> This module is a technology preview and is not supported.</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -292,24 +232,19 @@
          </important>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> By package; follows the upstream community of the respective package.</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> By package; follows the upstream community of the respective package.</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Support level:</emphasis> L3</para>
+               <para><emphasis role="bold">Support level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -318,48 +253,38 @@
          <para>This module adds a graphical user interface and essential desktop applications to the system.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLED (default), SLE WE (default), SLES for SAP, SLE RT (default)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLED (default), SLE WE (default), SLES for SAP, SLE RT (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
       <sect2 xml:id="art-modules-development">
          <title>Development Tools</title>
          <para>This module contains compilers (including <package>gcc</package>) and libraries required for compiling and debugging applications. Replaces the former Software Development Kit (SDK).</para>
-         <para>
-            <emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop Applications</para>
+         <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop Applications</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLED, SLE RT (default)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLED, SLE RT (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -369,24 +294,19 @@
          <para>High Availability is included in the subscription for SLES for SAP as a module. It is also available as an extension for SLES. For more information about SUSE Linux Enterprise High Availability, refer to <link xlink:href="https://www.suse.com/products/highavailability"/>.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP (included), SUSE Linux Enterprise Real Time</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP (included), SUSE Linux Enterprise Real Time</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -396,24 +316,19 @@
          <para>SUSE packages these tools in the HPC module to provide greater flexibility to deliver new versions or new tools more rapidly than the standard SUSE Linux Enterprise lifecycle would permit. Packages in this module are generally supported until a newer version of the package is released or a package is dropped from the module.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES on AMD64/Intel 64 and AArch64</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES on AMD64/Intel 64 and AArch64</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 1 year ESPOS, 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 1 year ESPOS, 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -424,24 +339,19 @@
          <para>Please note that this module has a different lifecycle than some of its packages. Not all packages are supported for the complete lifecycle of the module, but depend on migration requirements and upstream lifecycles.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -450,24 +360,19 @@
          <para>This extension provides packages to update critical components in SUSE Linux Enterprise without shutting down your system, which reduces planned downtime and increases service availability.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP on AMD64/Intel 64, s390x, and ppc64le</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP on AMD64/Intel 64, s390x, and ppc64le</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -487,16 +392,13 @@
          </important>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES on AMD64/Intel 64 and AArch64</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES on AMD64/Intel 64 and AArch64</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Support:</emphasis> Software in this module is provided by NVIDIA and is not supported by SUSE</para>
+               <para><emphasis role="bold">Support:</emphasis> Software in this module is provided by NVIDIA and is not supported by SUSE</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -505,24 +407,19 @@
          <para>This module contains all tools required to create images for deploying <phrase role="productname">SUSE Linux Enterprise Server</phrase> in cloud environments. For example: Amazon Web Services (AWS), Microsoft Azure, Google Compute Platform, or OpenStack.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -544,27 +441,22 @@
          <para>Packages from the Python 3 module can be installed alongside existing Python packages, and they can coexist in the same system without impacting Python 3.6 workloads.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES (default), SLES for SAP, SLED (default)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES (default), SLES for SAP, SLED (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> Python 3.11: 31 Dec 2029, Python 3.13: 31 Dec 2026</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> Python 3.11: 31 Dec 2029, Python 3.13: 31 Dec 2026</para>
             </listitem>
             <listitem>
                <para><!-- FIXME cwickert 2023-01-27: According to
               https://confluence.suse.com/display/SUSELinuxEnterpriseServer15SP5/%5BSLE+15+SP5%5D+6.+Modules
               LTSS is "under discussion." Update if necessary.
-              -->
-                  <emphasis role="bold">Extended support:</emphasis> None</para>
+              --><emphasis role="bold">Extended support:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -574,24 +466,19 @@
          <para>Packages in this module are generally supported until a newer version of the package is released or the package is dropped from the module.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop Applications, Development Tools, Server Applications</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop Applications, Development Tools, Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLE RT (included)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLE RT (included)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> None</para>
+               <para><emphasis role="bold">Extended support:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -601,24 +488,19 @@
          <para>This module contains packages specific to SLES for SAP. It has a different lifecycle than SUSE Linux Enterprise itself. Subscriptions for SUSE Linux Enterprise Server for SAP applications include 1.5 years of General Support plus 3 years of Extended Service Pack Overlap Support (ESPOS) for each service pack. This eliminates the need for customers to purchase Long Term Service Pack Support (LTSS) until the final service pack of a release.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES for SAP (included)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES for SAP (included)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years ESPOS, 3 years LTSS for last SP</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years ESPOS, 3 years LTSS for last SP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -628,24 +510,19 @@
          <para>This module contains packages and system configuration specific to SAP Business One Server. It is maintained and supported by the SUSE Linux Enterprise Server product subscription.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications, Desktop Applications, Development Tools</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications, Desktop Applications, Development Tools</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES (AMD64/Intel 64)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES (AMD64/Intel 64)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -654,24 +531,19 @@
          <para>This module adds server functionality by providing network services such as DHCP server, name server or Web server. This module is selected for installation by default; deselecting it is not recommended.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES (default), SLES for SAP, SLE RT (default)</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES (default), SLES for SAP, SLE RT (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -680,24 +552,19 @@
          <para>This module provides access to packages for <phrase role="productname">SUSE Linux Enterprise Server</phrase> maintained by the openSUSE community. These packages are delivered without L3 support but do not interfere with the supportability of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. For more information, refer to <link xlink:href="https://packagehub.suse.com/"/>.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLE RT, SLED</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLE RT, SLED</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> None</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> None</para>
+               <para><emphasis role="bold">Extended support:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> None</para>
+               <para><emphasis role="bold">Level:</emphasis> None</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -706,24 +573,19 @@
          <para>This module provides recent and more frequently updated versions of systems management packages such as Salt and Ansible.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Python 3</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Python 3</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLED</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP, SLED</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 6 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 6 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -732,24 +594,19 @@
          <para>This module provides SUSE Linux Enterprise systems with a method of updating the operating system and its packages in an entirely <quote>atomic</quote> way. Updates are either applied to the system all together in a single transaction, or not at all. This happens without influencing the running system. If an update fails, or if a successful update is deemed to be incompatible or incorrect, you can discard it immediately and return to its previous functioning state.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -758,24 +615,19 @@
          <para>This module contains packages intended for a running Web server.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Server Applications</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLES for SAP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
+               <para><emphasis role="bold">Extended support:</emphasis> 3 years LTSS</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> L3</para>
+               <para><emphasis role="bold">Level:</emphasis> L3</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -790,24 +642,19 @@
          </warning>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop</para>
+               <para><emphasis role="bold">Dependencies:</emphasis> Basesystem, Desktop</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Availability:</emphasis> SLES, SLED (default), SLES for SAP</para>
+               <para><emphasis role="bold">Availability:</emphasis> SLES, SLED (default), SLES for SAP</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
+               <para><emphasis role="bold">Lifecycle:</emphasis> 10 years</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Extended support:</emphasis> None</para>
+               <para><emphasis role="bold">Extended support:</emphasis> None</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis role="bold">Level:</emphasis> mixed L2/L3 (depending on package)</para>
+               <para><emphasis role="bold">Level:</emphasis> mixed L2/L3 (depending on package)</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -817,34 +664,26 @@
       <para>Modules and extensions can be installed when initially setting up the system and on an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation.</para>
       <sect2 xml:id="sec-modules-install-deployment">
          <title>Installing modules and extensions during system installation</title>
-         <para>Modules and extensions can easily be installed when setting up the system. The respective steps are part of the installation routine. Following the default installation path, this requires network access to contact the SUSE Customer Center or a local registration server (<link xlink:href="https://www.suse.com/products/multi-linux-manager/">SUSE Multi-Linux Manager</link> or Repository Mirroring Tool), which provide the respective repositories. Offline installation is supported, too. In that case, an additional installation media is required. For detailed information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Modules and extensions can easily be installed when setting up the system. The respective steps are part of the installation routine. Following the default installation path, this requires network access to contact the SUSE Customer Center or a local registration server (<link xlink:href="https://www.suse.com/products/multi-linux-manager/">SUSE Multi-Linux Manager</link> or Repository Mirroring Tool), which provide the respective repositories. Offline installation is supported, too. In that case, an additional installation media is required. For detailed information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
       <sect2 xml:id="sec-modules-install-yast">
          <title>Installing modules and extensions with YaST</title>
-         <para>To install modules &amp; extensions from the running system, you need to make sure your system is registered with the SUSE Customer Center or a local registration server. If you have not done so during the installation, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-register-sle-system" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>To install modules &amp; extensions from the running system, you need to make sure your system is registered with the SUSE Customer Center or a local registration server. If you have not done so during the installation, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-register-sle-system" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
          <note>
             <title>Viewing already installed add-ons</title>
-            <para>To view already installed add-ons, start YaST and select <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Add-Ons</guimenu>
-               </menuchoice>.</para>
+            <para>To view already installed add-ons, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Add-Ons</guimenu></menuchoice>.</para>
          </note>
          <procedure xml:id="pro-add-ons-extensions">
             <title>Installing add-ons and extensions from online channels with YaST</title>
             <step>
-               <para>Start YaST and select <menuchoice>
-                     <guimenu>Software</guimenu>
-                     <guimenu>System Extensions</guimenu>
-                  </menuchoice>. YaST connects to the registration server and displays a list of <guimenu>Available Extensions and Modules</guimenu>.</para>
+               <para>Start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>System Extensions</guimenu></menuchoice>. YaST connects to the registration server and displays a list of <guimenu>Available Extensions and Modules</guimenu>.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="82%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -870,8 +709,7 @@
                <para>Choose <guimenu>Accept</guimenu> and <guimenu>Finish</guimenu> to conclude the process.</para>
             </step>
             <step>
-               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </step>
          </procedure>
          <tip>
@@ -884,18 +722,15 @@
          <para>When installing an extension or add-on product from media, you can select various types of product media, like DVD/CD, removable mass storage devices (such as flash disks), or a local directory or ISO image. The media can also be provided by a network server, for example, via HTTP, FTP, NFS, or Samba.</para>
          <procedure>
             <step>
-               <para>Start YaST and select <menuchoice>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Add-On Products</guimenu>
-                  </menuchoice>. Alternatively, start the YaST <guimenu>Add-On Products</guimenu> module from the command line with <command>sudo yast2 add-on</command>.</para>
+               <para>Start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Add-On Products</guimenu></menuchoice>. Alternatively, start the YaST <guimenu>Add-On Products</guimenu> module from the command line with <command>sudo yast2 add-on</command>.</para>
                <para>The dialog will show an overview of already installed add-on products, modules and extensions.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="82%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -908,10 +743,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_new.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="82%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_new.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -933,15 +768,13 @@
                <para>After confirming these messages, YaST will download and parse the metadata. It will add the repository to the list of <guimenu>Configured Repositories</guimenu>.</para>
             </step>
             <step>
-               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </step>
             <step>
                <para>Confirm your changes with <guimenu>OK</guimenu> to close the configuration dialog.</para>
             </step>
             <step>
-               <para>After having successfully added the repository for the add-on media, the software manager starts, and you can install packages. For details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>After having successfully added the repository for the add-on media, the software manager starts, and you can install packages. For details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </step>
          </procedure>
       </sect2>
@@ -949,18 +782,14 @@
          <title>Deleting modules and extensions with YaST</title>
          <procedure>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Add-On Products</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Software</guimenu><guimenu>Add-On Products</guimenu></menuchoice>.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="82%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -1059,20 +888,9 @@ https://www.suse.com/documentation/sles-15/singlehtml/art_modules/art_modules.ht
          </warning>
          <important>
             <title>No automatic installation or removal of packages</title>
-            <para>
-               <command>SUSEConnect</command> only adds or removes modules and extensions. It registers or deregisters the components and enables or disables their repositories, but it does not install or remove any packages. If you want this to be done automatically, use YaST to manage modules and extensions.</para>
-            <para>When adding a module or extension, <command>SUSEConnect</command> does not install default packages or patterns. To do this manually, use Zypper or <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice>.</para>
-            <para>When deleting a module or extension, <command>SUSEConnect</command> does not perform a cleanup. Packages from the module or extension remain installed on the system, but are no longer updated from a repository. To list these <quote>orphaned</quote> packages, run <command>zypper packages --orphaned</command>. To remove one or more packages, run <command>zypper remove PACKAGE [ANOTHER_PACKAGE]</command>. Alternatively, use <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice> and then <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Package Classification</guimenu>
-                  <guimenu>Orphaned Packages</guimenu>
-               </menuchoice> to list and delete orphaned packages.</para>
+            <para><command>SUSEConnect</command> only adds or removes modules and extensions. It registers or deregisters the components and enables or disables their repositories, but it does not install or remove any packages. If you want this to be done automatically, use YaST to manage modules and extensions.</para>
+            <para>When adding a module or extension, <command>SUSEConnect</command> does not install default packages or patterns. To do this manually, use Zypper or <menuchoice><guimenu>YaST</guimenu><guimenu>Software Management</guimenu></menuchoice>.</para>
+            <para>When deleting a module or extension, <command>SUSEConnect</command> does not perform a cleanup. Packages from the module or extension remain installed on the system, but are no longer updated from a repository. To list these <quote>orphaned</quote> packages, run <command>zypper packages --orphaned</command>. To remove one or more packages, run <command>zypper remove PACKAGE [ANOTHER_PACKAGE]</command>. Alternatively, use <menuchoice><guimenu>YaST</guimenu><guimenu>Software Management</guimenu></menuchoice> and then <menuchoice><guimenu>View</guimenu><guimenu>Package Classification</guimenu><guimenu>Orphaned Packages</guimenu></menuchoice> to list and delete orphaned packages.</para>
          </important>
          <warning>
             <title>No updates for packages from deleted modules and extensions</title>
@@ -1187,10 +1005,7 @@ emacs Basesystem Module (sle-module-basesystem/15.4/x86_64)
         SUSEConnect --product sle-module-basesystem/15.4/x86_64
 emacs Available in repo Basesystem_Module_15_SP4_x86_64:SLE-Module-Basesystem15-SP4-Pool</screen>
       </example>
-      <para>Instead of searching for packages, you can also view the list of packages that belong to a module or extension. Start the YaST <guimenu>Software Management</guimenu> module and click <menuchoice>
-            <guimenu>View</guimenu>
-            <guimenu>Services</guimenu>
-         </menuchoice>. Select an entry to display the list of packages that belong to this module or extension.</para>
+      <para>Instead of searching for packages, you can also view the list of packages that belong to a module or extension. Start the YaST <guimenu>Software Management</guimenu> module and click <menuchoice><guimenu>View</guimenu><guimenu>Services</guimenu></menuchoice>. Select an entry to display the list of packages that belong to this module or extension.</para>
    </sect1>
    <xi:include href="common_copyright_quick.xml"/>
    <!-- This file is part of the project https://github.com/openSUSE/doc-kit -->

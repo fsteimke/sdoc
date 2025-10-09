@@ -30,8 +30,7 @@
             <para>SSH host and client keys</para>
          </listitem>
          <listitem>
-            <para>temporary directories, like <filename>/tmp/*</filename>
-            </para>
+            <para>temporary directories, like <filename>/tmp/*</filename></para>
          </listitem>
          <listitem>
             <para>Postfix data</para>

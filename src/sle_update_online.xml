@@ -45,9 +45,7 @@
       </warning>
       <important>
          <title>Upgrading SUSE Multi-Linux Manager clients</title>
-         <para>If the system to upgrade is a SUSE Multi-Linux Manager client, it cannot be upgraded by YaST online migration or <command>zypper migration</command>. Use the <citetitle>Client Migration</citetitle> procedure instead. It is described in the <link xlink:href="https://documentation.suse.com/multi-linux-manager/">
-               <citetitle>SUSE Multi-Linux Manager Upgrade Guide</citetitle>
-            </link>.</para>
+         <para>If the system to upgrade is a SUSE Multi-Linux Manager client, it cannot be upgraded by YaST online migration or <command>zypper migration</command>. Use the <citetitle>Client Migration</citetitle> procedure instead. It is described in the <link xlink:href="https://documentation.suse.com/multi-linux-manager/"><citetitle>SUSE Multi-Linux Manager Upgrade Guide</citetitle></link>.</para>
       </important>
    </sect1>
    <sect1 xml:id="sec-upgrade-online-workflow">
@@ -80,12 +78,10 @@
             <para>Until the package upgrade starts, there are only minimal changes on the system, such as changes to services and repositories. Restore <filename>/etc/zypp/repos.d/*</filename> to revert to the previous state.</para>
          </listitem>
          <listitem>
-            <para>After the package upgrade starts, you can revert to the previous state by using a Snapper snapshot (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>After the package upgrade starts, you can revert to the previous state by using a Snapper snapshot (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>).</para>
          </listitem>
          <listitem>
-            <para>After the migration target was selected, SUSE Customer Center changes the repository data. To revert this state manually, use <command>SUSEConnect</command>
-               <option>--rollback</option>.</para>
+            <para>After the migration target was selected, SUSE Customer Center changes the repository data. To revert this state manually, use <command>SUSEConnect</command><option>--rollback</option>.</para>
          </listitem>
       </orderedlist>
    </sect1>
@@ -127,10 +123,7 @@
             <para>Run YaST online update to get the latest package updates for your system.</para>
          </step>
          <step>
-            <para>Install the package <package>yast2-migration</package> and its dependencies (in YaST under <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice>).</para>
+            <para>Install the package <package>yast2-migration</package> and its dependencies (in YaST under <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>).</para>
          </step>
          <step>
             <para>Restart YaST, otherwise the newly installed module will not be shown in the control center.</para>
@@ -145,8 +138,7 @@
             <para>If the migration tool offers update repositories, it is recommended to proceed with <guimenu>Yes</guimenu>.</para>
          </step>
          <step>
-            <para>
-               <remark>toms 2015-09-09: FATE#319140</remark> If the online migration tool finds obsolete repositories from DVD or a local server, it is highly recommended to disable them. Obsolete repositories are for a previous service pack. Old repositories from SUSE Customer Center or RMT are removed automatically.</para>
+            <para><remark>toms 2015-09-09: FATE#319140</remark> If the online migration tool finds obsolete repositories from DVD or a local server, it is highly recommended to disable them. Obsolete repositories are for a previous service pack. Old repositories from SUSE Customer Center or RMT are removed automatically.</para>
             <para>If the registration server does not offer migrations for a module or extension, its repository configuration will remain unchanged. This usually happens with 3rd party repositories such as the <guimenu>NVIDIA Compute Module</guimenu> that are not specific to a product version or service pack. If necessary, you can manually check the repository configuration after the migration.</para>
          </step>
          <step>
@@ -160,8 +152,7 @@
    </sect1>
    <sect1 xml:id="sec-upgrade-online-zypper">
       <title>Upgrading with Zypper</title>
-      <para>To perform a service pack migration with Zypper, use the command-line tool <command>zypper</command>
-         <option>migration</option> from the package <package>zypper-migration-plugin</package>.</para>
+      <para>To perform a service pack migration with Zypper, use the command-line tool <command>zypper</command><option>migration</option> from the package <package>zypper-migration-plugin</package>.</para>
       <note>
          <title>Reduce installation size</title>
          <para>When performing the Service Pack migration, YaST will install all recommended packages. Especially in the case of custom minimal installations, this may increase the installation size of the system significantly.</para>
@@ -203,12 +194,10 @@
                   <para>If more than one migration target is available for your system, Zypper allows you to select one SP from the list. This is the same as skipping one or more SPs. Keep in mind, online migration for base products (SLES, SLED) remains available only between the SPs of a major version.</para>
                </listitem>
                <listitem>
-                  <para>By default, Zypper uses the option <option>--no-allow-vendor-change</option> which is passed to <command>zypper</command>
-                     <option>dup</option>. If a package was installed from a third-party repository, this option prevents packages from being replaced with the same package coming from SUSE.</para>
+                  <para>By default, Zypper uses the option <option>--no-allow-vendor-change</option> which is passed to <command>zypper</command><option>dup</option>. If a package was installed from a third-party repository, this option prevents packages from being replaced with the same package coming from SUSE.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <remark>toms 2015-09-09: FATE#319140</remark> If Zypper finds obsolete repositories coming from DVD or a local server, it is highly recommended to disable them. Old SUSE Customer Center or RMT repositories are removed automatically.</para>
+                  <para><remark>toms 2015-09-09: FATE#319140</remark> If Zypper finds obsolete repositories coming from DVD or a local server, it is highly recommended to disable them. Old SUSE Customer Center or RMT repositories are removed automatically.</para>
                </listitem>
             </itemizedlist>
          </step>
@@ -217,13 +206,7 @@
             <screen>266 packages to upgrade, 54 to downgrade, 17 new, 8 to reinstall, 5 to remove, 1 to change arch.
 Overall download size: 285.1 MiB. Already cached: 0 B  After the operation, additional 139.8 MiB will be used.
 Continue? [y/n/? shows all options] (y):</screen>
-            <para>Use the <keycombo>
-                  <keycap function="shift"/>
-                  <keycap function="pageup"/>
-               </keycombo> or <keycombo>
-                  <keycap function="shift"/>
-                  <keycap function="pagedown"/>
-               </keycombo> keys to scroll in your shell.</para>
+            <para>Use the <keycombo><keycap function="shift"/><keycap function="pageup"/></keycombo> or <keycombo><keycap function="shift"/><keycap function="pagedown"/></keycombo> keys to scroll in your shell.</para>
          </step>
          <step>
             <para>After successful migration restart your system.</para>
@@ -289,8 +272,7 @@ Continue? [y/n/? shows all options] (y):</screen>
    </sect1>
    <sect1 xml:id="sec-upgrade-online-rollback">
       <title>Rolling back a service pack</title>
-      <para>If a service pack does not work for you, SUSE Linux Enterprise supports reverting the system to the state before the service pack migration was started. Prerequisite is a Btrfs root partition with snapshots enabled (this has been the default since SLES 12). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>If a service pack does not work for you, SUSE Linux Enterprise supports reverting the system to the state before the service pack migration was started. Prerequisite is a Btrfs root partition with snapshots enabled (this has been the default since SLES 12). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
       <procedure xml:id="pro-upgrade-online-rollback">
          <step>
             <para>Get a list of all Snapper snapshots:</para>
@@ -357,11 +339,7 @@ Continue? [y/n/? shows all options] (y):</screen>
             </title>
             <para>To migrate from openSUSE Leap to <phrase role="productname">SUSE Linux Enterprise Server</phrase>, perform the following steps:</para>
             <step>
-               <para>Close all unused applications and switch to a TTY, for example by pressing <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo>. Then log in as <systemitem class="username">root</systemitem>.</para>
+               <para>Close all unused applications and switch to a TTY, for example by pressing <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo>. Then log in as <systemitem class="username">root</systemitem>.</para>
             </step>
             <step>
                <para>Install the <package>yast2-migration</package> and <package>rollback-helper</package> packages:</para>
@@ -408,10 +386,7 @@ Continue? [y/n/? shows all options] (y):</screen>
                <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl enable rollback</command></screen>
             </step>
             <step>
-               <para>Open YaST and select <menuchoice>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Online Migration</guimenu>
-                  </menuchoice> or run:</para>
+               <para>Open YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Online Migration</guimenu></menuchoice> or run:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command><command>yast2 migration_sle</command></screen>
                <para>The wizard will guide you through the migration process. If there are pending updates, they can be installed before registering the system. To register, enter your registration code and e-mail address. To register with a local RMT server, provide its URL instead of the registration code and leave the e-mail address empty.</para>
                <para>After the system is registered, the <phrase role="productname">SUSE Linux Enterprise Server</phrase> repositories will be added and the SLE packages will be installed to replace the openSUSE ones.</para>

@@ -102,8 +102,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             <para>If you want to deviate from the standard directories, Fontconfig allows you to choose another one. Let Fontconfig know by using the <literal>&lt;dir&gt;</literal> element, see <xref linkend="sec-x11-fontsys-config-fontconfig"/> for details.</para>
          </listitem>
          <listitem>
-            <para>Install fonts using <command>zypper</command>. Lots of fonts are already available as a package, be it on your SUSE distribution or in the <link xlink:href="https://download.opensuse.org/repositories/M17N:/fonts/">M17N:fonts</link> repository. Add the repository to your list using the following command. For example, to add a repository for <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-               <phrase role="productnumber">15 SP7</phrase>:</para>
+            <para>Install fonts using <command>zypper</command>. Lots of fonts are already available as a package, be it on your SUSE distribution or in the <link xlink:href="https://download.opensuse.org/repositories/M17N:/fonts/">M17N:fonts</link> repository. Add the repository to your list using the following command. For example, to add a repository for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> zypper ar
      https://download.opensuse.org/repositories/M17N:/fonts/SLE_15/</screen>
             <para>To search for your <replaceable>FONT_FAMILY_NAME</replaceable> use this command:</para>
@@ -125,8 +124,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
       <sect3 xml:id="sec-x11-fontsys-config-sysconfig">
          <title>Configuring fonts via <literal>sysconfig</literal>
          </title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with a <literal>sysconfig</literal> layer above Fontconfig. This is a good starting point for experimenting with font configuration. To change the default settings, edit the configuration file <filename>/etc/sysconfig/fonts-config</filename>. (or use the YaST sysconfig module). After you have edited the file, run <command>fonts-config</command>:</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with a <literal>sysconfig</literal> layer above Fontconfig. This is a good starting point for experimenting with font configuration. To change the default settings, edit the configuration file <filename>/etc/sysconfig/fonts-config</filename>. (or use the YaST sysconfig module). After you have edited the file, run <command>fonts-config</command>:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> /usr/sbin/fonts-config</screen>
          <para>Restart the application to make the effect visible. Keep in mind the following issues:</para>
          <itemizedlist mark="bullet" spacing="normal">
@@ -145,15 +143,13 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             <varlistentry>
                <term>Usage of rendering algorithms</term>
                <listitem>
-                  <para>Consider <varname>FORCE_HINTSTYLE</varname>, <varname>FORCE_AUTOHINT</varname>, <varname>FORCE_BW</varname>, <varname>FORCE_BW_MONOSPACE</varname>, <varname>USE_EMBEDDED_BITMAPS</varname> and <varname>EMBEDDED_BITMAP_LANGAGES</varname>
-                  </para>
+                  <para>Consider <varname>FORCE_HINTSTYLE</varname>, <varname>FORCE_AUTOHINT</varname>, <varname>FORCE_BW</varname>, <varname>FORCE_BW_MONOSPACE</varname>, <varname>USE_EMBEDDED_BITMAPS</varname> and <varname>EMBEDDED_BITMAP_LANGAGES</varname></para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Preference lists of generic aliases</term>
                <listitem>
-                  <para>Use <varname>PREFER_SANS_FAMILIES</varname>, <varname>PREFER_SERIF_FAMILIES</varname>, <varname>PREFER_MONO_FAMILIES</varname> and <varname>SEARCH_METRIC_COMPATIBLE</varname>
-                  </para>
+                  <para>Use <varname>PREFER_SANS_FAMILIES</varname>, <varname>PREFER_SERIF_FAMILIES</varname>, <varname>PREFER_MONO_FAMILIES</varname> and <varname>SEARCH_METRIC_COMPATIBLE</varname></para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -314,8 +310,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
                   <literal>&lt;prefer&gt;</literal> from <xref linkend="vle-x11-fontsys-example-alias-prefer"/>
                </term>
                <listitem>
-                  <para>This rule adds <quote>Droid Serif</quote>
-                     <emphasis>just before</emphasis> the first occurrence of <literal>serif</literal> in the PFL, whenever <literal>Alegreya SC</literal> is in PFL.</para>
+                  <para>This rule adds <quote>Droid Serif</quote><emphasis>just before</emphasis> the first occurrence of <literal>serif</literal> in the PFL, whenever <literal>Alegreya SC</literal> is in PFL.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -335,60 +330,26 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
                <colspec colwidth="3*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Order</para>
-                     </entry>
-                     <entry>
-                        <para>Current PFL</para>
-                     </entry>
+                     <entry><para>Order</para></entry>
+                     <entry><para>Current PFL</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Request</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>
-                        </para>
-                     </entry>
+                     <entry><para>Request</para></entry>
+                     <entry><para><literal>Alegreya SC</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-default"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>serif</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-default"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>serif</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-prefer"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-prefer"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-accept"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>STIXGeneral</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-accept"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>STIXGeneral</literal></para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -400,78 +361,31 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             <tgroup cols="3">
                <thead>
                   <row>
-                     <entry>
-                        <para>Order</para>
-                     </entry>
-                     <entry>
-                        <para>Current PFL</para>
-                     </entry>
-                     <entry>
-                        <para>Note</para>
-                     </entry>
+                     <entry><para>Order</para></entry>
+                     <entry><para>Current PFL</para></entry>
+                     <entry><para>Note</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Request</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Same request performed.</para>
-                     </entry>
+                     <entry><para>Request</para></entry>
+                     <entry><para><literal>Alegreya SC</literal></para></entry>
+                     <entry><para>Same request performed.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-prefer"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>serif</literal> not in PFL, nothing is substituted</para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-prefer"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal></para></entry>
+                     <entry><para><literal>serif</literal> not in PFL, nothing is substituted</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-accept"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>serif</literal> not in PFL, nothing is substituted</para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-accept"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal></para></entry>
+                     <entry><para><literal>serif</literal> not in PFL, nothing is substituted</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-default"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>serif</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal> present in PFL, substitution is performed</para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-default"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>serif</literal></para></entry>
+                     <entry><para><literal>Alegreya SC</literal> present in PFL, substitution is performed</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -479,8 +393,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
          <note>
             <title>Implication</title>
             <para>Think of the <literal>&lt;default&gt;</literal> alias as a classification or inclusion of this group (if not installed). As the example shows, <literal>&lt;default&gt;</literal> should always precede the <literal>&lt;prefer&gt;</literal> and <literal>&lt;accept&gt;</literal> aliases of that group.</para>
-            <para>
-               <literal>&lt;default&gt;</literal> classification is not limited to the generic aliases serif, sans-serif and monospace. See <filename>/usr/share/fontconfig/conf.avail/30-metric-aliases.conf</filename> for a complex example.</para>
+            <para><literal>&lt;default&gt;</literal> classification is not limited to the generic aliases serif, sans-serif and monospace. See <filename>/usr/share/fontconfig/conf.avail/30-metric-aliases.conf</filename> for a complex example.</para>
             <!-- Commented out as this  -->
             <!--<para>
         We can also think about Fontconfig alias system as of oriented graph.
@@ -524,8 +437,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
 &lt;/alias&gt;</screen>
          </example>
          <para>Priority is given by the order in the <literal>&lt;accept&gt;</literal> alias. Similarly, stronger <literal>&lt;prefer&gt;</literal> aliases can be used.</para>
-         <para>
-            <xref linkend="ex-x11-fontsys-fontconfig-aliases1"/> is expanded by <xref linkend="ex-x11-fontsys-fontconfig-aliases3"/>.</para>
+         <para><xref linkend="ex-x11-fontsys-fontconfig-aliases1"/> is expanded by <xref linkend="ex-x11-fontsys-fontconfig-aliases3"/>.</para>
          <example xml:id="ex-x11-fontsys-fontconfig-aliases3">
             <title>Aliases and family names substitutions</title>
             <variablelist>
@@ -561,84 +473,34 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
                <colspec colwidth="3*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Order</para>
-                     </entry>
-                     <entry>
-                        <para>Current PFL</para>
-                     </entry>
+                     <entry><para>Order</para></entry>
+                     <entry><para>Current PFL</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Request</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>
-                        </para>
-                     </entry>
+                     <entry><para>Request</para></entry>
+                     <entry><para><literal>Alegreya SC</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-default"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>serif</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-default"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>serif</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-prefer"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-prefer"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-accept"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>STIXGeneral</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-accept"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>STIXGeneral</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-accept2"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>Liberation Serif</literal>, <literal>STIXGeneral</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-accept2"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>serif</literal>, <literal>Liberation Serif</literal>, <literal>STIXGeneral</literal></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <xref linkend="vle-x11-fontsys-example-alias-prefer2"/>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>DejaVu Serif</literal>, <literal>serif</literal>, <literal>Liberation Serif</literal>, <literal>STIXGeneral</literal>
-                        </para>
-                     </entry>
+                     <entry><para><xref linkend="vle-x11-fontsys-example-alias-prefer2"/></para></entry>
+                     <entry><para><literal>Alegreya SC</literal>, <literal>Droid Serif</literal>, <literal>DejaVu Serif</literal>, <literal>serif</literal>, <literal>Liberation Serif</literal>, <literal>STIXGeneral</literal></para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -647,12 +509,10 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             <title>Implications.</title>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>In case multiple <literal>&lt;accept&gt;</literal> declarations for the same generic name exist, the declaration that is parsed last <quote>wins</quote>. If possible, do not use <literal>&lt;accept&gt;</literal>
-                     <emphasis role="bold">after</emphasis> user (<filename>/etc/fonts/conf.d/*-user.conf</filename>) when creating a system-wide configuration.</para>
+                  <para>In case multiple <literal>&lt;accept&gt;</literal> declarations for the same generic name exist, the declaration that is parsed last <quote>wins</quote>. If possible, do not use <literal>&lt;accept&gt;</literal><emphasis role="bold">after</emphasis> user (<filename>/etc/fonts/conf.d/*-user.conf</filename>) when creating a system-wide configuration.</para>
                </listitem>
                <listitem>
-                  <para>In case multiple <literal>&lt;prefer</literal> declarations for the same generic name exist, the declaration that is parsed last <quote>wins</quote>. If possible, do not use <literal>&lt;prefer&gt;</literal>
-                     <emphasis role="bold">before</emphasis> user in the system-wide configuration.</para>
+                  <para>In case multiple <literal>&lt;prefer</literal> declarations for the same generic name exist, the declaration that is parsed last <quote>wins</quote>. If possible, do not use <literal>&lt;prefer&gt;</literal><emphasis role="bold">before</emphasis> user in the system-wide configuration.</para>
                </listitem>
                <listitem>
                   <para>Every <literal>&lt;prefer&gt;</literal> declaration overwrites <literal>&lt;accept&gt;</literal> declarations for the same generic name. If the administrator wants to allow the user to use <literal>&lt;accept&gt;</literal> and not only <literal>&lt;prefer&gt;</literal>, the administrator should not use <literal>&lt;prefer&gt;</literal> in the system-wide configuration. On the other hand, as users mostly use <literal>&lt;prefer&gt;</literal>, this should not have any detrimental effect. We also see the use of <literal>&lt;prefer&gt;</literal> in system-wide configurations.</para>

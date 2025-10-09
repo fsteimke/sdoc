@@ -54,11 +54,7 @@
    </sect1>
    <sect1 xml:id="sec-audit-config">
       <title>Configuring the audit daemon</title>
-      <para>The basic setup of the audit daemon is done by editing <filename>/etc/audit/auditd.conf</filename>. You may also use YaST to configure the basic settings by calling <menuchoice>
-            <guimenu>YaST</guimenu>
-            <guimenu>Security and Users</guimenu>
-            <guimenu>Linux Audit Framework (LAF)</guimenu>
-         </menuchoice>. Use the tabs <guimenu>Log File</guimenu> and <guimenu>Disk Space</guimenu> for configuration.</para>
+      <para>The basic setup of the audit daemon is done by editing <filename>/etc/audit/auditd.conf</filename>. You may also use YaST to configure the basic settings by calling <menuchoice><guimenu>YaST</guimenu><guimenu>Security and Users</guimenu><guimenu>Linux Audit Framework (LAF)</guimenu></menuchoice>. Use the tabs <guimenu>Log File</guimenu> and <guimenu>Disk Space</guimenu> for configuration.</para>
       <screen><?dbfo keep-together="always"?>log_file = /var/log/audit/audit.log
 log_format = RAW
 log_group = root
@@ -134,11 +130,7 @@ disk_error_action = SUSPEND        ### or HALT</screen>
    <sect1 xml:id="sec-audit-aurules">
       <title>Setting up audit rules</title>
       <para>Using audit rules, determine which aspects of the system should be analyzed by audit. Normally this includes important databases and security-relevant configuration files. You may also analyze various system calls in detail if a broad analysis of your system is required. A detailed example configuration that includes most of the rules that are needed in a CAPP compliant environment is available in <xref linkend="cha-audit-scenarios"/>.</para>
-      <para>Audit rules can be passed to the audit daemon on the <command>auditctl</command> command line and by composing a rule set in <filename>/etc/audit/audit.rules</filename> which is processed whenever the audit daemon is started. To customize <filename>/etc/audit/audit.rules</filename> either edit it directly, or use YaST: <menuchoice>
-            <guimenu>Security and Users</guimenu>
-            <guimenu>Linux Audit Framework (LAF)</guimenu>
-            <guimenu>Rules for 'auditctl'</guimenu>
-         </menuchoice>. Rules passed on the command line are not persistent and need to be re-entered when the audit daemon is restarted.</para>
+      <para>Audit rules can be passed to the audit daemon on the <command>auditctl</command> command line and by composing a rule set in <filename>/etc/audit/audit.rules</filename> which is processed whenever the audit daemon is started. To customize <filename>/etc/audit/audit.rules</filename> either edit it directly, or use YaST: <menuchoice><guimenu>Security and Users</guimenu><guimenu>Linux Audit Framework (LAF)</guimenu><guimenu>Rules for 'auditctl'</guimenu></menuchoice>. Rules passed on the command line are not persistent and need to be re-entered when the audit daemon is restarted.</para>
       <para>A simple rule set for basic auditing on a few important files and directories could look like this:</para>
       <screen># basic audit system parameters
 -D
@@ -315,8 +307,7 @@ type=SYSCALL msg=audit(1234885703.090:7889): arch=c000003e syscall=191 success=n
    <sect1 xml:id="sec-audit-viz">
       <title>Configuring log visualization</title>
       <para>Using the scripts <command>mkbar</command> and <command>mkgraph</command> you can illustrate your audit statistics with various graphs and charts. As with any other <command>aureport</command> command, the plotting commands are scriptable and can easily be configured to run as cron jobs.</para>
-      <para>
-         <command>mkbar</command> and <command>mkgraph</command> were created by Steve Grubb at Red Hat. They are available from <link xlink:href="https://people.redhat.com/sgrubb/audit/visualize/"/>. Because the current version of audit in <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not ship with these scripts, proceed as follows to make them available on your system:</para>
+      <para><command>mkbar</command> and <command>mkgraph</command> were created by Steve Grubb at Red Hat. They are available from <link xlink:href="https://people.redhat.com/sgrubb/audit/visualize/"/>. Because the current version of audit in <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not ship with these scripts, proceed as follows to make them available on your system:</para>
       <warning>
          <title>Downloaded content is dangerous</title>
          <para>Use <command>mkbar</command> and <command>mkgraph</command> at your own risk. Any content downloaded from the Web is potentially dangerous to your system, even more so when run with <systemitem class="username">root</systemitem> privileges.</para>

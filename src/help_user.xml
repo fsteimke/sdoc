@@ -10,8 +10,7 @@
    <title>Help and documentation</title>
    <info>
       <abstract>
-         <para>
-            <phrase role="productname">SUSE® Linux Enterprise Server</phrase> comes with various sources of information and documentation, many of which are already integrated into your installed system:</para>
+         <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> comes with various sources of information and documentation, many of which are already integrated into your installed system:</para>
       </abstract>
    </info>
    <!--taroth: @maintainer: the following varlist is included in
@@ -34,34 +33,27 @@
          <term>Documentation in <filename>/usr/share/doc</filename>
          </term>
          <listitem>
-            <para>This traditional help directory holds various documentation files and the release notes for your system. Find more detailed information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-help-onboard-docdir" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>This traditional help directory holds various documentation files and the release notes for your system. Find more detailed information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-docdir" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
       </varlistentry>
       <varlistentry>
          <term>Man pages and info pages for shell commands</term>
          <listitem>
-            <para>When working with the shell, you do not need to know the options of the commands by heart. Traditionally, the shell provides integrated help by means of man pages and info pages. Read more in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-help-onboard-manpages" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-help-onboard-infopages" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>When working with the shell, you do not need to know the options of the commands by heart. Traditionally, the shell provides integrated help by means of man pages and info pages. Read more in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-manpages" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-infopages" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
       </varlistentry>
    </variablelist>
    <sect1 xml:id="sec-help-onboard-yelp">
       <title>Using GNOME Help</title>
-      <para>On the GNOME desktop, to start Help directly from an application, either click the <guimenu>Help</guimenu> button or press <keycap>F1</keycap>. Both options take you directly to the application's documentation in the help center. However, you can also start Help by opening a terminal end entering <command>yelp</command> or from the main menu by clicking <menuchoice>
-            <guimenu>Applications</guimenu>
-            <guimenu>Favorites</guimenu>
-            <guimenu>Help</guimenu>
-         </menuchoice>.</para>
+      <para>On the GNOME desktop, to start Help directly from an application, either click the <guimenu>Help</guimenu> button or press <keycap>F1</keycap>. Both options take you directly to the application's documentation in the help center. However, you can also start Help by opening a terminal end entering <command>yelp</command> or from the main menu by clicking <menuchoice><guimenu>Applications</guimenu><guimenu>Favorites</guimenu><guimenu>Help</guimenu></menuchoice>.</para>
       <figure>
          <title>Main window of Help</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -75,29 +67,19 @@
       <para>If you are searching for additional product-related information, you can also refer to the following Web sites:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://www.suse.com/support/kb/">SUSE Knowledgebase</link>
-            </para>
+            <para><link xlink:href="https://www.suse.com/support/kb/">SUSE Knowledgebase</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://community.suse.com/">SUSE and Rancher Community</link>
-            </para>
+            <para><link xlink:href="https://community.suse.com/">SUSE and Rancher Community</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.suse.com/communities/blog/">SUSE Blog</link>
-            </para>
+            <para><link xlink:href="https://www.suse.com/communities/blog/">SUSE Blog</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.gnome.org/">GNOME Web Site</link>
-            </para>
+            <para><link xlink:href="https://www.gnome.org/">GNOME Web Site</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kde.org/">KDE Web Site</link>
-            </para>
+            <para><link xlink:href="https://www.kde.org/">KDE Web Site</link></para>
          </listitem>
       </itemizedlist>
       <para>You can also try general-purpose search engines. For example, use the search terms <literal>Linux CD-RW help</literal> or <literal>LibreOffice file conversion problem</literal> if you were having trouble with the CD burning or with LibreOffice file conversion.</para>
@@ -191,8 +173,7 @@
                   <link xlink:href="https://www.din.de/en"/>
                </term>
                <listitem>
-                  <para>The Deutsches Institut für Normung (DIN) is a registered technical and scientific association. It was founded in 1917. According to DIN, the organization is <quote>the institution responsible for standards in Germany and represents German interests in worldwide and European standards organizations.</quote>
-                  </para>
+                  <para>The Deutsches Institut für Normung (DIN) is a registered technical and scientific association. It was founded in 1917. According to DIN, the organization is <quote>the institution responsible for standards in Germany and represents German interests in worldwide and European standards organizations.</quote></para>
                   <para>The association brings together manufacturers, consumers, trade professionals, service companies, scientists and others who have an interest in the establishment of standards. The standards are subject to a fee and can be ordered using the DIN home page.</para>
                </listitem>
             </varlistentry>

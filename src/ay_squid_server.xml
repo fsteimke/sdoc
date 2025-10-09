@@ -304,10 +304,8 @@
          </term>
          <listitem>
             <para>Define all ports where Squid will listen for clients' HTTP requests.</para>
-            <para>
-               <literal>Host</literal> can contain a host name or IP address or remain empty.</para>
-            <para>
-               <literal>transparent</literal> disables PMTU discovery when transparent.</para>
+            <para><literal>Host</literal> can contain a host name or IP address or remain empty.</para>
+            <para><literal>transparent</literal> disables PMTU discovery when transparent.</para>
          </listitem>
       </varlistentry>
       <varlistentry>
@@ -317,8 +315,7 @@
          <listitem>
             <para>Refresh patterns define how Squid treats the objects in the cache.</para>
             <para>The refresh patterns are checked in the order listed here. The first matching entry is used.</para>
-            <para>
-               <literal>Min</literal> determines how long (in minutes) an object should be considered fresh if no explicit expiry time is given. <literal>Max</literal> is the upper limit of how long objects without an explicit expiry time will be considered fresh. <literal>Percent</literal> is the percentage of the object's age (time since last modification). An object without an explicit expiry time will be considered fresh.</para>
+            <para><literal>Min</literal> determines how long (in minutes) an object should be considered fresh if no explicit expiry time is given. <literal>Max</literal> is the upper limit of how long objects without an explicit expiry time will be considered fresh. <literal>Percent</literal> is the percentage of the object's age (time since last modification). An object without an explicit expiry time will be considered fresh.</para>
          </listitem>
       </varlistentry>
       <varlistentry>

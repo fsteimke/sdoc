@@ -62,8 +62,7 @@
             <varlistentry>
                <term>initramfs</term>
                <listitem>
-                  <para>The initial RAM file system, also referred to as “initial RAM disk” (initrd) for historical reasons (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-boot-terminology" xrefstyle="%label &#34;%c&#34;"/>).</para>
+                  <para>The initial RAM file system, also referred to as “initial RAM disk” (initrd) for historical reasons (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-terminology" xrefstyle="%label &#34;%c&#34;"/>).</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -91,8 +90,7 @@
          <para>If you need to apply changes to the built-in configuration for your storage array, read <xref linkend="sec-multipath-conf-file"/>.</para>
          <important>
             <title>Disclaimer about built-in hardware properties</title>
-            <para>
-               <filename>multipath-tools</filename> has built-in presets for many storage arrays. The existence of such presets for a given storage product <emphasis>does not imply</emphasis> that the vendor of the storage product has tested the product with <systemitem>dm-multipath</systemitem>, nor that the vendor endorses or supports the use of <systemitem>dm-multipath</systemitem> with the product. Always consult the original vendor documentation for support-related questions.</para>
+            <para><filename>multipath-tools</filename> has built-in presets for many storage arrays. The existence of such presets for a given storage product <emphasis>does not imply</emphasis> that the vendor of the storage product has tested the product with <systemitem>dm-multipath</systemitem>, nor that the vendor endorses or supports the use of <systemitem>dm-multipath</systemitem> with the product. Always consult the original vendor documentation for support-related questions.</para>
          </important>
       </sect2>
       <sect2 xml:id="sec-multipath-hardware-handlers">
@@ -188,10 +186,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/multipath-popup.png" width="50%"/>
+                  <imagedata fileref="media/multipath-popup.png" width="46%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/multipath-popup.png" width="50%"/>
+                  <imagedata fileref="media/multipath-popup.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -235,8 +233,7 @@
    </sect1>
    <sect1 xml:id="sec-multipath-offline-update">
       <title>Updating SLE on multipath systems</title>
-      <para>When updating your system online, you can proceed as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase>
-         <xref linkend="cha-upgrade-online" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>When updating your system online, you can proceed as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-online" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <para>The offline update of your system is similar to the fresh installation as described in <xref linkend="sec-multipath-installing"/>. There is no <literal>blacklist</literal>, so if the user selects to enable multipath, the root device will appear as a multipath device, even if it is normally not one. When <command>dracut</command> builds the initramfs during the update procedure, it sees a different storage stack than it would see on the booted system. See <xref linkend="sec-multipath-initrd-persistent"/> and <xref linkend="sec-multipath-referring"/>.</para>
    </sect1>
    <sect1 xml:id="sec-multipath-mpiotools">
@@ -326,10 +323,8 @@
       </sect2>
       <sect2 xml:id="sec-multipath-mpiotools-multipathd">
          <title>The <command>multipathd</command> daemon</title>
-         <para>
-            <command>multipathd</command> is the most important part of a modern Linux device mapper multipath setup. It is normally started through the systemd service <filename>multipathd.service</filename> (see <xref linkend="sec-multipath-configuration-start"/>).</para>
-         <para>
-            <command>multipathd</command> serves the following tasks (some of them depend on the configuration):</para>
+         <para><command>multipathd</command> is the most important part of a modern Linux device mapper multipath setup. It is normally started through the systemd service <filename>multipathd.service</filename> (see <xref linkend="sec-multipath-configuration-start"/>).</para>
+         <para><command>multipathd</command> serves the following tasks (some of them depend on the configuration):</para>
          <itemizedlist>
             <listitem>
                <para>On startup, detects path devices and sets up multipath maps from detected devices.</para>
@@ -356,8 +351,7 @@
                <para>Handles SCSI persistent reservation keys for path devices if configured. See <xref linkend="sec-multipath-mpiotools-mpathpersist"/>.</para>
             </listitem>
          </itemizedlist>
-         <para>
-            <command>multipathd</command> also serves as a command-line client to process interactive commands by sending them to the running daemon. The general syntax to send commands to the daemon is as follows:</para>
+         <para><command>multipathd</command> also serves as a command-line client to process interactive commands by sending them to the running daemon. The general syntax to send commands to the daemon is as follows:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> multipathd <replaceable>COMMAND</replaceable></screen>
          <para>or</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> multipathd -k'<replaceable>COMMAND</replaceable>'</screen>
@@ -514,8 +508,7 @@
             <para>This is the recommended way to handle persistent reservations with multipath maps. It is available from <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 SP4.</para>
          </note>
          <para>Use the command <command>mpathpersist</command> to query and set persistent reservations for multipath maps consisting of SCSI devices. Refer to the manual page <systemitem>mpathpersist(8)</systemitem> for details. The command-line options are the same as those of the <command>sg_persist</command> from the <systemitem>sg3_utils</systemitem> package. The <systemitem>sg_persist(8)</systemitem> manual page explains the semantics of the options in detail.</para>
-         <para>In the following examples, <replaceable>DEVICE</replaceable> denotes a device mapper multipath device like <filename>/dev/mapper/mpatha</filename>. The commands below are listed with long options for better readability. All options have single-letter replacements, like in <command>mpathpersist -oGS 123abc <replaceable>DEVICE</replaceable>
-            </command>.</para>
+         <para>In the following examples, <replaceable>DEVICE</replaceable> denotes a device mapper multipath device like <filename>/dev/mapper/mpatha</filename>. The commands below are listed with long options for better readability. All options have single-letter replacements, like in <command>mpathpersist -oGS 123abc <replaceable>DEVICE</replaceable></command>.</para>
          <variablelist>
             <varlistentry>
                <term>mpathpersist --in --read-keys <replaceable>DEVICE</replaceable>
@@ -662,8 +655,7 @@
       <important>
          <title>Vendor recommendations and built-in hardware defaults</title>
          <para>Some storage vendors publish recommended values for multipath options in their documentation. These values often represent what the vendor has tested in their environment and found most suitable for the storage product. See the disclaimer in <xref linkend="sec-multipath-hardware-autodetect"/>.</para>
-         <para>
-            <systemitem>multipath-tools</systemitem> has built-in defaults for many storage arrays that are derived from the published vendor recommendations. Run <command>multipath -T</command> to see the current settings for your devices and compare them to vendor recommendations.</para>
+         <para><systemitem>multipath-tools</systemitem> has built-in defaults for many storage arrays that are derived from the published vendor recommendations. Run <command>multipath -T</command> to see the current settings for your devices and compare them to vendor recommendations.</para>
       </important>
       <sect2 xml:id="sec-multipath-conf-file-create">
          <title>Creating <filename>/etc/multipath.conf</filename>
@@ -746,8 +738,7 @@ section {
                <term>devices</term>
                <listitem>
                   <para>Settings specific to the storage controller. This section is a collection of <literal>device</literal> subsections. Values in this section override values for the same options in the <filename>defaults</filename> section, and the built-in settings of <systemitem>multipath-tools</systemitem>.</para>
-                  <para>
-                     <literal>device</literal> entries in the <literal>devices</literal> section are matched against the vendor and product of a device using regular expressions. These entries will be “merged”, setting all options from matching sections for the device. If the same option is set in multiple matching <literal>device</literal> sections, the last device entry takes precedence, even if it is less “specific” than preceding entries. This applies also if the matching entries appear in different configuration files (see <xref linkend="sec-multipath-conf-file-precedence"/>). In the following example, a device <literal>SOMECORP STORAGE</literal> will use <literal>fast_io_fail_tmo 15</literal>.</para>
+                  <para><literal>device</literal> entries in the <literal>devices</literal> section are matched against the vendor and product of a device using regular expressions. These entries will be “merged”, setting all options from matching sections for the device. If the same option is set in multiple matching <literal>device</literal> sections, the last device entry takes precedence, even if it is less “specific” than preceding entries. This applies also if the matching entries appear in different configuration files (see <xref linkend="sec-multipath-conf-file-precedence"/>). In the following example, a device <literal>SOMECORP STORAGE</literal> will use <literal>fast_io_fail_tmo 15</literal>.</para>
                   <screen>
 devices {
     device {
@@ -890,8 +881,7 @@ defaults {
                         <replaceable>N</replaceable>
                      </term>
                      <listitem>
-                        <para>
-                           <replaceable>N</replaceable> is a positive integer. Keep the map device in queuing mode for <replaceable>N</replaceable> polling intervals. When the time elapses, <command>multipathd</command> fails the map device. If <literal>polling_interval</literal> is 5 seconds and <literal>no_path_retry</literal> is 6, <command>multipathd</command> will queue I/O for approximately 6 * 5s = 30s before failing I/O on the map device.</para>
+                        <para><replaceable>N</replaceable> is a positive integer. Keep the map device in queuing mode for <replaceable>N</replaceable> polling intervals. When the time elapses, <command>multipathd</command> fails the map device. If <literal>polling_interval</literal> is 5 seconds and <literal>no_path_retry</literal> is 6, <command>multipathd</command> will queue I/O for approximately 6 * 5s = 30s before failing I/O on the map device.</para>
                      </listitem>
                   </varlistentry>
                </variablelist>
@@ -941,8 +931,7 @@ defaults {
                         <replaceable>N</replaceable>
                      </term>
                      <listitem>
-                        <para>
-                           <replaceable>N</replaceable> is a positive integer. Wait for <replaceable>N</replaceable> polling intervals before activating the highest priority path group. If the priorities change again during this time, the wait period starts anew.</para>
+                        <para><replaceable>N</replaceable> is a positive integer. Wait for <replaceable>N</replaceable> polling intervals before activating the highest priority path group. If the priorities change again during this time, the wait period starts anew.</para>
                      </listitem>
                   </varlistentry>
                </variablelist>
@@ -1143,8 +1132,7 @@ defaults {
 }</screen>
             <calloutlist>
                <callout arearefs="mp-co-bl-wwid">
-                  <para>
-                     <literal>wwid</literal> entries are ideal for excluding specific devices, for example, the root disk.</para>
+                  <para><literal>wwid</literal> entries are ideal for excluding specific devices, for example, the root disk.</para>
                </callout>
                <callout arearefs="mp-co-bl-device">
                   <para>This <literal>device</literal> section excludes all ATA devices (the regular expression for <literal>product</literal> matches anything).</para>
@@ -1222,8 +1210,7 @@ blacklist_exceptions {
                   <note>
                      <title>Maintaining <filename>/etc/multipath/wwids</filename>
                      </title>
-                     <para>
-                        <systemitem>multipath-tools</systemitem> keeps a record of previously setup multipath maps in the file <filename>/etc/multipath/wwids</filename> (the “WWIDs file”). Devices with WWIDs listed in this file are considered multipath path devices. The file is important for multipath device selection for all values of <option>find_multipaths</option> except <literal>greedy</literal>.</para>
+                     <para><systemitem>multipath-tools</systemitem> keeps a record of previously setup multipath maps in the file <filename>/etc/multipath/wwids</filename> (the “WWIDs file”). Devices with WWIDs listed in this file are considered multipath path devices. The file is important for multipath device selection for all values of <option>find_multipaths</option> except <literal>greedy</literal>.</para>
                      <para>If <option>find_multipaths</option> is set to <literal>yes</literal> or <literal>smart</literal>, <command>multipathd</command> adds WWIDs to <filename>/etc/multipath/wwids</filename> after setting up new maps, so that these maps will be detected more quickly in the future.</para>
                      <para>The WWIDs file can be manually modified:</para>
                      <informalexample>
@@ -1252,8 +1239,7 @@ blacklist_exceptions {
    </sect1>
    <sect1 xml:id="sec-multipath-names">
       <title>Multipath device names and WWIDs</title>
-      <para>
-         <command>multipathd</command> and <command>multipath</command> internally use WWIDs to identify devices. WWIDs are also used as map names by default. For convenience, <systemitem>multipath-tools</systemitem> supports assigning simpler, more easily memorizable names to multipath devices.</para>
+      <para><command>multipathd</command> and <command>multipath</command> internally use WWIDs to identify devices. WWIDs are also used as map names by default. For convenience, <systemitem>multipath-tools</systemitem> supports assigning simpler, more easily memorizable names to multipath devices.</para>
       <sect2 xml:id="sec-multipath-conf-file-wwid">
          <title>WWIDs and device Identification</title>
          <para>It is crucial for multipath operation to reliably detect devices that represent paths to the same storage volume. <systemitem>multipath-tools</systemitem> uses the device's World Wide Identification (WWID) for this purpose (sometimes also referred to as Universally Unique ID (UUID) or Unique ID (UID—do not confuse with “User ID”)). The WWID of a map device is always the same as the WWID of its path devices.</para>
@@ -1262,16 +1248,13 @@ blacklist_exceptions {
          <para>The udev properties used by <systemitem>multipath-tools</systemitem> to derive WWIDs are:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <literal>ID_SERIAL</literal> for SCSI devices (do not confuse this with the device's “serial number”)</para>
+               <para><literal>ID_SERIAL</literal> for SCSI devices (do not confuse this with the device's “serial number”)</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>ID_UID</literal> for DASD devices</para>
+               <para><literal>ID_UID</literal> for DASD devices</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>ID_WWN</literal> for NVMe devices</para>
+               <para><literal>ID_WWN</literal> for NVMe devices</para>
             </listitem>
          </itemizedlist>
          <warning>
@@ -1293,8 +1276,7 @@ blacklist_exceptions {
       </sect2>
       <sect2 xml:id="sec-multipath-user-friendly-names">
          <title>Using autogenerated user-friendly names</title>
-         <para>
-            <systemitem>multipath-tools</systemitem> also supports autogenerated aliases, so-called “user-friendly names”. The naming scheme of the aliases follows the pattern: mpath<replaceable>INDEX</replaceable>, where <replaceable>INDEX</replaceable> is a lower case letter (starting with <literal>a</literal>). So the first autogenerated alias is <literal>mpatha</literal>, the next one is <literal>mpathb</literal>, <literal>mpathc</literal> to <literal>mpathz</literal>. After that follows <literal>mpathaa</literal>, <literal>mpathab</literal>, and so on.</para>
+         <para><systemitem>multipath-tools</systemitem> also supports autogenerated aliases, so-called “user-friendly names”. The naming scheme of the aliases follows the pattern: mpath<replaceable>INDEX</replaceable>, where <replaceable>INDEX</replaceable> is a lower case letter (starting with <literal>a</literal>). So the first autogenerated alias is <literal>mpatha</literal>, the next one is <literal>mpathb</literal>, <literal>mpathc</literal> to <literal>mpathz</literal>. After that follows <literal>mpathaa</literal>, <literal>mpathab</literal>, and so on.</para>
          <para>Map names are only useful if they are persistent. <systemitem>multipath-tools</systemitem> keeps track of the assigned names in the file <filename>/etc/multipath/bindings</filename> (the “bindings file”). When a new map is created, the WWID is first looked up in this file. If it is not found, the lowest available user-friendly name is assigned to it.</para>
          <para>Explicit aliases as discussed in <xref linkend="sec-multipath-alias"/> take precedence over user-friendly names.</para>
          <para>The following options in <filename>/etc/multipath.conf</filename> affect user-friendly names:</para>
@@ -1323,8 +1305,7 @@ blacklist_exceptions {
       </sect2>
       <sect2 xml:id="sec-multipath-referring">
          <title>Referring to multipath maps</title>
-         <para>Technically, multipath maps are Device Mapper devices, which have generic names of the form <filename>/dev/dm-<replaceable>n</replaceable>
-            </filename> with an integer number <replaceable>n</replaceable>. These names are not persistent. They should <emphasis>never</emphasis> be used to refer to the multipath maps. <command>udev</command> creates various symbolic links to these devices, which are more suitable as persistent references. These links differ with respect to their invariance against certain configuration changes. The following typical example shows various symlinks all pointing to the same device.</para>
+         <para>Technically, multipath maps are Device Mapper devices, which have generic names of the form <filename>/dev/dm-<replaceable>n</replaceable></filename> with an integer number <replaceable>n</replaceable>. These names are not persistent. They should <emphasis>never</emphasis> be used to refer to the multipath maps. <command>udev</command> creates various symbolic links to these devices, which are more suitable as persistent references. These links differ with respect to their invariance against certain configuration changes. The following typical example shows various symlinks all pointing to the same device.</para>
          <informalexample>
             <screen>/dev/disk/by-id/dm-name-mpathb<co xml:id="mp-ref-dm-name"/> -&gt; ../../dm-1
 /dev/disk/by-id/dm-uuid-mpath-3600a098000aad73f00000a3f5a275dc8<co xml:id="mp-ref-dm-uuid"/> -&gt; ../../dm-1
@@ -1409,11 +1390,9 @@ blacklist_exceptions {
          <varlistentry>
             <term>enable_foreign</term>
             <listitem>
-               <para>
-                  <systemitem>multipath-tools</systemitem> provides a plugin API for other multipathing backends than Device Mapper multipath. The API supports monitoring and displaying information about the multipath topology using standard commands like <command>multipath -ll</command>. Modifying the topology is unsupported.</para>
+               <para><systemitem>multipath-tools</systemitem> provides a plugin API for other multipathing backends than Device Mapper multipath. The API supports monitoring and displaying information about the multipath topology using standard commands like <command>multipath -ll</command>. Modifying the topology is unsupported.</para>
                <para>The value of <literal>enable_foreign</literal> is a regular expression to match against foreign library names. The default value is “<literal>NONE</literal>”.</para>
-               <para>
-                  <phrase role="productname">SUSE Linux Enterprise Server</phrase> ships the <literal>nvme</literal> plugin, which adds support for the native NVMe multipathing (see <xref linkend="sec-multipath-hardware-implementations"/>). To enable the <literal>nvme</literal> plugin, set</para>
+               <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> ships the <literal>nvme</literal> plugin, which adds support for the native NVMe multipathing (see <xref linkend="sec-multipath-hardware-implementations"/>). To enable the <literal>nvme</literal> plugin, set</para>
                <screen>defaults {
     enable_foreign nvme
 }</screen>
@@ -1476,8 +1455,7 @@ blacklist_exceptions {
                            <para>This setting is available from <phrase role="productname">SLES</phrase> 15SP4. Marginal path state is derived from FPIN events (see below). Marginal paths are moved into a separate path group, as described for<literal>off</literal>. This setting requires no further host-side configuration. It is the recommended way to handle marginal paths on Fibre Channel fabrics that support FPIN.</para>
                            <note>
                               <title>FPIN-based marginal path detection</title>
-                              <para>
-                                 <command>multipathd</command> listens for Fibre Channel Performance Impact Notifications (FPIN). If an FPIN-LI (Link Integrity) event is received for a path device, the path will enter marginal state. This state will last until a RSCN or Link up event is received on the Fibre channel adapter the device is connected to.</para>
+                              <para><command>multipathd</command> listens for Fibre Channel Performance Impact Notifications (FPIN). If an FPIN-LI (Link Integrity) event is received for a path device, the path will enter marginal state. This state will last until a RSCN or Link up event is received on the Fibre channel adapter the device is connected to.</para>
                            </note>
                         </listitem>
                      </varlistentry>
@@ -1580,74 +1558,32 @@ size=64G features='3 queue_if_no_path pg_init_retries 50'<co xml:id="mp-co-top-f
                <colspec colwidth="1*"/>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>ready</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The path is healthy and up</para>
-                     </entry>
+                     <entry><para><literal>ready</literal></para></entry>
+                     <entry><para>The path is healthy and up</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>ghost</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>A passive path in an active/passive array</para>
-                     </entry>
+                     <entry><para><literal>ghost</literal></para></entry>
+                     <entry><para>A passive path in an active/passive array</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>faulty</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The path is down or unreachable</para>
-                     </entry>
+                     <entry><para><literal>faulty</literal></para></entry>
+                     <entry><para>The path is down or unreachable</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>i/o timeout</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>A checker command timed out</para>
-                     </entry>
+                     <entry><para><literal>i/o timeout</literal></para></entry>
+                     <entry><para>A checker command timed out</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>i/o pending</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Waiting for the completion of a path checker command</para>
-                     </entry>
+                     <entry><para><literal>i/o pending</literal></para></entry>
+                     <entry><para>Waiting for the completion of a path checker command</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>delayed</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Path reinstantiation is delayed to avoid "flapping"</para>
-                     </entry>
+                     <entry><para><literal>delayed</literal></para></entry>
+                     <entry><para>Path reinstantiation is delayed to avoid "flapping"</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>shaky</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>An unreliable path (emc path checker only)</para>
-                     </entry>
+                     <entry><para><literal>shaky</literal></para></entry>
+                     <entry><para>An unreliable path (emc path checker only)</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -1668,9 +1604,7 @@ size=64G features='3 queue_if_no_path pg_init_retries 50'<co xml:id="mp-co-top-f
             <step>
                <para>Enter the following command at a terminal prompt:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> multipathd disablequeueing map <replaceable>MAPNAME</replaceable></screen>
-               <para>Replace <literal>
-                     <replaceable>MAPNAME</replaceable>
-                  </literal> with the correct WWID or mapped alias name for the device.</para>
+               <para>Replace <literal><replaceable>MAPNAME</replaceable></literal> with the correct WWID or mapped alias name for the device.</para>
                <para>This command immediately causes all queued I/O to fail and propagates the error to the calling application. File systems will observe I/O errors and switch to read-only mode.</para>
             </step>
             <step>
@@ -1740,9 +1674,7 @@ DM_MULTIPATH_DEVICE_PATH=1</screen>
             <title>Example of boot deadlock</title>
             <para>Consider a system with multipathing where the root device is not multipathed, and no devices are excluded from multipath (see <xref linkend="vl-multipath-planning-type-noroot-noinitrd"/> in <xref linkend="sec-multipath-planning-type-noroot"/>). The root file system is mounted in the initramfs. <command>systemd</command> switches to the root file system and <command>multipathd</command> starts up. Because the device is already mounted, <command>multipathd</command> fails to set up the multipath map for it. Because the root device is not configured in <literal>blacklist</literal>, it is considered a multipath device, and <literal>SYSTEMD_READY=0</literal> is set for it.</para>
             <para>Later in the boot process, the system attempts to mount additional file systems like <filename>/var</filename> and <filename>/home</filename>. Usually, these file systems will be on the same device as the root file system, by default as BTRFS subvolumes of the root file system itself. But systemd cannot mount them because of <literal>SYSTEMD_READY=0</literal>. <emphasis>We are in a deadlock</emphasis>: The dm-multipath device cannot be created, and the underlying device is blocked for systemd. The additional file systems cannot be mounted, resulting in boot failure.</para>
-            <para>
-               <emphasis role="bold">A solution to this problem already exists.</emphasis>
-               <command>multipathd</command> detects this situation and releases the device to <command>systemd</command> which can then proceed mounting the file system. However, it is important to understand the general problem, which can still occur in more subtle ways.</para>
+            <para><emphasis role="bold">A solution to this problem already exists.</emphasis><command>multipathd</command> detects this situation and releases the device to <command>systemd</command> which can then proceed mounting the file system. However, it is important to understand the general problem, which can still occur in more subtle ways.</para>
          </note>
       </sect2>
       <sect2 xml:id="sec-multipath-trouble-ref">
@@ -1857,25 +1789,13 @@ rd.debug<co xml:id="mp-co-kparm-rd"/></screen>
          <para>For more information about troubleshooting multipath I/O issues on SUSE Linux Enterprise Server, see the following Technical Information Documents (TIDs) in the SUSE Knowledgebase:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <link xlink:href="https://www.suse.com/support/kb/doc/?id=000016331">
-                     <citetitle>Using LVM on local and SAN attached devices</citetitle>
-                  </link>
-               </para>
+               <para><link xlink:href="https://www.suse.com/support/kb/doc/?id=000016331"><citetitle>Using LVM on local and SAN attached devices</citetitle></link></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://www.suse.com/support/kb/doc/?id=000017521">
-                     <citetitle>Using LVM on Multipath (DM MPIO) Devices</citetitle>
-                  </link>
-               </para>
+               <para><link xlink:href="https://www.suse.com/support/kb/doc/?id=000017521"><citetitle>Using LVM on Multipath (DM MPIO) Devices</citetitle></link></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://www.suse.com/support/kb/doc/?id=000017762">
-                     <citetitle>HOWTO: Add, Resize and Remove LUN without restarting SLES</citetitle>
-                  </link>
-               </para>
+               <para><link xlink:href="https://www.suse.com/support/kb/doc/?id=000017762"><citetitle>HOWTO: Add, Resize and Remove LUN without restarting SLES</citetitle></link></para>
             </listitem>
          </itemizedlist>
       </sect2>

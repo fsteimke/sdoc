@@ -11,8 +11,7 @@
    <para>389 Directory Server supports making offline and online backups. The <command>dsctl</command> command makes offline database backups, and the <command>dsconf</command> command makes online database backups. Back up the LDAP server configuration directory to enable complete restoration in case of a major failure.</para>
    <sect2 xml:id="sec-security-ldap-backup-config">
       <title>Backing up the LDAP server configuration</title>
-      <para>Your LDAP server configuration is in the directory <filename>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>
-         </filename>. This directory contains certificates, keys and the <filename>dse.ldif</filename> file. Make a compressed backup of this directory with the <command>tar</command> command:</para>
+      <para>Your LDAP server configuration is in the directory <filename>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable></filename>. This directory contains certificates, keys and the <filename>dse.ldif</filename> file. Make a compressed backup of this directory with the <command>tar</command> command:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>tar caf \</command><command>config_slapd-<replaceable>INSTANCE_NAME</replaceable>-$(date +%Y-%m-%d_%H-%M-%S).tar.gz \</command><command>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>/</command></screen>
       <note role="compact">
          <title>Harmless tar error message</title>
@@ -30,8 +29,7 @@
 <command>config_slapd-<replaceable>INSTANCE_NAME-DATE</replaceable>.tar.gz</command></screen>
          </step>
          <step>
-            <para>Copy it to <filename>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>
-               </filename>:</para>
+            <para>Copy it to <filename>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable></filename>:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command><command>cp -r etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable></command> \
 <command>/etc/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable></command></screen>
          </step>
@@ -67,8 +65,7 @@ db2ldif successful</screen>
       <para>Use the <command>dsconf</command> to make an online backup of your LDAP database:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>dsconf <replaceable>INSTANCE_NAME</replaceable> backup create</command>
 The backup create task has finished successfully</screen>
-      <para>This creates <filename>/var/lib/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>/bak/<replaceable>INSTANCE_NAME-DATE</replaceable>
-         </filename>.</para>
+      <para>This creates <filename>/var/lib/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>/bak/<replaceable>INSTANCE_NAME-DATE</replaceable></filename>.</para>
       <para>Restore it:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>dsconf <replaceable>INSTANCE_NAME</replaceable> backup restore</command> \
 <command>/var/lib/dirsrv/slapd-<replaceable>INSTANCE_NAME</replaceable>/bak/<replaceable>INSTANCE_NAME-DATE</replaceable></command></screen>

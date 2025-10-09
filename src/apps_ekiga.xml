@@ -9,8 +9,7 @@
       <productname>Ekiga</productname>: using voice over IP</title>
    <info>
       <abstract>
-         <para>
-            <productname>Ekiga</productname> is an application you can use for making phone calls via Voice over IP (VoIP), video conferencing, and instant messaging.</para>
+         <para><productname>Ekiga</productname> is an application you can use for making phone calls via Voice over IP (VoIP), video conferencing, and instant messaging.</para>
       </abstract>
    </info>
    <note>
@@ -75,20 +74,13 @@
             <para>If registration fails after making changes to your configuration, restart <productname>Ekiga</productname>.</para>
          </step>
       </procedure>
-      <para>
-         <productname>Ekiga</productname> allows you to maintain multiple accounts. To configure an additional account, proceed as follows:</para>
+      <para><productname>Ekiga</productname> allows you to maintain multiple accounts. To configure an additional account, proceed as follows:</para>
       <procedure>
          <step>
-            <para>Open <menuchoice>
-                  <guimenu>Edit</guimenu>
-                  <guimenu>Accounts</guimenu>
-               </menuchoice>.</para>
+            <para>Open <menuchoice><guimenu>Edit</guimenu><guimenu>Accounts</guimenu></menuchoice>.</para>
          </step>
          <step>
-            <para>Choose <menuchoice>
-                  <guimenu>Accounts</guimenu>
-                  <guimenu>Add &lt;account type&gt;</guimenu>
-               </menuchoice>. If you are unsure, select <guimenu>Add a SIP Account</guimenu>.</para>
+            <para>Choose <menuchoice><guimenu>Accounts</guimenu><guimenu>Add &lt;account type&gt;</guimenu></menuchoice>. If you are unsure, select <guimenu>Add a SIP Account</guimenu>.</para>
          </step>
          <step>
             <para>Enter <guimenu>User</guimenu> and <guimenu>Password</guimenu> according to the data provided by your provider.</para>
@@ -103,25 +95,17 @@
       <para>The user interface has different modes. To switch between views, use the toolbar. The following modes are available:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <guimenu>Display images from your camera device</guimenu>
-            </para>
+            <para><guimenu>Display images from your camera device</guimenu></para>
             <para>It displays images from your local Web cam (or from a remote Web cam during a call).</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>View the contacts list</guimenu>
-            </para>
+            <para><guimenu>View the contacts list</guimenu></para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>View the dial pad</guimenu>
-            </para>
+            <para><guimenu>View the dial pad</guimenu></para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>View the call history</guimenu>
-            </para>
+            <para><guimenu>View the call history</guimenu></para>
          </listitem>
       </itemizedlist>
       <figure xml:id="fig-ekiga-main">
@@ -129,10 +113,10 @@
             <productname>Ekiga</productname> user interface</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/ekiga_main.png" width="45%"/>
+               <imagedata fileref="media/ekiga_main.png" width="41%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/ekiga_main.png" width="55%"/>
+               <imagedata fileref="media/ekiga_main.png" width="50%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -144,204 +128,74 @@
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>Key Combination</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Key Combination</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>O</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Initiate a call with the current number.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>O</keycap></keycombo></para></entry>
+                  <entry><para>Initiate a call with the current number.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap function="escape"/>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Hang up.</para>
-                  </entry>
+                  <entry><para><keycap function="escape"/></para></entry>
+                  <entry><para>Hang up.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>N</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Add a contact to your address book.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>N</keycap></keycombo></para></entry>
+                  <entry><para>Add a contact to your address book.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>B</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Open the <guimenu>Address Book</guimenu> dialog.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>B</keycap></keycombo></para></entry>
+                  <entry><para>Open the <guimenu>Address Book</guimenu> dialog.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap>H</keycap>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Hold the current call.</para>
-                  </entry>
+                  <entry><para><keycap>H</keycap></para></entry>
+                  <entry><para>Hold the current call.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap>T</keycap>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Transfer the current call to another party.</para>
-                  </entry>
+                  <entry><para><keycap>T</keycap></para></entry>
+                  <entry><para>Transfer the current call to another party.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap>M</keycap>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Suspend the audio stream of the current call.</para>
-                  </entry>
+                  <entry><para><keycap>M</keycap></para></entry>
+                  <entry><para>Suspend the audio stream of the current call.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap>P</keycap>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Suspend the video stream of the current call.</para>
-                  </entry>
+                  <entry><para><keycap>P</keycap></para></entry>
+                  <entry><para>Suspend the video stream of the current call.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>W</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Close the <productname>Ekiga</productname> user interface.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>W</keycap></keycombo></para></entry>
+                  <entry><para>Close the <productname>Ekiga</productname> user interface.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>Q</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Quit <productname>Ekiga</productname>.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>Q</keycap></keycombo></para></entry>
+                  <entry><para>Quit <productname>Ekiga</productname>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>E</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Start the account manager.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>E</keycap></keycombo></para></entry>
+                  <entry><para>Start the account manager.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>J</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Activate <guimenu>Call Panel</guimenu> on the main user interface.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>J</keycap></keycombo></para></entry>
+                  <entry><para>Activate <guimenu>Call Panel</guimenu> on the main user interface.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>+</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Zoom in to the picture from the Web cam.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>+</keycap></keycombo></para></entry>
+                  <entry><para>Zoom in to the picture from the Web cam.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>-</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Zoom out on the picture from the Web cam.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>-</keycap></keycombo></para></entry>
+                  <entry><para>Zoom out on the picture from the Web cam.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycombo>
-                           <keycap function="control"/>
-                           <keycap>0</keycap>
-                        </keycombo>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Return to the normal size of the Web cam display.</para>
-                  </entry>
+                  <entry><para><keycombo><keycap function="control"/><keycap>0</keycap></keycombo></para></entry>
+                  <entry><para>Return to the normal size of the Web cam display.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <keycap>F11</keycap>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Use full screen for the Web cam.</para>
-                  </entry>
+                  <entry><para><keycap>F11</keycap></para></entry>
+                  <entry><para>Use full screen for the Web cam.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -358,13 +212,10 @@
             <para>Enter the SIP address of the party to call at the bottom of the window. The address should look like:</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>for direct local calls: <literal>sip:username@domainname</literal> or <literal>username@hostname</literal>
-                  </para>
+                  <para>for direct local calls: <literal>sip:username@domainname</literal> or <literal>username@hostname</literal></para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>sip:username@domainname</literal> or <literal>userid@sipserver</literal>
-                  </para>
+                  <para><literal>sip:username@domainname</literal> or <literal>userid@sipserver</literal></para>
                </listitem>
             </itemizedlist>
             <!-- bg: don't see that this works anymore
@@ -375,24 +226,17 @@
     </para> -->
          </step>
          <step>
-            <para>Click <guimenu>Call</guimenu> or press <keycombo>
-                  <keycap function="control"/>
-                  <keycap>O</keycap>
-               </keycombo> and wait for the other party to pick up the phone.</para>
+            <para>Click <guimenu>Call</guimenu> or press <keycombo><keycap function="control"/><keycap>O</keycap></keycombo> and wait for the other party to pick up the phone.</para>
          </step>
          <step>
             <para>To end the call, click <guimenu>Hang up</guimenu> or press <keycap function="escape"/>.</para>
          </step>
       </procedure>
-      <para>If you need to tweak the sound parameters, click <menuchoice>
-            <guimenu>Edit</guimenu>
-            <guimenu>Preferences</guimenu>
-         </menuchoice>.</para>
+      <para>If you need to tweak the sound parameters, click <menuchoice><guimenu>Edit</guimenu><guimenu>Preferences</guimenu></menuchoice>.</para>
    </sect1>
    <sect1 xml:id="sec-ekiga-answer">
       <title>Answering a call</title>
-      <para>
-         <productname>Ekiga</productname> can receive calls in two different ways. First, it can be called directly with <literal>sip:user@host</literal>, or via SIP provider. Most SIP providers enable you to receive calls from a normal landline to your VoIP account. Depending on the mode in which you use <productname>Ekiga</productname>, there are several ways in which you are alerted to an incoming call:</para>
+      <para><productname>Ekiga</productname> can receive calls in two different ways. First, it can be called directly with <literal>sip:user@host</literal>, or via SIP provider. Most SIP providers enable you to receive calls from a normal landline to your VoIP account. Depending on the mode in which you use <productname>Ekiga</productname>, there are several ways in which you are alerted to an incoming call:</para>
       <variablelist>
          <varlistentry>
             <term>Normal application</term>
@@ -411,11 +255,7 @@
    </sect1>
    <sect1 xml:id="sec-ekiga-calladd">
       <title>Using the address book</title>
-      <para>
-         <productname>Ekiga</productname> can manage your SIP contacts. All the contacts are displayed in the <guimenu>Contacts list</guimenu> tab, shown in the main window after start-up. To add a contact or a new contact group, select <menuchoice>
-            <guimenu>Chat</guimenu>
-            <guimenu>Add Contact</guimenu>
-         </menuchoice>.</para>
+      <para><productname>Ekiga</productname> can manage your SIP contacts. All the contacts are displayed in the <guimenu>Contacts list</guimenu> tab, shown in the main window after start-up. To add a contact or a new contact group, select <menuchoice><guimenu>Chat</guimenu><guimenu>Add Contact</guimenu></menuchoice>.</para>
       <para>If you want to add a new group, enter the group name into the bottom text box and click <guimenu>Add Group</guimenu>. The new group is then added to the group list and preselected.</para>
       <para>The following entries are required for a valid contact:</para>
       <variablelist>

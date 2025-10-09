@@ -10,8 +10,7 @@
    <para>Linux Unified Key Setup (LUKS) is the standard for Linux disk encryption. It provides a standardized on-disk format and enables users to transport or migrate data seamlessly.</para>
    <para>LUKS is used to encrypt block devices. The contents of the encrypted device are arbitrary, and therefore any file system can be encrypted, including swap partitions. All necessary setup information, like encryption keys and parameters, such as cipher type and key size, is stored in the partition header.</para>
    <para>Encryption is done with a multi-layer approach. First, the block device is encrypted using a master key. Then, this master key is encrypted with each active user key. User keys are derived from passphrases, FIDO2 security keys, TPMs or smart cards. This multi-layer approach allows users to change their passphrase without re-encrypting the whole block device.</para>
-   <para>For more information about LUKS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-      <xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>For more information about LUKS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
    <sect2 xml:id="deployment-encryption-methods">
       <title>Encryption methods</title>
       <para>To encrypt a device, follow the instructions in <xref linkend="sec-expert-partitioner-options"/>.</para>
@@ -26,21 +25,10 @@
                <para>During installation in the YaST configuration:</para>
                <itemizedlist>
                   <listitem>
-                     <para>In the graphical interface, press <keycombo>
-                           <keycap>Ctrl</keycap>
-                           <keycap>Alt</keycap>
-                           <keycap>Shift</keycap>
-                           <keycap>C</keycap>
-                        </keycombo>.</para>
+                     <para>In the graphical interface, press <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>Shift</keycap><keycap>C</keycap></keycombo>.</para>
                   </listitem>
                   <listitem>
-                     <para>In the text interface, press <keycombo>
-                           <keycap>Ctrl</keycap>
-                           <keycap>D</keycap>
-                        </keycombo> and then <keycombo>
-                           <keycap>Shift</keycap>
-                           <keycap>C</keycap>
-                        </keycombo>.</para>
+                     <para>In the text interface, press <keycombo><keycap>Ctrl</keycap><keycap>D</keycap></keycombo> and then <keycombo><keycap>Shift</keycap><keycap>C</keycap></keycombo>.</para>
                   </listitem>
                </itemizedlist>
                <para>Check <guimenu>Enable Experimental LUKS2 Encryption Support</guimenu> and exit the configuration screen with <guimenu>OK</guimenu>.</para>
@@ -105,8 +93,7 @@
          <varlistentry>
             <term>PBKDF2</term>
             <listitem>
-               <para>
-                  <literal>PBKDF2</literal> is the function that LUKS1 uses. It is defined in <link xlink:href="https://tools.ietf.org/html/rfc2898">RFC 2898</link>.</para>
+               <para><literal>PBKDF2</literal> is the function that LUKS1 uses. It is defined in <link xlink:href="https://tools.ietf.org/html/rfc2898">RFC 2898</link>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -128,8 +115,7 @@
             <para>As an intentional security feature, Argon2 requires a lot more memory to be computed. This may result in problems on some systems. If the strength of the password can be fully assured, then using PBKDF2 may still be secure and save memory.</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem>grub2</systemitem> offers limited support to boot from devices encrypted with LUKS2, but only if PBKDF2 is used. This means you cannot use Argon2 for a file system that contains the <filename>/boot</filename> directory. Note that even if PBKDF2 is used, some manual <systemitem>grub2</systemitem> configuration may be needed to boot from a LUKS2 device.</para>
+            <para><systemitem>grub2</systemitem> offers limited support to boot from devices encrypted with LUKS2, but only if PBKDF2 is used. This means you cannot use Argon2 for a file system that contains the <filename>/boot</filename> directory. Note that even if PBKDF2 is used, some manual <systemitem>grub2</systemitem> configuration may be needed to boot from a LUKS2 device.</para>
          </listitem>
       </itemizedlist>
       <!--
@@ -139,7 +125,6 @@
       encrypt the root file system.
     </para>
     -->
-      <para>For more information on configuring device encryption with LUKS, use the <literal>Help</literal> button in the installer and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-         <xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information on configuring device encryption with LUKS, use the <literal>Help</literal> button in the installer and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect2>
 </sect1>

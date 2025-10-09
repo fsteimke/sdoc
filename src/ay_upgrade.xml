@@ -10,32 +10,25 @@
    <para>AutoYaST can also be used for doing a system upgrade. Besides upgrade packages, the following sections are supported too:</para>
    <itemizedlist>
       <listitem>
-         <para>
-            <literal>scripts/pre-scripts</literal> Running user scripts very early, before anything else really happens.</para>
+         <para><literal>scripts/pre-scripts</literal> Running user scripts very early, before anything else really happens.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>add-on</literal> Defining an additional add-on product.</para>
+         <para><literal>add-on</literal> Defining an additional add-on product.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>language</literal> Setting language.</para>
+         <para><literal>language</literal> Setting language.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>timezone</literal> Setting timezone.</para>
+         <para><literal>timezone</literal> Setting timezone.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>keyboard</literal> Setting keyboard.</para>
+         <para><literal>keyboard</literal> Setting keyboard.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>software</literal> Installing additional software/patterns. Removing installed packages.</para>
+         <para><literal>software</literal> Installing additional software/patterns. Removing installed packages.</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>suse_register</literal> Running registration process.</para>
+         <para><literal>suse_register</literal> Running registration process.</para>
       </listitem>
    </itemizedlist>
    <para>To control the upgrade process the following sections can be defined:</para>

@@ -47,8 +47,7 @@ UEVENT[1185238505.306440] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.
 UDEV  [1185238505.325384] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/event4 (input)
 UDEV  [1185238505.342257] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/mouse2 (input)</screen>
       <para>The <literal>UEVENT</literal> lines show the events the kernel has sent over netlink. The <literal>UDEV</literal> lines show the finished <systemitem class="service">udev</systemitem> event handlers. The timing is printed in microseconds. The time between <literal>UEVENT</literal> and <literal>UDEV</literal> is the time <systemitem class="service">udev</systemitem> took to process this event or the <systemitem class="service">udev</systemitem> daemon has delayed its execution to synchronize this event with related and already running events. For example, events for hard disk partitions always wait for the main disk device event to finish, because the partition events may rely on the data that the main disk event has queried from the hardware.</para>
-      <para>
-         <command>udevadm monitor --env</command> shows the complete event environment:</para>
+      <para><command>udevadm monitor --env</command> shows the complete event environment:</para>
       <screen>ACTION=add
 DEVPATH=/devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10
 SUBSYSTEM=input
@@ -60,9 +59,7 @@ EV=7
 KEY=70000 0 0 0 0
 REL=103
 MODALIAS=input:b0003v046DpC03Ee0110-e0,1,2,k110,111,112,r0,1,8,amlsfw</screen>
-      <para>
-         <systemitem class="service">udev</systemitem> also sends messages to syslog. The default syslog priority that controls which messages are sent to syslog is specified in the <systemitem class="service">udev</systemitem> configuration file <filename>/etc/udev/udev.conf</filename>. The log priority of the running daemon can be changed with <command>udevadm control --log_priority=</command>
-         <replaceable>LEVEL/NUMBER</replaceable>.</para>
+      <para><systemitem class="service">udev</systemitem> also sends messages to syslog. The default syslog priority that controls which messages are sent to syslog is specified in the <systemitem class="service">udev</systemitem> configuration file <filename>/etc/udev/udev.conf</filename>. The log priority of the running daemon can be changed with <command>udevadm control --log_priority=</command><replaceable>LEVEL/NUMBER</replaceable>.</para>
    </sect1>
    <sect1 xml:id="sec-udev-rules">
       <title>Influencing kernel device event handling with <systemitem class="service">udev</systemitem> rules</title>
@@ -101,12 +98,10 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
             <para>Each line of the rules file represents one rule. If a rule is longer than one line, use <literal>\</literal> to join the different lines as you would do in shell syntax.</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="service">udev</systemitem> rules support a shell-style pattern that matches the <literal>*</literal>, <literal>?</literal>, and <literal>[]</literal> patterns.</para>
+            <para><systemitem class="service">udev</systemitem> rules support a shell-style pattern that matches the <literal>*</literal>, <literal>?</literal>, and <literal>[]</literal> patterns.</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="service">udev</systemitem> rules support substitutions.</para>
+            <para><systemitem class="service">udev</systemitem> rules support substitutions.</para>
          </listitem>
       </itemizedlist>
       <sect2 xml:id="sec-udev-rules-ops">
@@ -160,8 +155,7 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
       </sect2>
       <sect2 xml:id="sec-udev-rules-subst">
          <title>Using substitutions in <systemitem class="service">udev</systemitem> rules</title>
-         <para>
-            <systemitem class="service">udev</systemitem> rules support the use of placeholders and substitutions. Use them in a similar fashion as you would do in any other scripts. The following substitutions can be used with <systemitem class="service">udev</systemitem> rules:</para>
+         <para><systemitem class="service">udev</systemitem> rules support the use of placeholders and substitutions. Use them in a similar fashion as you would do in any other scripts. The following substitutions can be used with <systemitem class="service">udev</systemitem> rules:</para>
          <variablelist>
             <varlistentry>
                <term>
@@ -302,8 +296,7 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
                   <literal>ATTR{<replaceable>FILENAME</replaceable>}</literal>
                </term>
                <listitem>
-                  <para>
-                     <systemitem class="filesystem">sysfs</systemitem> attributes of the event device. To match a string contained in the <filename>vendor</filename> attribute file name, you could use <literal>ATTR{vendor}=="On[sS]tream"</literal>, for example.</para>
+                  <para><systemitem class="filesystem">sysfs</systemitem> attributes of the event device. To match a string contained in the <filename>vendor</filename> attribute file name, you could use <literal>ATTR{vendor}=="On[sS]tream"</literal>, for example.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -440,16 +433,13 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
                   <para>Load variables into the event environment such as the output of an external program. <systemitem class="service">udev</systemitem> imports variables of several types. If no type is specified, <systemitem class="service">udev</systemitem> tries to determine the type itself based on the executable bit of the file permissions.</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <literal>program</literal> tells <systemitem class="service">udev</systemitem> to execute an external program and import its output.</para>
+                        <para><literal>program</literal> tells <systemitem class="service">udev</systemitem> to execute an external program and import its output.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>file</literal> tells <systemitem class="service">udev</systemitem> to import a text file.</para>
+                        <para><literal>file</literal> tells <systemitem class="service">udev</systemitem> to import a text file.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>parent</literal> tells <systemitem class="service">udev</systemitem> to import the stored keys from the parent device.</para>
+                        <para><literal>parent</literal> tells <systemitem class="service">udev</systemitem> to import the stored keys from the parent device.</para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -470,20 +460,16 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
                   <para>The <literal>OPTION</literal> key may have several values:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <literal>last_rule</literal> tells <systemitem class="service">udev</systemitem> to ignore all later rules.</para>
+                        <para><literal>last_rule</literal> tells <systemitem class="service">udev</systemitem> to ignore all later rules.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>ignore_device</literal> tells <systemitem class="service">udev</systemitem> to ignore this event.</para>
+                        <para><literal>ignore_device</literal> tells <systemitem class="service">udev</systemitem> to ignore this event.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>ignore_remove</literal> tells <systemitem class="service">udev</systemitem> to ignore all later remove events for the device.</para>
+                        <para><literal>ignore_remove</literal> tells <systemitem class="service">udev</systemitem> to ignore all later remove events for the device.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>all_partitions</literal> tells <systemitem class="service">udev</systemitem> to create device nodes for all available partitions on a block device.</para>
+                        <para><literal>all_partitions</literal> tells <systemitem class="service">udev</systemitem> to create device nodes for all available partitions on a block device.</para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -528,8 +514,7 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
                <filename>/sys/*</filename>
             </term>
             <listitem>
-               <para>Virtual file system provided by the Linux kernel, exporting all currently known devices. This information is used by <systemitem class="service">udev</systemitem> to create device nodes in <filename>/dev</filename>
-               </para>
+               <para>Virtual file system provided by the Linux kernel, exporting all currently known devices. This information is used by <systemitem class="service">udev</systemitem> to create device nodes in <filename>/dev</filename></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -603,8 +588,7 @@ SUBSYSTEM=="firmware", ACTION=="add", RUN+="firmware.sh"</screen>
                <command>udevadm</command>
             </term>
             <listitem>
-               <para>
-                  <command>udevadm</command> can be used to control the runtime behavior of <systemitem class="service">udev</systemitem>, request kernel events, manage the event queue and provide simple debugging mechanisms.</para>
+               <para><command>udevadm</command> can be used to control the runtime behavior of <systemitem class="service">udev</systemitem>, request kernel events, manage the event queue and provide simple debugging mechanisms.</para>
             </listitem>
          </varlistentry>
          <varlistentry>

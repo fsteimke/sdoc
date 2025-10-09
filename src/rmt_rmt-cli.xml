@@ -305,13 +305,10 @@
                <para>This command lists and provides the option to delete inactive systems. It has the following options:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <option>--before <replaceable>DATE</replaceable>
-                        </option>—lists systems that have been inactive since <replaceable>DATE</replaceable> until now. Default is the last 3 months.</para>
+                     <para><option>--before <replaceable>DATE</replaceable></option>—lists systems that have been inactive since <replaceable>DATE</replaceable> until now. Default is the last 3 months.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <option>--no-confirmation</option>—allows the administrator to delete matching systems without confirmation.</para>
+                     <para><option>--no-confirmation</option>—allows the administrator to delete matching systems without confirmation.</para>
                   </listitem>
                </itemizedlist>
                <screen><prompt role="root">#</prompt>rmt-cli systems purge --before 2021-06-16

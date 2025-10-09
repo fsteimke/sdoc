@@ -167,10 +167,10 @@ cd /etc/openvpn
                      <title>Routed VPN</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/vpn_routed1.png" width="80%"/>
+                           <imagedata fileref="media/vpn_routed1.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/vpn_routed1.png" width="50%"/>
+                           <imagedata fileref="media/vpn_routed1.png" width="46%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -216,10 +216,10 @@ cd /etc/openvpn
                      <title>Bridged VPN - scenario 1</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/vpn_bridged1.png" width="80%"/>
+                           <imagedata fileref="media/vpn_bridged1.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/vpn_bridged1.png" width="50%"/>
+                           <imagedata fileref="media/vpn_bridged1.png" width="46%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -245,10 +245,10 @@ cd /etc/openvpn
                      <title>Bridged VPN - scenario 2</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/vpn_bridged2.png" width="80%"/>
+                           <imagedata fileref="media/vpn_bridged2.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/vpn_bridged2.png" width="50%"/>
+                           <imagedata fileref="media/vpn_bridged2.png" width="46%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -274,10 +274,10 @@ cd /etc/openvpn
                      <title>Bridged VPN - scenario 3</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/vpn_bridged3.png" width="80%"/>
+                           <imagedata fileref="media/vpn_bridged3.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/vpn_bridged3.png" width="50%"/>
+                           <imagedata fileref="media/vpn_bridged3.png" width="46%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -289,11 +289,7 @@ cd /etc/openvpn
    </sect1>
    <sect1 xml:id="sec-security-vpn-simplest">
       <title>Setting up a simple test scenario</title>
-      <para>In the following example, we create a point-to-point VPN tunnel. The example demonstrates how to create a VPN tunnel between one client and a server. It is assumed that your VPN server uses private IP addresses like <systemitem class="ipaddress">
-            <replaceable>IP_OF_SERVER</replaceable>
-         </systemitem> and your client uses the IP address <systemitem class="ipaddress">
-            <replaceable>IP_OF_CLIENT</replaceable>
-         </systemitem>. Make sure you select addresses which do not conflict with other IP addresses.</para>
+      <para>In the following example, we create a point-to-point VPN tunnel. The example demonstrates how to create a VPN tunnel between one client and a server. It is assumed that your VPN server uses private IP addresses like <systemitem class="ipaddress"><replaceable>IP_OF_SERVER</replaceable></systemitem> and your client uses the IP address <systemitem class="ipaddress"><replaceable>IP_OF_CLIENT</replaceable></systemitem>. Make sure you select addresses which do not conflict with other IP addresses.</para>
       <warning>
          <title>Use only for testing</title>
          <para>This following scenario is provided as an example meant for familiarizing yourself with VPN technology. <emphasis>Do not</emphasis> use this as a real world scenario, as it can compromise the security and safety of your IT infrastructure.</para>
@@ -306,12 +302,10 @@ cd /etc/openvpn
                <para>Place your OpenVPN configuration files in the directory <filename>/etc/openvpn</filename>.</para>
             </listitem>
             <listitem>
-               <para>Name your configuration files <filename>
-                     <replaceable>MY_CONFIGURATION</replaceable>.conf</filename>.</para>
+               <para>Name your configuration files <filename><replaceable>MY_CONFIGURATION</replaceable>.conf</filename>.</para>
             </listitem>
             <listitem>
-               <para>If there are multiple files that belong to the same configuration, place them in a subdirectory like <filename>/etc/openvpn/<replaceable>MY_CONFIGURATION</replaceable>
-                  </filename>.</para>
+               <para>If there are multiple files that belong to the same configuration, place them in a subdirectory like <filename>/etc/openvpn/<replaceable>MY_CONFIGURATION</replaceable></filename>.</para>
             </listitem>
          </itemizedlist>
       </tip>
@@ -352,11 +346,7 @@ PRE_DOWN_SCRIPT='systemd:openvpn@service'</screen>
                <para>The notation <literal>openvpn@server</literal> points to the OpenVPN server configuration file located at <filename>/etc/openvpn/server.conf</filename>. For more information, see <filename>/usr/share/doc/packages/openvpn/README.SUSE</filename>.</para>
             </step>
             <step xml:id="st-security-vpn-simplest-vpnserv-yast">
-               <para>If you use a firewall, start YaST and open UDP port 1194 (<menuchoice>
-                     <guimenu>Security and Users</guimenu>
-                     <guimenu>Firewall</guimenu>
-                     <guimenu>Allowed Services</guimenu>
-                  </menuchoice>).</para>
+               <para>If you use a firewall, start YaST and open UDP port 1194 (<menuchoice><guimenu>Security and Users</guimenu><guimenu>Firewall</guimenu><guimenu>Allowed Services</guimenu></menuchoice>).</para>
             </step>
             <step>
                <para>Start the OpenVPN server service by setting the tun device to <literal>up</literal>:</para>
@@ -421,19 +411,13 @@ PRE_DOWN_SCRIPT='systemd:openvpn@client'</screen>
       <para>This setup involves the following basic steps:</para>
       <procedure>
          <step>
-            <para>
-               <xref linkend="sec-security-vpn-certs"/>
-            </para>
+            <para><xref linkend="sec-security-vpn-certs"/></para>
          </step>
          <step>
-            <para>
-               <xref linkend="sec-security-vpn-config-server"/>
-            </para>
+            <para><xref linkend="sec-security-vpn-config-server"/></para>
          </step>
          <step>
-            <para>
-               <xref linkend="sec-security-vpn-config-clients"/>
-            </para>
+            <para><xref linkend="sec-security-vpn-config-clients"/></para>
          </step>
       </procedure>
       <sect2 xml:id="sec-security-vpn-certs">
@@ -1059,22 +1043,16 @@ nameserver &dnsip;</screen>
       <para>For more information about VPN, see:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://openvpn.net"/>: the OpenVPN home page</para>
+            <para><link xlink:href="https://openvpn.net"/>: the OpenVPN home page</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man</command>
-               <option>openvpn</option>
-            </para>
+            <para><command>man</command><option>openvpn</option></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>/usr/share/doc/packages/openvpn/sample-config-files/</filename>: example configuration files for different scenarios.</para>
+            <para><filename>/usr/share/doc/packages/openvpn/sample-config-files/</filename>: example configuration files for different scenarios.</para>
          </listitem>
          <listitem>
-            <para>
-               <filename>/usr/src/linux/Documentation/networking/tuntap.txt</filename>, to install the <systemitem class="resource">kernel-source</systemitem> package.</para>
+            <para><filename>/usr/src/linux/Documentation/networking/tuntap.txt</filename>, to install the <systemitem class="resource">kernel-source</systemitem> package.</para>
          </listitem>
       </itemizedlist>
    </sect1>

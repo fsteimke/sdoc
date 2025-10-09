@@ -147,15 +147,13 @@ You should now review your instance configuration and data:
       <para>For checking the correctness of configuration and subsequent troubleshooting, the following information is important:</para>
       <itemizedlist>
          <listitem>
-            <para>OpenLDAP discovers that a user is allowed passthrough authentication if the <literal>userPassword</literal> attribute has a value with the <literal>userPassword: {SASL}<replaceable>USERNAME@REALM</replaceable>
-               </literal> format. The prerequisite is to build the OpenLDAP server with the <literal>--enable-spasswd</literal> option to enable passthrough authentication.</para>
+            <para>OpenLDAP discovers that a user is allowed passthrough authentication if the <literal>userPassword</literal> attribute has a value with the <literal>userPassword: {SASL}<replaceable>USERNAME@REALM</replaceable></literal> format. The prerequisite is to build the OpenLDAP server with the <literal>--enable-spasswd</literal> option to enable passthrough authentication.</para>
          </listitem>
          <listitem>
             <para>OpenLDAP configures its connection to <literal>saslauthd</literal> from <filename>/usr/lib/sasl2/slapd.conf</filename>.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>saslauthd</literal> discovers the relevant modules using its command-line parameters configured in <literal>/etc/sysconfig/saslauthd</literal>.</para>
+            <para><literal>saslauthd</literal> discovers the relevant modules using its command-line parameters configured in <literal>/etc/sysconfig/saslauthd</literal>.</para>
          </listitem>
          <listitem>
             <para>The back-end modules of <literal>saslauthd</literal> use their own configuration, as documented in <command>man saslauthd</command>.</para>
@@ -178,9 +176,7 @@ You should now review your instance configuration and data:
             <step>
                <para>Migrate from OpenLDAP to 389 Directory Server by running the <command>openldap_to_ds</command> command-line tool. For detailed information on the migration process, refer to the section <xref linkend="sec-security-ldap-migrate-test"/>.</para>
                <note>
-                  <para>While the <command>openldap_to_ds</command> process is running, if a user is detected as having the value of the <literal>userPssword</literal> attribute in the <literal>userPassword: {SASL}<replaceable>USERNAME@REALM</replaceable>
-                     </literal> format, it is removed and placed as the value of the <literal>nsSaslauthId</literal> attribute in the <literal>nsSaslauthId: <replaceable>USERNAME@REALM</replaceable>
-                     </literal> format. Additionally, the attribute value <literal>objectClass: nsSaslauthAccount</literal> is automatically added to support the modification.</para>
+                  <para>While the <command>openldap_to_ds</command> process is running, if a user is detected as having the value of the <literal>userPssword</literal> attribute in the <literal>userPassword: {SASL}<replaceable>USERNAME@REALM</replaceable></literal> format, it is removed and placed as the value of the <literal>nsSaslauthId</literal> attribute in the <literal>nsSaslauthId: <replaceable>USERNAME@REALM</replaceable></literal> format. Additionally, the attribute value <literal>objectClass: nsSaslauthAccount</literal> is automatically added to support the modification.</para>
                </note>
             </step>
             <step>

@@ -13,10 +13,10 @@
       <title>Open Fibre channel over Ethernet SAN</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/fcoe_san_a.png" width="80%"/>
+            <imagedata fileref="media/fcoe_san_a.png" width="73%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/fcoe_san_a.png" width="100%"/>
+            <imagedata fileref="media/fcoe_san_a.png" width="92%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -40,10 +40,10 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="80%"/>
+               <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="10%"/>
+               <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="9%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -64,17 +64,14 @@
       <para>You can use the YaST FCoE Client Configuration option to create, configure, and remove FCoE interfaces for the FCoE disks in your Fibre Channel storage infrastructure. To use this option, the FCoE Initiator service (the <systemitem class="daemon">fcoemon</systemitem> daemon) and the Link Layer Discovery Protocol agent daemon (<systemitem class="daemon">llpad</systemitem>) must be installed and running, and the FCoE connections must be enabled at the FCoE-capable switch.</para>
       <procedure>
          <step>
-            <para>Launch YaST and select <menuchoice>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>FCoE Client Configuration</guimenu>
-               </menuchoice>.</para>
+            <para>Launch YaST and select <menuchoice><guimenu>Network Services</guimenu><guimenu>FCoE Client Configuration</guimenu></menuchoice>.</para>
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/fcoe_services_a.png" width="80%"/>
+                     <imagedata fileref="media/fcoe_services_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/fcoe_services_a.png" width="100%"/>
+                     <imagedata fileref="media/fcoe_services_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -102,10 +99,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="80%"/>
+                     <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="100%"/>
+                     <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -166,8 +163,7 @@
                   </listitem>
                </varlistentry>
             </variablelist>
-            <para>If you modify a setting, click <guimenu>Next</guimenu> to save and apply the change. The settings are written to the <filename>/etc/fcoe/cfg-eth<replaceable>X</replaceable>
-               </filename> file. The <systemitem class="daemon">fcoemon</systemitem> daemon reads the configuration files for each FCoE interface when it is initialized.</para>
+            <para>If you modify a setting, click <guimenu>Next</guimenu> to save and apply the change. The settings are written to the <filename>/etc/fcoe/cfg-eth<replaceable>X</replaceable></filename> file. The <systemitem class="daemon">fcoemon</systemitem> daemon reads the configuration files for each FCoE interface when it is initialized.</para>
          </step>
          <step>
             <para>To remove an interface that is already configured, select it from the list. Click <guimenu>Remove Interface</guimenu> and <guimenu>Continue</guimenu> to confirm. The FCoE Interface value changes to <guimenu>not configured</guimenu>.</para>
@@ -177,10 +173,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/fcoe_configtab_a.png" width="80%"/>
+                     <imagedata fileref="media/fcoe_configtab_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/fcoe_configtab_a.png" width="100%"/>
+                     <imagedata fileref="media/fcoe_configtab_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

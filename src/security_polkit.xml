@@ -173,8 +173,7 @@ org.freedesktop.login1.reboot:
       <note>
          <title>Restrictions of <command>pkaction</command> on <phrase role="productname">SUSE Linux Enterprise Server</phrase>
          </title>
-         <para>
-            <command>pkaction</command> only takes the upstream defaults into account. It is not aware of the SUSE default privileges that are overriding the upstream defaults. Therefore, be careful about interpreting this output.</para>
+         <para><command>pkaction</command> only takes the upstream defaults into account. It is not aware of the SUSE default privileges that are overriding the upstream defaults. Therefore, be careful about interpreting this output.</para>
       </note>
    </sect1>
    <sect1 xml:id="sec-security-polkit-change-modify-config">
@@ -267,8 +266,7 @@ polkit.addRule(function(action, subject) {
       <procedure xml:id="pro-restore-polkit-defaults">
          <title>Restoring the <phrase role="productname">SUSE Linux Enterprise Server</phrase> defaults</title>
          <step>
-            <para>Choose the desired profile as described in <xref linkend="sec-security-polkit-policies-default"/>
-            </para>
+            <para>Choose the desired profile as described in <xref linkend="sec-security-polkit-policies-default"/></para>
          </step>
          <step>
             <para>Remove any overrides from <filename>/etc/polkit-default-privs.local</filename>.</para>

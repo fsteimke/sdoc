@@ -31,10 +31,7 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
       <para>On desktop and laptop computers, NetworkManager is enabled by default. You can disable and enable it at any time using the Network Settings module in YaST.</para>
       <procedure>
          <step>
-            <para>Run YaST and go to <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Network Settings</guimenu>
-               </menuchoice>.</para>
+            <para>Run YaST and go to <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>The <guimenu>Network Settings</guimenu> dialog opens. Go to the <guimenu>Global Options</guimenu> tab.</para>
@@ -82,10 +79,10 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
          <title>GNOME Network Connections dialog</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/nm_gnome_tabs.png" width="70%"/>
+               <imagedata fileref="media/nm_gnome_tabs.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/nm_gnome_tabs.png" width="50%"/>
+               <imagedata fileref="media/nm_gnome_tabs.png" width="46%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -204,14 +201,10 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                   <para>To use this VPN technology, install:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-openvpn</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-openvpn</systemitem></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-openvpn-gnome</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-openvpn-gnome</systemitem></para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -222,14 +215,10 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                   <para>To use this VPN technology, install:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-openconnect</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-openconnect</systemitem></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-openconnect-gnome</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-openconnect-gnome</systemitem></para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -240,14 +229,10 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                   <para>To use this VPN technology, install:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-pptp</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-pptp</systemitem></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <systemitem class="resource">NetworkManager-pptp-gnome</systemitem>
-                        </para>
+                        <para><systemitem class="resource">NetworkManager-pptp-gnome</systemitem></para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -277,71 +262,29 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                      <colspec colnum="2" colname="desc" colwidth="70*"/>
                      <tbody>
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>Gateway</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>The remote endpoint of the VPN server</para>
-                           </entry>
+                           <entry><para><guimenu>Gateway</guimenu></para></entry>
+                           <entry><para>The remote endpoint of the VPN server</para></entry>
                         </row>
                         <!-- Optional fields, depends on what you have selected in Connection Type -->
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>User name</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>The user (only available when you have selected <guimenu>Password with Certificates (TLS)</guimenu>)</para>
-                           </entry>
+                           <entry><para><guimenu>User name</guimenu></para></entry>
+                           <entry><para>The user (only available when you have selected <guimenu>Password with Certificates (TLS)</guimenu>)</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>Password</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>The password for the user (only available when you have selected <guimenu>Password with Certificates (TLS)</guimenu>)</para>
-                           </entry>
+                           <entry><para><guimenu>Password</guimenu></para></entry>
+                           <entry><para>The password for the user (only available when you have selected <guimenu>Password with Certificates (TLS)</guimenu>)</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>User Certificate</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>
-                                 <filename>/etc/openvpn/client1.crt</filename>
-                              </para>
-                           </entry>
+                           <entry><para><guimenu>User Certificate</guimenu></para></entry>
+                           <entry><para><filename>/etc/openvpn/client1.crt</filename></para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>CA Certificate</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>
-                                 <filename>/etc/openvpn/ca.crt</filename>
-                              </para>
-                           </entry>
+                           <entry><para><guimenu>CA Certificate</guimenu></para></entry>
+                           <entry><para><filename>/etc/openvpn/ca.crt</filename></para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <guimenu>Private Key</guimenu>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>
-                                 <filename>/etc/openvpn/client1.key</filename>
-                              </para>
-                           </entry>
+                           <entry><para><guimenu>Private Key</guimenu></para></entry>
+                           <entry><para><filename>/etc/openvpn/client1.key</filename></para></entry>
                         </row>
                      </tbody>
                   </tgroup>
@@ -393,17 +336,16 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                <systemitem class="daemon">firewalld</systemitem> zones in NetworkManager</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/nm_firewalld_zones.png" width="70%"/>
+                  <imagedata fileref="media/nm_firewalld_zones.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/nm_firewalld_zones.png" width="50%"/>
+                  <imagedata fileref="media/nm_firewalld_zones.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </figure>
          <para>The firewall zones set general rules about which network connections are allowed. To configure the zone of <emphasis>firewalld</emphasis> for a wired connection, go to the <emphasis>Identity</emphasis> tab of the connection settings. To configure the zone of <emphasis>firewalld</emphasis> for a Wi-Fi connection, go to the <emphasis>Security</emphasis> tab of the connection settings.</para>
          <para>If you are in your home network, use the zone <literal>home</literal>. For public wireless networks, switch to <literal>public</literal>. If you are in a secure environment and want to allow all connections, use the zone <literal>trusted</literal>.</para>
-         <para>For details about firewalld, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For details about firewalld, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-nm-faq">
@@ -441,10 +383,7 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                      <para>Start the dialog for configuring network connections as described in <xref linkend="sec-nm-configure"/>. Choose the connection you want to modify and click <guimenu>Edit</guimenu>. Switch to the <guimenu>IPv4 Settings</guimenu> tab and from the <guimenu>Method</guimenu> drop-down list, activate <guimenu>Shared to other computers</guimenu>. That will enable IP traffic forwarding and run a DHCP server on the device. Confirm your changes in NetworkManager.</para>
                   </listitem>
                   <listitem>
-                     <para>As the DHCP server uses port <literal>67</literal>, make sure that it is not blocked by the firewall: On the machine sharing the connections, start YaST and select <menuchoice>
-                           <guimenu>Security and Users</guimenu>
-                           <guimenu>Firewall</guimenu>
-                        </menuchoice>. Switch to the <guimenu>Allowed Services</guimenu> category. If <guimenu>DHCP Server</guimenu> is not already shown as <guimenu>Allowed Service</guimenu>, select <guimenu>DHCP Server</guimenu> from <guimenu>Services to Allow</guimenu> and click <guimenu>Add</guimenu>. Confirm your changes in YaST.</para>
+                     <para>As the DHCP server uses port <literal>67</literal>, make sure that it is not blocked by the firewall: On the machine sharing the connections, start YaST and select <menuchoice><guimenu>Security and Users</guimenu><guimenu>Firewall</guimenu></menuchoice>. Switch to the <guimenu>Allowed Services</guimenu> category. If <guimenu>DHCP Server</guimenu> is not already shown as <guimenu>Allowed Service</guimenu>, select <guimenu>DHCP Server</guimenu> from <guimenu>Services to Allow</guimenu> and click <guimenu>Add</guimenu>. Confirm your changes in YaST.</para>
                   </listitem>
                </orderedlist>
             </answer>
@@ -499,9 +438,7 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
          <varlistentry>
             <term>NetworkManager project page</term>
             <listitem>
-               <para>
-                  <link xlink:href="https://gitlab.freedesktop.org/NetworkManager/NetworkManager"/>
-               </para>
+               <para><link xlink:href="https://gitlab.freedesktop.org/NetworkManager/NetworkManager"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -510,12 +447,10 @@ http://www.heise.de/netze/artikel/WLAN-und-LAN-sichern-mit-IEEE-802-1X-und-Radiu
                <para>Also check out the information in the following directories for the latest information about NetworkManager and the GNOME applet:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <filename>/usr/share/doc/packages/NetworkManager/</filename>,</para>
+                     <para><filename>/usr/share/doc/packages/NetworkManager/</filename>,</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <filename>/usr/share/doc/packages/NetworkManager-gnome/</filename>.</para>
+                     <para><filename>/usr/share/doc/packages/NetworkManager-gnome/</filename>.</para>
                   </listitem>
                </itemizedlist>
             </listitem>

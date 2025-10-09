@@ -60,17 +60,14 @@
             </varlistentry>
          </variablelist>
          <para>Before installing additional languages, determine which of them should be the default system language (primary language).</para>
-         <para>To access the YaST language module, start YaST and click <menuchoice>
-               <guimenu>System</guimenu>
-               <guimenu>Language</guimenu>
-            </menuchoice>. Alternatively, start the <guimenu>Languages</guimenu> dialog directly by running <command>sudo yast2 language &amp;</command> from a command line.</para>
+         <para>To access the YaST language module, start YaST and click <menuchoice><guimenu>System</guimenu><guimenu>Language</guimenu></menuchoice>. Alternatively, start the <guimenu>Languages</guimenu> dialog directly by running <command>sudo yast2 language &amp;</command> from a command line.</para>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_language.png" width="75%"/>
+                  <imagedata fileref="media/yast2_language.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_language.png" width="75%"/>
+                  <imagedata fileref="media/yast2_language.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -88,13 +85,7 @@
                <!-- bnc#359220 -->
                <tip>
                   <title>Advanced settings</title>
-                  <para>For advanced keyboard or time zone settings, select <menuchoice>
-                        <guimenu>Hardware</guimenu>
-                        <guimenu>System Keyboard Layout</guimenu>
-                     </menuchoice> or <menuchoice>
-                        <guimenu>System</guimenu>
-                        <guimenu>Date and Time</guimenu>
-                     </menuchoice> in YaST. For more information, refer to <xref linkend="sec-yast-hw-keym"/> and <xref linkend="sec-yast-country"/>.</para>
+                  <para>For advanced keyboard or time zone settings, select <menuchoice><guimenu>Hardware</guimenu><guimenu>System Keyboard Layout</guimenu></menuchoice> or <menuchoice><guimenu>System</guimenu><guimenu>Date and Time</guimenu></menuchoice> in YaST. For more information, refer to <xref linkend="sec-yast-hw-keym"/> and <xref linkend="sec-yast-country"/>.</para>
                </tip>
             </step>
             <step xml:id="st-yast-lang-additional-root">
@@ -147,23 +138,19 @@
          <para>After you have installed the respective language with YaST, you can run a single application in another language.</para>
          <para>Start the application from the command line by using the following command:</para>
          <screen>LANG=<replaceable>LANGUAGE</replaceable> <replaceable>application</replaceable></screen>
-         <para>For example, to start f-spot in German, run <command>LANG=de_DE f-spot</command>. For other languages, use the appropriate language code. Get a list of all language codes available with the <command>locale </command>
-            <option>-av</option> command.</para>
+         <para>For example, to start f-spot in German, run <command>LANG=de_DE f-spot</command>. For other languages, use the appropriate language code. Get a list of all language codes available with the <command>locale </command><option>-av</option> command.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-yast-country">
       <title>Changing the country and time settings</title>
-      <para>Using the YaST date and time module, adjust your system date, clock and time zone information to the area you are working in. To access the YaST module, start YaST and click <menuchoice>
-            <guimenu>System</guimenu>
-            <guimenu>Date and Time</guimenu>
-         </menuchoice>. Alternatively, start the <guimenu>Clock and Time Zone</guimenu> dialog directly by running <command>sudo yast2 timezone &amp;</command> from a command line.</para>
+      <para>Using the YaST date and time module, adjust your system date, clock and time zone information to the area you are working in. To access the YaST module, start YaST and click <menuchoice><guimenu>System</guimenu><guimenu>Date and Time</guimenu></menuchoice>. Alternatively, start the <guimenu>Clock and Time Zone</guimenu> dialog directly by running <command>sudo yast2 timezone &amp;</command> from a command line.</para>
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_timezone.png" width="75%"/>
+               <imagedata fileref="media/yast2_timezone.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_timezone.png" width="75%"/>
+               <imagedata fileref="media/yast2_timezone.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -208,10 +195,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
+                     <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
                   </imageobject>
                   <imageobject role="pdf">
-                     <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
+                     <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

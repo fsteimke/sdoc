@@ -25,10 +25,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/firefox_main.png" width="100%"/>
+               <imagedata fileref="media/firefox_main.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/firefox_main.png" width="100%"/>
+               <imagedata fileref="media/firefox_main.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -63,20 +63,7 @@
       <sect2 xml:id="sec-firefox-zoom">
          <title>Zooming</title>
          <para>Firefox offers two zooming options: page zoom, the default and text zoom. Page zoom enlarges the entire page as is, with all elements of a page, including graphics, expanding equally while text zoom only changes the text size.</para>
-         <para>To toggle between page and text zoom, from the menu bar, choose <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Zoom</guimenu>
-               <guimenu>Zoom Text Only</guimenu>
-            </menuchoice>. To zoom in or out, either use the mouse wheel while holding the <keycap function="control"/> key, or use <keycombo>
-               <keycap function="control"/>
-               <keycap>+</keycap>
-            </keycombo> and <keycombo>
-               <keycap function="control"/>
-               <keycap>-</keycap>
-            </keycombo>. Reset the zoom factor with <keycombo>
-               <keycap function="control"/>
-               <keycap>0</keycap>
-            </keycombo>.</para>
+         <para>To toggle between page and text zoom, from the menu bar, choose <menuchoice><guimenu>View</guimenu><guimenu>Zoom</guimenu><guimenu>Zoom Text Only</guimenu></menuchoice>. To zoom in or out, either use the mouse wheel while holding the <keycap function="control"/> key, or use <keycombo><keycap function="control"/><keycap>+</keycap></keycombo> and <keycombo><keycap function="control"/><keycap>-</keycap></keycombo>. Reset the zoom factor with <keycombo><keycap function="control"/><keycap>0</keycap></keycombo>.</para>
       </sect2>
       <sect2 xml:id="sec-firefox-tabbedbrowsing">
          <title>Tabbed browsing</title>
@@ -85,32 +72,13 @@
             <varlistentry>
                <term>Opening tabs</term>
                <listitem>
-                  <para>To open a new tab, from the menu bar, select <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>New Tab</guimenu>
-                     </menuchoice> or press <keycombo>
-                        <keycap function="control"/>
-                        <keycap>T</keycap>
-                     </keycombo>. This opens an empty tab in the <productname>Firefox</productname> window. To open a link on a Web page or a bookmark in a tab, middle-click it. Alternatively, right-click a link and select <guimenu>Open Link in New Tab</guimenu>. You may also open an address in the address bar in a new tab with a middle-click or by pressing <keycombo>
-                        <keycap function="control"/>
-                        <keycap function="enter"/>
-                     </keycombo>.</para>
+                  <para>To open a new tab, from the menu bar, select <menuchoice><guimenu>File</guimenu><guimenu>New Tab</guimenu></menuchoice> or press <keycombo><keycap function="control"/><keycap>T</keycap></keycombo>. This opens an empty tab in the <productname>Firefox</productname> window. To open a link on a Web page or a bookmark in a tab, middle-click it. Alternatively, right-click a link and select <guimenu>Open Link in New Tab</guimenu>. You may also open an address in the address bar in a new tab with a middle-click or by pressing <keycombo><keycap function="control"/><keycap function="enter"/></keycombo>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Closing tabs</term>
                <listitem>
-                  <para>Right-click a tab to open a context menu, giving you access to tab managing options such as closing, reloading or bookmarking. To close a tab, you may also use <keycombo>
-                        <keycap function="control"/>
-                        <keycap>W</keycap>
-                     </keycombo> or click the close button. Any closed tab can be restored by choosing from the menu bar <menuchoice>
-                        <guimenu>History</guimenu>
-                        <guimenu>Recently Closed Tabs</guimenu>
-                     </menuchoice>. To reopen the last closed tab, either choose <guimenu>Undo Close Tab</guimenu> from the context menu or press <keycombo>
-                        <keycap function="control"/>
-                        <keycap function="shift"/>
-                        <keycap>T</keycap>
-                     </keycombo>.</para>
+                  <para>Right-click a tab to open a context menu, giving you access to tab managing options such as closing, reloading or bookmarking. To close a tab, you may also use <keycombo><keycap function="control"/><keycap>W</keycap></keycombo> or click the close button. Any closed tab can be restored by choosing from the menu bar <menuchoice><guimenu>History</guimenu><guimenu>Recently Closed Tabs</guimenu></menuchoice>. To reopen the last closed tab, either choose <guimenu>Undo Close Tab</guimenu> from the context menu or press <keycombo><keycap function="control"/><keycap function="shift"/><keycap>T</keycap></keycombo>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -129,10 +97,7 @@
       </sect2>
       <sect2 xml:id="sec-firefox-sidebar">
          <title>Using the sidebar</title>
-         <para>Use the left side of your browser window for viewing bookmarks or browsing history. Extensions may add new ways to use the sidebar as well. To display the sidebar, from the menu bar, select <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Sidebar</guimenu>
-            </menuchoice> and select the contents.</para>
+         <para>Use the left side of your browser window for viewing bookmarks or browsing history. Extensions may add new ways to use the sidebar as well. To display the sidebar, from the menu bar, select <menuchoice><guimenu>View</guimenu><guimenu>Sidebar</guimenu></menuchoice> and select the contents.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-firefox-findinfo">
@@ -140,8 +105,7 @@
       <para>There are two ways to find information in <productname>Firefox</productname>. To search the Internet with a search engine, use the search bar. To search the page currently displayed, use the find bar.</para>
       <sect2 xml:id="sec-firefox-searchengine">
          <title>Finding information on the Web</title>
-         <para>
-            <productname>Firefox</productname> has a search bar that can access different engines like Google, Yahoo or Amazon. For example, if you are looking for information about SUSE using the current engine, click in the search bar, type <literal>SUSE</literal> and press <keycap function="enter"/>. The results appear in your window.</para>
+         <para><productname>Firefox</productname> has a search bar that can access different engines like Google, Yahoo or Amazon. For example, if you are looking for information about SUSE using the current engine, click in the search bar, type <literal>SUSE</literal> and press <keycap function="enter"/>. The results appear in your window.</para>
          <para>To choose a different search engine, type your search term, then click one of the search provider icons at the bottom of the appearing pop-up.</para>
          <sect3 xml:id="sec-firefox-searchengine-add">
             <title>Customizing the search bar</title>
@@ -177,10 +141,10 @@
                <title>Firefox—manage search engines</title>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
+                     <imagedata fileref="media/firefox_manage_searchengines.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
+                     <imagedata fileref="media/firefox_manage_searchengines.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -188,13 +152,8 @@
          </sect3>
          <sect3 xml:id="sec-firefox-searchengine-smartkeywords">
             <title>Adding keywords to your online searches</title>
-            <para>
-               <productname>Firefox</productname> lets you define own <emphasis>keywords</emphasis>: abbreviations to use as a URL shortcut for a particular search engine. If you have defined <literal>ws</literal> as a keyword for the Wikipedia search, for example, you can type <literal>ws <replaceable>SEARCHTERM</replaceable>
-               </literal> into the address bar to search Wikipedia for <replaceable>SEARCHTERM</replaceable>.</para>
-            <para>To assign a shortcut for a search engine from the search bar, click the menu button to the right of the search bar and select <menuchoice>
-                  <guimenu>Settings</guimenu>
-                  <guimenu>Search</guimenu>
-               </menuchoice>. In the <guimenu>Search Shortcuts</guimenu> section, select a search engine, double-click its <guimenu>Keyword</guimenu> column, enter a keyword and press <keycap function="enter"/>.</para>
+            <para><productname>Firefox</productname> lets you define own <emphasis>keywords</emphasis>: abbreviations to use as a URL shortcut for a particular search engine. If you have defined <literal>ws</literal> as a keyword for the Wikipedia search, for example, you can type <literal>ws <replaceable>SEARCHTERM</replaceable></literal> into the address bar to search Wikipedia for <replaceable>SEARCHTERM</replaceable>.</para>
+            <para>To assign a shortcut for a search engine from the search bar, click the menu button to the right of the search bar and select <menuchoice><guimenu>Settings</guimenu><guimenu>Search</guimenu></menuchoice>. In the <guimenu>Search Shortcuts</guimenu> section, select a search engine, double-click its <guimenu>Keyword</guimenu> column, enter a keyword and press <keycap function="enter"/>.</para>
             <para>It is also possible to define a keyword for any search field on a Web site. Proceed as follows:</para>
             <procedure>
                <step>
@@ -207,8 +166,7 @@
                   <para>Enter your <guimenu>Keyword</guimenu> for this search.</para>
                </step>
                <step>
-                  <para>
-                     <guimenu>Save</guimenu> this keyword.</para>
+                  <para><guimenu>Save</guimenu> this keyword.</para>
                </step>
             </procedure>
             <tip>
@@ -219,15 +177,8 @@
       </sect2>
       <sect2 xml:id="sec-firefox-findinfo-page">
          <title>Searching in the current page</title>
-         <para>To search inside a Web page, in the menu bar, click <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Find in Page</guimenu>
-            </menuchoice> or press <keycombo>
-               <keycap function="control"/>
-               <keycap>F</keycap>
-            </keycombo>. The find bar opens at the bottom of the window. Type your query in the text box. <productname>Firefox</productname> finds the first occurrence of this phrase as you type. You can find other occurrences of the phrase by pressing <keycap>F3</keycap> or the <guimenu>Next</guimenu> button in the find bar. Clicking the <guimenu>Highlight All</guimenu> button highlights all occurrences of the phrase. Checking the <guimenu>Match Case</guimenu> option makes the query case-sensitive.</para>
-         <para>
-            <productname>Firefox</productname> also offers two quick-find options. Click anywhere you like to start a search on a Web page, type the key <keycap>/</keycap> followed by the search term. The first occurrence of the search term is highlighted as you type. Use <keycap>F3</keycap> to find the next occurrence. It is also possible to limit quick-find to links only. This search option is available by typing the key <keycap>'</keycap>.</para>
+         <para>To search inside a Web page, in the menu bar, click <menuchoice><guimenu>Edit</guimenu><guimenu>Find in Page</guimenu></menuchoice> or press <keycombo><keycap function="control"/><keycap>F</keycap></keycombo>. The find bar opens at the bottom of the window. Type your query in the text box. <productname>Firefox</productname> finds the first occurrence of this phrase as you type. You can find other occurrences of the phrase by pressing <keycap>F3</keycap> or the <guimenu>Next</guimenu> button in the find bar. Clicking the <guimenu>Highlight All</guimenu> button highlights all occurrences of the phrase. Checking the <guimenu>Match Case</guimenu> option makes the query case-sensitive.</para>
+         <para><productname>Firefox</productname> also offers two quick-find options. Click anywhere you like to start a search on a Web page, type the key <keycap>/</keycap> followed by the search term. The first occurrence of the search term is highlighted as you type. Use <keycap>F3</keycap> to find the next occurrence. It is also possible to limit quick-find to links only. This search option is available by typing the key <keycap>'</keycap>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-firefox-bookmarks">
@@ -243,17 +194,14 @@
             <title>The <productname>Firefox</productname> bookmark library</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_library.png" width="85%"/>
+                  <imagedata fileref="media/firefox_library.png" width="78%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_library.png" width="85%"/>
+                  <imagedata fileref="media/firefox_library.png" width="78%"/>
                </imageobject>
             </mediaobject>
          </figure>
-         <para>To open the <guimenu>Library</guimenu>, in the menu bar, click <menuchoice>
-               <guimenu>Bookmarks</guimenu>
-               <guimenu>Manage Bookmarks</guimenu>
-            </menuchoice>. The library window is split into two parts: the left pane shows the folder tree view, the right pane the subfolders and bookmarks of the selected folder. Use <guimenu>Views</guimenu> to customize the right pane. The left pane contains three main folders:</para>
+         <para>To open the <guimenu>Library</guimenu>, in the menu bar, click <menuchoice><guimenu>Bookmarks</guimenu><guimenu>Manage Bookmarks</guimenu></menuchoice>. The library window is split into two parts: the left pane shows the folder tree view, the right pane the subfolders and bookmarks of the selected folder. Use <guimenu>Views</guimenu> to customize the right pane. The left pane contains three main folders:</para>
          <variablelist>
             <varlistentry>
                <term>History</term>
@@ -308,41 +256,21 @@
    browsers. It is pretty useless though, since a) only Firefox is included with
    SLE, b) Epiphany and Chromium are not supported. (Though you can import from
    Chrome, IE, and Safari.) - sknorr, 2015-09-23 -->
-         <para>To import bookmarks from another browser or from a file in HTML format, open the library by choosing from the menu bar, <menuchoice>
-               <guimenu>Bookmarks</guimenu>
-               <guimenu>Manage Bookmarks</guimenu>
-            </menuchoice>. To start the Import Wizard, click <menuchoice>
-               <guimenu>Import and Backup</guimenu>
-               <guimenu>Import Bookmarks from HTML</guimenu>
-            </menuchoice> and choose an import location. Start the import by clicking <guimenu>Next</guimenu>. Imports from an HTML file are imported as is.</para>
+         <para>To import bookmarks from another browser or from a file in HTML format, open the library by choosing from the menu bar, <menuchoice><guimenu>Bookmarks</guimenu><guimenu>Manage Bookmarks</guimenu></menuchoice>. To start the Import Wizard, click <menuchoice><guimenu>Import and Backup</guimenu><guimenu>Import Bookmarks from HTML</guimenu></menuchoice> and choose an import location. Start the import by clicking <guimenu>Next</guimenu>. Imports from an HTML file are imported as is.</para>
          <para>Exporting bookmarks is also done via <guimenu>Import and Backup</guimenu> in the library window. To save your bookmarks as an HTML file, choose <guimenu>Export Bookmarks to HTML</guimenu>. To create a backup of your bookmarks, choose <guimenu>Backup</guimenu>. <productname>Firefox</productname> uses a JavaScript Object Notation file format (<filename>.json</filename>) for backups.</para>
-         <para>To restore a bookmark backup, click <menuchoice>
-               <guimenu>Import and Backup</guimenu>
-               <guimenu>Restore</guimenu>
-            </menuchoice>. Then locate the backup you want to restore from.</para>
+         <para>To restore a bookmark backup, click <menuchoice><guimenu>Import and Backup</guimenu><guimenu>Restore</guimenu></menuchoice>. Then locate the backup you want to restore from.</para>
       </sect2>
       <sect2 xml:id="sec-firefox-bookmarks-toolbar">
          <title>The bookmarks toolbar</title>
-         <para>The <guimenu>Bookmarks Toolbar</guimenu> is displayed beneath the address bar and lets you quickly access bookmarks. You can also add, organize and edit bookmarks directly. To activate the <guimenu>Bookmarks Toolbar</guimenu>, select <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Toolbars</guimenu>
-               <guimenu>Bookmarks Toolbar</guimenu>
-               <guimenu>Always Show</guimenu>
-            </menuchoice>.</para>
+         <para>The <guimenu>Bookmarks Toolbar</guimenu> is displayed beneath the address bar and lets you quickly access bookmarks. You can also add, organize and edit bookmarks directly. To activate the <guimenu>Bookmarks Toolbar</guimenu>, select <menuchoice><guimenu>View</guimenu><guimenu>Toolbars</guimenu><guimenu>Bookmarks Toolbar</guimenu><guimenu>Always Show</guimenu></menuchoice>.</para>
          <para>To edit the <literal>Bookmarks Toolbar</literal>, you can use the library as described in <xref linkend="sec-firefox-bookmarks-organise"/>. Its content is located in the folder <guimenu>Bookmarks Toolbar</guimenu>. It is also possible to manage the toolbar directly. To add a folder, bookmark or separator, right-click an empty space in the toolbar and select the appropriate entry from the pop-up menu. To add the current page to the bar, click the icon of the Web page in the address bar and drag it to the final position on the <literal>Bookmarks Toolbar</literal>.</para>
          <para>To edit a certain folder or bookmark, right-click it. A menu opens where you can <guimenu>Remove Folder</guimenu> or change other settings. To move or copy an entry, choose <guimenu>Cut</guimenu> or <guimenu>Copy</guimenu> and <guimenu>Paste</guimenu> it to the final position.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-firefox-downloadmanager">
       <title>Using the download manager</title>
-      <para>Keep track of your current and past downloads with the download manager. To start the download manager, in the menu bar, click <menuchoice>
-            <guimenu>Tools</guimenu>
-            <guimenu>Downloads</guimenu>
-         </menuchoice>. While downloading a file, a progress bar indicates the download status. If necessary, pause the download and resume it later. To open a downloaded file with the associated application, click <guimenu>Open</guimenu>. To open the location to which the file was saved, choose <guimenu>Open Containing Folder</guimenu>. <guimenu>Remove From History</guimenu> only deletes the entry from the download manager. However, it does not delete the file from the hard disk.</para>
-      <para>By default, all files are downloaded to <filename>~/Downloads</filename>. To change this behavior, in the menu bar, click <menuchoice>
-            <guimenu>Edit</guimenu>
-            <guimenu>Settings</guimenu>
-         </menuchoice>. Go to <guimenu>General</guimenu>. Under <guimenu>Downloads</guimenu>, either choose another location or <guimenu>Always ask you where to save files</guimenu>.</para>
+      <para>Keep track of your current and past downloads with the download manager. To start the download manager, in the menu bar, click <menuchoice><guimenu>Tools</guimenu><guimenu>Downloads</guimenu></menuchoice>. While downloading a file, a progress bar indicates the download status. If necessary, pause the download and resume it later. To open a downloaded file with the associated application, click <guimenu>Open</guimenu>. To open the location to which the file was saved, choose <guimenu>Open Containing Folder</guimenu>. <guimenu>Remove From History</guimenu> only deletes the entry from the download manager. However, it does not delete the file from the hard disk.</para>
+      <para>By default, all files are downloaded to <filename>~/Downloads</filename>. To change this behavior, in the menu bar, click <menuchoice><guimenu>Edit</guimenu><guimenu>Settings</guimenu></menuchoice>. Go to <guimenu>General</guimenu>. Under <guimenu>Downloads</guimenu>, either choose another location or <guimenu>Always ask you where to save files</guimenu>.</para>
       <tip>
          <title>Resuming downloads</title>
          <para>If your browser crashes or is closed while downloading, all pending downloads are automatically resumed in the background when starting <productname>Firefox</productname> the next time. A download that was paused before the browser was closed can be resumed manually via the download manager.</para>
@@ -354,12 +282,10 @@
          <title>FTP support stopped</title>
          <para>For security reasons, <productname>Mozilla</productname> has removed the default support for clicking on FTP links in <productname>Firefox</productname>. You can enable this support by adding <command>network.gio.supported-protocols=ftp:</command> via the <command>about:config</command> settings. This enables desktop support via the GNOME Virtual File System (GVFS). See the GVFS documentation for all supported protocols at <link xlink:href="https://wiki.gnome.org/Projects/gvfs/doc"/>.</para>
       </note>
-      <para>
-         <productname>Firefox</productname> offers various measures for safe browsing. It automatically checks whether you are trying to access a site known to contain harmful software (malware) or a site known to steal sensitive data (phishing) and stops you from entering these sites. The Instant Web Site ID lets you easily check a site's legitimacy, while the password manager and pop-up blocker provide additional security. With Private Browsing, you can surf the Internet without <productname>Firefox</productname> recording data on your computer.</para>
+      <para><productname>Firefox</productname> offers various measures for safe browsing. It automatically checks whether you are trying to access a site known to contain harmful software (malware) or a site known to steal sensitive data (phishing) and stops you from entering these sites. The Instant Web Site ID lets you easily check a site's legitimacy, while the password manager and pop-up blocker provide additional security. With Private Browsing, you can surf the Internet without <productname>Firefox</productname> recording data on your computer.</para>
       <sect2 xml:id="sec-firefox-security-instant-id">
          <title>Instant Web site ID</title>
-         <para>
-            <productname>Firefox</productname> allows you to check the identity of a Web page with a single glance. The icon in the address bar next to the address indicates which identity information is available and whether communication is encrypted:</para>
+         <para><productname>Firefox</productname> allows you to check the identity of a Web page with a single glance. The icon in the address bar next to the address indicates which identity information is available and whether communication is encrypted:</para>
          <variablelist>
             <varlistentry>
                <term>Gray globe</term>
@@ -393,10 +319,10 @@
                <productname>Firefox</productname> Page Info—Permissions tab</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
+                  <imagedata fileref="media/firefox_page_info_permissions.png" width="82%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
+                  <imagedata fileref="media/firefox_page_info_permissions.png" width="82%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -404,43 +330,21 @@
       </sect2>
       <sect2 xml:id="sec-firefox-security-instant-id-cert-import">
          <title>Importing certificates</title>
-         <para>
-            <productname>Firefox</productname> comes with a certificate store for identifying certificate authorities (CA). Using these certificates enables the browser to automatically verify certificates issued by Web sites. If a Web site issues a certificate that has not been signed by one of the CAs from the certificate store, it is not trusted. This ensures that no spoofed certificates are accepted.</para>
+         <para><productname>Firefox</productname> comes with a certificate store for identifying certificate authorities (CA). Using these certificates enables the browser to automatically verify certificates issued by Web sites. If a Web site issues a certificate that has not been signed by one of the CAs from the certificate store, it is not trusted. This ensures that no spoofed certificates are accepted.</para>
          <para>Large organizations usually use their own certificate authorities in-house and distribute the respective certificates via the system-wide certificate store located at <filename>/etc/pki/nssdb</filename>. To configure Firefox (and other Mozilla tools, such as Thunderbird) to use this system-wide CA store in addition to its own, export the <envar>NSS_USE_SHARED_DB</envar> variable. For example, you can add the following line to <filename>~/.bashrc</filename>:</para>
          <screen>export NSS_USE_SHARED_DB=1</screen>
-         <para>Alternatively, or additionally, you can import certificates manually. To do so, in the menu bar, open the <guimenu>Preferences</guimenu> dialog by clicking <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Settings</guimenu>
-            </menuchoice>. Select <menuchoice>
-               <guimenu>Privacy &amp; Security</guimenu>
-               <guimenu>Certificates</guimenu>
-               <guimenu>View Certificates</guimenu>
-               <guimenu>Your Certificates</guimenu>
-               <guimenu>Import</guimenu>
-            </menuchoice> and select the certificate to import. Only import certificates you absolutely trust.</para>
+         <para>Alternatively, or additionally, you can import certificates manually. To do so, in the menu bar, open the <guimenu>Preferences</guimenu> dialog by clicking <menuchoice><guimenu>Edit</guimenu><guimenu>Settings</guimenu></menuchoice>. Select <menuchoice><guimenu>Privacy &amp; Security</guimenu><guimenu>Certificates</guimenu><guimenu>View Certificates</guimenu><guimenu>Your Certificates</guimenu><guimenu>Import</guimenu></menuchoice> and select the certificate to import. Only import certificates you absolutely trust.</para>
       </sect2>
       <sect2 xml:id="sec-firefox-security-passwords">
          <title>Password management</title>
          <para>Each time you enter a user name and a password on a Web site, <productname>Firefox</productname> offers to store this data. A pop-up at the top of the page opens, asking you whether you want <productname>Firefox</productname> to save the password. If you accept by clicking <guimenu>Save</guimenu>, the password is stored on your hard disk in an encrypted format. The next time you access this site, <productname>Firefox</productname> automatically fills in the login data.</para>
-         <para>To review or manage your passwords, open the password manager by clicking <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Settings</guimenu>
-               <guimenu>Privacy &amp; Security</guimenu>
-               <guimenu>Logins and Passwords</guimenu>
-               <guimenu>Saved Logins</guimenu>
-            </menuchoice> in the menu bar. The password manager opens with a list of sites and their corresponding user names. By default, the passwords are not displayed. You can click the eye icon to display them. To delete single or all entries from the list, click <guimenu>Remove</guimenu> or <guimenu>Remove All</guimenu>, respectively.</para>
-         <para>To protect your passwords from unauthorized access, you can set a master password that is required when managing or adding passwords. In the menu bar, click <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Settings</guimenu>
-            </menuchoice>, choose the category <guimenu>Privacy &amp; Security</guimenu> and activate <guimenu>Use a Primary Password</guimenu>.</para>
+         <para>To review or manage your passwords, open the password manager by clicking <menuchoice><guimenu>Edit</guimenu><guimenu>Settings</guimenu><guimenu>Privacy &amp; Security</guimenu><guimenu>Logins and Passwords</guimenu><guimenu>Saved Logins</guimenu></menuchoice> in the menu bar. The password manager opens with a list of sites and their corresponding user names. By default, the passwords are not displayed. You can click the eye icon to display them. To delete single or all entries from the list, click <guimenu>Remove</guimenu> or <guimenu>Remove All</guimenu>, respectively.</para>
+         <para>To protect your passwords from unauthorized access, you can set a master password that is required when managing or adding passwords. In the menu bar, click <menuchoice><guimenu>Edit</guimenu><guimenu>Settings</guimenu></menuchoice>, choose the category <guimenu>Privacy &amp; Security</guimenu> and activate <guimenu>Use a Primary Password</guimenu>.</para>
       </sect2>
       <sect2 xml:id="sec-firefox-security-private-browsing">
          <title>Private browsing</title>
          <para>By default, <productname>Firefox</productname> keeps track of your browsing history by storing content and links of visited Web sites, cookies, downloads, passwords, search terms, and formula data. Collecting and storing this data makes browsing faster and more convenient. However, when you use a public terminal or a friend's computer, for example, you could turn this behavior off. In Private Browsing mode, <productname>Firefox</productname> will not keep track of your browsing history nor will it cache the content of pages you have visited.</para>
-         <para>To enable the Private Browsing mode, in the menu bar, click <menuchoice>
-               <guimenu>File</guimenu>
-               <guimenu>New Private Window</guimenu>
-            </menuchoice>. The current Web site and all open tabs are replaced by the Private Browsing information screen. As long as you browse in private mode, the string <literal>Private Browsing</literal> is displayed in the titlebar of the window.</para>
+         <para>To enable the Private Browsing mode, in the menu bar, click <menuchoice><guimenu>File</guimenu><guimenu>New Private Window</guimenu></menuchoice>. The current Web site and all open tabs are replaced by the Private Browsing information screen. As long as you browse in private mode, the string <literal>Private Browsing</literal> is displayed in the titlebar of the window.</para>
          <para>Disable Private Browsing by closing the private window.</para>
          <para>To make Private Browsing the default mode, open the <guimenu>Privacy &amp; Security</guimenu> tab in the <guimenu>Settings</guimenu> window as described in <xref linkend="sec-firefox-preferences"/>. Go to the <guimenu>History</guimenu> section. Choose <guimenu>Use custom settings for History</guimenu> from the drop-down menu and check the <guimenu>Always use private browsing mode</guimenu>.</para>
          <note>
@@ -452,8 +356,7 @@
    <sect1 xml:id="sec-firefox-customizing">
       <title>Customizing <productname>Firefox</productname>
       </title>
-      <para>
-         <productname>Firefox</productname> can be customized extensively.</para>
+      <para><productname>Firefox</productname> can be customized extensively.</para>
       <itemizedlist>
          <listitem>
             <para>Change the way <productname>Firefox</productname> behaves by altering the preferences.</para>
@@ -468,29 +371,22 @@
       <para>To manage extensions, themes and plug-ins, <productname>Firefox</productname> has an add-ons manager.</para>
       <sect2 xml:id="sec-firefox-preferences">
          <title>Preferences</title>
-         <para>
-            <productname>Firefox</productname> offers a wide range of configuration options. These are available by opening <guimenu>Settings</guimenu> in the menu bar. Each option is described in detail in the online help, which can be accessed by clicking the question mark icon in the dialog.</para>
+         <para><productname>Firefox</productname> offers a wide range of configuration options. These are available by opening <guimenu>Settings</guimenu> in the menu bar. Each option is described in detail in the online help, which can be accessed by clicking the question mark icon in the dialog.</para>
          <figure xml:id="fig-firefox-preferences">
             <title>Firefox preferences in General settings</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_preferences.png" width="90%"/>
+                  <imagedata fileref="media/firefox_preferences.png" width="82%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_preferences.png" width="100%"/>
+                  <imagedata fileref="media/firefox_preferences.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </figure>
          <sect3 xml:id="sec-firefox-preferences-sessions">
             <title>Session management</title>
             <para>By default, <productname>Firefox</productname> automatically restores your session—windows and tabs—only after it has crashed, or after a restart because of an extension. However, it can be configured to restore a session every time it is started: open the Preferences dialog as described in <xref linkend="sec-firefox-preferences"/> and go to the category <guimenu>General</guimenu>. In the <guimenu>Startup</guimenu> section, set the option <guimenu>Restore previous session</guimenu>.</para>
-            <para>When you have multiple windows open they will only be restored the next time when you close all of them at once with <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Quit</guimenu>
-               </menuchoice> (from the menu bar) or with <keycombo>
-                  <keycap function="control"/>
-                  <keycap>Q</keycap>
-               </keycombo>. If you close the windows one by one, only the last window is restored.</para>
+            <para>When you have multiple windows open they will only be restored the next time when you close all of them at once with <menuchoice><guimenu>File</guimenu><guimenu>Quit</guimenu></menuchoice> (from the menu bar) or with <keycombo><keycap function="control"/><keycap>Q</keycap></keycombo>. If you close the windows one by one, only the last window is restored.</para>
          </sect3>
          <sect3 xml:id="sec-firefox-preferences-language">
             <title>Language preferences for Web sites</title>
@@ -515,10 +411,10 @@
                <title>Installing <productname>Firefox</productname> extensions</title>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/firefox_addon_manager.png" width="80%"/>
+                     <imagedata fileref="media/firefox_addon_manager.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/firefox_addon_manager.png" width="100%"/>
+                     <imagedata fileref="media/firefox_addon_manager.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -534,13 +430,7 @@
    <sect1 xml:id="sec-firefox-printing">
       <title>Printing from <productname>Firefox</productname>
       </title>
-      <para>Before you actually print a Web page, a print preview is shown. From the menu bar, choose <menuchoice>
-            <guimenu>File</guimenu>
-            <guimenu>Print</guimenu>
-         </menuchoice> or press <keycombo>
-            <keycap function="control"/>
-            <keycap>P</keycap>
-         </keycombo>. The <guimenu>Printer</guimenu> dialog opens. Configure paper size and orientation per printer.</para>
+      <para>Before you actually print a Web page, a print preview is shown. From the menu bar, choose <menuchoice><guimenu>File</guimenu><guimenu>Print</guimenu></menuchoice> or press <keycombo><keycap function="control"/><keycap>P</keycap></keycombo>. The <guimenu>Printer</guimenu> dialog opens. Configure paper size and orientation per printer.</para>
    </sect1>
    <sect1 xml:id="sec-firefox-moreinfo">
       <title>More information</title>

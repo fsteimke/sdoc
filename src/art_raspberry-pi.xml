@@ -46,16 +46,14 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
    </info>
    <sect1 xml:id="sec-rpi-platform">
       <title>Platform overview</title>
-      <para>To use <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> on Raspberry Pi, a 64-bit Arm* compatible Raspberry Pi* is required. <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase>
-         <phrase role="productnumber">15 SP7</phrase> is tested to work on Raspberry Pi 3 Model A+, Model B, Model B+, and Raspberry Pi 4 Model B boards as well as on Raspberry Pi Compute Module 3 and 3+ on MyPi Industrial IoT Integrator Board.</para>
+      <para>To use <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> on Raspberry Pi, a 64-bit Arm* compatible Raspberry Pi* is required. <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase><phrase role="productnumber">15 SP7</phrase> is tested to work on Raspberry Pi 3 Model A+, Model B, Model B+, and Raspberry Pi 4 Model B boards as well as on Raspberry Pi Compute Module 3 and 3+ on MyPi Industrial IoT Integrator Board.</para>
       <sect2 xml:id="sec-rpi-platform-system">
          <title>Technical details of the Raspberry Pi 3 model B</title>
          <para>Raspberry Pi is a series of small single-board computers based on a System-on-a-Chip (SoC) by Broadcom*, featuring various peripherals on the board.</para>
@@ -63,10 +61,10 @@
             <title>Overview of Raspberry Pi 3 model B connectors, © Efa / English Wikipedia / CC BY-SA 3.0</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/rpi-3b-overview-2.png" width="80%"/>
+                  <imagedata fileref="media/rpi-3b-overview-2.png" width="73%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/rpi-3b-overview-2.png" width="80%"/>
+                  <imagedata fileref="media/rpi-3b-overview-2.png" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -74,10 +72,10 @@
             <title>Photo of Raspberry Pi 3 model B connectors, © Evan-Amos / own work / public domain</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/rpi-3b-photo.png" width="80%"/>
+                  <imagedata fileref="media/rpi-3b-photo.png" width="73%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/rpi-3b-photo.png" width="80%"/>
+                  <imagedata fileref="media/rpi-3b-photo.png" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -134,8 +132,7 @@
             <varlistentry>
                <term>Connectors</term>
                <listitem>
-                  <para>A 0.1 inch multi-function pin header is also available. Note that not all functionality of this header is exposed in <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase>
-                     <phrase role="productnumber">15 SP7</phrase>.</para>
+                  <para>A 0.1 inch multi-function pin header is also available. Note that not all functionality of this header is exposed in <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -145,12 +142,10 @@
             <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase>
             <phrase role="productnumber">15 SP7</phrase>
          </title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> is the first fully supported commercial Linux operating system product available for Raspberry Pi. You can purchase subscriptions which entitle you to receive all released bug and security fixes, feature updates, and technical assistance from SUSE's worldwide support. Learn more about subscription and support options at <link xlink:href="https://www.suse.com/support/programs/subscriptions/?id=SUSE_Linux_Enterprise_Server"/>.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> is the first fully supported commercial Linux operating system product available for Raspberry Pi. You can purchase subscriptions which entitle you to receive all released bug and security fixes, feature updates, and technical assistance from SUSE's worldwide support. Learn more about subscription and support options at <link xlink:href="https://www.suse.com/support/programs/subscriptions/?id=SUSE_Linux_Enterprise_Server"/>.</para>
          <note>
             <title>Trial version</title>
-            <para>If you want to try out <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase>
-               <phrase role="productnumber">15 SP7</phrase> on Raspberry Pi, SUSE will provide you with a trial version. This gives you access to free patches and updates for a period of 60 days. You must log in to the SUSE Customer Center at <link xlink:href="https://scc.suse.com/"/> using your Customer Center account credentials to receive this free offer. If you do not have a Customer Center account, you must create one to take advantage of the trial version.</para>
+            <para>If you want to try out <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase><phrase role="productnumber">15 SP7</phrase> on Raspberry Pi, SUSE will provide you with a trial version. This gives you access to free patches and updates for a period of 60 days. You must log in to the SUSE Customer Center at <link xlink:href="https://scc.suse.com/"/> using your Customer Center account credentials to receive this free offer. If you do not have a Customer Center account, you must create one to take advantage of the trial version.</para>
          </note>
          <bridgehead>Minimum System Requirements for Installation</bridgehead>
          <itemizedlist>
@@ -183,8 +178,7 @@
                <varlistentry><!-- TODO: Better title? -->
                   <term>AArch64 instruction set</term>
                   <listitem>
-                     <para>
-                        <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> on Raspberry Pi is the first distribution for Raspberry Pi using the AArch64 instruction set.</para>
+                     <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> on Raspberry Pi is the first distribution for Raspberry Pi using the AArch64 instruction set.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
@@ -196,8 +190,7 @@
                <varlistentry>
                   <term>Root file system</term>
                   <listitem>
-                     <para>
-                        <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi uses Btrfs as the file system for the root partition. Compression is enabled by default for better SD card performance.</para>
+                     <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi uses Btrfs as the file system for the root partition. Compression is enabled by default for better SD card performance.</para>
                   </listitem>
                </varlistentry>
             </variablelist>
@@ -273,8 +266,7 @@
    <sect1 xml:id="sec-rpi-installation">
       <title>Installation</title>
       <!-- TODO: Compressed or not compressed? -->
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi is distributed as an XZ-compressed image file for microSD cards. This section will guide you through the process of preparing the card for the first boot. If you already have a microSD card containing the image, you can skip this section and go straight to <xref linkend="sec-rpi-firstboot"/>.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi is distributed as an XZ-compressed image file for microSD cards. This section will guide you through the process of preparing the card for the first boot. If you already have a microSD card containing the image, you can skip this section and go straight to <xref linkend="sec-rpi-firstboot"/>.</para>
       <note>
          <title>SD card space requirements</title>
          <para>It is recommended to use a card with a capacity of at least 8 GB.</para>
@@ -299,19 +291,16 @@
       </sect2>
       <sect2 xml:id="sec-rpi-installation-windows">
          <title>Preparing the card on Microsoft Windows operating systems</title>
-         <para>The following steps will guide you through the installation of the image onto the SD card on <trademark class="registered">Microsoft</trademark>
-            <trademark class="registered">Windows</trademark> operating systems. You need to meet these prerequisites:</para>
+         <para>The following steps will guide you through the installation of the image onto the SD card on <trademark class="registered">Microsoft</trademark><trademark class="registered">Windows</trademark> operating systems. You need to meet these prerequisites:</para>
          <itemizedlist>
             <listitem>
                <para>Latest available image of <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi</para>
             </listitem>
             <listitem>
-               <para>Easy 7-Zip from <link xlink:href="http://www.e7z.org/"/>
-               </para>
+               <para>Easy 7-Zip from <link xlink:href="http://www.e7z.org/"/></para>
             </listitem>
             <listitem>
-               <para>Win32 Disk Imager from <link xlink:href="https://sourceforge.net/projects/win32diskimager/"/>
-               </para>
+               <para>Win32 Disk Imager from <link xlink:href="https://sourceforge.net/projects/win32diskimager/"/></para>
             </listitem>
          </itemizedlist>
          <procedure xml:id="pro-rpi-installation-windows">
@@ -320,7 +309,7 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_image_7z.png"/>
+                        <imagedata width="73%" fileref="media/rpi_image_7z.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -330,7 +319,7 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_image_win32.png"/>
+                        <imagedata width="73%" fileref="media/rpi_image_win32.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -349,8 +338,7 @@
                <para>Latest available image of <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi</para>
             </listitem>
             <listitem>
-               <para>The Unarchiver from <link xlink:href="https://unarchiver.c3.cx/unarchiver"/>
-               </para>
+               <para>The Unarchiver from <link xlink:href="https://unarchiver.c3.cx/unarchiver"/></para>
             </listitem>
          </itemizedlist>
          <procedure xml:id="pro-rpi-installation-macos">
@@ -359,7 +347,7 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_image_macos_sles12sp3.jpg"/>
+                        <imagedata width="73%" fileref="media/rpi_image_macos_sles12sp3.jpg"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -368,12 +356,10 @@
                <para>Open a terminal window and change into the destination directory of the uncompressed image. Enter <command>diskutil list</command> before and after the SD card is inserted to find out which device to use.</para>
             </step>
             <step>
-               <para>Run <command>diskutil unmountDisk <replaceable>/dev/diskX</replaceable>
-                  </command>, where X is the disk number from the previous step.</para>
+               <para>Run <command>diskutil unmountDisk <replaceable>/dev/diskX</replaceable></command>, where X is the disk number from the previous step.</para>
             </step>
             <step>
-               <para>Run <command>sudo dd bs=4096 if=<replaceable>imageFile.raw</replaceable> of=/dev/disk<replaceable>X</replaceable>
-                  </command>, where <replaceable>X</replaceable> is the disk number and <replaceable>imageFile.raw</replaceable> is the name of the uncompressed image.</para>
+               <para>Run <command>sudo dd bs=4096 if=<replaceable>imageFile.raw</replaceable> of=/dev/disk<replaceable>X</replaceable></command>, where <replaceable>X</replaceable> is the disk number and <replaceable>imageFile.raw</replaceable> is the name of the uncompressed image.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> dd bs=4096 if=SLES15-SP7-Minimal-Image.aarch64-15.7-RaspberryPi-GM.raw.xz of=/dev/disk4
 Password:
 5550+0 records in
@@ -409,7 +395,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_keyboard.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_keyboard.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -419,7 +405,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_eula.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_eula.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -429,7 +415,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_timezone.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_timezone.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -442,7 +428,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_root.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_root.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -452,7 +438,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_root_confirm.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_root_confirm.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -462,7 +448,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_reg.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_reg.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -479,7 +465,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_wifi.png"/>
+                        <imagedata width="73%" fileref="media/rpi_first_wifi.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -509,7 +495,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_ssid.png"/>
+                              <imagedata width="73%" fileref="media/rpi_first_wifi_ssid.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -519,7 +505,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_auth.png"/>
+                              <imagedata width="73%" fileref="media/rpi_first_wifi_auth.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -529,7 +515,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_passwd.png"/>
+                              <imagedata width="73%" fileref="media/rpi_first_wifi_passwd.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -561,12 +547,8 @@ Password:
             <title>Evaluation code</title>
             <para>Sixty-day evaluation subscriptions may be requested at the following page: <link xlink:href="https://www.suse.com/products/arm/"/>.</para>
          </note>
-         <para>
-            <emphasis role="strong">After you have obtained a registration code from a subscription card, you need to activate your subscription on the SUSE Customer Center at:</emphasis>
-         </para>
-         <para>
-            <link xlink:href="https://scc.suse.com/"/>
-         </para>
+         <para><emphasis role="strong">After you have obtained a registration code from a subscription card, you need to activate your subscription on the SUSE Customer Center at:</emphasis></para>
+         <para><link xlink:href="https://scc.suse.com/"/></para>
          <para>To register your subscription, perform the following steps:</para>
          <procedure xml:id="pro-rpi-reg-process">
             <step>
@@ -574,7 +556,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_scc.png"/>
+                        <imagedata width="73%" fileref="media/rpi_scc.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -584,7 +566,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_management_tools.png"/>
+                        <imagedata width="73%" fileref="media/rpi_management_tools.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -594,7 +576,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_activate_subscription.png"/>
+                        <imagedata width="73%" fileref="media/rpi_activate_subscription.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -604,7 +586,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_enter_code.png"/>
+                        <imagedata width="73%" fileref="media/rpi_enter_code.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -614,7 +596,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_confirm_activation.png"/>
+                        <imagedata width="73%" fileref="media/rpi_confirm_activation.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -624,7 +606,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_success.png"/>
+                        <imagedata width="73%" fileref="media/rpi_success.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -729,10 +711,8 @@ Successfully registered system</screen>
       <para>After the initial configuration procedure and the first boot of the system, you can now use various components of the system.</para>
       <sect2 xml:id="sec-rpi-x11">
          <title>Desktop</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi 15 GA had packages for a minimal X11 desktop (IceWM) preinstalled.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi <phrase role="productnumber">15 SP7</phrase> comes as a tiny text-based appliance, allowing you to install any available desktop of your choice or none for headless usage. Should you want to re-create the package selection of the previous images, a pattern <literal>x11_raspberrypi</literal> is provided for convenience.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi 15 GA had packages for a minimal X11 desktop (IceWM) preinstalled.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> for Raspberry Pi <phrase role="productnumber">15 SP7</phrase> comes as a tiny text-based appliance, allowing you to install any available desktop of your choice or none for headless usage. Should you want to re-create the package selection of the previous images, a pattern <literal>x11_raspberrypi</literal> is provided for convenience.</para>
          <para>If not done already, you will need to enable the <emphasis role="italic">Desktop Applications Module</emphasis>. Assuming you have registered the base product already, as described in <xref linkend="sec-rpi-registration"/>, the fastest way to enable the module is:</para>
          <screen><prompt role="root">#</prompt>SUSEConnect -p sle-module-desktop-applications/15.7/aarch64
 Registering system to SUSE Customer Center
@@ -763,8 +743,7 @@ Successfully registered system
       <para>This introduction only covered the most basic tasks.</para>
       <sect2 xml:id="sec-rpi-documentation-sle">
          <title>Product documentation</title>
-         <para>You can find the complete documentation for <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase>
-            <phrase role="productnumber">15 SP7</phrase> at <link xlink:href="https://documentation.suse.com/"/>.</para>
+         <para>You can find the complete documentation for <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase><phrase role="productnumber">15 SP7</phrase> at <link xlink:href="https://documentation.suse.com/"/>.</para>
          <note>
             <title>Applicability of product documentation</title>
             <para>Not all content in the product documentation applies to <phrase role="productname">SUSE Linux Enterprise Server for Arm</phrase> on Raspberry Pi, because Raspberry Pi differs significantly from other hardware platforms.</para>

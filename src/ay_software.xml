@@ -7,9 +7,7 @@
        xml:id="CreateProfile-Software">
    <title>Software</title>
    <info/>
-   <para>
-      <remark role="fixme">Add a short description</remark>
-   </para>
+   <para><remark role="fixme">Add a short description</remark></para>
    <sect2 xml:id="Software-Selections-base-product">
       <title>Product selection</title>
       <para>Starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15, all products are distributed using a single installation medium. Therefore you need to choose which product to install by using the <tag class="element">product</tag> tag.</para>

@@ -9,8 +9,7 @@
    <info>
       <abstract>
          <para>Virtual Network Computing (VNC) enables you to access a remote computer via a graphical desktop, and run remote graphical applications. VNC is platform-independent and accesses the remote machine from any operating system. This chapter describes how to connect to a VNC server with the desktop clients vncviewer and Remmina, and how to operate a VNC server.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports two different kinds of VNC sessions: one-time sessions that <quote>live</quote> While the VNC connection from the client is kept up, and persistent sessions that <quote>live</quote> until they are explicitly terminated.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports two different kinds of VNC sessions: one-time sessions that <quote>live</quote> While the VNC connection from the client is kept up, and persistent sessions that <quote>live</quote> until they are explicitly terminated.</para>
          <para>A VNC server can offer both kinds of sessions simultaneously on different ports, but an open session cannot be converted from one type to the other.</para>
       </abstract>
    </info>
@@ -64,10 +63,10 @@
             <title>Remmina's main window</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina.png" width="50%"/>
+                  <imagedata fileref="media/remmina.png" width="46%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina.png" width="50%"/>
+                  <imagedata fileref="media/remmina.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -75,22 +74,15 @@
       </sect2>
       <sect2 xml:id="vnc-remmina-addnew">
          <title>Adding remote sessions</title>
-         <para>To add and save a new remote session, click <inlinemediaobject>
-               <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina_plus.png" width="4mm" format="PNG"/>
-               </imageobject>
-               <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina_plus.png" width="4mm" format="PNG"/>
-               </imageobject>
-            </inlinemediaobject> in the top left of the main window. The <guimenu>Remote Desktop Preference</guimenu> window opens.</para>
+         <para>To add and save a new remote session, click <inlinemediaobject><imageobject outputformat="print"><imagedata fileref="media/remmina_plus.png" width="4mm" format="PNG"/></imageobject><imageobject outputformat="screen"><imagedata fileref="media/remmina_plus.png" width="4mm" format="PNG"/></imageobject></inlinemediaobject> in the top left of the main window. The <guimenu>Remote Desktop Preference</guimenu> window opens.</para>
          <figure>
             <title>Remote desktop preference</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina_session_details.png" width="80%"/>
+                  <imagedata fileref="media/remmina_session_details.png" width="73%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina_session_details.png" width="80%"/>
+                  <imagedata fileref="media/remmina_session_details.png" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -145,10 +137,10 @@
                <title>Quick-starting</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
+                     <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
+                     <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -165,10 +157,10 @@
                <title>Remmina viewing remote session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -190,10 +182,10 @@
             <title>Reading path to the profile file</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina_status.png" width="50%"/>
+                  <imagedata fileref="media/remmina_status.png" width="46%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina_status.png" width="50%"/>
+                  <imagedata fileref="media/remmina_status.png" width="46%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -206,11 +198,7 @@
       <procedure xml:id="pro-vnc-one-time-activate">
          <title>Enabling one-time VNC sessions</title>
          <step>
-            <para>Start <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>Remote Administration (VNC)</guimenu>
-               </menuchoice>.</para>
+            <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>Remote Administration (VNC)</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Check <guimenu>Allow Remote Administration Without Session Management</guimenu>.</para>
@@ -236,10 +224,10 @@
          <title>Remote administration</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/vnc_nosession.png" width="70%"/>
+               <imagedata fileref="media/vnc_nosession.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/vnc_nosession.png" width="70%"/>
+               <imagedata fileref="media/vnc_nosession.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -255,8 +243,7 @@
       </sect2>
       <sect2 xml:id="sec-vnc-one-time-connect">
          <title>Initiating a one-time VNC session</title>
-         <para>To connect to a one-time VNC session, a VNC viewer must be installed, see also <xref linkend="sec-vnc-viewer"/>. Alternatively use a JavaScript-capable Web browser to view the VNC session by entering the following URL: <literal>http://jupiter.example.com:5801</literal>
-         </para>
+         <para>To connect to a one-time VNC session, a VNC viewer must be installed, see also <xref linkend="sec-vnc-viewer"/>. Alternatively use a JavaScript-capable Web browser to view the VNC session by entering the following URL: <literal>http://jupiter.example.com:5801</literal></para>
       </sect2>
       <sect2 xml:id="sec-vnc-one-time-config">
          <title>Configuring one-time VNC sessions</title>
@@ -272,8 +259,7 @@
          <screen><prompt>&gt;</prompt><command>sudo</command> systemctl reload xvnc.socket</screen>
          <important>
             <title>Firewall and VNC ports</title>
-            <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+            <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
          </important>
       </sect2>
    </sect1>
@@ -290,11 +276,7 @@
          <procedure xml:id="vnc-persistent-vncmanager-enable">
             <title>Enabling persistent VNC sessions</title>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Network Services</guimenu>
-                     <guimenu>Remote Administration (VNC)</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>Remote Administration (VNC)</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Activate <guimenu>Allow Remote Administration With Session Management</guimenu>.</para>
@@ -323,10 +305,10 @@
                <title>VNC session settings</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="78%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="78%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -398,10 +380,10 @@
                <title>Joining a persistent VNC session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>

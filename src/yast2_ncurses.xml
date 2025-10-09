@@ -12,23 +12,17 @@
       <title>Main window of YaST in text mode</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="64%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>
-   <para>To launch the ncurses-based version of YaST, open the terminal and run the <command>sudo yast2</command> command. Use the <keycap function="tab"/> or arrow keys to navigate between interface elements like menu items, fields and buttons. All menu items and buttons in YaST can be accessed using the appropriate function keys or keyboard shortcuts. For example, you can cancel the current operation by pressing <keycap>F9</keycap>, while the <keycap>F10</keycap> key can be used to accept the changes. Each menu item and button in YaST's ncurses-based interface has a highlighted letter in its label. This letter is part of the keyboard shortcut assigned to the interface element. For example, the letter <literal>Q</literal> is highlighted in the <guimenu>Quit</guimenu> button. This means that you can activate the button by pressing <keycombo>
-         <keycap function="alt"/>
-         <keycap>Alt+Q</keycap>
-      </keycombo>.</para>
+   <para>To launch the ncurses-based version of YaST, open the terminal and run the <command>sudo yast2</command> command. Use the <keycap function="tab"/> or arrow keys to navigate between interface elements like menu items, fields and buttons. All menu items and buttons in YaST can be accessed using the appropriate function keys or keyboard shortcuts. For example, you can cancel the current operation by pressing <keycap>F9</keycap>, while the <keycap>F10</keycap> key can be used to accept the changes. Each menu item and button in YaST's ncurses-based interface has a highlighted letter in its label. This letter is part of the keyboard shortcut assigned to the interface element. For example, the letter <literal>Q</literal> is highlighted in the <guimenu>Quit</guimenu> button. This means that you can activate the button by pressing <keycombo><keycap function="alt"/><keycap>Alt+Q</keycap></keycombo>.</para>
    <tip>
       <title>Refreshing YaST dialogs</title>
-      <para>If a YaST dialog gets corrupted or distorted, for example, while resizing the window, press <keycombo>
-            <keycap function="control"/>
-            <keycap>L</keycap>
-         </keycombo> to refresh and restore its contents.</para>
+      <para>If a YaST dialog gets corrupted or distorted, for example, while resizing the window, press <keycombo><keycap function="control"/><keycap>L</keycap></keycombo> to refresh and restore its contents.</para>
    </tip>
    <sect1 xml:id="sec-yast-cli-navigate">
       <title>Navigation in modules</title>
@@ -37,47 +31,25 @@
          <varlistentry>
             <term>Moving between buttons and selection lists</term>
             <listitem>
-               <para>Use <keycap function="tab"/> to move between the buttons and frames containing selection lists. To navigate in the opposite direction, use <keycombo>
-                     <keycap function="alt"/>
-                     <keycap function="tab"/>
-                  </keycombo> or <keycombo>
-                     <keycap function="shift"/>
-                     <keycap function="tab"/>
-                  </keycombo> combinations.</para>
+               <para>Use <keycap function="tab"/> to move between the buttons and frames containing selection lists. To navigate in the opposite direction, use <keycombo><keycap function="alt"/><keycap function="tab"/></keycombo> or <keycombo><keycap function="shift"/><keycap function="tab"/></keycombo> combinations.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Navigating in selection lists</term>
             <listitem>
-               <para>Use the arrow keys (<keycap function="up"/> and <keycap function="down"/>) to move through the individual elements in an active frame containing a selection list. If individual entries are longer than the frame's width, use <keycombo>
-                     <keycap function="shift"/>
-                     <keycap function="right"/>
-                  </keycombo> or <keycombo>
-                     <keycap function="shift"/>
-                     <keycap function="left"/>
-                  </keycombo> to scroll horizontally. If the arrow key causes the selection to move to another frame, use <keycombo>
-                     <keycap function="control"/>
-                     <keycap>E</keycap>
-                  </keycombo> or <keycombo>
-                     <keycap function="control"/>
-                     <keycap>A</keycap>
-                  </keycombo> instead.</para>
+               <para>Use the arrow keys (<keycap function="up"/> and <keycap function="down"/>) to move through the individual elements in an active frame containing a selection list. If individual entries are longer than the frame's width, use <keycombo><keycap function="shift"/><keycap function="right"/></keycombo> or <keycombo><keycap function="shift"/><keycap function="left"/></keycombo> to scroll horizontally. If the arrow key causes the selection to move to another frame, use <keycombo><keycap function="control"/><keycap>E</keycap></keycombo> or <keycombo><keycap function="control"/><keycap>A</keycap></keycombo> instead.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Working with buttons, radio buttons, and check boxes</term>
             <listitem>
-               <para>To select items with empty square brackets (check boxes) or empty parentheses (radio buttons), press <keycap function="space"/> or <keycap function="enter"/>. Alternatively, radio buttons and check boxes can be selected directly with <keycombo>
-                     <keycap function="alt"/>
-                     <keycap>highlighted_letter</keycap>
-                  </keycombo>. In this case, you do not need to confirm with <keycap function="enter"/>. If you navigate to an item with <keycap function="tab"/>, press <keycap function="enter"/> to execute the selected action or activate the respective menu item.</para>
+               <para>To select items with empty square brackets (check boxes) or empty parentheses (radio buttons), press <keycap function="space"/> or <keycap function="enter"/>. Alternatively, radio buttons and check boxes can be selected directly with <keycombo><keycap function="alt"/><keycap>highlighted_letter</keycap></keycombo>. In this case, you do not need to confirm with <keycap function="enter"/>. If you navigate to an item with <keycap function="tab"/>, press <keycap function="enter"/> to execute the selected action or activate the respective menu item.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Function keys</term>
             <listitem>
-               <para>The function keys (from <keycap>F1</keycap> to <keycap>F12</keycap>) enable quick access to the specific buttons. Available function key combinations (<literal>F<replaceable>X</replaceable>
-                  </literal>) are shown in the bottom line of the YaST screen. Which function keys are really mapped to which buttons depend on the active YaST module, because the different modules offer different buttons (<guimenu>Details</guimenu>, <guimenu>Info</guimenu>, <guimenu>Add</guimenu>, <guimenu>Delete</guimenu>, etc.). Use <keycap>F10</keycap> for <guimenu>Accept</guimenu>, <guimenu>OK</guimenu>, <guimenu>Next</guimenu>, and <guimenu>Finish</guimenu>. Press <keycap>F1</keycap> to access the YaST help.</para>
+               <para>The function keys (from <keycap>F1</keycap> to <keycap>F12</keycap>) enable quick access to the specific buttons. Available function key combinations (<literal>F<replaceable>X</replaceable></literal>) are shown in the bottom line of the YaST screen. Which function keys are really mapped to which buttons depend on the active YaST module, because the different modules offer different buttons (<guimenu>Details</guimenu>, <guimenu>Info</guimenu>, <guimenu>Add</guimenu>, <guimenu>Delete</guimenu>, etc.). Use <keycap>F10</keycap> for <guimenu>Accept</guimenu>, <guimenu>OK</guimenu>, <guimenu>Next</guimenu>, and <guimenu>Finish</guimenu>. Press <keycap>F1</keycap> to access the YaST help.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -97,10 +69,10 @@
          <title>The software installation module</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -205,14 +177,7 @@
             <term>Using <keycap function="alt"/> instead of <keycap function="escape"/>
             </term>
             <listitem>
-               <para>
-                  <keycap function="alt"/> shortcuts can be executed with <keycap function="escape"/> instead of <keycap function="alt"/>. For example, <keycombo>
-                     <keycap function="escape"/>
-                     <keycap>H</keycap>
-                  </keycombo> replaces <keycombo>
-                     <keycap function="alt"/>
-                     <keycap>H</keycap>
-                  </keycombo>. (Press <keycap function="escape"/>, <emphasis>then</emphasis> press <keycap>H</keycap>.)</para>
+               <para><keycap function="alt"/> shortcuts can be executed with <keycap function="escape"/> instead of <keycap function="alt"/>. For example, <keycombo><keycap function="escape"/><keycap>H</keycap></keycombo> replaces <keycombo><keycap function="alt"/><keycap>H</keycap></keycombo>. (Press <keycap function="escape"/>, <emphasis>then</emphasis> press <keycap>H</keycap>.)</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -225,13 +190,7 @@
                </keycombo>
             </term>
             <listitem>
-               <para>If the <keycap function="alt"/> and <keycap function="shift"/> combinations are taken over by the window manager or the terminal, use the combinations <keycombo>
-                     <keycap function="control"/>
-                     <keycap>F</keycap>
-                  </keycombo> (forward) and <keycombo>
-                     <keycap function="control"/>
-                     <keycap>B</keycap>
-                  </keycombo> (backward) instead.</para>
+               <para>If the <keycap function="alt"/> and <keycap function="shift"/> combinations are taken over by the window manager or the terminal, use the combinations <keycombo><keycap function="control"/><keycap>F</keycap></keycombo> (forward) and <keycombo><keycap function="control"/><keycap>B</keycap></keycombo> (backward) instead.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -252,8 +211,7 @@
          <screen><prompt>&gt;</prompt><command>sudo</command> yast <replaceable>-i package_name</replaceable></screen>
          <para>or</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> yast --install <replaceable>-i package_name</replaceable></screen>
-         <para>
-            <replaceable>package_name</replaceable> can be a single short package name, for example, <package>gvim</package>, installed with dependency checking, or the full path to an RPM package, which is installed without dependency checking.</para>
+         <para><replaceable>package_name</replaceable> can be a single short package name, for example, <package>gvim</package>, installed with dependency checking, or the full path to an RPM package, which is installed without dependency checking.</para>
          <para>While YaST offers basic functionality for managing software from the command line, consider using Zypper for more advanced package management tasks. Find more information on using Zypper in <xref linkend="sec-zypper"/>.</para>
       </sect2>
       <sect2 xml:id="sec-yast-cli-options-modules">
@@ -314,8 +272,7 @@
          </sect3>
          <sect3>
             <title>yast audit-laf</title>
-            <para>Displays and configures the Linux Audit Framework. Refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
+            <para>Displays and configures the Linux Audit Framework. Refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
             <variablelist>
                <varlistentry>
                   <term>set</term>
@@ -759,8 +716,7 @@ Enabled php5
          </sect3>
          <sect3>
             <title>yast kdump</title>
-            <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-               <xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/>. <command>yast kdump</command> accepts the following commands:</para>
+            <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/>. <command>yast kdump</command> accepts the following commands:</para>
             <variablelist>
                <varlistentry>
                   <term>copykernel</term>

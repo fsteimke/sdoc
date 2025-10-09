@@ -8,14 +8,12 @@
    <title>On-demand mounting with autofs</title>
    <info>
       <abstract>
-         <para>
-            <systemitem>autofs</systemitem> is a program that automatically mounts specified directories on an on-demand basis. It is based on a kernel module for high efficiency, and can manage both local directories and network shares. These automatic mount points are mounted only when they are accessed, and unmounted after a certain period of inactivity. This on-demand behavior saves bandwidth and results in better performance than static mounts managed by <filename>/etc/fstab</filename>. While <systemitem>autofs</systemitem> is a control script, <command>automount</command> is the command (daemon) that does the actual auto-mounting.</para>
+         <para><systemitem>autofs</systemitem> is a program that automatically mounts specified directories on an on-demand basis. It is based on a kernel module for high efficiency, and can manage both local directories and network shares. These automatic mount points are mounted only when they are accessed, and unmounted after a certain period of inactivity. This on-demand behavior saves bandwidth and results in better performance than static mounts managed by <filename>/etc/fstab</filename>. While <systemitem>autofs</systemitem> is a control script, <command>automount</command> is the command (daemon) that does the actual auto-mounting.</para>
       </abstract>
    </info>
    <sect1 xml:id="sec-autofs-installation">
       <title>Installation</title>
-      <para>
-         <systemitem>autofs</systemitem> is not installed on <phrase role="productname">SUSE Linux Enterprise Server</phrase> by default. To use its auto-mounting capabilities, first install it with</para>
+      <para><systemitem>autofs</systemitem> is not installed on <phrase role="productname">SUSE Linux Enterprise Server</phrase> by default. To use its auto-mounting capabilities, first install it with</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> zypper install autofs</screen>
    </sect1>
    <sect1 xml:id="sec-autofs-configuration">
@@ -57,9 +55,7 @@
                <para>In case you need to split the master map into several files, uncomment the line, and put the mappings (suffixed with <literal>.autofs</literal>) in the <filename>/etc/auto.master.d/</filename> directory.</para>
             </callout>
             <callout arearefs="co-autofs-plus">
-               <para>
-                  <literal>+auto.master</literal> ensures that those using NIS (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-nis-server" xrefstyle="%label &#34;%c&#34;"/> for more information on NIS) will still find their master map.</para>
+               <para><literal>+auto.master</literal> ensures that those using NIS (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-nis-server" xrefstyle="%label &#34;%c&#34;"/> for more information on NIS) will still find their master map.</para>
             </callout>
          </calloutlist>
          <para>Entries in <filename>auto.master</filename> have three fields with the following syntax:</para>
@@ -109,8 +105,7 @@
          </important>
          <para>Map files specify the (local or network) source location, and the mount point where to mount the source locally. The general format of maps is similar to the master map. The difference is that the <emphasis>options</emphasis> appear between the mount point and the location instead of at the end of the entry:</para>
          <screen>mount point      options      location</screen>
-         <para>Make sure that map files are not marked as executable. You can remove the executable bits by executing <command>chmod -x <replaceable>MAP_FILE</replaceable>
-            </command>.</para>
+         <para>Make sure that map files are not marked as executable. You can remove the executable bits by executing <command>chmod -x <replaceable>MAP_FILE</replaceable></command>.</para>
          <variablelist>
             <varlistentry>
                <term>mount point</term>
@@ -215,8 +210,7 @@
          <step>
             <para>Create a new map file for NFS shares:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> vim /etc/auto.nfs</screen>
-            <para>
-               <filename>/etc/auto.nfs</filename> normally contains a separate line for each NFS share. Its format is described in <xref linkend="sec-autofs-mapfiles"/>. Add the line describing the mount point and the NFS share network address:</para>
+            <para><filename>/etc/auto.nfs</filename> normally contains a separate line for each NFS share. Its format is described in <xref linkend="sec-autofs-mapfiles"/>. Add the line describing the mount point and the NFS share network address:</para>
             <screen>export      jupiter.com:/home/geeko/doc/export</screen>
             <para>The above line means that the <filename>/home/geeko/doc/export</filename> directory on the <literal>jupiter.com</literal> host will be auto-mounted to the <filename>/nfs/export</filename> directory on the local host (<filename>/nfs</filename> is taken from the <filename>auto.master</filename> map) when requested. The <filename>/nfs/export</filename> directory will be created automatically by <systemitem>autofs</systemitem>.</para>
          </step>

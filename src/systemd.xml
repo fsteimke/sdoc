@@ -7,8 +7,7 @@
          xml:id="cha-systemd">
    <title>The <systemitem class="daemon">systemd</systemitem> daemon</title>
    <info/>
-   <para>
-      <systemitem class="daemon">systemd</systemitem> initializes the system. It has the process ID 1. <systemitem class="daemon">systemd</systemitem> is started directly by the kernel and resists signal 9, which normally terminates processes. All other programs are started directly by <systemitem class="daemon">systemd</systemitem> or by one of its child processes. <systemitem class="daemon">systemd</systemitem> is a replacement for the System V init daemon and is fully compatible with System V init (by supporting init scripts).</para>
+   <para><systemitem class="daemon">systemd</systemitem> initializes the system. It has the process ID 1. <systemitem class="daemon">systemd</systemitem> is started directly by the kernel and resists signal 9, which normally terminates processes. All other programs are started directly by <systemitem class="daemon">systemd</systemitem> or by one of its child processes. <systemitem class="daemon">systemd</systemitem> is a replacement for the System V init daemon and is fully compatible with System V init (by supporting init scripts).</para>
    <para>The main advantage of <systemitem class="daemon">systemd</systemitem> is that it considerably speeds up boot time by parallelizing service starts. Furthermore, <systemitem class="daemon">systemd</systemitem> only starts a service when it is really needed. Daemons are not started unconditionally at boot time, but when being required for the first time. <systemitem class="daemon">systemd</systemitem> also supports Kernel Control Groups (cgroups), creating snapshots, and restoring the system state. For more details see <link xlink:href="https://www.freedesktop.org/wiki/Software/systemd/"/>.</para>
    <tip>
       <title>
@@ -23,8 +22,7 @@ systemd=true</screen>
    <sect1 xml:id="sec-boot-systemd-concept">
       <title>The <systemitem class="daemon">systemd</systemitem> concept</title>
       <para>The following section explains the concept behind <systemitem class="daemon">systemd</systemitem>.</para>
-      <para>
-         <systemitem class="daemon">systemd</systemitem> is a system and session manager for Linux, compatible with System V and LSB init scripts. The main features of <systemitem class="daemon">systemd</systemitem> include:</para>
+      <para><systemitem class="daemon">systemd</systemitem> is a system and session manager for Linux, compatible with System V and LSB init scripts. The main features of <systemitem class="daemon">systemd</systemitem> include:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
             <para>parallelization capabilities</para>
@@ -51,8 +49,7 @@ systemd=true</screen>
       <sect2 xml:id="sec-boot-systemd-unitfile">
          <title>Unit file</title>
          <para>A unit configuration file contains information about a service, a socket, a device, a mount point, an automount point, a swap file or partition, a start-up target, a watched file system path, a timer controlled and supervised by <systemitem class="daemon">systemd</systemitem>, a temporary system state snapshot, a resource management slice or a group of externally created processes.</para>
-         <para>
-            <quote>Unit file</quote> is a generic term used by <systemitem class="daemon">systemd</systemitem> for the following:</para>
+         <para><quote>Unit file</quote> is a generic term used by <systemitem class="daemon">systemd</systemitem> for the following:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
                <formalpara>
@@ -115,8 +112,7 @@ systemd=true</screen>
                </formalpara>
             </listitem>
          </itemizedlist>
-         <para>For more information about <systemitem class="daemon">systemd</systemitem> unit files, see <link xlink:href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html"/>
-         </para>
+         <para>For more information about <systemitem class="daemon">systemd</systemitem> unit files, see <link xlink:href="https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html"/></para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-boot-systemd-basics">
@@ -127,8 +123,7 @@ systemd=true</screen>
       <tip>
          <title>Terminal output and Bash completion</title>
          <para>If the output goes to a terminal (and not to a pipe or a file, for example), <systemitem class="daemon">systemd</systemitem> commands send long output to a pager by default. Use the <option>--no-pager</option> option to turn off paging mode.</para>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> also supports bash-completion, allowing you to enter the first letters of a subcommand and then press <keycap function="tab"/>. This feature is only available in the <systemitem>bash</systemitem> shell and requires the installation of the package <systemitem class="resource">bash-completion</systemitem>.</para>
+         <para><systemitem class="daemon">systemd</systemitem> also supports bash-completion, allowing you to enter the first letters of a subcommand and then press <keycap function="tab"/>. This feature is only available in the <systemitem>bash</systemitem> shell and requires the installation of the package <systemitem class="resource">bash-completion</systemitem>.</para>
       </tip>
       <sect2 xml:id="sec-boot-systemd-basics-services">
          <title>Managing services in a running system</title>
@@ -149,8 +144,7 @@ systemd=true</screen>
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> allows you to manage several services in one go. Instead of executing init scripts one after the other as with System V init, execute a command like the following:</para>
+         <para><systemitem class="daemon">systemd</systemitem> allows you to manage several services in one go. Instead of executing init scripts one after the other as with System V init, execute a command like the following:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> systemctl start <replaceable>MY_1ST_SERVICE</replaceable><replaceable>MY_2ND_SERVICE</replaceable></screen>
          <para>To list all services available on the system:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> systemctl list-unit-files --type=service</screen>
@@ -163,138 +157,56 @@ systemd=true</screen>
                <colspec colnum="3" colname="3" colwidth="20*"/>
                <thead>
                   <row>
-                     <entry colname="1">
-                        <para>Task</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>
-                           <systemitem class="daemon">systemd</systemitem> Command</para>
-                     </entry>
-                     <entry colname="3">
-                        <para>System V init Command</para>
-                     </entry>
+                     <entry colname="1"><para>Task</para></entry>
+                     <entry colname="2"><para><systemitem class="daemon">systemd</systemitem> Command</para></entry>
+                     <entry colname="3"><para>System V init Command</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry colname="1">
-                        <para>Starting</para>
-                     </entry>
-                     <entry colname="2">
-                        <screen>start</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>start</screen>
-                     </entry>
+                     <entry colname="1"><para>Starting</para></entry>
+                     <entry colname="2"><screen>start</screen></entry>
+                     <entry colname="3"><screen>start</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <para>Stopping</para>
-                     </entry>
-                     <entry colname="2">
-                        <screen>stop</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>stop</screen>
-                     </entry>
+                     <entry colname="1"><para>Stopping</para></entry>
+                     <entry colname="2"><screen>stop</screen></entry>
+                     <entry colname="3"><screen>stop</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Restarting</title>
-                           <para>Shuts down services and starts them afterward. If a service is not yet running, it is started.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>restart</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>restart</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Restarting</title><para>Shuts down services and starts them afterward. If a service is not yet running, it is started.</para></formalpara></entry>
+                     <entry colname="2"><screen>restart</screen></entry>
+                     <entry colname="3"><screen>restart</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Restarting conditionally</title>
-                           <para>Restarts services if they are currently running. Does nothing for services that are not running.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>try-restart</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>try-restart</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Restarting conditionally</title><para>Restarts services if they are currently running. Does nothing for services that are not running.</para></formalpara></entry>
+                     <entry colname="2"><screen>try-restart</screen></entry>
+                     <entry colname="3"><screen>try-restart</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Reloading</title>
-                           <para>Tells services to reload their configuration files without interrupting operation. Use case: tell Apache to reload a modified <filename>httpd.conf</filename> configuration file. Not all services support reloading.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>reload</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>reload</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Reloading</title><para>Tells services to reload their configuration files without interrupting operation. Use case: tell Apache to reload a modified <filename>httpd.conf</filename> configuration file. Not all services support reloading.</para></formalpara></entry>
+                     <entry colname="2"><screen>reload</screen></entry>
+                     <entry colname="3"><screen>reload</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Reloading or restarting</title>
-                           <para>Reloads services if reloading is supported, otherwise restarts them. If a service is not yet running, it is started.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>reload-or-restart</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>n/a</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Reloading or restarting</title><para>Reloads services if reloading is supported, otherwise restarts them. If a service is not yet running, it is started.</para></formalpara></entry>
+                     <entry colname="2"><screen>reload-or-restart</screen></entry>
+                     <entry colname="3"><screen>n/a</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Reloading or restarting conditionally</title>
-                           <para>Reloads services if reloading is supported, otherwise restarts them if currently running. Does nothing for services that are not running.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>reload-or-try-restart</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>n/a</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Reloading or restarting conditionally</title><para>Reloads services if reloading is supported, otherwise restarts them if currently running. Does nothing for services that are not running.</para></formalpara></entry>
+                     <entry colname="2"><screen>reload-or-try-restart</screen></entry>
+                     <entry colname="3"><screen>n/a</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Getting detailed status information</title>
-                           <para>Lists information about the status of services. The <systemitem class="daemon">systemd</systemitem> command shows details such as description, executable, status, cgroup, and messages last issued by a service (see <xref linkend="sec-boot-systemd-basics-services-debugging"/>). The level of details displayed with the System V init differs from service to service.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>status</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>status</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Getting detailed status information</title><para>Lists information about the status of services. The <systemitem class="daemon">systemd</systemitem> command shows details such as description, executable, status, cgroup, and messages last issued by a service (see <xref linkend="sec-boot-systemd-basics-services-debugging"/>). The level of details displayed with the System V init differs from service to service.</para></formalpara></entry>
+                     <entry colname="2"><screen>status</screen></entry>
+                     <entry colname="3"><screen>status</screen></entry>
                   </row>
                   <row>
-                     <entry colname="1">
-                        <formalpara>
-                           <title>Getting short status information</title>
-                           <para>Shows whether services are active or not.</para>
-                        </formalpara>
-                     </entry>
-                     <entry colname="2">
-                        <screen>is-active</screen>
-                     </entry>
-                     <entry colname="3">
-                        <screen>status</screen>
-                     </entry>
+                     <entry colname="1"><formalpara><title>Getting short status information</title><para>Shows whether services are active or not.</para></formalpara></entry>
+                     <entry colname="2"><screen>is-active</screen></entry>
+                     <entry colname="3"><screen>status</screen></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -308,8 +220,7 @@ systemd=true</screen>
             <para>The following table lists enabling and disabling commands for <systemitem class="daemon">systemd</systemitem> and System V init:</para>
             <important>
                <title>Service start</title>
-               <para>When enabling a service on the command line, it is not started automatically. It is scheduled to be started with the next system start-up or runlevel/target change. To immediately start a service after having enabled it, explicitly run <command>systemctl start <replaceable>MY_SERVICE</replaceable>
-                  </command> or <command>rc <replaceable>MY_SERVICE</replaceable> start</command>.</para>
+               <para>When enabling a service on the command line, it is not started automatically. It is scheduled to be started with the next system start-up or runlevel/target change. To immediately start a service after having enabled it, explicitly run <command>systemctl start <replaceable>MY_SERVICE</replaceable></command> or <command>rc <replaceable>MY_SERVICE</replaceable> start</command>.</para>
             </important>
             <table rowsep="1">
                <title>Commands for enabling and disabling services</title>
@@ -319,124 +230,41 @@ systemd=true</screen>
                   <colspec colnum="3" colname="3" colwidth="28*"/>
                   <thead>
                      <row>
-                        <entry colname="1">
-                           <para>Task</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <systemitem class="daemon">systemd</systemitem> Command</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>System V init Command</para>
-                        </entry>
+                        <entry colname="1"><para>Task</para></entry>
+                        <entry colname="2"><para><systemitem class="daemon">systemd</systemitem> Command</para></entry>
+                        <entry colname="3"><para>System V init Command</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry colname="1">
-                           <para>Enabling</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl enable <replaceable>MY_SERVICE(S)</replaceable>
-                              </command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>
-                              <command>insserv <replaceable>MY_SERVICE(S)</replaceable>
-                              </command>, <command>chkconfig -a <replaceable>MY_SERVICE(S)</replaceable>
-                              </command>
-                           </para>
-                        </entry>
+                        <entry colname="1"><para>Enabling</para></entry>
+                        <entry colname="2"><para><command>systemctl enable <replaceable>MY_SERVICE(S)</replaceable></command></para></entry>
+                        <entry colname="3"><para><command>insserv <replaceable>MY_SERVICE(S)</replaceable></command>, <command>chkconfig -a <replaceable>MY_SERVICE(S)</replaceable></command></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>Disabling</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl disable <replaceable>MY_SERVICE(S)</replaceable>.service</command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>
-                              <command>insserv -r <replaceable>MY_SERVICE(S)</replaceable>
-                              </command>, <command>chkconfig -d <replaceable>MY_SERVICE(S)</replaceable>
-                              </command>
-                           </para>
-                        </entry>
+                        <entry colname="1"><para>Disabling</para></entry>
+                        <entry colname="2"><para><command>systemctl disable <replaceable>MY_SERVICE(S)</replaceable>.service</command></para></entry>
+                        <entry colname="3"><para><command>insserv -r <replaceable>MY_SERVICE(S)</replaceable></command>, <command>chkconfig -d <replaceable>MY_SERVICE(S)</replaceable></command></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <formalpara>
-                              <title>Checking</title>
-                              <para>Shows whether a service is enabled or not.</para>
-                           </formalpara>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl is-enabled <replaceable>MY_SERVICE</replaceable>
-                              </command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>
-                              <command>chkconfig <replaceable>MY_SERVICE</replaceable>
-                              </command>
-                           </para>
-                        </entry>
+                        <entry colname="1"><formalpara><title>Checking</title><para>Shows whether a service is enabled or not.</para></formalpara></entry>
+                        <entry colname="2"><para><command>systemctl is-enabled <replaceable>MY_SERVICE</replaceable></command></para></entry>
+                        <entry colname="3"><para><command>chkconfig <replaceable>MY_SERVICE</replaceable></command></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <formalpara>
-                              <title>Re-enabling</title>
-                              <para>Similar to restarting a service, this command first disables and then enables a service. Useful to re-enable a service with its defaults.</para>
-                           </formalpara>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl reenable <replaceable>MY_SERVICE</replaceable>
-                              </command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>n/a</para>
-                        </entry>
+                        <entry colname="1"><formalpara><title>Re-enabling</title><para>Similar to restarting a service, this command first disables and then enables a service. Useful to re-enable a service with its defaults.</para></formalpara></entry>
+                        <entry colname="2"><para><command>systemctl reenable <replaceable>MY_SERVICE</replaceable></command></para></entry>
+                        <entry colname="3"><para>n/a</para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <formalpara>
-                              <title>Masking</title>
-                              <para>After <quote>disabling</quote> a service, it can still be started manually. To disable a service, you need to mask it. Use with care.</para>
-                           </formalpara>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl mask <replaceable>MY_SERVICE</replaceable>
-                              </command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>n/a</para>
-                        </entry>
+                        <entry colname="1"><formalpara><title>Masking</title><para>After <quote>disabling</quote> a service, it can still be started manually. To disable a service, you need to mask it. Use with care.</para></formalpara></entry>
+                        <entry colname="2"><para><command>systemctl mask <replaceable>MY_SERVICE</replaceable></command></para></entry>
+                        <entry colname="3"><para>n/a</para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <formalpara>
-                              <title>Unmasking</title>
-                              <para>A service that has been masked can only be used again after it has been unmasked.</para>
-                           </formalpara>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl unmask <replaceable>MY_SERVICE</replaceable>
-                              </command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>n/a</para>
-                        </entry>
+                        <entry colname="1"><formalpara><title>Unmasking</title><para>A service that has been masked can only be used again after it has been unmasked.</para></formalpara></entry>
+                        <entry colname="2"><para><command>systemctl unmask <replaceable>MY_SERVICE</replaceable></command></para></entry>
+                        <entry colname="3"><para>n/a</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -450,8 +278,7 @@ systemd=true</screen>
       <sect2 xml:id="sec-boot-systemd-targets">
          <title>Targets compared to runlevels</title>
          <para>With System V init the system was booted into a so-called <quote>Runlevel</quote>. A runlevel defines how the system is started and what services are available in the running system. Runlevels are numbered; the most commonly known ones are <literal>0</literal> (shutting down the system), <literal>3</literal> (multiuser with network) and <literal>5</literal> (multiuser with network and display manager).</para>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> introduces a new concept by using so-called <quote>target units</quote>. However, it remains fully compatible with the runlevel concept. Target units are named rather than numbered and serve specific purposes. For example, the targets <systemitem>local-fs.target</systemitem> and <systemitem>swap.target</systemitem> mount local file systems and swap spaces.</para>
+         <para><systemitem class="daemon">systemd</systemitem> introduces a new concept by using so-called <quote>target units</quote>. However, it remains fully compatible with the runlevel concept. Target units are named rather than numbered and serve specific purposes. For example, the targets <systemitem>local-fs.target</systemitem> and <systemitem>swap.target</systemitem> mount local file systems and swap spaces.</para>
          <para>The target <systemitem>graphical.target</systemitem> provides a multiuser system with network and display manager capabilities and is equivalent to runlevel 5. Complex targets, such as <systemitem>graphical.target</systemitem> act as <quote>meta</quote> targets by combining a subset of other targets. Since <systemitem class="daemon">systemd</systemitem> makes it easy to create custom targets by combining existing targets, it offers great flexibility.</para>
          <para>The following list shows the most important <systemitem class="daemon">systemd</systemitem> target units. For a full list refer to <command>man 7 systemd.special</command>.</para>
          <variablelist>
@@ -461,8 +288,7 @@ systemd=true</screen>
                   <systemitem>default.target</systemitem>
                </term>
                <listitem>
-                  <para>The target that is booted by default. Not a <quote>real</quote> target, but rather a symbolic link to another target like <systemitem>graphic.target</systemitem>. Can be permanently changed via YaST (see <xref linkend="sec-boot-runlevel-edit"/>). To change it for a session, use the kernel parameter <literal>systemd.unit=<replaceable>MY_TARGET.target</replaceable>
-                     </literal> at the boot prompt.</para>
+                  <para>The target that is booted by default. Not a <quote>real</quote> target, but rather a symbolic link to another target like <systemitem>graphic.target</systemitem>. Can be permanently changed via YaST (see <xref linkend="sec-boot-runlevel-edit"/>). To change it for a session, use the kernel parameter <literal>systemd.unit=<replaceable>MY_TARGET.target</replaceable></literal> at the boot prompt.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -523,8 +349,7 @@ systemd=true</screen>
             </varlistentry>
          </variablelist>
          <para>To remain compatible with the System V init runlevel system, <systemitem class="daemon">systemd</systemitem> provides special targets named <literal>runlevel<replaceable>X</replaceable>.target</literal> mapping the corresponding runlevels numbered <replaceable>X</replaceable>.</para>
-         <para>To inspect the current target, use the command: <command>systemctl get-default</command>
-         </para>
+         <para>To inspect the current target, use the command: <command>systemctl get-default</command></para>
          <table rowsep="1">
             <title>System V runlevels and <systemitem class="daemon">systemd</systemitem> target units</title>
             <tgroup cols="3">
@@ -533,104 +358,46 @@ systemd=true</screen>
                <colspec colnum="3" colname="3" colwidth="40*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>System V runlevel</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem class="daemon">systemd</systemitem> target</para>
-                     </entry>
-                     <entry>
-                        <para>Purpose</para>
-                     </entry>
+                     <entry><para>System V runlevel</para></entry>
+                     <entry><para><systemitem class="daemon">systemd</systemitem> target</para></entry>
+                     <entry><para>Purpose</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>0</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel0.target</systemitem>, <systemitem>halt.target</systemitem>, <systemitem>poweroff.target</systemitem>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>System shutdown</para>
-                     </entry>
+                     <entry><para>0</para></entry>
+                     <entry><para><systemitem>runlevel0.target</systemitem>, <systemitem>halt.target</systemitem>, <systemitem>poweroff.target</systemitem></para></entry>
+                     <entry><para>System shutdown</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>1, S</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel1.target</systemitem>, <systemitem>rescue.target</systemitem>,</para>
-                     </entry>
-                     <entry>
-                        <para>Single-user mode</para>
-                     </entry>
+                     <entry><para>1, S</para></entry>
+                     <entry><para><systemitem>runlevel1.target</systemitem>, <systemitem>rescue.target</systemitem>,</para></entry>
+                     <entry><para>Single-user mode</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>2</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel2.target</systemitem>, <systemitem>multi-user.target</systemitem>,</para>
-                     </entry>
-                     <entry>
-                        <para>Local multiuser without remote network</para>
-                     </entry>
+                     <entry><para>2</para></entry>
+                     <entry><para><systemitem>runlevel2.target</systemitem>, <systemitem>multi-user.target</systemitem>,</para></entry>
+                     <entry><para>Local multiuser without remote network</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>3</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel3.target</systemitem>, <systemitem>multi-user.target</systemitem>,</para>
-                     </entry>
-                     <entry>
-                        <para>Full multiuser with network</para>
-                     </entry>
+                     <entry><para>3</para></entry>
+                     <entry><para><systemitem>runlevel3.target</systemitem>, <systemitem>multi-user.target</systemitem>,</para></entry>
+                     <entry><para>Full multiuser with network</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>4</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel4.target</systemitem>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Unused/User-defined</para>
-                     </entry>
+                     <entry><para>4</para></entry>
+                     <entry><para><systemitem>runlevel4.target</systemitem></para></entry>
+                     <entry><para>Unused/User-defined</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>5</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel5.target</systemitem>, <systemitem>graphical.target</systemitem>,</para>
-                     </entry>
-                     <entry>
-                        <para>Full multiuser with network and display manager</para>
-                     </entry>
+                     <entry><para>5</para></entry>
+                     <entry><para><systemitem>runlevel5.target</systemitem>, <systemitem>graphical.target</systemitem>,</para></entry>
+                     <entry><para>Full multiuser with network and display manager</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>6</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <systemitem>runlevel6.target</systemitem>, <systemitem>reboot.target</systemitem>,</para>
-                     </entry>
-                     <entry>
-                        <para>System reboot</para>
-                     </entry>
+                     <entry><para>6</para></entry>
+                     <entry><para><systemitem>runlevel6.target</systemitem>, <systemitem>reboot.target</systemitem>,</para></entry>
+                     <entry><para>System reboot</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -651,118 +418,41 @@ systemd=true</screen>
                   <colspec colnum="3" colname="3" colwidth="30*"/>
                   <thead>
                      <row>
-                        <entry colname="1">
-                           <para>Task</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <systemitem class="daemon">systemd</systemitem> Command</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>System V init Command</para>
-                        </entry>
+                        <entry colname="1"><para>Task</para></entry>
+                        <entry colname="2"><para><systemitem class="daemon">systemd</systemitem> Command</para></entry>
+                        <entry colname="3"><para>System V init Command</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry colname="1">
-                           <para>Change the current target/runlevel</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl isolate</command>
-                              <replaceable>MY_TARGET</replaceable>.target</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>
-                              <command>telinit</command>
-                              <replaceable>X</replaceable>
-                           </para>
-                        </entry>
+                        <entry colname="1"><para>Change the current target/runlevel</para></entry>
+                        <entry colname="2"><para><command>systemctl isolate</command><replaceable>MY_TARGET</replaceable>.target</para></entry>
+                        <entry colname="3"><para><command>telinit</command><replaceable>X</replaceable></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>Change to the default target/runlevel</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl default</command>
-                           </para>
-                        </entry>
-                        <entry colname="3">
-                           <para>n/a</para>
-                        </entry>
+                        <entry colname="1"><para>Change to the default target/runlevel</para></entry>
+                        <entry colname="2"><para><command>systemctl default</command></para></entry>
+                        <entry colname="3"><para>n/a</para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>Get the current target/runlevel</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl list-units --type=target</command>
-                           </para>
-                           <para>With <systemitem class="daemon">systemd</systemitem>, there is usually more than one active target. The command lists all currently active targets.</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>
-                              <command>who -r</command>
-                           </para>
-                           <para>or</para>
-                           <para>
-                              <command>runlevel</command>
-                           </para>
-                        </entry>
+                        <entry colname="1"><para>Get the current target/runlevel</para></entry>
+                        <entry colname="2"><para><command>systemctl list-units --type=target</command></para><para>With <systemitem class="daemon">systemd</systemitem>, there is usually more than one active target. The command lists all currently active targets.</para></entry>
+                        <entry colname="3"><para><command>who -r</command></para><para>or</para><para><command>runlevel</command></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>persistently change the default runlevel</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>Use the Services Manager or run the following command:</para>
-                           <para>
-                              <command>ln -sf /usr/lib/systemd/system/</command>
-                              <replaceable>MY_TARGET</replaceable>.target /etc/systemd/system/default.target</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>Use the Services Manager or change the line</para>
-                           <para>
-                              <command>id:</command>
-                              <replaceable>X</replaceable>:initdefault:</para>
-                           <para>in <filename>/etc/inittab</filename>
-                           </para>
-                        </entry>
+                        <entry colname="1"><para>persistently change the default runlevel</para></entry>
+                        <entry colname="2"><para>Use the Services Manager or run the following command:</para><para><command>ln -sf /usr/lib/systemd/system/</command><replaceable>MY_TARGET</replaceable>.target /etc/systemd/system/default.target</para></entry>
+                        <entry colname="3"><para>Use the Services Manager or change the line</para><para><command>id:</command><replaceable>X</replaceable>:initdefault:</para><para>in <filename>/etc/inittab</filename></para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>Change the default runlevel for the current boot process</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>Enter the following option at the boot prompt</para>
-                           <para>
-                              <command>systemd.unit=</command>
-                              <replaceable>MY_TARGET</replaceable>.target</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>Enter the desired runlevel number at the boot prompt.</para>
-                        </entry>
+                        <entry colname="1"><para>Change the default runlevel for the current boot process</para></entry>
+                        <entry colname="2"><para>Enter the following option at the boot prompt</para><para><command>systemd.unit=</command><replaceable>MY_TARGET</replaceable>.target</para></entry>
+                        <entry colname="3"><para>Enter the desired runlevel number at the boot prompt.</para></entry>
                      </row>
                      <row>
-                        <entry colname="1">
-                           <para>Show a target's/runlevel's dependencies</para>
-                        </entry>
-                        <entry colname="2">
-                           <para>
-                              <command>systemctl show -p "Requires"</command>
-                              <replaceable>MY_TARGET</replaceable>.target</para>
-                           <para>
-                              <command>systemctl show -p "Wants"</command>
-                              <replaceable>MY_TARGET</replaceable>.target</para>
-                           <para>
-                              <quote>Requires</quote> lists the hard dependencies (the ones that must be resolved), whereas <quote>Wants</quote> lists the soft dependencies (the ones that get resolved if possible).</para>
-                        </entry>
-                        <entry colname="3">
-                           <para>n/a</para>
-                        </entry>
+                        <entry colname="1"><para>Show a target's/runlevel's dependencies</para></entry>
+                        <entry colname="2"><para><command>systemctl show -p "Requires"</command><replaceable>MY_TARGET</replaceable>.target</para><para><command>systemctl show -p "Wants"</command><replaceable>MY_TARGET</replaceable>.target</para><para><quote>Requires</quote> lists the hard dependencies (the ones that must be resolved), whereas <quote>Wants</quote> lists the soft dependencies (the ones that get resolved if possible).</para></entry>
+                        <entry colname="3"><para>n/a</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -771,12 +461,10 @@ systemd=true</screen>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-debug">
          <title>Debugging system start-up</title>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> offers the means to analyze the system start-up process. You can review the list of all services and their status (rather than having to parse <filename>/var/log/</filename>). <systemitem class="daemon">systemd</systemitem> also allows you to scan the start-up procedure to find out how much time each service start-up consumes.</para>
+         <para><systemitem class="daemon">systemd</systemitem> offers the means to analyze the system start-up process. You can review the list of all services and their status (rather than having to parse <filename>/var/log/</filename>). <systemitem class="daemon">systemd</systemitem> also allows you to scan the start-up procedure to find out how much time each service start-up consumes.</para>
          <sect3 xml:id="sec-boot-systemd-debug-review">
             <title>Review start-up of services</title>
-            <para>To review the complete list of services that have been started since booting the system, enter the command <command>systemctl</command>. It lists all active services like shown below (shortened). To get more information on a specific service, use <command>systemctl status <replaceable>MY_SERVICE</replaceable>
-               </command>.</para>
+            <para>To review the complete list of services that have been started since booting the system, enter the command <command>systemctl</command>. It lists all active services like shown below (shortened). To get more information on a specific service, use <command>systemctl status <replaceable>MY_SERVICE</replaceable></command>.</para>
             <example>
                <title>List active services</title>
                <screen><prompt role="root">#</prompt>systemctl
@@ -852,10 +540,10 @@ Startup finished in 2666ms (kernel) + 21961ms (userspace) = 24628ms</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/systemd_startup.svg" width="75%"/>
+                              <imagedata fileref="media/systemd_startup.svg" width="69%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/systemd_startup.png" width="75%"/>
+                              <imagedata fileref="media/systemd_startup.png" width="69%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -873,8 +561,7 @@ Startup finished in 2666ms (kernel) + 21961ms (userspace) = 24628ms</screen>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-sysv-compatibility">
          <title>System V compatibility</title>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> is compatible with System V, allowing you to still use existing System V init scripts. However, there is at least one known issue where a System V init script does not work with <systemitem class="daemon">systemd</systemitem> out of the box: starting a service as a different user via <command>su</command> or <command>sudo</command> in init scripts results in a failure of the script, producing an <quote>Access denied</quote> error.</para>
+         <para><systemitem class="daemon">systemd</systemitem> is compatible with System V, allowing you to still use existing System V init scripts. However, there is at least one known issue where a System V init script does not work with <systemitem class="daemon">systemd</systemitem> out of the box: starting a service as a different user via <command>su</command> or <command>sudo</command> in init scripts results in a failure of the script, producing an <quote>Access denied</quote> error.</para>
          <para>When changing the user with <command>su</command> or <command>sudo</command>, a PAM session is started. This session will be terminated after the init script is finished. As a consequence, the service that has been started by the init script is also terminated. To work around this error, proceed as follows:</para>
          <procedure>
             <step>
@@ -899,33 +586,27 @@ WantedBy=multi-user.target<co xml:id="co-service-wrapper-target"/></screen>
                      <para>Optional—only use if the init script starts a daemon.</para>
                   </callout>
                   <callout arearefs="co-service-wrapper-target">
-                     <para>
-                        <literal>multi-user.target</literal> also starts the init script when booting into <literal>graphical.target</literal>. If it should only be started when booting into the display manager, use <literal>graphical.target</literal>.</para>
+                     <para><literal>multi-user.target</literal> also starts the init script when booting into <literal>graphical.target</literal>. If it should only be started when booting into the display manager, use <literal>graphical.target</literal>.</para>
                   </callout>
                </calloutlist>
             </step>
             <step>
-               <para>Start the daemon with <command>systemctl start <replaceable>APPLICATION</replaceable>
-                  </command>.</para>
+               <para>Start the daemon with <command>systemctl start <replaceable>APPLICATION</replaceable></command>.</para>
             </step>
          </procedure>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-boot-runlevel-edit">
       <title>Managing services with YaST</title>
-      <para>Basic service management can also be done with the YaST Services Manager module. It supports starting, stopping, enabling and disabling services. It also lets you show a service's status and change the default target. Start the YaST module with <menuchoice>
-            <guimenu>YaST</guimenu>
-            <guimenu>System</guimenu>
-            <guimenu>Services Manager</guimenu>
-         </menuchoice>.</para>
+      <para>Basic service management can also be done with the YaST Services Manager module. It supports starting, stopping, enabling and disabling services. It also lets you show a service's status and change the default target. Start the YaST module with <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Services Manager</guimenu></menuchoice>.</para>
       <figure xml:id="fig-yast2-runlevel">
          <title>Services Manager</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_runlevel.png" width="75%"/>
+               <imagedata fileref="media/yast2_runlevel.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_runlevel.png" width="75%"/>
+               <imagedata fileref="media/yast2_runlevel.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -954,8 +635,7 @@ WantedBy=multi-user.target<co xml:id="co-service-wrapper-target"/></screen>
          <varlistentry>
             <term>View a status messages</term>
             <listitem>
-               <para>To view the status message of a service, select it from the list and choose <guimenu>Show Details</guimenu>. The output is identical to the one generated by the command <command>systemctl</command>
-                  <option>-l</option> status <replaceable>MY_SERVICE</replaceable>.</para>
+               <para>To view the status message of a service, select it from the list and choose <guimenu>Show Details</guimenu>. The output is identical to the one generated by the command <command>systemctl</command><option>-l</option> status <replaceable>MY_SERVICE</replaceable>.</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -966,8 +646,7 @@ WantedBy=multi-user.target<co xml:id="co-service-wrapper-target"/></screen>
       <para>The following sections describe how to customize <systemitem class="daemon">systemd</systemitem> unit files.</para>
       <sect2 xml:id="systemd-unit-file-placement">
          <title>Where are unit files stored?</title>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> unit files shipped by SUSE are stored in <filename>/usr/lib/systemd/</filename>. Customized unit files and unit file <emphasis>drop-ins</emphasis> are stored in <filename>/etc/systemd/</filename>.</para>
+         <para><systemitem class="daemon">systemd</systemitem> unit files shipped by SUSE are stored in <filename>/usr/lib/systemd/</filename>. Customized unit files and unit file <emphasis>drop-ins</emphasis> are stored in <filename>/etc/systemd/</filename>.</para>
          <warning>
             <title>Preventing your customization from being overwritten</title>
             <para>When customizing <systemitem class="daemon">systemd</systemitem>, always use the directory <filename>/etc/systemd/</filename> instead of <filename>/usr/lib/systemd/</filename>. Otherwise your changes will be overwritten by the next update of <systemitem class="daemon">systemd</systemitem>.</para>
@@ -975,8 +654,7 @@ WantedBy=multi-user.target<co xml:id="co-service-wrapper-target"/></screen>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-custom-service">
          <title>Override with drop-in files</title>
-         <para>Drop-in files (or <emphasis>drop-ins</emphasis>) are partial unit files that override only specific settings of the unit file. Drop-ins have higher precedence over main configuration files. The command <command>systemctl edit <replaceable>SERVICE</replaceable>
-            </command> starts the default text editor and creates a directory with an empty <filename>override.conf</filename> file in <filename>/etc/systemd/system/<replaceable>NAME</replaceable>.service.d/</filename>. The command also ensures that the running <systemitem class="daemon">systemd</systemitem> process is notified about the changes.</para>
+         <para>Drop-in files (or <emphasis>drop-ins</emphasis>) are partial unit files that override only specific settings of the unit file. Drop-ins have higher precedence over main configuration files. The command <command>systemctl edit <replaceable>SERVICE</replaceable></command> starts the default text editor and creates a directory with an empty <filename>override.conf</filename> file in <filename>/etc/systemd/system/<replaceable>NAME</replaceable>.service.d/</filename>. The command also ensures that the running <systemitem class="daemon">systemd</systemitem> process is notified about the changes.</para>
          <para>For example, to change the amount of time that the system waits for MariaDB to start, run <command>sudo systemctl edit mariadb.service</command> and edit the opened file to include the modified lines only:</para>
          <screen>
 # Configures the time to wait for start-up/stop
@@ -986,8 +664,7 @@ TimeoutSec=300
          <para>For further information, refer to the man pages that can be evoked with the <command>man 1 systemctl</command> command.</para>
          <warning>
             <title>Creating a copy of a full unit file</title>
-            <para>If you use the <option>--full</option> option in the <command>systemctl edit --full <replaceable>SERVICE</replaceable>
-               </command> command, a copy of the original unit file is created where you can modify specific options. We do not recommend such customization because when the unit file is updated by SUSE, its changes are overridden by the customized copy in the <filename>/etc/systemd/system/</filename> directory. Moreover, if SUSE provides updates to distribution drop-ins, they override the copy of the unit file created with <option>--full</option>. To prevent this confusion and always have your customization valid, use drop-ins.</para>
+            <para>If you use the <option>--full</option> option in the <command>systemctl edit --full <replaceable>SERVICE</replaceable></command> command, a copy of the original unit file is created where you can modify specific options. We do not recommend such customization because when the unit file is updated by SUSE, its changes are overridden by the customized copy in the <filename>/etc/systemd/system/</filename> directory. Moreover, if SUSE provides updates to distribution drop-ins, they override the copy of the unit file created with <option>--full</option>. To prevent this confusion and always have your customization valid, use drop-ins.</para>
          </warning>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-custom-drop-in">
@@ -1041,24 +718,19 @@ RateLimitIntervalSec=0</screen>
             <para>The following ranges are reserved:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <literal>0-19</literal> is reserved for <systemitem class="daemon">systemd</systemitem> upstream.</para>
+                  <para><literal>0-19</literal> is reserved for <systemitem class="daemon">systemd</systemitem> upstream.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>20-29</literal> is reserved for <systemitem class="daemon">systemd</systemitem> shipped by SUSE.</para>
+                  <para><literal>20-29</literal> is reserved for <systemitem class="daemon">systemd</systemitem> shipped by SUSE.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>30-39</literal> is reserved for SUSE packages other than <systemitem class="daemon">systemd</systemitem>.</para>
+                  <para><literal>30-39</literal> is reserved for SUSE packages other than <systemitem class="daemon">systemd</systemitem>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>40-49</literal> is reserved for third-party packages.</para>
+                  <para><literal>40-49</literal> is reserved for third-party packages.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>50</literal> is reserved for unit drop-in files created with <command>systemctl set-property</command>.</para>
+                  <para><literal>50</literal> is reserved for unit drop-in files created with <command>systemctl set-property</command>.</para>
                </listitem>
             </itemizedlist>
             <para>Use a two-digit number above this range to ensure that none of the drop-ins shipped by SUSE can override your own drop-ins.</para>
@@ -1070,15 +742,11 @@ RateLimitIntervalSec=0</screen>
             <para>Because the configuration of <systemitem class="daemon">systemd</systemitem> components can be scattered across different places on the file system, it might be hard to get a global overview. To inspect the configuration of a <systemitem class="daemon">systemd</systemitem> component, use the following commands:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <command>systemctl cat <replaceable>UNIT_PATTERN</replaceable>
-                     </command> prints configuration files related to one or more <systemitem class="daemon">systemd</systemitem> units, for example:</para>
+                  <para><command>systemctl cat <replaceable>UNIT_PATTERN</replaceable></command> prints configuration files related to one or more <systemitem class="daemon">systemd</systemitem> units, for example:</para>
                   <screen><prompt>&gt;</prompt>systemctl cat atd.service</screen>
                </listitem>
                <listitem>
-                  <para>
-                     <command>systemd-analyze cat-config <replaceable>DAEMON_NAME_OR_PATH</replaceable>
-                     </command> copies the contents of a configuration file and drop-ins for a <systemitem class="daemon">systemd</systemitem> daemon, for example:</para>
+                  <para><command>systemd-analyze cat-config <replaceable>DAEMON_NAME_OR_PATH</replaceable></command> copies the contents of a configuration file and drop-ins for a <systemitem class="daemon">systemd</systemitem> daemon, for example:</para>
                   <screen><prompt>&gt;</prompt>systemd-analyze cat-config systemd/journald.conf</screen>
                </listitem>
             </itemizedlist>
@@ -1122,8 +790,7 @@ User=user
 Group=users
 StandardInput=socket
 </screen>
-         <para>For a complete list of the <systemitem class="daemon">systemd</systemitem>
-            <quote>socket</quote> and <quote>service</quote> file options, refer to the systemd.socket and systemd.service manual pages (<command>man 5 systemd.socket</command>, <command>man 5 systemd.service</command>).</para>
+         <para>For a complete list of the <systemitem class="daemon">systemd</systemitem><quote>socket</quote> and <quote>service</quote> file options, refer to the systemd.socket and systemd.service manual pages (<command>man 5 systemd.socket</command>, <command>man 5 systemd.service</command>).</para>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-custom-targets">
          <title>Creating custom targets</title>
@@ -1150,8 +817,7 @@ StandardInput=socket
       <para>The following sections cover advanced topics for system administrators. For even more advanced <systemitem class="daemon">systemd</systemitem> documentation, refer to Lennart Pöttering's series about <systemitem class="daemon">systemd</systemitem> for administrators at <link xlink:href="https://0pointer.de/blog/projects/"/>.</para>
       <sect2 xml:id="sec-boot-systemd-advanced-tmp">
          <title>Cleaning temporary directories</title>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> supports cleaning temporary directories regularly. The configuration from the previous system version is automatically migrated and active. <literal>tmpfiles.d</literal>—which is responsible for managing temporary files—reads its configuration from <filename>/etc/tmpfiles.d/*.conf</filename>, <filename>/run/tmpfiles.d/*.conf</filename>, and <filename>/usr/lib/tmpfiles.d/*.conf</filename> files. Configuration placed in <filename>/etc/tmpfiles.d/*.conf</filename> overrides related configurations from the other two directories (<filename>/usr/lib/tmpfiles.d/*.conf</filename> is where packages store their configuration files).</para>
+         <para><systemitem class="daemon">systemd</systemitem> supports cleaning temporary directories regularly. The configuration from the previous system version is automatically migrated and active. <literal>tmpfiles.d</literal>—which is responsible for managing temporary files—reads its configuration from <filename>/etc/tmpfiles.d/*.conf</filename>, <filename>/run/tmpfiles.d/*.conf</filename>, and <filename>/usr/lib/tmpfiles.d/*.conf</filename> files. Configuration placed in <filename>/etc/tmpfiles.d/*.conf</filename> overrides related configurations from the other two directories (<filename>/usr/lib/tmpfiles.d/*.conf</filename> is where packages store their configuration files).</para>
          <para>The configuration format is one line per path containing action and path, and optionally mode, ownership, age and argument fields, depending on the action. The following example unlinks the X11 lock files:</para>
          <screen>Type Path               Mode UID  GID  Age Argument
 r    /tmp/.X[0-9]*-lock</screen>
@@ -1169,8 +835,7 @@ Apr 09 15:30:36 jupiter systemd[1]: Started Daily Cleanup of Temporary Directori
       </sect2>
       <sect2 xml:id="sec-boot-systemd-advanced-logging">
          <title>System log</title>
-         <para>
-            <xref linkend="sec-boot-systemd-basics-services-debugging"/> explains how to view log messages for a given service. However, displaying log messages is not restricted to service logs. You can also access and query the complete log messages written by <systemitem class="daemon">systemd</systemitem>—the so-called <quote>Journal</quote>. Use the command <command>journalctl</command> to display the complete log messages starting with the oldest entries. Refer to <command>man 1 journalctl</command> for options such as applying filters or changing the output format.</para>
+         <para><xref linkend="sec-boot-systemd-basics-services-debugging"/> explains how to view log messages for a given service. However, displaying log messages is not restricted to service logs. You can also access and query the complete log messages written by <systemitem class="daemon">systemd</systemitem>—the so-called <quote>Journal</quote>. Use the command <command>journalctl</command> to display the complete log messages starting with the oldest entries. Refer to <command>man 1 journalctl</command> for options such as applying filters or changing the output format.</para>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-advanced-snapshots">
          <title>Snapshots</title>
@@ -1258,8 +923,7 @@ WantedBy=multi-user.target
       <sect2 xml:id="sec-boot-systemd-advanced-cgroups">
          <title>Kernel control groups (cgroups)</title>
          <para>On a traditional System V init system, it is not always possible to match a process to the service that spawned it. Certain services, such as Apache, spawn a lot of third-party processes (for example, CGI or Java processes), which themselves spawn more processes. This makes a clear assignment difficult or even impossible. Additionally, a service may not finish correctly, leaving certain children alive.</para>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> solves this problem by placing each service into its own cgroup. cgroups are a kernel feature that allows aggregating processes and all their children into hierarchical organized groups. <systemitem class="daemon">systemd</systemitem> names each cgroup after its service. Since a non-privileged process is not allowed to <quote>leave</quote> its cgroup, this provides an effective way to label all processes spawned by a service with the name of the service.</para>
+         <para><systemitem class="daemon">systemd</systemitem> solves this problem by placing each service into its own cgroup. cgroups are a kernel feature that allows aggregating processes and all their children into hierarchical organized groups. <systemitem class="daemon">systemd</systemitem> names each cgroup after its service. Since a non-privileged process is not allowed to <quote>leave</quote> its cgroup, this provides an effective way to label all processes spawned by a service with the name of the service.</para>
          <para>To list all processes belonging to a service, use the command <command>systemd-cgls</command>, for example:</para>
          <example>
             <title>List all processes belonging to a service</title>
@@ -1289,20 +953,17 @@ WantedBy=multi-user.target
 
 [...]</screen>
          </example>
-         <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-            <xref linkend="cha-tuning-cgroups" xrefstyle="%label &#34;%c&#34;"/> for more information about cgroups.</para>
+         <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-cgroups" xrefstyle="%label &#34;%c&#34;"/> for more information about cgroups.</para>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-advanced-kill">
          <title>Terminating services (sending signals)</title>
          <para>As explained in <xref linkend="sec-boot-systemd-advanced-cgroups"/>, it is not always possible to assign a process to its parent service process in a System V init system. This makes it difficult to stop a service and its children. Child processes that have not been terminated remain as zombie processes.</para>
-         <para>
-            <systemitem class="daemon">systemd</systemitem>'s concept of confining each service into a cgroup makes it possible to identify all child processes of a service and therefore allows you to send a signal to each of these processes. Use <command>systemctl kill</command> to send signals to services. For a list of available signals refer to <command>man 7 signals</command>.</para>
+         <para><systemitem class="daemon">systemd</systemitem>'s concept of confining each service into a cgroup makes it possible to identify all child processes of a service and therefore allows you to send a signal to each of these processes. Use <command>systemctl kill</command> to send signals to services. For a list of available signals refer to <command>man 7 signals</command>.</para>
          <variablelist>
             <varlistentry>
                <term>Sending <systemitem>SIGTERM</systemitem> to a service</term>
                <listitem>
-                  <para>
-                     <systemitem>SIGTERM</systemitem> is the default signal that is sent.</para>
+                  <para><systemitem>SIGTERM</systemitem> is the default signal that is sent.</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> systemctl kill <replaceable>MY_SERVICE</replaceable></screen>
                </listitem>
             </varlistentry>
@@ -1334,14 +995,12 @@ WantedBy=multi-user.target
       <sect2 xml:id="sec-boot-systemd-basics-services-debugging">
          <title>Debugging services</title>
          <para>By default, <systemitem class="daemon">systemd</systemitem> is not overly verbose. If a service was started successfully, no output is produced. In case of a failure, a short error message is displayed. However, <command>systemctl status</command> provides a means to debug the start-up and operation of a service.</para>
-         <para>
-            <systemitem class="daemon">systemd</systemitem> comes with its own logging mechanism (<quote>The Journal</quote>) that logs system messages. This allows you to display the service messages together with status messages. The <command>status</command> command works similar to <command>tail</command> and can also display the log messages in different formats, making it a powerful debugging tool.</para>
+         <para><systemitem class="daemon">systemd</systemitem> comes with its own logging mechanism (<quote>The Journal</quote>) that logs system messages. This allows you to display the service messages together with status messages. The <command>status</command> command works similar to <command>tail</command> and can also display the log messages in different formats, making it a powerful debugging tool.</para>
          <variablelist>
             <varlistentry>
                <term>Show service start-up failure</term>
                <listitem>
-                  <para>Whenever a service fails to start, use <command>systemctl status <replaceable>MY_SERVICE</replaceable>
-                     </command> to get a detailed error message:</para>
+                  <para>Whenever a service fails to start, use <command>systemctl status <replaceable>MY_SERVICE</replaceable></command> to get a detailed error message:</para>
                   <screen><prompt role="root">#</prompt>systemctl start apache2
 Job failed. See system journal and 'systemctl status' for details.
 <prompt role="root">#</prompt>systemctl status apache2
@@ -1357,8 +1016,7 @@ Apr 04 16:52:26 g144 start_apache2[3088]: httpd2-prefork: Syntax error on line
             <varlistentry>
                <term>Show last <replaceable>N</replaceable> service messages</term>
                <listitem>
-                  <para>The default behavior of the <command>status</command> subcommand is to display the last ten messages a service issued. To change the number of messages to show, use the <option>--lines=<replaceable>N</replaceable>
-                     </option> parameter:</para>
+                  <para>The default behavior of the <command>status</command> subcommand is to display the last ten messages a service issued. To change the number of messages to show, use the <option>--lines=<replaceable>N</replaceable></option> parameter:</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> systemctl status chronyd
 <prompt>&gt;</prompt><command>sudo</command> systemctl --lines=20 status chronyd</screen>
                </listitem>
@@ -1366,16 +1024,14 @@ Apr 04 16:52:26 g144 start_apache2[3088]: httpd2-prefork: Syntax error on line
             <varlistentry>
                <term>Show service messages in append mode</term>
                <listitem>
-                  <para>To display a <quote>live stream</quote> of service messages, use the <option>--follow</option> option, which works like <command>tail</command>
-                     <option>-f</option>:</para>
+                  <para>To display a <quote>live stream</quote> of service messages, use the <option>--follow</option> option, which works like <command>tail</command><option>-f</option>:</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> systemctl --follow status chronyd</screen>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Messages output format</term>
                <listitem>
-                  <para>The <option>--output=<replaceable>MODE</replaceable>
-                     </option> parameter allows you to change the output format of service messages. The most important modes available are:</para>
+                  <para>The <option>--output=<replaceable>MODE</replaceable></option> parameter allows you to change the output format of service messages. The most important modes available are:</para>
                   <variablelist>
                      <varlistentry>
                         <term>
@@ -1425,8 +1081,7 @@ Apr 04 16:52:26 g144 start_apache2[3088]: httpd2-prefork: Syntax error on line
             <para>Time units are logged to the <systemitem class="daemon">systemd</systemitem> journal, which makes it easier to monitor and troubleshoot them.</para>
          </listitem>
       </itemizedlist>
-      <para>
-         <systemitem class="daemon">systemd</systemitem> timer units are identified by the <literal>.timer</literal> file name extension.</para>
+      <para><systemitem class="daemon">systemd</systemitem> timer units are identified by the <literal>.timer</literal> file name extension.</para>
       <sect2 xml:id="sec-boot-systemd-timer-types">
          <title>
             <systemitem class="daemon">systemd</systemitem> timer types</title>
@@ -1497,9 +1152,7 @@ OnCalendar=Sat,Sun 22:00</screen>
          <varlistentry>
             <term>Homepage</term>
             <listitem>
-               <para>
-                  <link xlink:href="https://systemd.io/"/>
-               </para>
+               <para><link xlink:href="https://systemd.io/"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>

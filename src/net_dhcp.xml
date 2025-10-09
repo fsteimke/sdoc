@@ -11,7 +11,7 @@
          <para>The purpose of the <emphasis>Dynamic Host Configuration Protocol</emphasis> (DHCP) is to assign network settings centrally (from a server) rather than configuring them locally on every workstation. A host configured to use DHCP does not have control over its own static address. It is enabled to configure itself automatically according to directions from the server. If you use the NetworkManager on the client side, you do not need to configure the client. This is useful if you have changing environments and only one interface active at a time. Never use NetworkManager on a machine that runs a DHCP server.</para>
       </abstract>
    </info>
-   <tip>
+   <tip arch="zseries">
       <title>IBM Z: DHCP support</title>
       <para>On IBM Z platforms, DHCP only works on interfaces using the OSA and OSA Express network cards. These cards are the only ones with a MAC, which is required for the DHCP autoconfiguration features.</para>
    </tip>
@@ -21,18 +21,11 @@
    <para>A DHCP server supplies not only the IP address and the netmask, but also the host name, domain name, gateway and name server addresses for the client to use. Besides that, DHCP allows several parameters to be configured in a centralized way, for example, a time server from which clients may poll the current time or even a print server.</para>
    <sect1 xml:id="sec-dhcp-yast">
       <title>Configuring a DHCP server with YaST</title>
-      <para>To install a DHCP server, start YaST and select <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Software Management</guimenu>
-         </menuchoice>. Choose <menuchoice>
-            <guimenu>Filter</guimenu>
-            <guimenu>Patterns</guimenu>
-         </menuchoice> and select <guimenu>DHCP and DNS Server</guimenu>. Confirm the installation of the dependent packages to finish the installation process.</para>
+      <para>To install a DHCP server, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>. Choose <menuchoice><guimenu>Filter</guimenu><guimenu>Patterns</guimenu></menuchoice> and select <guimenu>DHCP and DNS Server</guimenu>. Confirm the installation of the dependent packages to finish the installation process.</para>
       <important>
          <title>LDAP support</title>
          <para>The YaST DHCP module can be set up to store the server configuration locally (on the host that runs the DHCP server) or to have its configuration data managed by an LDAP server. To use LDAP, set up your LDAP environment before configuring the DHCP server.</para>
-         <para>For more information about LDAP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="cha-security-ldap" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information about LDAP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-ldap" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </important>
       <para>The YaST DHCP module (<systemitem>yast2-dhcp-server</systemitem>) allows you to set up your own DHCP server for the local network. The module can run in wizard mode or expert configuration mode.</para>
       <sect2 xml:id="sec-dhcp-yast-init">
@@ -57,18 +50,17 @@
                <note>
                   <title>DHCP and <command>firewalld</command>
                   </title>
-                  <para>The option <guimenu>Open Firewall for Selected Interfaces</guimenu> does not (yet) support <command>firewalld</command> in <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                     <phrase role="productnumber">15 SP7</phrase>. To manually open the DHCP port, run</para>
+                  <para>The option <guimenu>Open Firewall for Selected Interfaces</guimenu> does not (yet) support <command>firewalld</command> in <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>. To manually open the DHCP port, run</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --zone=public --permanent --add-service=dhcp</command><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --reload</command></screen>
                </note>
                <figure xml:id="fig-yast2-dhcp-wiz1">
                   <title>DHCP server: card selection</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz1.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz1.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz1.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz1.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -79,10 +71,10 @@
                   <title>DHCP server: global settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz2.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz2.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz2.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz2.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -93,10 +85,10 @@
                   <title>DHCP server: dynamic DHCP</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz3.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz3.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz3.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz3.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -110,10 +102,10 @@
                   <title>DHCP server: start-up</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_start.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_start.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_start.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_start.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -124,10 +116,10 @@
                   <title>DHCP server: host management</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_statdhcp.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_statdhcp.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dhcp_statdhcp.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dhcp_statdhcp.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -146,10 +138,10 @@
                      <title>DHCP server: chroot jail and declarations</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_chroot.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_chroot.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_chroot.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_chroot.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -163,10 +155,10 @@
                      <title>DHCP server: selecting a declaration type</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_newdec.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_newdec.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_newdec.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_newdec.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -180,10 +172,10 @@
                      <title>DHCP server: configuring subnets</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_sub.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_sub.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_sub.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_sub.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -197,10 +189,10 @@
                      <title>DHCP server: TSIG configuration</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_tsig.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_tsig.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_tsig.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_tsig.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -214,10 +206,10 @@
                      <title>DHCP server: interface configuration for dynamic DNS</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_dyndns.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_dyndns.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_dyndns.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_dyndns.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -231,10 +223,7 @@
             <varlistentry>
                <term>Network interface configuration</term>
                <listitem>
-                  <para>To define the interfaces the DHCP server should listen to and to adjust the firewall configuration, select <menuchoice>
-                        <guimenu>Advanced</guimenu>
-                        <guimenu>Interface Configuration</guimenu>
-                     </menuchoice> from the expert configuration dialog. From the list of interfaces displayed, select one or more that should be attended by the DHCP server. If clients in all subnets need to be able to communicate with the server and the server host also runs a firewall, adjust the firewall accordingly. <!-- cwickert 2018-08-30: FIXME broken in SLE/Leap 15 due to firewalld.
+                  <para>To define the interfaces the DHCP server should listen to and to adjust the firewall configuration, select <menuchoice><guimenu>Advanced</guimenu><guimenu>Interface Configuration</guimenu></menuchoice> from the expert configuration dialog. From the list of interfaces displayed, select one or more that should be attended by the DHCP server. If clients in all subnets need to be able to communicate with the server and the server host also runs a firewall, adjust the firewall accordingly. <!-- cwickert 2018-08-30: FIXME broken in SLE/Leap 15 due to firewalld.
         See BSC#1097952, BSC#1083099, and others.
         Once this has been fixed, uncomment the following and remove the note
        --><!--
@@ -247,18 +236,17 @@
                   <note>
                      <title>DHCP and <command>firewalld</command>
                      </title>
-                     <para>The option <guimenu>Open Firewall for Selected Interfaces</guimenu> does not (yet) support <command>firewalld</command> in <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                        <phrase role="productnumber">15 SP7</phrase>. To manually open the DHCP port, run</para>
+                     <para>The option <guimenu>Open Firewall for Selected Interfaces</guimenu> does not (yet) support <command>firewalld</command> in <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>. To manually open the DHCP port, run</para>
                      <screen><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --zone=public --permanent --add-service=dhcp</command><prompt>&gt;</prompt><command>sudo</command><command>firewall-cmd --reload</command></screen>
                   </note>
                   <figure xml:id="fig-yast2-dhcp-fire">
                      <title>DHCP server: network interface and firewall</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_fire.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_fire.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="75%" fileref="media/yast2_dhcp_fire.png"/>
+                           <imagedata width="69%" fileref="media/yast2_dhcp_fire.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -320,14 +308,12 @@ subnet 192.168.2.0 netmask 255.255.255.0
          </listitem>
       </itemizedlist>
       <para>The last section of the file defines a network, including a subnet mask. To finish, specify the address range that the DHCP daemon should use to assign IP addresses to interested clients. In <xref linkend="dat-dhcp-conf"/>, clients may be given any address between <literal>192.168.2.10</literal> and <literal>192.168.2.20</literal> or <literal>192.168.2.100</literal> and <literal>192.168.2.200</literal>.</para>
-      <para>After editing these few lines, you should be able to activate the DHCP daemon with the command <command>systemctl start dhcpd</command>. It will be ready for use immediately. Use the command <command>rcdhcpd</command> <option>check-syntax</option>
-         <!--taroth 2014-02-13: systemd - this command is going to stay according to a
+      <para>After editing these few lines, you should be able to activate the DHCP daemon with the command <command>systemctl start dhcpd</command>. It will be ready for use immediately. Use the command <command>rcdhcpd</command> <option>check-syntax</option><!--taroth 2014-02-13: systemd - this command is going to stay according to a
     discussion with Marius (mt): "Could you open a bug for me, that rcdhcpd /
     rcdhcp6 currently does not support the "check-syntax" action (referring to
     bnc#861124)? I'd submit the required scripts ASAP then and you can keep
     the text" - see also
-    http://bugzilla.suse.com/show_bug.cgi?id=868713-->
-         <!--ke 2014-05-14: mt implemented it as promised.--> to perform a brief syntax check. If you encounter any unexpected problems with your configuration (the server aborts with an error or does not return <literal>done</literal> on start), you should be able to find out what has gone wrong by looking for information either in the main system log that can be queried with the command <command>journalctl</command> (see <xref linkend="cha-journalctl"/> for more information).</para>
+    http://bugzilla.suse.com/show_bug.cgi?id=868713--><!--ke 2014-05-14: mt implemented it as promised.--> to perform a brief syntax check. If you encounter any unexpected problems with your configuration (the server aborts with an error or does not return <literal>done</literal> on start), you should be able to find out what has gone wrong by looking for information either in the main system log that can be queried with the command <command>journalctl</command> (see <xref linkend="cha-journalctl"/> for more information).</para>
       <para>On a default <phrase role="productname">SUSE Linux Enterprise Server</phrase> system, the DHCP daemon is started in a chroot environment for security reasons. The configuration files must be copied to the chroot environment so the daemon can find them. Normally, there is no need to worry about this because the command <command>systemctl start dhcpd</command> automatically copies the files.</para>
       <sect2 xml:id="sec-dhcp-statip">
          <title>Clients with fixed IP addresses</title>
@@ -340,9 +326,7 @@ hardware ethernet 00:30:6E:08:EC:80;
 fixed-address 192.168.2.100;
 }</screen>
          </example>
-         <para>The name of the respective client (<literal>host</literal>
-            <replaceable>HOSTNAME</replaceable>, here <systemitem>jupiter</systemitem>) is entered in the first line and the MAC address in the second line. On Linux hosts, find the MAC address with the command <command>ip</command>
-            <option>link show</option> followed by the network device (for example, <literal>eth0</literal>). The output should contain something like</para>
+         <para>The name of the respective client (<literal>host</literal><replaceable>HOSTNAME</replaceable>, here <systemitem>jupiter</systemitem>) is entered in the first line and the MAC address in the second line. On Linux hosts, find the MAC address with the command <command>ip</command><option>link show</option> followed by the network device (for example, <literal>eth0</literal>). The output should contain something like</para>
          <screen>link/ether 00:30:6E:08:EC:80</screen>
          <para>In the preceding example, a client with a network card having the MAC address <literal>00:30:6E:08:EC:80</literal> is assigned the IP address <systemitem class="ipaddress">192.168.2.100</systemitem> and the host name <literal>jupiter</literal> automatically. The type of hardware to enter is <literal>ethernet</literal> in nearly all cases, although <literal>token-ring</literal>, which is often found on IBM systems, is also supported.</para>
       </sect2>
@@ -353,24 +337,16 @@ fixed-address 192.168.2.100;
          <para>To enable dhcpd to resolve host names even from within the chroot environment, the following configuration files must be copied as well:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <filename>/etc/localtime</filename>
-               </para>
+               <para><filename>/etc/localtime</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/etc/host.conf</filename>
-               </para>
+               <para><filename>/etc/host.conf</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/etc/hosts</filename>
-               </para>
+               <para><filename>/etc/hosts</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/var/run/netconfig/resolv.conf</filename>
-               </para>
+               <para><filename>/var/run/netconfig/resolv.conf</filename></para>
             </listitem>
          </itemizedlist>
          <para>These files are copied to <filename>/var/lib/dhcp/etc/</filename> when starting the init script. Take these copies into account for any changes that they require if they are dynamically modified by scripts like <filename>/etc/ppp/ip-up</filename>. However, there should be no need to worry about this if the configuration file only specifies IP addresses (instead of host names).</para>

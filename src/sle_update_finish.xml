@@ -21,10 +21,7 @@
       <para>For a list of unneeded packages, run:</para>
       <screen><prompt>&gt;</prompt><command>zypper packages --unneeded</command></screen>
       <tip>
-         <para>To avoid unneeded packages, use <command>zypper rm</command> with the <option>--clean-deps</option> option or YaST with <menuchoice>
-               <guimenu>Options</guimenu>
-               <guimenu>Clean up when deleting packages</guimenu>
-            </menuchoice> enabled.</para>
+         <para>To avoid unneeded packages, use <command>zypper rm</command> with the <option>--clean-deps</option> option or YaST with <menuchoice><guimenu>Options</guimenu><guimenu>Clean up when deleting packages</guimenu></menuchoice> enabled.</para>
       </tip>
       <para>You can combine both lists into one:</para>
       <screen><prompt>&gt;</prompt><command>zypper packages --orphaned --unneeded</command></screen>
@@ -50,16 +47,14 @@
    <!-- SLE-23641 -->
    <sect1 xml:id="sec-upgrade-finish-python3">
       <title>Enable the <literal>Python 3</literal> module</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 uses Python 3.6 by default. Python 3.9 was added in <phrase role="productname">SLES</phrase> 15 SP3 as a more recent alternative. This version is no longer supported as of <phrase role="productname">SLES</phrase> 15 SP4. Instead, recent Python versions with important updates and security fixes are available through the <literal>Python 3</literal> module.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 uses Python 3.6 by default. Python 3.9 was added in <phrase role="productname">SLES</phrase> 15 SP3 as a more recent alternative. This version is no longer supported as of <phrase role="productname">SLES</phrase> 15 SP4. Instead, recent Python versions with important updates and security fixes are available through the <literal>Python 3</literal> module.</para>
       <para>If you installed Python 3.9 under <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP3, enable the <literal>Python 3</literal> module with:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>SUSEConnect -p sle-module-python3/15.7/<replaceable>x86_64</replaceable></command>.</screen>
       <para>Alternatively, you can return to the default Python version by removing 3.9 with <command>zypper remove -u python39</command>.</para>
    </sect1>
    <sect1 xml:id="sec-upgrade-finish-xfs4">
       <title>Reformat XFS v4 devices</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the <quote>on-disk format</quote> (v5) of the XFS file system. The main advantages of this format are automatic checksums of all XFS metadata, file type support, and support for a larger number of access control lists for a file.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports the <quote>on-disk format</quote> (v5) of the XFS file system. The main advantages of this format are automatic checksums of all XFS metadata, file type support, and support for a larger number of access control lists for a file.</para>
       <para>Note that this format is not supported by SUSE Linux Enterprise kernels older than version 3.12, by <literal>xfsprogs</literal> older than version 3.2.0, and GRUB 2 versions released before SUSE Linux Enterprise 12.</para>
       <important>
          <title>V4 is deprecated</title>

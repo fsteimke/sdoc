@@ -7,8 +7,7 @@
          xml:id="cha-qemu-monitor">
    <title>Virtual machine administration using QEMU monitor</title>
    <info/>
-   <para>When a virtual machine is invoked by the <command>qemu-system-<replaceable>ARCH</replaceable>
-      </command> command, for example <command>qemu-system-x86_64</command>, a monitor console is provided for performing interaction with the user. Using the commands available in the monitor console, it is possible to inspect the running operating system, change removable media, take screenshots or audio grabs and control other aspects of the virtual machine.</para>
+   <para>When a virtual machine is invoked by the <command>qemu-system-<replaceable>ARCH</replaceable></command> command, for example <command>qemu-system-x86_64</command>, a monitor console is provided for performing interaction with the user. Using the commands available in the monitor console, it is possible to inspect the running operating system, change removable media, take screenshots or audio grabs and control other aspects of the virtual machine.</para>
    <note>
       <para>The following sections list selected useful QEMU monitor commands and their purpose. To get the full list, enter <command>help</command> in the QEMU monitor command line.</para>
    </note>
@@ -17,22 +16,12 @@
       <tip>
          <title>No monitor console for <systemitem class="library">libvirt</systemitem>
          </title>
-         <para>You can access the monitor console only if you started the virtual machine directly with the <command>qemu-system-<replaceable>ARCH</replaceable>
-            </command> command and are viewing its graphical output in a built-in QEMU window.</para>
+         <para>You can access the monitor console only if you started the virtual machine directly with the <command>qemu-system-<replaceable>ARCH</replaceable></command> command and are viewing its graphical output in a built-in QEMU window.</para>
          <para>If you started the virtual machine with <systemitem class="library">libvirt</systemitem>, for example, using <command>virt-manager</command>, and are viewing its output via VNC or Spice sessions, you cannot access the monitor console directly. You can, however, send the monitor command to the virtual machine via <command>virsh</command>:</para>
          <screen><prompt role="root">#</prompt>virsh qemu-monitor-command <replaceable>COMMAND</replaceable></screen>
       </tip>
-      <para>The way you access the monitor console depends on which display device you use to view the output of a virtual machine. Find more details about displays in <xref linkend="cha-qemu-running-devices-graphic-display"/>. For example, to view the monitor while the <option>-display gtk</option> option is in use, press <keycombo>
-            <keycap function="control"/>
-            <keycap function="alt"/>
-            <keycap>2</keycap>
-         </keycombo>. Similarly, when the <option>-nographic</option> option is in use, you can switch to the monitor console by pressing the following key combination: <keycombo>
-            <keycap function="control"/>
-            <keycap>A</keycap>
-         </keycombo>
-         <keycap>C</keycap>.</para>
-      <para>To get help while using the console, use <command>help</command> or <command>?</command>. To get help for a specific command, use <command>help</command>
-         <replaceable>COMMAND</replaceable>.</para>
+      <para>The way you access the monitor console depends on which display device you use to view the output of a virtual machine. Find more details about displays in <xref linkend="cha-qemu-running-devices-graphic-display"/>. For example, to view the monitor while the <option>-display gtk</option> option is in use, press <keycombo><keycap function="control"/><keycap function="alt"/><keycap>2</keycap></keycombo>. Similarly, when the <option>-nographic</option> option is in use, you can switch to the monitor console by pressing the following key combination: <keycombo><keycap function="control"/><keycap>A</keycap></keycombo><keycap>C</keycap>.</para>
+      <para>To get help while using the console, use <command>help</command> or <command>?</command>. To get help for a specific command, use <command>help</command><replaceable>COMMAND</replaceable>.</para>
    </sect1>
    <sect1 xml:id="sec-qemu-monitor-get">
       <title>Getting information about the guest system</title>
@@ -375,22 +364,15 @@ Bus  0, device   4, function 0:
       <tip>
          <para>Devices added with the <command>device_add</command> command can be removed from the guest with <command>device_del</command>. Enter <command>help device_del</command> on the QEMU monitor command line for more information.</para>
       </tip>
-      <para>To release the device or file connected to the removable media device, use the <command>eject</command>
-         <replaceable>DEVICE</replaceable> command. Use the optional <option>-f</option> to force ejection.</para>
-      <para>To change removable media (like CD-ROMs), use the <command>change</command>
-         <replaceable>DEVICE</replaceable> command. The name of the removable media can be determined using the <command>info block</command> command:</para>
+      <para>To release the device or file connected to the removable media device, use the <command>eject</command><replaceable>DEVICE</replaceable> command. Use the optional <option>-f</option> to force ejection.</para>
+      <para>To change removable media (like CD-ROMs), use the <command>change</command><replaceable>DEVICE</replaceable> command. The name of the removable media can be determined using the <command>info block</command> command:</para>
       <screen><prompt>(qemu)</prompt><command>info block</command>
 ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
 <prompt>(qemu)</prompt><command>change ide1-cd0 /path/to/image</command></screen>
    </sect1>
    <sect1 xml:id="sec-qemu-monitor-keyboard">
       <title>Controlling keyboard and mouse</title>
-      <para>It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts certain key combinations at low level (such as <keycombo>
-            <keycap function="control"/>
-            <keycap function="alt"/>
-            <keycap>F1</keycap>
-         </keycombo> in X Window Syustem), you can still enter them using the <command>sendkey</command>
-         <replaceable>KEYS</replaceable>:</para>
+      <para>It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts certain key combinations at low level (such as <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo> in X Window Syustem), you can still enter them using the <command>sendkey</command><replaceable>KEYS</replaceable>:</para>
       <screen>sendkey ctrl-alt-f1</screen>
       <para>To list the key names used in the <replaceable>KEYS</replaceable> option, enter <command>sendkey</command> and press <keycap function="tab"/>.</para>
       <para>To control the mouse, the following commands can be used:</para>
@@ -429,8 +411,7 @@ ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
       <para>If the virtual machine was started with the <option>-balloon virtio</option> option (the paravirtualized balloon device is therefore enabled), you can change the available memory dynamically. For more information about enabling the balloon device, see <xref linkend="cha-qemu-guest-inst-qemu-kvm"/>.</para>
       <para>To get information about the balloon device in the monitor console and to determine whether the device is enabled, use the <command>info balloon</command> command:</para>
       <screen>(qemu) info balloon</screen>
-      <para>If the balloon device is enabled, use the <command>balloon</command>
-         <replaceable>MEMORY_IN_MB</replaceable> command to set the requested amount of memory:</para>
+      <para>If the balloon device is enabled, use the <command>balloon</command><replaceable>MEMORY_IN_MB</replaceable> command to set the requested amount of memory:</para>
       <screen>(qemu) balloon 400</screen>
    </sect1>
    <sect1 xml:id="sec-qemu-monitor-virt-memory">
@@ -445,8 +426,7 @@ ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
                <replaceable>FILENAME</replaceable>
             </term>
             <listitem>
-               <para>Saves virtual memory dump starting at <replaceable>ADDR</replaceable> of size <replaceable>SIZE</replaceable> to file <replaceable>FILENAME</replaceable>
-               </para>
+               <para>Saves virtual memory dump starting at <replaceable>ADDR</replaceable> of size <replaceable>SIZE</replaceable> to file <replaceable>FILENAME</replaceable></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -465,11 +445,7 @@ ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
                <replaceable>ADDR</replaceable>
             </term>
             <listitem>
-               <para>Makes a virtual memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal>
-                     <replaceable>COUNT</replaceable>
-                     <replaceable>FORMAT</replaceable>
-                     <replaceable>SIZE</replaceable>
-                  </literal>:</para>
+               <para>Makes a virtual memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal>:</para>
                <para>The <replaceable>COUNT</replaceable> parameter is the number of items to be dumped.</para>
                <para>The <replaceable>FORMAT</replaceable> can be <literal>x</literal> (hex), <literal>d</literal> (signed decimal), <literal>u</literal> (unsigned decimal), <literal>o</literal> (octal), <literal>c</literal> (char) or <literal>i</literal> (assembly instruction).</para>
                <para>The <replaceable>SIZE</replaceable> parameter can be <literal>b</literal> (8 bits), <literal>h</literal> (16 bits), <literal>w</literal> (32 bits) or <literal>g</literal> (64 bits). On x86, <literal>h</literal> or <literal>w</literal> can be specified with the <literal>i</literal> format to respectively select 16 or 32-bit code instruction size.</para>
@@ -480,11 +456,7 @@ ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
                <replaceable>ADDR</replaceable>
             </term>
             <listitem>
-               <para>Makes a physical memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal>
-                     <replaceable>COUNT</replaceable>
-                     <replaceable>FORMAT</replaceable>
-                     <replaceable>SIZE</replaceable>
-                  </literal>:</para>
+               <para>Makes a physical memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal>:</para>
                <para>The <replaceable>COUNT</replaceable> parameter is the number of the items to be dumped.</para>
                <para>The <replaceable>FORMAT</replaceable> can be <literal>x</literal> (hex), <literal>d</literal> (signed decimal), <literal>u</literal> (unsigned decimal), <literal>o</literal> (octal), <literal>c</literal> (char) or <literal>i</literal> (asm instruction).</para>
                <para>The <replaceable>SIZE</replaceable> parameter can be <literal>b</literal> (8 bits), <literal>h</literal> (16 bits), <literal>w</literal> (32 bits) or <literal>g</literal> (64 bits). On x86, <literal>h</literal> or <literal>w</literal> can be specified with the<literal>i</literal> format to respectively select 16 or 32-bit code instruction size.</para>
@@ -495,8 +467,7 @@ ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device
    <sect1 xml:id="sec-qemu-monitor-snapshots">
       <title>Managing virtual machine snapshots</title>
       <para>Managing snapshots in QEMU monitor is not supported by SUSE yet. The information found in this section may be helpful in specific cases.</para>
-      <para>
-         <xref linkend="gloss-vt-vm"/> snapshots are snapshots of the complete virtual machine including the state of CPU, RAM and the content of all writable disks. To use virtual machine snapshots, you must have at least one non-removable and writable block device using the <literal>qcow2</literal> disk image format.</para>
+      <para><xref linkend="gloss-vt-vm"/> snapshots are snapshots of the complete virtual machine including the state of CPU, RAM and the content of all writable disks. To use virtual machine snapshots, you must have at least one non-removable and writable block device using the <literal>qcow2</literal> disk image format.</para>
       <para>Snapshots are helpful when you need to save your virtual machine in a particular state. For example, after you have configured network services on a virtualized server and want to quickly start the virtual machine in the same state that was saved last. You can also create a snapshot after the virtual machine has been powered off to create a backup state before you try something experimental and make VM Guest unstable. This section introduces the former case, while the latter is described in <xref linkend="cha-qemu-guest-inst-qemu-img-snapshots"/>.</para>
       <para>The following commands are available for managing snapshots in QEMU monitor:</para>
       <variablelist>
@@ -618,35 +589,30 @@ ID<co xml:id="co-qemu-monitor-snapshot-l-id"/>      TAG<co xml:id="co-qemu-monit
             <para>Live migration is only possible between VM Host Servers with the same CPU features.</para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="gloss-vt-storage-ahci"/> interface, <xref linkend="gloss-vt-virtfs"/> feature, and the <option>-mem-path</option> command line option are not compatible with migration.</para>
+            <para><xref linkend="gloss-vt-storage-ahci"/> interface, <xref linkend="gloss-vt-virtfs"/> feature, and the <option>-mem-path</option> command line option are not compatible with migration.</para>
          </listitem>
          <listitem>
             <para>The guest on the source and destination hosts must be started in the same way.</para>
          </listitem>
          <listitem>
-            <para>
-               <option>-snapshot</option> qemu command line option should not be used for migration (and this <command>qemu</command> command line option is not supported).</para>
+            <para><option>-snapshot</option> qemu command line option should not be used for migration (and this <command>qemu</command> command line option is not supported).</para>
          </listitem>
       </itemizedlist>
       <important>
          <title>Support status</title>
          <para>The <literal>postcopy</literal> mode is not yet supported in <phrase role="productname">SUSE Linux Enterprise Server</phrase>. It is released as a technology preview only. For more information about <literal>postcopy</literal>, see <link xlink:href="https://wiki.qemu.org/Features/PostCopyLiveMigration"/>.</para>
       </important>
-      <para>More recommendations can be found at the following Web site: <link xlink:href="https://www.linux-kvm.org/page/Migration"/>
-      </para>
+      <para>More recommendations can be found at the following Web site: <link xlink:href="https://www.linux-kvm.org/page/Migration"/></para>
       <para>The live migration process has the following steps:</para>
       <procedure>
          <step>
             <para>The virtual machine instance is running on the source host.</para>
          </step>
          <step>
-            <para>The virtual machine is started on the destination host in the frozen listening mode. The parameters used are the same as on the source host plus the <option>-incoming tcp:<replaceable>IP</replaceable>:<replaceable>PORT</replaceable>
-               </option> parameter, where <replaceable>IP</replaceable> specifies the IP address and <replaceable>PORT</replaceable> specifies the port for listening to the incoming migration. If 0 is set as IP address, the virtual machine listens on all interfaces.</para>
+            <para>The virtual machine is started on the destination host in the frozen listening mode. The parameters used are the same as on the source host plus the <option>-incoming tcp:<replaceable>IP</replaceable>:<replaceable>PORT</replaceable></option> parameter, where <replaceable>IP</replaceable> specifies the IP address and <replaceable>PORT</replaceable> specifies the port for listening to the incoming migration. If 0 is set as IP address, the virtual machine listens on all interfaces.</para>
          </step>
          <step>
-            <para>On the source host, switch to the monitor console and use the <command>migrate -d tcp:</command>
-               <replaceable>DESTINATION_IP</replaceable>:<replaceable>PORT</replaceable> command to initiate the migration.</para>
+            <para>On the source host, switch to the monitor console and use the <command>migrate -d tcp:</command><replaceable>DESTINATION_IP</replaceable>:<replaceable>PORT</replaceable> command to initiate the migration.</para>
          </step>
          <step>
             <para>To determine the state of the migration, use the <command>info migrate</command> command in the monitor console on the source host.</para>
@@ -655,12 +621,10 @@ ID<co xml:id="co-qemu-monitor-snapshot-l-id"/>      TAG<co xml:id="co-qemu-monit
             <para>To cancel the migration, use the <command>migrate_cancel</command> command in the monitor console on the source host.</para>
          </step>
          <step>
-            <para>To set the maximum tolerable downtime for migration in seconds, use the <command>migrate_set_downtime</command>
-               <replaceable>NUMBER_OF_SECONDS</replaceable> command.</para>
+            <para>To set the maximum tolerable downtime for migration in seconds, use the <command>migrate_set_downtime</command><replaceable>NUMBER_OF_SECONDS</replaceable> command.</para>
          </step>
          <step>
-            <para>To set the maximum speed for migration in bytes per second, use the <command>migrate_set_speed</command>
-               <replaceable>BYTES_PER_SECOND</replaceable> command.</para>
+            <para>To set the maximum speed for migration in bytes per second, use the <command>migrate_set_speed</command><replaceable>BYTES_PER_SECOND</replaceable> command.</para>
          </step>
       </procedure>
    </sect1>
@@ -694,8 +658,7 @@ ID<co xml:id="co-qemu-monitor-snapshot-l-id"/>      TAG<co xml:id="co-qemu-monit
     "return": {
     }
 }</screen>
-         <para>
-            <literal>"return": {}</literal> is a QMP's success response.</para>
+         <para><literal>"return": {}</literal> is a QMP's success response.</para>
          <para>QMP's commands can have arguments. For example, to eject a CD-ROM drive, enter the following:</para>
          <screen>-&gt;{ "execute": "eject", "arguments": { "device": "ide1-cd0" } }
 &lt;- {

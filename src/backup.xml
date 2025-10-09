@@ -21,10 +21,10 @@
       <title>GNOME Backups application</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/gnome_backup.png" width="75%"/>
+            <imagedata fileref="media/gnome_backup.png" width="69%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/gnome_backup.png" width="75%"/>
+            <imagedata fileref="media/gnome_backup.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>

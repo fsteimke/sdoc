@@ -27,10 +27,9 @@
     $fn:=string-join(($bn, 'TEST.xml'),'.')
     return string-join(($output-dir,$fn),'/')"/>
 
-  <!-- Serialization of generated XML source files: intended with exceptions for DocBook
-       linespecific environment -->
+  <!-- Serialization of generated XML source files: indent with exceptions -->
   <p:variable name="suppress-indentation"
-    select="let $e:='address literallayout programlisting programlistingco screen screenco screensho synopsis',
+    select="let $e:='address literallayout programlisting programlistingco screen screenco screensho synopsis para simpara entry',
     $qe:= tokenize($e,'\s+') ! concat('Q{http://docbook.org/ns/docbook}',.)
     return string-join($qe, ' ')"/>
   <p:variable name="xml-format" select="map{
@@ -58,7 +57,8 @@
       <ol>
         <li><p>Correction of errors in the DocBook sources</p></li>
         <li><p>Check profiling parameters against effectivity attribute</p></li>
-        <p><li>Remove empty elements and useless <em>phrase</em> elements, leftover from profiling</li></p>
+        <p><li>Remove empty elements and useless <em>phrase</em> elements, leftover from
+            profiling</li></p>
         <li><p>Normalize text nodes, except within linespecific environment</p></li>
       </ol>
     </p:documentation>
@@ -166,10 +166,8 @@
     <p:variable name="fileref" as="xs:string" select="/db:imagedata/@fileref"/>
     <p:variable name="basename" as="xs:string" select="tokenize($fileref,'/')[last()]"/>
     <p:variable name="type" select="tokenize($fileref,'\.')[last()]"/>
-    <p:variable name="source"
-      select="string-join(($original-dir,'images/src',$type,$basename),'/')"/>
-    <p:variable name="dest" as="xs:string"
-      select="string-join(($output-dir,$fileref),'/')"/>
+    <p:variable name="source" select="string-join(($original-dir,'images/src',$type,$basename),'/')"/>
+    <p:variable name="dest" as="xs:string" select="string-join(($output-dir,$fileref),'/')"/>
     <p:try>
       <p:file-copy href="{$source}" target="{$dest}"/>
       <p:catch>

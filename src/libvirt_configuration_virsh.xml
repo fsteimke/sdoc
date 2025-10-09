@@ -89,15 +89,12 @@ Product Name: Standard PC (Q35 + ICH9, 2009)</screen>
       <tip>
          <title>Machine type update recommendations</title>
          <para>Whenever the QEMU version on the host system is upgraded, for example, when upgrading the VM Host Server to a new service pack, upgrade the machine type of the VM Guests to the latest available version. To check, use the command <command>qemu-system-x86_64 -M help</command> on the VM Host Server.</para>
-         <para>The default machine type <literal>pc-i440fx</literal>, for example, is regularly updated. If your VM Guest still runs with a machine type of <literal>pc-i440fx-1.<replaceable>X</replaceable>
-            </literal>, we strongly recommend an update to <literal>pc-i440fx-2.<replaceable>X</replaceable>
-            </literal>. This allows taking advantage of the most recent updates and corrections in machine definitions, and ensures better future compatibility.</para>
+         <para>The default machine type <literal>pc-i440fx</literal>, for example, is regularly updated. If your VM Guest still runs with a machine type of <literal>pc-i440fx-1.<replaceable>X</replaceable></literal>, we strongly recommend an update to <literal>pc-i440fx-2.<replaceable>X</replaceable></literal>. This allows taking advantage of the most recent updates and corrections in machine definitions, and ensures better future compatibility.</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-libvirt-hypervisor-features-virsh">
       <title>Configuring hypervisor features</title>
-      <para>
-         <command>libvirt</command> automatically enables a default set of hypervisor features that are sufficient in most circumstances, but also allows enabling and disabling features as needed. As an example, Xen does not support enabling PCI pass-through by default. It must be enabled with the <literal>passthrough</literal> setting. Hypervisor features can be configured with <command>virsh</command>. Look for the <tag>&lt;features&gt;</tag> element in the VM Guest's configuration file and adjust its features as required. Continuing with the Xen pass-through example:</para>
+      <para><command>libvirt</command> automatically enables a default set of hypervisor features that are sufficient in most circumstances, but also allows enabling and disabling features as needed. As an example, Xen does not support enabling PCI pass-through by default. It must be enabled with the <literal>passthrough</literal> setting. Hypervisor features can be configured with <command>virsh</command>. Look for the <tag>&lt;features&gt;</tag> element in the VM Guest's configuration file and adjust its features as required. Continuing with the Xen pass-through example:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> virsh edit sle15sp1
  &lt;features&gt;
     &lt;xen&gt;
@@ -357,8 +354,7 @@ Used memory:    8388608 KiB
             <para>Write down the device ID, <literal>03:07.0</literal> in this example.</para>
          </step>
          <step>
-            <para>Gather detailed information about the device using <command>virsh nodedev-dumpxml <replaceable>ID</replaceable>
-               </command>. To get the <replaceable>ID</replaceable>, replace the colon and the period in the device ID (<literal>03:07.0</literal>) with underscores. Prefix the result with <quote>pci_0000_</quote>: <literal>pci_0000_03_07_0</literal>.</para>
+            <para>Gather detailed information about the device using <command>virsh nodedev-dumpxml <replaceable>ID</replaceable></command>. To get the <replaceable>ID</replaceable>, replace the colon and the period in the device ID (<literal>03:07.0</literal>) with underscores. Prefix the result with <quote>pci_0000_</quote>: <literal>pci_0000_03_07_0</literal>.</para>
             <screen><prompt>&gt;</prompt><command>sudo</command><command>virsh nodedev-dumpxml pci_0000_03_07_0</command>
 &lt;device&gt;
   &lt;name&gt;pci_0000_03_07_0&lt;/name&gt;
@@ -402,8 +398,7 @@ Used memory:    8388608 KiB
                <title>
                   <literal>managed</literal> compared to <literal>unmanaged</literal>
                </title>
-               <para>
-                  <systemitem>libvirt</systemitem> recognizes two modes for handling PCI devices: they can be <literal>managed</literal> or <literal>unmanaged</literal>. In the managed case, <systemitem>libvirt</systemitem> handles all details of unbinding the device from the existing driver if needed, resetting the device, binding it to <systemitem>vfio-pci</systemitem> before starting the domain, etc. When the domain is terminated or the device is removed from the domain, <systemitem>libvirt</systemitem> unbinds from <systemitem>vfio-pci</systemitem> and rebinds to the original driver when using a managed device. If the device is unmanaged, the user must ensure that all these management aspects of the device are done before assigning it to a domain, and after the device is no longer used by the domain.</para>
+               <para><systemitem>libvirt</systemitem> recognizes two modes for handling PCI devices: they can be <literal>managed</literal> or <literal>unmanaged</literal>. In the managed case, <systemitem>libvirt</systemitem> handles all details of unbinding the device from the existing driver if needed, resetting the device, binding it to <systemitem>vfio-pci</systemitem> before starting the domain, etc. When the domain is terminated or the device is removed from the domain, <systemitem>libvirt</systemitem> unbinds from <systemitem>vfio-pci</systemitem> and rebinds to the original driver when using a managed device. If the device is unmanaged, the user must ensure that all these management aspects of the device are done before assigning it to a domain, and after the device is no longer used by the domain.</para>
             </tip>
             <para>In the example above, the <literal>managed='yes'</literal> option means that the device is managed. To switch the device mode to unmanaged, set <literal>managed='no'</literal> in the listing above. If you do so, you need to take care of the related driver with the <command>virsh nodedev-detach</command> and <command>virsh nodedev-reattach</command> commands. Before starting the VM Guest, you need to detach the device from the host by running <command>virsh nodedev-detach pci_0000_03_07_0</command>. In case the VM Guest is not running, you can make the device available for the host by running <command>virsh nodedev-reattach pci_0000_03_07_0</command>.</para>
          </step>
@@ -426,8 +421,7 @@ Used memory:    8388608 KiB
       </important>
       <sect2 xml:id="tip-libvirt-config-zpci">
          <title>PCI Pass-Through for IBM Z</title>
-         <para>To support IBM Z, QEMU extended PCI representation by allowing the user to configure extra attributes. Two more attributes—<option>uid</option> and <option>fid</option>—were added to the <literal>&lt;zpci/&gt;</literal>
-            <systemitem class="library">libvirt</systemitem> specification. <option>uid</option> represents user-defined identifier, while <option>fid</option> represents PCI function identifier. These attributes are optional and if you do not specify them, they are automatically generated with non-conflicting values.</para>
+         <para>To support IBM Z, QEMU extended PCI representation by allowing the user to configure extra attributes. Two more attributes—<option>uid</option> and <option>fid</option>—were added to the <literal>&lt;zpci/&gt;</literal><systemitem class="library">libvirt</systemitem> specification. <option>uid</option> represents user-defined identifier, while <option>fid</option> represents PCI function identifier. These attributes are optional and if you do not specify them, they are automatically generated with non-conflicting values.</para>
          <para>To include zPCI attribute in your domain specification, use the following example definition:</para>
          <screen>
 &lt;controller type='pci' index='0' model='pci-root'/&gt;
@@ -485,15 +479,13 @@ Bus 001 Device 003: ID <emphasis role="bold">0557:2221</emphasis> ATEN Internati
    <sect1 xml:id="sec-libvirt-config-io">
       <title>Adding SR-IOV devices</title>
       <para>Single Root I/O Virtualization (<xref linkend="vt-io-sriov"/>) capable <xref linkend="gloss-vt-acronym-pcie"/> devices can replicate their resources, so they appear as multiple devices. Each of these <quote>pseudo-devices</quote> can be assigned to a VM Guest.</para>
-      <para>
-         <xref linkend="vt-io-sriov"/> is an industry specification that was created by the Peripheral Component Interconnect Special Interest Group (PCI-SIG) consortium. It introduces physical functions (PF) and virtual functions (VF). PFs are full <xref linkend="gloss-vt-acronym-pcie"/> functions used to manage and configure the device. PFs also can move data. VFs lack the configuration and management part—they only can move data and a reduced set of configuration functions. As VFs do not have all <xref linkend="gloss-vt-acronym-pcie"/> functions, the host operating system or the <xref linkend="gloss-vt-hypervisor"/> must support <xref linkend="vt-io-sriov"/> to access and initialize VFs. The theoretical maximum for VFs is 256 per device (consequently the maximum for a dual-port Ethernet card would be 512). In practice, this maximum is much lower, since each VF consumes resources.</para>
+      <para><xref linkend="vt-io-sriov"/> is an industry specification that was created by the Peripheral Component Interconnect Special Interest Group (PCI-SIG) consortium. It introduces physical functions (PF) and virtual functions (VF). PFs are full <xref linkend="gloss-vt-acronym-pcie"/> functions used to manage and configure the device. PFs also can move data. VFs lack the configuration and management part—they only can move data and a reduced set of configuration functions. As VFs do not have all <xref linkend="gloss-vt-acronym-pcie"/> functions, the host operating system or the <xref linkend="gloss-vt-hypervisor"/> must support <xref linkend="vt-io-sriov"/> to access and initialize VFs. The theoretical maximum for VFs is 256 per device (consequently the maximum for a dual-port Ethernet card would be 512). In practice, this maximum is much lower, since each VF consumes resources.</para>
       <sect2 xml:id="sec-libvirt-config-io-requirements">
          <title>Requirements</title>
          <para>The following requirements must be met to use <xref linkend="vt-io-sriov"/>:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>An <xref linkend="vt-io-sriov"/>-capable network card (as of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15</phrase>, only network cards support <xref linkend="vt-io-sriov"/>)</para>
+               <para>An <xref linkend="vt-io-sriov"/>-capable network card (as of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15</phrase>, only network cards support <xref linkend="vt-io-sriov"/>)</para>
             </listitem>
             <listitem>
                <para>An AMD64/Intel 64 host supporting hardware virtualization (AMD-V or Intel VT-x), see <xref linkend="sec-kvm-requires-hardware"/> for more information</para>
@@ -502,16 +494,13 @@ Bus 001 Device 003: ID <emphasis role="bold">0557:2221</emphasis> ATEN Internati
                <para>A chipset that supports device assignment (AMD-Vi or Intel <xref linkend="gloss-vt-acronym-vtd"/>)</para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="library">libvirt</systemitem> 0.9.10 or better</para>
+               <para><systemitem class="library">libvirt</systemitem> 0.9.10 or better</para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="vt-io-sriov"/> drivers must be loaded and configured on the host system</para>
+               <para><xref linkend="vt-io-sriov"/> drivers must be loaded and configured on the host system</para>
             </listitem>
             <listitem>
-               <para>A host configuration that meets the requirements listed at <xref linkend="ann-vt-io-require"/>
-               </para>
+               <para>A host configuration that meets the requirements listed at <xref linkend="ann-vt-io-require"/></para>
             </listitem>
             <listitem>
                <para>A list of the PCI addresses of the VFs assigned to VM Guests</para>
@@ -676,24 +665,16 @@ pci_0000_04_11_5</screen>
                <para>The following data is needed for the next step:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>&lt;domain&gt;0&lt;/domain&gt;</literal>
-                     </para>
+                     <para><literal>&lt;domain&gt;0&lt;/domain&gt;</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>&lt;bus&gt;4&lt;/bus&gt;</literal>
-                     </para>
+                     <para><literal>&lt;bus&gt;4&lt;/bus&gt;</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>&lt;slot&gt;16&lt;/slot&gt;</literal>
-                     </para>
+                     <para><literal>&lt;slot&gt;16&lt;/slot&gt;</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>&lt;function&gt;0&lt;/function&gt;</literal>
-                     </para>
+                     <para><literal>&lt;function&gt;0&lt;/function&gt;</literal></para>
                   </listitem>
                </itemizedlist>
             </step>
@@ -720,8 +701,7 @@ pci_0000_04_11_5</screen>
             <step>
                <para>Add the VF interface to an existing VM Guest:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command><command>virsh attach-device <replaceable>GUEST</replaceable> /tmp/vf-interface.xml --<replaceable>OPTION</replaceable></command></screen>
-               <para>
-                  <replaceable>GUEST</replaceable> needs to be replaced by the domain name, ID or UUID of the VM Guest. --<replaceable>OPTION</replaceable> can be one of the following:</para>
+               <para><replaceable>GUEST</replaceable> needs to be replaced by the domain name, ID or UUID of the VM Guest. --<replaceable>OPTION</replaceable> can be one of the following:</para>
                <variablelist>
                   <varlistentry>
                      <term>
@@ -847,8 +827,7 @@ Found 2 nodes:
       <para>The following child elements are the most important:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <tag>driver</tag> contains the driver and the bus. These are used by the VM Guest to work with the new disk device.</para>
+            <para><tag>driver</tag> contains the driver and the bus. These are used by the VM Guest to work with the new disk device.</para>
          </listitem>
          <listitem>
             <para>The <tag>target</tag> element contains the device name under which the new disk is shown in the VM Guest. It also contains the optional bus attribute, which defines the type of bus on which the new disk should operate.</para>
@@ -889,8 +868,7 @@ Found 2 nodes:
    </sect1>
    <sect1 xml:id="sec-libvirt-config-controllers-virsh">
       <title>Configuring controller devices</title>
-      <para>
-         <command>libvirt</command> manages controllers automatically based on the type of virtual devices used by the VM Guest. If the VM Guest contains PCI and SCSI devices, PCI and SCSI controllers are created and managed automatically. <command>libvirt</command> also models controllers that are hypervisor-specific, for example, a <literal>virtio-serial</literal> controller for KVM VM Guests or a <literal>xenbus</literal> controller for Xen VM Guests. Although the default controllers and their configuration are generally fine, there may be use cases where controllers or their attributes need to be adjusted manually. For example, a virtio-serial controller may need more ports, or a xenbus controller may need more memory or more virtual interrupts.</para>
+      <para><command>libvirt</command> manages controllers automatically based on the type of virtual devices used by the VM Guest. If the VM Guest contains PCI and SCSI devices, PCI and SCSI controllers are created and managed automatically. <command>libvirt</command> also models controllers that are hypervisor-specific, for example, a <literal>virtio-serial</literal> controller for KVM VM Guests or a <literal>xenbus</literal> controller for Xen VM Guests. Although the default controllers and their configuration are generally fine, there may be use cases where controllers or their attributes need to be adjusted manually. For example, a virtio-serial controller may need more ports, or a xenbus controller may need more memory or more virtual interrupts.</para>
       <para>The xenbus controller is unique in that it serves as the controller for all Xen paravirtual devices. If a VM Guest has many disk and/or network devices, the controller may need more memory. Xen's <literal>max_grant_frames</literal> attribute sets how many grant frames, or blocks of shared memory, are allocated to the <literal>xenbus</literal> controller for each VM Guest.</para>
       <para>The default of 32 is enough in most circumstances, but a VM Guest with multiple I/O devices and an I/O-intensive workload may experience performance issues because of grant frame exhaustion. The <command>xen-diag</command> can check the current and maximum <literal>max_grant_frames</literal> values for dom0 and your VM Guests. The VM Guests must be running:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> virsh list
@@ -1002,20 +980,16 @@ domid=3: nr_frames=3, max_nr_frames=40
       <para>The operation mode of the macvtap device can be controlled with the <literal>mode</literal> attribute. The following list shows its possible values and a description for each:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <literal>vepa</literal>: all VM Guest packets are sent to an external bridge. Packets whose destination is a VM Guest on the same VM Host Server as where the packet originates from are sent back to the VM Host Server by the VEPA capable bridge (today's bridges are typically not VEPA capable).</para>
+            <para><literal>vepa</literal>: all VM Guest packets are sent to an external bridge. Packets whose destination is a VM Guest on the same VM Host Server as where the packet originates from are sent back to the VM Host Server by the VEPA capable bridge (today's bridges are typically not VEPA capable).</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>bridge</literal>: packets whose destination is on the same VM Host Server as where they originate from are directly delivered to the target macvtap device. Both origin and destination devices need to be in <literal>bridge</literal> mode for direct delivery. If either of them is in <literal>vepa</literal> mode, a VEPA capable bridge is required.</para>
+            <para><literal>bridge</literal>: packets whose destination is on the same VM Host Server as where they originate from are directly delivered to the target macvtap device. Both origin and destination devices need to be in <literal>bridge</literal> mode for direct delivery. If either of them is in <literal>vepa</literal> mode, a VEPA capable bridge is required.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>private</literal>: all packets are sent to the external bridge and delivered to a target VM Guest on the same VM Host Server if they are sent through an external router or gateway and that device sends them back to the VM Host Server. This procedure is followed if either the source or destination device is in private mode.</para>
+            <para><literal>private</literal>: all packets are sent to the external bridge and delivered to a target VM Guest on the same VM Host Server if they are sent through an external router or gateway and that device sends them back to the VM Host Server. This procedure is followed if either the source or destination device is in private mode.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>passthrough</literal>: a special mode that gives more power to the network interface. All packets are forwarded to the interface, allowing virtio VM Guests to change the MAC address or set promiscuous mode to bridge the interface or create VLAN interfaces on top of it. A network interface is not shareable in <literal>passthrough</literal> mode. Assigning an interface to a VM Guest disconnects it from the VM Host Server. For this reason SR-IOV virtual functions are often assigned to the VM Guest in <literal>passthrough</literal> mode.</para>
+            <para><literal>passthrough</literal>: a special mode that gives more power to the network interface. All packets are forwarded to the interface, allowing virtio VM Guests to change the MAC address or set promiscuous mode to bridge the interface or create VLAN interfaces on top of it. A network interface is not shareable in <literal>passthrough</literal> mode. Assigning an interface to a VM Guest disconnects it from the VM Host Server. For this reason SR-IOV virtual functions are often assigned to the VM Guest in <literal>passthrough</literal> mode.</para>
          </listitem>
       </itemizedlist>
    </sect1>
@@ -1028,8 +1002,7 @@ domid=3: nr_frames=3, max_nr_frames=40
    </sect1>
    <sect1 xml:id="virsh-video-dual-head">
       <title>Configuring multiple monitors (dual head)</title>
-      <para>
-         <systemitem class="library">libvirt</systemitem> supports a dual head configuration to display the video output of the VM Guest on multiple monitors.</para>
+      <para><systemitem class="library">libvirt</systemitem> supports a dual head configuration to display the video output of the VM Guest on multiple monitors.</para>
       <important>
          <title>No support for Xen</title>
          <para>The Xen hypervisor does not support dual head configuration.</para>
@@ -1076,11 +1049,7 @@ domid=3: nr_frames=3, max_nr_frames=40
             <para>From the list of VMs, select the one whose configuration you have modified and confirm with <guimenu>Connect</guimenu>.</para>
          </step>
          <step>
-            <para>After the graphical subsystem (Xorg) loads in the VM Guest, select <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Displays</guimenu>
-                  <guimenu>Display 2</guimenu>
-               </menuchoice> to open a new window with the second monitor's output.</para>
+            <para>After the graphical subsystem (Xorg) loads in the VM Guest, select <menuchoice><guimenu>View</guimenu><guimenu>Displays</guimenu><guimenu>Display 2</guimenu></menuchoice> to open a new window with the second monitor's output.</para>
          </step>
       </procedure>
    </sect1>

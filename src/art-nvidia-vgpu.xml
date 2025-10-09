@@ -24,8 +24,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
@@ -43,14 +42,10 @@
                <para>Verify that you have a compatible server and GPU cards. Check specifications for details:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <link xlink:href="https://docs.nvidia.com/grid/gpus-supported-by-vgpu.html"/>
-                     </para>
+                     <para><link xlink:href="https://docs.nvidia.com/grid/gpus-supported-by-vgpu.html"/></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <link xlink:href="https://docs.nvidia.com/grid/index.html"/>
-                     </para>
+                     <para><link xlink:href="https://docs.nvidia.com/grid/index.html"/></para>
                   </listitem>
                </itemizedlist>
             </step>
@@ -145,8 +140,7 @@ BOOT_IMAGE=/boot/vmlinuz-default [...] intel_iommu=on [...]
                <screen><prompt>&gt;</prompt><command>sudo</command><command><replaceable>/PATH/TO/NVIDIA-Linux-x86_64-XXX.XX.XX.run</replaceable> --uninstall</command></screen>
             </step>
             <step>
-               <para>
-                  <emphasis>OPTIONAL but RECOMMENDED:</emphasis> Sometimes, driver installations can leave behind configuration files. To ensure a clean state, remove any potentially conflicting configuration files.</para>
+               <para><emphasis>OPTIONAL but RECOMMENDED:</emphasis> Sometimes, driver installations can leave behind configuration files. To ensure a clean state, remove any potentially conflicting configuration files.</para>
                <warning>
                   <para>Remove driver configuration files only when you are absolutely sure that it relates to a potentially conflicting NVIDIA driver that you have already uninstalled.</para>
                </warning>
@@ -183,8 +177,7 @@ BOOT_IMAGE=/boot/vmlinuz-default [...] intel_iommu=on [...]
                <screen><prompt>&gt;</prompt>chmod +x NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run
 <prompt>&gt;</prompt><command>sudo</command> ./NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run
 </screen>
-               <para>You can find detailed information about the installation process in the log file <filename>/var/log/nvidia-installer.log</filename>
-               </para>
+               <para>You can find detailed information about the installation process in the log file <filename>/var/log/nvidia-installer.log</filename></para>
                <tip>
                   <para>To enable dynamic kernel-module support, and thus have the module rebuilt automatically when a new kernel is installed, add the <option>--dkms</option> option:</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> ./NVIDIA-Linux-x86_64-450.55-vgpu-kvm.run --dkms</screen>
@@ -392,8 +385,7 @@ lrwxrwxrwx 1 root root           0 Sep 21 11:58 virtfn9 -&gt; ../0000:b1:01.5
 </screen>
             </step>
             <step>
-               <para>
-                  <emphasis>Create a vGPU device.</emphasis> Select the virtual function (VF) that you want to use to create the vGPU device and assign it a unique ID.</para>
+               <para><emphasis>Create a vGPU device.</emphasis> Select the virtual function (VF) that you want to use to create the vGPU device and assign it a unique ID.</para>
                <important>
                   <para>Each VF can only create one vGPU instance. To create more vGPU instances, you need to use a different VF.</para>
                </important>
@@ -577,8 +569,7 @@ GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-ee14e29d-dd5b-2e8e-eeaf-9d3debd10788)
                <para>Create a <systemitem class="library">libvirt</systemitem>-based virtual machine (VM) with UEFI support and a normal VGA display.</para>
             </step>
             <step>
-               <para>Edit the VM's configuration by running <command>virsh edit <replaceable>VM-NAME</replaceable>
-                  </command>.</para>
+               <para>Edit the VM's configuration by running <command>virsh edit <replaceable>VM-NAME</replaceable></command>.</para>
             </step>
             <step>
                <para>Add the new mdev device with the unique ID you used when creating the vGPU device to the &lt;devices/&gt; section.</para>
@@ -857,11 +848,7 @@ Ecc Mode
       </sect2>
       <sect2 xml:id="configure-nvidia-vgpu-additional-vmanager-blank">
          <title>Black screen in Virt-manager</title>
-         <para>If you see only a black screen in Virt-manager, press <keycombo>
-               <keycap function="alt"/>
-               <keycap function="control"/>
-               <keycap>2</keycap>
-            </keycombo> from Virt-manager viewer. You should be able to get in the display again.</para>
+         <para>If you see only a black screen in Virt-manager, press <keycombo><keycap function="alt"/><keycap function="control"/><keycap>2</keycap></keycombo> from Virt-manager viewer. You should be able to get in the display again.</para>
       </sect2>
       <sect2 xml:id="configure-nvidia-vgpu-additional-vmanager-vnc-blank">
          <title>Black screen in VNC client when using a non-QEMU VNC server</title>
@@ -946,10 +933,10 @@ c 25
                      <title>Time-sliced architecture (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="75%"/>
+                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="69%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="75%"/>
+                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="69%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -963,10 +950,10 @@ c 25
                      <title>MIG-backed architecture (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="75%"/>
+                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="69%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="75%"/>
+                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="69%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -984,46 +971,26 @@ c 25
                <colspec colname="c2" colwidth="80*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>vGPU series</para>
-                     </entry>
-                     <entry>
-                        <para>Optimal workload</para>
-                     </entry>
+                     <entry><para>vGPU series</para></entry>
+                     <entry><para>Optimal workload</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Q-series</para>
-                     </entry>
-                     <entry>
-                        <para>Virtual workstations for creative and technical professionals who require the performance and features of the NVIDIA Quadro technology.</para>
-                     </entry>
+                     <entry><para>Q-series</para></entry>
+                     <entry><para>Virtual workstations for creative and technical professionals who require the performance and features of the NVIDIA Quadro technology.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>C-series</para>
-                     </entry>
-                     <entry>
-                        <para>Compute-intensive server workloads, for example, artificial intelligence (AI), deep learning, or high-performance computing (HPC).</para>
-                     </entry>
+                     <entry><para>C-series</para></entry>
+                     <entry><para>Compute-intensive server workloads, for example, artificial intelligence (AI), deep learning, or high-performance computing (HPC).</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>B-series</para>
-                     </entry>
-                     <entry>
-                        <para>Virtual desktops for business professionals and knowledge workers.</para>
-                     </entry>
+                     <entry><para>B-series</para></entry>
+                     <entry><para>Virtual desktops for business professionals and knowledge workers.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>A-series</para>
-                     </entry>
-                     <entry>
-                        <para>Application streaming or session-based solutions for virtual applications users.</para>
-                     </entry>
+                     <entry><para>A-series</para></entry>
+                     <entry><para>Application streaming or session-based solutions for virtual applications users.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -1038,10 +1005,10 @@ c 25
                <title>Example time-sliced vGPU configurations on NVIDIA Tesla M60 (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="75%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="75%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1053,10 +1020,10 @@ c 25
                <title>Example MIG-backed vGPU configurations on NVIDIA A100 PCIe 40 GB (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="75%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="75%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>

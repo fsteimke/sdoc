@@ -11,10 +11,7 @@
    <warning>
       <para>If you do not know all details about the setup of your sound system, do not change its settings manually. Instead, let your sound subsystem—PipeWire or PulseAudio— configure it for you. Use dedicated desktop application to switch audio devices. As a fallback, use the <command>pavucontrol</command> graphical application.</para>
    </warning>
-   <para>To start the sound module, start YaST and click <menuchoice>
-         <guimenu>Hardware</guimenu>
-         <guimenu>Sound</guimenu>
-      </menuchoice>. Alternatively, start the <guimenu>Sound Configuration</guimenu> dialog directly by running <command>yast2 sound &amp;</command> as user <systemitem class="username">root</systemitem> from a command line. If the sound module is not available, install it using the <command>sudo zypper install yast2-sound</command> command.</para>
+   <para>To start the sound module, start YaST and click <menuchoice><guimenu>Hardware</guimenu><guimenu>Sound</guimenu></menuchoice>. Alternatively, start the <guimenu>Sound Configuration</guimenu> dialog directly by running <command>yast2 sound &amp;</command> as user <systemitem class="username">root</systemitem> from a command line. If the sound module is not available, install it using the <command>sudo zypper install yast2-sound</command> command.</para>
    <procedure xml:id="pro-yast2-sound-add">
       <title>Configuring sound cards</title>
       <para>If you have added a new sound card or YaST could not automatically configure an existing sound card, follow the steps below. For configuring a new sound card, you need to know your sound card vendor and model. If in doubt, refer to your sound card documentation for the required information. For a reference list of sound cards supported by ALSA with their corresponding sound modules, see <link xlink:href="https://www.alsa-project.org/main/index.php/Matrix:Main"/>.</para>
@@ -83,17 +80,11 @@
          <para>To adjust the volume of an already configured sound card or to test the sound card, select the sound card entry in the <guimenu>Sound Configuration</guimenu> dialog and click <guimenu>Other</guimenu>. Select the respective menu item.</para>
          <note>
             <title>YaST mixer</title>
-            <para>The YaST mixer settings provide only basic options. They are intended for troubleshooting (for example, if the test sound is not audible). Access the YaST mixer settings from <menuchoice>
-                  <guimenu>Other</guimenu>
-                  <guimenu>Volume</guimenu>
-               </menuchoice>. For everyday use and fine-tuning of sound options, use the mixer applet provided by your desktop or the <command>alsasound</command> command line tool.</para>
+            <para>The YaST mixer settings provide only basic options. They are intended for troubleshooting (for example, if the test sound is not audible). Access the YaST mixer settings from <menuchoice><guimenu>Other</guimenu><guimenu>Volume</guimenu></menuchoice>. For everyday use and fine-tuning of sound options, use the mixer applet provided by your desktop or the <command>alsasound</command> command line tool.</para>
          </note>
       </step>
       <step>
-         <para>For playback of MIDI files, select <menuchoice>
-               <guimenu>Other</guimenu>
-               <guimenu>Start Sequencer</guimenu>
-            </menuchoice>.</para>
+         <para>For playback of MIDI files, select <menuchoice><guimenu>Other</guimenu><guimenu>Start Sequencer</guimenu></menuchoice>.</para>
       </step>
       <step>
          <para>When a supported sound card is detected, you can install SoundFonts for playback of MIDI files:</para>
@@ -102,24 +93,15 @@
                <para>Insert the original driver CD-ROM into your CD or DVD drive.</para>
             </step>
             <step>
-               <para>Select <menuchoice>
-                     <guimenu>Other</guimenu>
-                     <guimenu>Install SoundFonts</guimenu>
-                  </menuchoice> to copy SF2 SoundFonts™ to your hard disk. The SoundFonts are saved in the directory <filename>/usr/share/sfbank/creative/</filename>.</para>
+               <para>Select <menuchoice><guimenu>Other</guimenu><guimenu>Install SoundFonts</guimenu></menuchoice> to copy SF2 SoundFonts™ to your hard disk. The SoundFonts are saved in the directory <filename>/usr/share/sfbank/creative/</filename>.</para>
             </step>
          </substeps>
       </step>
       <step>
-         <para>If you have configured more than one sound card in your system you can adjust the order of your sound cards. To set a sound card as primary device, select the sound card in the <guimenu>Sound Configuration</guimenu> and click <menuchoice>
-               <guimenu>Other</guimenu>
-               <guimenu>Set as the Primary Card</guimenu>
-            </menuchoice>. The sound device with index <literal>0</literal> is the default device and thus used by the system and the applications.</para>
+         <para>If you have configured more than one sound card in your system you can adjust the order of your sound cards. To set a sound card as primary device, select the sound card in the <guimenu>Sound Configuration</guimenu> and click <menuchoice><guimenu>Other</guimenu><guimenu>Set as the Primary Card</guimenu></menuchoice>. The sound device with index <literal>0</literal> is the default device and thus used by the system and the applications.</para>
       </step>
       <step><!-- fate#304936 -->
-         <para>By default, <phrase role="productname">SUSE Linux Enterprise Server</phrase> uses the PulseAudio sound system. This is an abstraction layer that helps to mix multiple audio streams, bypassing any restrictions the hardware may have. To enable or disable the PulseAudio sound system, click <menuchoice>
-               <guimenu>Other</guimenu>
-               <guimenu>PulseAudio Configuration</guimenu>
-            </menuchoice>. If enabled, PulseAudio daemon is used to play sounds. Disable <guimenu>PulseAudio Support</guimenu> to use something else system-wide.</para>
+         <para>By default, <phrase role="productname">SUSE Linux Enterprise Server</phrase> uses the PulseAudio sound system. This is an abstraction layer that helps to mix multiple audio streams, bypassing any restrictions the hardware may have. To enable or disable the PulseAudio sound system, click <menuchoice><guimenu>Other</guimenu><guimenu>PulseAudio Configuration</guimenu></menuchoice>. If enabled, PulseAudio daemon is used to play sounds. Disable <guimenu>PulseAudio Support</guimenu> to use something else system-wide.</para>
       </step>
    </procedure>
    <para>The volume and configuration of all sound cards are saved when you click <guimenu>OK</guimenu> and leave the YaST sound module. The mixer settings are saved to the file <filename>/etc/asound.state</filename>. The ALSA configuration data is appended to the end of the file <filename>/etc/modprobe.d/sound</filename> and written to <filename>/etc/sysconfig/sound</filename>.</para>

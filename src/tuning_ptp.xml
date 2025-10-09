@@ -7,8 +7,7 @@
          xml:id="cha-tuning-ptp">
    <title>Precision Time Protocol</title>
    <info/>
-   <para>For network environments, it is vital to keep the computer and other devices' clocks synchronized and accurate. There are several solutions to achieve synchronicity and accuracy, for example, the widely used Network Time Protocol (NTP) described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-      <xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>For network environments, it is vital to keep the computer and other devices' clocks synchronized and accurate. There are several solutions to achieve synchronicity and accuracy, for example, the widely used Network Time Protocol (NTP) described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/>.</para>
    <para>The Precision Time Protocol (PTP) is a protocol capable of sub-microsecond accuracy, which is better than what NTP achieves. PTP support is divided between the kernel and user space. The kernel in <phrase role="productname">SUSE Linux Enterprise Server</phrase> includes support for PTP clocks, which are provided by network drivers.</para>
    <sect1 xml:id="tuning-ptp-intro">
       <title>Introduction to PTP</title>
@@ -52,8 +51,7 @@ SOF_TIMESTAMPING_RX_HARDWARE</screen>
       <sect2 xml:id="tuning-ptp-ptp41">
          <title>Using <command>ptp4l</command>
          </title>
-         <para>
-            <command>ptp4l</command> uses hardware time stamping by default. As <systemitem class="username">root</systemitem>, you need to specify the network interface capable of hardware time stamping with the <option>-i</option> option. The <option>-m</option> tells <command>ptp4l</command> to print its output to the standard output instead of the system's logging facility:</para>
+         <para><command>ptp4l</command> uses hardware time stamping by default. As <systemitem class="username">root</systemitem>, you need to specify the network interface capable of hardware time stamping with the <option>-i</option> option. The <option>-m</option> tells <command>ptp4l</command> to print its output to the standard output instead of the system's logging facility:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> ptp4l -m -i eth0
 selected eth0 as PTP clock
 port 1: INITIALIZING to LISTENING on INITIALIZE
@@ -73,8 +71,7 @@ master offset  -4284 s2 freq -30135 path delay    9892</screen>
          <para>The <literal>freq</literal> value represents the frequency adjustment of the clock (in parts per billion, ppb).</para>
          <para>The <literal>path delay</literal> value represents the estimated delay of the synchronization messages sent from the master (in nanoseconds).</para>
          <para>Port 0 is a Unix domain socket used for local PTP management. Port 1 is the <systemitem>eth0</systemitem> interface.</para>
-         <para>
-            <literal>INITIALIZING</literal>, <literal>LISTENING</literal>, <literal>UNCALIBRATED</literal> and <literal>SLAVE</literal> are examples of port states which change on <literal>INITIALIZE</literal>, <literal>RS_SLAVE</literal>, and <literal>MASTER_CLOCK_SELECTED</literal> events. When the port state changes from <literal>UNCALIBRATED</literal> to <literal>SLAVE</literal>, the computer has successfully synchronized with a PTP master clock.</para>
+         <para><literal>INITIALIZING</literal>, <literal>LISTENING</literal>, <literal>UNCALIBRATED</literal> and <literal>SLAVE</literal> are examples of port states which change on <literal>INITIALIZE</literal>, <literal>RS_SLAVE</literal>, and <literal>MASTER_CLOCK_SELECTED</literal> events. When the port state changes from <literal>UNCALIBRATED</literal> to <literal>SLAVE</literal>, the computer has successfully synchronized with a PTP master clock.</para>
          <para>You can enable software time stamping with the <option>-S</option> option.</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> ptp4l -m -S -i eth3</screen>
          <para>You can also run <command>ptp4l</command> as a service:</para>
@@ -88,8 +85,7 @@ master offset  -4284 s2 freq -30135 path delay    9892</screen>
       <sect2 xml:id="tuning-ptp-confile">
          <title>
             <command>ptp4l</command> configuration file</title>
-         <para>
-            <command>ptp4l</command> can read its configuration from an optional configuration file. As no configuration file is used by default, you need to specify it with <option>-f</option>.</para>
+         <para><command>ptp4l</command> can read its configuration from an optional configuration file. As no configuration file is used by default, you need to specify it with <option>-f</option>.</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> ptp4l -f /etc/ptp4l.conf</screen>
          <para>The configuration file is divided into sections. The global section (indicated as <literal>[global]</literal>) sets the program options, clock options and default port options. Other sections are port specific, and they override the default port options. The name of the section is the name of the configured port—for example, <literal>[eth0]</literal>. An empty port section can be used to replace the command line option.</para>
          <screen>[global]
@@ -102,8 +98,7 @@ time_stamping         software
       </sect2>
       <sect2 xml:id="tuning-ptp-delay-measurement">
          <title>Delay measurement</title>
-         <para>
-            <command>ptp4l</command> measures time delay in two different ways: <emphasis>peer-to-peer</emphasis> (P2P) or <emphasis>end-to-end</emphasis> (E2E).</para>
+         <para><command>ptp4l</command> measures time delay in two different ways: <emphasis>peer-to-peer</emphasis> (P2P) or <emphasis>end-to-end</emphasis> (E2E).</para>
          <variablelist>
             <varlistentry>
                <term>P2P</term>
@@ -222,11 +217,9 @@ phc2sys[629.628]: phc offset     64668 s1 freq  -37690 delay   2726
 [...]
 phc2sys[646.630]: phc offset      -333 s2 freq  -37426 delay   2747
 phc2sys[646.630]: phc offset       194 s2 freq  -36999 delay   2749</screen>
-         <para>
-            <command>ptp4l</command> normally writes messages with high frequency. You can reduce the frequency with the <literal>summary_interval</literal> directive. Its value is an exponent of the 2^N expression. For example, to reduce the output to every 1024 (which is equal to 2^10) seconds, add the following line to the <filename>/etc/ptp4l.conf</filename> file:</para>
+         <para><command>ptp4l</command> normally writes messages with high frequency. You can reduce the frequency with the <literal>summary_interval</literal> directive. Its value is an exponent of the 2^N expression. For example, to reduce the output to every 1024 (which is equal to 2^10) seconds, add the following line to the <filename>/etc/ptp4l.conf</filename> file:</para>
          <screen>summary_interval 10</screen>
-         <para>You can also reduce the frequency of the <command>phc2sys</command> command's updates with the <option>-u <replaceable>SUMMARY-UPDATES</replaceable>
-            </option> option.</para>
+         <para>You can also reduce the frequency of the <command>phc2sys</command> command's updates with the <option>-u <replaceable>SUMMARY-UPDATES</replaceable></option> option.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="tuning-ptp-examples">
@@ -234,40 +227,32 @@ phc2sys[646.630]: phc offset       194 s2 freq  -36999 delay   2749</screen>
       <para>This section includes several examples of <command>ptp4l</command> configuration. The examples are not full configuration files but rather a minimal list of changes to be made to the specific files. The string <replaceable>ethX</replaceable> stands for the actual network interface name in your setup.</para>
       <example>
          <title>Slave clock using software time stamping</title>
-         <para>
-            <filename>/etc/sysconfig/ptp4l</filename>:</para>
+         <para><filename>/etc/sysconfig/ptp4l</filename>:</para>
          <screen>OPTIONS=”-f /etc/ptp4l.conf -i ethX”</screen>
          <para>No changes made to the distribution <filename>/etc/ptp4l.conf</filename>.</para>
       </example>
       <example>
          <title>Slave clock using hardware time stamping</title>
-         <para>
-            <filename>/etc/sysconfig/ptp4l</filename>:</para>
+         <para><filename>/etc/sysconfig/ptp4l</filename>:</para>
          <screen>OPTIONS=”-f /etc/ptp4l.conf -i ethX”</screen>
-         <para>
-            <filename>/etc/sysconfig/phc2sys</filename>:</para>
+         <para><filename>/etc/sysconfig/phc2sys</filename>:</para>
          <screen>OPTIONS=”-s ethX -w”</screen>
          <para>No changes made to the distribution <filename>/etc/ptp4l.conf</filename>.</para>
       </example>
       <example>
          <title>Master clock using hardware time stamping</title>
-         <para>
-            <filename>/etc/sysconfig/ptp4l</filename>:</para>
+         <para><filename>/etc/sysconfig/ptp4l</filename>:</para>
          <screen>OPTIONS=”-f /etc/ptp4l.conf -i ethX”</screen>
-         <para>
-            <filename>/etc/sysconfig/phc2sys</filename>:</para>
+         <para><filename>/etc/sysconfig/phc2sys</filename>:</para>
          <screen>OPTIONS=”-s CLOCK_REALTIME -c ethX -w”</screen>
-         <para>
-            <filename>/etc/ptp4l.conf</filename>:</para>
+         <para><filename>/etc/ptp4l.conf</filename>:</para>
          <screen>priority1 127</screen>
       </example>
       <example>
          <title>Master clock using software time stamping (not generally recommended)</title>
-         <para>
-            <filename>/etc/sysconfig/ptp4l</filename>:</para>
+         <para><filename>/etc/sysconfig/ptp4l</filename>:</para>
          <screen>OPTIONS=”-f /etc/ptp4l.conf -i ethX”</screen>
-         <para>
-            <filename>/etc/ptp4l.conf</filename>:</para>
+         <para><filename>/etc/ptp4l.conf</filename>:</para>
          <screen>priority1 127</screen>
       </example>
    </sect1>

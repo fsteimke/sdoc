@@ -7,8 +7,7 @@
          xml:id="cha-qemu-host">
    <title>Setting up a KVM VM Host Server</title>
    <info/>
-   <para>This section documents how to set up and use <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-      <phrase role="productnumber">15 SP7</phrase> as a QEMU-KVM based virtual machine host.</para>
+   <para>This section documents how to set up and use <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> as a QEMU-KVM based virtual machine host.</para>
    <tip>
       <title>Resources</title>
       <para>The virtual guest system needs the same hardware resources as if it were installed on a physical machine. The more guests you plan to run on the host system, the more hardware resources—CPU, disk, memory and network—you need to add to the VM Host Server.</para>
@@ -26,19 +25,15 @@
             <para>Verify that the <package>yast2-vm</package> package is installed. This package is YaST's configuration tool that simplifies the installation of virtualization hypervisors.</para>
          </step>
          <step>
-            <para>Run <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Virtualization</guimenu>
-                  <guimenu>Install Hypervisor and Tools</guimenu>
-               </menuchoice>.</para>
+            <para>Run <menuchoice><guimenu>YaST</guimenu><guimenu>Virtualization</guimenu><guimenu>Install Hypervisor and Tools</guimenu></menuchoice>.</para>
             <figure>
                <title>Installing the KVM hypervisor and tools</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_hypervisors.png" width="75%"/>
+                     <imagedata fileref="media/yast2_hypervisors.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_hypervisors.png" width="75%"/>
+                     <imagedata fileref="media/yast2_hypervisors.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -52,10 +47,10 @@
                <title>Network bridge</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_netbridge.png" width="75%"/>
+                     <imagedata fileref="media/yast2_netbridge.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_netbridge.png" width="75%"/>
+                     <imagedata fileref="media/yast2_netbridge.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -75,14 +70,12 @@ kvm                   411041  1 kvm_intel</screen>
       <title>KVM host-specific features</title>
       <para>You can improve the performance of KVM-based VM Guests by letting them fully use specific features of the VM Host Server's hardware (<emphasis>paravirtualization</emphasis>). This section introduces techniques to make the guests access the physical host's hardware directly—without the emulation layer—to make the most use of it.</para>
       <tip>
-         <para>Examples included in this section assume basic knowledge of the <command>qemu-system-<replaceable>ARCH</replaceable>
-            </command> command line options. For more information, see <xref linkend="cha-qemu-running"/>.</para>
+         <para>Examples included in this section assume basic knowledge of the <command>qemu-system-<replaceable>ARCH</replaceable></command> command line options. For more information, see <xref linkend="cha-qemu-running"/>.</para>
       </tip>
       <sect2 xml:id="kvm-virtio-scsi">
          <title>Using the host storage with <systemitem>virtio-scsi</systemitem>
          </title>
-         <para>
-            <systemitem>virtio-scsi</systemitem> is an advanced storage stack for KVM. It replaces the former <systemitem>virtio-blk</systemitem> stack for SCSI devices pass-through. It has several advantages over <systemitem>virtio-blk</systemitem>:</para>
+         <para><systemitem>virtio-scsi</systemitem> is an advanced storage stack for KVM. It replaces the former <systemitem>virtio-blk</systemitem> stack for SCSI devices pass-through. It has several advantages over <systemitem>virtio-blk</systemitem>:</para>
          <variablelist>
             <varlistentry>
                <term>Improved scalability</term>
@@ -93,19 +86,15 @@ kvm                   411041  1 kvm_intel</screen>
             <varlistentry>
                <term>Standard command set</term>
                <listitem>
-                  <para>
-                     <systemitem>virtio-blk</systemitem> uses a small set of commands that need to be known to both the <systemitem>virtio-blk</systemitem> driver and the virtual machine monitor, and so introducing a new command requires updating both the driver and the monitor.</para>
+                  <para><systemitem>virtio-blk</systemitem> uses a small set of commands that need to be known to both the <systemitem>virtio-blk</systemitem> driver and the virtual machine monitor, and so introducing a new command requires updating both the driver and the monitor.</para>
                   <para>By comparison, <systemitem>virtio-scsi</systemitem> does not define commands, but rather a transport protocol for these commands following the industry-standard SCSI specification. This approach is shared with other technologies, such as Fibre Channel, ATAPI and USB devices.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Device naming</term>
                <listitem>
-                  <para>
-                     <systemitem>virtio-blk</systemitem> devices are presented inside the guest as <filename>/dev/vd<replaceable>X</replaceable>
-                     </filename>, which is different from device names in physical systems and may cause migration problems.</para>
-                  <para>
-                     <systemitem>virtio-scsi</systemitem> keeps the device names identical to those on physical systems, making the virtual machines easily relocatable.</para>
+                  <para><systemitem>virtio-blk</systemitem> devices are presented inside the guest as <filename>/dev/vd<replaceable>X</replaceable></filename>, which is different from device names in physical systems and may cause migration problems.</para>
+                  <para><systemitem>virtio-scsi</systemitem> keeps the device names identical to those on physical systems, making the virtual machines easily relocatable.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -130,8 +119,7 @@ kvm                   411041  1 kvm_intel</screen>
          <screen><prompt role="root">#</prompt>qemu-system-x86_64 [...] \
 -netdev tap,id=guest0,vhost=on,script=no \
 -net nic,model=virtio,netdev=guest0,macaddr=00:16:35:AF:94:4B</screen>
-         <para>
-            <literal>guest0</literal> is an identification string of the vhost-driven device.</para>
+         <para><literal>guest0</literal> is an identification string of the vhost-driven device.</para>
       </sect2>
       <sect2 xml:id="kvm-qemu-multiqueue">
          <title>Scaling network performance with multiqueue virtio-net</title>
@@ -212,8 +200,7 @@ Virtual Function [8086:10ca] (rev 01)
             <step>
                <para>Bind the device to the vfio-pci driver using the vendor ID from step 1:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> echo "8086 153a" &gt; /sys/bus/pci/drivers/vfio-pci/new_id</screen>
-               <para>A new device <filename>/dev/vfio/<replaceable>IOMMU_GROUP</replaceable>
-                  </filename> is created as a result, <filename>/dev/vfio/20</filename> in this case.</para>
+               <para>A new device <filename>/dev/vfio/<replaceable>IOMMU_GROUP</replaceable></filename> is created as a result, <filename>/dev/vfio/20</filename> in this case.</para>
             </step>
             <step>
                <para>Change the ownership of the newly created device:</para>
@@ -227,8 +214,7 @@ Virtual Function [8086:10ca] (rev 01)
          </procedure>
          <important>
             <title>No hotplugging</title>
-            <para>As of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-               <phrase role="productnumber">15 SP7</phrase>, hotplugging of PCI devices passed to a VM Guest via VFIO is not supported.</para>
+            <para>As of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>, hotplugging of PCI devices passed to a VM Guest via VFIO is not supported.</para>
          </important>
          <!-- fs 2015-10-09: not yet supported
         <para>
@@ -275,12 +261,10 @@ Virtual Function [8086:10ca] (rev 01)
             <para>In QEMU, the implementation of VirtFS is simplified by defining two types of devices:</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>
-                     <literal>virtio-9p-pci</literal> device which transports protocol messages and data between the host and the guest.</para>
+                  <para><literal>virtio-9p-pci</literal> device which transports protocol messages and data between the host and the guest.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>fsdev</literal> device which defines the export file system properties, such as file system type and security model.</para>
+                  <para><literal>fsdev</literal> device which defines the export file system properties, such as file system type and security model.</para>
                </listitem>
             </itemizedlist>
             <example xml:id="ex-qemu-virtfs-host">
@@ -314,8 +298,7 @@ Virtual Function [8086:10ca] (rev 01)
       <sect2 xml:id="kvm-qemu-ksm">
          <title>KSM: sharing memory pages between guests</title>
          <para>Kernel Same Page Merging (<xref linkend="gloss-vt-acronym-ksm"/>) is a Linux kernel feature that merges identical memory pages from multiple running processes into one memory region. Because KVM guests run as processes under Linux, <xref linkend="gloss-vt-acronym-ksm"/> provides the memory overcommit feature to hypervisors for more efficient use of memory. Therefore, if you need to run multiple virtual machines on a host with limited memory, <xref linkend="gloss-vt-acronym-ksm"/> may be helpful to you.</para>
-         <para>
-            <xref linkend="gloss-vt-acronym-ksm"/> stores its status information in the files under the <filename>/sys/kernel/mm/ksm</filename> directory:</para>
+         <para><xref linkend="gloss-vt-acronym-ksm"/> stores its status information in the files under the <filename>/sys/kernel/mm/ksm</filename> directory:</para>
          <screen><prompt>&gt;</prompt>ls -1 /sys/kernel/mm/ksm
 full_scans
 merge_across_nodes

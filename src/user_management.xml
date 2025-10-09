@@ -12,9 +12,7 @@
       <title>Various account checks</title>
       <sect2 xml:id="sec-sec-prot-general-accounts-unlocked">
          <title>Unlocked accounts</title>
-         <para>It is important that all system and vendor accounts that are not used for logins are locked. To get a list of unlocked accounts on your system, you can check for accounts that do <emphasis>not</emphasis> have an encrypted password string starting with <literal>!</literal> or <literal>*</literal> in the <filename>/etc/shadow</filename> file. If you lock an account using either <command>passwd</command>
-            <option>-l</option> or <command>usermod</command>
-            <option>-L</option>, it puts a <literal>!</literal> in front of the encrypted password, effectively disabling the password. Many system and shared accounts are locked by default by having a <literal>*</literal> ,<literal>!!</literal> or <literal>!*</literal> as the password field which renders the encrypted password into an invalid string. Hence, to get a list of all unlocked (encryptable) accounts, run the following command:</para>
+         <para>It is important that all system and vendor accounts that are not used for logins are locked. To get a list of unlocked accounts on your system, you can check for accounts that do <emphasis>not</emphasis> have an encrypted password string starting with <literal>!</literal> or <literal>*</literal> in the <filename>/etc/shadow</filename> file. If you lock an account using either <command>passwd</command><option>-l</option> or <command>usermod</command><option>-L</option>, it puts a <literal>!</literal> in front of the encrypted password, effectively disabling the password. Many system and shared accounts are locked by default by having a <literal>*</literal> ,<literal>!!</literal> or <literal>!*</literal> as the password field which renders the encrypted password into an invalid string. Hence, to get a list of all unlocked (encryptable) accounts, run the following command:</para>
          <screen><prompt role="root">#</prompt>egrep -v ':\*|:\!' /etc/shadow | awk -F: '{print $1}'</screen>
          <para>Also make sure all accounts have an <literal>x</literal> in the password field in <filename>/etc/passwd</filename>. The following command lists all accounts that do not have a <literal>x</literal> in the password field:</para>
          <screen><prompt role="root">#</prompt>grep -v ':x:' /etc/passwd</screen>
@@ -26,8 +24,7 @@
          <screen><prompt role="root">#</prompt>find / -path /proc -prune -o -user <replaceable>ACCOUNT</replaceable> -ls</screen>
          <para>The <option>-prune</option> option in this example is used to skip the /proc file system. If you are sure that an account can be deleted, you can remove the account using the following command:</para>
          <screen><prompt role="root">#</prompt>userdel -r <replaceable>ACCOUNT</replaceable></screen>
-         <para>Without the <option>-r</option> option, <command>userdel</command> does not delete the user's home directory and mail spool (<filename>/var/spool/mail/<replaceable>USER</replaceable>
-            </filename>). Many system accounts do not have a home directory.</para>
+         <para>Without the <option>-r</option> option, <command>userdel</command> does not delete the user's home directory and mail spool (<filename>/var/spool/mail/<replaceable>USER</replaceable></filename>). Many system accounts do not have a home directory.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-sec-prot-general-pw-aging">
@@ -39,79 +36,29 @@
          <tgroup cols="3">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/etc/login.defs</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>PASS_MAX_DAYS</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Maximum number of days a password is valid.</para>
-                  </entry>
+                  <entry><para><filename>/etc/login.defs</filename></para></entry>
+                  <entry><para><literal>PASS_MAX_DAYS</literal></para></entry>
+                  <entry><para>Maximum number of days a password is valid.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/etc/login.defs</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>PASS_MIN_DAYS</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum number of days before a user can change the password since the last change.</para>
-                  </entry>
+                  <entry><para><filename>/etc/login.defs</filename></para></entry>
+                  <entry><para><literal>PASS_MIN_DAYS</literal></para></entry>
+                  <entry><para>Minimum number of days before a user can change the password since the last change.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/etc/login.defs</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>PASS_WARN_AGE</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Number of days between the last password change and the next password change reminder.</para>
-                  </entry>
+                  <entry><para><filename>/etc/login.defs</filename></para></entry>
+                  <entry><para><literal>PASS_WARN_AGE</literal></para></entry>
+                  <entry><para>Number of days between the last password change and the next password change reminder.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/etc/default/useradd</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>INACTIVE</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Number of days after password expiration until the account is disabled.</para>
-                  </entry>
+                  <entry><para><filename>/etc/default/useradd</filename></para></entry>
+                  <entry><para><literal>INACTIVE</literal></para></entry>
+                  <entry><para>Number of days after password expiration until the account is disabled.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/etc/default/useradd</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>EXPIRE</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Account expiration date in the format YYYY-MM-DD.</para>
-                  </entry>
+                  <entry><para><filename>/etc/default/useradd</filename></para></entry>
+                  <entry><para><literal>EXPIRE</literal></para></entry>
+                  <entry><para>Account expiration date in the format YYYY-MM-DD.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -152,33 +99,13 @@ Account Expires: Never</screen>
    <xi:include href="hardening_pam_stack.xml"/>
    <sect1 xml:id="sec-sec-prot-restrict-root">
       <title>Restricting <systemitem class="username">root</systemitem> logins</title>
-      <para>By default, the <systemitem class="username">root</systemitem> user is assigned a password and can log in using various methods—for example, on a local terminal, in a graphical session, or remotely via SSH. These methods should be restricted as far as possible. Shared usage of the root account should be avoided. Instead, individual administrators should use tools such as <literal>su</literal> or <literal>sudo</literal> (for more information, type <command>man 1 su</command> or <command>man 8 sudo</command>) to obtain elevated privileges. This allows associating <systemitem class="username">root</systemitem> logins with particular users. This also adds another layer of security; not only the <systemitem class="username">root</systemitem> password, but both the <systemitem class="username">root</systemitem>
-         <emphasis>and</emphasis> the password of an administrator's regular account would need to be compromised to gain full root access. This section explains how to limit direct root logins on the different levels of the system.</para>
+      <para>By default, the <systemitem class="username">root</systemitem> user is assigned a password and can log in using various methods—for example, on a local terminal, in a graphical session, or remotely via SSH. These methods should be restricted as far as possible. Shared usage of the root account should be avoided. Instead, individual administrators should use tools such as <literal>su</literal> or <literal>sudo</literal> (for more information, type <command>man 1 su</command> or <command>man 8 sudo</command>) to obtain elevated privileges. This allows associating <systemitem class="username">root</systemitem> logins with particular users. This also adds another layer of security; not only the <systemitem class="username">root</systemitem> password, but both the <systemitem class="username">root</systemitem><emphasis>and</emphasis> the password of an administrator's regular account would need to be compromised to gain full root access. This section explains how to limit direct root logins on the different levels of the system.</para>
       <sect2 xml:id="sec-sec-prot-restrict-root-tty">
          <title>Restricting local text console logins</title>
-         <para>TTY devices provide text-mode system access via the console. For desktop systems these are accessed via the local keyboard or—in case of server systems—via input devices connected to a KVM switch or a remote management card (for example, ILO and DRAC). By default, Linux offers six different consoles, which can be switched to via the key combinations <keycombo>
-               <keycap function="alt"/>
-               <keycap>F1</keycap>
-            </keycombo> to <keycombo>
-               <keycap function="alt"/>
-               <keycap>F6</keycap>
-            </keycombo>, when running in text mode, or <keycombo>
-               <keycap function="control"/>
-               <keycap function="alt"/>
-               <keycap>F1</keycap>
-            </keycombo> to <keycombo>
-               <keycap function="control"/>
-               <keycap function="alt"/>
-               <keycap>F6</keycap>
-            </keycombo> when running in a graphical session. The associated terminal devices are named <literal>tty1</literal> to <literal>tty6</literal>.</para>
+         <para>TTY devices provide text-mode system access via the console. For desktop systems these are accessed via the local keyboard or—in case of server systems—via input devices connected to a KVM switch or a remote management card (for example, ILO and DRAC). By default, Linux offers six different consoles, which can be switched to via the key combinations <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo> to <keycombo><keycap function="alt"/><keycap>F6</keycap></keycombo>, when running in text mode, or <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo> to <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F6</keycap></keycombo> when running in a graphical session. The associated terminal devices are named <literal>tty1</literal> to <literal>tty6</literal>.</para>
          <para>The following steps restrict root access to the first TTY. Even this access method is only meant for emergency access to the system and should never be used for everyday system administration tasks.</para>
          <note>
-            <para>The steps shown here are tailored towards PC architectures (x86 and AMD64/Intel 64). On architectures such as POWER, different terminal device names than <literal>tty1</literal> can be used. Be careful not to lock yourself out by specifying wrong terminal device names. You can determine the device name of the terminal you are currently logged in to by running the <literal>tty</literal> command. Be careful not to do this in a virtual terminal, such as via SSH or in a graphical session (device names <filename>/dev/pts/<replaceable>N</replaceable>
-               </filename>), but only from an actual login terminal reachable via <keycombo>
-                  <keycap function="alt"/>
-                  <keycap>F<replaceable>N</replaceable>
-                  </keycap>
-               </keycombo>.</para>
+            <para>The steps shown here are tailored towards PC architectures (x86 and AMD64/Intel 64). On architectures such as POWER, different terminal device names than <literal>tty1</literal> can be used. Be careful not to lock yourself out by specifying wrong terminal device names. You can determine the device name of the terminal you are currently logged in to by running the <literal>tty</literal> command. Be careful not to do this in a virtual terminal, such as via SSH or in a graphical session (device names <filename>/dev/pts/<replaceable>N</replaceable></filename>), but only from an actual login terminal reachable via <keycombo><keycap function="alt"/><keycap>F<replaceable>N</replaceable></keycap></keycombo>.</para>
          </note>
          <procedure>
             <title>Restricting root logins on local TTYs</title>
@@ -235,8 +162,7 @@ tty1</screen>
    <sect1 xml:id="sec-sec-prot-restrict-sudo">
       <title>Restricting <command>sudo</command> users</title>
       <para>The <command>sudo</command> command allows users to execute commands in the context of another user, typically the <systemitem class="username">root</systemitem> user. The <command>sudo</command> configuration consists of a rule-set that defines the mappings between commands to execute and their allowed source and target users and groups. The configuration is stored in the file <filename>/etc/sudoers</filename>. <!-- cha-adm-sudo is part of the admin guide,
-     which is not available for openSUSE dos --> For more information about <command>sudo</command>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-adm-sudo" xrefstyle="%label &#34;%c&#34;"/>.</para>
+     which is not available for openSUSE dos --> For more information about <command>sudo</command>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-sudo" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <para>By default, <command>sudo</command> asks for the <systemitem class="username">root</systemitem> password on SUSE systems. Unlike <command>su</command> however, <command>sudo</command> remembers the password and allows further commands to be executed as <systemitem class="username">root</systemitem> without asking for the password again for five minutes. Therefore, <command>sudo</command> should be enabled for selected administrator users only.</para>
       <procedure>
          <title>Restricting <command>sudo</command> for normal users</title>
@@ -293,144 +219,40 @@ tty1</screen>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>bash</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>bash, sh</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>
-                        <literal>TMOUT</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>seconds</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>read-only TMOUT=</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/bash.bashrc</filename>
-                     </para>
-                  </entry>
+                  <entry><para><literal>bash</literal></para></entry>
+                  <entry><para><literal>bash, sh</literal></para></entry>
+                  <entry align="center"><para><literal>TMOUT</literal></para></entry>
+                  <entry align="center"><para>seconds</para></entry>
+                  <entry><para><literal>read-only TMOUT=</literal></para></entry>
+                  <entry><para><filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename></para></entry>
+                  <entry><para><filename>/etc/bash.bashrc</filename></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>mksh</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>ksh, lksh, mksh, pdksh</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>
-                        <literal>TMOUT</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>seconds</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>read-only TMOUT=</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/ksh.kshrc.local</filename>
-                     </para>
-                  </entry>
+                  <entry><para><literal>mksh</literal></para></entry>
+                  <entry><para><literal>ksh, lksh, mksh, pdksh</literal></para></entry>
+                  <entry align="center"><para><literal>TMOUT</literal></para></entry>
+                  <entry align="center"><para>seconds</para></entry>
+                  <entry><para><literal>read-only TMOUT=</literal></para></entry>
+                  <entry><para><filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename></para></entry>
+                  <entry><para><filename>/etc/ksh.kshrc.local</filename></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>tcsh</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>csh, tcsh</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>
-                        <literal>autologout</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>minutes</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>set -r autologout=</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/csh.login.local</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/csh.cshrc.local</filename>
-                     </para>
-                  </entry>
+                  <entry><para><literal>tcsh</literal></para></entry>
+                  <entry><para><literal>csh, tcsh</literal></para></entry>
+                  <entry align="center"><para><literal>autologout</literal></para></entry>
+                  <entry align="center"><para>minutes</para></entry>
+                  <entry><para><literal>set -r autologout=</literal></para></entry>
+                  <entry><para><filename>/etc/csh.login.local</filename></para></entry>
+                  <entry><para><filename>/etc/csh.cshrc.local</filename></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>zsh</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>zsh</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>
-                        <literal>TMOUT</literal>
-                     </para>
-                  </entry>
-                  <entry align="center">
-                     <para>seconds</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>readonly TMOUT=</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <filename>/etc/zsh.zshrc.local</filename>
-                     </para>
-                  </entry>
+                  <entry><para><literal>zsh</literal></para></entry>
+                  <entry><para><literal>zsh</literal></para></entry>
+                  <entry align="center"><para><literal>TMOUT</literal></para></entry>
+                  <entry align="center"><para>seconds</para></entry>
+                  <entry><para><literal>readonly TMOUT=</literal></para></entry>
+                  <entry><para><filename>/etc/profile.local</filename>, <filename>/etc/profile.d/</filename></para></entry>
+                  <entry><para><filename>/etc/zsh.zshrc.local</filename></para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -448,13 +270,7 @@ tty1</screen>
 # 24h = 86400 sec
 readonly TMOUT=86400</screen>
       <tip>
-         <para>We recommend using the <command>screen</command> tool to detach sessions before logging out. <command>screen</command> sessions are not terminated and can be re-attached whenever required. An active session can be locked without logging out (read about <keycombo>
-               <keycombo>
-                  <keycap function="control"/>
-                  <keycap>A</keycap>
-               </keycombo>
-               <keycap>X</keycap>
-            </keycombo> / <command>lockscreen</command> in <command>man screen</command> for details).</para>
+         <para>We recommend using the <command>screen</command> tool to detach sessions before logging out. <command>screen</command> sessions are not terminated and can be re-attached whenever required. An active session can be locked without logging out (read about <keycombo><keycombo><keycap function="control"/><keycap>A</keycap></keycombo><keycap>X</keycap></keycombo> / <command>lockscreen</command> in <command>man screen</command> for details).</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-sec-prot-dos">
@@ -580,7 +396,6 @@ fi</screen>
          </title>
          <para>Converts raw data from /var/run/utmp or <filename>/var/log/wtmp</filename> into ASCII-parseable format.</para>
       </formalpara>
-      <para>Also check the <filename>/var/log/messages</filename> file, or the output of <command>journalctl</command> if no logging facility is running. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the <systemitem class="daemon">systemd</systemitem> journal.</para>
+      <para>Also check the <filename>/var/log/messages</filename> file, or the output of <command>journalctl</command> if no logging facility is running. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the <systemitem class="daemon">systemd</systemitem> journal.</para>
    </sect1>
 </chapter>

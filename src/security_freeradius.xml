@@ -65,10 +65,7 @@ Waking up in 4.9 seconds.
   </screen>
       <para>On the client machine, install <systemitem class="resource">freeradius-server-utils</systemitem>. Try logging in from the client as <literal>bob</literal>, using the <command>radtest</command> command. It is better to use the IP address of the RADIUS server rather than the hostname because it is faster:</para>
       <screen><prompt>&gt;</prompt><command>radtest bob hello 192.168.2.100 0 testing123-1</command></screen>
-      <para>If your test logins fail, review all the output to learn what went wrong. There are several test users and test clients provided. The configuration files are full of useful information, and we recommend studying them. When you are satisfied with your testing and ready to create a production configuration, remove all the test certificates in <filename>/etc/raddb/certs</filename> and replace them with your own certificates, comment out all the test users and clients, and stop <command>radiusd</command> by pressing <keycombo>
-            <keycap function="control"/>
-            <keycap>C</keycap>
-         </keycombo>. Manage the <literal>radiusd.service</literal> with <command>systemctl</command>, just like any other service.</para>
+      <para>If your test logins fail, review all the output to learn what went wrong. There are several test users and test clients provided. The configuration files are full of useful information, and we recommend studying them. When you are satisfied with your testing and ready to create a production configuration, remove all the test certificates in <filename>/etc/raddb/certs</filename> and replace them with your own certificates, comment out all the test users and clients, and stop <command>radiusd</command> by pressing <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>. Manage the <literal>radiusd.service</literal> with <command>systemctl</command>, just like any other service.</para>
       <para>To learn how to fit a FreeRADIUS server in your network, see <link xlink:href="https://freeradius.org/documentation/"/> and <link xlink:href="https://networkradius.com/freeradius-documentation/"/> for in-depth references and howtos.</para>
    </sect1>
 </chapter>

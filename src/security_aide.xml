@@ -20,14 +20,9 @@
       <title>Setting up an AIDE database</title>
       <important>
          <title>Initialize AIDE database after installation</title>
-         <para>Before you install your system, verify the checksum of your medium (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-installation-troubleshooting-checking-media"
-                  xrefstyle="%label &#34;%c&#34;"/>) to make sure you do not use a compromised source. After you have installed the system, initialize the AIDE database. To make sure that all went well during and after the installation, do an installation directly on the console, without any network attached to the computer. Do not leave the computer unattended or connected to any network before AIDE creates its database.</para>
+         <para>Before you install your system, verify the checksum of your medium (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-installation-troubleshooting-checking-media" xrefstyle="%label &#34;%c&#34;"/>) to make sure you do not use a compromised source. After you have installed the system, initialize the AIDE database. To make sure that all went well during and after the installation, do an installation directly on the console, without any network attached to the computer. Do not leave the computer unattended or connected to any network before AIDE creates its database.</para>
       </important>
-      <para>AIDE is not installed by default on <phrase role="productname">SUSE Linux Enterprise Server</phrase>. To install it, either use <menuchoice>
-            <guimenu>Computer</guimenu>
-            <guimenu>Install Software</guimenu>
-         </menuchoice>, or enter <literal>zypper install aide</literal> on the command line as <systemitem class="username">root</systemitem>.</para>
+      <para>AIDE is not installed by default on <phrase role="productname">SUSE Linux Enterprise Server</phrase>. To install it, either use <menuchoice><guimenu>Computer</guimenu><guimenu>Install Software</guimenu></menuchoice>, or enter <literal>zypper install aide</literal> on the command line as <systemitem class="username">root</systemitem>.</para>
       <para>To tell AIDE which attributes of which files should be checked, use the <filename>/etc/aide.conf</filename> configuration file. It must be modified to become the actual configuration. The first section handles general parameters like the location of the AIDE database file. More relevant for local configurations are the <systemitem>Custom Rules</systemitem> and the <systemitem>Directories and Files</systemitem> sections. A typical rule looks like the following:</para>
       <screen>Binlib     = p+i+n+u+g+s+b+m+c+md5+sha1</screen>
       <para>After defining the variable <literal>Binlib</literal>, the respective check boxes are used in the files section. Important options include the following:</para>
@@ -36,134 +31,70 @@
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>Option</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Option</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>p</para>
-                  </entry>
-                  <entry>
-                     <para>Check for the file permissions of the selected files or directories.</para>
-                  </entry>
+                  <entry><para>p</para></entry>
+                  <entry><para>Check for the file permissions of the selected files or directories.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>i</para>
-                  </entry>
-                  <entry>
-                     <para>Check for the inode number. Every file name has a unique inode number that should not change.</para>
-                  </entry>
+                  <entry><para>i</para></entry>
+                  <entry><para>Check for the inode number. Every file name has a unique inode number that should not change.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>n</para>
-                  </entry>
-                  <entry>
-                     <para>Check for the number of links pointing to the relevant file.</para>
-                  </entry>
+                  <entry><para>n</para></entry>
+                  <entry><para>Check for the number of links pointing to the relevant file.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>u</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the owner of the file has changed.</para>
-                  </entry>
+                  <entry><para>u</para></entry>
+                  <entry><para>Check if the owner of the file has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>g</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the group of the file has changed.</para>
-                  </entry>
+                  <entry><para>g</para></entry>
+                  <entry><para>Check if the group of the file has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>s</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the file size has changed.</para>
-                  </entry>
+                  <entry><para>s</para></entry>
+                  <entry><para>Check if the file size has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>b</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the block count used by the file has changed.</para>
-                  </entry>
+                  <entry><para>b</para></entry>
+                  <entry><para>Check if the block count used by the file has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>m</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the modification time of the file has changed.</para>
-                  </entry>
+                  <entry><para>m</para></entry>
+                  <entry><para>Check if the modification time of the file has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>c</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the files access time has changed.</para>
-                  </entry>
+                  <entry><para>c</para></entry>
+                  <entry><para>Check if the files access time has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>S</para>
-                  </entry>
-                  <entry>
-                     <para>Check for a changed file size.</para>
-                  </entry>
+                  <entry><para>S</para></entry>
+                  <entry><para>Check for a changed file size.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>I</para>
-                  </entry>
-                  <entry>
-                     <para>Ignore changes of the file name.</para>
-                  </entry>
+                  <entry><para>I</para></entry>
+                  <entry><para>Ignore changes of the file name.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>md5</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the md5 checksum of the file has changed. We recommend to use sha256 or sha512.</para>
-                  </entry>
+                  <entry><para>md5</para></entry>
+                  <entry><para>Check if the md5 checksum of the file has changed. We recommend to use sha256 or sha512.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>sha1</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the sha1 (160 Bit) checksum of the file has changed. We recommend to use sha256 or sha512.</para>
-                  </entry>
+                  <entry><para>sha1</para></entry>
+                  <entry><para>Check if the sha1 (160 Bit) checksum of the file has changed. We recommend to use sha256 or sha512.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>sha256</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the sha256 checksum of the file has changed.</para>
-                  </entry>
+                  <entry><para>sha256</para></entry>
+                  <entry><para>Check if the sha256 checksum of the file has changed.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>sha512</para>
-                  </entry>
-                  <entry>
-                     <para>Check if the sha512 checksum of the file has changed.</para>
-                  </entry>
+                  <entry><para>sha512</para></entry>
+                  <entry><para>Check if the sha512 checksum of the file has changed.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -288,8 +219,7 @@ dud:ftp://ftp.example.com/mhash<replaceable>VERSION</replaceable>.<replaceable>A
       <para>Information about AIDE is available at the following places:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>The home page of AIDE: <link xlink:href="https://aide.github.io/"/>
-            </para>
+            <para>The home page of AIDE: <link xlink:href="https://aide.github.io/"/></para>
          </listitem>
          <listitem>
             <para>In the documented template configuration <filename>/etc/aide.conf</filename>.</para>

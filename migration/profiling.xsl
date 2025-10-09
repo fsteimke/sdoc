@@ -30,7 +30,8 @@
       select="tokenize(@condition, ';') = tokenize($profile-condition, ';') or not(@condition)"/>
     <xsl:if test="$os and $arch and $condition">
       <xsl:copy copy-namespaces="no">
-        <xsl:apply-templates select="@* except (@os | @arch | @condition), node()"/>
+        <!-- we need the @arch attribute in para elements that survived profiling to set markers -->
+        <xsl:apply-templates select="@* except (@os | @condition), node()"/>
       </xsl:copy>
     </xsl:if>
   </xsl:template>

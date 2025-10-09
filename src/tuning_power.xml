@@ -22,53 +22,32 @@
          <para>Modern processors have several power saving modes called <literal>C-states</literal>. They reflect the capability of an idle processor to turn off unused components to save power.</para>
          <para>When a processor is in the <literal>C0</literal> state, it is executing instructions. A processor running in any other C-state is idle. The higher the C number, the deeper the CPU sleep mode: more components are shut down to save power. Deeper sleep states can save large amounts of energy. Their downside is that they introduce latency. This means, it takes more time for the CPU to go back to <literal>C0</literal>. Depending on workload (threads waking up, triggering CPU usage and then going back to sleep again for a short period of time) and hardware (for example, interrupt activity of a network device), disabling the deepest sleep states can increase overall performance. For details on how to do so, refer to <xref linkend="sec-tuning-power-tools-cpupower-idle-info"/>.</para>
          <para>Some states also have submodes with different power saving latency levels. Which C-states and submodes are supported depends on the respective processor. However, <literal>C1</literal> is always available.</para>
-         <para>
-            <xref linkend="tab-tuning-power-cstates"/> gives an overview of the most common C-states.</para>
+         <para><xref linkend="tab-tuning-power-cstates"/> gives an overview of the most common C-states.</para>
          <table xml:id="tab-tuning-power-cstates">
             <title>C-states</title>
             <tgroup cols="2">
                <thead>
                   <row>
-                     <entry>
-                        <para>Mode</para>
-                     </entry>
-                     <entry>
-                        <para>Definition</para>
-                     </entry>
+                     <entry><para>Mode</para></entry>
+                     <entry><para>Definition</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>C0</para>
-                     </entry>
-                     <entry>
-                        <para>Operational state. CPU fully turned on.</para>
-                     </entry>
+                     <entry><para>C0</para></entry>
+                     <entry><para>Operational state. CPU fully turned on.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>C1</para>
-                     </entry>
-                     <entry>
-                        <para>First idle state. Stops CPU main internal clocks via software. Bus interface unit and APIC are kept running at full speed.</para>
-                     </entry>
+                     <entry><para>C1</para></entry>
+                     <entry><para>First idle state. Stops CPU main internal clocks via software. Bus interface unit and APIC are kept running at full speed.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>C2</para>
-                     </entry>
-                     <entry>
-                        <para>Stops CPU main internal clocks via hardware. State in which the processor maintains all software-visible states, but may take longer to wake up through interrupts.</para>
-                     </entry>
+                     <entry><para>C2</para></entry>
+                     <entry><para>Stops CPU main internal clocks via hardware. State in which the processor maintains all software-visible states, but may take longer to wake up through interrupts.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>C3</para>
-                     </entry>
-                     <entry>
-                        <para>Stops all CPU internal clocks. The processor does not need to keep its cache coherent, but maintains other states. Some processors have variations of the C3 state that differ in how long it takes to wake the processor through interrupts.</para>
-                     </entry>
+                     <entry><para>C3</para></entry>
+                     <entry><para>Stops all CPU internal clocks. The processor does not need to keep its cache coherent, but maintains other states. Some processors have variations of the C3 state that differ in how long it takes to wake the processor through interrupts.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -201,8 +180,7 @@
    <sect1 xml:id="sec-tuning-power-tools-cpupower">
       <title>The <systemitem class="resource">cpupower</systemitem> tools</title>
       <para>The <command>cpupower</command> tools are designed to give an overview of <emphasis>all</emphasis> CPU power-related parameters that are supported on a given machine, including turbo (or boost) states. Use the toolset to view and modify settings of the kernel-related CPUfreq and cpuidle systems and other settings not related to frequency scaling or idle states. The integrated monitoring framework can access both kernel-related parameters and hardware statistics. Therefore, it is ideally suited for performance benchmarks. It also helps you to identify the dependencies between turbo and idle states.</para>
-      <para>After installing the <systemitem class="resource">cpupower</systemitem> package, view the available <command>cpupower</command> subcommands with <command>cpupower --help</command>. Access the general man page with <command>man cpupower</command>, and the man pages of the subcommands with <command>man cpupower-<replaceable>SUBCOMMAND</replaceable>
-         </command>.</para>
+      <para>After installing the <systemitem class="resource">cpupower</systemitem> package, view the available <command>cpupower</command> subcommands with <command>cpupower --help</command>. Access the general man page with <command>man cpupower</command>, and the man pages of the subcommands with <command>man cpupower-<replaceable>SUBCOMMAND</replaceable></command>.</para>
       <sect2 xml:id="sec-tuning-power-tools-cpupower-freq-info">
          <title>Viewing current settings with <command>cpupower</command>
          </title>
@@ -320,8 +298,7 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
       <sect2 xml:id="sec-tuning-power-tools-cpupower-freq-set">
          <title>Modifying current settings with <command>cpupower</command>
          </title>
-         <para>You can use <command>cpupower frequency-set</command> command as <systemitem class="username">root</systemitem> to modify current settings. It allows you to set values for the minimum or maximum CPU frequency the governor may select or to create a new governor. With the <option>-c</option> option, you can also specify for which of the processors the settings should be modified. That makes it easy to use a consistent policy across all processors without adjusting the settings for each processor individually. For more details and the available options, see the man page <literal>cpupower-frequency-set</literal> or run <command>cpupower frequency-set</command>
-            <option>--help</option>.</para>
+         <para>You can use <command>cpupower frequency-set</command> command as <systemitem class="username">root</systemitem> to modify current settings. It allows you to set values for the minimum or maximum CPU frequency the governor may select or to create a new governor. With the <option>-c</option> option, you can also specify for which of the processors the settings should be modified. That makes it easy to use a consistent policy across all processors without adjusting the settings for each processor individually. For more details and the available options, see the man page <literal>cpupower-frequency-set</literal> or run <command>cpupower frequency-set</command><option>--help</option>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-tuning-power-options">
@@ -442,8 +419,7 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
          <varlistentry>
             <term>Log file information?</term>
             <listitem>
-               <para>Check the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>) for any output regarding the CPUfreq subsystem. Only severe errors are reported there.</para>
+               <para>Check the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>) for any output regarding the CPUfreq subsystem. Only severe errors are reported there.</para>
                <para>If you suspect problems with the CPUfreq subsystem on your machine, you can also enable additional debug output. To do so, either use <command>cpufreq.debug=7</command> as boot parameter or execute the following command as <systemitem class="username">root</systemitem>:</para>
                <screen><prompt role="root">#</prompt>echo 7 &gt; /sys/module/cpufreq/parameters/debug</screen>
                <para>This will cause CPUfreq to log more information to <command>dmesg</command> on state transitions, which is useful for diagnosis. But as this additional output of kernel messages can be rather comprehensive, use it only if you are sure that a problem exists.</para>
@@ -469,10 +445,10 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
          <title>powerTOP in interactive mode</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -490,10 +466,10 @@ powerreport-20200108-104431.html
          <title>HTML powerTOP report</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_html.png" width="75%"/>
+               <imagedata fileref="media/powertop_html.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_html.png" width="75%"/>
+               <imagedata fileref="media/powertop_html.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -510,25 +486,16 @@ powerreport-20200108-104431.html
       <para>For more information, see:</para>
       <itemizedlist>
          <listitem>
-            <para>The powerTOP project page at <link xlink:href="https://01.org/powertop"/>
-            </para>
+            <para>The powerTOP project page at <link xlink:href="https://01.org/powertop"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="sec-util-proc-procinfo-sysctl"/>
-            </para>
+            <para><xref linkend="sec-util-proc-procinfo-sysctl"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-systemd" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-systemd" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-udev" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-udev" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
       </itemizedlist>
    </sect1>

@@ -28,10 +28,10 @@
          <title>KVM virtualization architecture</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/kvm_qemu.png" width="100%"/>
+               <imagedata fileref="media/kvm_qemu.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/kvm_qemu.png" width="100%"/>
+               <imagedata fileref="media/kvm_qemu.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>

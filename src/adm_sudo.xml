@@ -91,8 +91,7 @@ root's password:
    <sect1 xml:id="sec-sudo-conf">
       <title>Configuring <command>sudo</command>
       </title>
-      <para>
-         <command>sudo</command> provides a wide range on configurable options.</para>
+      <para><command>sudo</command> provides a wide range on configurable options.</para>
       <note>
          <title>Locked yourself out of sudo</title>
          <para>If you accidentally locked yourself out of <command>sudo</command>, use <command>su -</command> and the <systemitem class="username">root</systemitem> password to start a root shell. To fix the error, run <command>visudo</command>.</para>
@@ -427,8 +426,7 @@ User_List Host_List = [(User_List)] [NOPASSWD:|PASSWD:] Cmnd_List
                </term>
                <listitem>
                   <para>The user is not prompted for a password when running commands matching <literal>Cmd_List</literal> after <literal>NOPASSWD:</literal>.</para>
-                  <para>
-                     <literal>PASSWD</literal> is the default. It only needs to be specified when both <literal>PASSWD</literal> and <literal>NOPASSWD</literal> are on the same line:</para>
+                  <para><literal>PASSWD</literal> is the default. It only needs to be specified when both <literal>PASSWD</literal> and <literal>NOPASSWD</literal> are on the same line:</para>
                   <screen>tux ALL = PASSWD: /usr/bin/foo, NOPASSWD: /usr/bin/bar</screen>
                </listitem>
             </varlistentry>
@@ -446,8 +444,7 @@ User_List Host_List = [(User_List)] [NOPASSWD:|PASSWD:] Cmnd_List
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>
-            <literal>ALL</literal> can be used as <literal>User_List</literal>, <literal>Host_List</literal>, and <literal>Cmnd_List</literal>.</para>
+         <para><literal>ALL</literal> can be used as <literal>User_List</literal>, <literal>Host_List</literal>, and <literal>Cmnd_List</literal>.</para>
          <para>A rule that allows <systemitem class="username">tux</systemitem> to run all commands as root without entering a password:</para>
          <screen>tux ALL = NOPASSWD: ALL</screen>
          <para>A rule that allows <systemitem class="username">tux</systemitem> to run <command>systemctl restart apache2</command>:</para>
@@ -456,8 +453,7 @@ User_List Host_List = [(User_List)] [NOPASSWD:|PASSWD:] Cmnd_List
          <screen>tux ALL = (admin) /usr/bin/wall ""</screen>
          <warning>
             <title>Unsafe rules</title>
-            <para>
-               <emphasis>Do not</emphasis> use rules like <literal>ALL ALL = ALL</literal> without <literal>Defaults targetpw</literal>. Otherwise anyone can run commands as <systemitem class="username">root</systemitem>.</para>
+            <para><emphasis>Do not</emphasis> use rules like <literal>ALL ALL = ALL</literal> without <literal>Defaults targetpw</literal>. Otherwise anyone can run commands as <systemitem class="username">root</systemitem>.</para>
          </warning>
          <important>
             <title>Winbind and sudo</title>

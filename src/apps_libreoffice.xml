@@ -24,95 +24,41 @@
             <colspec colnum="3" colname="see" colwidth="25*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Module</para>
-                  </entry>
-                  <entry>
-                     <para>Purpose</para>
-                  </entry>
-                  <entry>
-                     <para>Described in</para>
-                  </entry>
+                  <entry><para>Module</para></entry>
+                  <entry><para>Purpose</para></entry>
+                  <entry><para>Described in</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>Writer</para>
-                  </entry>
-                  <entry>
-                     <para>Word processor module</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="cha-lo-writer" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Writer</para></entry>
+                  <entry><para>Word processor module</para></entry>
+                  <entry><para><xref linkend="cha-lo-writer" xrefstyle="%label"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Calc</para>
-                  </entry>
-                  <entry>
-                     <para>Spreadsheet module</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="cha-lo-calc" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Calc</para></entry>
+                  <entry><para>Spreadsheet module</para></entry>
+                  <entry><para><xref linkend="cha-lo-calc" xrefstyle="%label"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Impress</para>
-                  </entry>
-                  <entry>
-                     <para>Presentation module</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="sec-lo-various-impress" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Impress</para></entry>
+                  <entry><para>Presentation module</para></entry>
+                  <entry><para><xref linkend="sec-lo-various-impress" xrefstyle="%label"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Base</para>
-                  </entry>
-                  <entry>
-                     <para>Database module</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="sec-lo-various-base" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Base</para></entry>
+                  <entry><para>Database module</para></entry>
+                  <entry><para><xref linkend="sec-lo-various-base" xrefstyle="%label"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Draw</para>
-                  </entry>
-                  <entry>
-                     <para>Module for drawing vector graphics</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="sec-lo-various-draw" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Draw</para></entry>
+                  <entry><para>Module for drawing vector graphics</para></entry>
+                  <entry><para><xref linkend="sec-lo-various-draw" xrefstyle="%label"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Math</para>
-                  </entry>
-                  <entry>
-                     <para>Module for generating mathematical formulas</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <xref linkend="sec-lo-various-math" xrefstyle="%label"/>
-                     </para>
-                  </entry>
+                  <entry><para>Math</para></entry>
+                  <entry><para>Module for generating mathematical formulas</para></entry>
+                  <entry><para><xref linkend="sec-lo-various-math" xrefstyle="%label"/></para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -126,20 +72,14 @@
             <para>Click the <guimenu>Activities</guimenu> overview and type <literal>libre</literal> in the search box. Click the LibreOffice module you want to open.</para>
          </listitem>
          <listitem>
-            <para>If any LibreOffice module is open, you can start any of the other modules by clicking <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>New</guimenu>
-               </menuchoice> in the LibreOffice module and then selecting the type of document you want to create.</para>
+            <para>If any LibreOffice module is open, you can start any of the other modules by clicking <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu></menuchoice> in the LibreOffice module and then selecting the type of document you want to create.</para>
          </listitem>
          <listitem>
             <para>As an alternative, use the command <command>libreoffice</command> and one of the options <option>--writer</option>, <option>--calc</option>, <option>--impress</option>, <option>--draw</option>, or <option>--base</option> to start the respective module.</para>
             <para>LibreOffice has many command-line options, especially for allowing document conversions. To learn more about the command-line options of LibreOffice, see <command>libreoffice --help</command> or the man page of LibreOffice (<command>man libreoffice(1)</command>).</para>
          </listitem>
       </itemizedlist>
-      <para>Before you start working with LibreOffice, you may be interested in changing some options from the Preferences dialog. In any LibreOffice module, click <menuchoice>
-            <guimenu>Tools</guimenu>
-            <guimenu>Options</guimenu>
-         </menuchoice> to open the dialog. The most important settings are:</para>
+      <para>Before you start working with LibreOffice, you may be interested in changing some options from the Preferences dialog. In any LibreOffice module, click <menuchoice><guimenu>Tools</guimenu><guimenu>Options</guimenu></menuchoice> to open the dialog. The most important settings are:</para>
       <variablelist>
          <varlistentry>
             <term>
@@ -238,11 +178,7 @@
          <para>LibreOffice can read, edit and save documents in several formats. It is not necessary to convert files from those formats to the OpenDocument format used by LibreOffice to use those files. However, if you want to convert the files, you can do so. To convert several documents, such as when first switching to LibreOffice, do the following:</para>
          <procedure>
             <step>
-               <para>Select <menuchoice>
-                     <guimenu>File</guimenu>
-                     <guimenu>Wizards</guimenu>
-                     <guimenu>Document Converter</guimenu>
-                  </menuchoice>.</para>
+               <para>Select <menuchoice><guimenu>File</guimenu><guimenu>Wizards</guimenu><guimenu>Document Converter</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Choose the file format from which to convert.</para>
@@ -274,20 +210,13 @@
             <varlistentry>
                <term>If the recipient needs to be able to edit the file</term>
                <listitem>
-                  <para>Save the document in the format the other user needs. For example, to save as a Microsoft Word file, click <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>Save As</guimenu>
-                     </menuchoice>, then select the Microsoft Word file type for the version of Word the other user needs.</para>
+                  <para>Save the document in the format the other user needs. For example, to save as a Microsoft Word file, click <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>, then select the Microsoft Word file type for the version of Word the other user needs.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>If the recipient only needs to read the document</term>
                <listitem>
-                  <para>Export the document to a PDF file with <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>Export</guimenu>
-                        <guimenu>Export as PDF</guimenu>
-                     </menuchoice>. PDF files can be read on any platform using a PDF viewer.</para>
+                  <para>Export the document to a PDF file with <menuchoice><guimenu>File</guimenu><guimenu>Export</guimenu><guimenu>Export as PDF</guimenu></menuchoice>. PDF files can be read on any platform using a PDF viewer.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -299,21 +228,13 @@
             <varlistentry>
                <term>E-mailing a document as a PDF</term>
                <listitem>
-                  <para>Click <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>Send</guimenu>
-                        <guimenu>E-mail as PDF</guimenu>
-                     </menuchoice>. Your default e-mail program opens with the file attached.</para>
+                  <para>Click <menuchoice><guimenu>File</guimenu><guimenu>Send</guimenu><guimenu>E-mail as PDF</guimenu></menuchoice>. Your default e-mail program opens with the file attached.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>E-mailing a document to a Microsoft Word user</term>
                <listitem>
-                  <para>Click <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>Send</guimenu>
-                        <guimenu>E-mail as Microsoft Word</guimenu>
-                     </menuchoice>. Your default e-mail program opens with the file attached.</para>
+                  <para>Click <menuchoice><guimenu>File</guimenu><guimenu>Send</guimenu><guimenu>E-mail as Microsoft Word</guimenu></menuchoice>. Your default e-mail program opens with the file attached.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -321,17 +242,10 @@
    </sect1>
    <sect1 xml:id="sec-lo-oview-passwd">
       <title>Saving files with a password</title>
-      <para>You can save files, no matter in which LibreOffice format, with a password. Unlike older versions of LibreOffice, the encryption applied to the document with recent versions of LibreOffice is very strong. However, this encryption does not protect file names and file sizes of encrypted files. If that is important to you, see the alternate encryption methods described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-         <xref linkend="cha-security-cryptofs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>You can save files, no matter in which LibreOffice format, with a password. Unlike older versions of LibreOffice, the encryption applied to the document with recent versions of LibreOffice is very strong. However, this encryption does not protect file names and file sizes of encrypted files. If that is important to you, see the alternate encryption methods described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-cryptofs" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <procedure xml:id="pro-lo-encrypt">
          <step>
-            <para>To save a file with a password, select <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Save</guimenu>
-               </menuchoice> or <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Save As</guimenu>
-               </menuchoice>.</para>
+            <para>To save a file with a password, select <menuchoice><guimenu>File</guimenu><guimenu>Save</guimenu></menuchoice> or <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In the dialog that opens, activate the check box <guimenu>Save with password</guimenu> at the bottom and click <guimenu>Save</guimenu>.</para>
@@ -344,16 +258,10 @@
       <para>To change the password, do either of the following:</para>
       <itemizedlist>
          <listitem>
-            <para>Overwrite the same file by selecting <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Save As</guimenu>
-               </menuchoice>. Make sure <guimenu>Save with Password</guimenu> is deactivated.</para>
+            <para>Overwrite the same file by selecting <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>. Make sure <guimenu>Save with Password</guimenu> is deactivated.</para>
          </listitem>
          <listitem>
-            <para>Select <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Properties</guimenu>
-               </menuchoice> and click <guimenu>Change Password</guimenu> in the <guimenu>General</guimenu> tab to access the password dialog.</para>
+            <para>Select <menuchoice><guimenu>File</guimenu><guimenu>Properties</guimenu></menuchoice> and click <guimenu>Change Password</guimenu> in the <guimenu>General</guimenu> tab to access the password dialog.</para>
          </listitem>
       </itemizedlist>
    </sect1>
@@ -362,19 +270,16 @@
       <para>You can customize LibreOffice to best suit your needs and working style. Toolbars, menus and key combinations can all be reconfigured to help you more quickly access the features you use the most.</para>
       <para>You can also assign macros to application events if you want specific actions to occur when those events take place. For example, if you always work with a specific spreadsheet, you can create a macro that opens the spreadsheet and assign the macro to the <guimenu>Start Application</guimenu> event.</para>
       <para>This section contains simple, generic instructions for customizing your environment. The changes you make are effective immediately. This means you can see if the changes are what you wanted and go back and modify them if they are not. See the LibreOffice help files for detailed instructions.</para>
-      <para>To access the customization dialog in any open LibreOffice module, select <menuchoice>
-            <guimenu>Tools</guimenu>
-            <guimenu>Customize</guimenu>
-         </menuchoice>.</para>
+      <para>To access the customization dialog in any open LibreOffice module, select <menuchoice><guimenu>Tools</guimenu><guimenu>Customize</guimenu></menuchoice>.</para>
       <figure xml:id="fig-lo-oview-custom">
          <title>Customization dialog in <guimenu>Writer</guimenu>
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -386,11 +291,7 @@
          <title>Customizing menus</title>
          <para>You can add or delete items from current menus, reorganize menus and even create new menus.</para>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Customize</guimenu>
-                  <guimenu>Menus</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>Tools</guimenu><guimenu>Customize</guimenu><guimenu>Menus</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In the right column in the <guimenu>Target</guimenu> drop-down box, select the menu you want to customize.</para>
@@ -411,11 +312,7 @@
       <procedure>
          <title>Customizing toolbars</title>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Customize</guimenu>
-                  <guimenu>Toolbars</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>Tools</guimenu><guimenu>Customize</guimenu><guimenu>Toolbars</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In the right column in the <guimenu>Target</guimenu> drop-down box, select the toolbar you want to customize.</para>
@@ -456,11 +353,7 @@
          <title>Customizing events</title>
          <para>LibreOffice also provides ways to assign macros to events such as application start-up or the saving of a document. The assigned macro runs automatically whenever the selected event occurs.</para>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Customize</guimenu>
-                  <guimenu>Events</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>Tools</guimenu><guimenu>Customize</guimenu><guimenu>Events</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select the event you want to change.</para>
@@ -479,11 +372,7 @@
             <para>The <guimenu>Keyboard</guimenu> tab is only available in an open document.</para>
          </note>
          <step>
-            <para>Open a document and click <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Customize</guimenu>
-                  <guimenu>Keyboard</guimenu>
-               </menuchoice>.</para>
+            <para>Open a document and click <menuchoice><guimenu>Tools</guimenu><guimenu>Customize</guimenu><guimenu>Keyboard</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In the <guimenu>Shortcut Keys</guimenu> box, select the key or key combination you want to assign a command to.</para>
@@ -501,18 +390,15 @@
    </sect1>
    <sect1 xml:id="sec-lo-oview-global">
       <title>Changing the global settings</title>
-      <para>Global settings can be changed in any LibreOffice module by clicking <menuchoice>
-            <guimenu>Tools</guimenu>
-            <guimenu>Options</guimenu>
-         </menuchoice> on the menu bar. This opens the window shown in the figure below. A tree structure is used to display categories of settings.</para>
+      <para>Global settings can be changed in any LibreOffice module by clicking <menuchoice><guimenu>Tools</guimenu><guimenu>Options</guimenu></menuchoice> on the menu bar. This opens the window shown in the figure below. A tree structure is used to display categories of settings.</para>
       <figure xml:id="fig-ooo-cust-globalsettings">
          <title>The Options window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_options.png" width="95%"/>
+               <imagedata fileref="media/oo_options.png" width="87%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_options.png" width="85%"/>
+               <imagedata fileref="media/oo_options.png" width="78%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -526,160 +412,66 @@
             <colspec align="center" colnum="3" colname="3" colwidth="20*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Settings Category</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
-                  <entry>
-                     <para>Module</para>
-                  </entry>
+                  <entry><para>Settings Category</para></entry>
+                  <entry><para>Description</para></entry>
+                  <entry><para>Module</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Basic settings, including your user data (such as your address and e-mail), important paths and settings for printers and external programs.</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice</guimenu></para></entry>
+                  <entry><para>Basic settings, including your user data (such as your address and e-mail), important paths and settings for printers and external programs.</para></entry>
+                  <entry><para>All</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Load/Save</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to the opening and saving of several file types. There is a dialog for general settings and several special dialogs to define how external formats should be handled.</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
+                  <entry><para><guimenu>Load/Save</guimenu></para></entry>
+                  <entry><para>Settings related to the opening and saving of several file types. There is a dialog for general settings and several special dialogs to define how external formats should be handled.</para></entry>
+                  <entry><para>All</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Language Settings</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to languages and writing aids, such as your locale and spell checker settings. This is also the place to enable support for Asian languages.</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
+                  <entry><para><guimenu>Language Settings</guimenu></para></entry>
+                  <entry><para>Settings related to languages and writing aids, such as your locale and spell checker settings. This is also the place to enable support for Asian languages.</para></entry>
+                  <entry><para>All</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Writer</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to word processing, such as the basic units, fonts and layout that Writer should use.</para>
-                  </entry>
-                  <entry>
-                     <para>Writer</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Writer</guimenu></para></entry>
+                  <entry><para>Settings related to word processing, such as the basic units, fonts and layout that Writer should use.</para></entry>
+                  <entry><para>Writer</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Writer/Web</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to the HTML authoring features of LibreOffice.</para>
-                  </entry>
-                  <entry>
-                     <para>Writer</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Writer/Web</guimenu></para></entry>
+                  <entry><para>Settings related to the HTML authoring features of LibreOffice.</para></entry>
+                  <entry><para>Writer</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Calc</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to spreadsheets, such as spreadsheet appearance, Microsoft Excel compatibility options and calculation options.</para>
-                  </entry>
-                  <entry>
-                     <para>Calc</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Calc</guimenu></para></entry>
+                  <entry><para>Settings related to spreadsheets, such as spreadsheet appearance, Microsoft Excel compatibility options and calculation options.</para></entry>
+                  <entry><para>Calc</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Impress</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to presentations, such as enabling the smartphone remote control and the grid of the page to use.</para>
-                  </entry>
-                  <entry>
-                     <para>Impress</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Impress</guimenu></para></entry>
+                  <entry><para>Settings related to presentations, such as enabling the smartphone remote control and the grid of the page to use.</para></entry>
+                  <entry><para>Impress</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Draw</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Settings related to drawings, such as the grid of the page to use.</para>
-                  </entry>
-                  <entry>
-                     <para>Draw</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Draw</guimenu></para></entry>
+                  <entry><para>Settings related to drawings, such as the grid of the page to use.</para></entry>
+                  <entry><para>Draw</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>LibreOffice Base</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Allows setting and editing database connections and registered databases.</para>
-                  </entry>
-                  <entry>
-                     <para>Base</para>
-                  </entry>
+                  <entry><para><guimenu>LibreOffice Base</guimenu></para></entry>
+                  <entry><para>Allows setting and editing database connections and registered databases.</para></entry>
+                  <entry><para>Base</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Charts</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Allows defining the default colors used for newly created charts.</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
+                  <entry><para><guimenu>Charts</guimenu></para></entry>
+                  <entry><para>Allows defining the default colors used for newly created charts.</para></entry>
+                  <entry><para>All</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <guimenu>Internet</guimenu>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Allows configuring a proxy and the e-mail software to use.</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
+                  <entry><para><guimenu>Internet</guimenu></para></entry>
+                  <entry><para>Allows configuring a proxy and the e-mail software to use.</para></entry>
+                  <entry><para>All</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -703,11 +495,7 @@
             <para>Start LibreOffice and open or create a document that contains the styles and content that you want to re-use for other documents of that type.</para>
          </step>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Templates</guimenu>
-                  <guimenu>Save as Template</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>File</guimenu><guimenu>Templates</guimenu><guimenu>Save as Template</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Choose a <guimenu>Template Name</guimenu> and <guimenu>Category</guimenu>.</para>
@@ -740,10 +528,7 @@
       <procedure>
          <title>Setting properties</title>
          <step>
-            <para>Click <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Properties</guimenu>
-               </menuchoice>.</para>
+            <para>Click <menuchoice><guimenu>File</guimenu><guimenu>Properties</guimenu></menuchoice>.</para>
             <!-- Commented out all the tabs: led too far away from the procedure.
 - sknorr, 2016-07-13-->
             <!-- A dialog opens. It has, among others, the following tabs: <variablelist>

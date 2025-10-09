@@ -15,7 +15,7 @@
             <imagedata fileref="media/rules_flow.png"/>
          </imageobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/rules_flow.png" width="75%"/>
+            <imagedata fileref="media/rules_flow.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>

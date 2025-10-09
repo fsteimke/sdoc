@@ -30,8 +30,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>

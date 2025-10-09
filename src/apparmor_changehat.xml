@@ -33,18 +33,13 @@
       <para>When Apache is ChangeHat-aware, it checks for the following customized AppArmor security profiles in the order given for every URI request that it receives.</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>URI-specific hat. For example, <filename>^www_app_name/templates/classic/images/bar_left.gif</filename>
-            </para>
+            <para>URI-specific hat. For example, <filename>^www_app_name/templates/classic/images/bar_left.gif</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <literal>DEFAULT_URI</literal>
-            </para>
+            <para><literal>DEFAULT_URI</literal></para>
          </listitem>
          <listitem>
-            <para>
-               <literal>HANDLING_UNTRUSTED_INPUT</literal>
-            </para>
+            <para><literal>HANDLING_UNTRUSTED_INPUT</literal></para>
          </listitem>
       </itemizedlist>
       <note>
@@ -107,10 +102,10 @@
                   <title>Adminer login page</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/aa_changehat_adminer.png" width="75%"/>
+                        <imagedata fileref="media/aa_changehat_adminer.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/aa_changehat_adminer.png" width="40%"/>
+                        <imagedata fileref="media/aa_changehat_adminer.png" width="36%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -176,8 +171,7 @@
                <para>Before the last closing curly bracket (<literal>}</literal>), insert the following section:</para>
                <screen>^adminer flags=(complain) {
 }</screen>
-               <para>Note the <literal>(complain)</literal> addition after the hat name—it tells AppArmor to leave the <systemitem>adminer</systemitem> hat in complain mode. That is because we need to learn the hat profile by accessing Adminer later on. <remark>@cboltz: i did it this way myself and it worked perfectly</remark>
-               </para>
+               <para>Note the <literal>(complain)</literal> addition after the hat name—it tells AppArmor to leave the <systemitem>adminer</systemitem> hat in complain mode. That is because we need to learn the hat profile by accessing Adminer later on. <remark>@cboltz: i did it this way myself and it worked perfectly</remark></para>
             </step>
             <step>
                <para>Save the file, and then restart AppArmor, then Apache.</para>
@@ -232,8 +226,7 @@ Severity: 3
                <screen>Profile:  /usr/sbin/httpd2-prefork^adminer</screen>
                <para>The <command>aa-logprof</command> command asks you to pick the right rule for each discovered AppArmor event. Specify the one you want to use, and confirm with <guimenu>Allow</guimenu>. For more information on working with the <command>aa-genprof</command> and <command>aa-logprof</command> interface, see <xref linkend="sec-apparmor-commandline-profiling-summary-genprof"/>.</para>
                <tip>
-                  <para>
-                     <command>aa-logprof</command> offers several valid rules for the examined event. Some are <emphasis>abstractions</emphasis>—predefined sets of rules affecting a specific common group of targets. Sometimes it is useful to include such an abstraction instead of a direct URI rule:</para>
+                  <para><command>aa-logprof</command> offers several valid rules for the examined event. Some are <emphasis>abstractions</emphasis>—predefined sets of rules affecting a specific common group of targets. Sometimes it is useful to include such an abstraction instead of a direct URI rule:</para>
                   <screen> 1 - #include &lt;abstractions/php5&gt;
  [2 - /var/lib/php5/sess_3jdmii9cacj1e3jnahbtopajl7p064ai242]</screen>
                   <para>In the example above, it is recommended hitting <guimenu>1</guimenu> and confirming with <guimenu>A</guimenu> to allow the abstraction.</para>
@@ -248,11 +241,9 @@ Severity: 3
                <para>Hit <guimenu>S</guimenu> to save the changes.</para>
             </step>
             <step>
-               <para>Set the profile to enforce mode with <command>aa-enforce</command>
-               </para>
+               <para>Set the profile to enforce mode with <command>aa-enforce</command></para>
                <screen><prompt>&gt;</prompt><command>sudo</command> aa-enforce usr.sbin.httpd2-prefork</screen>
-               <para>and check its status with <command>aa-status</command>
-               </para>
+               <para>and check its status with <command>aa-status</command></para>
                <screen><prompt>&gt;</prompt><command>sudo</command> aa-status
 apparmor module is loaded.
 39 profiles are loaded.
@@ -280,10 +271,10 @@ apparmor module is loaded.
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/hats_in_profiles.png" width="75%"/>
+                  <imagedata fileref="media/hats_in_profiles.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/hats_in_profiles.png" width="75%"/>
+                  <imagedata fileref="media/hats_in_profiles.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -293,10 +284,10 @@ apparmor module is loaded.
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/hat_createhat.png" width="50%"/>
+                        <imagedata fileref="media/hat_createhat.png" width="46%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/hat_createhat.png" width="35%"/>
+                        <imagedata fileref="media/hat_createhat.png" width="32%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

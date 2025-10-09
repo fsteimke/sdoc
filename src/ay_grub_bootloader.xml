@@ -7,8 +7,7 @@
        xml:id="CreateProfile-Bootloader">
    <title>The GRUB 2 boot loader</title>
    <info/>
-   <para>This documentation is for <command>yast2-bootloader</command> and applies to GRUB 2. For older product versions shipping with legacy GRUB, refer to the documentation that comes with your distribution in <filename>/usr/share/doc/packages/autoyast2/</filename>
-   </para>
+   <para>This documentation is for <command>yast2-bootloader</command> and applies to GRUB 2. For older product versions shipping with legacy GRUB, refer to the documentation that comes with your distribution in <filename>/usr/share/doc/packages/autoyast2/</filename></para>
    <para>By default, AutoYaST proposes the same booting mechanism as used by the booting medium. For example, if you boot using EFI, the GRUB 2 for EFI is installed. Therefore, you can omit this section unless you have specific requirements. As the EFI boot requires specific partitioning, we recommend using the automatic partitioning as described in <xref linkend="CreateProfile-Automatic-Partitioning"/>, which will create all needed partitions automatically.</para>
    <para>If you need to adapt the default, use the <literal>&lt;bootloader&gt;</literal> part. Its general structure looks like the following snippet:</para>
    <screen>&lt;bootloader&gt;
@@ -33,20 +32,16 @@
       <para>Possible values for <replaceable>LOADER_TYPE</replaceable> are:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <literal>default</literal>: The installer chooses the correct boot loader. This is the default when no option is defined.</para>
+            <para><literal>default</literal>: The installer chooses the correct boot loader. This is the default when no option is defined.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>grub2</literal>: Use the legacy BIOS boot loader.</para>
+            <para><literal>grub2</literal>: Use the legacy BIOS boot loader.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>grub2-efi</literal>: Use the EFI boot loader.</para>
+            <para><literal>grub2-efi</literal>: Use the EFI boot loader.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>none</literal>: The boot process is not managed and configured by the installer.</para>
+            <para><literal>none</literal>: The boot process is not managed and configured by the installer.</para>
          </listitem>
       </itemizedlist>
    </sect2>
@@ -170,11 +165,7 @@
             <term>gfxmode</term>
             <listitem>
                <para>Graphical resolution of the GRUB 2 screen (requires &lt;terminal&gt; to be set to <literal>gfxterm</literal>).</para>
-               <para>Valid entries are <literal>auto</literal>, <literal>
-                     <replaceable>HORIZONTAL</replaceable>x<replaceable>VERTICAL</replaceable>
-                  </literal>, or <literal>
-                     <replaceable>HORIZONTAL</replaceable>x<replaceable>VERTICAL</replaceable>x<replaceable>COLOR DEPTH</replaceable>
-                  </literal>. You can see the screen resolutions supported by GRUB 2 on a particular system by using the <command>vbeinfo</command> command at the GRUB 2 command line in the running system.</para>
+               <para>Valid entries are <literal>auto</literal>, <literal><replaceable>HORIZONTAL</replaceable>x<replaceable>VERTICAL</replaceable></literal>, or <literal><replaceable>HORIZONTAL</replaceable>x<replaceable>VERTICAL</replaceable>x<replaceable>COLOR DEPTH</replaceable></literal>. You can see the screen resolutions supported by GRUB 2 on a particular system by using the <command>vbeinfo</command> command at the GRUB 2 command line in the running system.</para>
                <screen>&lt;gfxmode&gt;1280x1024x24&lt;/gfxmode&gt;</screen>
             </listitem>
          </varlistentry>
@@ -190,11 +181,9 @@
             <listitem>
                <para>If this is defined, it protects the boot loader with a password. The system will not boot until the password is entered.</para>
                <para>It has three subelements: <literal>value</literal>, <literal>encrypted</literal>, and <literal>unrestricted</literal>.</para>
-               <para>
-                  <literal>value</literal> holds the password. It can be either plain text, which YaST will encrypt, or a password already encrypted with <command>grub-mkpasswd-pbkdf2</command>. Set <literal>encrypted</literal> to <literal>true</literal> when you use an already encrypted password.</para>
+               <para><literal>value</literal> holds the password. It can be either plain text, which YaST will encrypt, or a password already encrypted with <command>grub-mkpasswd-pbkdf2</command>. Set <literal>encrypted</literal> to <literal>true</literal> when you use an already encrypted password.</para>
                <para>When <literal>unrestricted</literal> is set to <literal>false</literal>, users need the password defined by the <literal>value</literal> subelement to boot or edit GRUB 2 menu entries (by pressing <keycap>E</keycap> on a selected boot menu item). When it is set to <literal>true</literal>, users can boot the system without a password, but need a password to edit GRUB 2 menu entries. If the option is omitted, it defaults to <literal>true</literal>.</para>
-               <para>For more information on managing boot passwords, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="vle-grub2-yast2-boot-password" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>For more information on managing boot passwords, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vle-grub2-yast2-boot-password" xrefstyle="%label &#34;%c&#34;"/>.</para>
                <screen>&lt;password&gt;&lt;value&gt;my_strong_password&lt;/value&gt;&lt;encrypted&gt;false&lt;/encrypted&gt;&lt;unrestricted&gt;false&lt;/unrestricted&gt;&lt;/password&gt;</screen>
             </listitem>
          </varlistentry>
@@ -252,8 +241,7 @@
          <varlistentry>
             <term>vgamode</term>
             <listitem>
-               <para>Adds the kernel parameter <literal>vga=<replaceable>VALUE</replaceable>
-                  </literal> to the boot entries.</para>
+               <para>Adds the kernel parameter <literal>vga=<replaceable>VALUE</replaceable></literal> to the boot entries.</para>
                <screen>&lt;vgamode&gt;0x317&lt;/vgamode&gt;</screen>
             </listitem>
          </varlistentry>

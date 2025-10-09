@@ -95,8 +95,7 @@
                </formalpara>
                <formalpara>
                   <title>Windows networks</title>
-                  <para>SUSE Linux Enterprise Desktop supports Active Directory as an authentication source. It offers you all the advantages of a secure and stable Linux operating system plus convenient interaction with other Windows clients, as well as the means to manipulate your Windows user data from a Linux client. Explore this feature in detail in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                     <xref linkend="cha-security-ad" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>SUSE Linux Enterprise Desktop supports Active Directory as an authentication source. It offers you all the advantages of a secure and stable Linux operating system plus convenient interaction with other Windows clients, as well as the means to manipulate your Windows user data from a Linux client. Explore this feature in detail in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-ad" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </formalpara>
                <!-- fs 2017-06-22: Don't think this is valid nor interesting anymore
      <formalpara>
@@ -115,8 +114,7 @@
          <varlistentry>
             <term>Application security with AppArmor</term>
             <listitem>
-               <para>SUSE Linux Enterprise Desktop enables you to secure your applications by enforcing security profiles tailor-made for your applications. To learn more about AppArmor, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>SUSE Linux Enterprise Desktop enables you to secure your applications by enforcing security profiles tailor-made for your applications. To learn more about AppArmor, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
          </varlistentry>
       </variablelist>

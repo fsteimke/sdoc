@@ -8,24 +8,21 @@
    <title>Virtualization tools</title>
    <info>
       <abstract>
-         <para>
-            <systemitem class="library">libvirt</systemitem> is a library that provides a common API for managing popular virtualization solutions, among them KVM and Xen. The library provides a normalized management API for these virtualization solutions, allowing a stable, cross-hypervisor interface for higher-level management tools. The library also provides APIs for management of virtual networks and storage on the VM Host Server. The configuration of each VM Guest is stored in an XML file.</para>
+         <para><systemitem class="library">libvirt</systemitem> is a library that provides a common API for managing popular virtualization solutions, among them KVM and Xen. The library provides a normalized management API for these virtualization solutions, allowing a stable, cross-hypervisor interface for higher-level management tools. The library also provides APIs for management of virtual networks and storage on the VM Host Server. The configuration of each VM Guest is stored in an XML file.</para>
          <para>With <systemitem class="library">libvirt</systemitem>, you can also manage your VM Guests remotely. It supports TLS encryption, x509 certificates and authentication with SASL. This enables managing VM Host Servers centrally from a single workstation, alleviating the need to access each VM Host Server individually.</para>
          <para>Using the <systemitem class="library">libvirt</systemitem>-based tools is the recommended way of managing VM Guests. Interoperability between <systemitem class="library">libvirt</systemitem> and <systemitem class="library">libvirt</systemitem>-based applications has been tested and is an essential part of SUSE's support stance.</para>
       </abstract>
    </info>
    <sect1 xml:id="sec-tools-intro-console">
       <title>Virtualization console tools</title>
-      <para>
-         <systemitem class="library">libvirt</systemitem> includes several command-line utilities to manage virtual machines. The most important ones are:</para>
+      <para><systemitem class="library">libvirt</systemitem> includes several command-line utilities to manage virtual machines. The most important ones are:</para>
       <variablelist>
          <varlistentry>
             <term>
                <command>virsh</command> (Package: <package>libvirt-client</package>)</term>
             <listitem>
                <para>A command-line tool to manage VM Guests with similar functionality as the Virtual Machine Manager. <command>virsh</command> allows you to change a VM Guest's status, set up new guests and devices, or edit existing configurations. <command>virsh</command> is also useful to script VM Guest management operations.</para>
-               <para>
-                  <command>virsh</command> takes the first argument as a command and further arguments as options to this command:</para>
+               <para><command>virsh</command> takes the first argument as a command and further arguments as options to this command:</para>
                <screen>virsh [-c <replaceable>URI</replaceable>] <replaceable>COMMAND</replaceable><replaceable>DOMAIN-ID</replaceable> [OPTIONS]</screen>
                <para>Like <command>zypper</command>, <command>virsh</command> can also be called without a command. In this case, it starts a shell waiting for your commands. This mode is useful when having to run subsequent commands:</para>
                <screen>~&gt; virsh -c qemu+ssh://wilber@mercury.example.com/system
@@ -80,10 +77,10 @@ mercury.example.com</screen>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
+                        <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
+                        <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -112,10 +109,10 @@ mercury.example.com</screen>
                <informalfigure pgwide="0">
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
+                        <imagedata fileref="media/yast2_vm.png" width="51%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
+                        <imagedata fileref="media/yast2_vm.png" width="51%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

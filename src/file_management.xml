@@ -14,20 +14,16 @@
       <para>Another advantage of separate file systems is the possibility of choosing special mount options that are suitable for certain regions in the file system hierarchy. The mount options are:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <literal>noexec</literal>: prevents execution of files.</para>
+            <para><literal>noexec</literal>: prevents execution of files.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>nodev</literal>: prevents character or block special devices from being usable.</para>
+            <para><literal>nodev</literal>: prevents character or block special devices from being usable.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>nosuid</literal>: prevents the <literal>set-user-ID</literal> or <literal>set-group-ID</literal> bits from being effective.</para>
+            <para><literal>nosuid</literal>: prevents the <literal>set-user-ID</literal> or <literal>set-group-ID</literal> bits from being effective.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>ro</literal>: mounts the file system <literal>read-only</literal>.</para>
+            <para><literal>ro</literal>: mounts the file system <literal>read-only</literal>.</para>
          </listitem>
       </itemizedlist>
       <para>Each of these options needs to be carefully considered before applying it to a partition mount. Applications may stop working, or the support status may be violated. When applied correctly, mount options can help against certain types of security attacks or misconfigurations. For example, there should be no need for <literal>set-user-ID</literal> binaries to be placed in <filename>/tmp</filename>.</para>
@@ -37,8 +33,7 @@
    <sect1 xml:id="sec-sec-prot-general-file-permissions">
       <title>Modifying permissions of certain system files</title>
       <para>Many files—especially in the <filename>/etc</filename> directory—are world-readable, which means that unprivileged users can read their contents. Normally this is not a problem, but to take extra care, you can remove the world-readable or group-readable bits for sensitive files.</para>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides the <package>permissions</package> package to easily apply file permissions. The package comes with three pre-defined system profiles:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> provides the <package>permissions</package> package to easily apply file permissions. The package comes with three pre-defined system profiles:</para>
       <variablelist>
          <varlistentry>
             <term>easy</term>
@@ -151,11 +146,7 @@ drwxr-----. 2 17086 4096 Nov 29 15:06 f</screen>
 UMASK           022</screen>
          <para>For individual users, add the umask to the 'gecos' field in <filename>/etc/passwd</filename> like this:</para>
          <screen>tux:x:1000:100:Tux Linux,UMASK=<replaceable>022</replaceable>:/home/tux:/bin/bash</screen>
-         <para>You can do the same with <command>yast users</command> by adding <literal>UMASK=<replaceable>022</replaceable>
-            </literal> to a user's <menuchoice>
-               <guimenu>Details</guimenu>
-               <guimenu>Additional User Information</guimenu>
-            </menuchoice>.</para>
+         <para>You can do the same with <command>yast users</command> by adding <literal>UMASK=<replaceable>022</replaceable></literal> to a user's <menuchoice><guimenu>Details</guimenu><guimenu>Additional User Information</guimenu></menuchoice>.</para>
          <para>The settings made in <filename>/etc/login.defs</filename> and <filename>/etc/passwd</filename> are applied by the PAM module <filename>pam_umask.so</filename>. For additional configuration options, refer to <command>man pam_umask</command>.</para>
          <para>For the changes to take effect, users need to log out and back in again. Afterwards, use the <command>umask</command> command to verify the umask is set correctly.</para>
       </sect2>
@@ -168,8 +159,7 @@ UMASK           022</screen>
   /srv /tmp /usr /var -type f -perm '/6000' -ls</screen>
       <para>You may need to extend the list of directories that are searched if you have a different file system structure.</para>
       <para>SUSE sets the SUID/SGID bit on binary if it is really necessary. Ensure that code developers do not set SUID/SGID bits on their programs if it is not an absolute requirement. You can often use workarounds like removing the executable bit for world/others. However, a better approach is to change the design of the software or use capabilities.</para>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports file capabilities to allow more fine-grained privileges to be given to programs rather than the full power of <systemitem class="username">root</systemitem>:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports file capabilities to allow more fine-grained privileges to be given to programs rather than the full power of <systemitem class="username">root</systemitem>:</para>
       <screen><prompt role="root">#</prompt>getcap -v /usr/bin/ping
 /usr/bin/ping = cap_new_raw+eip</screen>
       <para>The previous command grants the <literal>CAP_NET_RAW</literal> capability to whoever executes <command>ping</command>. In case of vulnerabilities inside <command>ping</command>, an attacker can gain, at most, this capability in contrast with full <systemitem class="username">root</systemitem>. Whenever possible, file capabilities should be chosen in favor of the SUID bit. But this applies when the binary is SUID to <systemitem class="username">root</systemitem>, not to other users such as <literal>news</literal>, <literal>lp</literal> and similar.</para>

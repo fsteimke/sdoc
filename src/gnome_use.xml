@@ -19,10 +19,10 @@
          <title>File manager</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/nautilus.png" width="75%"/>
+               <imagedata fileref="media/nautilus.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/nautilus.png" width="75%"/>
+               <imagedata fileref="media/nautilus.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -70,162 +70,58 @@
                <colspec colnum="2" colname="2" colwidth="59*"/>
                <thead>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>Key Combination</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Description</para>
-                     </entry>
+                     <entry colname="1"><para>Key Combination</para></entry>
+                     <entry colname="2"><para>Description</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="left"/>
-                           </keycombo>/ <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="right"/>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Go backward/go forward.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="alt"/><keycap function="left"/></keycombo>/ <keycombo><keycap function="alt"/><keycap function="right"/></keycombo></para></entry>
+                     <entry colname="2"><para>Go backward/go forward.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="up"/>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Open the parent directory.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="alt"/><keycap function="up"/></keycombo></para></entry>
+                     <entry colname="2"><para>Open the parent directory.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycap function="left"/>, <keycap function="right"/>, <keycap function="up"/>, <keycap function="down"/>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Select an item.</para>
-                     </entry>
+                     <entry colname="1"><para><keycap function="left"/>, <keycap function="right"/>, <keycap function="up"/>, <keycap function="down"/></para></entry>
+                     <entry colname="2"><para>Select an item.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="down"/>
-                           </keycombo> or <keycap function="enter"/>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Open an item.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="alt"/><keycap function="down"/></keycombo> or <keycap function="enter"/></para></entry>
+                     <entry colname="2"><para>Open an item.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="enter"/>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Open an item's <guimenu>Properties</guimenu> dialog.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="alt"/><keycap function="enter"/></keycombo></para></entry>
+                     <entry colname="2"><para>Open an item's <guimenu>Properties</guimenu> dialog.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="shift"/>
-                              <keycap function="alt"/>
-                              <keycap function="down"/>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Open an item and close the current directory.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="shift"/><keycap function="alt"/><keycap function="down"/></keycombo></para></entry>
+                     <entry colname="2"><para>Open an item and close the current directory.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="control"/>
-                              <keycap>L</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Transform the path bar from a button view to a text box.</para>
-                        <para>Exit this mode by pressing <keycap function="enter"/> (go to the location) or <keycap function="escape"/> (to remain in the current directory).</para>
-                        <para>The path bar supports the URI schema, and can be used to connect to remote servers via FTP, SFTP, SSH, SMB and other protocols. For example, use <literal>ftp://tux@ftp.example.tld</literal> to connect to an FTP server <literal>ftp.example.tld</literal> with the user name <literal>tux</literal>.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="control"/><keycap>L</keycap></keycombo></para></entry>
+                     <entry colname="2"><para>Transform the path bar from a button view to a text box.</para><para>Exit this mode by pressing <keycap function="enter"/> (go to the location) or <keycap function="escape"/> (to remain in the current directory).</para><para>The path bar supports the URI schema, and can be used to connect to remote servers via FTP, SFTP, SSH, SMB and other protocols. For example, use <literal>ftp://tux@ftp.example.tld</literal> to connect to an FTP server <literal>ftp.example.tld</literal> with the user name <literal>tux</literal>.</para></entry>
                   </row>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>
-                           <keycap>/</keycap>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Transform the path bar from a button view to a text box and replace the current path with <literal>/</literal>.</para>
-                     </entry>
+                     <entry colname="1"><para><keycap>/</keycap></para></entry>
+                     <entry colname="2"><para>Transform the path bar from a button view to a text box and replace the current path with <literal>/</literal>.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="alt"/>
-                              <keycap function="home"/>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Open your home directory.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="alt"/><keycap function="home"/></keycombo></para></entry>
+                     <entry colname="2"><para>Open your home directory.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>Any number or letter key</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Start a search within the current directories and their subdirectories. The character you pressed is used as the first character of the search term. Search happens as you type, you do not need to press <keycap function="enter"/>.</para>
-                     </entry>
+                     <entry colname="1"><para>Any number or letter key</para></entry>
+                     <entry colname="2"><para>Start a search within the current directories and their subdirectories. The character you pressed is used as the first character of the search term. Search happens as you type, you do not need to press <keycap function="enter"/>.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>
-                           <keycombo>
-                              <keycap function="control"/>
-                              <keycap>T</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Start a search within the current directories and their subdirectories. The character you pressed is used as the first character of the search term. Search happens as you type, you do not need to press <keycap function="enter"/>.</para>
-                     </entry>
+                     <entry colname="1"><para><keycombo><keycap function="control"/><keycap>T</keycap></keycombo></para></entry>
+                     <entry colname="2"><para>Start a search within the current directories and their subdirectories. The character you pressed is used as the first character of the search term. Search happens as you type, you do not need to press <keycap function="enter"/>.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>
-                           <keycap function="delete"/>
-                        </para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Moves the selected file or directory to the trash, from which it can be restored with <guimenu>Undo</guimenu>.</para>
-                     </entry>
+                     <entry colname="1"><para><keycap function="delete"/></para></entry>
+                     <entry colname="2"><para>Moves the selected file or directory to the trash, from which it can be restored with <guimenu>Undo</guimenu>.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -257,16 +153,13 @@
                <para>Select a file extension from the drop-down list.</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <filename>.zip</filename> files are compatible with all operating systems.</para>
+                     <para><filename>.zip</filename> files are compatible with all operating systems.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <filename>.tar.xz</filename> files are compatible only with Linux* and Mac* systems.</para>
+                     <para><filename>.tar.xz</filename> files are compatible only with Linux* and Mac* systems.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <filename>.7z</filename> are smaller archives but must be installed on Windows* and Mac*.</para>
+                     <para><filename>.7z</filename> are smaller archives but must be installed on Windows* and Mac*.</para>
                   </listitem>
                </itemizedlist>
             </step>
@@ -376,13 +269,7 @@
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-cutnpaste">
       <title>Copying text between applications</title>
-      <para>Copy and paste works the same as in any other operating system. First select the text, so that it appears highlighted. Then press <keycombo>
-            <keycap function="control"/>
-            <keycap>C</keycap>
-         </keycombo>. Now move the keyboard focus to the right position. Finally, to insert the text, press <keycombo>
-            <keycap function="control"/>
-            <keycap>V</keycap>
-         </keycombo>.</para>
+      <para>Copy and paste works the same as in any other operating system. First select the text, so that it appears highlighted. Then press <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>. Now move the keyboard focus to the right position. Finally, to insert the text, press <keycombo><keycap function="control"/><keycap>V</keycap></keycombo>.</para>
       <para>To copy or paste in the terminal, additionally press <keycap function="shift"/> together with the above key combinations.</para>
       <para>An alternative way of using copy and paste is described in the following:</para>
       <procedure>
@@ -398,10 +285,8 @@
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-connections">
       <title>Managing Internet connections</title>
-      <para>To surf the Web or send and receive e-mail messages, you must have configured an Internet connection. If you have installed <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a laptop or a mobile device, NetworkManager is enabled by default. On the GNOME desktop, you can then establish Internet connections with NetworkManager as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-nm-configure" xrefstyle="%label &#34;%c&#34;"/>.</para>
-      <para>Depending on your environment, you can choose in YaST which basic service to use for setting up network connections (either NetworkManager or <productname>wicked</productname>). For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-network-yast-netcard-global" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To surf the Web or send and receive e-mail messages, you must have configured an Internet connection. If you have installed <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a laptop or a mobile device, NetworkManager is enabled by default. On the GNOME desktop, you can then establish Internet connections with NetworkManager as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-nm-configure" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Depending on your environment, you can choose in YaST which basic service to use for setting up network connections (either NetworkManager or <productname>wicked</productname>). For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast-netcard-global" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-internet">
       <title>Exploring the Internet</title>
@@ -411,15 +296,14 @@
    <sect1 xml:id="sec-gnomeuser-use-mail">
       <title>E-mail and scheduling</title>
       <para>The GNOME desktop offers <productname>Evolution</productname>, a personal information management application that provides integrated mail, calendaring and address book functionality.</para>
-      <para>
-         <productname>Evolution</productname> seamlessly combines e-mail, a calendar, an address book, and a memo and task list in one easy-to-use application. With its extensive support for communications and data interchange standards, it can work with existing corporate networks and applications, including Microsoft* Exchange.</para>
+      <para><productname>Evolution</productname> seamlessly combines e-mail, a calendar, an address book, and a memo and task list in one easy-to-use application. With its extensive support for communications and data interchange standards, it can work with existing corporate networks and applications, including Microsoft* Exchange.</para>
       <informalfigure pgwide="0">
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evolution.png" width="100%"/>
+               <imagedata fileref="media/evolution.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evolution.png" width="80%"/>
+               <imagedata fileref="media/evolution.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -435,38 +319,26 @@
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-power-mgmt">
       <title>Controlling your desktop’s power management</title>
-      <para>You can open the power settings by opening the <guimenu>Activities</guimenu> overview by pressing <keycap function="meta"/> and typing <literal>power</literal>. Now select <menuchoice>
-            <guimenu>Settings</guimenu>
-            <guimenu>Power</guimenu>
-         </menuchoice> from the results.</para>
+      <para>You can open the power settings by opening the <guimenu>Activities</guimenu> overview by pressing <keycap function="meta"/> and typing <literal>power</literal>. Now select <menuchoice><guimenu>Settings</guimenu><guimenu>Power</guimenu></menuchoice> from the results.</para>
       <para>On certain events, such as a critically low battery state, GNOME displays notifications informing you about the event.</para>
       <para>For more information, see <xref linkend="sec-gnome-settings-hardware-power"/>.</para>
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-archives">
       <title>Creating, displaying and decompressing archives</title>
       <para>You can use the <productname>Archive Manager</productname> application to create, view, modify or unpack an archive. An archive is a file that acts as a container for other files. An archive can contain many files, directories and subdirectories, mostly in compressed form. You can use <productname>Archive Manager</productname> to create, open and extract a compressed non-archive file.</para>
-      <para>
-         <productname>Archive Manager</productname> supports common formats, such as:</para>
+      <para><productname>Archive Manager</productname> supports common formats, such as:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <filename>zip</filename>
-            </para>
+            <para><filename>zip</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>tar</filename>
-            </para>
+            <para><filename>tar</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>lzh</filename>
-            </para>
+            <para><filename>lzh</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>rar</filename>
-            </para>
+            <para><filename>rar</filename></para>
          </listitem>
       </itemizedlist>
       <para>To start <guimenu>Archive Manager</guimenu>, open the <guimenu>Activities</guimenu> overview by pressing <keycap function="meta"/> and type <literal>arch</literal>.</para>
@@ -477,10 +349,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/file_roller.png" width="70%"/>
+               <imagedata fileref="media/file_roller.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/file_roller.png" width="70%"/>
+               <imagedata fileref="media/file_roller.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -492,8 +364,7 @@
             </step>
             <step>
                <para>Select the archive you want to open and click <guimenu>Open</guimenu>.</para>
-               <para>
-                  <productname>Archive Manager</productname> displays the following:</para>
+               <para><productname>Archive Manager</productname> displays the following:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
                      <para>The archive name in the path bar.</para>
@@ -529,57 +400,30 @@
                      <colspec colnum="2" colname="2" colwidth="65*"/>
                      <thead>
                         <row rowsep="1">
-                           <entry colname="1">
-                              <para>Option</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>Description</para>
-                           </entry>
+                           <entry colname="1"><para>Option</para></entry>
+                           <entry colname="2"><para>Description</para></entry>
                         </row>
                      </thead>
                      <tbody>
                         <row rowsep="0">
-                           <entry colname="1">
-                              <para>All files</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>Extracts all files from the archive.</para>
-                           </entry>
+                           <entry colname="1"><para>All files</para></entry>
+                           <entry colname="2"><para>Extracts all files from the archive.</para></entry>
                         </row>
                         <row rowsep="0">
-                           <entry colname="1">
-                              <para>Selected files</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>Extracts the selected files from the archive.</para>
-                           </entry>
+                           <entry colname="1"><para>Selected files</para></entry>
+                           <entry colname="2"><para>Extracts the selected files from the archive.</para></entry>
                         </row>
                         <row rowsep="0">
-                           <entry colname="1">
-                              <para>Files</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>Extracts from the archive all files that match the specified pattern.</para>
-                           </entry>
+                           <entry colname="1"><para>Files</para></entry>
+                           <entry colname="2"><para>Extracts from the archive all files that match the specified pattern.</para></entry>
                         </row>
                         <row rowsep="0">
-                           <entry colname="1">
-                              <para>Keep directory structure</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>Reconstructs the directory structure when extracting the specified files.</para>
-                              <para>For example, you specify <filename>/tmp</filename> in the <guimenu>Filename</guimenu> text box and extract all files. The archive contains a subdirectory called <filename>doc</filename>. If you select the <guimenu>Keep directory structure</guimenu> option, Archive Manager extracts the contents of the subdirectory to <filename>/tmp/doc</filename>.</para>
-                              <para>If you do not select the <guimenu>Keep directory structure</guimenu> option, Archive Manager does not create any subdirectories. Instead, it extracts all files from the archive, including files from subdirectories, to <filename>/tmp</filename>.</para>
-                           </entry>
+                           <entry colname="1"><para>Keep directory structure</para></entry>
+                           <entry colname="2"><para>Reconstructs the directory structure when extracting the specified files.</para><para>For example, you specify <filename>/tmp</filename> in the <guimenu>Filename</guimenu> text box and extract all files. The archive contains a subdirectory called <filename>doc</filename>. If you select the <guimenu>Keep directory structure</guimenu> option, Archive Manager extracts the contents of the subdirectory to <filename>/tmp/doc</filename>.</para><para>If you do not select the <guimenu>Keep directory structure</guimenu> option, Archive Manager does not create any subdirectories. Instead, it extracts all files from the archive, including files from subdirectories, to <filename>/tmp</filename>.</para></entry>
                         </row>
                         <row rowsep="0">
-                           <entry colname="1">
-                              <para>Do not overwrite newer files</para>
-                           </entry>
-                           <entry colname="2">
-                              <para>If not active, Archive Manager overwrites any files in the destination directory that have the same name as the specified files.</para>
-                              <para>If you select this option, Archive Manager does not extract the specified file if an existing file with the same name already exists in the destination directory.</para>
-                           </entry>
+                           <entry colname="1"><para>Do not overwrite newer files</para></entry>
+                           <entry colname="2"><para>If not active, Archive Manager overwrites any files in the destination directory that have the same name as the specified files.</para><para>If you select this option, Archive Manager does not extract the specified file if an existing file with the same name already exists in the destination directory.</para></entry>
                         </row>
                      </tbody>
                   </tgroup>
@@ -607,8 +451,7 @@
             </step>
             <step>
                <para>Click <guimenu>Create</guimenu>.</para>
-               <para>
-                  <productname>Archive Manager</productname> creates an empty archive, but does not yet write the archive to disk. A new archive is only written to the disk when the archive contains at least one file. If you create a new archive and quit <productname>Archive Manager</productname> before adding any files, the archive is deleted.</para>
+               <para><productname>Archive Manager</productname> creates an empty archive, but does not yet write the archive to disk. A new archive is only written to the disk when the archive contains at least one file. If you create a new archive and quit <productname>Archive Manager</productname> before adding any files, the archive is deleted.</para>
             </step>
             <step>
                <para>Add files and directories to the new archive:</para>
@@ -618,8 +461,7 @@
                   </step>
                   <step>
                      <para>Click <guimenu>Add</guimenu>.</para>
-                     <para>
-                        <productname>Archive Manager</productname> adds the files to the current directory in the archive.</para>
+                     <para><productname>Archive Manager</productname> adds the files to the current directory in the archive.</para>
                   </step>
                </substeps>
             </step>
@@ -633,32 +475,19 @@
       <para>Use the following global key combinations to quickly take a screenshot:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <keycap>Print</keycap> takes a screenshot of the entire desktop.</para>
+            <para><keycap>Print</keycap> takes a screenshot of the entire desktop.</para>
          </listitem>
          <listitem>
-            <para>
-               <keycombo>
-                  <keycap function="alt"/>
-                  <keycap>Print</keycap>
-               </keycombo> takes a screenshot of a window.</para>
+            <para><keycombo><keycap function="alt"/><keycap>Print</keycap></keycombo> takes a screenshot of a window.</para>
          </listitem>
          <listitem>
-            <para>
-               <keycombo>
-                  <keycap function="shift"/>
-                  <keycap>Print</keycap>
-               </keycombo> takes a screenshot of an area you select.</para>
+            <para><keycombo><keycap function="shift"/><keycap>Print</keycap></keycombo> takes a screenshot of an area you select.</para>
          </listitem>
       </itemizedlist>
       <para>You can also use <productname>GIMP</productname> to take screenshots as described in the following:</para>
       <procedure>
          <step>
-            <para>Open <productname>GIMP</productname> and select <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Create</guimenu>
-                  <guimenu>Screenshot</guimenu>
-               </menuchoice>.</para>
+            <para>Open <productname>GIMP</productname> and select <menuchoice><guimenu>File</guimenu><guimenu>Create</guimenu><guimenu>Screenshot</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select an area, choose a delay and then click <guimenu>Snap</guimenu>.</para>
@@ -679,10 +508,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evince.png" width="90%"/>
+               <imagedata fileref="media/evince.png" width="82%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evince.png" width="78%"/>
+               <imagedata fileref="media/evince.png" width="71%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -694,7 +523,6 @@
    <sect1 xml:id="sec-gnomeuser-use-updates">
       <title>Obtaining software updates</title>
       <para>When you connect to the Internet, the updater applet automatically checks whether software updates for your system are available. When important updates are available, you receive a notification on your desktop.</para>
-      <para>For detailed information on how to install software updates with the updater applet and how to configure it, refer to the chapter about installing and removing software in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-updater" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For detailed information on how to install software updates with the updater applet and how to configure it, refer to the chapter about installing and removing software in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-updater" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
 </chapter>

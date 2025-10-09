@@ -22,87 +22,36 @@
    </important>
    <sect2 xml:id="sec-sec-prot-general-pam-pw-strength">
       <title>Password strength</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> can leverage the <systemitem class="library">pam_cracklib</systemitem> library to test for weak passwords—and to suggest using a stronger one if it determines obvious weakness. The following parameters represent an example that could be part of a corporate password policy or something required because of audit constraints.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> can leverage the <systemitem class="library">pam_cracklib</systemitem> library to test for weak passwords—and to suggest using a stronger one if it determines obvious weakness. The following parameters represent an example that could be part of a corporate password policy or something required because of audit constraints.</para>
       <para>The PAM libraries follow a defined flow. The best way to design the perfect stack usually is to consider all of the requirements and policies and draw out a flow chart.</para>
       <table>
          <title>Sample rules/constraints for password enforcement</title>
          <tgroup cols="3">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <systemitem class="library">pam_cracklib.so</systemitem>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>minlen=8</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum length of password is 8</para>
-                  </entry>
+                  <entry><para><systemitem class="library">pam_cracklib.so</systemitem></para></entry>
+                  <entry><para><literal>minlen=8</literal></para></entry>
+                  <entry><para>Minimum length of password is 8</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <systemitem class="library">pam_cracklib.so</systemitem>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>lcredit=-1</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum number of lowercase letters is 1</para>
-                  </entry>
+                  <entry><para><systemitem class="library">pam_cracklib.so</systemitem></para></entry>
+                  <entry><para><literal>lcredit=-1</literal></para></entry>
+                  <entry><para>Minimum number of lowercase letters is 1</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <systemitem class="library">pam_cracklib.so</systemitem>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>ucredit=-1</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum number of uppercase letters is 1</para>
-                  </entry>
+                  <entry><para><systemitem class="library">pam_cracklib.so</systemitem></para></entry>
+                  <entry><para><literal>ucredit=-1</literal></para></entry>
+                  <entry><para>Minimum number of uppercase letters is 1</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <systemitem class="library">pam_cracklib.so</systemitem>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>dcredit=-1</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum number of digits is 1</para>
-                  </entry>
+                  <entry><para><systemitem class="library">pam_cracklib.so</systemitem></para></entry>
+                  <entry><para><literal>dcredit=-1</literal></para></entry>
+                  <entry><para>Minimum number of digits is 1</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <systemitem class="library">pam_cracklib.so</systemitem>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <literal>ocredit=-1</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Minimum number of other characters is 1</para>
-                  </entry>
+                  <entry><para><systemitem class="library">pam_cracklib.so</systemitem></para></entry>
+                  <entry><para><literal>ocredit=-1</literal></para></entry>
+                  <entry><para>Minimum number of other characters is 1</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -138,8 +87,7 @@ session   optional   pam_umask.so</screen>
          <para>Password failure counts can easily be abused to cause denial-of-service attacks by deliberately creating login failures.</para>
          <para>Only use password failure counts if you have to. Restrict locking to the necessary minimum, and do not lock critical accounts. Keep in mind that locking not only applies to human users but also to system accounts used to provide services.</para>
       </important>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not lock accounts by default, but provides PAM module <command>pam_tally2</command> to easily implement password failure counts. Add the following line to the top of <filename>/etc/pam.d/login</filename> to lock out all users (except for <systemitem class="username">root</systemitem>) after six failed logins, and to automatically unlock the accounts after ten minutes:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> does not lock accounts by default, but provides PAM module <command>pam_tally2</command> to easily implement password failure counts. Add the following line to the top of <filename>/etc/pam.d/login</filename> to lock out all users (except for <systemitem class="username">root</systemitem>) after six failed logins, and to automatically unlock the accounts after ten minutes:</para>
       <screen>auth required pam_tally2.so deny=6 unlock_time=600</screen>
       <para>This is an example of a complete <filename>/etc/pam.d/login</filename> file:</para>
       <screen>#%PAM-1.0

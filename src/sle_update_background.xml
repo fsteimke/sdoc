@@ -136,10 +136,10 @@
          <title>Major releases and service packs</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/new-maintenance-model.svg" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model.svg" width="87%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/new-maintenance-model.png" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model.png" width="87%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -148,10 +148,10 @@
          <title>Long term service pack support</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/new-maintenance-model+ltss.svg" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model+ltss.svg" width="87%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/new-maintenance-model+ltss.png" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model+ltss.png" width="87%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -160,13 +160,11 @@
    </sect1>
    <sect1 xml:id="sec-upgrade-background-modules">
       <title>Module dependencies and lifecycles</title>
-      <para>For a list of modules, their dependencies, and lifecycles, see the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase>
-         <xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For a list of modules, their dependencies, and lifecycles, see the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-upgrade-background-lifecyclereport">
       <title>Generating periodic lifecycle report</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> can regularly check for changes in the support status of all installed products and send the report via e-mail in case of changes. To generate the report, install the <package>zypper-lifecycle-plugin</package> with <command>zypper in zypper-lifecycle-plugin</command>.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> can regularly check for changes in the support status of all installed products and send the report via e-mail in case of changes. To generate the report, install the <package>zypper-lifecycle-plugin</package> with <command>zypper in zypper-lifecycle-plugin</command>.</para>
       <para>Enable the report generation on your system with <command>systemctl</command>:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl</command> enable lifecycle-report.timer</screen>
       <para>The recipient and subject of the report e-mail, and the report generation period can be configured in the file <filename>/etc/sysconfig/lifecycle-report</filename> with any text editor. The settings <literal>MAIL_TO</literal> and <literal>MAIL_SUBJ</literal> define the mail recipient and subject, while <literal>DAYS</literal> sets the interval at which the report is generated.</para>
@@ -191,264 +189,112 @@ DAYS=14</screen>
             <thead>
                <row>
                   <entry/>
-                  <entry namest="c2" nameend="c4" align="center">
-                     <para>General Support for Most Recent Service Pack (SP)</para>
-                  </entry>
-                  <entry>
-                     <para>General Support for Previous SP, with LTSS</para>
-                  </entry>
-                  <entry>
-                     <para>Extended Support with LTSS</para>
-                  </entry>
+                  <entry namest="c2" nameend="c4" align="center"><para>General Support for Most Recent Service Pack (SP)</para></entry>
+                  <entry><para>General Support for Previous SP, with LTSS</para></entry>
+                  <entry><para>Extended Support with LTSS</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Feature</para>
-                  </entry>
-                  <entry>
-                     <para>Year 1-5</para>
-                  </entry>
-                  <entry>
-                     <para>Year 6-7</para>
-                  </entry>
-                  <entry>
-                     <para>Year 8-10</para>
-                  </entry>
-                  <entry>
-                     <para>Year 4-10</para>
-                  </entry>
-                  <entry>
-                     <para>Year 10-13</para>
-                  </entry>
+                  <entry><para>Feature</para></entry>
+                  <entry><para>Year 1-5</para></entry>
+                  <entry><para>Year 6-7</para></entry>
+                  <entry><para>Year 8-10</para></entry>
+                  <entry><para>Year 4-10</para></entry>
+                  <entry><para>Year 10-13</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>Technical Services</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
+                  <entry><para>Technical Services</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Access to Patches and Fixes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
+                  <entry><para>Access to Patches and Fixes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Access to Documentation and Knowledge Base</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
+                  <entry><para>Access to Documentation and Knowledge Base</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Support for Existing Stacks and Workloads</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
+                  <entry><para>Support for Existing Stacks and Workloads</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Support for New Deployments</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
+                  <entry><para>Support for New Deployments</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>No</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Enhancement Requests</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
+                  <entry><para>Enhancement Requests</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>No</para></entry>
+                  <entry><para>No</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Hardware Enablement and Optimization</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
+                  <entry><para>Hardware Enablement and Optimization</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>No</para></entry>
+                  <entry><para>No</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Driver updates via SUSE SolidDriver Program (formerly PLDP)</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>No</para>
-                  </entry>
+                  <entry><para>Driver updates via SUSE SolidDriver Program (formerly PLDP)</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>No</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Backport of Fixes from Recent SP</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Based on partner and customer requests)</para>
-                  </entry>
-                  <entry>
-                     <para>N/A</para>
-                  </entry>
-                  <entry>
-                     <para>N/A</para>
-                  </entry>
+                  <entry><para>Backport of Fixes from Recent SP</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Based on partner and customer requests)</para></entry>
+                  <entry><para>N/A</para></entry>
+                  <entry><para>N/A</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Security Updates<superscript>1</superscript>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
-                  <entry>
-                     <para>All</para>
-                  </entry>
-                  <entry>
-                     <para>Critical only</para>
-                  </entry>
-                  <entry>
-                     <para>Critical only</para>
-                  </entry>
+                  <entry><para>Security Updates<superscript>1</superscript></para></entry>
+                  <entry><para>All</para></entry>
+                  <entry><para>All</para></entry>
+                  <entry><para>All</para></entry>
+                  <entry><para>Critical only</para></entry>
+                  <entry><para>Critical only</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Defect Resolution</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Yes</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Severity Level 1 and 2 defects only)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Severity Level 1 and 2 defects only)</para>
-                  </entry>
-                  <entry>
-                     <para>Limited (Severity Level 1 and 2 defects only)</para>
-                  </entry>
+                  <entry><para>Defect Resolution</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Yes</para></entry>
+                  <entry><para>Limited (Severity Level 1 and 2 defects only)</para></entry>
+                  <entry><para>Limited (Severity Level 1 and 2 defects only)</para></entry>
+                  <entry><para>Limited (Severity Level 1 and 2 defects only)</para></entry>
                </row>
             </tbody>
          </tgroup>
       </table>
-      <para>
-         <superscript>1</superscript> For further information on the SUSE Linux Enterprise Update Policy, refer to the following <link xlink:href="https://www.suse.com/support/kb/doc/?id=000018318">knowledgebase article</link>.</para>
+      <para><superscript>1</superscript> For further information on the SUSE Linux Enterprise Update Policy, refer to the following <link xlink:href="https://www.suse.com/support/kb/doc/?id=000018318">knowledgebase article</link>.</para>
    </sect1>
    <sect1 xml:id="sec-upgrade-background-register">
       <title>Registering and deregistering machines with SUSEConnect</title>
@@ -464,9 +310,7 @@ DAYS=14</screen>
    </sect1>
    <sect1 xml:id="sec-upgrade-background-enable-ltss">
       <title>Enabling LTSS support</title>
-      <para>
-         <literal>Long Term Service Pack Support</literal> (LTSS) extends the lifecycle of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. It is available as an extension. For more information about LTSS, refer to <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/>
-      </para>
+      <para><literal>Long Term Service Pack Support</literal> (LTSS) extends the lifecycle of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. It is available as an extension. For more information about LTSS, refer to <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/></para>
       <procedure>
          <para>To enable the LTSS extension, perform the following steps:</para>
          <step>

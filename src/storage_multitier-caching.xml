@@ -117,8 +117,7 @@
          <systemitem class="resource">bcache</systemitem>
       </title>
       <!-- https://bcache.evilpiepirate.org/ -->
-      <para>
-         <systemitem class="resource">bcache</systemitem> is a Linux kernel block layer cache. It allows one or more fast disk drives (such as SSDs) to act as a cache for one or more slower hard disks. <systemitem class="resource">bcache</systemitem> supports write-through and write-back, and is independent of the file system used. By default it caches random reads and writes only, which SSDs excel at. It is suitable for desktops, servers, and high end storage arrays as well.</para>
+      <para><systemitem class="resource">bcache</systemitem> is a Linux kernel block layer cache. It allows one or more fast disk drives (such as SSDs) to act as a cache for one or more slower hard disks. <systemitem class="resource">bcache</systemitem> supports write-through and write-back, and is independent of the file system used. By default it caches random reads and writes only, which SSDs excel at. It is suitable for desktops, servers, and high end storage arrays as well.</para>
       <sect2 xml:id="sec-multitiercache-bcache-features">
          <title>Main features</title>
          <itemizedlist>
@@ -159,14 +158,12 @@
                <screen>sudo make-bcache --block 4k --bucket 2M -C /dev/sdc</screen>
                <tip>
                   <title>Multi-device support</title>
-                  <para>
-                     <command>make-bcache</command> can prepare and register multiple backing devices and a cache device at the same time. In this case you do not need to manually attach the cache device to the backing device afterward:</para>
+                  <para><command>make-bcache</command> can prepare and register multiple backing devices and a cache device at the same time. In this case you do not need to manually attach the cache device to the backing device afterward:</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> make-bcache -B /dev/sda /dev/sdb -C /dev/sdc</screen>
                </tip>
             </step>
             <step>
-               <para>
-                  <systemitem class="resource">bcache</systemitem> devices show up as</para>
+               <para><systemitem class="resource">bcache</systemitem> devices show up as</para>
                <screen>/dev/bcache<replaceable>N</replaceable></screen>
                <para>and as</para>
                <screen>/dev/bcache/by-uuid/<replaceable>UUID</replaceable>
@@ -191,18 +188,15 @@
          <title>
             <systemitem class="resource">bcache</systemitem> configuration using <systemitem>sysfs</systemitem>
          </title>
-         <para>
-            <systemitem class="resource">bcache</systemitem> devices use the <systemitem>sysfs</systemitem> interface to store their runtime configuration values. This way you can change <systemitem class="resource">bcache</systemitem> backing and cache disks' behavior or see their usage statistics.</para>
-         <para>For the complete list of <systemitem class="resource">bcache</systemitem>
-            <systemitem>sysfs</systemitem> parameters, see the contents of the <filename>/usr/src/linux/Documentation/bcache.txt</filename> file, mainly the <literal>SYSFS - BACKING DEVICE</literal>, <literal>SYSFS - BACKING DEVICE STATS</literal>, and <literal>SYSFS - CACHE DEVICE</literal> sections.</para>
+         <para><systemitem class="resource">bcache</systemitem> devices use the <systemitem>sysfs</systemitem> interface to store their runtime configuration values. This way you can change <systemitem class="resource">bcache</systemitem> backing and cache disks' behavior or see their usage statistics.</para>
+         <para>For the complete list of <systemitem class="resource">bcache</systemitem><systemitem>sysfs</systemitem> parameters, see the contents of the <filename>/usr/src/linux/Documentation/bcache.txt</filename> file, mainly the <literal>SYSFS - BACKING DEVICE</literal>, <literal>SYSFS - BACKING DEVICE STATS</literal>, and <literal>SYSFS - CACHE DEVICE</literal> sections.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-multitiercache-lvmcache">
       <title>
          <systemitem class="resource">lvmcache</systemitem>
       </title>
-      <para>
-         <systemitem class="resource">lvmcache</systemitem> is a caching mechanism consisting of logical volumes (LVs). It uses the <literal>dm-cache</literal> kernel driver and supports write-through (default) and write-back caching modes. <systemitem class="resource">lvmcache</systemitem> improves performance of a large and slow LV by dynamically migrating some of its data to a faster and smaller LV. For more information on LVM, see <xref linkend="part-lvm"/>.</para>
+      <para><systemitem class="resource">lvmcache</systemitem> is a caching mechanism consisting of logical volumes (LVs). It uses the <literal>dm-cache</literal> kernel driver and supports write-through (default) and write-back caching modes. <systemitem class="resource">lvmcache</systemitem> improves performance of a large and slow LV by dynamically migrating some of its data to a faster and smaller LV. For more information on LVM, see <xref linkend="part-lvm"/>.</para>
       <para>LVM refers to the small, fast LV as a <emphasis>cache pool LV</emphasis>. The large, slow LV is called the <emphasis>origin LV</emphasis>. Because of requirements from dm-cache, LVM further splits the cache pool LV into two devices: the <emphasis>cache data LV</emphasis> and <emphasis>cache metadata LV</emphasis>. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored.</para>
       <sect2 xml:id="sec-multitiercache-lvmcache-configure">
          <title>Configuring <systemitem class="resource">lvmcache</systemitem>
@@ -210,18 +204,15 @@
          <para>This section describes steps to create and configure LVM based caching.</para>
          <procedure>
             <step>
-               <para>
-                  <emphasis>Create the origin LV.</emphasis> Create a new LV or use an existing LV to become the origin LV:</para>
+               <para><emphasis>Create the origin LV.</emphasis> Create a new LV or use an existing LV to become the origin LV:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvcreate -n <replaceable>ORIGIN_LV</replaceable> -L 100G vg <replaceable>/dev/SLOW_DEV</replaceable></screen>
             </step>
             <step>
-               <para>
-                  <emphasis>Create the cache data LV.</emphasis> This LV will hold data blocks from the origin LV. The size of this LV is the size of the cache and will be reported as the size of the cache pool LV.</para>
+               <para><emphasis>Create the cache data LV.</emphasis> This LV will hold data blocks from the origin LV. The size of this LV is the size of the cache and will be reported as the size of the cache pool LV.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvcreate -n <replaceable>CACHE_DATA_LV</replaceable> -L 10G vg <replaceable>/dev/FAST</replaceable></screen>
             </step>
             <step>
-               <para>
-                  <emphasis>Create the cache metadata LV.</emphasis> This LV will hold cache pool metadata. The size of this LV should be approximately 1000 times smaller than the cache data LV, with a minimum size of 8MB.</para>
+               <para><emphasis>Create the cache metadata LV.</emphasis> This LV will hold cache pool metadata. The size of this LV should be approximately 1000 times smaller than the cache data LV, with a minimum size of 8MB.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvcreate -n <replaceable>CACHE_METADATA_LV</replaceable> -L 12M vg <replaceable>/dev/FAST</replaceable></screen>
                <para>List the volumes you have created so far:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvs -a vg
@@ -231,14 +222,10 @@ cache_metadata_lv vg   -wi-a-----  12.00m
 origin_lv         vg   -wi-a----- 100.00g</screen>
             </step>
             <step>
-               <para>
-                  <emphasis>Create a cache pool LV.</emphasis> Combine the data and metadata LVs into a cache pool LV. You can set the cache pool LV's behavior at the same time.</para>
-               <para>
-                  <replaceable>CACHE_POOL_LV</replaceable> takes the name of <replaceable>CACHE_DATA_LV</replaceable>.</para>
-               <para>
-                  <replaceable>CACHE_DATA_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cdata and becomes hidden.</para>
-               <para>
-                  <replaceable>CACHE_META_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cmeta and becomes hidden.</para>
+               <para><emphasis>Create a cache pool LV.</emphasis> Combine the data and metadata LVs into a cache pool LV. You can set the cache pool LV's behavior at the same time.</para>
+               <para><replaceable>CACHE_POOL_LV</replaceable> takes the name of <replaceable>CACHE_DATA_LV</replaceable>.</para>
+               <para><replaceable>CACHE_DATA_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cdata and becomes hidden.</para>
+               <para><replaceable>CACHE_META_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cmeta and becomes hidden.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvconvert --type cache-pool \
  --poolmetadata vg/cache_metadata_lv vg/cache_data_lv</screen>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvs -a vg
@@ -249,12 +236,10 @@ cache_data_lv          vg   Cwi---C---  10.00g
 origin_lv              vg   -wi-a----- 100.00g</screen>
             </step>
             <step>
-               <para>
-                  <emphasis>Create a cache LV.</emphasis> Create a cache LV by linking the cache pool LV to the origin LV.</para>
+               <para><emphasis>Create a cache LV.</emphasis> Create a cache LV by linking the cache pool LV to the origin LV.</para>
                <para>The user accessible cache LV takes the name of the origin LV, while the origin LV becomes a hidden LV renamed to <replaceable>ORIGIN_LV</replaceable>_corig.</para>
                <para>CacheLV takes the name of <replaceable>ORIGIN_LV</replaceable>.</para>
-               <para>
-                  <replaceable>ORIGIN_LV</replaceable> is renamed to <replaceable>ORIGIN_LV</replaceable>_corig and becomes hidden.</para>
+               <para><replaceable>ORIGIN_LV</replaceable> is renamed to <replaceable>ORIGIN_LV</replaceable>_corig and becomes hidden.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvconvert --type cache --cachepool vg/cache_data_lv vg/origin_lv</screen>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvs -a vg
 LV              VG   Attr       LSize   Pool   Origin

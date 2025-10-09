@@ -41,18 +41,13 @@
          <para>For <phrase role="productname">SUSE Linux Enterprise Server</phrase>, there are two such files. Both are located in the root directory of the first installation medium:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <filename>suse.ins</filename>, for which to work you need to set up network access in Linuxrc before starting the installation.</para>
+               <para><filename>suse.ins</filename>, for which to work you need to set up network access in Linuxrc before starting the installation.</para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>susehmc.ins</filename> which allows installing without network access.</para>
+               <para><filename>susehmc.ins</filename> which allows installing without network access.</para>
             </listitem>
          </itemizedlist>
-         <para>In the left navigation pane of the HMC expand <menuchoice>
-               <guimenu>Systems Management</guimenu>
-               <guimenu>Systems</guimenu>
-            </menuchoice> and select the mainframe system you want to work with. Choose the LPAR where you want to boot <phrase role="productname">SUSE Linux Enterprise Server</phrase> from the table of LPARs and select <guimenu>Load from Removable Media or Server</guimenu>.</para>
+         <para>In the left navigation pane of the HMC expand <menuchoice><guimenu>Systems Management</guimenu><guimenu>Systems</guimenu></menuchoice> and select the mainframe system you want to work with. Choose the LPAR where you want to boot <phrase role="productname">SUSE Linux Enterprise Server</phrase> from the table of LPARs and select <guimenu>Load from Removable Media or Server</guimenu>.</para>
          <para>Now either choose <guimenu>Hardware Management Console CD-ROM/DVD</guimenu> or <guimenu>FTP Source</guimenu>. If having chosen the latter option, provide the servers address or name and your credentials. If the appropriate <filename>.ins</filename> file is not located in the root directory of the server, provide the path to this file. Continue to the <guimenu>Select the software to load</guimenu> menu and select the appropriate <filename>.ins</filename> entry. Start the installation with <guimenu>OK</guimenu>.</para>
       </sect3>
       <sect3 xml:id="sec-zseries-information-iplopt-dvd">

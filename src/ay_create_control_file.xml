@@ -35,24 +35,13 @@
                <imagedata fileref="media/autoyast2-maindialog.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/autoyast2-maindialog.png" width="75%"/>
+               <imagedata fileref="media/autoyast2-maindialog.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
       <sect2 xml:id="CreateProfile-CMS-new">
          <title>Creating a new control file</title>
-         <para>The easiest way to create an AutoYaST profile is to use an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> system as a template. On an already installed system, launch <menuchoice>
-               <guimenu>YaST</guimenu>
-               <guimenu>Miscellaneous</guimenu>
-               <guimenu>Autoinstallation Configuration</guimenu>
-            </menuchoice>. Then select <menuchoice>
-               <guimenu>Tools</guimenu>
-               <guimenu>Create Reference Profile</guimenu>
-            </menuchoice> from the menu. Choose the system components you want to include in the profile. Alternatively, create a profile containing the complete system configuration by launching <menuchoice>
-               <guimenu>YaST</guimenu>
-               <guimenu>Miscellaneous</guimenu>
-               <guimenu>Autoinstallation Cloning System</guimenu>
-            </menuchoice> or running <command>sudo yast clone_system</command> from the command line.</para>
+         <para>The easiest way to create an AutoYaST profile is to use an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> system as a template. On an already installed system, launch <menuchoice><guimenu>YaST</guimenu><guimenu>Miscellaneous</guimenu><guimenu>Autoinstallation Configuration</guimenu></menuchoice>. Then select <menuchoice><guimenu>Tools</guimenu><guimenu>Create Reference Profile</guimenu></menuchoice> from the menu. Choose the system components you want to include in the profile. Alternatively, create a profile containing the complete system configuration by launching <menuchoice><guimenu>YaST</guimenu><guimenu>Miscellaneous</guimenu><guimenu>Autoinstallation Cloning System</guimenu></menuchoice> or running <command>sudo yast clone_system</command> from the command line.</para>
          <para>Both methods will create the file <filename>/root/autoinst.xml</filename>. The cloned profile can be used to set up an identical clone of the system it was created from. However, you will usually want to adjust the file to allow for installing multiple machines that are very similar, but not identical. This can be done by adjusting the profile with your favorite text/XML editor.</para>
          <warning>
             <title>Sensitive data in profiles</title>
@@ -72,8 +61,7 @@
       <para>If the control file is not well formed, for example, if a tag is not closed, <command>xmllint</command> will report the errors.</para>
       <para>To validate the control file, use the tool <command>jing</command> from the package with the same name. During validation, misplaced or missing tags and attributes and wrong attribute values are detected. The <package>jing</package> package is provided with the SUSE Software Development Kit.</para>
       <screen>jing /usr/share/YaST2/schema/autoyast/rng/profile.rng &lt;control file&gt;</screen>
-      <para>
-         <literal>/usr/share/YaST2/schema/autoyast/rng/profile.rng</literal> is provided by the package <literal>yast2-schema-default</literal>. This file describes the syntax and classes of an AutoYaST profile.</para>
+      <para><literal>/usr/share/YaST2/schema/autoyast/rng/profile.rng</literal> is provided by the package <literal>yast2-schema-default</literal>. This file describes the syntax and classes of an AutoYaST profile.</para>
       <note>
          <title>Schema extensions</title>
          <para>AutoYaST can be extended by other products and modules, but the schema does not contain the specification for those extensions. As a consequence, when AutoYaST is given a profile that uses one of those extensions, it might report the profile as invalid.</para>
@@ -162,8 +150,7 @@
    Pipe the output of each sabcmd to the next sabcmd.
    </para>
    -->
-      <para>For more information about XSLT, go to the official Web page <link xlink:href="https://www.w3.org/TR/xslt">www.w3.org/TR/xslt</link>
-      </para>
+      <para>For more information about XSLT, go to the official Web page <link xlink:href="https://www.w3.org/TR/xslt">www.w3.org/TR/xslt</link></para>
    </sect1>
    <sect1 xml:id="check-profile">
       <title>Checking a control file</title>
@@ -183,8 +170,7 @@
          <para>The simplest way to use this command is just to read and validate the profile:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command>  yast2 autoyast check-profile filename=autoinst.xml output=result.xml</screen>
          <para>The <filename>result.xml</filename> file contains the result of evaluating the profile. Bear in mind that, even if you do not use any advanced feature, the content of <filename>autoinst.xml</filename> and <filename>result.xml</filename> may differ. The reason is that AutoYaST does some cleaning up when it processes the profile.</para>
-         <para>
-            <literal>check-profile</literal> can deal with remote files too:</para>
+         <para><literal>check-profile</literal> can deal with remote files too:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command>  yast2 autoyast check-profile filename=http://192.168.1.100/autoinst.xml output=result.xml</screen>
       </sect2>
       <sect2 xml:id="sec-running-pre-scripts">

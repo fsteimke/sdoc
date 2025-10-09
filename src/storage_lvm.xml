@@ -19,16 +19,15 @@
    <sect1 xml:id="sec-lvm-explained">
       <title>Understanding the logical volume manager</title>
       <para>LVM enables flexible distribution of hard disk space over several physical volumes (hard disks, partitions, LUNs). It was developed because the need to change the segmentation of hard disk space might arise only after the initial partitioning has already been done during installation. Because it is difficult to modify partitions on a running system, LVM provides a virtual pool (volume group or VG) of storage space from which logical volumes (LVs) can be created as needed. The operating system accesses these LVs instead of the physical partitions. Volume groups can span more than one disk, so that several disks or parts of them can constitute one single VG. In this way, LVM provides a kind of abstraction from the physical disk space that allows its segmentation to be changed in a much easier and safer way than through physical repartitioning.</para>
-      <para>
-         <xref linkend="fig-lvm-explain"/> compares physical partitioning (left) with LVM segmentation (right). On the left side, one single disk has been divided into three physical partitions (PART), each with a mount point (MP) assigned so that the operating system can access them. On the right side, two disks have been divided into two and three physical partitions each. Two LVM volume groups (VG 1 and VG 2) have been defined. VG 1 contains two partitions from DISK 1 and one from DISK 2. VG 2 contains the remaining two partitions from DISK 2.</para>
+      <para><xref linkend="fig-lvm-explain"/> compares physical partitioning (left) with LVM segmentation (right). On the left side, one single disk has been divided into three physical partitions (PART), each with a mount point (MP) assigned so that the operating system can access them. On the right side, two disks have been divided into two and three physical partitions each. Two LVM volume groups (VG 1 and VG 2) have been defined. VG 1 contains two partitions from DISK 1 and one from DISK 2. VG 2 contains the remaining two partitions from DISK 2.</para>
       <figure xml:id="fig-lvm-explain">
          <title>Physical partitioning versus LVM</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/lvm.svg" width="80%"/>
+               <imagedata fileref="media/lvm.svg" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/lvm.png" width="100%"/>
+               <imagedata fileref="media/lvm.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -55,7 +54,7 @@
          <title>LVM and RAID</title>
          <para>Even though LVM also supports RAID levels 0, 1, 4, 5 and 6, we recommend using <literal>mdraid</literal> (see <xref linkend="cha-raid"/>). However, LVM works fine with RAID 0 and 1, as RAID 0 is similar to common logical volume management (individual logical blocks are mapped onto blocks on the physical devices). LVM used on top of RAID 1 can keep track of mirror synchronization and is fully able to manage the synchronization process. With higher RAID levels you need a management daemon that monitors the states of attached disks and can inform administrators if there is a problem in the disk array. LVM includes such a daemon, but in exceptional situations such as a device failure, the daemon does not work properly.</para>
       </note>
-      <warning>
+      <warning arch="zseries">
          <title>IBM Z: LVM root file system</title>
          <para>If you configure the system with a root file system on LVM or software RAID array, you must place <filename>/boot/zipl</filename> on a separate, non-LVM or non-RAID partition, otherwise the system will fail to boot. The recommended size for such a partition is 500 MB and the recommended file system is Ext4.</para>
       </warning>
@@ -72,9 +71,7 @@
    always refers to LVM version&nbsp;2.
    </para>
    -->
-      <para>You can manage new or existing LVM storage objects by using the YaST Partitioner. Instructions and further information about configuring LVM are available in the official <link xlink:href="https://tldp.org/HOWTO/LVM-HOWTO/">
-            <citetitle>LVM HOWTO</citetitle>
-         </link>.</para>
+      <para>You can manage new or existing LVM storage objects by using the YaST Partitioner. Instructions and further information about configuring LVM are available in the official <link xlink:href="https://tldp.org/HOWTO/LVM-HOWTO/"><citetitle>LVM HOWTO</citetitle></link>.</para>
    </sect1>
    <sect1 xml:id="sec-lvm-vg">
       <title>Creating volume groups</title>
@@ -85,8 +82,7 @@
             <para>Launch YaST and open the <guimenu>Partitioner</guimenu>.</para>
          </step>
          <step>
-            <para>In case you need to reconfigure your existing partitioning setup, proceed as follows. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details. Skip this step if you only want to use unused disks or partitions that already exist.</para>
+            <para>In case you need to reconfigure your existing partitioning setup, proceed as follows. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details. Skip this step if you only want to use unused disks or partitions that already exist.</para>
             <warning>
                <title>Physical volumes on unpartitioned disks</title>
                <para>You can use an unpartitioned disk as a physical volume (PV) if that disk is <emphasis>not</emphasis> the one where the operating system is installed and from which it boots.</para>
@@ -119,10 +115,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm4_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm4_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm4_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm4_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -156,19 +152,15 @@
             <para>On the Volume Management page, click <guimenu>Next</guimenu>, verify that the new volume group is listed, then click <guimenu>Finish</guimenu>.</para>
          </step>
          <step>
-            <para>To check which physical devices are part of the volume group, open the YaST Partitioner at any time in the running system and click <menuchoice>
-                  <guimenu>Volume Management</guimenu>
-                  <guimenu>Edit</guimenu>
-                  <guimenu>Physical Devices</guimenu>
-               </menuchoice>. Leave this screen with <guimenu>Abort</guimenu>.</para>
+            <para>To check which physical devices are part of the volume group, open the YaST Partitioner at any time in the running system and click <menuchoice><guimenu>Volume Management</guimenu><guimenu>Edit</guimenu><guimenu>Physical Devices</guimenu></menuchoice>. Leave this screen with <guimenu>Abort</guimenu>.</para>
             <figure xml:id="fig-yast2-lvm-physical-volumes">
                <title>Physical volumes in the volume group named DATA</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm5_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm5_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm5_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm5_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -214,20 +206,17 @@
             <para>In the left panel, select <guimenu>Volume Management</guimenu>. A list of existing Volume Groups opens in the right panel.</para>
          </step>
          <step>
-            <para>Select the volume group in which you want to create the volume and choose <menuchoice>
-                  <guimenu>Logical Volumes</guimenu>
-                  <guimenu>Add Logical Volume</guimenu>
-               </menuchoice>.</para>
+            <para>Select the volume group in which you want to create the volume and choose <menuchoice><guimenu>Logical Volumes</guimenu><guimenu>Add Logical Volume</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Provide a <guimenu>Name</guimenu> for the volume and choose <guimenu>Normal Volume</guimenu> (refer to <xref linkend="sec-lvm-lv-thin"/> for setting up thinly provisioned volumes). Proceed with <guimenu>Next</guimenu>.</para>
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm9_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm9_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm9_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm9_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -238,10 +227,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm10_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm10_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm10_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm10_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -251,10 +240,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm11_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm11_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm11_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm11_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -272,8 +261,7 @@
       </procedure>
       <sect2 xml:id="sec-lvm-lv-thin">
          <title>Thinly provisioned logical volumes</title>
-         <para>An LVM logical volume can optionally be thinly provisioned. Thin provisioning allows you to create logical volumes with sizes that overbook the available free space. You create a thin pool that contains unused space reserved for use with an arbitrary number of thin volumes. A thin volume is created as a sparse volume and space is allocated from a thin pool as needed. The thin pool can be expanded dynamically when needed for cost-effective allocation of storage space. Thinly provisioned volumes also support snapshots which can be managed with Snapper—see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+         <para>An LVM logical volume can optionally be thinly provisioned. Thin provisioning allows you to create logical volumes with sizes that overbook the available free space. You create a thin pool that contains unused space reserved for use with an arbitrary number of thin volumes. A thin volume is created as a sparse volume and space is allocated from a thin pool as needed. The thin pool can be expanded dynamically when needed for cost-effective allocation of storage space. Thinly provisioned volumes also support snapshots which can be managed with Snapper—see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
          <para>To set up a thinly provisioned logical volume, proceed as described in <xref linkend="pro-lvm-lv"/>. When it comes to choosing the volume type, do not choose <guimenu>Normal Volume</guimenu>, but rather <guimenu>Thin Volume</guimenu> or <guimenu>Thin Pool</guimenu>.</para>
          <variablelist>
             <varlistentry>
@@ -333,24 +321,19 @@
             <para>where the options/parameters have the following meanings:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <literal>--type</literal> - you need to specify <literal>raid1</literal>, otherwise the command uses the implicit segment type <literal>mirror</literal> and creates a non-raid mirror.</para>
+                  <para><literal>--type</literal> - you need to specify <literal>raid1</literal>, otherwise the command uses the implicit segment type <literal>mirror</literal> and creates a non-raid mirror.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>-m</literal> - specifies the count of mirrors.</para>
+                  <para><literal>-m</literal> - specifies the count of mirrors.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>-L</literal> - specifies the size of the logical volume.</para>
+                  <para><literal>-L</literal> - specifies the size of the logical volume.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>-n</literal> - by using this option you specify a name of the logical volume.</para>
+                  <para><literal>-n</literal> - by using this option you specify a name of the logical volume.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>vg1</literal> - is a name of the volume group used by the logical volume.</para>
+                  <para><literal>vg1</literal> - is a name of the volume group used by the logical volume.</para>
                </listitem>
             </itemizedlist>
             <para>LVM creates a logical volume of one extent size for each data volume in the array. If you have two mirrored volumes, LVM creates another two volumes that stores metadata.</para>
@@ -442,10 +425,10 @@ root's password:
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm8_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm8_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm8_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm8_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -499,10 +482,10 @@ root's password:
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm12_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm12_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm12_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm12_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -565,8 +548,7 @@ root's password:
    </sect1>
    <sect1 xml:id="sec-lvm-cli">
       <title>Using LVM commands</title>
-      <para>For information about using LVM commands, see the <command>man</command> pages for the commands described in the following table. All commands need to be executed with <systemitem class="username">root</systemitem> privileges. Either use <command>sudo</command>
-         <replaceable>COMMAND</replaceable> (recommended), or execute them directly as <systemitem class="username">root</systemitem>.</para>
+      <para>For information about using LVM commands, see the <command>man</command> pages for the commands described in the following table. All commands need to be executed with <systemitem class="username">root</systemitem> privileges. Either use <command>sudo</command><replaceable>COMMAND</replaceable> (recommended), or execute them directly as <systemitem class="username">root</systemitem>.</para>
       <variablelist>
          <title>LVM commands</title>
          <varlistentry>
@@ -606,16 +588,13 @@ root's password:
                <para>Configures the mode of volume group activation. You can specify one of the following values:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>complete</literal> - only the logical volumes that are not affected by missing physical volumes can be activated, even though the particular logical volume can tolerate such a failure.</para>
+                     <para><literal>complete</literal> - only the logical volumes that are not affected by missing physical volumes can be activated, even though the particular logical volume can tolerate such a failure.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>degraded</literal> - is the default activation mode. If there is a sufficient level of redundancy to activate a logical volume, the logical volume can be activated even though some physical volumes are missing.</para>
+                     <para><literal>degraded</literal> - is the default activation mode. If there is a sufficient level of redundancy to activate a logical volume, the logical volume can be activated even though some physical volumes are missing.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>partial</literal> - the LVM tries to activate the volume group even though some physical volumes are missing. If a non-redundant logical volume is missing important physical volumes, then the logical volume usually cannot be activated and is handled as an error target.</para>
+                     <para><literal>partial</literal> - the LVM tries to activate the volume group even though some physical volumes are missing. If a non-redundant logical volume is missing important physical volumes, then the logical volume usually cannot be activated and is handled as an error target.</para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -702,16 +681,13 @@ root's password:
                <para>Configures the mode of logical volume activation. You can specify one of the following values:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>complete</literal> - the logical volume can be activated only if all its physical volumes are active.</para>
+                     <para><literal>complete</literal> - the logical volume can be activated only if all its physical volumes are active.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>degraded</literal> - is the default activation mode. If there is a sufficient level of redundancy to activate a logical volume, the logical volume can be activated even though some physical volumes are missing.</para>
+                     <para><literal>degraded</literal> - is the default activation mode. If there is a sufficient level of redundancy to activate a logical volume, the logical volume can be activated even though some physical volumes are missing.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>partial</literal> - the LVM tries to activate the volume even though some physical volumes are missing. In this case part of the logical volume may be unavailable and it might cause data loss. This option is typically not used, but might be useful when restoring data.</para>
+                     <para><literal>partial</literal> - the LVM tries to activate the volume even though some physical volumes are missing. In this case part of the logical volume may be unavailable and it might cause data loss. This option is typically not used, but might be useful when restoring data.</para>
                   </listitem>
                </itemizedlist>
                <para>You can specify the activation mode also in <filename>/etc/lvm/lvm.conf</filename> by specifying one of the above described values of the <literal>activation_mode</literal> configuration option.</para>
@@ -846,8 +822,7 @@ root's password:
             <step>
                <para>At the terminal prompt, enter the following command to grow the size of the logical volume:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvextend -L +<replaceable>SIZE</replaceable> /dev/<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable></screen>
-               <para>For <replaceable>SIZE</replaceable>, specify the amount of space you want to add to the logical volume, such as 10 GB. Replace <filename>/dev/<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable>
-                  </filename> with the Linux path to the logical volume, such as <filename>/dev/LOCAL/DATA</filename>. For example:</para>
+               <para>For <replaceable>SIZE</replaceable>, specify the amount of space you want to add to the logical volume, such as 10 GB. Replace <filename>/dev/<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable></filename> with the Linux path to the logical volume, such as <filename>/dev/LOCAL/DATA</filename>. For example:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> lvextend -L +10GB /dev/vg1/v1</screen>
             </step>
             <step>

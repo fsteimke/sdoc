@@ -44,10 +44,10 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/klp.png" width="80%"/>
+               <imagedata fileref="media/klp.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/klp.png" width="100%"/>
+               <imagedata fileref="media/klp.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -100,14 +100,12 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
   -r ADDITIONAL REGCODE</screen>
          </step>
          <step>
-            <para>Activate SLES Live Patching using the obtained command followed by <option>-r <replaceable>LIVE_PATCHING_REGISTRATION_CODE</replaceable>
-               </option>, for example:</para>
+            <para>Activate SLES Live Patching using the obtained command followed by <option>-r <replaceable>LIVE_PATCHING_REGISTRATION_CODE</replaceable></option>, for example:</para>
             <screen>SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
   -r <replaceable>LIVE_PATCHING_REGISTRATION_CODE</replaceable></screen>
          </step>
          <step>
-            <para>Install the required packages and dependencies using the command <command>zypper install -t pattern lp_sles</command>
-            </para>
+            <para>Install the required packages and dependencies using the command <command>zypper install -t pattern lp_sles</command></para>
          </step>
       </procedure>
       <para>At this point, the system has already been live-patched.</para>
@@ -155,8 +153,7 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                <para>Use the command <command>zypper search -s kernel-livepatch-<replaceable>RUNNING_KERNEL_VERSION</replaceable>-default</command> to search for previous versions of the patch. The command returns a list of available package versions. Keep in mind that for every new live patch package release, the version number increases by one. Make sure that you choose the version number one release lower than the current one.</para>
             </step>
             <step>
-               <para>Install the desired version with the command <command>zypper in --oldpackage kernel-livepatch-<replaceable>RUNNING_KERNEL_VERSION</replaceable>-default=<replaceable>DESIRED_VERSION</replaceable>
-                  </command>.</para>
+               <para>Install the desired version with the command <command>zypper in --oldpackage kernel-livepatch-<replaceable>RUNNING_KERNEL_VERSION</replaceable>-default=<replaceable>DESIRED_VERSION</replaceable></command>.</para>
             </step>
          </procedure>
       </sect2>

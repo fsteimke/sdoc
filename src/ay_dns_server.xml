@@ -13,56 +13,26 @@
       <tgroup cols="3">
          <thead>
             <row>
-               <entry>
-                  <para>Attribute</para>
-               </entry>
-               <entry>
-                  <para>Value</para>
-               </entry>
-               <entry>
-                  <para>Description</para>
-               </entry>
+               <entry><para>Attribute</para></entry>
+               <entry><para>Value</para></entry>
+               <entry><para>Description</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <literal>chroot</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>The DNS server must be jailed in a chroot.</para>
-               </entry>
+               <entry><para><literal>chroot</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>The DNS server must be jailed in a chroot.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>start_service</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>Bind is enabled (executed on system start).</para>
-               </entry>
+               <entry><para><literal>start_service</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>Bind is enabled (executed on system start).</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>use_ldap</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>Store the settings in LDAP instead of native configuration files.</para>
-               </entry>
+               <entry><para><literal>use_ldap</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>Store the settings in LDAP instead of native configuration files.</para></entry>
             </row>
          </tbody>
       </tgroup>
@@ -81,44 +51,22 @@
       <tgroup cols="2">
          <thead>
             <row>
-               <entry>
-                  <para>List</para>
-               </entry>
-               <entry>
-                  <para>Description</para>
-               </entry>
+               <entry><para>List</para></entry>
+               <entry><para>Description</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <literal>logging</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>Options of the DNS server logging.</para>
-               </entry>
+               <entry><para><literal>logging</literal></para></entry>
+               <entry><para>Options of the DNS server logging.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>options</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>Bind options like the files and directories to use, the list of forwarders and other configuration settings.</para>
-               </entry>
+               <entry><para><literal>options</literal></para></entry>
+               <entry><para>Bind options like the files and directories to use, the list of forwarders and other configuration settings.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>zones</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>List of DNS zones known by the server, including all the settings, records and SOA records.</para>
-               </entry>
+               <entry><para><literal>zones</literal></para></entry>
+               <entry><para>List of DNS zones known by the server, including all the settings, records and SOA records.</para></entry>
             </row>
          </tbody>
       </tgroup>

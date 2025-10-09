@@ -8,10 +8,8 @@
    <title>Using NIS</title>
    <info>
       <abstract>
-         <para>When multiple Unix systems in a network access common resources, it becomes imperative that all user and group identities are the same for all machines in that network. The network should be transparent to users: their environments should not vary, regardless of which machine they are using. This can be done by NIS and NFS services. NFS distributes file systems over a network and is discussed in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-            <xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
-         <para>NIS (Network Information Service) can be described as a database-like service that provides access to the contents of <filename>/etc/passwd</filename>, <filename>/etc/shadow</filename>, and <filename>/etc/group</filename> across networks. NIS can also be used for other purposes (making the contents of files like <filename>/etc/hosts</filename> or <filename>/etc/services</filename> available, for example), but this is beyond the scope of this introduction. People often refer to NIS as <emphasis>YP</emphasis>, because it works like the network's <quote>yellow pages.</quote>
-         </para>
+         <para>When multiple Unix systems in a network access common resources, it becomes imperative that all user and group identities are the same for all machines in that network. The network should be transparent to users: their environments should not vary, regardless of which machine they are using. This can be done by NIS and NFS services. NFS distributes file systems over a network and is discussed in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>NIS (Network Information Service) can be described as a database-like service that provides access to the contents of <filename>/etc/passwd</filename>, <filename>/etc/shadow</filename>, and <filename>/etc/group</filename> across networks. NIS can also be used for other purposes (making the contents of files like <filename>/etc/hosts</filename> or <filename>/etc/services</filename> available, for example), but this is beyond the scope of this introduction. People often refer to NIS as <emphasis>YP</emphasis>, because it works like the network's <quote>yellow pages.</quote></para>
       </abstract>
    </info>
    <sect1 xml:id="sec-nis-server">
@@ -30,11 +28,7 @@
          <para>To manage the NIS Server functionality with YaST, install the <systemitem class="resource">yast2-nis-server</systemitem> package by running the <command>zypper in yast2-nis-server</command> command as root. To configure a NIS master server for your network, proceed as follows:</para>
          <procedure>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Network Services</guimenu>
-                     <guimenu>NIS Server</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>NIS Server</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>If you need just one NIS server in your network or if this server is to act as the master for further NIS slave servers, select <guimenu>Install and Set Up NIS Master Server</guimenu>. YaST installs the required packages.</para>
@@ -46,10 +40,10 @@
                   <title>NIS server setup</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -76,26 +70,25 @@
                         <title>Master server setup</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_nis_master.png" width="75%"/>
+                              <imagedata fileref="media/yast2_nis_master.png" width="69%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_nis_master.png" width="75%"/>
+                              <imagedata fileref="media/yast2_nis_master.png" width="69%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
                   </step>
                   <step>
                      <para>Leave this dialog with <guimenu>Next</guimenu> or click <guimenu>Other Global Settings</guimenu> to make additional settings.</para>
-                     <para>
-                        <guimenu>Other Global Settings</guimenu> include changing the source directory of the NIS server (<filename>/etc</filename> by default). In addition, passwords can be merged here. The setting should be <guimenu>Yes</guimenu> to create the user database from the system authentication files <filename>/etc/passwd</filename>, <filename>/etc/shadow</filename> and <filename>/etc/group</filename>. Also, determine the smallest user and group ID that should be offered by NIS. Click <guimenu>OK</guimenu> to confirm your settings and return to the previous screen.</para>
+                     <para><guimenu>Other Global Settings</guimenu> include changing the source directory of the NIS server (<filename>/etc</filename> by default). In addition, passwords can be merged here. The setting should be <guimenu>Yes</guimenu> to create the user database from the system authentication files <filename>/etc/passwd</filename>, <filename>/etc/shadow</filename> and <filename>/etc/group</filename>. Also, determine the smallest user and group ID that should be offered by NIS. Click <guimenu>OK</guimenu> to confirm your settings and return to the previous screen.</para>
                      <figure xml:id="fig-inst-nisserver2">
                         <title>Changing the directory and synchronizing files for a NIS server</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="75%"/>
+                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="69%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="75%"/>
+                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="69%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -114,10 +107,10 @@
                   <title>NIS server maps setup</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis_maps.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis_maps.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis_maps.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis_maps.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -131,10 +124,10 @@
                   <title>Setting request permissions for a NIS server</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis_hosts.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis_hosts.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis_hosts.png" width="75%"/>
+                        <imagedata fileref="media/yast2_nis_hosts.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -149,11 +142,7 @@
          <para>To configure additional NIS <emphasis>slave servers</emphasis> in your network, proceed as follows:</para>
          <procedure>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Network Services</guimenu>
-                     <guimenu>NIS Server</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>NIS Server</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Select <guimenu>Install and Set Up NIS Slave Server</guimenu> and click <guimenu>Next</guimenu>.</para>
@@ -198,26 +187,21 @@
       <para>To use NIS on a workstation, do the following:</para>
       <procedure>
          <step>
-            <para>Start <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>NIS Client</guimenu>
-               </menuchoice>.</para>
+            <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>NIS Client</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Activate the <guimenu>Use NIS</guimenu> button.</para>
          </step>
          <step>
-            <para>Enter the NIS domain. This is a domain name given by your administrator or a static external IP address received by DHCP. For information about DHCP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-dhcp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Enter the NIS domain. This is a domain name given by your administrator or a static external IP address received by DHCP. For information about DHCP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-dhcp" xrefstyle="%label &#34;%c&#34;"/>.</para>
             <figure xml:id="fig-inst-nisclient">
                <title>Setting domain and address of a NIS server</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_inst_nisclient.png" width="75%"/>
+                     <imagedata fileref="media/yast2_inst_nisclient.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_inst_nisclient.png" width="75%"/>
+                     <imagedata fileref="media/yast2_inst_nisclient.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>

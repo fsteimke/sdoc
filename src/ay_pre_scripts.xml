@@ -7,8 +7,7 @@
          xml:id="pre-scripts">
    <title>Combining ERB templates and scripts</title>
    <info/>
-   <para>
-      <xref linkend="pre-install-scripts"/> already describes how to use a pre-script to modify the current profile. In a nutshell, if the script creates a <filename>/tmp/profile/modified.xml</filename> file, AutoYaST imports that profile and forgets about the initial one.</para>
+   <para><xref linkend="pre-install-scripts"/> already describes how to use a pre-script to modify the current profile. In a nutshell, if the script creates a <filename>/tmp/profile/modified.xml</filename> file, AutoYaST imports that profile and forgets about the initial one.</para>
    <para>This is a pretty flexible approach and the only limitation is that you need to rely on the languages and libraries that are available in the installation media.</para>
    <sect1 xml:id="erb-and-scripts">
       <title>Embedding ERB in your scripts</title>

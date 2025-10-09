@@ -14,8 +14,7 @@
    <note>
       <title>Gathering and Analyzing System Information with <command>supportconfig</command>
       </title>
-      <para>Apart from the utilities presented in the following, <phrase role="productname">SUSE Linux Enterprise Server</phrase> also contains <command>supportconfig</command>, a tool to create reports about the system such as: current kernel version, hardware, installed packages, partition setup and much more. These reports are used to provide the SUSE support with needed information in case a support ticket is created. However, they can also be analyzed for known issues to help resolve problems faster. For this purpose, <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides both an appliance and a command line tool for Supportconfig Analysis (SCA). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>Apart from the utilities presented in the following, <phrase role="productname">SUSE Linux Enterprise Server</phrase> also contains <command>supportconfig</command>, a tool to create reports about the system such as: current kernel version, hardware, installed packages, partition setup and much more. These reports are used to provide the SUSE support with needed information in case a support ticket is created. However, they can also be analyzed for known issues to help resolve problems faster. For this purpose, <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides both an appliance and a command line tool for Supportconfig Analysis (SCA). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
    </note>
    <para>For each of the described commands, examples of the relevant outputs are presented. In the examples, the first line is the command itself (after the <systemitem class="username">tux</systemitem> &gt; or root #). Omissions are indicated with square brackets (<literal>[...]</literal>) and long lines are wrapped where necessary. Line breaks for long lines are indicated by a backslash (<literal>\</literal>).</para>
    <screen><prompt>&gt;</prompt>command -x -y
@@ -214,15 +213,13 @@ procs -----------memory----------- ---swap-- -----io---- -system-- -----cpu-----
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>See <command>vmstat</command>
-            <option>--help</option> for more options.</para>
+         <para>See <command>vmstat</command><option>--help</option> for more options.</para>
       </sect2>
       <xi:include href="tuning_utilities_dstat.xml"/>
       <sect2 xml:id="sec-util-multi-sar">
          <title>System activity information: <command>sar</command>
          </title>
-         <para>
-            <command>sar</command> can generate extensive reports on almost all important system activities, among them CPU, memory, IRQ usage, I/O, and networking. It can also generate reports in real time. The <command>sar</command> command gathers data from the <filename>/proc</filename> file system.</para>
+         <para><command>sar</command> can generate extensive reports on almost all important system activities, among them CPU, memory, IRQ usage, I/O, and networking. It can also generate reports in real time. The <command>sar</command> command gathers data from the <filename>/proc</filename> file system.</para>
          <note>
             <title>sysstat package</title>
             <para>The <command>sar</command> command is a part of the <package>sysstat</package> package. Install it with YaST, or with the <command>zypper in sysstat</command> command. <systemitem class="daemon">sysstat.service</systemitem> does not start by default, and must be enabled and started with the following command:</para>
@@ -231,8 +228,7 @@ procs -----------memory----------- ---swap-- -----io---- -system-- -----cpu-----
          <sect3 xml:id="sec-util-multi-sar-report">
             <title>Generating reports with <command>sar</command>
             </title>
-            <para>To generate reports in real time, call <command>sar</command> with an interval (seconds) and a count. To generate reports from files specify a file name with the option <option>-f</option> instead of interval and count. If file name, interval and count are not specified, <command>sar</command> attempts to generate a report from <filename>/var/log/sa/sa<replaceable>DD</replaceable>
-               </filename>, where <replaceable>DD</replaceable> stands for the current day. This is the default location to where <command>sadc</command> (the system activity data collector) writes its data. Query multiple files with multiple <option>-f</option> options.</para>
+            <para>To generate reports in real time, call <command>sar</command> with an interval (seconds) and a count. To generate reports from files specify a file name with the option <option>-f</option> instead of interval and count. If file name, interval and count are not specified, <command>sar</command> attempts to generate a report from <filename>/var/log/sa/sa<replaceable>DD</replaceable></filename>, where <replaceable>DD</replaceable> stands for the current day. This is the default location to where <command>sadc</command> (the system activity data collector) writes its data. Query multiple files with multiple <option>-f</option> options.</para>
             <screen>sar 2 10                         # real time report, 10 times every 2 seconds
 sar -f ~/reports/sar_2014_07_17  # queries file sar_2014_07_17
 sar                              # queries file from today in /var/log/sa/
@@ -257,8 +253,7 @@ Linux 6.4.0-150700.38-default (jupiter)         03/11/2024        _x86_64_      
 17:52:09        all     53,33      0,00      4,88      0,05      0,00     41,74
 17:52:19        all     56,98      0,00      5,65      0,10      0,00     37,27
 Average:        all     49,62      0,00      5,51      0,24      0,00     44,62</screen>
-               <para>
-                  <guimenu>%iowait</guimenu> displays the percentage of time that the CPU was idle while waiting for an I/O request. If this value is much higher than zero over a long period of time, there is a bottleneck in the I/O system (network or hard disk). If the <guimenu>%idle</guimenu> value is zero over a long period of time, your CPU is working at capacity.</para>
+               <para><guimenu>%iowait</guimenu> displays the percentage of time that the CPU was idle while waiting for an I/O request. If this value is much higher than zero over a long period of time, there is a bottleneck in the I/O system (network or hard disk). If the <guimenu>%idle</guimenu> value is zero over a long period of time, your CPU is working at capacity.</para>
             </sect4>
             <sect4 xml:id="sec-util-multi-sar-report-memory">
                <title>Memory usage report: <command>sar</command>
@@ -343,36 +338,29 @@ Average: sr0  0.00     0.00      0.00      0.00      0.00      0.00      0.00   
                <para>The option <option>-n</option> lets you generate multiple network related reports. Specify one of the following keywords along with the <option>-n</option>:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <emphasis>DEV</emphasis>: Generates a statistic report for all network devices</para>
+                     <para><emphasis>DEV</emphasis>: Generates a statistic report for all network devices</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <emphasis>EDEV</emphasis>: Generates an error statistics report for all network devices</para>
+                     <para><emphasis>EDEV</emphasis>: Generates an error statistics report for all network devices</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <emphasis>NFS</emphasis>: Generates a statistic report for an NFS client</para>
+                     <para><emphasis>NFS</emphasis>: Generates a statistic report for an NFS client</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <emphasis>NFSD</emphasis>: Generates a statistic report for an NFS server</para>
+                     <para><emphasis>NFSD</emphasis>: Generates a statistic report for an NFS server</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <emphasis>SOCK</emphasis>: Generates a statistic report on sockets</para>
+                     <para><emphasis>SOCK</emphasis>: Generates a statistic report on sockets</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <emphasis>ALL</emphasis>: Generates all network statistic reports</para>
+                     <para><emphasis>ALL</emphasis>: Generates all network statistic reports</para>
                   </listitem>
                </itemizedlist>
             </sect4>
          </sect3>
          <sect3 xml:id="sec-util-multi-sar-visual">
             <title>Visualizing <command>sar</command> data</title>
-            <para>
-               <command>sar</command> reports are not always easy to parse for humans. kSar, a Java application visualizing your <command>sar</command> data, creates easy-to-read graphs. It can even generate PDF reports. kSar takes data generated in real time, and past data from a file. kSar is licensed under the BSD license and is available from <link xlink:href="https://sourceforge.net/projects/ksar/"/>.</para>
+            <para><command>sar</command> reports are not always easy to parse for humans. kSar, a Java application visualizing your <command>sar</command> data, creates easy-to-read graphs. It can even generate PDF reports. kSar takes data generated in real time, and past data from a file. kSar is licensed under the BSD license and is available from <link xlink:href="https://sourceforge.net/projects/ksar/"/>.</para>
          </sect3>
       </sect2>
    </sect1>
@@ -394,20 +382,17 @@ Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
 sdb               2.02        36.74        45.73    3544894    4412392
 sda               1.05         5.12        13.47     493753    1300276
 sdc               0.02         0.14         0.00      13641         37</screen>
-         <para>Invoking <command>iostat</command> in this way helps you find out whether throughput is different from your expectation, but not why. Such questions can be better answered by an extended report which can be generated by invoking <command>iostat</command>
-            <option>-x</option>. Extended reports additionally include, for example, information on average queue sizes and average wait times. It may also be easier to evaluate the data if idle block devices are excluded using the <option>-z</option> switch. Find definitions for each of the displayed column titles in the man page of <command>iostat</command> (<command>man 1 iostat</command>).</para>
+         <para>Invoking <command>iostat</command> in this way helps you find out whether throughput is different from your expectation, but not why. Such questions can be better answered by an extended report which can be generated by invoking <command>iostat</command><option>-x</option>. Extended reports additionally include, for example, information on average queue sizes and average wait times. It may also be easier to evaluate the data if idle block devices are excluded using the <option>-z</option> switch. Find definitions for each of the displayed column titles in the man page of <command>iostat</command> (<command>man 1 iostat</command>).</para>
          <remark>The man page seemed clear enough on the column titles. What might help additionally though is some kind of practical guide like: "if (this value) is (lower/higher than expected), check whether (this config is set/this hardware is working)". - sknorr, 2015-10-09</remark>
          <para>You can also specify that a certain device should be monitored at specified intervals. For example, to generate five reports at three-second intervals for the device <systemitem>sda</systemitem>, use:</para>
          <screen><prompt>&gt;</prompt><command>iostat</command> -p sda 3 5</screen>
          <para>To show statistics of network file systems (NFS), there are two similar utilities:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <command>nfsiostat-sysstat</command> is included with the package <package>sysstat</package>.</para>
+               <para><command>nfsiostat-sysstat</command> is included with the package <package>sysstat</package>.</para>
             </listitem>
             <listitem>
-               <para>
-                  <command>nfsiostat</command> is included with the package <package>nfs-client</package>.</para>
+               <para><command>nfsiostat</command> is included with the package <package>nfs-client</package>.</para>
             </listitem>
          </itemizedlist>
          <note>
@@ -441,11 +426,10 @@ Average:  all  47,85   0,00  3,34     0,00  0,00   0,40    0,00    0,00    0,00 
             </listitem>
          </itemizedlist>
       </sect2>
-      <sect2 xml:id="sec-util-system-turbostat">
+      <sect2 xml:id="sec-util-system-turbostat" arch="x86_64">
          <title>Processor frequency monitoring: <command>turbostat</command>
          </title>
-         <para>
-            <command>turbostat</command> shows frequencies, load, temperature, and power of AMD64/Intel 64 processors. It can operate in two modes: If called with a command, the command process is forked and statistics are displayed upon command completion. When run without a command, it displays updated statistics every five seconds. <command>turbostat</command> requires the kernel module <systemitem>msr</systemitem> to be loaded.</para>
+         <para><command>turbostat</command> shows frequencies, load, temperature, and power of AMD64/Intel 64 processors. It can operate in two modes: If called with a command, the command process is forked and statistics are displayed upon command completion. When run without a command, it displays updated statistics every five seconds. <command>turbostat</command> requires the kernel module <systemitem>msr</systemitem> to be loaded.</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> turbostat find /etc -type d -exec true {} \;
 0.546880 sec
      CPU Avg_MHz   Busy% Bzy_MHz TSC_MHz
@@ -462,8 +446,7 @@ Average:  all  47,85   0,00  3,34     0,00  0,00   0,40    0,00    0,00    0,00 
          <title>Task monitoring: <command>pidstat</command>
          </title>
          <para>If you need to see what load a particular task applies to your system, use <command>pidstat</command> command. It prints activity of every selected task or all tasks managed by Linux kernel if no task is specified. You can also set the number of reports to be displayed and the time interval between them.</para>
-         <para>For example, <command>pidstat</command>
-            <option>-C</option> firefox 2 3 prints the load statistic for tasks whose command name includes the string <quote>firefox</quote>. There are three reports printed at two second intervals.</para>
+         <para>For example, <command>pidstat</command><option>-C</option> firefox 2 3 prints the load statistic for tasks whose command name includes the string <quote>firefox</quote>. There are three reports printed at two second intervals.</para>
          <screen><prompt role="root">#</prompt>pidstat -C firefox 2 3
 Linux 6.4.0-150700.38-default (jupiter)         03/11/2024        _x86_64_        (2 CPU)
 
@@ -478,15 +461,13 @@ Linux 6.4.0-150700.38-default (jupiter)         03/11/2024        _x86_64_      
 
 Average:      UID       PID    %usr %system  %guest    %CPU   CPU  Command
 Average:     1000       387   43,19    3,65    0,00   46,84     -  firefox</screen>
-         <para>Similarly, <command>pidstat</command>
-            <option>-d</option> can be used to estimate how much I/O tasks are doing, whether they are sleeping on that I/O and how many clock ticks the task was stalled.</para>
+         <para>Similarly, <command>pidstat</command><option>-d</option> can be used to estimate how much I/O tasks are doing, whether they are sleeping on that I/O and how many clock ticks the task was stalled.</para>
       </sect2>
       <sect2 xml:id="sec-util-dmesg">
          <title>Kernel ring buffer: <command>dmesg</command>
          </title>
          <para>The Linux kernel keeps certain messages in a ring buffer. To view these messages, enter the command <command>dmesg -T</command>.</para>
-         <para>Older events are logged in the <systemitem class="daemon">systemd</systemitem> journal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the journal.</para>
+         <para>Older events are logged in the <systemitem class="daemon">systemd</systemitem> journal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the journal.</para>
       </sect2>
       <sect2 xml:id="sec-util-system-lsof">
          <title>List of open files: <command>lsof</command>
@@ -518,8 +499,7 @@ sshd      8837 root   10u  IPv4 294831      0t0  TCP localhost:x11 (LISTEN)</scr
       <sect2 xml:id="sec-util-system-udevmonitor">
          <title>Kernel and udev event sequence viewer: <command>udevadm monitor</command>
          </title>
-         <para>
-            <command>udevadm monitor</command> listens to the kernel uevents and events sent out by a udev rule and prints the device path (DEVPATH) of the event to the console. This is a sequence of events while connecting a USB memory stick:</para>
+         <para><command>udevadm monitor</command> listens to the kernel uevents and events sent out by a udev rule and prints the device path (DEVPATH) of the event to the console. This is a sequence of events while connecting a USB memory stick:</para>
          <note>
             <title>Monitoring udev events</title>
             <para>Only root user is allowed to monitor udev events by running the <command>udevadm</command> command.</para>
@@ -722,10 +702,7 @@ KiB Swap:  1541116 total,        0 used,  1541116 free.   377000 cached Mem
    16 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 bioset
    17 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 crypto
    18 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 kblockd</screen>
-         <para>By default the output is sorted by CPU usage (column <guimenu>%CPU</guimenu>, shortcut <keycombo>
-               <keycap function="shift"/>
-               <keycap>P</keycap>
-            </keycombo>). Use the following key combinations to change the sort field:</para>
+         <para>By default the output is sorted by CPU usage (column <guimenu>%CPU</guimenu>, shortcut <keycombo><keycap function="shift"/><keycap>P</keycap></keycombo>). Use the following key combinations to change the sort field:</para>
          <simplelist>
             <member>
                <keycombo>
@@ -743,26 +720,19 @@ KiB Swap:  1541116 total,        0 used,  1541116 free.   377000 cached Mem
                   <keycap>T</keycap>
                </keycombo>: Time (<guimenu>TIME+</guimenu>)</member>
          </simplelist>
-         <para>To use any other field for sorting, press <keycap>F</keycap> and select a field from the list. To toggle the sort order, Use <keycombo>
-               <keycap function="shift"/>
-               <keycap>R</keycap>
-            </keycombo>.</para>
-         <para>The parameter <option>-U <replaceable>UID</replaceable>
-            </option> monitors only the processes associated with a particular user. Replace <replaceable>UID</replaceable> with the user ID of the user. Use <command>top -U $(id -u)</command> to show processes of the current user</para>
+         <para>To use any other field for sorting, press <keycap>F</keycap> and select a field from the list. To toggle the sort order, Use <keycombo><keycap function="shift"/><keycap>R</keycap></keycombo>.</para>
+         <para>The parameter <option>-U <replaceable>UID</replaceable></option> monitors only the processes associated with a particular user. Replace <replaceable>UID</replaceable> with the user ID of the user. Use <command>top -U $(id -u)</command> to show processes of the current user</para>
       </sect2>
-      <sect2 xml:id="sec-util-processes-virtualtop">
+      <sect2 xml:id="sec-util-processes-virtualtop" arch="zseries">
          <title>IBM Z hypervisor monitor: <command>hyptop</command>
          </title>
-         <para>
-            <command>hyptop</command> provides a dynamic real-time view of an IBM Z hypervisor environment, using the kernel infrastructure through debugfs. It works with either the z/VM or the LPAR hypervisor. Depending on the available data it, for example, shows CPU and memory consumption of active LPARs or z/VM guests. It provides a curses based user interface similar to the <command>top</command> command. <command>hyptop</command> provides two windows:</para>
+         <para><command>hyptop</command> provides a dynamic real-time view of an IBM Z hypervisor environment, using the kernel infrastructure through debugfs. It works with either the z/VM or the LPAR hypervisor. Depending on the available data it, for example, shows CPU and memory consumption of active LPARs or z/VM guests. It provides a curses based user interface similar to the <command>top</command> command. <command>hyptop</command> provides two windows:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <guimenu>sys_list</guimenu>: Lists systems that the current hypervisor is running</para>
+               <para><guimenu>sys_list</guimenu>: Lists systems that the current hypervisor is running</para>
             </listitem>
             <listitem>
-               <para>
-                  <guimenu>sys</guimenu>: Shows one system in more detail</para>
+               <para><guimenu>sys</guimenu>: Shows one system in more detail</para>
             </listitem>
          </itemizedlist>
          <para>You can run <command>hyptop</command> in interactive mode (default) or in batch mode with the <option>-b</option> option. Help in the interactive mode is available by pressing <keycap>?</keycap> after <command>hyptop</command> is started.</para>
@@ -831,38 +801,30 @@ cpuid     cpu visual
          <note>
             <title>Installing <command>iotop</command>
             </title>
-            <para>
-               <command>iotop</command> is not installed by default. You need to install it manually with <command>zypper in iotop</command> as <systemitem class="username">root</systemitem>.</para>
+            <para><command>iotop</command> is not installed by default. You need to install it manually with <command>zypper in iotop</command> as <systemitem class="username">root</systemitem>.</para>
          </note>
-         <para>
-            <command>iotop</command> displays columns for the I/O bandwidth read and written by each process during the sampling period. It also displays the percentage of time the process spent while swapping in and while waiting on I/O. For each process, its I/O priority (class/level) is shown. In addition, the total I/O bandwidth read and written during the sampling period is displayed at the top of the interface.</para>
+         <para><command>iotop</command> displays columns for the I/O bandwidth read and written by each process during the sampling period. It also displays the percentage of time the process spent while swapping in and while waiting on I/O. For each process, its I/O priority (class/level) is shown. In addition, the total I/O bandwidth read and written during the sampling period is displayed at the top of the interface.</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
                <para>The <keycap function="left"/> and <keycap function="right"/> keys change the sorting.</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>R</keycap> reverses the sort order.</para>
+               <para><keycap>R</keycap> reverses the sort order.</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>O</keycap> toggles between showing all processes and threads (default view) and showing only those doing I/O. (This function is similar to adding <option>--only</option> on command line.)</para>
+               <para><keycap>O</keycap> toggles between showing all processes and threads (default view) and showing only those doing I/O. (This function is similar to adding <option>--only</option> on command line.)</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>P</keycap> toggles between showing threads (default view) and processes. (This function is similar to <option>--only</option>.)</para>
+               <para><keycap>P</keycap> toggles between showing threads (default view) and processes. (This function is similar to <option>--only</option>.)</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>A</keycap> toggles between showing the current I/O bandwidth (default view) and accumulated I/O operations since <command>iotop</command> was started. (This function is similar to <option>--accumulated</option>.)</para>
+               <para><keycap>A</keycap> toggles between showing the current I/O bandwidth (default view) and accumulated I/O operations since <command>iotop</command> was started. (This function is similar to <option>--accumulated</option>.)</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>I</keycap> lets you change the priority of a thread or a process's threads.</para>
+               <para><keycap>I</keycap> lets you change the priority of a thread or a process's threads.</para>
             </listitem>
             <listitem>
-               <para>
-                  <keycap>Q</keycap> quits <command>iotop</command>.</para>
+               <para><keycap>Q</keycap> quits <command>iotop</command>.</para>
             </listitem>
             <listitem>
                <para>Pressing any other key forces a refresh.</para>
@@ -875,8 +837,7 @@ Total DISK READ: 50.61 K/s | Total DISK WRITE: 11.68 K/s
  3416 be/4 tux         50.61 K/s    0.00 B/s  0.00 %  4.05 % find /
   275 be/3 root        0.00 B/s    3.89 K/s  0.00 %  2.34 % [jbd2/sda2-8]
  5055 be/4 tux          0.00 B/s    3.89 K/s  0.00 %  0.04 % emacs</screen>
-         <para>
-            <command>iotop</command> can be also used in a batch mode (<literal>-b</literal>) and its output stored in a file for later analysis. For a complete set of options, see the manual page (<command>man 8 iotop</command>).</para>
+         <para><command>iotop</command> can be also used in a batch mode (<literal>-b</literal>) and its output stored in a file for later analysis. For a complete set of options, see the manual page (<command>man 8 iotop</command>).</para>
       </sect2>
       <sect2 xml:id="sec-util-processes-nice">
          <title>Modify a process's niceness: <command>nice</command> and <command>renice</command>
@@ -886,19 +847,10 @@ Total DISK READ: 50.61 K/s | Total DISK WRITE: 11.68 K/s
          <para>Calling <command>nice</command> without any parameters prints the current niceness:</para>
          <screen><prompt>&gt;</prompt>nice
 0</screen>
-         <para>Running <command>nice</command>
-            <replaceable>COMMAND</replaceable> increments the current nice level for the given command by 10. Using <command>nice</command>
-            <option>-n <replaceable>LEVEL</replaceable>
-            </option>
-            <replaceable>COMMAND</replaceable> lets you specify a new niceness relative to the current one.</para>
-         <para>To change the niceness of a running process, use <command>renice</command>
-            <replaceable>PRIORITY</replaceable>
-            <option>-p <replaceable>PROCESS_ID</replaceable>
-            </option>, for example:</para>
+         <para>Running <command>nice</command><replaceable>COMMAND</replaceable> increments the current nice level for the given command by 10. Using <command>nice</command><option>-n <replaceable>LEVEL</replaceable></option><replaceable>COMMAND</replaceable> lets you specify a new niceness relative to the current one.</para>
+         <para>To change the niceness of a running process, use <command>renice</command><replaceable>PRIORITY</replaceable><option>-p <replaceable>PROCESS_ID</replaceable></option>, for example:</para>
          <screen><prompt>&gt;</prompt>renice +5 3266</screen>
-         <para>To restore the niceness of all processes owned by a specific user, use the option <option>-u <replaceable>USER</replaceable>
-            </option>. <remark>sknorr, 2014-07-23: as far as verbs go, "(to) renice" is pretty terrible</remark> Process groups are reniced by the option <option>-g <replaceable>PROCESS_GROUP_ID</replaceable>
-            </option>.</para>
+         <para>To restore the niceness of all processes owned by a specific user, use the option <option>-u <replaceable>USER</replaceable></option>. <remark>sknorr, 2014-07-23: as far as verbs go, "(to) renice" is pretty terrible</remark> Process groups are reniced by the option <option>-g <replaceable>PROCESS_GROUP_ID</replaceable></option>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-util-memory">
@@ -1026,12 +978,10 @@ DirectMap2M:     2017280 kB</screen>
                   <para>Recently used memory that is not reclaimed unless necessary or on explicit request. <guimenu>Active</guimenu> is the sum of <guimenu>Active(anon)</guimenu> and <guimenu>Active(file)</guimenu>:</para>
                   <itemizedlist>
                      <listitem>
-                        <para>
-                           <guimenu>Active(anon)</guimenu> tracks swap-backed memory. This includes private and shared anonymous mappings and private file pages after copy-on-write.</para>
+                        <para><guimenu>Active(anon)</guimenu> tracks swap-backed memory. This includes private and shared anonymous mappings and private file pages after copy-on-write.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <guimenu>Active(file)</guimenu> tracks other file system backed memory.</para>
+                        <para><guimenu>Active(file)</guimenu> tracks other file system backed memory.</para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -1044,12 +994,10 @@ DirectMap2M:     2017280 kB</screen>
                   <para>Less recently used memory that is generally reclaimed first. <guimenu>Inactive</guimenu> is the sum of <guimenu>Inactive(anon)</guimenu> and <guimenu>Inactive(file)</guimenu>:</para>
                   <itemizedlist>
                      <listitem>
-                        <para>
-                           <guimenu>Inactive(anon)</guimenu> tracks swap backed memory. This includes private and shared anonymous mappings and private file pages after copy-on-write.</para>
+                        <para><guimenu>Inactive(anon)</guimenu> tracks swap backed memory. This includes private and shared anonymous mappings and private file pages after copy-on-write.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <guimenu>Inactive(file)</guimenu> tracks other file system backed memory.</para>
+                        <para><guimenu>Inactive(file)</guimenu> tracks other file system backed memory.</para>
                      </listitem>
                   </itemizedlist>
                </listitem>
@@ -1309,10 +1257,8 @@ DirectMap2M:     2017280 kB</screen>
       <sect2 xml:id="sec-util-networking-ip">
          <title>Basic network diagnostics: <command>ip</command>
          </title>
-         <para>
-            <command>ip</command> is a powerful tool to set up and control network interfaces. You can also use it to quickly view basic statistics about network interfaces of the system. For example, whether the interface is up or how many errors, dropped packets, or packet collisions there are.</para>
-         <para>If you run <command>ip</command> with no additional parameter, it displays a help output. To list all network interfaces, enter <command>ip addr show</command> (or abbreviated as <command>ip a</command>). <command>ip addr show up</command> lists only running network interfaces. <command>ip -s link show</command>
-            <replaceable>DEVICE</replaceable> lists statistics for the specified interface only:</para>
+         <para><command>ip</command> is a powerful tool to set up and control network interfaces. You can also use it to quickly view basic statistics about network interfaces of the system. For example, whether the interface is up or how many errors, dropped packets, or packet collisions there are.</para>
+         <para>If you run <command>ip</command> with no additional parameter, it displays a help output. To list all network interfaces, enter <command>ip addr show</command> (or abbreviated as <command>ip a</command>). <command>ip addr show up</command> lists only running network interfaces. <command>ip -s link show</command><replaceable>DEVICE</replaceable> lists statistics for the specified interface only:</para>
          <screen><prompt role="root">#</prompt>ip -s link show br0
 6: br0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP mode DEFAULT
     link/ether 00:19:d1:72:d4:30 brd ff:ff:ff:ff:ff:ff
@@ -1320,8 +1266,7 @@ DirectMap2M:     2017280 kB</screen>
     6346104756 9265517  0       10860   0       0
     TX: bytes  packets  errors  dropped carrier collsns
     3996204683 3655523  0       0       0       0</screen>
-         <para>
-            <command>ip</command> can also show interfaces (<option>link</option>), routing tables (<option>route</option>), and much more—refer to <command>man 8 ip</command> for details.</para>
+         <para><command>ip</command> can also show interfaces (<option>link</option>), routing tables (<option>route</option>), and much more—refer to <command>man 8 ip</command> for details.</para>
          <screen><prompt role="root">#</prompt>ip route
 default via 192.168.2.1 dev eth1
 192.168.2.0/24 dev eth0  proto kernel  scope link  src 192.168.2.100
@@ -1370,8 +1315,7 @@ TOTAL                                                  5.916  394.192 KB/sec</sc
       </sect2>
       <sect2 xml:id="sec-util-networking-cards">
          <title>Ethernet cards in detail: ethtool</title>
-         <para>
-            <command>ethtool</command> can display and change detailed aspects of your Ethernet network device. By default it prints the current setting of the specified device.</para>
+         <para><command>ethtool</command> can display and change detailed aspects of your Ethernet network device. By default it prints the current setting of the specified device.</para>
          <screen><prompt role="root">#</prompt>ethtool eth0
 Settings for eth0:
  Supported ports: [ TP ]
@@ -1394,63 +1338,34 @@ Settings for eth0:
                <colspec colnum="2" colname="2" colwidth="50*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>
-                           <command>ethtool</command> option</para>
-                     </entry>
-                     <entry>
-                        <para>it queries the device for</para>
-                     </entry>
+                     <entry><para><command>ethtool</command> option</para></entry>
+                     <entry><para>it queries the device for</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>-a</para>
-                     </entry>
-                     <entry>
-                        <para>pause parameter information</para>
-                     </entry>
+                     <entry><para>-a</para></entry>
+                     <entry><para>pause parameter information</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>-c</para>
-                     </entry>
-                     <entry>
-                        <para>interrupt coalescing information</para>
-                     </entry>
+                     <entry><para>-c</para></entry>
+                     <entry><para>interrupt coalescing information</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>-g</para>
-                     </entry>
-                     <entry>
-                        <para>Rx/Tx (receive/transmit) ring parameter information</para>
-                     </entry>
+                     <entry><para>-g</para></entry>
+                     <entry><para>Rx/Tx (receive/transmit) ring parameter information</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>-i</para>
-                     </entry>
-                     <entry>
-                        <para>associated driver information</para>
-                     </entry>
+                     <entry><para>-i</para></entry>
+                     <entry><para>associated driver information</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>-k</para>
-                     </entry>
-                     <entry>
-                        <para>offload information</para>
-                     </entry>
+                     <entry><para>-k</para></entry>
+                     <entry><para>offload information</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>-S</para>
-                     </entry>
-                     <entry>
-                        <para>NIC and driver-specific statistics</para>
-                     </entry>
+                     <entry><para>-S</para></entry>
+                     <entry><para>NIC and driver-specific statistics</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -1459,8 +1374,7 @@ Settings for eth0:
       <sect2 xml:id="sec-util-networking-netstat">
          <title>Show the network status: <command>ss</command>
          </title>
-         <para>
-            <command>ss</command> is a tool to dump socket statistics and replaces the <command>netstat</command> command. To list all connections use <command>ss</command> without parameters:</para>
+         <para><command>ss</command> is a tool to dump socket statistics and replaces the <command>netstat</command> command. To list all connections use <command>ss</command> without parameters:</para>
          <screen><prompt role="root">#</prompt>ss
 Netid  State      Recv-Q Send-Q   Local Address:Port       Peer Address:Port
 u_str  ESTAB      0      0                    * 14082                 * 14083
@@ -1529,7 +1443,7 @@ cache_alignment : 64
 address sizes   : 36 bits physical, 48 bits virtual
 power management:
 [...]</screen>
-      <tip>
+      <tip arch="x86_64">
          <title>Detailed processor information</title>
          <para>Detailed information about the processor on the AMD64/Intel 64 architecture is also available by running <command>x86info</command>.</para>
       </tip>
@@ -1628,16 +1542,14 @@ ffffe000-fffff000 ---p 00000000 00:00 0          [vdso]</screen>
                <filename>/proc/config.gz</filename>
             </term>
             <listitem>
-               <para>
-                  <command>gzip</command>-compressed configuration file of the kernel currently running</para>
+               <para><command>gzip</command>-compressed configuration file of the kernel currently running</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>/proc/<replaceable>PID/</replaceable>
             </term>
             <listitem>
-               <para>Find information about processes currently running in the <filename>/proc/</filename>
-                  <replaceable>NNN</replaceable> directories, where <replaceable>NNN</replaceable> is the process ID (PID) of the relevant process. Every process can find its own characteristics in <filename>/proc/self/</filename>.</para>
+               <para>Find information about processes currently running in the <filename>/proc/</filename><replaceable>NNN</replaceable> directories, where <replaceable>NNN</replaceable> is the process ID (PID) of the relevant process. Every process can find its own characteristics in <filename>/proc/self/</filename>.</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -1681,11 +1593,8 @@ irq 40:   3216894 hpet2                 irq 50:   1088673 nvidia</screen>
       <sect2 xml:id="sec-util-proc-procinfo-sysctl">
          <title>System control parameters: <filename>/proc/sys/</filename>
          </title>
-         <para>System control parameters are used to modify the Linux kernel parameters at runtime. They reside in <filename>/proc/sys/</filename> and can be viewed and modified with the <command>sysctl</command> command. To list all parameters, run <command>sysctl</command>
-            <option>-a</option>. A single parameter can be listed with <command>sysctl</command>
-            <replaceable>PARAMETER_NAME</replaceable>.</para>
-         <para>Parameters are grouped into categories and can be listed with <command>sysctl</command>
-            <replaceable>CATEGORY</replaceable> or by listing the contents of the respective directories. The most important categories are listed below. The links to further readings require the installation of the package <systemitem class="resource">kernel-source</systemitem>.</para>
+         <para>System control parameters are used to modify the Linux kernel parameters at runtime. They reside in <filename>/proc/sys/</filename> and can be viewed and modified with the <command>sysctl</command> command. To list all parameters, run <command>sysctl</command><option>-a</option>. A single parameter can be listed with <command>sysctl</command><replaceable>PARAMETER_NAME</replaceable>.</para>
+         <para>Parameters are grouped into categories and can be listed with <command>sysctl</command><replaceable>CATEGORY</replaceable> or by listing the contents of the respective directories. The most important categories are listed below. The links to further readings require the installation of the package <systemitem class="resource">kernel-source</systemitem>.</para>
          <variablelist>
             <varlistentry>
                <term>
@@ -1705,30 +1614,25 @@ irq 40:   3216894 hpet2                 irq 50:   1088673 nvidia</screen>
                <term>
                   <command>sysctl kernel</command> (<filename>/proc/sys/kernel/</filename>)</term>
                <listitem>
-                  <para>Information about the task scheduler, system shared memory, and other kernel-related parameters. For details see <filename>/usr/src/linux/Documentation/sysctl/kernel.txt</filename>
-                  </para>
+                  <para>Information about the task scheduler, system shared memory, and other kernel-related parameters. For details see <filename>/usr/src/linux/Documentation/sysctl/kernel.txt</filename></para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>
                   <command>sysctl net</command> (<filename>/proc/sys/net/</filename>)</term>
                <listitem>
-                  <para>Information about network bridges, and general network parameters (mainly the <filename>ipv4/</filename> subdirectory). For details see <filename>/usr/src/linux/Documentation/sysctl/net.txt</filename>
-                  </para>
+                  <para>Information about network bridges, and general network parameters (mainly the <filename>ipv4/</filename> subdirectory). For details see <filename>/usr/src/linux/Documentation/sysctl/net.txt</filename></para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>
                   <command>sysctl vm</command> (<filename>/proc/sys/vm/</filename>)</term>
                <listitem>
-                  <para>Entries in this path relate to information about the virtual memory, swapping, and caching. For details see <filename>/usr/src/linux/Documentation/sysctl/vm.txt</filename>
-                  </para>
+                  <para>Entries in this path relate to information about the virtual memory, swapping, and caching. For details see <filename>/usr/src/linux/Documentation/sysctl/vm.txt</filename></para>
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>To set or change a parameter for the current session, use the command <command>sysctl</command>
-            <option>-w</option>
-            <replaceable>PARAMETER</replaceable>=<replaceable>VALUE</replaceable>. To permanently change a setting, add a line <replaceable>PARAMETER</replaceable>=<replaceable>VALUE</replaceable> to <filename>/etc/sysctl.conf</filename>.</para>
+         <para>To set or change a parameter for the current session, use the command <command>sysctl</command><option>-w</option><replaceable>PARAMETER</replaceable>=<replaceable>VALUE</replaceable>. To permanently change a setting, add a line <replaceable>PARAMETER</replaceable>=<replaceable>VALUE</replaceable> to <filename>/etc/sysctl.conf</filename>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-util-hardware">
@@ -1779,8 +1683,7 @@ Controller (rev 02)
   Capabilities: [e4] PCI-X non-bridge device
   Kernel driver in use: e1000
   Kernel modules: e1000</screen>
-         <para>Information about device name resolution is obtained from the file <filename>/usr/share/pci.ids</filename>. PCI IDs not listed in this file are marked <quote>Unknown device.</quote>
-         </para>
+         <para>Information about device name resolution is obtained from the file <filename>/usr/share/pci.ids</filename>. PCI IDs not listed in this file are marked <quote>Unknown device.</quote></para>
          <para>The parameter <option>-vv</option> produces all the information that could be queried by the program. To view the pure numeric values, use the parameter <option>-n</option>.</para>
       </sect2>
       <sect2 xml:id="sec-util-hardware-lsusb">
@@ -1802,8 +1705,7 @@ Bus 001 Device 001: ID 0000:0000</screen>
       <sect2 xml:id="sec-util-hardware-tmon">
          <title>Monitoring and tuning the thermal subsystem: <command>tmon</command>
          </title>
-         <para>
-            <command>tmon</command> is a tool to help visualize, tune, and test the complex thermal subsystem. When started without parameters, <command>tmon</command> runs in monitoring mode:</para>
+         <para><command>tmon</command> is a tool to help visualize, tune, and test the complex thermal subsystem. When started without parameters, <command>tmon</command> runs in monitoring mode:</para>
          <screen>┌──────THERMAL ZONES(SENSORS)──────────────────────────────┐
 │Thermal Zones:                 acpitz00                   │
 │Trip Points:                   PC                         │
@@ -1838,10 +1740,8 @@ Ctrl-c - Quit   TAB - Tuning
          <para>The <systemitem class="resource">mcelog</systemitem> package logs and parses/translates Machine Check Exceptions (MCE) on hardware errors, including I/O, CPU, and memory errors. Additionally, mcelog handles predictive bad page offlining and automatic core offlining when cache errors happen. Formerly this was managed by a cron job executed hourly. Now hardware errors are immediately processed by an mcelog daemon.</para>
          <note>
             <title>Support for AMD scalable MCA</title>
-            <para>
-               <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports AMD's Scalable Machine Check Architecture (Scalable MCA). Scalable MCA improves hardware error reporting in AMD Zen processors. It expands information logged in MCA banks for improved error handling and better diagnosability.</para>
-            <para>
-               <systemitem class="daemon">mcelog</systemitem> captures MCA messages (<systemitem class="daemon">rasdaemon</systemitem> and <systemitem class="daemon">dmesg</systemitem> also capture MCA messages). See section 3.1, <citetitle>Machine Check Architecture</citetitle> of <citetitle>Processor Programming Reference (PPR) for AMD Family 17h Model 01h, Revision B1 Processors</citetitle> for detailed information, <link xlink:href="https://developer.amd.com/wordpress/media/2017/11/54945_PPR_Family_17h_Models_00h-0Fh.pdf"/>.</para>
+            <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports AMD's Scalable Machine Check Architecture (Scalable MCA). Scalable MCA improves hardware error reporting in AMD Zen processors. It expands information logged in MCA banks for improved error handling and better diagnosability.</para>
+            <para><systemitem class="daemon">mcelog</systemitem> captures MCA messages (<systemitem class="daemon">rasdaemon</systemitem> and <systemitem class="daemon">dmesg</systemitem> also capture MCA messages). See section 3.1, <citetitle>Machine Check Architecture</citetitle> of <citetitle>Processor Programming Reference (PPR) for AMD Family 17h Model 01h, Revision B1 Processors</citetitle> for detailed information, <link xlink:href="https://developer.amd.com/wordpress/media/2017/11/54945_PPR_Family_17h_Models_00h-0Fh.pdf"/>.</para>
          </note>
          <para>mcelog is configured in <filename>/etc/mcelog/mcelog.conf</filename>. Configuration options are documented in <command>man mcelog</command>, and at <link xlink:href="https://mcelog.org/"/>. The following example shows only changes to the default file:</para>
          <screen>daemon = yes
@@ -1857,10 +1757,9 @@ socket-path = /var/run/mcelog-client</screen>
          <screen><prompt role="root">#</prompt>systemctl enable mcelog
 <prompt role="root">#</prompt>systemctl start mcelog</screen>
       </sect2>
-      <sect2 xml:id="sec-util-hardware-dmicecode">
+      <sect2 xml:id="sec-util-hardware-dmicecode" arch="x86_64">
          <title>AMD64/Intel 64: dmidecode: DMI table decoder</title>
-         <para>
-            <command>dmidecode</command> shows the machine's DMI table containing information such as serial numbers and BIOS revisions of the hardware.</para>
+         <para><command>dmidecode</command> shows the machine's DMI table containing information such as serial numbers and BIOS revisions of the hardware.</para>
          <screen><prompt role="root">#</prompt>dmidecode
 # dmidecode 2.12
 SMBIOS 2.5 present.
@@ -1889,10 +1788,9 @@ Processor Information
         Part Number: Not Specified
 [..]</screen>
       </sect2>
-      <sect2 xml:id="sec-util-hardware-lshw">
+      <sect2 xml:id="sec-util-hardware-lshw" arch="power">
          <title>POWER: list hardware</title>
-         <para>
-            <command>lshw</command> extracts and displays the hardware configuration of the machine.</para>
+         <para><command>lshw</command> extracts and displays the hardware configuration of the machine.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-util-file">
@@ -1905,8 +1803,7 @@ Processor Information
          <screen><prompt>&gt;</prompt>file /usr/bin/file
 /usr/bin/file: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), \
     for GNU/Linux 2.6.4, dynamically linked (uses shared libs), stripped</screen>
-         <para>The parameter <option>-f <replaceable>LIST</replaceable>
-            </option> specifies a file with a list of file names to examine. The <option>-z</option> allows <command>file</command> to look inside compressed files:</para>
+         <para>The parameter <option>-f <replaceable>LIST</replaceable></option> specifies a file with a list of file names to examine. The <option>-z</option> allows <command>file</command> to look inside compressed files:</para>
          <screen><prompt>&gt;</prompt>file /usr/share/man/man1/file.1.gz
 /usr/share/man/man1/file.1.gz: gzip compressed data, from Unix, max compression
 <prompt>&gt;</prompt>file -z /usr/share/man/man1/file.1.gz
@@ -2012,8 +1909,7 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 tux      :0       console          Wed13   ?xdm?   8:15   0.03s /usr/lib/gdm/gd
 tux      console  :0               Wed13   26:41m  0.00s  0.03s /usr/lib/gdm/gd
 tux      pts/0    :0               Wed13   20:11   0.10s  2.89s /usr/lib/gnome-</screen>
-         <para>If any users of other systems have logged in remotely, the parameter <option>-f</option> shows the computers from which they have established the connection. <remark>aherrmann, 2016-10-11: In fact '-f' toggles printing the 'from' field. Some systems have a 'w' command which was built such that 'from' field is shown by default. In this case using '-f' causes 'from' field not to be shown.</remark>
-         </para>
+         <para>If any users of other systems have logged in remotely, the parameter <option>-f</option> shows the computers from which they have established the connection. <remark>aherrmann, 2016-10-11: In fact '-f' toggles printing the 'from' field. Some systems have a 'w' command which was built such that 'from' field is shown by default. In this case using '-f' causes 'from' field not to be shown.</remark></para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-util-time">
@@ -2069,10 +1965,7 @@ sys     0m0.205s<co xml:id="co-util-time-sys"/></screen>
       <title>Graph your data: RRDtool</title>
       <para>There are a lot of data in the world around you, which can be easily measured in time. For example, changes in the temperature, or the number of data sent or received by your computer's network interface. RRDtool can help you store and visualize such data in detailed and customizable graphs.</para>
       <para>RRDtool is available for most Unix platforms and Linux distributions. <phrase role="productname">SUSE® Linux Enterprise Server</phrase> ships RRDtool as well. Install it either with YaST or by entering</para>
-      <para>
-         <command>zypper</command>
-         <option>install</option>
-         <replaceable>rrdtool</replaceable> in the command line as <systemitem class="username">root</systemitem>.</para>
+      <para><command>zypper</command><option>install</option><replaceable>rrdtool</replaceable> in the command line as <systemitem class="username">root</systemitem>.</para>
       <tip>
          <title>Bindings</title>
          <para>There are Perl, Python, Ruby, and PHP bindings available for RRDtool, so that you can write your own monitoring scripts in your preferred scripting language.</para>
@@ -2109,8 +2002,7 @@ done</screen>
                   <para>RRDtool accepts time information in a special format - so called <emphasis>Unix time</emphasis>. It is defined as the number of seconds since the midnight of January 1, 1970 (UTC). For example, 1272907114 represents 2010-05-03 17:18:34.</para>
                </listitem>
                <listitem>
-                  <para>The free memory information is reported in bytes with <command>free</command>
-                     <option>-b</option>. Prefer to supply basic units (bytes) instead of multiple units (like kilobytes).</para>
+                  <para>The free memory information is reported in bytes with <command>free</command><option>-b</option>. Prefer to supply basic units (bytes) instead of multiple units (like kilobytes).</para>
                </listitem>
                <listitem>
                   <para>The line with the <command>echo ...</command> command contains the future name of the database file (<literal>free_mem.rrd</literal>), and together creates a command line for updating RRDtool values.</para>
@@ -2129,9 +2021,7 @@ rrdtool update free_mem.rrd 1272974863:1180377088
 rrdtool update free_mem.rrd 1272974867:1179369472
 rrdtool update free_mem.rrd 1272974871:1181806592</screen>
             <para>It is convenient to redirect the command's output to a file with</para>
-            <para>
-               <command>sh free_mem.sh &gt; free_mem_updates.log</command>
-            </para>
+            <para><command>sh free_mem.sh &gt; free_mem_updates.log</command></para>
             <para>to simplify its future execution.</para>
          </sect3>
          <sect3 xml:id="sec-util-rrdtool-example-create">
@@ -2154,8 +2044,7 @@ DS:memory:GAUGE:600:U:U RRA:AVERAGE:0.5:1:24</screen>
                   <para>The <literal>DS:memory:GAUGE:600:U:U</literal> part introduces a new data source for the database. It is called <emphasis>memory</emphasis>, its type is <emphasis>gauge</emphasis>, the maximum number between two updates is 600 seconds, and the <emphasis>minimal</emphasis> and <emphasis>maximal</emphasis> value in the measured range are unknown (U).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>RRA:AVERAGE:0.5:1:24</literal> creates Round Robin archive (RRA) whose stored data is processed with the <emphasis>consolidation functions</emphasis> (CF) that calculates the <emphasis>average</emphasis> of data points. 3 arguments of the consolidation function are appended to the end of the line.</para>
+                  <para><literal>RRA:AVERAGE:0.5:1:24</literal> creates Round Robin archive (RRA) whose stored data is processed with the <emphasis>consolidation functions</emphasis> (CF) that calculates the <emphasis>average</emphasis> of data points. 3 arguments of the consolidation function are appended to the end of the line.</para>
                </listitem>
             </itemizedlist>
             <para>If no error message is displayed, then <filename>free_mem.rrd</filename> database is created in the current directory:</para>
@@ -2190,8 +2079,7 @@ DS:memory:GAUGE:600:U:U RRA:AVERAGE:0.5:1:24</screen>
             <itemizedlist mark="bullet" spacing="normal">
                <title>Points to notice</title>
                <listitem>
-                  <para>
-                     <literal>AVERAGE</literal> fetches the average value points from the database, because only one data source is defined (<xref linkend="sec-util-rrdtool-example-create"/>) with <literal>AVERAGE</literal> processing and no other function is available.</para>
+                  <para><literal>AVERAGE</literal> fetches the average value points from the database, because only one data source is defined (<xref linkend="sec-util-rrdtool-example-create"/>) with <literal>AVERAGE</literal> processing and no other function is available.</para>
                </listitem>
                <listitem>
                   <para>The first line of the output prints the name of the data source as defined in <xref linkend="sec-util-rrdtool-example-create"/>.</para>
@@ -2217,16 +2105,13 @@ LINE2:free_memory#FF0000 \
             <itemizedlist mark="bullet" spacing="normal">
                <title>Points to notice</title>
                <listitem>
-                  <para>
-                     <filename>free_mem.png</filename> is the file name of the graph to be created.</para>
+                  <para><filename>free_mem.png</filename> is the file name of the graph to be created.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <option>--start</option> and <option>--end</option> limit the time range within which the graph is drawn.</para>
+                  <para><option>--start</option> and <option>--end</option> limit the time range within which the graph is drawn.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <option>--step</option> specifies the time resolution (in seconds) of the graph.</para>
+                  <para><option>--step</option> specifies the time resolution (in seconds) of the graph.</para>
                </listitem>
                <listitem>
                   <para>The <literal>DEF:...</literal> part is a data definition called <emphasis>free_memory</emphasis>. Its data is read from the <filename>free_mem.rrd</filename> database and its data source called <emphasis>memory</emphasis>. The <emphasis>average</emphasis> value points are calculated, because no others were defined in <xref linkend="sec-util-rrdtool-example-create"/>.</para>
@@ -2235,26 +2120,23 @@ LINE2:free_memory#FF0000 \
                   <para>The <literal>LINE...</literal> part specifies properties of the line to be drawn into the graph. It is 2 pixels wide, its data come from the <emphasis>free_memory</emphasis> definition, and its color is red.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <option>--vertical-label</option> sets the label to be printed along the <emphasis>y</emphasis> axis, and <option>--title</option> sets the main label for the whole graph.</para>
+                  <para><option>--vertical-label</option> sets the label to be printed along the <emphasis>y</emphasis> axis, and <option>--title</option> sets the main label for the whole graph.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <option>--zoom</option> specifies the zoom factor for the graph. This value must be greater than zero.</para>
+                  <para><option>--zoom</option> specifies the zoom factor for the graph. This value must be greater than zero.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <option>--x-grid</option> specifies how to draw grid lines and their labels into the graph. Our example places them every second, while major grid lines are placed every 4 seconds. Labels are placed every 10 seconds under the major grid lines.</para>
+                  <para><option>--x-grid</option> specifies how to draw grid lines and their labels into the graph. Our example places them every second, while major grid lines are placed every 4 seconds. Labels are placed every 10 seconds under the major grid lines.</para>
                </listitem>
             </itemizedlist>
             <figure xml:id="util-rrdtool-example-create-graph1">
                <title>Example graph created with RRDtool</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="75%" fileref="media/rrdtool_graph1.png"/>
+                     <imagedata width="69%" fileref="media/rrdtool_graph1.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="55%" fileref="media/rrdtool_graph1.png"/>
+                     <imagedata width="50%" fileref="media/rrdtool_graph1.png"/>
                   </imageobject>
                </mediaobject>
             </figure>

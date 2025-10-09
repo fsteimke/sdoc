@@ -13,95 +13,41 @@
       <tgroup cols="3">
          <thead>
             <row>
-               <entry>
-                  <para>Element</para>
-               </entry>
-               <entry>
-                  <para>Value</para>
-               </entry>
-               <entry>
-                  <para>Description</para>
-               </entry>
+               <entry><para>Element</para></entry>
+               <entry><para>Value</para></entry>
+               <entry><para>Description</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <literal>chroot</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>A value of 1 means that the DHCP server must be jailed in a chroot.</para>
-               </entry>
+               <entry><para><literal>chroot</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>A value of 1 means that the DHCP server must be jailed in a chroot.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>start_service</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>Set this to 1 to enable the DHCP server (that is, run it on system start-up).</para>
-               </entry>
+               <entry><para><literal>start_service</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>Set this to 1 to enable the DHCP server (that is, run it on system start-up).</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>use_ldap</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>0 / 1</para>
-               </entry>
-               <entry>
-                  <para>If set to 1, the settings will be stored in LDAP instead of native configuration files.</para>
-               </entry>
+               <entry><para><literal>use_ldap</literal></para></entry>
+               <entry><para>0 / 1</para></entry>
+               <entry><para>If set to 1, the settings will be stored in LDAP instead of native configuration files.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>other_options</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>Text</para>
-               </entry>
-               <entry>
-                  <para>String with parameters that will be passed to the DHCP server executable when started. For example, use "-p 1234" to listen on a non-standard 1234 port. For all possible options, consult the dhcpd manual page. If left blank, default values will be used.</para>
-               </entry>
+               <entry><para><literal>other_options</literal></para></entry>
+               <entry><para>Text</para></entry>
+               <entry><para>String with parameters that will be passed to the DHCP server executable when started. For example, use "-p 1234" to listen on a non-standard 1234 port. For all possible options, consult the dhcpd manual page. If left blank, default values will be used.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>allowed_interfaces</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>List</para>
-               </entry>
-               <entry>
-                  <para>List of network cards in which the DHCP server will be operating. See the example below for the exact format.</para>
-               </entry>
+               <entry><para><literal>allowed_interfaces</literal></para></entry>
+               <entry><para>List</para></entry>
+               <entry><para>List of network cards in which the DHCP server will be operating. See the example below for the exact format.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>settings</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>List</para>
-               </entry>
-               <entry>
-                  <para>List of settings to configure the behavior of the DHCP server. The configuration is defined in a tree-like structure where the root represents the global options, with subnets and host nested from there. The <literal>children</literal>, <literal>parent_id</literal> and <literal>parent_type</literal> properties are used to represent that nesting. See the example below for the exact format.</para>
-               </entry>
+               <entry><para><literal>settings</literal></para></entry>
+               <entry><para>List</para></entry>
+               <entry><para>List of settings to configure the behavior of the DHCP server. The configuration is defined in a tree-like structure where the root represents the global options, with subnets and host nested from there. The <literal>children</literal>, <literal>parent_id</literal> and <literal>parent_type</literal> properties are used to represent that nesting. See the example below for the exact format.</para></entry>
             </row>
          </tbody>
       </tgroup>

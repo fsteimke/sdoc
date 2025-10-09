@@ -54,8 +54,7 @@
          <term>timezone</term>
          <listitem>
             <para>Time zone.</para>
-            <para>A list of available time zones can be found under <filename>/usr/share/YaST2/data/timezone_raw.ycp</filename>
-            </para>
+            <para>A list of available time zones can be found under <filename>/usr/share/YaST2/data/timezone_raw.ycp</filename></para>
          </listitem>
       </varlistentry>
    </variablelist>
@@ -72,8 +71,7 @@
          <term>keymap</term>
          <listitem>
             <para>Keyboard layout</para>
-            <para>Keymap-code values or keymap-alias values are valid. A list of available entries can be found in <literal>/usr/share/YaST2/lib/y2keyboard/keyboards.rb</literal>. For example, <literal>english-us, us, english-uk, uk.</literal>
-            </para>
+            <para>Keymap-code values or keymap-alias values are valid. A list of available entries can be found in <literal>/usr/share/YaST2/lib/y2keyboard/keyboards.rb</literal>. For example, <literal>english-us, us, english-uk, uk.</literal></para>
          </listitem>
       </varlistentry>
    </variablelist>

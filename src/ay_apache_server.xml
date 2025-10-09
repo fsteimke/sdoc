@@ -384,8 +384,7 @@
       <varlistentry>
          <term>Key</term>
          <listitem>
-            <para>Host name; <literal>&lt;KEY&gt;main&lt;/KEY&gt;</literal> defines the main hosts, for example <literal>&lt;KEY&gt;192.168.43.2/secondserver.suse.de&lt;/KEY&gt;</literal>
-            </para>
+            <para>Host name; <literal>&lt;KEY&gt;main&lt;/KEY&gt;</literal> defines the main hosts, for example <literal>&lt;KEY&gt;192.168.43.2/secondserver.suse.de&lt;/KEY&gt;</literal></para>
          </listitem>
       </varlistentry>
       <varlistentry>

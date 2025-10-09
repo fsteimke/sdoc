@@ -82,7 +82,7 @@
          </varlistentry>
          <varlistentry>
             <term>
-               <filename>/boot/grub2/x86_64-efi</filename>, <filename>/boot/grub2/power-ieee1275</filename>, <filename>/boot/grub2/s390x</filename>
+               <filename arch="x86_64">/boot/grub2/x86_64-efi</filename>, <filename arch="power">/boot/grub2/power-ieee1275</filename>, <filename arch="zseries">/boot/grub2/s390x</filename>
             </term>
             <listitem>
                <para>These configuration files contain architecture-specific options.</para>
@@ -99,8 +99,7 @@
          </title>
          <para>The graphical splash screen with the boot menu is based on the GRUB 2 configuration file <filename>/boot/grub2/grub.cfg</filename>, which contains information about all partitions or operating systems that can be booted by the menu.</para>
          <para>Every time the system is booted, GRUB 2 loads the menu file directly from the file system. For this reason, GRUB 2 does not need to be re-installed after changes to the configuration file. <filename>grub.cfg</filename> is automatically rebuilt with kernel installations or removals.</para>
-         <para>
-            <filename>grub.cfg</filename> is compiled from the file <filename>/etc/default/grub</filename> and scripts found in the <filename>/etc/grub.d/</filename> directory when running the command <command>grub2-mkconfig -o /boot/grub2/grub.cfg</command>. Therefore you should never edit the file manually. Instead, edit the related source files or use the YaST <guimenu>Boot Loader</guimenu> module to modify the configuration as described in <xref linkend="sec-grub2-yast2-config"/>.</para>
+         <para><filename>grub.cfg</filename> is compiled from the file <filename>/etc/default/grub</filename> and scripts found in the <filename>/etc/grub.d/</filename> directory when running the command <command>grub2-mkconfig -o /boot/grub2/grub.cfg</command>. Therefore you should never edit the file manually. Instead, edit the related source files or use the YaST <guimenu>Boot Loader</guimenu> module to modify the configuration as described in <xref linkend="sec-grub2-yast2-config"/>.</para>
       </sect2>
       <sect2 xml:id="sec-grub2-etc-default-grub">
          <title>The file <filename>/etc/default/grub</filename>
@@ -125,14 +124,10 @@
                </term>
                <listitem>
                   <para>Sets the boot menu entry that is booted by default. Its value can be a numeric value, the complete name of a menu entry, or <quote>saved</quote>.</para>
-                  <para>
-                     <literal>GRUB_DEFAULT=2</literal> boots the third (counted from zero) boot menu entry.</para>
-                  <para>
-                     <literal>GRUB_DEFAULT="2&gt;0"</literal> boots the first submenu entry of the third top-level menu entry.</para>
-                  <para>
-                     <literal>GRUB_DEFAULT="Example boot menu entry"</literal> boots the menu entry with the title <quote>Example boot menu entry</quote>.</para>
-                  <para>
-                     <literal>GRUB_DEFAULT=saved</literal> boots the entry specified by the <command>grub2-once</command> or <command>grub2-set-default</command> commands. While <command>grub2-reboot</command> sets the default boot entry for the next reboot only, <command>grub2-set-default</command> sets the default boot entry until changed. <command>grub2-editenv list</command> lists the next boot entry.</para>
+                  <para><literal>GRUB_DEFAULT=2</literal> boots the third (counted from zero) boot menu entry.</para>
+                  <para><literal>GRUB_DEFAULT="2&gt;0"</literal> boots the first submenu entry of the third top-level menu entry.</para>
+                  <para><literal>GRUB_DEFAULT="Example boot menu entry"</literal> boots the menu entry with the title <quote>Example boot menu entry</quote>.</para>
+                  <para><literal>GRUB_DEFAULT=saved</literal> boots the entry specified by the <command>grub2-once</command> or <command>grub2-set-default</command> commands. While <command>grub2-reboot</command> sets the default boot entry for the next reboot only, <command>grub2-set-default</command> sets the default boot entry until changed. <command>grub2-editenv list</command> lists the next boot entry.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -208,8 +203,7 @@
                   <screen>GRUB_CMDLINE_XEN="loglvl=all guest_loglvl=all"</screen>
                   <tip>
                      <title>Xen hypervisor options</title>
-                     <para>Find a complete list of Xen hypervisor options in <link xlink:href="https://xenbits.xen.org/docs/unstable/misc/xen-command-line.html"/>
-                     </para>
+                     <para>Find a complete list of Xen hypervisor options in <link xlink:href="https://xenbits.xen.org/docs/unstable/misc/xen-command-line.html"/></para>
                   </tip>
                </listitem>
             </varlistentry>
@@ -346,10 +340,10 @@
                   <title>GRUB 2 boot editor</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/grub2_edit_config.png" width="75%"/>
+                        <imagedata fileref="media/grub2_edit_config.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/grub2_edit_config.png" width="75%"/>
+                        <imagedata fileref="media/grub2_edit_config.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -370,14 +364,13 @@
          <para>Changes made this way only apply to the current boot process and are not saved permanently.</para>
          <important>
             <title>Keyboard layout during the boot procedure</title>
-            <para>The US keyboard layout is the only one available when booting. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="fig-trouble-install-keyboard-us" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The US keyboard layout is the only one available when booting. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="fig-trouble-install-keyboard-us" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </important>
-         <note>
+         <note arch="x86_64">
             <title>Boot loader on the installation media</title>
             <para>The Boot Loader of the installation media on systems with a traditional BIOS is still GRUB Legacy. To add boot parameters, select an entry and start typing. Additions you make to the installation boot entry are permanently saved in the installed system.</para>
          </note>
-         <note>
+         <note arch="zseries">
             <title>Editing GRUB 2 menu entries on IBM Z</title>
             <para>Cursor movement and editing commands on IBM Z differ—see <xref linkend="sec-grub2-zseries"/> for details.</para>
          </note>
@@ -392,8 +385,7 @@
          <para>Proceed as follows to set a boot password. Alternatively use YaST (<xref linkend="vle-grub2-yast2-boot-password"/>).</para>
          <procedure>
             <step>
-               <para>Encrypt the password using <command>grub2-mkpasswd-pbkdf2:</command>
-               </para>
+               <para>Encrypt the password using <command>grub2-mkpasswd-pbkdf2:</command></para>
                <screen><prompt>&gt;</prompt><command>sudo</command> grub2-mkpasswd-pbkdf2
 Password: ****
 Reenter password: ****
@@ -463,12 +455,10 @@ menuentry 'Maintenance mode' --users maintainer {
                <para>If no user is specified, both boot menu entries are accessible, but no one can access GRUB 2 command line or edit existing menu entries.</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>admin</literal> user can access GRUB 2 command line and edit existing menu entries.</para>
+               <para><literal>admin</literal> user can access GRUB 2 command line and edit existing menu entries.</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>maintenance</literal> user can select the recovery menu item.</para>
+               <para><literal>maintenance</literal> user can select the recovery menu item.</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -493,8 +483,7 @@ menuentry 'Maintenance mode' --users maintainer {
             <varlistentry>
                <term>Cursor movement</term>
                <listitem>
-                  <para>
-                     <quote>Traditional</quote> cursor movement is not possible. <keycap function="alt"/>, <keycap function="meta"/>, <keycap function="control"/> and the cursor keys do not work. To move the cursor, use the key combinations listed in <xref linkend="sec-grub2-zseries-keys"/>.</para>
+                  <para><quote>Traditional</quote> cursor movement is not possible. <keycap function="alt"/>, <keycap function="meta"/>, <keycap function="control"/> and the cursor keys do not work. To move the cursor, use the key combinations listed in <xref linkend="sec-grub2-zseries-keys"/>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -506,10 +495,7 @@ menuentry 'Maintenance mode' --users maintainer {
             <varlistentry>
                <term>Enter</term>
                <listitem>
-                  <para>The <keycap function="enter"/> key does not work, use <keycombo>
-                        <keycap>^</keycap>
-                        <keycap>J</keycap>
-                     </keycombo> instead.</para>
+                  <para>The <keycap function="enter"/> key does not work, use <keycombo><keycap>^</keycap><keycap>J</keycap></keycombo> instead.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -520,499 +506,156 @@ menuentry 'Maintenance mode' --users maintainer {
             <tgroup cols="3">
                <tbody>
                   <row>
-                     <entry morerows="2" valign="top">
-                        <para>Common Substitutes:</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>J</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>engage (<quote>Enter</quote>)</para>
-                     </entry>
+                     <entry morerows="2" valign="top"><para>Common Substitutes:</para></entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>J</keycap></keycombo></para></entry>
+                     <entry><para>engage (<quote>Enter</quote>)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>L</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>cancel, return to previous <quote>state</quote>
-                        </para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>L</keycap></keycombo></para></entry>
+                     <entry><para>cancel, return to previous <quote>state</quote></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>I</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>tab completion (in edit and shell mode)</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>I</keycap></keycombo></para></entry>
+                     <entry><para>tab completion (in edit and shell mode)</para></entry>
                   </row>
                   <row>
-                     <entry morerows="8" valign="top">
-                        <para>Keys Available in Menu Mode:</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>A</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>first entry</para>
-                     </entry>
+                     <entry morerows="8" valign="top"><para>Keys Available in Menu Mode:</para></entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>A</keycap></keycombo></para></entry>
+                     <entry><para>first entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>E</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>last entry</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>E</keycap></keycombo></para></entry>
+                     <entry><para>last entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>P</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>previous entry</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>P</keycap></keycombo></para></entry>
+                     <entry><para>previous entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>N</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>next entry</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>N</keycap></keycombo></para></entry>
+                     <entry><para>next entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>G</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>previous page</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>G</keycap></keycombo></para></entry>
+                     <entry><para>previous page</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>C</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>next page</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>C</keycap></keycombo></para></entry>
+                     <entry><para>next page</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>F</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>boot selected entry or enter submenu (same as <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>J</keycap>
-                           </keycombo>)</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>F</keycap></keycombo></para></entry>
+                     <entry><para>boot selected entry or enter submenu (same as <keycombo><keycap>^</keycap><keycap>J</keycap></keycombo>)</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>E</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>edit selected entry</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>E</keycap></keycombo></para></entry>
+                     <entry><para>edit selected entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>C</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>enter GRUB-Shell</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>C</keycap></keycombo></para></entry>
+                     <entry><para>enter GRUB-Shell</para></entry>
                   </row>
                   <row>
-                     <entry morerows="13" valign="top">
-                        <para>Keys Available in Edit Mode:</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>P</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>previous line</para>
-                     </entry>
+                     <entry morerows="13" valign="top"><para>Keys Available in Edit Mode:</para></entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>P</keycap></keycombo></para></entry>
+                     <entry><para>previous line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>N</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>next line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>N</keycap></keycombo></para></entry>
+                     <entry><para>next line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>B</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>backward char</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>B</keycap></keycombo></para></entry>
+                     <entry><para>backward char</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>F</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>forward char</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>F</keycap></keycombo></para></entry>
+                     <entry><para>forward char</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>A</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>beginning of line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>A</keycap></keycombo></para></entry>
+                     <entry><para>beginning of line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>E</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>end of line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>E</keycap></keycombo></para></entry>
+                     <entry><para>end of line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>H</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>backspace</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>H</keycap></keycombo></para></entry>
+                     <entry><para>backspace</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>D</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>delete</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>D</keycap></keycombo></para></entry>
+                     <entry><para>delete</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>K</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>delete line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>K</keycap></keycombo></para></entry>
+                     <entry><para>delete line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>Y</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>yank</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>Y</keycap></keycombo></para></entry>
+                     <entry><para>yank</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>O</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>open line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>O</keycap></keycombo></para></entry>
+                     <entry><para>open line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>L</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>refresh screen</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>L</keycap></keycombo></para></entry>
+                     <entry><para>refresh screen</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>X</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>boot entry</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>X</keycap></keycombo></para></entry>
+                     <entry><para>boot entry</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>C</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>enter GRUB-Shell</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>C</keycap></keycombo></para></entry>
+                     <entry><para>enter GRUB-Shell</para></entry>
                   </row>
                   <row>
-                     <entry morerows="10" valign="top">
-                        <para>Keys Available in Command Line Mode:</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>P</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>previous command</para>
-                     </entry>
+                     <entry morerows="10" valign="top"><para>Keys Available in Command Line Mode:</para></entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>P</keycap></keycombo></para></entry>
+                     <entry><para>previous command</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>N</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>next command from history</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>N</keycap></keycombo></para></entry>
+                     <entry><para>next command from history</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>A</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>beginning of line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>A</keycap></keycombo></para></entry>
+                     <entry><para>beginning of line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>E</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>end of line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>E</keycap></keycombo></para></entry>
+                     <entry><para>end of line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>B</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>backward char</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>B</keycap></keycombo></para></entry>
+                     <entry><para>backward char</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>F</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>forward char</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>F</keycap></keycombo></para></entry>
+                     <entry><para>forward char</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>H</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>backspace</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>H</keycap></keycombo></para></entry>
+                     <entry><para>backspace</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>D</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>delete</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>D</keycap></keycombo></para></entry>
+                     <entry><para>delete</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>K</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>delete line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>K</keycap></keycombo></para></entry>
+                     <entry><para>delete line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>U</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>discard line</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>U</keycap></keycombo></para></entry>
+                     <entry><para>discard line</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <keycombo>
-                              <keycap>^</keycap>
-                              <keycap>Y</keycap>
-                           </keycombo>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>yank</para>
-                     </entry>
+                     <entry><para><keycombo><keycap>^</keycap><keycap>Y</keycap></keycombo></para></entry>
+                     <entry><para>yank</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -1089,8 +732,7 @@ menuentry 'Maintenance mode' --users maintainer {
    </sect1>
    <sect1 xml:id="grub-rescue-target">
       <title>Rescue mode</title>
-      <para>
-         <emphasis>Rescue mode</emphasis> is a specific <systemitem class="username">root</systemitem> user session for troubleshooting and repairing systems where the booting process fails. It offers a single-user environment with local file systems and core system services active. Network interfaces are not activated. To enter the rescue mode, follow these steps.</para>
+      <para><emphasis>Rescue mode</emphasis> is a specific <systemitem class="username">root</systemitem> user session for troubleshooting and repairing systems where the booting process fails. It offers a single-user environment with local file systems and core system services active. Network interfaces are not activated. To enter the rescue mode, follow these steps.</para>
       <procedure xml:id="proc-rescue-mode">
          <title>Entering rescue mode</title>
          <step>

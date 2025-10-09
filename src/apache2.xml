@@ -28,8 +28,7 @@
                <para>The latest security updates are installed. If in doubt, run a YaST Online Update.</para>
             </listitem>
             <listitem>
-               <para>The default Web server port (<literal>80</literal>) is opened in the firewall. For this, configure <systemitem class="daemon">firewalld</systemitem> to allow the service <literal>http</literal> in the public zone. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+               <para>The default Web server port (<literal>80</literal>) is opened in the firewall. For this, configure <systemitem class="daemon">firewalld</systemitem> to allow the service <literal>http</literal> in the public zone. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
             </listitem>
          </orderedlist>
       </sect2>
@@ -39,16 +38,10 @@
          <procedure>
             <title>Installing Apache with the default configuration</title>
             <step>
-               <para>Start YaST and select <menuchoice>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Software Management</guimenu>
-                  </menuchoice>.</para>
+               <para>Start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>.</para>
             </step>
             <step>
-               <para>Choose <menuchoice>
-                     <guimenu>Filter</guimenu>
-                     <guimenu>Patterns</guimenu>
-                  </menuchoice> and select <guimenu>Web and LAMP Server</guimenu>.</para>
+               <para>Choose <menuchoice><guimenu>Filter</guimenu><guimenu>Patterns</guimenu></menuchoice> and select <guimenu>Web and LAMP Server</guimenu>.</para>
             </step>
             <step>
                <para>Confirm the installation of the dependent packages to finish the installation process.</para>
@@ -78,18 +71,13 @@
    </sect1>
    <sect1 xml:id="sec-apache2-configuration">
       <title>Configuring Apache</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> offers two configuration options:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> offers two configuration options:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <xref linkend="sec-apache2-configuration-manually" xrefstyle="%c"/>
-            </para>
+            <para><xref linkend="sec-apache2-configuration-manually" xrefstyle="%c"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="sec-apache2-configuration-yast" xrefstyle="%c"/>
-            </para>
+            <para><xref linkend="sec-apache2-configuration-yast" xrefstyle="%c"/></para>
          </listitem>
       </itemizedlist>
       <para>Manual configuration offers a higher level of detail, but lacks the convenience of the YaST GUI.</para>
@@ -104,31 +92,23 @@
          <para>Apache configuration files can be found in two different locations:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <xref linkend="sec-apache2-configuration-manually-configfiles-etc-sysconfig-apache2"
-                        xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-apache2-configuration-manually-configfiles-etc-sysconfig-apache2" xrefstyle="%c"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="sec-apache2-configuration-manually-configfiles-etc-apache2"
-                        xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-apache2-configuration-manually-configfiles-etc-apache2" xrefstyle="%c"/></para>
             </listitem>
          </itemizedlist>
          <sect3 xml:id="sec-apache2-configuration-manually-configfiles-etc-sysconfig-apache2">
             <title>
                <filename>/etc/sysconfig/apache2</filename>
             </title>
-            <para>
-               <filename>/etc/sysconfig/apache2</filename> controls global Apache settings, like modules to load, additional configuration files to include, flags with which the server should be started, and flags that should be added to the command line. Every configuration option in this file is extensively documented and therefore not mentioned here. For a general-purpose Web server, the settings in <filename>/etc/sysconfig/apache2</filename> should be sufficient for any configuration needs.</para>
+            <para><filename>/etc/sysconfig/apache2</filename> controls global Apache settings, like modules to load, additional configuration files to include, flags with which the server should be started, and flags that should be added to the command line. Every configuration option in this file is extensively documented and therefore not mentioned here. For a general-purpose Web server, the settings in <filename>/etc/sysconfig/apache2</filename> should be sufficient for any configuration needs.</para>
          </sect3>
          <sect3 xml:id="sec-apache2-configuration-manually-configfiles-etc-apache2">
             <title>
                <filename>/etc/apache2/</filename>
             </title>
-            <para>
-               <filename>/etc/apache2/</filename> hosts all configuration files for Apache. In the following, the purpose of each file is explained. Each file includes several configuration options (also called <emphasis>directives</emphasis>). Every configuration option in these files is extensively documented and therefore not mentioned here.</para>
+            <para><filename>/etc/apache2/</filename> hosts all configuration files for Apache. In the following, the purpose of each file is explained. Each file includes several configuration options (also called <emphasis>directives</emphasis>). Every configuration option in these files is extensively documented and therefore not mentioned here.</para>
             <para>The Apache configuration files are organized as follows:</para>
             <screen>/etc/apache2/
      |
@@ -299,16 +279,14 @@
             <title>Virtual host configuration</title>
             <para>The term <emphasis>virtual host</emphasis> refers to Apache's ability to serve multiple universal resource identifiers (URIs) from the same physical machine. This means that several domains, such as www.example.com and www.example.net, are run by a single Web server on one physical machine.</para>
             <para>It is common practice to use virtual hosts to save administrative effort (only a single Web server needs to be maintained) and hardware expenses (each domain does not require a dedicated server). Virtual hosts can be name based, IP based, or port based.</para>
-            <para>To list all existing virtual hosts, use the command <command>apache2ctl</command>
-               <option>-S</option>. This outputs a list showing the default server and all virtual hosts together with their IP addresses and listening ports. Furthermore, the list also contains an entry for each virtual host showing its location in the configuration files.</para>
+            <para>To list all existing virtual hosts, use the command <command>apache2ctl</command><option>-S</option>. This outputs a list showing the default server and all virtual hosts together with their IP addresses and listening ports. Furthermore, the list also contains an entry for each virtual host showing its location in the configuration files.</para>
             <para>Virtual hosts can be configured via YaST as described in <xref linkend="sec-apache2-configuration-yast-wizard-virtual-hosts"/> or by manually editing a configuration file. By default, Apache in <phrase role="productname">SUSE Linux Enterprise Server</phrase> is prepared for one configuration file per virtual host in <filename>/etc/apache2/vhosts.d/</filename>. All files in this directory with the extension <filename>.conf</filename> are automatically included to the configuration. A basic template for a virtual host is provided in this directory (<filename>vhost.template</filename> or <filename>vhost-ssl.template</filename> for a virtual host with SSL support).</para>
             <tip>
                <title>Always create a virtual host configuration</title>
                <para>It is recommended to always create a virtual host configuration file, even if your Web server only hosts one domain. By doing so, you not only have the domain-specific configuration in one file, but you can always fall back to a working basic configuration by simply moving, deleting or renaming the configuration file for the virtual host. For the same reason, you should also create separate configuration files for each virtual host.</para>
                <para>When using name-based virtual hosts, it is recommended to set up a default configuration that is used when a domain name does not match a virtual host configuration. The default virtual host is the one whose configuration is loaded first. Since the order of the configuration files is determined by file name, start the file name of the default virtual host configuration with an underscore character (<literal>_</literal>) to make sure it is loaded first (for example: <filename>_default_vhost.conf</filename>).</para>
             </tip>
-            <para>The <systemitem>&lt;VirtualHost&gt;</systemitem>
-               <systemitem>&lt;/VirtualHost&gt;</systemitem> block holds the information that applies to a particular domain. When Apache receives a client request for a defined virtual host, it uses the directives enclosed in this section. Almost all directives can be used in a virtual host context. See <link xlink:href="https://httpd.apache.org/docs/2.4/mod/quickreference.html"/> for further information about Apache's configuration directives.</para>
+            <para>The <systemitem>&lt;VirtualHost&gt;</systemitem><systemitem>&lt;/VirtualHost&gt;</systemitem> block holds the information that applies to a particular domain. When Apache receives a client request for a defined virtual host, it uses the directives enclosed in this section. Almost all directives can be used in a virtual host context. See <link xlink:href="https://httpd.apache.org/docs/2.4/mod/quickreference.html"/> for further information about Apache's configuration directives.</para>
             <sect4 xml:id="sec-apache2-configuration-manually-vhost-named-vhosts">
                <title>Name-based virtual hosts</title>
                <para>With name-based virtual hosts, more than one Web site is served per IP address. Apache uses the host field in the HTTP header that is sent by the client to connect the request to a matching <systemitem>ServerName</systemitem> entry of one of the virtual host declarations. If no matching <systemitem>ServerName</systemitem> is found, the first specified virtual host is used as a default.</para>
@@ -633,20 +611,12 @@ sknorr, 2017-06-07 -->
       <sect2 xml:id="sec-apache2-modules-installing">
          <title>Module installation</title>
          <para>If you have done a default installation as described in <xref linkend="sec-apache2-quickstart-installation"/>, the following modules are already installed: all base and extension modules, the multiprocessing module Prefork MPM, and the external module <systemitem>mod_python</systemitem>.</para>
-         <para>You can install additional external modules by starting YaST and choosing <menuchoice>
-               <guimenu>Software</guimenu>
-               <guimenu>Software Management</guimenu>
-            </menuchoice>. Now choose <menuchoice>
-               <guimenu>Filter</guimenu>
-               <guimenu>Search</guimenu>
-            </menuchoice> and search for <literal>apache</literal>. Among other packages, the results list contains all available external Apache modules.</para>
+         <para>You can install additional external modules by starting YaST and choosing <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>. Now choose <menuchoice><guimenu>Filter</guimenu><guimenu>Search</guimenu></menuchoice> and search for <literal>apache</literal>. Among other packages, the results list contains all available external Apache modules.</para>
       </sect2>
       <sect2 xml:id="sec-apache2-modules-activating">
          <title>Activation and deactivation</title>
          <para>Activate or deactivate particular modules either manually or with YaST. In YaST, script language modules (PHP 8 and Python) need to be enabled or disabled with the module configuration described in <xref linkend="sec-apache2-configuration-yast-wizard"/>. All other modules can be enabled or disabled as described in <xref linkend="sec-apache2-configuration-yast-server-configuration-modules"/>.</para>
-         <para>If you prefer to activate or deactivate the modules manually, use the commands <command>a2enmod</command>
-            <replaceable>MODULE</replaceable> or <command>a2dismod</command>
-            <replaceable>MODULE</replaceable>, respectively. <command>a2enmod -l</command> outputs a list of all currently active modules.</para>
+         <para>If you prefer to activate or deactivate the modules manually, use the commands <command>a2enmod</command><replaceable>MODULE</replaceable> or <command>a2dismod</command><replaceable>MODULE</replaceable>, respectively. <command>a2enmod -l</command> outputs a list of all currently active modules.</para>
          <important>
             <title>Including configuration files for external modules</title>
             <para>If you have activated external modules manually, make sure to load their configuration files in all virtual host configurations. Configuration files for external modules are located under <filename>/etc/apache2/conf.d/</filename> and are loaded in <filename>/etc/apache2/default-server.conf</filename> by default. For more fine-grained control you can comment out the inclusion in <filename>/etc/apache2/default-server.conf</filename> and add it to specific virtual hosts only. See <filename>/etc/apache2/vhosts.d/vhost.template</filename> for examples.</para>
@@ -678,8 +648,7 @@ sknorr, 2017-06-07 -->
                </term>
                <listitem>
                   <para>The authentication modules provide different authentication methods: basic authentication with <systemitem>mod_auth_basic</systemitem> or digest authentication with <systemitem>mod_auth_digest</systemitem>.</para>
-                  <para>
-                     <systemitem>mod_auth_basic</systemitem> and <systemitem>mod_auth_digest</systemitem> must be combined with an authentication provider module, <systemitem>mod_authn_*</systemitem> (for example, <systemitem>mod_authn_file</systemitem> for text file–based authentication) and with an authorization module <systemitem>mod_authz_*</systemitem> (for example, <systemitem>mod_authz_user</systemitem> for user authorization).</para>
+                  <para><systemitem>mod_auth_basic</systemitem> and <systemitem>mod_auth_digest</systemitem> must be combined with an authentication provider module, <systemitem>mod_authn_*</systemitem> (for example, <systemitem>mod_authn_file</systemitem> for text file–based authentication) and with an authorization module <systemitem>mod_authz_*</systemitem> (for example, <systemitem>mod_authz_user</systemitem> for user authorization).</para>
                   <para>More information about this topic is available in the <citetitle>Authentication HOWTO</citetitle> at <link xlink:href="https://httpd.apache.org/docs/2.4/howto/auth.html"/>.</para>
                </listitem>
             </varlistentry>
@@ -688,8 +657,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_auth_openidc</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_auth_openidc</systemitem> the only certified way to use OpenID Connect with the Apache HTTP server. (See <link xlink:href="https://openid.net/developers/certified-openid-connect-implementations/"/>.)</para>
+                  <para><systemitem>mod_auth_openidc</systemitem> the only certified way to use OpenID Connect with the Apache HTTP server. (See <link xlink:href="https://openid.net/developers/certified-openid-connect-implementations/"/>.)</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -705,8 +673,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_cgi</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_cgi</systemitem> is needed to execute CGI scripts. This module is enabled by default.</para>
+                  <para><systemitem>mod_cgi</systemitem> is needed to execute CGI scripts. This module is enabled by default.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -722,8 +689,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_dir</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_dir</systemitem> provides the <systemitem>DirectoryIndex</systemitem> directive with which you can configure which files are automatically delivered when a directory is requested (<filename>index.html</filename> by default). It also provides an automatic redirect to the correct URL when a directory request does not contain a trailing slash. This module is enabled by default.</para>
+                  <para><systemitem>mod_dir</systemitem> provides the <systemitem>DirectoryIndex</systemitem> directive with which you can configure which files are automatically delivered when a directory is requested (<filename>index.html</filename> by default). It also provides an automatic redirect to the correct URL when a directory request does not contain a trailing slash. This module is enabled by default.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -755,8 +721,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_include</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_include</systemitem> lets you use Server Side Includes (SSI), which provide a basic functionality to generate HTML pages dynamically. This module is enabled by default.</para>
+                  <para><systemitem>mod_include</systemitem> lets you use Server Side Includes (SSI), which provide a basic functionality to generate HTML pages dynamically. This module is enabled by default.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -812,8 +777,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_spelling</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_spelling</systemitem> attempts to automatically correct typographical errors in URLs, such as capitalization errors.</para>
+                  <para><systemitem>mod_spelling</systemitem> attempts to automatically correct typographical errors in URLs, such as capitalization errors.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -837,8 +801,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_suexec</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_suexec</systemitem> lets you run CGI scripts under a different user and group. This module is enabled by default.</para>
+                  <para><systemitem>mod_suexec</systemitem> lets you run CGI scripts under a different user and group. This module is enabled by default.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -853,18 +816,13 @@ sknorr, 2017-06-07 -->
       </sect2>
       <sect2 xml:id="sec-apache2-modules-mpm">
          <title>Multiprocessing modules</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides two different multiprocessing modules (MPMs) for use with Apache:</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> provides two different multiprocessing modules (MPMs) for use with Apache:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <xref linkend="sec-apache2-modules-mpm-prefork" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-apache2-modules-mpm-prefork" xrefstyle="%c"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref linkend="sec-apache2-modules-mpm-worker" xrefstyle="%c"/>
-               </para>
+               <para><xref linkend="sec-apache2-modules-mpm-worker" xrefstyle="%c"/></para>
             </listitem>
          </itemizedlist>
          <sect3 xml:id="sec-apache2-modules-mpm-prefork">
@@ -924,8 +882,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_python</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_python</systemitem> allows embedding Python within the Apache HTTP server for a considerable boost in performance and added flexibility in designing Web-based applications.</para>
+                  <para><systemitem>mod_python</systemitem> allows embedding Python within the Apache HTTP server for a considerable boost in performance and added flexibility in designing Web-based applications.</para>
                   <simplelist>
                      <member>Package Name: <systemitem>apache2-mod_python</systemitem>
                      </member>
@@ -939,8 +896,7 @@ sknorr, 2017-06-07 -->
                   <systemitem>mod_security</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <systemitem>mod_security</systemitem> provides a Web application firewall to protect Web applications from a range of attacks. It also enables HTTP traffic monitoring and real-time analysis.</para>
+                  <para><systemitem>mod_security</systemitem> provides a Web application firewall to protect Web applications from a range of attacks. It also enables HTTP traffic monitoring and real-time analysis.</para>
                   <simplelist>
                      <member>Package Name: <systemitem>apache2-mod_security2</systemitem>
                      </member>
@@ -958,21 +914,17 @@ sknorr, 2017-06-07 -->
       <sect2 xml:id="sec-apache2-modules-building-modules">
          <title>Compilation</title>
          <para>Apache can be extended by advanced users by writing custom modules. To develop modules for Apache or compile third-party modules, the package <systemitem>apache2-devel</systemitem> is required along with the corresponding development tools. <systemitem>apache2-devel</systemitem> also contains the <command>apxs2</command> tools, which are necessary for compiling additional modules for Apache.</para>
-         <para>
-            <command>apxs2</command> enables the compilation and installation of modules from source code (including the required changes to the configuration files), which creates <emphasis>dynamic shared objects</emphasis> (DSOs) that can be loaded into Apache at runtime.</para>
+         <para><command>apxs2</command> enables the compilation and installation of modules from source code (including the required changes to the configuration files), which creates <emphasis>dynamic shared objects</emphasis> (DSOs) that can be loaded into Apache at runtime.</para>
          <para>The <command>apxs2</command> binaries are located under <filename>/usr/sbin</filename>:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <filename>/usr/sbin/apxs2</filename>—suitable for building an extension module that works with any MPM. The installation location is <filename>/usr/lib64/apache2</filename>.</para>
+               <para><filename>/usr/sbin/apxs2</filename>—suitable for building an extension module that works with any MPM. The installation location is <filename>/usr/lib64/apache2</filename>.</para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/usr/sbin/apxs2-prefork</filename>—suitable for prefork MPM modules. The installation location is <filename>/usr/lib64/apache2-prefork</filename>.</para>
+               <para><filename>/usr/sbin/apxs2-prefork</filename>—suitable for prefork MPM modules. The installation location is <filename>/usr/lib64/apache2-prefork</filename>.</para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/usr/sbin/apxs2-worker</filename>—suitable for worker MPM modules. The installation location is <filename>/usr/lib64/apache2-worker</filename>.</para>
+               <para><filename>/usr/sbin/apxs2-worker</filename>—suitable for worker MPM modules. The installation location is <filename>/usr/lib64/apache2-worker</filename>.</para>
             </listitem>
          </itemizedlist>
          <para>Install and activate a module from source code with the following commands:</para>
@@ -1030,16 +982,13 @@ sknorr, 2017-06-07 -->
          <itemizedlist mark="bullet" spacing="normal">
             <title>CGI troubleshooting</title>
             <listitem>
-               <para>
-                  <emphasis>Have you reloaded the server after having changed the configuration?</emphasis> If not, reload with <command>systemctl reload apache2.service</command>.</para>
+               <para><emphasis>Have you reloaded the server after having changed the configuration?</emphasis> If not, reload with <command>systemctl reload apache2.service</command>.</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis>If you have configured your custom CGI directory, is it configured properly?</emphasis> If in doubt, try the script within the default CGI directory <filename>/srv/www/cgi-bin/</filename> and call it with <uri>http://localhost/cgi-bin/test.cgi</uri>.</para>
+               <para><emphasis>If you have configured your custom CGI directory, is it configured properly?</emphasis> If in doubt, try the script within the default CGI directory <filename>/srv/www/cgi-bin/</filename> and call it with <uri>http://localhost/cgi-bin/test.cgi</uri>.</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis>Are the file permissions correct?</emphasis> Change into the CGI directory and execute <command>ls -l test.cgi</command>. The output should start with</para>
+               <para><emphasis>Are the file permissions correct?</emphasis> Change into the CGI directory and execute <command>ls -l test.cgi</command>. The output should start with</para>
                <screen>-rwxr-xr-x  1 root root</screen>
             </listitem>
             <listitem>
@@ -1052,8 +1001,7 @@ sknorr, 2017-06-07 -->
       <title>Setting up a secure Web server with SSL</title>
       <para>Whenever sensitive data, such as credit card information, is transferred between Web server and client, it is desirable to have a secure, encrypted connection with authentication. <systemitem>mod_ssl</systemitem> provides strong encryption using the secure sockets layer (SSL) and transport layer security (TLS) protocols for HTTP communication between a client and the Web server. Using TLS/SSL, a private connection between Web server and client is established. Data integrity is ensured and client and server can authenticate each other.</para>
       <para>For this purpose, the server sends an SSL certificate that holds information proving the server's valid identity before any request to a URL is answered. In turn, this guarantees that the server is the uniquely correct end point for the communication. Additionally, the certificate generates an encrypted connection between client and server that can transport information without the risk of exposing sensitive, plain-text content.</para>
-      <para>
-         <systemitem>mod_ssl</systemitem> does not implement the TLS/SSL protocols itself, but acts as an interface between Apache and an SSL library. In <phrase role="productname">SUSE Linux Enterprise Server</phrase>, the OpenSSL library is used. OpenSSL is automatically installed with Apache.</para>
+      <para><systemitem>mod_ssl</systemitem> does not implement the TLS/SSL protocols itself, but acts as an interface between Apache and an SSL library. In <phrase role="productname">SUSE Linux Enterprise Server</phrase>, the OpenSSL library is used. OpenSSL is automatically installed with Apache.</para>
       <para>The most visible effect of using <systemitem>mod_ssl</systemitem> with Apache is that URLs are prefixed with <literal>https://</literal> instead of <literal>http://</literal>.</para>
       <sect2 xml:id="sec-apache2-ssl-certificate">
          <title>Creating an SSL certificate</title>
@@ -1066,28 +1014,19 @@ sknorr, 2017-06-07 -->
          </tip>
          <sect3 xml:id="sec-apache2-ssl-certificate-test">
             <title>Creating a <quote>test</quote> certificate</title>
-            <para>To generate a test certificate, call the script <command>/usr/bin/gensslcert</command>. It creates or overwrites the files listed below. Use <command>gensslcert</command>'s optional switches to fine-tune the certificate. Call <command>/usr/bin/gensslcert</command>
-               <option>-h</option> for more information.</para>
+            <para>To generate a test certificate, call the script <command>/usr/bin/gensslcert</command>. It creates or overwrites the files listed below. Use <command>gensslcert</command>'s optional switches to fine-tune the certificate. Call <command>/usr/bin/gensslcert</command><option>-h</option> for more information.</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>
-                     <filename>/etc/apache2/ssl.crt/ca.crt</filename>
-                  </para>
+                  <para><filename>/etc/apache2/ssl.crt/ca.crt</filename></para>
                </listitem>
                <listitem>
-                  <para>
-                     <filename>/etc/apache2/ssl.crt/server.crt</filename>
-                  </para>
+                  <para><filename>/etc/apache2/ssl.crt/server.crt</filename></para>
                </listitem>
                <listitem>
-                  <para>
-                     <filename>/etc/apache2/ssl.key/server.key</filename>
-                  </para>
+                  <para><filename>/etc/apache2/ssl.key/server.key</filename></para>
                </listitem>
                <listitem>
-                  <para>
-                     <filename>/etc/apache2/ssl.csr/server.csr</filename>
-                  </para>
+                  <para><filename>/etc/apache2/ssl.csr/server.csr</filename></para>
                </listitem>
             </itemizedlist>
             <para>A copy of <filename>ca.crt</filename> is also placed at <filename>/srv/www/htdocs/CA.crt</filename> for download.</para>
@@ -1210,44 +1149,32 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
          <para>The default port for TLS/SSL requests on the Web server side is 443. There is no conflict between a <quote>regular</quote> Apache listening on port 80 and an TLS/SSL-enabled Apache listening on port 443. In fact, HTTP and HTTPS can be run with the same Apache instance. Usually separate virtual hosts are used to dispatch requests to port 80 and port 443 to separate virtual servers.</para>
          <important>
             <title>Firewall configuration</title>
-            <para>Do not forget to open the firewall for SSL-enabled Apache on port 443. This can be done with <systemitem class="daemon">firewalld</systemitem> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Do not forget to open the firewall for SSL-enabled Apache on port 443. This can be done with <systemitem class="daemon">firewalld</systemitem> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </important>
          <para>The SSL module is enabled by default in the global server configuration. In case it has been disabled on your host, activate it with the following command: <command>a2enmod ssl</command>. To finally enable SSL, the server needs to be started with the flag <quote>SSL</quote>. To do so, call <command>a2enflag SSL</command> (case-sensitive!). If you have chosen to encrypt your server certificate with a password, you should also increase the value for <systemitem>APACHE_TIMEOUT</systemitem> in <filename>/etc/sysconfig/apache2</filename>, so you have enough time to enter the passphrase when Apache starts. Restart the server to make these changes active. A reload is not sufficient.</para>
          <para>The virtual host configuration directory contains a template <filename>/etc/apache2/vhosts.d/vhost-ssl.template</filename> with SSL-specific directives that are extensively documented. Refer to <xref linkend="sec-apache2-configuration-manually-vhost"/> for the general virtual host configuration.</para>
          <para>To get started, copy the template to <filename>/etc/apache2/vhosts.d/<replaceable>MYSSL-HOST</replaceable>.conf</filename> and edit it. Adjusting the values for the following directives should be sufficient:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <systemitem>DocumentRoot</systemitem>
-               </para>
+               <para><systemitem>DocumentRoot</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>ServerName</systemitem>
-               </para>
+               <para><systemitem>ServerName</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>ServerAdmin</systemitem>
-               </para>
+               <para><systemitem>ServerAdmin</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>ErrorLog</systemitem>
-               </para>
+               <para><systemitem>ErrorLog</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>TransferLog</systemitem>
-               </para>
+               <para><systemitem>TransferLog</systemitem></para>
             </listitem>
          </itemizedlist>
          <sect3 xml:id="sec-apache2-ssl-configuration-name-based">
             <title>Name-based virtual hosts and SSL</title>
             <para>By default it is not possible to run multiple SSL-enabled virtual hosts on a server with only one IP address. Name-based virtual hosting requires that Apache knows which server name has been requested. The problem with SSL connections is, that such a request can only be read after the SSL connection has already been established (by using the default virtual host). As a result, users will receive a warning message stating that the certificate does not match the server name.</para>
-            <para>
-               <phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with an extension to the SSL protocol called Server Name Indication (SNI) addresses this issue by sending the name of the virtual domain as part of the SSL negotiation. This enables the server to <quote>switch</quote> to the correct virtual domain early and present the browser the correct certificate.</para>
+            <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with an extension to the SSL protocol called Server Name Indication (SNI) addresses this issue by sending the name of the virtual domain as part of the SSL negotiation. This enables the server to <quote>switch</quote> to the correct virtual domain early and present the browser the correct certificate.</para>
             <para>SNI is enabled by default on <phrase role="productname">SUSE Linux Enterprise Server</phrase>. To enable Name-Based Virtual Hosts for SSL, configure the server as described in <xref linkend="sec-apache2-configuration-manually-vhost-named-vhosts"/> (you need to use port <literal>443</literal> rather than port <literal>80</literal> with SSL).</para>
             <important>
                <title>SNI browser support</title>
@@ -1333,8 +1260,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
       <para>Here are several points to consider when setting up more Apache instances on the same server:</para>
       <itemizedlist>
          <listitem>
-            <para>The file <filename>/etc/sysconfig/apache2@<replaceable>INSTANCE_NAME</replaceable>
-               </filename> can include the same variables as <filename>/etc/sysconfig/apache2</filename>, including module loading and MPM setting.</para>
+            <para>The file <filename>/etc/sysconfig/apache2@<replaceable>INSTANCE_NAME</replaceable></filename> can include the same variables as <filename>/etc/sysconfig/apache2</filename>, including module loading and MPM setting.</para>
          </listitem>
          <listitem>
             <para>The default Apache instance does not need to be running while other instances run.</para>
@@ -1359,25 +1285,19 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
             <listitem>
                <formalpara>
                   <title>Web page</title>
-                  <para>
-                     <link xlink:href="https://www.suse.com/support/security/"/>
-                  </para>
+                  <para><link xlink:href="https://www.suse.com/support/security/"/></para>
                </formalpara>
             </listitem>
             <listitem>
                <formalpara>
                   <title>Mailing list archive</title>
-                  <para>
-                     <link xlink:href="https://lists.opensuse.org/archives/list/security-announce@lists.opensuse.org/"/>
-                  </para>
+                  <para><link xlink:href="https://lists.opensuse.org/archives/list/security-announce@lists.opensuse.org/"/></para>
                </formalpara>
             </listitem>
             <listitem>
                <formalpara>
                   <title>List of security announcements</title>
-                  <para>
-                     <link xlink:href="https://www.suse.com/support/update/"/>
-                  </para>
+                  <para><link xlink:href="https://www.suse.com/support/update/"/></para>
                </formalpara>
             </listitem>
          </itemizedlist>
@@ -1417,8 +1337,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
                <para>In case of both fatal and nonfatal errors, check the Apache log files for causes, mainly the error log file located at <filename>/var/log/apache2/error_log</filename> by default. Additionally, you can control the verbosity of the logged messages with the <systemitem>LogLevel</systemitem> directive if more detail is needed in the log files.</para>
                <tip>
                   <title>A simple test</title>
-                  <para>Watch the Apache log messages with the command <command>tail -F /var/log/apache2/<replaceable>MY_ERROR_LOG</replaceable>
-                     </command>. Then run <command>systemctl restart apache2.service</command>. Now, try to connect with a browser and check the output.</para>
+                  <para>Watch the Apache log messages with the command <command>tail -F /var/log/apache2/<replaceable>MY_ERROR_LOG</replaceable></command>. Then run <command>systemctl restart apache2.service</command>. Now, try to connect with a browser and check the output.</para>
                </tip>
             </listitem>
          </varlistentry>
@@ -1447,9 +1366,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
                   <systemitem>mod_apparmor</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://en.opensuse.org/SDB:AppArmor"/>
-                  </para>
+                  <para><link xlink:href="https://en.opensuse.org/SDB:AppArmor"/></para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -1457,9 +1374,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
                   <systemitem>mod_php8</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://www.php.net/manual/en/install.unix.apache2.php"/>
-                  </para>
+                  <para><link xlink:href="https://www.php.net/manual/en/install.unix.apache2.php"/></para>
                   <para>You can obtain detailed information about <systemitem>mod_php8</systemitem> configuration in its well-commented main configuration file <filename>/etc/php8/apache2/php.ini</filename>.</para>
                </listitem>
             </varlistentry>
@@ -1468,9 +1383,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
                   <systemitem>mod_python</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://modpython.org/"/>
-                  </para>
+                  <para><link xlink:href="https://modpython.org/"/></para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -1478,9 +1391,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
                   <systemitem>mod_security</systemitem>
                </term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://github.com/owasp-modsecurity/ModSecurity"/>
-                  </para>
+                  <para><link xlink:href="https://github.com/owasp-modsecurity/ModSecurity"/></para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -1492,17 +1403,13 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
             <varlistentry>
                <term>Apache developer information</term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://httpd.apache.org/dev/"/>
-                  </para>
+                  <para><link xlink:href="https://httpd.apache.org/dev/"/></para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Apache developer documentation</term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://httpd.apache.org/docs/2.4/developer/"/>
-                  </para>
+                  <para><link xlink:href="https://httpd.apache.org/docs/2.4/developer/"/></para>
                </listitem>
             </varlistentry>
          </variablelist>

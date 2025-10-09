@@ -7,8 +7,7 @@
        xml:id="CreateProfile-firewall">
    <title>Firewall configuration</title>
    <info/>
-   <para>SuSEfirewall2 has been replaced by <systemitem class="daemon">firewalld</systemitem> starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA. Profiles using SuSEfirewall2 properties will be translated to <systemitem class="daemon">firewalld</systemitem> profiles. However, not all profile properties can be converted. For details about <systemitem class="daemon">firewalld</systemitem>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-      <xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>SuSEfirewall2 has been replaced by <systemitem class="daemon">firewalld</systemitem> starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA. Profiles using SuSEfirewall2 properties will be translated to <systemitem class="daemon">firewalld</systemitem> profiles. However, not all profile properties can be converted. For details about <systemitem class="daemon">firewalld</systemitem>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>.</para>
    <important>
       <title>Limited backward compatibility with SuSEFirewall2 based profiles</title>
       <para>The use of SuSEfirewall2-based profiles will be only partially supported as many options are not valid in <systemitem class="daemon">firewalld</systemitem>, and some missing configuration could affect your network security.</para>
@@ -20,121 +19,51 @@
          <tgroup cols="3">
             <thead>
                <row>
-                  <entry>
-                     <para>Attribute</para>
-                  </entry>
-                  <entry>
-                     <para>Value</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Attribute</para></entry>
+                  <entry><para>Value</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>start_firewall</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Boolean</para>
-                  </entry>
-                  <entry>
-                     <para>Whether <systemitem class="daemon">firewalld</systemitem> should be started right after applying the configuration.</para>
-                  </entry>
+                  <entry><para><literal>start_firewall</literal></para></entry>
+                  <entry><para>Boolean</para></entry>
+                  <entry><para>Whether <systemitem class="daemon">firewalld</systemitem> should be started right after applying the configuration.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>enable_firewall</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Boolean</para>
-                  </entry>
-                  <entry>
-                     <para>Whether <systemitem class="daemon">firewalld</systemitem> should be started on every system start-up.</para>
-                  </entry>
+                  <entry><para><literal>enable_firewall</literal></para></entry>
+                  <entry><para>Boolean</para></entry>
+                  <entry><para>Whether <systemitem class="daemon">firewalld</systemitem> should be started on every system start-up.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>default_zone</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Zone name</para>
-                  </entry>
-                  <entry>
-                     <para>The default zone is used for everything that is not explicitly assigned.</para>
-                  </entry>
+                  <entry><para><literal>default_zone</literal></para></entry>
+                  <entry><para>Zone name</para></entry>
+                  <entry><para>The default zone is used for everything that is not explicitly assigned.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>log_denied_packets</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Type of dropped packets to be logged</para>
-                  </entry>
-                  <entry>
-                     <para>Enable logging of dropped packets for the type selected. Values: <literal>off</literal>, <literal>unicast</literal>, <literal>multicast</literal>, <literal>broadcast</literal>, <literal>all</literal>.</para>
-                  </entry>
+                  <entry><para><literal>log_denied_packets</literal></para></entry>
+                  <entry><para>Type of dropped packets to be logged</para></entry>
+                  <entry><para>Enable logging of dropped packets for the type selected. Values: <literal>off</literal>, <literal>unicast</literal>, <literal>multicast</literal>, <literal>broadcast</literal>, <literal>all</literal>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>name</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Identifier of zone</para>
-                  </entry>
-                  <entry>
-                     <para>Used to identify a zone. If the zone is not known yet, a new zone will be created.</para>
-                  </entry>
+                  <entry><para><literal>name</literal></para></entry>
+                  <entry><para>Identifier of zone</para></entry>
+                  <entry><para>Used to identify a zone. If the zone is not known yet, a new zone will be created.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>short</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Short summary of zone</para>
-                  </entry>
-                  <entry>
-                     <para>Briefly summarizes the purpose of the zone. Ignored for already existing zones. If not specified, the name is used.</para>
-                  </entry>
+                  <entry><para><literal>short</literal></para></entry>
+                  <entry><para>Short summary of zone</para></entry>
+                  <entry><para>Briefly summarizes the purpose of the zone. Ignored for already existing zones. If not specified, the name is used.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>description</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Description of zone</para>
-                  </entry>
-                  <entry>
-                     <para>Describes the purpose of the zone. Ignored for already existing zones. If not specified, the name is used.</para>
-                  </entry>
+                  <entry><para><literal>description</literal></para></entry>
+                  <entry><para>Description of zone</para></entry>
+                  <entry><para>Describes the purpose of the zone. Ignored for already existing zones. If not specified, the name is used.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>target</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Default action</para>
-                  </entry>
-                  <entry>
-                     <para>Defines the default action in the zone if no rule matches. Possible values are <literal>ACCEPT</literal>, <literal>%%REJECT%%</literal>, <literal>DROP</literal> and <literal>default</literal>. If not specified, <literal>default</literal> is used. For details about values, see <link xlink:href="https://firewalld.org/documentation/zone/options.html"/>.</para>
-                  </entry>
+                  <entry><para><literal>target</literal></para></entry>
+                  <entry><para>Default action</para></entry>
+                  <entry><para>Defines the default action in the zone if no rule matches. Possible values are <literal>ACCEPT</literal>, <literal>%%REJECT%%</literal>, <literal>DROP</literal> and <literal>default</literal>. If not specified, <literal>default</literal> is used. For details about values, see <link xlink:href="https://firewalld.org/documentation/zone/options.html"/>.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -147,82 +76,36 @@
          <tgroup cols="3">
             <thead>
                <row>
-                  <entry>
-                     <para>Attributes</para>
-                  </entry>
-                  <entry>
-                     <para>Value</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Attributes</para></entry>
+                  <entry><para>Value</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>interfaces</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List of interface names</para>
-                  </entry>
-                  <entry>
-                     <para>List of interface names assigned to this zone. Interfaces or sources can only be part of one zone.</para>
-                  </entry>
+                  <entry><para><literal>interfaces</literal></para></entry>
+                  <entry><para>List of interface names</para></entry>
+                  <entry><para>List of interface names assigned to this zone. Interfaces or sources can only be part of one zone.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>services</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List of services</para>
-                  </entry>
-                  <entry>
-                     <para>List of services accessible in this zone.</para>
-                  </entry>
+                  <entry><para><literal>services</literal></para></entry>
+                  <entry><para>List of services</para></entry>
+                  <entry><para>List of services accessible in this zone.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>ports</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List of ports</para>
-                  </entry>
-                  <entry>
-                     <para>List of single ports or ranges to be opened in the assigned zone.</para>
-                  </entry>
+                  <entry><para><literal>ports</literal></para></entry>
+                  <entry><para>List of ports</para></entry>
+                  <entry><para>List of single ports or ranges to be opened in the assigned zone.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>protocols</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List of protocols</para>
-                  </entry>
-                  <entry>
-                     <para>List of protocols to be opened or be accessible in the assigned zone.</para>
-                  </entry>
+                  <entry><para><literal>protocols</literal></para></entry>
+                  <entry><para>List of protocols</para></entry>
+                  <entry><para>List of protocols to be opened or be accessible in the assigned zone.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>masquerade</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Enable masquerade</para>
-                  </entry>
-                  <entry>
-                     <para>It will enable or disable network address translation <emphasis>(NAT)</emphasis> in the assigned zone.</para>
-                  </entry>
+                  <entry><para><literal>masquerade</literal></para></entry>
+                  <entry><para>Enable masquerade</para></entry>
+                  <entry><para>It will enable or disable network address translation <emphasis>(NAT)</emphasis> in the assigned zone.</para></entry>
                </row>
             </tbody>
          </tgroup>

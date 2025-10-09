@@ -20,56 +20,26 @@
       <tgroup cols="3">
          <thead>
             <row>
-               <entry>
-                  <para>Attributes</para>
-               </entry>
-               <entry>
-                  <para>Value</para>
-               </entry>
-               <entry>
-                  <para>Description</para>
-               </entry>
+               <entry><para>Attributes</para></entry>
+               <entry><para>Value</para></entry>
+               <entry><para>Description</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <literal>import</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>true / false</para>
-               </entry>
-               <entry>
-                  <para>SSH keys will be imported. If set to <literal>false</literal>, nothing will be imported.</para>
-               </entry>
+               <entry><para><literal>import</literal></para></entry>
+               <entry><para>true / false</para></entry>
+               <entry><para>SSH keys will be imported. If set to <literal>false</literal>, nothing will be imported.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>copy_config</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>true / false</para>
-               </entry>
-               <entry>
-                  <para>Additionally, SSH server configuration will be imported. This setting will not have effect if <literal>import</literal> is set to <literal>false</literal>.</para>
-               </entry>
+               <entry><para><literal>copy_config</literal></para></entry>
+               <entry><para>true / false</para></entry>
+               <entry><para>Additionally, SSH server configuration will be imported. This setting will not have effect if <literal>import</literal> is set to <literal>false</literal>.</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>device</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>Partition</para>
-               </entry>
-               <entry>
-                  <para>Partition to import keys and configuration from. If it is not set, the partition which contains the most recently accessed key is used.</para>
-               </entry>
+               <entry><para><literal>device</literal></para></entry>
+               <entry><para>Partition</para></entry>
+               <entry><para>Partition to import keys and configuration from. If it is not set, the partition which contains the most recently accessed key is used.</para></entry>
             </row>
          </tbody>
       </tgroup>

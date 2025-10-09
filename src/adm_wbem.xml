@@ -33,12 +33,9 @@
          </listitem>
       </itemizedlist>
       <para>The Common Information Model Object Manager (CIMOM) is a CIM object manager or, more specifically, an application that manages objects according to the CIM standard. CIMOM manages communication between CIMOM providers and a CIM client, where the administrator manages the system.</para>
-      <para>
-         <emphasis>CIMOM providers</emphasis> are software performing specific tasks within the CIMOM that are requested by client applications. Each provider instruments one or more aspects of the CIMOM's schema. These providers interact directly with the hardware.</para>
-      <para>
-         <emphasis>Standards Based Linux Instrumentation for Manageability (SBLIM)</emphasis> is a collection of tools designed to support Web-Based Enterprise Management (WBEM). SUSE® Linux Enterprise Server uses the open source CIMOM (or CIM server) from the SBLIM project called <emphasis>Small Footprint CIM Broker</emphasis> .</para>
-      <para>
-         <emphasis>Small Footprint CIM Broker</emphasis> is a CIM server intended for use in resource-limited or embedded environments. It is designed to be modular and lightweight at the same time. Its based on open standards and it supports CMPI providers, CIM-XML encoding, and <emphasis>Managed Object Format (MOF)</emphasis>. It is highly configurable and performs stability even if the provider crashes. It is also easily accessible as it supports multiple transport protocols, such as HTTP, HTTPS, Unix domain sockets, Service Location Protocol (SLP), and Java Database Connectivity (JDBC).</para>
+      <para><emphasis>CIMOM providers</emphasis> are software performing specific tasks within the CIMOM that are requested by client applications. Each provider instruments one or more aspects of the CIMOM's schema. These providers interact directly with the hardware.</para>
+      <para><emphasis>Standards Based Linux Instrumentation for Manageability (SBLIM)</emphasis> is a collection of tools designed to support Web-Based Enterprise Management (WBEM). SUSE® Linux Enterprise Server uses the open source CIMOM (or CIM server) from the SBLIM project called <emphasis>Small Footprint CIM Broker</emphasis> .</para>
+      <para><emphasis>Small Footprint CIM Broker</emphasis> is a CIM server intended for use in resource-limited or embedded environments. It is designed to be modular and lightweight at the same time. Its based on open standards and it supports CMPI providers, CIM-XML encoding, and <emphasis>Managed Object Format (MOF)</emphasis>. It is highly configurable and performs stability even if the provider crashes. It is also easily accessible as it supports multiple transport protocols, such as HTTP, HTTPS, Unix domain sockets, Service Location Protocol (SLP), and Java Database Connectivity (JDBC).</para>
    </sect1>
    <sect1 xml:id="sec-wbem-setting">
       <title>Setting up SFCB</title>
@@ -91,38 +88,22 @@
                <colspec colnum="2" colname="2"/>
                <thead>
                   <row rowsep="1">
-                     <entry colname="1">
-                        <para>Task</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Linux Command</para>
-                     </entry>
+                     <entry colname="1"><para>Task</para></entry>
+                     <entry colname="2"><para>Linux Command</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>Start sfcbd</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Enter <command>systemctl start sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para>
-                     </entry>
+                     <entry colname="1"><para>Start sfcbd</para></entry>
+                     <entry colname="2"><para>Enter <command>systemctl start sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>Stop sfcbd</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Enter <command>systemctl stop sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para>
-                     </entry>
+                     <entry colname="1"><para>Stop sfcbd</para></entry>
+                     <entry colname="2"><para>Enter <command>systemctl stop sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para></entry>
                   </row>
                   <row rowsep="0">
-                     <entry colname="1">
-                        <para>Check sfcbd status</para>
-                     </entry>
-                     <entry colname="2">
-                        <para>Enter <command>systemctl status sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para>
-                     </entry>
+                     <entry colname="1"><para>Check sfcbd status</para></entry>
+                     <entry colname="2"><para>Enter <command>systemctl status sblim-sfcb.service</command> as <systemitem class="username">root</systemitem> in the command line.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -134,8 +115,7 @@
          <sect3 xml:id="sec-wbem-setting-secure-cert">
             <title>Certificates</title>
             <para>Secure Sockets Layers (SSL) transports require a certificate for secure communication to occur. When SFCB is installed, it has a self-signed certificate generated.</para>
-            <para>You can replace the path to the default certificate with a path to a commercial or self-signed one by changing the <literal>sslCertificateFilePath: <replaceable>PATH_FILENAME</replaceable>
-               </literal> setting in <filename>/etc/sfcb/sfcb.cfg</filename>. The file must be in PEM format.</para>
+            <para>You can replace the path to the default certificate with a path to a commercial or self-signed one by changing the <literal>sslCertificateFilePath: <replaceable>PATH_FILENAME</replaceable></literal> setting in <filename>/etc/sfcb/sfcb.cfg</filename>. The file must be in PEM format.</para>
             <para>By default, SFCB expects a server certificate in the following location:</para>
             <screen>/etc/sfcb/server.pem</screen>
             <para>To generate a new certificate, run the following command:</para>
@@ -269,8 +249,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
       </sect2>
       <sect2 xml:id="sec-wbem-config-cmdline">
          <title>Command line options</title>
-         <para>
-            <systemitem>sfcbd</systemitem>, the SFCB daemon, has several command line options that switch particular runtime features on or off. Enter these options when SFCB daemon starts.</para>
+         <para><systemitem>sfcbd</systemitem>, the SFCB daemon, has several command line options that switch particular runtime features on or off. Enter these options when SFCB daemon starts.</para>
          <variablelist>
             <varlistentry>
                <term>
@@ -341,8 +320,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
 ---         responseTiming:     262144  0x0040000
 ---              dbpdaemon:     524288  0x0080000
 ---                    slp:    1048576  0x0100000</screen>
-                  <para>A useful value that reveals the internal functions of sfcbd but does not generate too many messages, is <option>-t</option>
-                     <replaceable>2019</replaceable>.</para>
+                  <para>A useful value that reveals the internal functions of sfcbd but does not generate too many messages, is <option>-t</option><replaceable>2019</replaceable>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -358,48 +336,30 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the local port value that sfcbd should listen to receive HTTP (insecure) requests from CIM clients. Default is <literal>5988</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpPort:</literal>
-               <replaceable>PORT_NUMBER</replaceable>
-            </para>
+            <para><literal>httpPort:</literal><replaceable>PORT_NUMBER</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-2">
             <title>enableHttp</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies whether SFCB should accept HTTP client connections. Default is <literal>false</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>enableHttp:</literal>
-               <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>enableHttp:</literal><replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables HTTP connections.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables HTTP connections.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables HTTP connections.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables HTTP connections.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -410,75 +370,51 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the maximum number of simultaneous HTTP client connections before new incoming HTTP requests are blocked. Default is <literal>8</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpProcs:</literal>
-               <replaceable>MAX_NUMBER_OF_CONNECTIONS</replaceable>
-            </para>
+            <para><literal>httpProcs:</literal><replaceable>MAX_NUMBER_OF_CONNECTIONS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-3-5">
             <title>httpUserSFCB, httpUser</title>
             <bridgehead>Purpose</bridgehead>
-            <para>These options control what user the HTTP server will run under. If <option>httpUserSFCB</option> is <literal>true</literal>, HTTP will run under the same user as the SFCB main process. If it is <literal>false</literal> the user name specified for <option>httpUser</option> will be used. This setting is used for both HTTP and HTTPS servers. <option>httpUser</option>
-               <emphasis>must</emphasis> be specified if <option>httpUserSFCB</option> is set to <literal>false</literal>. the default is <literal>true</literal>.</para>
+            <para>These options control what user the HTTP server will run under. If <option>httpUserSFCB</option> is <literal>true</literal>, HTTP will run under the same user as the SFCB main process. If it is <literal>false</literal> the user name specified for <option>httpUser</option> will be used. This setting is used for both HTTP and HTTPS servers. <option>httpUser</option><emphasis>must</emphasis> be specified if <option>httpUserSFCB</option> is set to <literal>false</literal>. the default is <literal>true</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpUserSFCB: true</literal>
-            </para>
+            <para><literal>httpUserSFCB: true</literal></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-3-8">
             <title>httpLocalOnly</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies whether to limit HTTP requests to localhost only. Default is <literal>false</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpLocalOnly: false</literal>
-            </para>
+            <para><literal>httpLocalOnly: false</literal></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-4">
             <title>httpsPort</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the local port value where sfcbd listens for HTTPS requests from CIM clients. Default is <literal>5989</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpsPort: port_number</literal>
-            </para>
+            <para><literal>httpsPort: port_number</literal></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-5">
             <title>enableHttps</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies if SFCB will accept HTTPS client connections. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>enableHttps: option</literal>
-            </para>
+            <para><literal>enableHttps: option</literal></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables HTTPS connections.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables HTTPS connections.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables HTTPS connections.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables HTTPS connections.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -489,46 +425,30 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the maximum number of simultaneous HTTPS client connections before new incoming HTTPS requests are blocked. Default is <literal>8</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>httpsProcs:</literal> <replaceable>MAX_NUMBER_OF_CONNECTIONS</replaceable>
-            </para>
+            <para><literal>httpsProcs:</literal> <replaceable>MAX_NUMBER_OF_CONNECTIONS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-8">
             <title>enableInterOp</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies if SFCB will provide the <emphasis>interop</emphasis> namespace for indication support. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>enableInterOp:</literal> <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>enableInterOp:</literal> <replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables interop namespace.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables interop namespace.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables interop namespace.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables interop namespace.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -539,46 +459,30 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the maximum number of simultaneous provider processes. After this point, if a new incoming request requires loading a new provider, then one of the existing providers will first be automatically unloaded. Default is <literal>32</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>provProcs:</literal> <replaceable>MAX_NUMBER_OF_PROCS</replaceable>
-            </para>
+            <para><literal>provProcs:</literal> <replaceable>MAX_NUMBER_OF_PROCS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-10">
             <title>doBasicAuth</title>
             <bridgehead>Purpose</bridgehead>
             <para>Switches basic authentication on or off based on the client user identifier before it accepts the request. Default value is <literal>true</literal> which means that basic client authentication is performed.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>doBasicAuth:</literal> <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>doBasicAuth:</literal> <replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables basic authentication.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables basic authentication.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables basic authentication.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables basic authentication.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -589,46 +493,30 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the local library name. The SFCB server loads the library to authenticate the client user identifier. Default is <literal>sfcBasicPAMAuthentication</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>provProcs:</literal> <replaceable>MAX_NUMBER_OF_PROCS</replaceable>
-            </para>
+            <para><literal>provProcs:</literal> <replaceable>MAX_NUMBER_OF_PROCS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-12">
             <title>useChunking</title>
             <bridgehead>Purpose</bridgehead>
             <para>This option switches the use of HTTP/HTTPS <quote>chunking</quote> on or off. If switched on, the server will return large volumes of response data to the client in smaller <quote>chunks</quote>, rather than buffer the data and send it back all in one chunk. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>useChunking:</literal> <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>useChunking:</literal> <replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables HTTP/HTTPS data chunking.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables HTTP/HTTPS data chunking.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables HTTP/HTTPS data chunking.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables HTTP/HTTPS data chunking.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -639,91 +527,65 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the maximum time in seconds that SFCB HTTP process waits between two requests on one connection before it terminates. Setting it to <literal>0</literal> disables HTTP keep-alive. Default is <literal>0</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>keepaliveTimeout:</literal> <replaceable>SECS</replaceable>
-            </para>
+            <para><literal>keepaliveTimeout:</literal> <replaceable>SECS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-14">
             <title>keepaliveMaxRequest</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the maximum number of consecutive requests on one connection. Setting it to <literal>0</literal> disables HTTP keep-alive. Default value is <literal>10</literal> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>keepaliveMaxRequest:</literal> <replaceable>NUMBER_OF_CONNECTIONS</replaceable>
-            </para>
+            <para><literal>keepaliveMaxRequest:</literal> <replaceable>NUMBER_OF_CONNECTIONS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-15">
             <title>registrationDir</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the registration directory, which contains the provider registration data, the staging area, and the static repository. Default is <filename>/var/lib/sfcb/registration</filename> .</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>registrationDir:</literal> <replaceable>DIR</replaceable>
-            </para>
+            <para><literal>registrationDir:</literal> <replaceable>DIR</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-16">
             <title>providerDirs</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies a space-separated list of directories where SFCB is searching for provider libraries. Default is <filename>/usr/lib64 /usr/lib64 /usr/lib64/cmpi</filename>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>providerDirs:</literal> <replaceable>DIR</replaceable>
-            </para>
+            <para><literal>providerDirs:</literal> <replaceable>DIR</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-17">
             <title>providerSampleInterval</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the interval in seconds at which the provider manager is checking for idle providers. Default is <literal>30</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>providerSampleInterval:</literal> <replaceable>SECS</replaceable>
-            </para>
+            <para><literal>providerSampleInterval:</literal> <replaceable>SECS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-18">
             <title>providerTimeoutInterval</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the interval in seconds before an idle provider gets unloaded by the provider manager. Default is <literal>60</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>providerTimeoutInterval:</literal> <replaceable>SECS</replaceable>
-            </para>
+            <para><literal>providerTimeoutInterval:</literal> <replaceable>SECS</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-19">
             <title>providerAutoGroup</title>
             <bridgehead>Purpose</bridgehead>
             <para>If the provider registration file does not specify any other group, and the option is set to <literal>true</literal>, all providers in the same shared library are executed in the same process.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>providerAutoGroup:</literal> <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>providerAutoGroup:</literal> <replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>true</para>
-                        </entry>
-                        <entry>
-                           <para>Enables grouping of providers.</para>
-                        </entry>
+                        <entry><para>true</para></entry>
+                        <entry><para>Enables grouping of providers.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>false</para>
-                        </entry>
-                        <entry>
-                           <para>Disables grouping of providers.</para>
-                        </entry>
+                        <entry><para>false</para></entry>
+                        <entry><para>Disables grouping of providers.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -734,73 +596,48 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the name of the file that contains the server certificate. The file must be in PEM (Privacy Enhanced Mail, RFC 1421 and RFC 1424) format. This file is only required if <literal>enableHttps</literal> is set to <literal>true</literal>. Default is <filename>/etc/sfcb/server.pem</filename>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>sslCertificateFilePath:</literal> <replaceable>PATH</replaceable>
-            </para>
+            <para><literal>sslCertificateFilePath:</literal> <replaceable>PATH</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-21">
             <title>sslKeyFilePath</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the name of the file that contains the private key for the server certificate. The file must be in PEM format and may not be protected by passphrase. This file is only required if <literal>enableHttps</literal> is set to <literal>true</literal>. Default is <filename>/etc/sfcb/file.pem</filename>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>sslKeyFilePath:</literal> <replaceable>PATH</replaceable>
-            </para>
+            <para><literal>sslKeyFilePath:</literal> <replaceable>PATH</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-22">
             <title>sslClientTrustStore</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the name of the file that contains either the CA or self-signed certificates of the clients. This file must be in PEM format and is only required if <literal>sslClientCertificate</literal> is set to <literal>accept</literal> or <literal>require</literal>. Default is <filename>/etc/sfcb/client.pem</filename>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>sslClientTrustStore:</literal> <replaceable>PATH</replaceable>
-            </para>
+            <para><literal>sslClientTrustStore:</literal> <replaceable>PATH</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-23">
             <title>sslClientCertificate</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the way SFCB handles client certificate based authentication. If set to <literal>ignore</literal>, it will not request a certificate from the client. If set to <literal>accept</literal> it will request a certificate from the client but will not fail if the client does not present one. If set to <literal>require</literal>, it will refuse the client connection if the client does not present a certificate. Default value is <literal>ignore</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>sslClientCertificate:</literal> <replaceable>OPTION</replaceable>
-            </para>
+            <para><literal>sslClientCertificate:</literal> <replaceable>OPTION</replaceable></para>
             <informaltable frame="topbot" rowsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
-                        <entry>
-                           <para>Option</para>
-                        </entry>
-                        <entry>
-                           <para>Description</para>
-                        </entry>
+                        <entry><para>Option</para></entry>
+                        <entry><para>Description</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>ignore</para>
-                        </entry>
-                        <entry>
-                           <para>Disables requesting a client certificate.</para>
-                        </entry>
+                        <entry><para>ignore</para></entry>
+                        <entry><para>Disables requesting a client certificate.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>accept</para>
-                        </entry>
-                        <entry>
-                           <para>Disables requesting a client certificate.</para>
-                           <para>Will not fail if no certificate is present.</para>
-                        </entry>
+                        <entry><para>accept</para></entry>
+                        <entry><para>Disables requesting a client certificate.</para><para>Will not fail if no certificate is present.</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>require</para>
-                        </entry>
-                        <entry>
-                           <para>Refuses the client connection without a valid certificate.</para>
-                        </entry>
+                        <entry><para>require</para></entry>
+                        <entry><para>Refuses the client connection without a valid certificate.</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -811,36 +648,28 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the name of the local library to request for the user authentication based on client certificate. This is only requested if <literal>sslClientCertificate</literal> is not set to <literal>ignore</literal>. Default value is <filename>sfcCertificateAuthentication</filename>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>certificateAuthLib:</literal> <replaceable>FILE</replaceable>
-            </para>
+            <para><literal>certificateAuthLib:</literal> <replaceable>FILE</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-25">
             <title>traceLevel</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the trace level for SFCB. You can override it by setting environment variable <literal>SFCB_TRACE_LEVEL</literal>. Default value is <literal>0</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>traceLevel:</literal> <replaceable>NUM_LEVEL</replaceable>
-            </para>
+            <para><literal>traceLevel:</literal> <replaceable>NUM_LEVEL</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-26">
             <title>traceMask</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the trace mask for SFCB. you can override it by the command line option <option>--trace-components</option>. Default value is <literal>0</literal>.</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>traceMask:</literal> <replaceable>MASK</replaceable>
-            </para>
+            <para><literal>traceMask:</literal> <replaceable>MASK</replaceable></para>
          </sect3>
          <sect3 xml:id="sec-wbem-config-confile-27">
             <title>traceFile</title>
             <bridgehead>Purpose</bridgehead>
             <para>Specifies the trace file for SFCB. You can override it by setting environment variable <literal>SFCB_TRACE_FILE</literal>. Default value is <literal>stderr</literal> (standard error output).</para>
             <bridgehead>Syntax</bridgehead>
-            <para>
-               <literal>traceFile:</literal> <replaceable>OUTPUT</replaceable>
-            </para>
+            <para><literal>traceFile:</literal> <replaceable>OUTPUT</replaceable></para>
          </sect3>
       </sect2>
    </sect1>
@@ -864,15 +693,10 @@ WARNING: client.pem SSL Certificate trust store already exists.
          <para>The provider package is prepared for SFCB, so that its installation takes care of the proper registration. Most SBLIM providers are prepared for SFCB.</para>
          <sect3 xml:id="sec-wbem-advanced-cmpinst-crep">
             <title>Class repository</title>
-            <para>
-               <emphasis>Class repository</emphasis> is a place where SFCB stores information about CIM classes. It consists of a directory tree with namespace components. Typical CIM namespaces are <literal>root/cimv2</literal> or <literal>root/interop</literal>, which respectively translate to the class repository directory path on the file system</para>
-            <para>
-               <filename>/var/lib/sfcb/registration/repository/root/cimv2</filename>
-            </para>
+            <para><emphasis>Class repository</emphasis> is a place where SFCB stores information about CIM classes. It consists of a directory tree with namespace components. Typical CIM namespaces are <literal>root/cimv2</literal> or <literal>root/interop</literal>, which respectively translate to the class repository directory path on the file system</para>
+            <para><filename>/var/lib/sfcb/registration/repository/root/cimv2</filename></para>
             <para>and</para>
-            <para>
-               <filename>/var/lib/sfcb/registration/repository/root/interop</filename>
-            </para>
+            <para><filename>/var/lib/sfcb/registration/repository/root/interop</filename></para>
             <para>Each namespace directory contains the file <filename>classSchemas</filename>. The file has a compiled binary representation of all the CIM classes registered under that namespace. It also contains necessary information about their CIM superclasses.</para>
             <para>Each namespace directory may contain a file <filename>qualifiers</filename> which contains all qualifiers for the namespace. When sfcbd restarts, the class provider will scan the directory <filename>/var/lib/sfcb/registration/repository/</filename> and all its subdirectories to determine the registered namespaces. Then <filename>classSchemas</filename> files are decoded and the class hierarchy for each namespace is built.</para>
          </sect3>
@@ -1025,23 +849,17 @@ RegisteredProfile.reg</screen>
                   </listitem>
                </varlistentry>
             </variablelist>
-            <para>Once all the class definitions and provider registration files are stored in the staging area, you need to rebuild the SFCB class repository with the command <command>sfcbrepos</command>
-               <option>-f</option>.</para>
+            <para>Once all the class definitions and provider registration files are stored in the staging area, you need to rebuild the SFCB class repository with the command <command>sfcbrepos</command><option>-f</option>.</para>
             <para>You can add, change or remove classes this way. After rebuilding the class repository, restart SFCB with command <command>systemctl restart sfcb</command>.</para>
             <para>Alternatively, the SFCB package contains a utility that will copy provider class mof files and registration files to the correct locations in the staging area.</para>
-            <para>
-               <command>sfcbstage</command>
-               <option>-r</option>
-               <literal>[provider.reg] [class1.mof] [class2.mof] ...</literal>
-            </para>
+            <para><command>sfcbstage</command><option>-r</option><literal>[provider.reg] [class1.mof] [class2.mof] ...</literal></para>
             <para>After running this command you still need to rebuild the class repository and restart SFCB service.</para>
          </sect3>
       </sect2>
       <sect2 xml:id="sec-wbem-advanced-testing">
          <title>Testing SFCB</title>
          <para>The SFCB package includes two testing scripts: <command>wbemcat</command> and <command>xmltest</command>.</para>
-         <para>
-            <command>wbemcat</command> sends raw CIM-XML data via HTTP protocol to the specified SFCB host (localhost by default) listening on port 5988. Then it displays the returned results. The following file contains the CIM-XML representation of a standard EnumerateClasses request:</para>
+         <para><command>wbemcat</command> sends raw CIM-XML data via HTTP protocol to the specified SFCB host (localhost by default) listening on port 5988. Then it displays the returned results. The following file contains the CIM-XML representation of a standard EnumerateClasses request:</para>
          <screen>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;CIM CIMVERSION="2.0" DTDVERSION="2.0"&gt;
   &lt;MESSAGE ID="4711" PROTOCOLVERSION="1.0"&gt;

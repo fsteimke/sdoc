@@ -45,10 +45,7 @@
          <para>The YaST expert dialog for partitioning offers the options needed for creating an encrypted partition. To create a new encrypted partition proceed as follows:</para>
          <procedure>
             <step>
-               <para>Run the YaST Expert Partitioner with <menuchoice>
-                     <guimenu>System</guimenu>
-                     <guimenu>Partitioner</guimenu>
-                  </menuchoice>.</para>
+               <para>Run the YaST Expert Partitioner with <menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Select a hard disk, click <guimenu>Add</guimenu>, and select a primary or an extended partition.</para>
@@ -87,10 +84,7 @@
             <title>Activating encryption on a running system</title>
             <para>It is also possible to create encrypted partitions on a running system. However, encrypting an existing partition destroys all data on it, and requires re-sizing and restructuring of existing partitions.</para>
          </warning>
-         <para>On a running system, select <menuchoice>
-               <guimenu>System</guimenu>
-               <guimenu>Partitioner</guimenu>
-            </menuchoice> in the YaST control center. Click <guimenu>Yes</guimenu> to proceed. In the <guimenu>Expert Partitioner</guimenu>, select the partition to encrypt and click <guimenu>Edit</guimenu>. The rest of the procedure is the same as described in <xref linkend="sec-security-cryptofs-y2-part-inst"/>.</para>
+         <para>On a running system, select <menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></menuchoice> in the YaST control center. Click <guimenu>Yes</guimenu> to proceed. In the <guimenu>Expert Partitioner</guimenu>, select the partition to encrypt and click <guimenu>Edit</guimenu>. The rest of the procedure is the same as described in <xref linkend="sec-security-cryptofs-y2-part-inst"/>.</para>
       </sect2>
       <!-- this feature was removed from YaST in sle15sp0
   https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#id5997
@@ -111,8 +105,7 @@
       <para>Replace <replaceable>UID</replaceable> with part of the UID (for example, your first name) and <replaceable>FILE</replaceable> with the file you want to encrypt. For example:</para>
       <screen><prompt>&gt;</prompt>gpg -e -a --cipher-algo AES256 -r Tux secret.txt</screen>
       <para>This command creates an encrypted version of the specified file recognizable by the <filename>.asc</filename> file extension (in this example, it is <filename>secret.txt.asc</filename>).</para>
-      <para>
-         <command>-a</command> formats the file as ASCII text, if you want the contents to be copy-able. Omit <command>-a</command> to create a binary file, which in the above example would be <filename>secret.txt.gpg</filename>.</para>
+      <para><command>-a</command> formats the file as ASCII text, if you want the contents to be copy-able. Omit <command>-a</command> to create a binary file, which in the above example would be <filename>secret.txt.gpg</filename>.</para>
       <para>To decrypt an encrypted file, use the following command:</para>
       <screen><prompt>&gt;</prompt>gpg -d -o <replaceable>DECRYPTED_FILE</replaceable><replaceable>ENCRYPTED_FILE</replaceable></screen>
       <para>Replace <replaceable>DECRYPTED_FILE</replaceable> with the desired name for the decrypted file and <replaceable>ENCRYPTED_FILE</replaceable> with the encrypted file you want to decrypt.</para>
@@ -148,8 +141,7 @@
          </varlistentry>
       </variablelist>
       <important>
-         <para>
-            <emphasis>file.key</emphasis> is a private key and should be kept confidential.</para>
+         <para><emphasis>file.key</emphasis> is a private key and should be kept confidential.</para>
       </important>
       <variablelist>
          <varlistentry>
@@ -218,12 +210,10 @@
          <title>Additional Resources</title>
          <itemizedlist>
             <listitem>
-               <para>
-                  <link xlink:href="https://github.com/str4d/rage"/> Rage Encryption GitHub repository</para>
+               <para><link xlink:href="https://github.com/str4d/rage"/> Rage Encryption GitHub repository</para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://github.com/C2SP/C2SP/blob/main/age.md"/> Age Encryption GitHub repository</para>
+               <para><link xlink:href="https://github.com/C2SP/C2SP/blob/main/age.md"/> Age Encryption GitHub repository</para>
             </listitem>
          </itemizedlist>
       </sect2>

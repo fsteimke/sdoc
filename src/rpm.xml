@@ -8,8 +8,7 @@
    <title>RPM—the package manager</title>
    <info/>
    <para>RPM (RPM Package Manager) is used for managing software packages. Its main commands are <command>rpm</command> and <command>rpmbuild</command>. The powerful RPM database can be queried by the users, system administrators and package builders for detailed information about the installed software.</para>
-   <para>
-      <command>rpm</command> has five modes: installing, uninstalling (or updating) software packages, rebuilding the RPM database, querying RPM bases or individual RPM archives, integrity checking of packages and signing packages. <command>rpmbuild</command> can be used to build installable packages from pristine sources.</para>
+   <para><command>rpm</command> has five modes: installing, uninstalling (or updating) software packages, rebuilding the RPM database, querying RPM bases or individual RPM archives, integrity checking of packages and signing packages. <command>rpmbuild</command> can be used to build installable packages from pristine sources.</para>
    <para>Installable RPM archives are packed in a special binary format. These archives consist of the program files to install and certain meta information used during the installation by <command>rpm</command> to configure the software package or stored in the RPM database for documentation purposes. RPM archives normally have the extension <filename>.rpm</filename>.</para>
    <tip>
       <title>Software development packages</title>
@@ -17,8 +16,7 @@
    </tip>
    <sect2 xml:id="sec-rpm-package-auth">
       <title>Verifying package authenticity</title>
-      <para>RPM packages have a GPG signature. To verify the signature of an RPM package, use the command <command>rpm --checksig </command>
-         <replaceable>PACKAGE</replaceable>-1.2.3.rpm to determine whether the package originates from SUSE or from another trustworthy facility. This is especially recommended for update packages from the Internet.</para>
+      <para>RPM packages have a GPG signature. To verify the signature of an RPM package, use the command <command>rpm --checksig </command><replaceable>PACKAGE</replaceable>-1.2.3.rpm to determine whether the package originates from SUSE or from another trustworthy facility. This is especially recommended for update packages from the Internet.</para>
       <!--taroth 2015-06-01: fix for https://bugzilla.suse.com/show_bug.cgi?id=927292-->
       <para>While fixing issues in the operating system, you might need to install a Problem Temporary Fix (PTF) into a production system. The packages provided by SUSE are signed against a special PTF key. However, in contrast to SUSE Linux Enterprise 11, this key is not imported by default on SUSE Linux Enterprise 12 systems. To manually import the key, use the following command:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> rpm --import \
@@ -27,10 +25,8 @@
    </sect2>
    <sect2 xml:id="sec-rpm-packages-manage">
       <title>Managing packages: install, update, and uninstall</title>
-      <para>Normally, the installation of an RPM archive is quite simple: <command>rpm -i</command>
-         <replaceable>PACKAGE</replaceable>.rpm. With this command the package is installed, but only if its dependencies are fulfilled and if there are no conflicts with other packages. With an error message, <command>rpm</command> requests those packages that need to be installed to meet dependency requirements. In the background, the RPM database ensures that no conflicts arise—a specific file can only belong to one package. By choosing different options, you can force <command>rpm</command> to ignore these defaults, but this is only for experts. Otherwise, you risk compromising the integrity of the system and possibly jeopardize the ability to update the system.</para>
-      <para>The options <option>-U</option> or <option>--upgrade</option> and <option>-F</option> or <option>--freshen</option> can be used to update a package (for example, <command>rpm -F</command>
-         <replaceable>PACKAGE</replaceable>.rpm). This command removes the files of the old version and immediately installs the new files. The difference between the two versions is that <option>-U</option> installs packages that previously did not exist in the system, while <option>-F</option> merely updates previously installed packages. When updating, <command>rpm</command> updates configuration files carefully using the following strategy:</para>
+      <para>Normally, the installation of an RPM archive is quite simple: <command>rpm -i</command><replaceable>PACKAGE</replaceable>.rpm. With this command the package is installed, but only if its dependencies are fulfilled and if there are no conflicts with other packages. With an error message, <command>rpm</command> requests those packages that need to be installed to meet dependency requirements. In the background, the RPM database ensures that no conflicts arise—a specific file can only belong to one package. By choosing different options, you can force <command>rpm</command> to ignore these defaults, but this is only for experts. Otherwise, you risk compromising the integrity of the system and possibly jeopardize the ability to update the system.</para>
+      <para>The options <option>-U</option> or <option>--upgrade</option> and <option>-F</option> or <option>--freshen</option> can be used to update a package (for example, <command>rpm -F</command><replaceable>PACKAGE</replaceable>.rpm). This command removes the files of the old version and immediately installs the new files. The difference between the two versions is that <option>-U</option> installs packages that previously did not exist in the system, while <option>-F</option> merely updates previously installed packages. When updating, <command>rpm</command> updates configuration files carefully using the following strategy:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
             <para>If a configuration file was not changed by the system administrator, <command>rpm</command> installs the new version of the appropriate file. No action by the system administrator is required.</para>
@@ -39,15 +35,13 @@
             <para>If a configuration file was changed by the system administrator before the update, <command>rpm</command> saves the changed file with the extension <filename>.rpmorig</filename> or <filename>.rpmsave</filename> (backup file) and installs the version from the new package. This is done only if the originally installed file and the newer version are different. If this is the case, compare the backup file (<filename>.rpmorig</filename> or <filename>.rpmsave</filename>) with the newly installed file and make your changes again in the new file. Afterward, delete all <filename>.rpmorig</filename> and <filename>.rpmsave</filename> files to avoid problems with future updates.</para>
          </listitem>
          <listitem>
-            <para>
-               <filename>.rpmnew</filename> files appear if the configuration file already exists <emphasis>and</emphasis> if the <option>noreplace</option> label was specified in the <filename>.spec</filename> file.</para>
+            <para><filename>.rpmnew</filename> files appear if the configuration file already exists <emphasis>and</emphasis> if the <option>noreplace</option> label was specified in the <filename>.spec</filename> file.</para>
          </listitem>
       </itemizedlist>
       <para>Following an update, <filename>.rpmsave</filename> and <filename>.rpmnew</filename> files should be removed after comparing them, so they do not obstruct future updates. The <filename>.rpmorig</filename> extension is assigned if the file has not previously been recognized by the RPM database.</para>
       <para>Otherwise, <filename>.rpmsave</filename> is used. In other words, <filename>.rpmorig</filename> results from updating from a foreign format to RPM. <filename>.rpmsave</filename> results from updating from an older RPM to a newer RPM. <filename>.rpmnew</filename> does not disclose any information to whether the system administrator has made any changes to the configuration file. A list of these files is available in <filename>/var/adm/rpmconfigcheck</filename>. Some configuration files (like <filename>/etc/httpd/httpd.conf</filename>) are not overwritten to allow continued operation.</para>
       <para>The <option>-U</option> switch is <emphasis>not</emphasis> only an equivalent to uninstalling with the <option>-e</option> option and installing with the <option>-i</option> option. Use <option>-U</option> whenever possible.</para>
-      <para>To remove a package, enter <command>rpm -e</command>
-         <replaceable>PACKAGE</replaceable>. This command only deletes the package if there are no unresolved dependencies. It is theoretically impossible to delete Tcl/Tk, for example, as long as another application requires it. Even in this case, RPM calls for assistance from the database. If such a deletion is, for whatever reason, impossible (even if <emphasis>no</emphasis> additional dependencies exist), it may be helpful to rebuild the RPM database using the option <option>--rebuilddb</option>.</para>
+      <para>To remove a package, enter <command>rpm -e</command><replaceable>PACKAGE</replaceable>. This command only deletes the package if there are no unresolved dependencies. It is theoretically impossible to delete Tcl/Tk, for example, as long as another application requires it. Even in this case, RPM calls for assistance from the database. If such a deletion is, for whatever reason, impossible (even if <emphasis>no</emphasis> additional dependencies exist), it may be helpful to rebuild the RPM database using the option <option>--rebuilddb</option>.</para>
    </sect2>
    <sect2 xml:id="sec-rpm-delta">
       <title>Delta RPM packages</title>
@@ -68,105 +62,44 @@
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <option>-i</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Package information</para>
-                  </entry>
+                  <entry><para><option>-i</option></para></entry>
+                  <entry><para>Package information</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-l</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>File list</para>
-                  </entry>
+                  <entry><para><option>-l</option></para></entry>
+                  <entry><para>File list</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-f FILE</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Query the package that contains the file <replaceable>FILE</replaceable> (the full path must be specified with <replaceable>FILE</replaceable>)</para>
-                  </entry>
+                  <entry><para><option>-f FILE</option></para></entry>
+                  <entry><para>Query the package that contains the file <replaceable>FILE</replaceable> (the full path must be specified with <replaceable>FILE</replaceable>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-s</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>File list with status information (implies <option>-l</option>)</para>
-                  </entry>
+                  <entry><para><option>-s</option></para></entry>
+                  <entry><para>File list with status information (implies <option>-l</option>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-d</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List only documentation files (implies <literal>-l</literal>)</para>
-                  </entry>
+                  <entry><para><option>-d</option></para></entry>
+                  <entry><para>List only documentation files (implies <literal>-l</literal>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-c</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List only configuration files (implies <option>-l</option>)</para>
-                  </entry>
+                  <entry><para><option>-c</option></para></entry>
+                  <entry><para>List only configuration files (implies <option>-l</option>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>--dump</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>File list with complete details (to be used with <option>-l</option>, <option>-c</option>, or <option>-d</option>)</para>
-                  </entry>
+                  <entry><para><option>--dump</option></para></entry>
+                  <entry><para>File list with complete details (to be used with <option>-l</option>, <option>-c</option>, or <option>-d</option>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>--provides</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List features of the package that another package can request with <option>--requires</option>
-                     </para>
-                  </entry>
+                  <entry><para><option>--provides</option></para></entry>
+                  <entry><para>List features of the package that another package can request with <option>--requires</option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>--requires</option>, <option>-R</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Capabilities the package requires</para>
-                  </entry>
+                  <entry><para><option>--requires</option>, <option>-R</option></para></entry>
+                  <entry><para>Capabilities the package requires</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>--scripts</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Installation scripts (preinstall, postinstall, uninstall)</para>
-                  </entry>
+                  <entry><para><option>--scripts</option></para></entry>
+                  <entry><para>Installation scripts (preinstall, postinstall, uninstall)</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -215,92 +148,43 @@ for i in $(rpm -q -a -l | grep $1); do
     echo ""
 done</screen>
       </example>
-      <para>The command <command>rpm -q --changelog</command>
-         <replaceable>PACKAGE</replaceable> displays a detailed list of change information about a specific package, sorted by date.</para>
+      <para>The command <command>rpm -q --changelog</command><replaceable>PACKAGE</replaceable> displays a detailed list of change information about a specific package, sorted by date.</para>
       <para>With the installed RPM database, verification checks can be made. Initiate these with <option>-V</option>, or <option>--verify</option>. With this option, <command>rpm</command> shows all files in a package that have been changed since installation. <command>rpm</command> uses eight character symbols to give some hints about the following changes:</para>
       <table xml:id="tab-rpm-verify">
          <title>RPM verify options</title>
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <option>5</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>MD5 check sum</para>
-                  </entry>
+                  <entry><para><option>5</option></para></entry>
+                  <entry><para>MD5 check sum</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>S</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>File size</para>
-                  </entry>
+                  <entry><para><option>S</option></para></entry>
+                  <entry><para>File size</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>L</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Symbolic link</para>
-                  </entry>
+                  <entry><para><option>L</option></para></entry>
+                  <entry><para>Symbolic link</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>T</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Modification time</para>
-                  </entry>
+                  <entry><para><option>T</option></para></entry>
+                  <entry><para>Modification time</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>D</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Major and minor device numbers</para>
-                  </entry>
+                  <entry><para><option>D</option></para></entry>
+                  <entry><para>Major and minor device numbers</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>U</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Owner</para>
-                  </entry>
+                  <entry><para><option>U</option></para></entry>
+                  <entry><para>Owner</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>G</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Group</para>
-                  </entry>
+                  <entry><para><option>G</option></para></entry>
+                  <entry><para>Group</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>M</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Mode (permissions and file type)</para>
-                  </entry>
+                  <entry><para><option>M</option></para></entry>
+                  <entry><para>Mode (permissions and file type)</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -369,11 +253,7 @@ S.5....T c /etc/wgetrc</screen>
       <screen>/usr/src/packages/SOURCES/wget-1.19.5.tar.bz2
 /usr/src/packages/SOURCES/wgetrc.patch
 /usr/src/packages/SPECS/wget.spec</screen>
-      <para>
-         <command>rpmbuild</command>
-         <option>-b<replaceable>X</replaceable>
-         </option>
-         <filename>/usr/src/packages/SPECS/wget.spec</filename> starts the compilation. <replaceable>X</replaceable> is a wild card for various stages of the build process (see the output of <option>--help</option> or the RPM documentation for details). The following is merely a brief explanation:</para>
+      <para><command>rpmbuild</command><option>-b<replaceable>X</replaceable></option><filename>/usr/src/packages/SPECS/wget.spec</filename> starts the compilation. <replaceable>X</replaceable> is a wild card for various stages of the build process (see the output of <option>--help</option> or the RPM documentation for details). The following is merely a brief explanation:</para>
       <variablelist>
          <varlistentry>
             <term>
@@ -424,21 +304,17 @@ S.5....T c /etc/wgetrc</screen>
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>The binary RPM created can now be installed with <command>rpm</command>
-         <option>-i</option> or, preferably, with <command>rpm</command>
-         <option>-U</option>. Installation with <command>rpm</command> makes it appear in the RPM database.</para>
+      <para>The binary RPM created can now be installed with <command>rpm</command><option>-i</option> or, preferably, with <command>rpm</command><option>-U</option>. Installation with <command>rpm</command> makes it appear in the RPM database.</para>
       <para>Keep in mind that the <literal>BuildRoot</literal> directive in the spec file is deprecated. If you still need this feature, use the <option>--buildroot</option> option as a workaround.</para>
    </sect2>
    <sect2 xml:id="sec-rpm-build">
       <title>Compiling RPM packages with build</title>
-      <para>The danger with many packages is that unwanted files are added to the running system during the build process. To prevent this use <systemitem>build</systemitem>, which creates a defined environment in which the package is built. To establish this chroot environment, the <command>build</command> script must be provided with a complete package tree. This tree can be made available on the hard disk, via NFS, or from DVD. Set the position with <command>build --rpms</command>
-         <replaceable>DIRECTORY</replaceable>. Unlike <command>rpm</command>, the <command>build</command> command looks for the <filename>.spec</filename> file in the source directory. To build <filename>wget</filename> (like in the above example) with the DVD mounted in the system under <filename>/media/dvd</filename>, use the following commands as <systemitem class="username">root</systemitem>:</para>
+      <para>The danger with many packages is that unwanted files are added to the running system during the build process. To prevent this use <systemitem>build</systemitem>, which creates a defined environment in which the package is built. To establish this chroot environment, the <command>build</command> script must be provided with a complete package tree. This tree can be made available on the hard disk, via NFS, or from DVD. Set the position with <command>build --rpms</command><replaceable>DIRECTORY</replaceable>. Unlike <command>rpm</command>, the <command>build</command> command looks for the <filename>.spec</filename> file in the source directory. To build <filename>wget</filename> (like in the above example) with the DVD mounted in the system under <filename>/media/dvd</filename>, use the following commands as <systemitem class="username">root</systemitem>:</para>
       <screen><prompt role="root">#</prompt>cd /usr/src/packages/SOURCES/
 <prompt role="root">#</prompt>mv ../SPECS/wget.spec .
 <prompt role="root">#</prompt>build --rpms /media/dvd/suse/ wget.spec</screen>
       <para>Subsequently, a minimum environment is established at <filename>/var/tmp/build-root</filename>. The package is built in this environment. Upon completion, the resulting packages are located in <filename>/var/tmp/build-root/usr/src/packages/RPMS</filename>.</para>
-      <para>The <command>build</command> script offers several additional options. For example, cause the script to prefer your own RPMs, omit the initialization of the build environment or limit the <command>rpm</command> command to one of the above-mentioned stages. Access additional information with <command>build</command>
-         <option>--help</option> and by reading the <command>build</command> man page.</para>
+      <para>The <command>build</command> script offers several additional options. For example, cause the script to prefer your own RPMs, omit the initialization of the build environment or limit the <command>rpm</command> command to one of the above-mentioned stages. Access additional information with <command>build</command><option>--help</option> and by reading the <command>build</command> man page.</para>
    </sect2>
    <sect2 xml:id="sec-rpm-tools">
       <title>Tools for RPM archives and the RPM database</title>

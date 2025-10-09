@@ -25,20 +25,16 @@
             <listitem>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <systemitem>sapconf-netweaver</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
+                     <para><systemitem>sapconf-netweaver</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <systemitem>sapconf-hana</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
+                     <para><systemitem>sapconf-hana</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <systemitem>sapconf-bobj</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
+                     <para><systemitem>sapconf-bobj</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <systemitem>sapconf-ase</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
+                     <para><systemitem>sapconf-ase</systemitem> (<literal>sapconf</literal> profile as a replacement for <systemitem class="daemon">tuned</systemitem> profile)</para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -55,8 +51,7 @@
          </varlistentry>
       </variablelist>
       <para>If you previously made changes to the system tuning, those changes may be overwritten by <literal>sapconf</literal>.</para>
-      <para>
-         <literal>sapconf</literal> 5 ships a <systemitem class="daemon">systemd</systemitem> service which applies the tuning and ensures that related services are running.</para>
+      <para><literal>sapconf</literal> 5 ships a <systemitem class="daemon">systemd</systemitem> service which applies the tuning and ensures that related services are running.</para>
       <para>To use <literal>sapconf</literal>, make sure that the package <package>sapconf</package> is installed on your system.</para>
       <note>
          <title>No profiles in SUSE Linux Enterprise Server and <phrase role="productname">SUSE Linux Enterprise Server</phrase> <phrase role="productnumber">15 SP7</phrase>
@@ -118,12 +113,10 @@ Sapconf will not work properly!</screen>
             <para>Besides the <literal>sapconf</literal> service, it also relies on the following two services:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <systemitem class="daemon">sysstat</systemitem> which collects data on system activity.</para>
+                  <para><systemitem class="daemon">sysstat</systemitem> which collects data on system activity.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem class="daemon">uuidd</systemitem> which generates time-based UUIDs that are guaranteed to be unique even in settings where many processor cores are involved. This is necessary for SAP applications.</para>
+                  <para><systemitem class="daemon">uuidd</systemitem> which generates time-based UUIDs that are guaranteed to be unique even in settings where many processor cores are involved. This is necessary for SAP applications.</para>
                </listitem>
             </itemizedlist>
          </tip>
@@ -168,12 +161,10 @@ Sapconf will not work properly!</screen>
          <para>The following man pages provide additional information about <literal>sapconf</literal>:</para>
          <itemizedlist>
             <listitem>
-               <para>Detailed description of all tuning parameters set by <literal>sapconf</literal>: <command>man 5 sapconf</command>
-               </para>
+               <para>Detailed description of all tuning parameters set by <literal>sapconf</literal>: <command>man 5 sapconf</command></para>
             </listitem>
             <listitem>
-               <para>Information about configuring and customizing the <literal>sapconf</literal> profile: <command>man 7 sapconf</command>
-               </para>
+               <para>Information about configuring and customizing the <literal>sapconf</literal> profile: <command>man 7 sapconf</command></para>
             </listitem>
          </itemizedlist>
          <para>Also see the blog series detailing the updated version of <literal>sapconf</literal> at <link xlink:href="https://www.suse.com/c/a-new-sapconf-is-available/"/>.</para>

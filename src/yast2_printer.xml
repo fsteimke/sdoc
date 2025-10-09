@@ -8,10 +8,7 @@
    <title>Setting up a printer</title>
    <info/>
    <para>YaST can be used to configure local and network printers. Further information about printing (general information, technical details, and troubleshooting) is available in <xref linkend="cha-print"/>.</para>
-   <para>In YaST, click <menuchoice>
-         <guimenu>Hardware</guimenu>
-         <guimenu>Printer</guimenu>
-      </menuchoice> to start the printer module. By default it opens in the <guimenu>Printer Configurations</guimenu> view, displaying a list of all printers that are available and configured. This is especially useful when having access to a lot of printers via the network. From here you can also <guimenu>Print a Test Page</guimenu> and configure printers.</para>
+   <para>In YaST, click <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice> to start the printer module. By default it opens in the <guimenu>Printer Configurations</guimenu> view, displaying a list of all printers that are available and configured. This is especially useful when having access to a lot of printers via the network. From here you can also <guimenu>Print a Test Page</guimenu> and configure printers.</para>
    <note>
       <title>Starting CUPS</title>
       <para>To use the printer connected to your machine, you must have CUPS installed and running on your system. If CUPS is not running, you are prompted to start it. In case CUPS is not started at boot time, you are also prompted to enable it (recommended).</para>
@@ -26,10 +23,7 @@
       <procedure xml:id="pro-y2-hw-print-local-config">
          <title>Adding a new printer</title>
          <step>
-            <para>Start the YaST printer module with <menuchoice>
-                  <guimenu>Hardware</guimenu>
-                  <guimenu>Printer</guimenu>
-               </menuchoice>.</para>
+            <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In the <guimenu>Printer Configurations</guimenu> screen click <guimenu>Add</guimenu>.</para>
@@ -70,10 +64,7 @@
          <procedure>
             <title>Installing additional driver packages</title>
             <step>
-               <para>Start the YaST printer module with <menuchoice>
-                     <guimenu>Hardware</guimenu>
-                     <guimenu>Printer</guimenu>
-                  </menuchoice>.</para>
+               <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>In the <guimenu>Printer Configurations</guimenu> screen, click <guimenu>Add</guimenu>.</para>
@@ -97,10 +88,7 @@
          <procedure>
             <title>Adding a PPD file for PostScript printers</title>
             <step>
-               <para>Start the YaST printer module with <menuchoice>
-                     <guimenu>Hardware</guimenu>
-                     <guimenu>Printer</guimenu>
-                  </menuchoice>.</para>
+               <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>In the <guimenu>Printer Configurations</guimenu> screen, click <guimenu>Add</guimenu>.</para>
@@ -124,10 +112,7 @@
          <para>By editing an existing configuration for a printer you can change basic settings such as connection type and driver. It is also possible to adjust the default settings for paper size, resolution, media source, etc. You can change identifiers of the printer by altering the printer description or location.</para>
          <procedure>
             <step>
-               <para>Start the YaST printer module with <menuchoice>
-                     <guimenu>Hardware</guimenu>
-                     <guimenu>Printer</guimenu>
-                  </menuchoice>.</para>
+               <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>In the <guimenu>Printer Configurations</guimenu> screen, choose a local printer configuration from the list and click <guimenu>Edit</guimenu>.</para>
@@ -158,10 +143,7 @@
          <procedure>
             <title>Printing via a single CUPS server</title>
             <step>
-               <para>Start the YaST printer module with <menuchoice>
-                     <guimenu>Hardware</guimenu>
-                     <guimenu>Printer</guimenu>
-                  </menuchoice>.</para>
+               <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>From the left pane, select <guimenu>Print via Network</guimenu>.</para>
@@ -179,10 +161,7 @@
          <procedure>
             <title>Printing via multiple CUPS servers</title>
             <step>
-               <para>Start the YaST printer module with <menuchoice>
-                     <guimenu>Hardware</guimenu>
-                     <guimenu>Printer</guimenu>
-                  </menuchoice>.</para>
+               <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>From the left pane, select <guimenu>Print via Network</guimenu>.</para>
@@ -200,10 +179,7 @@
       </sect2>
       <sect2 xml:id="sec-yast-hw-print-network-other">
          <title>Using print servers other than CUPS</title>
-         <para>If your network offers print services via print servers other than CUPS, start the YaST printer module with <menuchoice>
-               <guimenu>Hardware</guimenu>
-               <guimenu>Printer</guimenu>
-            </menuchoice> and select <guimenu>Print via Network</guimenu> from the left pane. Start the <guimenu>Connection Wizard</guimenu> and choose the appropriate <guimenu>Connection Type</guimenu>. Ask your network administrator for details on configuring a network printer in your environment.</para>
+         <para>If your network offers print services via print servers other than CUPS, start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice> and select <guimenu>Print via Network</guimenu> from the left pane. Start the <guimenu>Connection Wizard</guimenu> and choose the appropriate <guimenu>Connection Type</guimenu>. Ask your network administrator for details on configuring a network printer in your environment.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-yast-hw-print-share">
@@ -212,10 +188,7 @@
       <procedure>
          <title>Sharing printers</title>
          <step>
-            <para>Start the YaST printer module with <menuchoice>
-                  <guimenu>Hardware</guimenu>
-                  <guimenu>Printer</guimenu>
-               </menuchoice>.</para>
+            <para>Start the YaST printer module with <menuchoice><guimenu>Hardware</guimenu><guimenu>Printer</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select <guimenu>Share Printers</guimenu> from the left pane.</para>

@@ -23,10 +23,10 @@
          <title>iSNS discovery domains</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/isns_a.png" width="80%"/>
+               <imagedata fileref="media/isns_a.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/isns_a.png" width="100%"/>
+               <imagedata fileref="media/isns_a.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -81,10 +81,7 @@
       <para>To install iSNS for Linux:</para>
       <procedure>
          <step>
-            <para>Start YaST and select <menuchoice>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>iSNS Server</guimenu>
-               </menuchoice>.</para>
+            <para>Start YaST and select <menuchoice><guimenu>Network Services</guimenu><guimenu>iSNS Server</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>In case <systemitem class="resource">open-isns</systemitem> is not installed yet, you are prompted to install it now. Confirm by clicking <guimenu>Install</guimenu>.</para>
@@ -94,10 +91,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/isns_config_a.png" width="80%"/>
+                     <imagedata fileref="media/isns_config_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/isns_config_a.png" width="100%"/>
+                     <imagedata fileref="media/isns_config_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -171,16 +168,15 @@
                <para>Click the <guimenu>Discovery Domains</guimenu> tab.</para>
                <para>The <guimenu>Discovery Domains</guimenu> area lists all existing discovery domains. You can <guimenu>Create Discovery Domains</guimenu>, or <guimenu>Delete</guimenu> existing ones. Keep in mind that deleting an iSCSI node from domain membership removes it from the domain, but it does not delete the iSCSI node.</para>
                <para>The <guimenu>Discovery Domain Members</guimenu> area lists all iSCSI nodes assigned to a selected discovery domain. Selecting a different discovery domain refreshes the list with members from that discovery domain. You can add and delete iSCSI nodes from a selected discovery domain. Deleting an iSCSI node removes it from the domain, but it does not delete the iSCSI node.</para>
-               <para>
-                  <guimenu>Create iSCSI Node Member</guimenu> allows a node that is not yet registered to be added as a member of the discovery domain. When the iSCSI initiator or target registers this node, then it becomes part of this domain.</para>
+               <para><guimenu>Create iSCSI Node Member</guimenu> allows a node that is not yet registered to be added as a member of the discovery domain. When the iSCSI initiator or target registers this node, then it becomes part of this domain.</para>
                <para role="intro">When an iSCSI initiator performs a discovery request, the iSNS service returns all iSCSI node targets that are members of the same discovery domain.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/isns_discdomains_a.png" width="80%"/>
+                        <imagedata fileref="media/isns_discdomains_a.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/isns_discdomains_a.png" width="100%"/>
+                        <imagedata fileref="media/isns_discdomains_a.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -208,10 +204,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/isns_iscsinodes_a.png" width="80%"/>
+                        <imagedata fileref="media/isns_iscsinodes_a.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/isns_iscsinodes_a.png" width="100%"/>
+                        <imagedata fileref="media/isns_iscsinodes_a.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -251,19 +247,13 @@
       <para>The following projects provide further information on iSNS and iSCSI:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <link xlink:href="https://github.com/open-iscsi/open-isns">iSNS server and client for Linux project</link>
-            </para>
+            <para><link xlink:href="https://github.com/open-iscsi/open-isns">iSNS server and client for Linux project</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://github.com/open-iscsi/target-isns">iSNS client for the Linux LIO iSCSI target</link>
-            </para>
+            <para><link xlink:href="https://github.com/open-iscsi/target-isns">iSNS client for the Linux LIO iSCSI target</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.open-iscsi.com">iSCSI tools for Linux</link>
-            </para>
+            <para><link xlink:href="https://www.open-iscsi.com">iSCSI tools for Linux</link></para>
          </listitem>
       </itemizedlist>
       <para>General information about iSNS is available in <citetitle>RFC 4171: Internet Storage Name Service</citetitle> at <link xlink:href="https://datatracker.ietf.org/doc/html/rfc4171"/>.</para>

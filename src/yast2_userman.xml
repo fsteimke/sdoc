@@ -10,18 +10,15 @@
    <para>During installation, you may have created a local user for your system. With the YaST module <guimenu>User and Group Management</guimenu> you can add users or edit existing ones. It also lets you configure your system to authenticate users with a network server.</para>
    <sect1 xml:id="sec-yast-userman-main">
       <title>User and group administration dialog</title>
-      <para>To administer users or groups, start YaST and click <menuchoice>
-            <guimenu>Security and Users</guimenu>
-            <guimenu>User and Group Management</guimenu>
-         </menuchoice>. Alternatively, start the <guimenu>User and Group Administration</guimenu> dialog directly by running <command>sudo yast2 users &amp;</command> from a command line.</para>
+      <para>To administer users or groups, start YaST and click <menuchoice><guimenu>Security and Users</guimenu><guimenu>User and Group Management</guimenu></menuchoice>. Alternatively, start the <guimenu>User and Group Administration</guimenu> dialog directly by running <command>sudo yast2 users &amp;</command> from a command line.</para>
       <figure xml:id="fig-y2-userman-main">
          <title>YaST user and group administration</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="82%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -60,10 +57,7 @@
          </varlistentry>
       </variablelist>
       <para>For user and group management, the dialog provides similar functionality. You can easily switch between the user and group administration view by choosing the appropriate tab at the top of the dialog.</para>
-      <para>Filter options allow you to define the set of users or groups you want to modify: on the <guimenu>Users</guimenu> or <guimenu>Group</guimenu> tab, click <guimenu>Set Filter</guimenu> to view and edit users or groups. They are listed according to certain categories, such as <guimenu>Local Users</guimenu> or <guimenu>LDAP Users</guimenu>, if applicable. With <menuchoice>
-            <guimenu>Set Filter</guimenu>
-            <guimenu>Customize Filter</guimenu>
-         </menuchoice> you can also set up and use a custom filter.</para>
+      <para>Filter options allow you to define the set of users or groups you want to modify: on the <guimenu>Users</guimenu> or <guimenu>Group</guimenu> tab, click <guimenu>Set Filter</guimenu> to view and edit users or groups. They are listed according to certain categories, such as <guimenu>Local Users</guimenu> or <guimenu>LDAP Users</guimenu>, if applicable. With <menuchoice><guimenu>Set Filter</guimenu><guimenu>Customize Filter</guimenu></menuchoice> you can also set up and use a custom filter.</para>
       <para>Depending on the filter you choose, not all the following options and functions may be available from the dialog.</para>
    </sect1>
    <sect1 xml:id="sec-yast-userman-users">
@@ -92,8 +86,7 @@
          <!--Fate #302264-->
          <step>
             <para>Activate <guimenu>Receive System Mail</guimenu> if you want system notifications to be delivered to this user's mailbox. This creates a mail alias for <systemitem class="username">root</systemitem> and the user can read the system mail without having to first log in as <systemitem class="username">root</systemitem>.</para>
-            <para>The mails sent by system services are stored in the local mailbox <filename>/var/spool/mail/</filename>
-               <replaceable>USERNAME</replaceable>, where <replaceable>USERNAME</replaceable> is the login name of the selected user. To read e-mails, you can use the <command>mail</command> command.</para>
+            <para>The mails sent by system services are stored in the local mailbox <filename>/var/spool/mail/</filename><replaceable>USERNAME</replaceable>, where <replaceable>USERNAME</replaceable> is the login name of the selected user. To read e-mails, you can use the <command>mail</command> command.</para>
          </step>
          <step>
             <para>To adjust further details such as the user ID or the path to the user's home directory, do so on the <guimenu>Details</guimenu> tab.</para>
@@ -107,10 +100,7 @@
          </step>
          <step>
             <para>Click <guimenu>OK</guimenu> to close the administration dialog and to save the changes. A newly added user can now log in to the system using the login name and password you created.</para>
-            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice>
-                  <guimenu>Expert Options</guimenu>
-                  <guimenu>Write Changes Now</guimenu>
-               </menuchoice>.</para>
+            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice><guimenu>Expert Options</guimenu><guimenu>Write Changes Now</guimenu></menuchoice>.</para>
          </step>
       </procedure>
       <!-- cwickert 2023-07-04: This is based on https://www.suse.com/support/kb/doc/?id=000020537
@@ -121,9 +111,7 @@
          <title>Do not rename the <systemitem class="username">root</systemitem> account</title>
          <para>While it is technically possible to rename the <systemitem class="username">root</systemitem> account, certain applications, scripts or third-party products may rely on the existence of a user called <systemitem class="username">root</systemitem>. While such a configuration always targets individual environments, necessary adjustments could be overwritten by vendor updates, so this becomes an ongoing task rather than a one-time setting. This is especially true in complex setups involving third-party applications, where it needs to be verified with every vendor involved whether a rename of the <systemitem class="username">root</systemitem> account is supported.</para>
          <para>As the implications for renaming the <systemitem class="username">root</systemitem> account cannot be foreseen, SUSE does not support renaming the <systemitem class="username">root</systemitem> account.</para>
-         <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-sec-prot-restrict-root" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-sec-prot-restrict-root-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </warning>
       <tip>
          <title>Matching user IDs</title>
@@ -152,10 +140,7 @@
             <title>Security risk</title>
             <para>Enabling <emphasis>Auto Login</emphasis> or <emphasis>Passwordless Login</emphasis> on a machine that can be accessed by more than one person is a security risk. Without the need to authenticate, any user can gain access to your system and your data. If your system contains confidential data, do not use this functionality.</para>
          </warning>
-         <para>To activate auto login or login without password, access these functions in the YaST <guimenu>User and Group Administration</guimenu> with <menuchoice>
-               <guimenu>Expert Options</guimenu>
-               <guimenu>Login Settings</guimenu>
-            </menuchoice>.</para>
+         <para>To activate auto login or login without password, access these functions in the YaST <guimenu>User and Group Administration</guimenu> with <menuchoice><guimenu>Expert Options</guimenu><guimenu>Login Settings</guimenu></menuchoice>.</para>
       </sect2>
       <sect2 xml:id="sec-yast-userman-adv-passw">
          <title>Enforcing password policies</title>
@@ -200,8 +185,7 @@
       <sect2 xml:id="sec-yast-userman-adv-quota">
          <title>Managing quotas</title>
          <para>To prevent system capacities from being exhausted without notification, system administrators can set up quotas for users or groups. Quotas can be defined for one or more file systems and restrict the amount of disk space that can be used and the number of inodes (index nodes) that can be created there. Inodes are data structures on a file system that store basic information about a regular file, directory or other file system object. They store all attributes of a file system object (like user and group ownership, read, write or execute permissions), except file name and contents.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> allows usage of <literal>soft</literal> and <literal>hard</literal> quotas. Additionally, grace intervals can be defined that allow users or groups to temporarily exceed their quotas by certain amounts.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> allows usage of <literal>soft</literal> and <literal>hard</literal> quotas. Additionally, grace intervals can be defined that allow users or groups to temporarily exceed their quotas by certain amounts.</para>
          <variablelist>
             <varlistentry>
                <term>Soft quota</term>
@@ -231,16 +215,11 @@
        2014-07-17 - fs: According to aschnell, Btrfs quotas are kaputt; this
        will eventually be fixed, so check for each SP if the following
        statement is still true
-      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-filesystems-major-btrfs-quota" xrefstyle="%label &#34;%c&#34;"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
-      enabled in the &yast; Expert Partitioner.--><remark>taroth 2014-06-04: todo - after btrfs quotas have been covered in the manuals (Storage Guide?), add link - taroth 2014-12-29: done</remark>
-               </para>
+      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-quota" xrefstyle="%label &#34;%c&#34;"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
+      enabled in the &yast; Expert Partitioner.--><remark>taroth 2014-06-04: todo - after btrfs quotas have been covered in the manuals (Storage Guide?), add link - taroth 2014-12-29: done</remark></para>
             </note>
             <step>
-               <para>In YaST, select <menuchoice>
-                     <guimenu>System</guimenu>
-                     <guimenu>Partitioner</guimenu>
-                  </menuchoice> and click <guimenu>Yes</guimenu> to proceed.</para>
+               <para>In YaST, select <menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></menuchoice> and click <guimenu>Yes</guimenu> to proceed.</para>
             </step>
             <step>
                <para>In the <guimenu>Expert Partitioner</guimenu>, select the partition for which to enable quotas and click <guimenu>Edit</guimenu>.</para>
@@ -277,10 +256,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_users_quota_qt.png" width="80%"/>
+                        <imagedata fileref="media/yast2_users_quota_qt.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_users_quota_qt.png" width="70%"/>
+                        <imagedata fileref="media/yast2_users_quota_qt.png" width="64%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -299,14 +278,10 @@
             </step>
             <step>
                <para>Click <guimenu>OK</guimenu> to close the administration dialog and save the changes.</para>
-               <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice>
-                     <guimenu>Expert Options</guimenu>
-                     <guimenu>Write Changes Now</guimenu>
-                  </menuchoice>.</para>
+               <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice><guimenu>Expert Options</guimenu><guimenu>Write Changes Now</guimenu></menuchoice>.</para>
             </step>
          </procedure>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> also ships command line tools like <literal>repquota</literal> or <literal>warnquota</literal>. System administrators can use these tools to control the disk usage or send e-mail notifications to users exceeding their quota. Using <command>quota_nld</command>, administrators can also forward kernel messages about exceeded quotas to D-BUS. For more information, refer to the <systemitem>repquota</systemitem>, the <systemitem>warnquota</systemitem> and the <command>quota_nld</command> man page. <!--taroth 2011-07-21: all of the above are included in quota.rpm--></para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> also ships command line tools like <literal>repquota</literal> or <literal>warnquota</literal>. System administrators can use these tools to control the disk usage or send e-mail notifications to users exceeding their quota. Using <command>quota_nld</command>, administrators can also forward kernel messages about exceeded quotas to D-BUS. For more information, refer to the <systemitem>repquota</systemitem>, the <systemitem>warnquota</systemitem> and the <command>quota_nld</command> man page. <!--taroth 2011-07-21: all of the above are included in quota.rpm--></para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-yast-userman-defaults">
@@ -320,12 +295,10 @@
             <para>To change the group the new users should automatically belong to, select another group from <guimenu>Default Group</guimenu>.</para>
          </step>
          <step>
-            <para>If you do not want to use <filename>/home/<replaceable>USERNAME</replaceable>
-               </filename> as the default path for new users' home directories, modify the <guimenu>Path Prefix for Home Directory</guimenu>.</para>
+            <para>If you do not want to use <filename>/home/<replaceable>USERNAME</replaceable></filename> as the default path for new users' home directories, modify the <guimenu>Path Prefix for Home Directory</guimenu>.</para>
          </step>
          <step>
-            <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="cha-security-acls" xrefstyle="%label &#34;%c&#34;"/> and to the <command>umask</command> man page.</para>
+            <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-acls" xrefstyle="%label &#34;%c&#34;"/> and to the <command>umask</command> man page.</para>
          </step>
          <step>
             <para>For information about the individual options, click <guimenu>Help</guimenu>.</para>
@@ -357,10 +330,7 @@
          </step>
          <step>
             <para>Click <guimenu>OK</guimenu> to close the administration dialog and save the changes.</para>
-            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice>
-                  <guimenu>Expert Options</guimenu>
-                  <guimenu>Write Changes Now</guimenu>
-               </menuchoice>.</para>
+            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice><guimenu>Expert Options</guimenu><guimenu>Write Changes Now</guimenu></menuchoice>.</para>
          </step>
       </procedure>
    </sect1>
@@ -386,10 +356,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="80%"/>
+                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="75%"/>
+                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -402,16 +372,10 @@
          </step>
          <step>
             <para>Click <guimenu>OK</guimenu> to close the administration dialog and save the changes.</para>
-            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice>
-                  <guimenu>Expert Options</guimenu>
-                  <guimenu>Write Changes Now</guimenu>
-               </menuchoice>.</para>
+            <para>Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice><guimenu>Expert Options</guimenu><guimenu>Write Changes Now</guimenu></menuchoice>.</para>
          </step>
       </procedure>
-      <para>To delete a group, it must not contain any group members. To delete a group, select it from the list and click <guimenu>Delete</guimenu>. Click <guimenu>OK</guimenu> to close the administration dialog and save the changes. Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice>
-            <guimenu>Expert Options</guimenu>
-            <guimenu>Write Changes Now</guimenu>
-         </menuchoice>.</para>
+      <para>To delete a group, it must not contain any group members. To delete a group, select it from the list and click <guimenu>Delete</guimenu>. Click <guimenu>OK</guimenu> to close the administration dialog and save the changes. Alternatively, to save all changes without exiting the <guimenu>User and Group Administration</guimenu> dialog, click <menuchoice><guimenu>Expert Options</guimenu><guimenu>Write Changes Now</guimenu></menuchoice>.</para>
    </sect1>
    <sect1 xml:id="sec-yast-userman-authent">
       <title>Changing the user authentication method</title>
@@ -420,22 +384,19 @@
          <varlistentry>
             <term>NIS</term>
             <listitem>
-               <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>SSSD</term>
             <listitem>
-               <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Samba</term>
             <listitem>
-               <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                  <xref linkend="cha-samba" xrefstyle="%label &#34;%c&#34;"/> .</para>
+               <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-samba" xrefstyle="%label &#34;%c&#34;"/> .</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -451,31 +412,19 @@
             <para>To change the authentication method, click <guimenu>Configure</guimenu> and select the authentication method you want to modify. This takes you directly to the client configuration modules in YaST. For information about the configuration of the appropriate client, refer to the following sections:</para>
             <formalpara>
                <title>NIS:</title>
-               <para>
-                  <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-nis-client" xrefstyle="%label &#34;%c&#34;"/>
-               </para>
+               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-nis-client" xrefstyle="%label &#34;%c&#34;"/></para>
             </formalpara>
             <formalpara>
                <title>LDAP:</title>
-               <para>
-                  <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-security-auth-yast-client" xrefstyle="%label &#34;%c&#34;"/>
-               </para>
+               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-yast-client" xrefstyle="%label &#34;%c&#34;"/></para>
             </formalpara>
             <formalpara>
                <title>Samba:</title>
-               <para>
-                  <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-samba-client-inst-yast" xrefstyle="%label &#34;%c&#34;"/>
-               </para>
+               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-samba-client-inst-yast" xrefstyle="%label &#34;%c&#34;"/></para>
             </formalpara>
             <formalpara>
                <title>SSSD:</title>
-               <para>
-                  <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/>
-               </para>
+               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/></para>
             </formalpara>
          </step>
          <step>

@@ -42,8 +42,7 @@
          <para>Choosing the appropriate topology for the cache hierarchy is important, because it is not desirable to increase the overall traffic on the network. For a large network, it would make sense to configure a proxy server for every subnet and connect them to a parent proxy server, which in turn is connected to the caching proxy server of the ISP.</para>
          <para>All this communication is handled by ICP (Internet cache protocol) running on top of the UDP protocol. Data transfers between caches are handled using HTTP (hypertext transmission protocol) based on TCP.</para>
          <para>To find the most appropriate server from which to request objects, a cache sends an ICP request to all sibling proxies. The sibling proxies answer these requests via ICP responses. If the object was detected, they use the code <literal>HIT</literal>, if not, they use <literal>MISS</literal>.</para>
-         <para>If multiple <literal>HIT</literal> responses were found, the proxy server decides from which server to download, depending on factors such as which cache sent the fastest answer or which one is closer. If no satisfactory responses are received, the request is sent to the parent cache. <remark>Is timestamp a factor? - sknorr, 2016-06-24</remark>
-         </para>
+         <para>If multiple <literal>HIT</literal> responses were found, the proxy server decides from which server to download, depending on factors such as which cache sent the fastest answer or which one is closer. If no satisfactory responses are received, the request is sent to the parent cache. <remark>Is timestamp a factor? - sknorr, 2016-06-24</remark></para>
          <note>
             <title>How Squid avoids duplication of objects</title>
             <para>To avoid duplication of objects in different caches in the network, other ICP protocols are used, such as CARP (cache array routing protocol) or HTCP (hypertext cache protocol). The more objects maintained in the network, the greater the possibility of finding the desired object.</para>
@@ -51,8 +50,7 @@
       </sect2>
       <sect2 xml:id="sec-squid-latching">
          <title>Caching Internet objects</title>
-         <para>Many objects available in the network are not static, such as dynamically generated pages and TLS/SSL-encrypted content. Objects like these are not cached because they change each time they are accessed. <remark>Squid can now decrypt TLS traffic with plug-ins. Not sure whether that is then stored or not. Also, not sure how/whether to get this information in here. - sknorr, 2016-06-24</remark>
-         </para>
+         <para>Many objects available in the network are not static, such as dynamically generated pages and TLS/SSL-encrypted content. Objects like these are not cached because they change each time they are accessed. <remark>Squid can now decrypt TLS traffic with plug-ins. Not sure whether that is then stored or not. Also, not sure how/whether to get this information in here. - sknorr, 2016-06-24</remark></para>
          <para>To determine how long objects should remain in the cache, objects are assigned one of several states. Web and proxy servers find out the status of an object by adding headers to these objects, such as <quote>Last modified</quote> or <quote>Expires</quote> and the corresponding date. Other headers specifying that objects must not be cached can be used as well.</para>
          <para>Objects in the cache are normally replaced, because of a lack of free disk space, using algorithms such as LRU (last recently used). This means that the proxy expunges those objects that have not been requested for the longest time.</para>
       </sect2>
@@ -496,8 +494,7 @@ Connection: close
          <para>The placeholders within this syntax stand for the following:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <replaceable>ACL_NAME</replaceable> can be any name.</para>
+               <para><replaceable>ACL_NAME</replaceable> can be any name.</para>
             </listitem>
             <listitem>
                <para>For <replaceable>TYPE</replaceable>, select from the options available in the <literal>ACCESS CONTROLS</literal> section of the <filename>/etc/squid/squid.conf</filename> file.</para>
@@ -535,8 +532,7 @@ acl lunch time MTWHF 12:00-15:00 <co xml:id="co-squid-school-time"/></screen>
                <term>http_access allow <replaceable>ACL_NAME</replaceable>
                </term>
                <listitem>
-                  <para>
-                     <option>http_access</option> defines who is allowed to use the proxy server and who can access what on the Internet. You need to define ACLs for this. The <literal>localhost</literal> and <literal>all</literal> ACLs have already been defined above, and you can deny or allow access to them via <literal>deny</literal> or <literal>allow</literal>. A list containing any number of <option>http_access</option> entries can be created, processed from top to bottom. Depending on which occurs first, access is allowed or denied to the respective URL. The last entry should always be <option>http_access deny all</option>. In the following example, <literal>localhost</literal> has free access to everything, while all other hosts are denied access:</para>
+                  <para><option>http_access</option> defines who is allowed to use the proxy server and who can access what on the Internet. You need to define ACLs for this. The <literal>localhost</literal> and <literal>all</literal> ACLs have already been defined above, and you can deny or allow access to them via <literal>deny</literal> or <literal>allow</literal>. A list containing any number of <option>http_access</option> entries can be created, processed from top to bottom. Depending on which occurs first, access is allowed or denied to the respective URL. The last entry should always be <option>http_access deny all</option>. In the following example, <literal>localhost</literal> has free access to everything, while all other hosts are denied access:</para>
                   <screen>
 http_access allow localhost
 http_access deny all
@@ -693,8 +689,7 @@ cachemgr_passwd none index menu 60min
 cachemgr_passwd secretpassword offline_toggle
 cachemgr_passwd disable all
 </screen>
-            <para>
-               <option>cache_mgr</option> defines a user name. <option>cache_mgr</option> defines which actions are allowed using which password.</para>
+            <para><option>cache_mgr</option> defines a user name. <option>cache_mgr</option> defines which actions are allowed using which password.</para>
             <para>The keywords <literal>none</literal> and <literal>disable</literal> are special: <literal>none</literal> removes the need for a password, <literal>disable</literal> disables functionality outright.</para>
             <para>The full list of actions can be best seen after logging in to <systemitem class="resource">cachemgr.cgi</systemitem>. To find out how the operation needs to be referenced in the configuration file, see the string after <literal>&amp;operation=</literal> in the URL of the action page. <literal>all</literal> is a special keyword meaning all actions.</para>
          </step>
@@ -714,8 +709,7 @@ cachemgr_passwd disable all
       <para>Log in as <systemitem class="username">root</systemitem>, then enter:</para>
       <screen><prompt role="root">#</prompt>cat access1.log [access2.log access3.log] | calamaris <replaceable>OPTIONS</replaceable> &gt; reportfile</screen>
       <para>When using more than one log file, make sure they are ordered chronologically, with older files listed first. This can be done either by listing the files one after the other as in the example above or by using <filename>access{1..3}.log</filename>.</para>
-      <para>
-         <command>calamaris</command> accepts the following options:</para>
+      <para><command>calamaris</command> accepts the following options:</para>
       <variablelist>
          <varlistentry>
             <term>

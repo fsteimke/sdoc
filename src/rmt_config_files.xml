@@ -167,12 +167,10 @@
       <para>By default access to API endpoints consumed by <command>SUSEConnect</command> is limited to HTTPS only. nginx is configured to use an SSL certificate and a private key from the following locations:</para>
       <itemizedlist>
          <listitem>
-            <para>Certificate: <filename>/etc/rmt/ssl/rmt-server.crt</filename>
-            </para>
+            <para>Certificate: <filename>/etc/rmt/ssl/rmt-server.crt</filename></para>
          </listitem>
          <listitem>
-            <para>Private key: <filename>/etc/rmt/ssl/rmt-server.key</filename>
-            </para>
+            <para>Private key: <filename>/etc/rmt/ssl/rmt-server.key</filename></para>
          </listitem>
       </itemizedlist>
       <para>The YaST RMT module generates a custom certificate authority which is used to sign HTTPS certificates. This means that to register, this certificate authority must be trusted by the client machines:</para>

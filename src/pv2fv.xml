@@ -22,27 +22,19 @@
          <para>PV machines typically use disk names such as <literal>vda*</literal>. These names must be changed to the FV <literal>hd*</literal> syntax. This change must be done in the following files:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <filename>/etc/fstab</filename>
-               </para>
+               <para><filename>/etc/fstab</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/boot/grub/menu.lst</filename> (SLES 11 only)</para>
+               <para><filename>/boot/grub/menu.lst</filename> (SLES 11 only)</para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/boot/grub*/device.map</filename>
-               </para>
+               <para><filename>/boot/grub*/device.map</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/etc/sysconfig/bootloader</filename>
-               </para>
+               <para><filename>/etc/sysconfig/bootloader</filename></para>
             </listitem>
             <listitem>
-               <para>
-                  <filename>/etc/default/grub</filename> (SLES 12, 15, openSUSE)</para>
+               <para><filename>/etc/default/grub</filename> (SLES 12, 15, openSUSE)</para>
             </listitem>
          </itemizedlist>
          <note>

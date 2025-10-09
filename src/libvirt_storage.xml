@@ -167,17 +167,10 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes</screen>
       <para>To make a shared directory available on a VM Guest, proceed as follows:</para>
       <procedure>
          <step>
-            <para>Open the guest's console in Virtual Machine Manager and either choose <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Details</guimenu>
-               </menuchoice> from the menu or click <guimenu>Show virtual hardware details</guimenu> in the toolbar. Choose <menuchoice>
-                  <guimenu>Add Hardware</guimenu>
-                  <guimenu>Filesystem</guimenu>
-               </menuchoice> to open the <guimenu>Filesystem Passthrough</guimenu> dialog.</para>
+            <para>Open the guest's console in Virtual Machine Manager and either choose <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice> from the menu or click <guimenu>Show virtual hardware details</guimenu> in the toolbar. Choose <menuchoice><guimenu>Add Hardware</guimenu><guimenu>Filesystem</guimenu></menuchoice> to open the <guimenu>Filesystem Passthrough</guimenu> dialog.</para>
          </step>
          <step>
-            <para>
-               <guimenu>Driver</guimenu> allows you to choose between a <guimenu>Handle</guimenu> or <guimenu>Path</guimenu> base driver. The default setting is <guimenu>Path</guimenu>. <guimenu>Mode</guimenu> lets you choose the security model, which influences the way file permissions are set on the host. Three options are available:</para>
+            <para><guimenu>Driver</guimenu> allows you to choose between a <guimenu>Handle</guimenu> or <guimenu>Path</guimenu> base driver. The default setting is <guimenu>Path</guimenu>. <guimenu>Mode</guimenu> lets you choose the security model, which influences the way file permissions are set on the host. Three options are available:</para>
             <variablelist>
                <varlistentry>
                   <term>
@@ -208,8 +201,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes</screen>
             <para>Specify the path to the directory on the VM Host Server with <guimenu>Source Path</guimenu>. Enter a string at <guimenu>Target Path</guimenu> to be used as a tag to mount the shared directory. The string of this field is a tag only, not a path on the VM Guest.</para>
          </step>
          <step>
-            <para>
-               <guimenu>Apply</guimenu> the setting. If the VM Guest is currently running, you need to shut it down to apply the new setting (rebooting the guest is not sufficient).</para>
+            <para><guimenu>Apply</guimenu> the setting. If the VM Guest is currently running, you need to shut it down to apply the new setting (rebooting the guest is not sufficient).</para>
          </step>
          <step>
             <para>Boot the VM Guest. To mount the shared directory, enter the following command:</para>

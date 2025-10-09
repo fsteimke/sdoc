@@ -33,8 +33,7 @@
             <title>Deprecation notice</title>
             <para>cgroup v1 has been deprecated, and might be removed in a future release.</para>
          </note>
-         <para>To enable the hybrid control group hierarchy, append <option>systemd.unified_cgroup_hierarchy=0</option> as a kernel command-line parameter to the GRUB 2 boot loader. For more details about configuring GRUB 2, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>To enable the hybrid control group hierarchy, append <option>systemd.unified_cgroup_hierarchy=0</option> as a kernel command-line parameter to the GRUB 2 boot loader. For more details about configuring GRUB 2, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-tuning-cgroups-accounting">
@@ -58,8 +57,7 @@
    <sect1 xml:id="sec-tuning-cgroups-tasksmax">
       <title>Preventing fork bombs with <literal>TasksMax</literal>
       </title>
-      <para>
-         <systemitem class="daemon">systemd</systemitem> supports configuring task count limits both for each individual leaf unit, or aggregated on slices. Upstream <systemitem class="daemon">systemd</systemitem> ships with defaults that limit the number of tasks in each unit (15% of the kernel global limit, run <command>/usr/sbin/sysctl kernel.pid_max</command> to see the total limit). Each user's slice is limited to 33% of the kernel limit. However, this is different for <phrase role="productname">SUSE Linux Enterprise Server</phrase>.</para>
+      <para><systemitem class="daemon">systemd</systemitem> supports configuring task count limits both for each individual leaf unit, or aggregated on slices. Upstream <systemitem class="daemon">systemd</systemitem> ships with defaults that limit the number of tasks in each unit (15% of the kernel global limit, run <command>/usr/sbin/sysctl kernel.pid_max</command> to see the total limit). Each user's slice is limited to 33% of the kernel limit. However, this is different for <phrase role="productname">SUSE Linux Enterprise Server</phrase>.</para>
       <sect2 xml:id="sec-tasksmax-defaults">
          <title>Finding the current default <literal>TasksMax</literal> values</title>
          <para>It became apparent, in practice, that there is not a single default that applies to all use cases. <phrase role="productname">SUSE Linux Enterprise Server</phrase> ships with two custom configurations that override the upstream defaults for system units and for user slices, and sets them both to <literal>infinity</literal>. <filename>/usr/lib/systemd/system.conf.d/__25-defaults-SLE.conf</filename> contains these lines:</para>
@@ -67,16 +65,14 @@
 [Manager]
 DefaultTasksMax=infinity
 </screen>
-         <para>
-            <filename>/usr/lib/systemd/system/user-.slice.d/25-defaults-SLE.conf</filename> contains these lines:</para>
+         <para><filename>/usr/lib/systemd/system/user-.slice.d/25-defaults-SLE.conf</filename> contains these lines:</para>
          <screen>[Slice]
 TasksMax=infinity
 </screen>
          <para>Use <command>systemctl</command> to verify the DefaultTasksMax value:</para>
          <screen><prompt>&gt;</prompt><command>systemctl show --property DefaultTasksMax</command>
 DefaultTasksMax=infinity</screen>
-         <para>
-            <literal>infinity</literal> means having no limit. It is not a requirement to change the default, but setting certain limits may help to prevent system crashes from runaway processes.</para>
+         <para><literal>infinity</literal> means having no limit. It is not a requirement to change the default, but setting certain limits may help to prevent system crashes from runaway processes.</para>
       </sect2>
       <sect2 xml:id="sec-edit-taskmax-default">
          <title>Overriding the <literal>DefaultTasksMax</literal> value</title>
@@ -119,8 +115,7 @@ DefaultTasksMax=256
    CGroup: /system.slice/mariadb.service
            └─3452 /usr/sbin/mysqld --defaults-file=/etc/my.cnf --user=mysql
 </screen>
-         <para>
-            <command>systemctl set-property</command> applies the new limit and creates a drop-in file for persistence, <filename>/etc/systemd/system/mariadb.service.d/50-TasksMax.conf</filename>, that contains only the changes you want to apply to the existing unit file. The value does not have to be 8192, but should be whatever limit is appropriate for your workloads.</para>
+         <para><command>systemctl set-property</command> applies the new limit and creates a drop-in file for persistence, <filename>/etc/systemd/system/mariadb.service.d/50-TasksMax.conf</filename>, that contains only the changes you want to apply to the existing unit file. The value does not have to be 8192, but should be whatever limit is appropriate for your workloads.</para>
       </sect2>
       <sect2>
          <title>Default <literal>TasksMax</literal> limit on users</title>
@@ -131,8 +126,7 @@ TasksMax=16284
 </screen>
          <note>
             <title>Numeric prefixes reference</title>
-            <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-boot-systemd-custom-drop-in" xrefstyle="%label &#34;%c&#34;"/> to learn what numeric prefixes are expected for drop-in files.</para>
+            <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-custom-drop-in" xrefstyle="%label &#34;%c&#34;"/> to learn what numeric prefixes are expected for drop-in files.</para>
          </note>
          <para>Then reload systemd to load the new value, and verify the change:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl daemon-reload</command><prompt>&gt;</prompt><command>systemctl show --property TasksMax user-1000.slice</command>
@@ -249,21 +243,16 @@ Delegate=pids memory
             <para>Kernel documentation (package <systemitem>kernel-source</systemitem>): files in <filename>/usr/src/linux/Documentation/admin-guide/cgroup-v1</filename> and file <filename>/usr/src/linux/Documentation/admin-guide/cgroup-v2.rst</filename>.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man systemd.resource-control</command>
-            </para>
+            <para><command>man systemd.resource-control</command></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/604609/"/>—Brown, Neil: Control Groups Series (2014, 7 parts).</para>
+            <para><link xlink:href="https://lwn.net/Articles/604609/"/>—Brown, Neil: Control Groups Series (2014, 7 parts).</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/243795/"/>—Corbet, Jonathan: Controlling memory use in containers (2007).</para>
+            <para><link xlink:href="https://lwn.net/Articles/243795/"/>—Corbet, Jonathan: Controlling memory use in containers (2007).</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/236038/"/>—Corbet, Jonathan: Process containers (2007).</para>
+            <para><link xlink:href="https://lwn.net/Articles/236038/"/>—Corbet, Jonathan: Process containers (2007).</para>
          </listitem>
       </itemizedlist>
    </sect1>

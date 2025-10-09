@@ -12,8 +12,7 @@
          <para>This chapter describes how to configure a DHCP and a TFTP server that provide the required infrastructure for booting with PXE.</para>
       </abstract>
    </info>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> can be installed via a Preboot Execution Environment (PXE). The client hardware needs to support booting via PXE. The network needs to provide a DHCP server and a TFTP server providing the required data to the clients. This chapter guides you through setting up the required servers.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> can be installed via a Preboot Execution Environment (PXE). The client hardware needs to support booting via PXE. The network needs to provide a DHCP server and a TFTP server providing the required data to the clients. This chapter guides you through setting up the required servers.</para>
    <para>PXE only boots a kernel and initrd. This can be used to boot into an installation environment or into live systems. To set up the installation sources, see <xref linkend="cha-deployment-instserver"/>.</para>
    <para>This section covers the configuration tasks needed in complex boot scenarios. It contains ready-to-apply configuration examples for DHCP, PXE boot, TFTP, and Wake on LAN.</para>
    <para>The examples assume that the DHCP, TFTP and NFS server reside on the same machine with the IP <literal>192.168.1.1</literal>. All services can reside on different machines without any problems. Make sure to change the IP addresses as required.</para>
@@ -94,12 +93,10 @@ DHCLIENT6_CLIENT_ID=<replaceable>00:03:52:54:00:02:c2:67</replaceable></screen>
          <para>Using the above hardware type-based and hardware address-based DUID, the new RFC 4361 DHCPv4 <literal>client-id</literal> would be:</para>
          <itemizedlist>
             <listitem>
-               <para>Using the last bytes of the MAC address as the IAID: <literal>ff:00:02:c2:67:00:01:xx:xx:xx:xx:52:54:00:02:c2:67</literal>
-               </para>
+               <para>Using the last bytes of the MAC address as the IAID: <literal>ff:00:02:c2:67:00:01:xx:xx:xx:xx:52:54:00:02:c2:67</literal></para>
             </listitem>
             <listitem>
-               <para>When the IAID is a simple incremented number: <literal>ff:00:00:00:01:00:01:xx:xx:xx:xx:52:54:00:02:c2:67</literal>
-               </para>
+               <para>When the IAID is a simple incremented number: <literal>ff:00:00:00:01:00:01:xx:xx:xx:xx:52:54:00:02:c2:67</literal></para>
             </listitem>
          </itemizedlist>
          <para>The <replaceable>xx:xx:xx:xx</replaceable> field in the DUID-Link-Layer Timestamp (DUID-LLT) is a creation time stamp. A DUID-Link-Layer (DUID-LL) (<literal>00:03:00:01:$MAC</literal>) does not have a time stamp.</para>
@@ -128,8 +125,7 @@ DHCLIENT6_CLIENT_ID=<replaceable>00:03:52:54:00:02:c2:67</replaceable></screen>
       </sect2>
       <sect2 xml:id="sec-deployment-tftp-server-grub-package">
          <title>Installing files for boot</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides the required files for booting via PXE on BIOS or UEFI machines. The following hardware architectures are supported:</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> provides the required files for booting via PXE on BIOS or UEFI machines. The following hardware architectures are supported:</para>
          <itemizedlist>
             <listitem>
                <para>AMD64/Intel 64</para>
@@ -147,8 +143,7 @@ DHCLIENT6_CLIENT_ID=<replaceable>00:03:52:54:00:02:c2:67</replaceable></screen>
          <para>Files required to boot from a specific hardware architecture are included in an RPM package. Install it on the machine running the TFTP server:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper in tftpboot-installation-SLE-<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</replaceable></command></screen>
          <para>Replace <replaceable>OS_VERSION</replaceable> with the version number of your <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation, for example <replaceable>SLE-15-SP3-x86_64</replaceable>, and replace <replaceable>ARCHITECTURE</replaceable> with the architecture of your system, for example <literal>x86_64</literal>. So the resulting text would look like this: <package>tftpboot-installation-SLE-15-SP3-x86_64</package>. Run <command>zypper se tftpboot</command> to search for all available versions and architectures.</para>
-         <para>The files will be installed in <filename>/srv/tftpboot/SLE-<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</replaceable>
-            </filename>. You can also copy the files for other versions and architectures of <phrase role="productname">SUSE Linux Enterprise Server</phrase> to the <filename>/srv/tftpboot</filename> directory.</para>
+         <para>The files will be installed in <filename>/srv/tftpboot/SLE-<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</replaceable></filename>. You can also copy the files for other versions and architectures of <phrase role="productname">SUSE Linux Enterprise Server</phrase> to the <filename>/srv/tftpboot</filename> directory.</para>
          <tip>
             <title>Serving different architectures</title>
             <para>The client and server hardware architecture can vary. For example, you can run an AMD64/Intel 64 TFTP server and provide a bootable environment for AArch64 client machines by installing the <package>tftpboot-installation-SLE-15-SP3-aarch64</package> package.</para>
@@ -156,8 +151,7 @@ DHCLIENT6_CLIENT_ID=<replaceable>00:03:52:54:00:02:c2:67</replaceable></screen>
          <note>
             <title>Existing <filename>/srv/tftpboot/</filename> directory</title>
             <para>If the directory <filename>/srv/tftpboot/</filename> already exists on your machine, then all files will be installed to <filename>/usr/share/tftpboot-installation/</filename>. This is the case if you are upgrading your PXE server from a previous SLES release.</para>
-            <para>To fix this problem, copy the files manually from <filename>/usr/share/tftpboot-installation/</filename> to <filename>/srv/tftpboot/</filename>. Alternatively, remove <filename>/srv/tftpboot/</filename> and reinstall the <package>tftpboot-installation-SLE-<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</replaceable>
-               </package> package.</para>
+            <para>To fix this problem, copy the files manually from <filename>/usr/share/tftpboot-installation/</filename> to <filename>/srv/tftpboot/</filename>. Alternatively, remove <filename>/srv/tftpboot/</filename> and reinstall the <package>tftpboot-installation-SLE-<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</replaceable></package> package.</para>
          </note>
       </sect2>
       <sect2 xml:id="sec-deployment-tftp-server-pxelinux">
@@ -228,49 +222,22 @@ timeout  50</screen>
                      <colspec colwidth="4*"/>
                      <thead>
                         <row>
-                           <entry valign="middle">
-                              <para>Argument</para>
-                           </entry>
-                           <entry>
-                              <para>Generated kernel command line / Description</para>
-                           </entry>
+                           <entry valign="middle"><para>Argument</para></entry>
+                           <entry><para>Generated kernel command line / Description</para></entry>
                         </row>
                      </thead>
                      <tbody>
                         <row>
-                           <entry>
-                              <para>
-                                 <option>1</option>
-                              </para>
-                           </entry>
-                           <entry>
-                              <screen>ip=<replaceable>CLIENT_IP</replaceable>:<replaceable>BOOT_SERVER_IP</replaceable>:<replaceable>GW_IP</replaceable>:<replaceable>NETMASK</replaceable></screen>
-                              <para>The placeholders are replaced based on the input from the DHCP/BOOTP or PXE boot server.</para>
-                              <para>Note, this option is not a substitute for running a DHCP client in the booted system. Without regular renewals, the lease acquired by the PXE BIOS will expire, making the IP address available for reuse by the DHCP server.</para>
-                           </entry>
+                           <entry><para><option>1</option></para></entry>
+                           <entry><screen>ip=<replaceable>CLIENT_IP</replaceable>:<replaceable>BOOT_SERVER_IP</replaceable>:<replaceable>GW_IP</replaceable>:<replaceable>NETMASK</replaceable></screen><para>The placeholders are replaced based on the input from the DHCP/BOOTP or PXE boot server.</para><para>Note, this option is not a substitute for running a DHCP client in the booted system. Without regular renewals, the lease acquired by the PXE BIOS will expire, making the IP address available for reuse by the DHCP server.</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <option>2</option>
-                              </para>
-                           </entry>
-                           <entry>
-                              <screen>BOOTIF=<replaceable>MAC_ADDRESS_OF_BOOT_INTERFACE</replaceable></screen>
-                              <para>This option is useful to avoid timeouts when the installation server probes one LAN interface after another until it gets a reply from a DHCP server. This option allows an initrd program to determine from which interface the system has been booted. linuxrc reads this option and uses this network interface.</para>
-                           </entry>
+                           <entry><para><option>2</option></para></entry>
+                           <entry><screen>BOOTIF=<replaceable>MAC_ADDRESS_OF_BOOT_INTERFACE</replaceable></screen><para>This option is useful to avoid timeouts when the installation server probes one LAN interface after another until it gets a reply from a DHCP server. This option allows an initrd program to determine from which interface the system has been booted. linuxrc reads this option and uses this network interface.</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <option>4</option>
-                              </para>
-                           </entry>
-                           <entry>
-                              <screen>SYSUUID=<replaceable>SYSTEM_UUID</replaceable></screen>
-                              <para>Adds UUIDs in lowercase hexadecimals, see <filename>/usr/share/doc/packages/syslinux/pxelinux.txt</filename>
-                              </para>
-                           </entry>
+                           <entry><para><option>4</option></para></entry>
+                           <entry><screen>SYSUUID=<replaceable>SYSTEM_UUID</replaceable></screen><para>Adds UUIDs in lowercase hexadecimals, see <filename>/usr/share/doc/packages/syslinux/pxelinux.txt</filename></para></entry>
                         </row>
                      </tbody>
                   </tgroup>
@@ -313,44 +280,22 @@ timeout  50</screen>
         <colspec colnum="2" colname="2" colwidth="60"/>-->
                      <thead>
                         <row>
-                           <entry>
-                              <para>Argument</para>
-                           </entry>
-                           <entry>
-                              <para>Description</para>
-                           </entry>
+                           <entry><para>Argument</para></entry>
+                           <entry><para>Description</para></entry>
                         </row>
                      </thead>
                      <tbody>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>0</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Perform a normal boot</para>
-                           </entry>
+                           <entry><para><literal>0</literal></para></entry>
+                           <entry><para>Perform a normal boot</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>4</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Perform a local boot with the Universal Network Driver Interface (UNDI) driver still resident in memory</para>
-                           </entry>
+                           <entry><para><literal>4</literal></para></entry>
+                           <entry><para>Perform a local boot with the Universal Network Driver Interface (UNDI) driver still resident in memory</para></entry>
                         </row>
                         <row>
-                           <entry>
-                              <para>
-                                 <literal>5</literal>
-                              </para>
-                           </entry>
-                           <entry>
-                              <para>Perform a local boot with the entire PXE stack, including the UNDI driver, still resident in memory</para>
-                           </entry>
+                           <entry><para><literal>5</literal></para></entry>
+                           <entry><para>Perform a local boot with the entire PXE stack, including the UNDI driver, still resident in memory</para></entry>
                         </row>
                      </tbody>
                   </tgroup>

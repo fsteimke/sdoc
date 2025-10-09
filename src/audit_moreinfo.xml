@@ -43,8 +43,7 @@
                      <literal>autrace(8)</literal>
                   </term>
                   <listitem>
-                     <para>A program similar to <command>strace</command>
-                     </para>
+                     <para>A program similar to <command>strace</command></para>
                   </listitem>
                </varlistentry>
                <varlistentry>

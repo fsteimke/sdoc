@@ -8,8 +8,7 @@
    <title>
       <command>journalctl</command>: query the <systemitem class="daemon">systemd</systemitem> journal</title>
    <info/>
-   <para>
-      <systemitem class="daemon">systemd</systemitem> features its own logging system called <emphasis>journal</emphasis>. There is no need to run a <systemitem>syslog</systemitem>-based service, as all system events are written to the journal.</para>
+   <para><systemitem class="daemon">systemd</systemitem> features its own logging system called <emphasis>journal</emphasis>. There is no need to run a <systemitem>syslog</systemitem>-based service, as all system events are written to the journal.</para>
    <para>The journal itself is a system service managed by <systemitem class="daemon">systemd</systemitem>. Its full name is <literal>systemd-journald.service</literal>. It collects and stores logging data by maintaining structured indexed journals based on logging information received from the kernel, user processes, standard input, and system service errors. The <literal>systemd-journald</literal> service is on by default:</para>
    <screen><prompt>&gt;</prompt><command>sudo</command> systemctl status systemd-journald
 systemd-journald.service - Journal Service
@@ -68,8 +67,7 @@ systemd-journald.service - Journal Service
          <varlistentry>
             <term>-u</term>
             <listitem>
-               <para>Shows only messages for the specified <systemitem class="daemon">systemd</systemitem> unit. This is equivalent to the field match <literal>_SYSTEMD_UNIT=<replaceable>UNIT</replaceable>
-                  </literal> (see <xref linkend="sec-journalctl-filter-fields"/>).</para>
+               <para>Shows only messages for the specified <systemitem class="daemon">systemd</systemitem> unit. This is equivalent to the field match <literal>_SYSTEMD_UNIT=<replaceable>UNIT</replaceable></literal> (see <xref linkend="sec-journalctl-filter-fields"/>).</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> journalctl -u apache2
 [...]
 Jun 03 10:07:11 pinkiepie systemd[1]: Starting The Apache Webserver...
@@ -83,8 +81,7 @@ Jun 03 10:07:12 pinkiepie systemd[1]: Started The Apache Webserver.</screen>
       <para>When called without switches, <command>journalctl</command> shows the full content of the journal, the oldest entries listed first. The output can be filtered by specific switches and fields.</para>
       <sect2 xml:id="sec-journalctl-filter-boot">
          <title>Filtering based on a boot number</title>
-         <para>
-            <command>journalctl</command> can filter messages based on a specific system boot. To list all available boots, run</para>
+         <para><command>journalctl</command> can filter messages based on a specific system boot. To list all available boots, run</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> journalctl --list-boots
 -1 097ed2cd99124a2391d2cffab1b566f0 Mon 2014-05-26 08:36:56 EDT—Fri 2014-05-30 05:33:44 EDT
  0 156019a44a774a0bb0148a92df4af81b Fri 2014-05-30 05:34:09 EDT—Fri 2014-05-30 06:15:01 EDT</screen>
@@ -213,18 +210,15 @@ enabled</screen>
    </sect1>
    <sect1 xml:id="sec-journalctl-yast">
       <title>Using YaST to filter the <systemitem class="daemon">systemd</systemitem> journal</title>
-      <para>For an easy way of filtering the systemd journal (without dealing with the journalctl syntax), you can use the YaST journal module. After installing it with <command>sudo zypper in yast2-journal</command>, start it from YaST by selecting <menuchoice>
-            <guimenu>System</guimenu>
-            <guimenu>Systemd Journal</guimenu>
-         </menuchoice>. Alternatively, start it from command line by entering <command>sudo yast2 journal</command>.</para>
+      <para>For an easy way of filtering the systemd journal (without dealing with the journalctl syntax), you can use the YaST journal module. After installing it with <command>sudo zypper in yast2-journal</command>, start it from YaST by selecting <menuchoice><guimenu>System</guimenu><guimenu>Systemd Journal</guimenu></menuchoice>. Alternatively, start it from command line by entering <command>sudo yast2 journal</command>.</para>
       <figure xml:id="fig-journalctl-yast">
          <title>YaST systemd journal</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_journal.png" width="80%"/>
+               <imagedata fileref="media/yast2_journal.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_journal.png" width="85%"/>
+               <imagedata fileref="media/yast2_journal.png" width="78%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -232,9 +226,6 @@ enabled</screen>
    </sect1>
    <sect1 xml:id="sec-journalctl-gnome-logs">
       <title>Viewing logs in GNOME</title>
-      <para>You can view the journal with <emphasis>GNOME Logs</emphasis>. Start it from the application menu. To view system log messages, it needs to be run as root, for example, with <command>xdg-su gnome-logs</command>. This command can be executed when pressing <keycombo>
-            <keycap function="alt"/>
-            <keycap>F2</keycap>
-         </keycombo>.</para>
+      <para>You can view the journal with <emphasis>GNOME Logs</emphasis>. Start it from the application menu. To view system log messages, it needs to be run as root, for example, with <command>xdg-su gnome-logs</command>. This command can be executed when pressing <keycombo><keycap function="alt"/><keycap>F2</keycap></keycombo>.</para>
    </sect1>
 </chapter>

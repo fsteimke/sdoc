@@ -78,8 +78,7 @@ Host key verification failed.</screen>
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> installs the OpenSSH package by default, providing the following commands:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> installs the OpenSSH package by default, providing the following commands:</para>
       <variablelist>
          <varlistentry>
             <term>
@@ -191,8 +190,7 @@ MaxAuthTries <replaceable>4</replaceable></programlisting>
       <para>The syntax checker only checks for correct syntax, and does not find configuration errors. When you are finished, reload the configuration:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl reload sshd.service</command></screen>
       <para>Check the server's key directories for correct permissions.</para>
-      <para>
-         <filename>/etc/ssh</filename> should be mode 0755/drwxr-xr-x, owned by root:root.</para>
+      <para><filename>/etc/ssh</filename> should be mode 0755/drwxr-xr-x, owned by root:root.</para>
       <para>Private keys should be 0600/-rw-------, owned by root:root.</para>
       <para>Public keys should be 0644/-rw-r--r--, owned by root:root.</para>
       <!-- not sure if this should be included, it seems redundant with
@@ -258,10 +256,8 @@ MaxAuthTries <replaceable>4</replaceable></programlisting>
       <para>With password authentication, all you need is the login and password of a user on the remote machine, and <systemitem class="daemon">sshd</systemitem> set up and running on the remote machine. You do not need any personal SSH keys. In the following example, user suzanne opens an SSH session to the host sun:</para>
       <screen><prompt>&gt;</prompt><command>ssh suzanne@sun</command></screen>
       <para>suzanne is prompted to enter the remote password. Type <literal>exit</literal> and press <keycap>Enter</keycap> to close an SSH session.</para>
-      <para>If the user name is the same on both machines, you can omit it, and then using <command>ssh <replaceable>HOST_NAME</replaceable>
-         </command> is sufficient. After a successful authentication, you can work on the command line or use interactive applications, such as YaST in text mode.</para>
-      <para>You may also run non-interactive commands (log in, run the command, then the session closes all in one command) on remote systems using the <command>ssh <replaceable>USER_NAME HOST COMMAND</replaceable>
-         </command> syntax. <replaceable>COMMAND</replaceable> must be properly quoted. Multiple commands can be concatenated as on a local shell:</para>
+      <para>If the user name is the same on both machines, you can omit it, and then using <command>ssh <replaceable>HOST_NAME</replaceable></command> is sufficient. After a successful authentication, you can work on the command line or use interactive applications, such as YaST in text mode.</para>
+      <para>You may also run non-interactive commands (log in, run the command, then the session closes all in one command) on remote systems using the <command>ssh <replaceable>USER_NAME HOST COMMAND</replaceable></command> syntax. <replaceable>COMMAND</replaceable> must be properly quoted. Multiple commands can be concatenated as on a local shell:</para>
       <screen><prompt>&gt;</prompt><command>ssh suzanne@sun "df -h &amp;&amp; du -sh /home"</command><prompt>&gt;</prompt><command>ssh suzanne@sun "sudo nano /etc/ssh/sshd_config"</command></screen>
       <para>When you run <command>sudo</command> on the remote machine, you are prompted for the <command>sudo</command> password.</para>
    </sect1>
@@ -274,8 +270,7 @@ MaxAuthTries <replaceable>4</replaceable></programlisting>
          <para>Some older SSH clients do not support ECDSA and ED25519. ECDSA and ED25519 were released with OpenSSH 6.5 in 2014. It is important to keep security services updated, and, if possible, to not allow unsafe old clients.</para>
       </note>
       <para>SSH keys serve two purposes: authenticating servers to clients, and authenticating clients to servers (see <xref linkend="sec-ssh-public-key-auth"/>). Server host keys are stored in <filename>/etc/ssh</filename>. Users' personal keys are stored in <filename>/home/<replaceable>user</replaceable>/.ssh</filename>.</para>
-      <para>
-         <filename>/home/<replaceable>user</replaceable>/.ssh</filename> is created when the user creates a new SSH key.</para>
+      <para><filename>/home/<replaceable>user</replaceable>/.ssh</filename> is created when the user creates a new SSH key.</para>
       <para>Host keys must not have passphrases.</para>
       <para>In most cases, private user keys should have strong passphrases.</para>
       <sect2 xml:id="sec-create-ssh-key-client">
@@ -339,14 +334,12 @@ total 608
 -rw-r--r-- 1 root root     96 2022-02-10 06:55 ssh_host_ed25519_key.pub
 -rw------- 1 root root   2602 2022-02-10 06:55 ssh_host_rsa_key
 -rw-r--r-- 1 root root    568 2022-02-10 06:55 ssh_host_rsa_key.pub</screen>
-         <para>
-            <command>ssh-keygen</command> has a special option, <option>-A</option>, for creating new host keys. This creates new keys for each of the key types for which host keys do not exist, with the default key file path, an empty passphrase, default bit size for the key type, and an empty comment. The following example creates a complete new set of host keys by first deleting the existing keys, then creating a new set:</para>
+         <para><command>ssh-keygen</command> has a special option, <option>-A</option>, for creating new host keys. This creates new keys for each of the key types for which host keys do not exist, with the default key file path, an empty passphrase, default bit size for the key type, and an empty comment. The following example creates a complete new set of host keys by first deleting the existing keys, then creating a new set:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>rm /etc/ssh/ssh_host*</command><prompt>&gt;</prompt><command>sudo</command><command>ssh-keygen -A</command></screen>
          <para>You can replace selected key pairs by first deleting only the keys you want to replace, because <command>ssh-keygen -A</command> does not replace existing keys.</para>
          <important>
             <title>Do not use DSA keys</title>
-            <para>
-               <command>ssh-keygen -A</command> creates DSA keys, even though they have been deprecated as unsafe for several years. In OpenSSH 7.0 they are still created, but disabled by not being listed in <filename>sshd_config</filename>. You may safely delete DSA keys.</para>
+            <para><command>ssh-keygen -A</command> creates DSA keys, even though they have been deprecated as unsafe for several years. In OpenSSH 7.0 they are still created, but disabled by not being listed in <filename>sshd_config</filename>. You may safely delete DSA keys.</para>
          </important>
          <para>When you want to rotate host keys (see <xref linkend="sec-ssh-sshdserver-rotation"/>), you must create the new keys individually, because they must exist at the same time as your old host keys. Your users authenticate with the old keys, and then receive the list of new keys. They need unique names, to not conflict with the old keys. The following example creates new RSA and Ed25519 host keys, labeled with the year and month they were created. Remember, the new host keys must not have passphrases:</para>
          <screen><prompt>&gt;</prompt><command>cd /etc/ssh</command><prompt>&gt;</prompt><command>sudo</command><command>ssh-keygen -b 4096 -f "<replaceable>SSH_HOST_RSA_2022_02</replaceable>"</command><prompt>&gt;</prompt><command>sudo</command><command>ssh-keygen -t ed25519 -f "<replaceable>SSH_HOST_ED25519_2022_02</replaceable>"</command></screen>
@@ -427,14 +420,10 @@ Accept updated hostkeys? (yes/no):yes</screen>
       <para>For more information:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <xref linkend="sec-ssh-authentic-gen-key"/>
-            </para>
+            <para><xref linkend="sec-ssh-authentic-gen-key"/></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="http://blog.djm.net.au/2015/02/key-rotation-in-openssh-68.html"/>
-            </para>
+            <para><link xlink:href="http://blog.djm.net.au/2015/02/key-rotation-in-openssh-68.html"/></para>
          </listitem>
          <listitem>
             <para>man 5 ssh_config, man 5 sshd_config</para>
@@ -564,24 +553,19 @@ valid from 2022-08-08T14:20:00 to 2022-09-05T15:21:19
          <para>If there is more than one host key on a server, sign them all.</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <option>-s</option> is your private signing key.</para>
+               <para><option>-s</option> is your private signing key.</para>
             </listitem>
             <listitem>
-               <para>
-                  <option>-n</option> is your list of principals. For host certificates, the principals are the machine's host name and fully qualified domain name.</para>
+               <para><option>-n</option> is your list of principals. For host certificates, the principals are the machine's host name and fully qualified domain name.</para>
             </listitem>
             <listitem>
-               <para>
-                  <option>-I</option> is the identity string. This is any comment or description you want. The string is logged, to help you quickly find relevant log entries.</para>
+               <para><option>-I</option> is the identity string. This is any comment or description you want. The string is logged, to help you quickly find relevant log entries.</para>
             </listitem>
             <listitem>
-               <para>
-                  <option>-h</option> creates a host certificate.</para>
+               <para><option>-h</option> creates a host certificate.</para>
             </listitem>
             <listitem>
-               <para>
-                  <option>-V</option> sets the expiration date for the certificate. In the example, the certificate expires in four weeks. (See the "-V validity_interval" section of <command>man 1 ssh-keygen</command> for allowed time formats.)</para>
+               <para><option>-V</option> sets the expiration date for the certificate. In the example, the certificate expires in four weeks. (See the "-V validity_interval" section of <command>man 1 ssh-keygen</command> for allowed time formats.)</para>
             </listitem>
          </itemizedlist>
          <para>Verify that your new certificate is built the way you want:</para>
@@ -614,9 +598,7 @@ valid from 2022-08-08T14:20:00 to 2022-09-05T15:21:19
  AAAAC3NzaC1lZDI1NTE5AAAAIH1pF6DN4BdsfUKWuyiGt/leCvuZ/fPu
  YxY7+4V68Fz0 signing key for user certificates
    </screen>
-         <para>List each server the user is allowed to access in a comma-delimited list, for example <literal>
-               <replaceable>venus,venus.example.com,saturn,saturn.example.com</replaceable>
-            </literal>. You may also grant access to all servers in domains with wildcards, for example <literal>*.example.com,*.example2.com</literal>.</para>
+         <para>List each server the user is allowed to access in a comma-delimited list, for example <literal><replaceable>venus,venus.example.com,saturn,saturn.example.com</replaceable></literal>. You may also grant access to all servers in domains with wildcards, for example <literal>*.example.com,*.example2.com</literal>.</para>
          <para>Try connecting to the server. You should be prompted for the password of the remote account, without being prompted to verify the host certificate.</para>
       </sect2>
       <sect2 xml:id="sec-ssh-certificate-user-certs">
@@ -627,10 +609,8 @@ valid from 2022-08-08T14:20:00 to 2022-09-05T15:21:19
  for suzanne valid from 2022-09-14T12:57:00 to 2023-09-13T12:58:21
 </screen>
          <para>The principal on user certificates is always the username. Store the user's certificate in <filename>~/.ssh</filename> on the user's machine.</para>
-         <para>User certificates replace the <filename>~/.ssh/authorized_keys</filename> files. Remove this file from a user account on the remote machine, then try opening an SSH session to that account. You should be able to log in without being prompted for a password. (Remember, the server should have a <literal>TrustedUserCAKeys /etc/ssh/<replaceable>ca-user-sign-key.pub</replaceable>
-            </literal> line in its <filename>/etc/ssh/sshd_config</filename> file, so that the server knows to trust your certificate authority.)</para>
-         <para>Additionally, look for <literal>Accepted publickey for <replaceable>suzanne</replaceable>
-            </literal> messages in your log files.</para>
+         <para>User certificates replace the <filename>~/.ssh/authorized_keys</filename> files. Remove this file from a user account on the remote machine, then try opening an SSH session to that account. You should be able to log in without being prompted for a password. (Remember, the server should have a <literal>TrustedUserCAKeys /etc/ssh/<replaceable>ca-user-sign-key.pub</replaceable></literal> line in its <filename>/etc/ssh/sshd_config</filename> file, so that the server knows to trust your certificate authority.)</para>
+         <para>Additionally, look for <literal>Accepted publickey for <replaceable>suzanne</replaceable></literal> messages in your log files.</para>
       </sect2>
       <sect2 xml:id="sec-ssh-certificate-revoke-host-keys">
          <title>Revoking host keys</title>
@@ -651,14 +631,12 @@ valid from 2022-08-08T14:20:00 to 2022-09-05T15:21:19
    <sect1 xml:id="sec-ssh-gnome-keyring">
       <title>Automated public key logins with gnome-keyring</title>
       <para>The <package>gnome-keyring</package> package is installed and enabled by default when the GNOME desktop environment is installed. <literal>gnome-keyring</literal> is integrated with your system login, automatically unlocking your secrets storage at login. When you change your login password, <literal>gnome-keyring</literal> automatically updates itself with your new password.</para>
-      <para>
-         <literal>gnome-keyring</literal> automatically loads all key pairs in <filename>~/.ssh</filename>, for each pair that has a <filename>*.pub</filename> file. You may manually load other keys with the <command>ssh-add</command> command, for example:</para>
+      <para><literal>gnome-keyring</literal> automatically loads all key pairs in <filename>~/.ssh</filename>, for each pair that has a <filename>*.pub</filename> file. You may manually load other keys with the <command>ssh-add</command> command, for example:</para>
       <screen><prompt>&gt;</prompt><command>ssh-add <replaceable>~/.otherkeys/my_key</replaceable></command></screen>
       <para>List all loaded keys:</para>
       <screen><prompt>&gt;</prompt><command>ssh-add -L</command></screen>
       <para>When you start up your system and then open an SSH session, you are prompted for your private key passphrase.</para>
-      <para>
-         <literal>gnome-keyring</literal> remembers the passphrase for the rest of your session. You do not have to re-enter the passphrase until after a system restart.</para>
+      <para><literal>gnome-keyring</literal> remembers the passphrase for the rest of your session. You do not have to re-enter the passphrase until after a system restart.</para>
    </sect1>
    <sect1 xml:id="sec-ssh-authentic-agent">
       <title>Automated public key logins with ssh-agent</title>
@@ -755,15 +733,12 @@ Type=wayland</screen>
    <sect1 xml:id="sec-ssh-programm-forwarding">
       <title>Agent forwarding</title>
       <para>By adding the <option>-A</option> option, the ssh-agent authentication mechanism is carried over to the next machine. This way, you can work from different machines without having to enter a password, but only if you have distributed your public key to the destination hosts and properly saved it there. (Refer to <xref linkend="sec-ssh-public-key-auth"/> to learn how to copy your public keys to other hosts.)</para>
-      <para>
-         <literal>AllowAgentForwarding yes</literal> is the default in <filename>/etc/ssh/sshd_config</filename>. Change it to <literal>No</literal> to disable it.</para>
+      <para><literal>AllowAgentForwarding yes</literal> is the default in <filename>/etc/ssh/sshd_config</filename>. Change it to <literal>No</literal> to disable it.</para>
    </sect1>
    <sect1 xml:id="sec-ssh-copy">
       <title>
          <command>scp</command>—secure copy</title>
-      <para>
-         <command>scp</command> copies files to or from a remote machine. If the user name on jupiter is different than the user name on sun, specify the latter using the <option>
-            <replaceable>USER_NAME</replaceable>&amp;host</option> format. If the file should be copied into a directory other than the remote user's home directory, specify it as sun:<replaceable>DIRECTORY</replaceable>. The following examples show how to copy a file from a local to a remote machine and vice versa.</para>
+      <para><command>scp</command> copies files to or from a remote machine. If the user name on jupiter is different than the user name on sun, specify the latter using the <option><replaceable>USER_NAME</replaceable>&amp;host</option> format. If the file should be copied into a directory other than the remote user's home directory, specify it as sun:<replaceable>DIRECTORY</replaceable>. The following examples show how to copy a file from a local to a remote machine and vice versa.</para>
       <screen><prompt>&gt;</prompt>scp ~/MyLetter.tex tux@sun:/tmp <co xml:id="co-scp-local-remote"/><prompt>&gt;</prompt>scp tux@sun:/tmp/MyLetter.tex ~ <co xml:id="co-scp-remote-local"/></screen>
       <calloutlist>
          <callout arearefs="co-scp-local-remote">
@@ -775,12 +750,10 @@ Type=wayland</screen>
       </calloutlist>
       <tip>
          <title>The <option>-l</option> option</title>
-         <para>With the <command>ssh</command> command, the option <option>-l</option> can be used to specify a remote user (as an alternative to the <option>
-               <replaceable>USER_NAME</replaceable>&amp;host</option> format). With <command>scp</command> the option <option>-l</option> is used to limit the bandwidth consumed by <command>scp</command>.</para>
+         <para>With the <command>ssh</command> command, the option <option>-l</option> can be used to specify a remote user (as an alternative to the <option><replaceable>USER_NAME</replaceable>&amp;host</option> format). With <command>scp</command> the option <option>-l</option> is used to limit the bandwidth consumed by <command>scp</command>.</para>
       </tip>
       <para>After the correct password is entered, <command>scp</command> starts the data transfer. It displays a progress bar and the time remaining for each file that is copied. Suppress all output with the <option>-q</option> option.</para>
-      <para>
-         <command>scp</command> also provides a recursive copying feature for entire directories. The command</para>
+      <para><command>scp</command> also provides a recursive copying feature for entire directories. The command</para>
       <screen><prompt>&gt;</prompt>scp -r src/ sun:backup/</screen>
       <para>copies the entire contents of the directory <filename>src</filename> including all subdirectories to the <filename>~/backup</filename> directory on the host sun. If this subdirectory does not exist, it is created automatically.</para>
       <para>The <option>-p</option> option tells <command>scp</command> to leave the time stamp of files unchanged. <option>-C</option> compresses the data transfer. This minimizes the data volume to transfer, but creates a heavier burden on the processors of both machines.</para>
@@ -816,50 +789,26 @@ cd path                            Change remote directory to 'path'
                         <colspec colnum="3" colname="3" colwidth="33*"/>
                         <thead>
                            <row>
-                              <entry>
-                                 <para>permissions original</para>
-                              </entry>
-                              <entry>
-                                 <para>umask</para>
-                              </entry>
-                              <entry>
-                                 <para>permissions uploaded</para>
-                              </entry>
+                              <entry><para>permissions original</para></entry>
+                              <entry><para>umask</para></entry>
+                              <entry><para>permissions uploaded</para></entry>
                            </row>
                         </thead>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>0666</para>
-                              </entry>
-                              <entry>
-                                 <para>0002</para>
-                              </entry>
-                              <entry>
-                                 <para>0664</para>
-                              </entry>
+                              <entry><para>0666</para></entry>
+                              <entry><para>0002</para></entry>
+                              <entry><para>0664</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>0600</para>
-                              </entry>
-                              <entry>
-                                 <para>0002</para>
-                              </entry>
-                              <entry>
-                                 <para>0600</para>
-                              </entry>
+                              <entry><para>0600</para></entry>
+                              <entry><para>0002</para></entry>
+                              <entry><para>0600</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>0775</para>
-                              </entry>
-                              <entry>
-                                 <para>0025</para>
-                              </entry>
-                              <entry>
-                                 <para>0750</para>
-                              </entry>
+                              <entry><para>0775</para></entry>
+                              <entry><para>0025</para></entry>
+                              <entry><para>0750</para></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -886,8 +835,7 @@ cd path                            Change remote directory to 'path'
    </sect1>
    <sect1 xml:id="sec-ssh-port-forwarding">
       <title>Port forwarding (SSH tunneling)</title>
-      <para>
-         <command>ssh</command> can also be used to redirect TCP/IP connections. This feature, also called <literal>SSH tunneling</literal>, redirects TCP connections to a certain port to another machine via an encrypted channel.</para>
+      <para><command>ssh</command> can also be used to redirect TCP/IP connections. This feature, also called <literal>SSH tunneling</literal>, redirects TCP connections to a certain port to another machine via an encrypted channel.</para>
       <para>With the following command, any connection directed to jupiter port 25 (SMTP) is redirected to the SMTP port on sun. This is especially useful for those using SMTP servers without SMTP-AUTH or POP-before-SMTP features. From any arbitrary location connected to a network, e-mail can be transferred to the <quote>home</quote> mail server for delivery.</para>
       <screen><prompt role="root">#</prompt>ssh -L 25:sun:25 jupiter</screen>
       <para>Similarly, all POP3 requests (port 110) on jupiter can be forwarded to the POP3 port of sun with this command:</para>
@@ -998,7 +946,7 @@ cd path                            Change remote directory to 'path'
                      <emphasis>jail.local</emphasis>file settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/fail2ban.png"/>
+                        <imagedata width="69%" fileref="media/fail2ban.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
                         <imagedata fileref="media/fail2ban.png"/>

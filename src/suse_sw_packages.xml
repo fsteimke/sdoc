@@ -14,24 +14,16 @@
       <para>Bash is the default system shell. When used as a login shell, it reads several initialization files. Bash processes them in the order they appear in this list:</para>
       <orderedlist spacing="normal">
          <listitem>
-            <para>
-               <filename>/etc/profile</filename>
-            </para>
+            <para><filename>/etc/profile</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>~/.profile</filename>
-            </para>
+            <para><filename>~/.profile</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>/etc/bash.bashrc</filename>
-            </para>
+            <para><filename>/etc/bash.bashrc</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <filename>~/.bashrc</filename>
-            </para>
+            <para><filename>~/.bashrc</filename></para>
          </listitem>
       </orderedlist>
       <para>Make custom settings in <filename>~/.profile</filename> or <filename>~/.bashrc</filename>. To ensure the correct processing of these files, it is necessary to copy the basic settings from <filename>/etc/skel/.profile</filename> or <filename>/etc/skel/.bashrc</filename> into the home directory of the user. It is recommended to copy the settings from <filename>/etc/skel</filename> after an update. Execute the following shell commands to prevent the loss of personal adjustments:</para>
@@ -70,14 +62,12 @@
    <sect2 xml:id="sec-suse-locate">
       <title>The <command>locate</command> command</title>
       <!-- bnc#892484: mlocate since SLE 12 -->
-      <para>
-         <command>locate</command>, a command for quickly finding files, is not included in the standard scope of installed software. If desired, install the package <systemitem>mlocate</systemitem>, the successor of the package <systemitem>findutils-locate</systemitem>. The <systemitem class="daemon">updatedb</systemitem> process is started automatically every night or about 15 minutes after booting the system.</para>
+      <para><command>locate</command>, a command for quickly finding files, is not included in the standard scope of installed software. If desired, install the package <systemitem>mlocate</systemitem>, the successor of the package <systemitem>findutils-locate</systemitem>. The <systemitem class="daemon">updatedb</systemitem> process is started automatically every night or about 15 minutes after booting the system.</para>
    </sect2>
    <sect2 xml:id="sec-suse-ulimit">
       <title>The <command>ulimit</command> command</title>
       <para>With the <command>ulimit</command> (<emphasis>user limits</emphasis>) command, it is possible to set limits for the use of system resources and to have these displayed. <command>ulimit</command> is especially useful for limiting available memory for applications. With this, an application can be prevented from co-opting too much of the system resources and slowing or even hanging up the operating system.</para>
-      <para>
-         <command>ulimit</command> can be used with various options. To limit memory usage, use the options listed in <xref linkend="tab-suse-packages-ulimit"/>.</para>
+      <para><command>ulimit</command> can be used with various options. To limit memory usage, use the options listed in <xref linkend="tab-suse-packages-ulimit"/>.</para>
       <table xml:id="tab-suse-packages-ulimit">
          <title>
             <command>ulimit</command>: Setting resources for the user</title>
@@ -85,54 +75,24 @@
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <option>-m</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>The maximum resident set size</para>
-                  </entry>
+                  <entry><para><option>-m</option></para></entry>
+                  <entry><para>The maximum resident set size</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-v</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>The maximum amount of virtual memory available to the shell</para>
-                  </entry>
+                  <entry><para><option>-v</option></para></entry>
+                  <entry><para>The maximum amount of virtual memory available to the shell</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-s</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>The maximum size of the stack</para>
-                  </entry>
+                  <entry><para><option>-s</option></para></entry>
+                  <entry><para>The maximum size of the stack</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-c</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>The maximum size of core files created</para>
-                  </entry>
+                  <entry><para><option>-c</option></para></entry>
+                  <entry><para>The maximum size of core files created</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>-a</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>All current limits are reported</para>
-                  </entry>
+                  <entry><para><option>-a</option></para></entry>
+                  <entry><para>All current limits are reported</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -164,15 +124,12 @@ ulimit -v 98304</screen>
    </sect2>
    <sect2 xml:id="sec-suse-manpages">
       <title>Man pages and info pages</title>
-      <para>For some GNU applications (such as tar), the man pages are no longer maintained. For these commands, use the <option>--help</option> option to get a quick overview of the info pages, which provide more in-depth instructions. Info <!-- it's a product name; so capitalize it -ke- --> is GNU's hypertext system. Read an introduction to this system by entering <command>info</command>
-         <option>info</option>. Info pages can be viewed with Emacs by entering <command>emacs</command>
-         <option>-f info</option> or directly in a console with <command>info</command>. You can also use tkinfo, xinfo or the help system to view info pages.</para>
+      <para>For some GNU applications (such as tar), the man pages are no longer maintained. For these commands, use the <option>--help</option> option to get a quick overview of the info pages, which provide more in-depth instructions. Info <!-- it's a product name; so capitalize it -ke- --> is GNU's hypertext system. Read an introduction to this system by entering <command>info</command><option>info</option>. Info pages can be viewed with Emacs by entering <command>emacs</command><option>-f info</option> or directly in a console with <command>info</command>. You can also use tkinfo, xinfo or the help system to view info pages.</para>
    </sect2>
    <!-- bnc#442262 -->
    <sect2 xml:id="sec-suse-packages-man">
       <title>Selecting man pages using the <command>man</command> command</title>
-      <para>To read a man page enter <command>man</command>
-         <replaceable>MAN_PAGE</replaceable>. If a man page with the same name exists in different sections, they will all be listed with the corresponding section numbers. Select the one to display. If you do not enter a section number within a few seconds, the first man page will be displayed.</para>
+      <para>To read a man page enter <command>man</command><replaceable>MAN_PAGE</replaceable>. If a man page with the same name exists in different sections, they will all be listed with the corresponding section numbers. Select the one to display. If you do not enter a section number within a few seconds, the first man page will be displayed.</para>
       <para>To change this to the default system behavior, set <literal>MAN_POSIXLY_CORRECT=1</literal> in a shell initialization file such as <filename>~/.bashrc</filename>.</para>
    </sect2>
    <xi:include href="suse_emacs.xml"/>

@@ -64,8 +64,7 @@
          <term>trustdom/</term>
          <listitem>
             <para>Trusted Domains.</para>
-            <para>A map of two maps (keys: <literal>establish, revoke</literal>). Each map contains entries in the format <literal>key: domainname</literal>
-               <literal>value: password</literal>.</para>
+            <para>A map of two maps (keys: <literal>establish, revoke</literal>). Each map contains entries in the format <literal>key: domainname</literal><literal>value: password</literal>.</para>
          </listitem>
       </varlistentry>
       <varlistentry>

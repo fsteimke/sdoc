@@ -78,22 +78,19 @@
          <varlistentry>
             <term>Adding or creating AppArmor profiles</term>
             <listitem>
-               <para>Refer to <xref linkend="sec-apparmor-commandline-add"/>
-               </para>
+               <para>Refer to <xref linkend="sec-apparmor-commandline-add"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Editing AppArmor profiles</term>
             <listitem>
-               <para>Refer to <xref linkend="sec-apparmor-commandline-edit"/>
-               </para>
+               <para>Refer to <xref linkend="sec-apparmor-commandline-edit"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Deleting AppArmor profiles</term>
             <listitem>
-               <para>Refer to <xref linkend="sec-apparmor-commandline-del"/>
-               </para>
+               <para>Refer to <xref linkend="sec-apparmor-commandline-del"/></para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -144,8 +141,7 @@
       <title>Unloading unknown AppArmor profiles</title>
       <warning>
          <title>Danger of unloading wanted profiles</title>
-         <para>
-            <command>aa-remove-unknown</command> unloads all profiles that are not stored in <filename>/etc/apparmor.d</filename>, for example automatically generated LXD profiles. This may compromise the security of the system. Use the <option>-n</option> parameter to list all profiles that are unloaded.</para>
+         <para><command>aa-remove-unknown</command> unloads all profiles that are not stored in <filename>/etc/apparmor.d</filename>, for example automatically generated LXD profiles. This may compromise the security of the system. Use the <option>-n</option> parameter to list all profiles that are unloaded.</para>
       </warning>
       <para>To unload all AppArmor profiles that are no longer in <filename>/etc/apparmor.d/</filename>, run:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>aa-remove-unknown</command></screen>
@@ -262,15 +258,13 @@
                <varlistentry>
                   <term>Directories</term>
                   <listitem>
-                     <para>If all the programs to profile are in one directory and there are no other programs in that directory, the simple command <command>aa-autodep</command>
-                        <replaceable>/path/to/your/programs/*</replaceable> creates basic profiles for all programs in that directory.</para>
+                     <para>If all the programs to profile are in one directory and there are no other programs in that directory, the simple command <command>aa-autodep</command><replaceable>/path/to/your/programs/*</replaceable> creates basic profiles for all programs in that directory.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>pstree -p</term>
                   <listitem>
-                     <para>You can run your application and use the standard Linux <command>pstree</command> command to find all processes running. Then manually hunt down the location of these programs and run the <command>aa-autodep</command> for each one. If the programs are in your path, <command>aa-autodep</command> finds them for you. If they are not in your path, the standard Linux command <command>find</command> might be helpful in finding your programs. Execute <command>find / -name '</command>
-                        <replaceable>MY_APPLICATION</replaceable>' -print to determine an application's path (<replaceable>MY_APPLICATION</replaceable> being an example application). You may use wild cards if appropriate.</para>
+                     <para>You can run your application and use the standard Linux <command>pstree</command> command to find all processes running. Then manually hunt down the location of these programs and run the <command>aa-autodep</command> for each one. If the programs are in your path, <command>aa-autodep</command> finds them for you. If they are not in your path, the standard Linux command <command>find</command> might be helpful in finding your programs. Execute <command>find / -name '</command><replaceable>MY_APPLICATION</replaceable>' -print to determine an application's path (<replaceable>MY_APPLICATION</replaceable> being an example application). You may use wild cards if appropriate.</para>
                   </listitem>
                </varlistentry>
             </variablelist>
@@ -305,8 +299,7 @@
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-decode">
             <title>aa-decode—decoding hex-encoded strings in AppArmor log files</title>
-            <para>
-               <command>aa-decode</command> decodes hex-encoded strings in the AppArmor log output. It can also process the audit log on standard input, convert any hex-encoded AppArmor log entries, and display them on standard output.</para>
+            <para><command>aa-decode</command> decodes hex-encoded strings in the AppArmor log output. It can also process the audit log on standard input, convert any hex-encoded AppArmor log entries, and display them on standard output.</para>
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-disable">
             <title>aa-disable—disabling an AppArmor security profile</title>
@@ -314,8 +307,7 @@
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-easyprof">
             <title>aa-easyprof—easy profile generation</title>
-            <para>
-               <command>aa-easyprof</command> provides an easy-to-use interface for AppArmor profile generation. <command>aa-easyprof</command> supports the use of templates and profile groups to quickly profile an application. While <command>aa-easyprof</command> can help with profile generation, its utility is dependent on the quality of the templates, profile groups and abstractions used. Also, this tool may create a profile that is less restricted than when creating a profile manually or with <command>aa-genprof</command> and <command>aa-logprof</command>.</para>
+            <para><command>aa-easyprof</command> provides an easy-to-use interface for AppArmor profile generation. <command>aa-easyprof</command> supports the use of templates and profile groups to quickly profile an application. While <command>aa-easyprof</command> can help with profile generation, its utility is dependent on the quality of the templates, profile groups and abstractions used. Also, this tool may create a profile that is less restricted than when creating a profile manually or with <command>aa-genprof</command> and <command>aa-logprof</command>.</para>
             <para>For more information, see the man page of <command>aa-easyprof</command> (8).</para>
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-enforce">
@@ -355,8 +347,7 @@
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-genprof">
             <title>aa-genprof—generating profiles</title>
-            <para>
-               <command>aa-genprof</command> is AppArmor's profile generating utility. It runs <command>aa-autodep</command> on the specified program, creating an approximate profile (if a profile does not already exist for it), sets it to complain mode, reloads it into AppArmor, marks the log, and prompts the user to execute the program and exercise its functionality. Its syntax is as follows:</para>
+            <para><command>aa-genprof</command> is AppArmor's profile generating utility. It runs <command>aa-autodep</command> on the specified program, creating an approximate profile (if a profile does not already exist for it), sets it to complain mode, reloads it into AppArmor, marks the log, and prompts the user to execute the program and exercise its functionality. Its syntax is as follows:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> aa-genprof [ -d <replaceable>/path/to/profiles</replaceable> ]  <replaceable>PROGRAM</replaceable></screen>
             <para>To create a profile for the Apache Web server program httpd2-prefork, do the following as <systemitem class="username">root</systemitem>:</para>
             <procedure>
@@ -380,8 +371,7 @@ apparmor="DENIED" operation="file_mmap" parent=2692 \
 profile="/usr/sbin/httpd2-prefork//HANDLING_UNTRUSTED_INPUT" \
 name="/var/log/apache2/access_log-20140116" pid=28730 comm="httpd2-prefork" \
 requested_mask="::r" denied_mask="::r" fsuid=30 ouid=0</screen>
-                        <para>If you are not running the audit daemon, the AppArmor events are logged directly to <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                           <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>):</para>
+                        <para>If you are not running the audit daemon, the AppArmor events are logged directly to <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>):</para>
                         <screen>Sep 13 13:20:30 K23 kernel: audit(1189682430.672:20810): \
 apparmor="DENIED" operation="file_mmap" parent=2692 \
 profile="/usr/sbin/httpd2-prefork//HANDLING_UNTRUSTED_INPUT" \
@@ -408,12 +398,10 @@ Sep 13 17:48:52 figwit root: GenProf: e2ff78636296f16d0b5301209a04430d</screen>
                   <para>Select from the following options that are available in the <command>aa-genprof</command> terminal window after you have executed the program function:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <keycap>S</keycap> runs <command>aa-genprof</command> on the system log from where it was marked when <command>aa-genprof</command> was started and reloads the profile. If system events exist in the log, AppArmor parses the learning mode log files. This generates a series of questions that you must answer to guide <command>aa-genprof</command> in generating the security profile.</para>
+                        <para><keycap>S</keycap> runs <command>aa-genprof</command> on the system log from where it was marked when <command>aa-genprof</command> was started and reloads the profile. If system events exist in the log, AppArmor parses the learning mode log files. This generates a series of questions that you must answer to guide <command>aa-genprof</command> in generating the security profile.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <keycap>F</keycap> exits the tool.</para>
+                        <para><keycap>F</keycap> exits the tool.</para>
                      </listitem>
                   </itemizedlist>
                   <note>
@@ -501,8 +489,7 @@ Severity: unknown
                         </variablelist>
                      </listitem>
                      <listitem>
-                        <para>
-                           <xref linkend="ex-apparmor-commandline-profiling-summary-genprof-perms"/> shows AppArmor suggest allowing a globbing pattern <filename>/var/run/nscd/*</filename> for reading, then using an abstraction to cover common Apache-related access rules.</para>
+                        <para><xref linkend="ex-apparmor-commandline-profiling-summary-genprof-perms"/> shows AppArmor suggest allowing a globbing pattern <filename>/var/run/nscd/*</filename> for reading, then using an abstraction to cover common Apache-related access rules.</para>
                         <example xml:id="ex-apparmor-commandline-profiling-summary-genprof-perms">
                            <title>Learning mode exception: defining permissions for an entry</title>
                            <screen><?dbfo keep-together="always"?>Profile:  /usr/sbin/httpd2-prefork
@@ -613,8 +600,7 @@ Adding #include &lt;abstractions/apache2-common&gt; to profile.
                   </itemizedlist>
                </step>
                <step>
-                  <para>To view and edit your profile using <command>vi</command>, enter <command>vi /etc/apparmor.d/</command>
-                     <replaceable>PROFILENAME</replaceable> in a terminal window. To enable syntax highlighting when editing an AppArmor profile in vim, use the commands <command>:syntax on</command> then <command>:set syntax=apparmor</command>. For more information about vim and syntax highlighting, refer to <xref linkend="sec-apparmor-commandline-profiling-summary-vim"/>.</para>
+                  <para>To view and edit your profile using <command>vi</command>, enter <command>vi /etc/apparmor.d/</command><replaceable>PROFILENAME</replaceable> in a terminal window. To enable syntax highlighting when editing an AppArmor profile in vim, use the commands <command>:syntax on</command> then <command>:set syntax=apparmor</command>. For more information about vim and syntax highlighting, refer to <xref linkend="sec-apparmor-commandline-profiling-summary-vim"/>.</para>
                </step>
                <step>
                   <para>Restart AppArmor and reload the profile set including the newly created one using the <command>systemctl reload apparmor</command> command.</para>
@@ -644,9 +630,7 @@ Adding #include &lt;abstractions/apache2-common&gt; to profile.
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-logprof">
             <title>aa-logprof—scanning the system log</title>
-            <para>
-               <command>aa-logprof</command> is an interactive tool used to review the complain and enforce mode events found in the log entries in <filename>/var/log/audit/audit.log</filename>, or directly in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>), and generate new entries in AppArmor security profiles.</para>
+            <para><command>aa-logprof</command> is an interactive tool used to review the complain and enforce mode events found in the log entries in <filename>/var/log/audit/audit.log</filename>, or directly in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>), and generate new entries in AppArmor security profiles.</para>
             <para>When you run <command>aa-logprof</command>, it begins to scan the log files produced in complain and enforce mode and, if there are new security events that are not covered by the existing profile set, it gives suggestions for modifying the profile. <command>aa-logprof</command> uses this information to observe program behavior.</para>
             <para>If a confined program forks and executes another program, <command>aa-logprof</command> sees this and asks the user which execution mode should be used when launching the child process. The execution modes <emphasis>ix</emphasis>, <emphasis>px</emphasis>, <emphasis>Px</emphasis>, <emphasis>ux</emphasis>, <emphasis>Ux</emphasis>, <emphasis>cx</emphasis>, <emphasis>Cx</emphasis>, and named profiles, are options for starting the child process. If a separate profile exists for the child process, the default selection is <emphasis>Px</emphasis>. If one does not exist, the profile defaults to <emphasis>ix</emphasis>. Child processes with separate profiles have <command>aa-autodep</command> run on them and are loaded into AppArmor, if it is running.</para>
             <para>When <command>aa-logprof</command> exits, profiles are updated with the changes. If AppArmor is active, the updated profiles are reloaded and, if any processes that generated security events are still running in the null-XXXX profiles (unique profiles temporarily created in complain mode), those processes are set to run under their proper profiles.</para>
@@ -682,10 +666,8 @@ Adding #include &lt;abstractions/apache2-common&gt; to profile.
                   </listitem>
                </varlistentry>
             </variablelist>
-            <para>
-               <command>aa-logprof</command> scans the log, asking you how to handle each logged event. Each question presents a numbered list of AppArmor rules that can be added by pressing the number of the item on the list.</para>
-            <para>By default, <command>aa-logprof</command> looks for profiles in <filename>/etc/apparmor.d/</filename>. Often running <command>aa-logprof</command> as <systemitem class="username">root</systemitem> is enough to update the profile. However, there might be times when you need to search archived log files, such as if the program exercise period exceeds the log rotation window (when the log file is archived and a new log file is started). If this is the case, you can enter <command>zcat -f `ls -1tr</command>
-               <replaceable>/path/to/logfile*</replaceable>` | aa-logprof -f -.</para>
+            <para><command>aa-logprof</command> scans the log, asking you how to handle each logged event. Each question presents a numbered list of AppArmor rules that can be added by pressing the number of the item on the list.</para>
+            <para>By default, <command>aa-logprof</command> looks for profiles in <filename>/etc/apparmor.d/</filename>. Often running <command>aa-logprof</command> as <systemitem class="username">root</systemitem> is enough to update the profile. However, there might be times when you need to search archived log files, such as if the program exercise period exceeds the log rotation window (when the log file is archived and a new log file is started). If this is the case, you can enter <command>zcat -f `ls -1tr</command><replaceable>/path/to/logfile*</replaceable>` | aa-logprof -f -.</para>
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-logprof-ex1">
             <title>aa-logprof example 1</title>
@@ -768,8 +750,7 @@ New Mode: r
 
 (A)llow / [(D)eny] / (N)ew / (G)lob / Glob w/(E)xt / Abo(r)t / (F)inish
 </screen>
-            <para>Several items of interest appear in this question. First, vsftpd is asking for a path entry at the top of the tree, even though vsftpd on <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-               <!-- without chroot_relative, you'll get /path/to/chroot/y2k.jpg, so you need to rewrite the whole section --> serves FTP files from <filename>/srv/ftp</filename> by default. This is because vsftpd uses chroot and, for the portion of the code inside the chroot jail, AppArmor sees file accesses regarding the chroot environment rather than the global absolute path.</para>
+            <para>Several items of interest appear in this question. First, vsftpd is asking for a path entry at the top of the tree, even though vsftpd on <phrase role="productname">SUSE Linux Enterprise Server</phrase><!-- without chroot_relative, you'll get /path/to/chroot/y2k.jpg, so you need to rewrite the whole section --> serves FTP files from <filename>/srv/ftp</filename> by default. This is because vsftpd uses chroot and, for the portion of the code inside the chroot jail, AppArmor sees file accesses regarding the chroot environment rather than the global absolute path.</para>
             <para>The second item of interest is that you should grant FTP read access to all JPEG files in the directory, so you could use <guimenu>Glob w/Ext</guimenu> and use the suggested path of <literal>/*.jpg</literal>. Doing so collapses all previous rules granting access to individual <literal>.jpg</literal> files and forestalls any future questions pertaining to access to <filename>.jpg</filename> files.</para>
             <para>Finally, you should grant more general access to FTP files. If you select <guimenu>Glob</guimenu> in the last entry, <command>aa-logprof</command> replaces the suggested path of <filename>/y2k.jpg</filename> with <filename>/*</filename>. Alternatively, you should grant even more access to the entire directory tree, in which case you could use the <guimenu>New</guimenu> path option and enter <literal>/**.jpg</literal> (which would grant access to all <literal>.jpg</literal> files in the entire directory tree) or <filename>/**</filename> (which would grant access to all files in the directory tree).</para>
             <para>These items deal with read accesses. Write accesses are similar, except that it is good policy to be more conservative in your use of regular expressions for write accesses. Dealing with execute accesses is more complex. Find an example in <xref linkend="ex-apparmor-commandline-profiling-summary-genprof-learn"/>.</para>
@@ -800,8 +781,7 @@ New Mode: r
                   <para>The rule written into the profile uses px/Px, which forces the transition to the child's own profile.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <command>aa-logprof</command> constructs a profile for the child and starts building it, in the same way that it built the parent profile, by assigning events for the child process to the child's profile and asking the <command>aa-logprof</command> user questions. The profile is applied if you run the child as a stand-alone program.</para>
+                  <para><command>aa-logprof</command> constructs a profile for the child and starts building it, in the same way that it built the parent profile, by assigning events for the child process to the child's profile and asking the <command>aa-logprof</command> user questions. The profile is applied if you run the child as a stand-alone program.</para>
                </listitem>
             </itemizedlist>
             <para>If a confined program forks and executes another program, <command>aa-logprof</command> sees this and asks the user which execution mode should be used when launching the child process. The execution modes of inherit, profile, unconfined, child, named profile, or an option to deny the execution are presented.</para>
@@ -820,8 +800,7 @@ New Mode: r
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-unconfined">
             <title>aa-unconfined—identifying unprotected processes</title>
             <para>The <command>aa-unconfined</command> command examines open network ports on your system, compares that to the set of profiles loaded on your system, and reports network services that do not have AppArmor profiles. It requires <systemitem class="username">root</systemitem> privileges and that it not be confined by an AppArmor profile.</para>
-            <para>
-               <command>aa-unconfined</command> must be run as <systemitem class="username">root</systemitem> to retrieve the process executable link from the <filename>/proc</filename> file system. This program is susceptible to the following race conditions:</para>
+            <para><command>aa-unconfined</command> must be run as <systemitem class="username">root</systemitem> to retrieve the process executable link from the <filename>/proc</filename> file system. This program is susceptible to the following race conditions:</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
                   <para>An unlinked executable is mishandled</para>
@@ -836,8 +815,7 @@ New Mode: r
          </sect3>
          <sect3 xml:id="commandline-profiling-summary-aa-notify">
             <title>aa-notify</title>
-            <para>
-               <command>aa-notify</command> is a handy utility that displays AppArmor notifications in your desktop environment. This is convenient if you do not want to inspect the AppArmor log file, but rather let the desktop inform you about events that violate the policy. To enable AppArmor desktop notifications, run <command>aa-notify</command>:</para>
+            <para><command>aa-notify</command> is a handy utility that displays AppArmor notifications in your desktop environment. This is convenient if you do not want to inspect the AppArmor log file, but rather let the desktop inform you about events that violate the policy. To enable AppArmor desktop notifications, run <command>aa-notify</command>:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> aa-notify -p -u <replaceable>USERNAME</replaceable> --display <replaceable>DISPLAY_NUMBER</replaceable></screen>
             <para>where <replaceable>USERNAME</replaceable> is your user name under which you are logged in, and <replaceable>DISPLAY_NUMBER</replaceable> is the X Window display number you are currently using, such as <literal>:0</literal>. The process is run in the background, and shows a notification each time a deny event happens.</para>
             <tip>
@@ -849,15 +827,14 @@ New Mode: r
                </title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/aa-notify.png" width="75%"/>
+                     <imagedata fileref="media/aa-notify.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/aa-notify.png" width="40%"/>
+                     <imagedata fileref="media/aa-notify.png" width="36%"/>
                   </imageobject>
                </mediaobject>
             </figure>
-            <para>With the <option>-s <replaceable>DAYS</replaceable>
-               </option> option, you can also configure <command>aa-notify</command> to display a summary of notifications for the specified number of past days. For more information on <command>aa-notify</command>, see its man page <command>man 8 aa-notify</command>.</para>
+            <para>With the <option>-s <replaceable>DAYS</replaceable></option> option, you can also configure <command>aa-notify</command> to display a summary of notifications for the specified number of past days. For more information on <command>aa-notify</command>, see its man page <command>man 8 aa-notify</command>.</para>
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-vim">
             <title>apparmor.vim</title>
@@ -866,8 +843,7 @@ New Mode: r
             <screen># vim:ft=apparmor</screen>
             <para>at the end of the profile.</para>
             <tip>
-               <para>
-                  <command>vim</command> comes with AppArmor highlighting automatically enabled for files in <filename>/etc/apparmor.d/</filename>.</para>
+               <para><command>vim</command> comes with AppArmor highlighting automatically enabled for files in <filename>/etc/apparmor.d/</filename>.</para>
             </tip>
             <para>When you enable this feature, vim colors the lines of the profile for you:</para>
             <variablelist>
@@ -914,8 +890,7 @@ New Mode: r
                   </listitem>
                </varlistentry>
             </variablelist>
-            <para>Use the <systemitem>apparmor.vim</systemitem> and <systemitem>vim</systemitem> man pages and the <option>:help syntax</option> from within the vim editor for further vim help about syntax highlighting. The AppArmor syntax is stored in <filename>/usr/share/vim/current/syntax/apparmor.vim.</filename>
-            </para>
+            <para>Use the <systemitem>apparmor.vim</systemitem> and <systemitem>vim</systemitem> man pages and the <option>:help syntax</option> from within the vim editor for further vim help about syntax highlighting. The AppArmor syntax is stored in <filename>/usr/share/vim/current/syntax/apparmor.vim.</filename></para>
          </sect3>
       </sect2>
    </sect1>
@@ -976,8 +951,7 @@ New Mode: r
                <filename>/proc/*/attr/current</filename>
             </term>
             <listitem>
-               <para>Check this file to review the confinement status of a process and the profile that is used to confine the process. The <command>ps</command>
-                  <option>auxZ</option> command retrieves this information automatically.</para>
+               <para>Check this file to review the confinement status of a process and the profile that is used to confine the process. The <command>ps</command><option>auxZ</option> command retrieves this information automatically.</para>
             </listitem>
          </varlistentry>
       </variablelist>

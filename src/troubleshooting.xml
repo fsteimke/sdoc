@@ -10,259 +10,116 @@
    <para>This chapter describes a range of potential problems and their solutions. Even if your situation is not precisely listed, there may be one similar enough to offer hints to the solution of your problem.</para>
    <sect1 xml:id="sec-trouble-info">
       <title>Finding and gathering information</title>
-      <para>Linux reports things in a detailed way. There are several places to look when you encounter problems with your system. Most of them are standard to Linux systems, and several are relevant to <phrase role="productname">SUSE Linux Enterprise Server</phrase> systems. Most log files can be viewed with YaST (<menuchoice>
-            <guimenu>Miscellaneous</guimenu>
-            <guimenu>Start-Up Log</guimenu>
-         </menuchoice>).</para>
-      <para>YaST offers the possibility to collect all system information needed by the support team. Use <menuchoice><!-- TODO check this vvvvvv -->
-            <guimenu>Other</guimenu>
-            <guimenu>Support</guimenu>
-         </menuchoice> and select the problem category. When all information is gathered, attach it to your support request.</para>
+      <para>Linux reports things in a detailed way. There are several places to look when you encounter problems with your system. Most of them are standard to Linux systems, and several are relevant to <phrase role="productname">SUSE Linux Enterprise Server</phrase> systems. Most log files can be viewed with YaST (<menuchoice><guimenu>Miscellaneous</guimenu><guimenu>Start-Up Log</guimenu></menuchoice>).</para>
+      <para>YaST offers the possibility to collect all system information needed by the support team. Use <menuchoice><!-- TODO check this vvvvvv --><guimenu>Other</guimenu><guimenu>Support</guimenu></menuchoice> and select the problem category. When all information is gathered, attach it to your support request.</para>
       <para>A list of the most frequently checked log files follows with the description of their typical purpose. Paths containing <filename>~</filename> refer to the current user's home directory.</para>
       <table xml:id="tab-trouble-info">
          <title>Log files</title>
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>Log File</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Log File</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <filename>~/.xsession-errors</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Messages from the desktop applications currently running.</para>
-                  </entry>
+                  <entry><para><filename>~/.xsession-errors</filename></para></entry>
+                  <entry><para>Messages from the desktop applications currently running.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/apparmor/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Log files from AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                        <xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/apparmor/</filename></para></entry>
+                  <entry><para>Log files from AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/audit/audit.log</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Log file from Audit to track any access to files, directories, or resources of your system, and trace system calls. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                        <xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/audit/audit.log</filename></para></entry>
+                  <entry><para>Log file from Audit to track any access to files, directories, or resources of your system, and trace system calls. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/mail.*</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Messages from the mail system.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/mail.*</filename></para></entry>
+                  <entry><para>Messages from the mail system.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/NetworkManager</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Log file from NetworkManager to collect problems with network connectivity</para>
-                  </entry>
+                  <entry><para><filename>/var/log/NetworkManager</filename></para></entry>
+                  <entry><para>Log file from NetworkManager to collect problems with network connectivity</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/samba/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Directory containing Samba server and client log messages.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/samba/</filename></para></entry>
+                  <entry><para>Directory containing Samba server and client log messages.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/warn</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>All messages from the kernel and system log daemon with the <quote>warning</quote> level or higher.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/warn</filename></para></entry>
+                  <entry><para>All messages from the kernel and system log daemon with the <quote>warning</quote> level or higher.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/wtmp</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Binary file containing user login records for the current machine session. View it with <command>last</command>.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/wtmp</filename></para></entry>
+                  <entry><para>Binary file containing user login records for the current machine session. View it with <command>last</command>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/Xorg.*.log</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Start-up and runtime log files from the X Window System. It is useful for debugging failed X start-ups.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/Xorg.*.log</filename></para></entry>
+                  <entry><para>Start-up and runtime log files from the X Window System. It is useful for debugging failed X start-ups.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/YaST2/</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Directory containing YaST's actions and their results.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/YaST2/</filename></para></entry>
+                  <entry><para>Directory containing YaST's actions and their results.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/var/log/zypper.log</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Log file of Zypper.</para>
-                  </entry>
+                  <entry><para><filename>/var/log/zypper.log</filename></para></entry>
+                  <entry><para>Log file of Zypper.</para></entry>
                </row>
             </tbody>
          </tgroup>
       </table>
-      <para>Apart from log files, your machine also supplies you with information about the running system. See <xref linkend="tab-trouble-system" xrefstyle="%label %c"/>
-      </para>
+      <para>Apart from log files, your machine also supplies you with information about the running system. See <xref linkend="tab-trouble-system" xrefstyle="%label %c"/></para>
       <table xml:id="tab-trouble-system">
          <title>System information with the <filename>/proc</filename> file system</title>
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>File</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>File</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/cpuinfo</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Contains processor information, including its type, make, model, and performance.</para>
-                  </entry>
+                  <entry><para><filename>/proc/cpuinfo</filename></para></entry>
+                  <entry><para>Contains processor information, including its type, make, model, and performance.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/dma</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Shows which DMA channels are currently being used.</para>
-                  </entry>
+                  <entry><para><filename>/proc/dma</filename></para></entry>
+                  <entry><para>Shows which DMA channels are currently being used.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/interrupts</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Shows which interrupts are in use, and how many of each have been in use.</para>
-                  </entry>
+                  <entry><para><filename>/proc/interrupts</filename></para></entry>
+                  <entry><para>Shows which interrupts are in use, and how many of each have been in use.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/iomem</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Displays the status of I/O (input/output) memory.</para>
-                  </entry>
+                  <entry><para><filename>/proc/iomem</filename></para></entry>
+                  <entry><para>Displays the status of I/O (input/output) memory.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/ioports</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Shows which I/O ports are in use at the moment.</para>
-                  </entry>
+                  <entry><para><filename>/proc/ioports</filename></para></entry>
+                  <entry><para>Shows which I/O ports are in use at the moment.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/meminfo</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Displays memory status.</para>
-                  </entry>
+                  <entry><para><filename>/proc/meminfo</filename></para></entry>
+                  <entry><para>Displays memory status.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/modules</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Displays the individual modules.</para>
-                  </entry>
+                  <entry><para><filename>/proc/modules</filename></para></entry>
+                  <entry><para>Displays the individual modules.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/mounts</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Displays devices currently mounted.</para>
-                  </entry>
+                  <entry><para><filename>/proc/mounts</filename></para></entry>
+                  <entry><para>Displays devices currently mounted.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/partitions</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Shows the partitioning of all hard disks.</para>
-                  </entry>
+                  <entry><para><filename>/proc/partitions</filename></para></entry>
+                  <entry><para>Shows the partitioning of all hard disks.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/proc/version</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Displays the current version of Linux.</para>
-                  </entry>
+                  <entry><para><filename>/proc/version</filename></para></entry>
+                  <entry><para>Displays the current version of Linux.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -273,60 +130,31 @@
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>File</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>File</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/sys/block</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Contains subdirectories for each block device discovered in the system. Generally, these are mostly disk type devices.</para>
-                  </entry>
+                  <entry><para><filename>/sys/block</filename></para></entry>
+                  <entry><para>Contains subdirectories for each block device discovered in the system. Generally, these are mostly disk type devices.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/sys/bus</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Contains subdirectories for each physical bus type.</para>
-                  </entry>
+                  <entry><para><filename>/sys/bus</filename></para></entry>
+                  <entry><para>Contains subdirectories for each physical bus type.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/sys/class</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Contains subdirectories grouped together as a functional types of devices (like graphics, net, printer, etc.)</para>
-                  </entry>
+                  <entry><para><filename>/sys/class</filename></para></entry>
+                  <entry><para>Contains subdirectories grouped together as a functional types of devices (like graphics, net, printer, etc.)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <filename>/sys/device</filename>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Contains the global device hierarchy.</para>
-                  </entry>
+                  <entry><para><filename>/sys/device</filename></para></entry>
+                  <entry><para>Contains the global device hierarchy.</para></entry>
                </row>
             </tbody>
          </tgroup>
       </table>
-      <para>Linux comes with several tools for system analysis and monitoring. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-         <xref linkend="cha-util" xrefstyle="%label &#34;%c&#34;"/> for a selection of the most important ones used in system diagnostics.</para>
+      <para>Linux comes with several tools for system analysis and monitoring. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-util" xrefstyle="%label &#34;%c&#34;"/> for a selection of the most important ones used in system diagnostics.</para>
       <para>Each of the following scenarios begins with a header describing the problem followed by a paragraph or two offering suggested solutions, available references for more detailed solutions, and cross-references to other scenarios that are related.</para>
    </sect1>
    <sect1 xml:id="sec-trouble-boot">
@@ -335,14 +163,8 @@
       <sect2 xml:id="sec-trouble-boot-nogrub">
          <title>The GRUB 2 boot loader fails to load</title>
          <para>If the hardware is functioning properly, it is possible that the boot loader is corrupted and Linux cannot start on the machine. In this case, it is necessary to repair the boot loader. To do so, you need to start the Rescue System as described in <xref linkend="sec-trouble-data-recover-rescue"/> and follow the instructions in <xref linkend="sec-trouble-data-recover-rescue-grub"/>.</para>
-         <para>Alternatively, you can use the Rescue System to fix the boot loader as follows. Boot your machine from the installation media. In the boot screen, choose <menuchoice>
-               <guimenu>More</guimenu>
-               <guimenu>Boot Linux System</guimenu>
-            </menuchoice>. Select the disk containing the installed system and kernel with the default kernel options.</para>
-         <para>When the system is booted, start YaST and switch to <menuchoice>
-               <guimenu>System</guimenu>
-               <guimenu>Boot Loader</guimenu>
-            </menuchoice>. Make sure that the <guimenu>Write generic Boot Code to MBR</guimenu> option is enabled, and click <guimenu>OK</guimenu>. This fixes the corrupted boot loader by overwriting it, or installs the boot loader if it is missing.</para>
+         <para>Alternatively, you can use the Rescue System to fix the boot loader as follows. Boot your machine from the installation media. In the boot screen, choose <menuchoice><guimenu>More</guimenu><guimenu>Boot Linux System</guimenu></menuchoice>. Select the disk containing the installed system and kernel with the default kernel options.</para>
+         <para>When the system is booted, start YaST and switch to <menuchoice><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice>. Make sure that the <guimenu>Write generic Boot Code to MBR</guimenu> option is enabled, and click <guimenu>OK</guimenu>. This fixes the corrupted boot loader by overwriting it, or installs the boot loader if it is missing.</para>
          <para>Other reasons for the machine not booting may be BIOS-related:</para>
          <variablelist>
             <varlistentry>
@@ -361,12 +183,7 @@
       </sect2>
       <sect2 xml:id="sec-trouble-boot-prompt">
          <title>No graphical login</title>
-         <para>If the machine starts, but does not boot into the graphical login manager, anticipate problems either with the choice of the default systemd target or the configuration of the X Window System. To check the current systemd default target run the command <command>sudo systemctl get-default</command>. If the value returned is <emphasis>not</emphasis>
-            <literal>graphical.target</literal>, run the command <command>sudo systemctl isolate graphical.target</command>. If the graphical login screen starts, log in and start <menuchoice>
-               <guimenu>YaST</guimenu>
-               <guimenu>System</guimenu>
-               <guimenu>Services Manager</guimenu>
-            </menuchoice> and set the <guimenu>Default System Target</guimenu> to <guimenu>Graphical Interface</guimenu>. From now on the system should boot into the graphical login screen.</para>
+         <para>If the machine starts, but does not boot into the graphical login manager, anticipate problems either with the choice of the default systemd target or the configuration of the X Window System. To check the current systemd default target run the command <command>sudo systemctl get-default</command>. If the value returned is <emphasis>not</emphasis><literal>graphical.target</literal>, run the command <command>sudo systemctl isolate graphical.target</command>. If the graphical login screen starts, log in and start <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Services Manager</guimenu></menuchoice> and set the <guimenu>Default System Target</guimenu> to <guimenu>Graphical Interface</guimenu>. From now on the system should boot into the graphical login screen.</para>
          <para>If the graphical login screen does not start even if having booted or switched to the graphical target, your desktop or X Window software may be misconfigured or corrupted. Examine the log files at <filename>/var/log/Xorg.*.log</filename> for detailed messages from the X server as it attempted to start. If the desktop fails during start, it may log error messages to the system journal that can be queried with the command <command>journalctl</command> (see <xref linkend="cha-journalctl"/> for more information). If these error messages hint at a configuration problem in the X server, try to fix these issues. If the graphical system still does not come up, consider reinstalling the graphical desktop.</para>
       </sect2>
       <sect2 xml:id="sec-trouble-boot-btrfs">
@@ -417,8 +234,7 @@
                <para>If the system is configured to use Kerberos, the system's local time may have drifted past the accepted variance with the Kerberos server time (this is typically 300 seconds). If NTP (network time protocol) is not working properly or local NTP servers are not working, Kerberos authentication ceases to function because it depends on common clock synchronization across the network.</para>
             </listitem>
             <listitem>
-               <para>The system's authentication configuration is misconfigured. Check the PAM configuration files involved for any typographical errors or misordering of directives. For additional background information about PAM and the syntax of the configuration files involved, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="cha-pam" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>The system's authentication configuration is misconfigured. Check the PAM configuration files involved for any typographical errors or misordering of directives. For additional background information about PAM and the syntax of the configuration files involved, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-pam" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
             <listitem>
                <para>The home partition is encrypted. Find more information about this topic in <xref linkend="sec-trouble-login-encrypted"/>.</para>
@@ -450,18 +266,10 @@
                <para>Log in as <systemitem class="username">root</systemitem> and check the system journal with <command>journalctl -e</command> for error messages of the login process and of PAM.</para>
             </step>
             <step>
-               <para>Try to log in from a console (using <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo>). If this is successful, the blame cannot be put on PAM, because it is possible to authenticate this user on this machine. Try to locate any problems with the X Window System or the GNOME desktop. For more information, refer to <xref linkend="sec-trouble-login-dk"/>.</para>
+               <para>Try to log in from a console (using <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo>). If this is successful, the blame cannot be put on PAM, because it is possible to authenticate this user on this machine. Try to locate any problems with the X Window System or the GNOME desktop. For more information, refer to <xref linkend="sec-trouble-login-dk"/>.</para>
             </step>
             <step>
-               <para>If the user's home directory has been used with another Linux distribution, remove the <filename>Xauthority</filename> file in the user's home. Use a console login via <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo> and run <command>rm .Xauthority</command> as this user. This should eliminate X authentication problems for this user. Try graphical login again.</para>
+               <para>If the user's home directory has been used with another Linux distribution, remove the <filename>Xauthority</filename> file in the user's home. Use a console login via <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo> and run <command>rm .Xauthority</command> as this user. This should eliminate X authentication problems for this user. Try graphical login again.</para>
             </step>
             <step>
                <para>If the desktop could not start because of corrupt configuration files, proceed with <xref linkend="sec-trouble-login-dk"/>.</para>
@@ -506,18 +314,10 @@
                <para>See if another user can log in to the misbehaving machine. If another user can log in without difficulty or if <systemitem class="username">root</systemitem> can log in, log in and examine the system journal with the <command>journalctl -e</command> &gt; file. Locate the time stamps that correspond to the login attempts and determine if PAM has produced any error messages.</para>
             </step>
             <step>
-               <para>Try to log in from a console (using <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo>). If this is successful, the problem is not with PAM or the directory server on which the user's home is hosted, because it is possible to authenticate this user on this machine. Try to locate any problems with the X Window System or the GNOME desktop. For more information, refer to <xref linkend="sec-trouble-login-dk"/>.</para>
+               <para>Try to log in from a console (using <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo>). If this is successful, the problem is not with PAM or the directory server on which the user's home is hosted, because it is possible to authenticate this user on this machine. Try to locate any problems with the X Window System or the GNOME desktop. For more information, refer to <xref linkend="sec-trouble-login-dk"/>.</para>
             </step>
             <step>
-               <para>If the user's home directory has been used with another Linux distribution, remove the <filename>Xauthority</filename> file in the user's home. Use a console login via <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo> and run <command>rm .Xauthority</command> as this user. This should eliminate X authentication problems for this user. Try graphical login again.</para>
+               <para>If the user's home directory has been used with another Linux distribution, remove the <filename>Xauthority</filename> file in the user's home. Use a console login via <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo> and run <command>rm .Xauthority</command> as this user. This should eliminate X authentication problems for this user. Try graphical login again.</para>
             </step>
             <step>
                <para>If the desktop could not start because of corrupt configuration files, proceed with <xref linkend="sec-trouble-login-dk"/>.</para>
@@ -531,11 +331,7 @@
          <para>To unlock your encrypted partition, proceed as follows:</para>
          <procedure>
             <step>
-               <para>Switch to the text console with <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F1</keycap>
-                  </keycombo>.</para>
+               <para>Switch to the text console with <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F1</keycap></keycombo>.</para>
             </step>
             <step>
                <para>Become <systemitem class="username">root</systemitem>.</para>
@@ -548,10 +344,7 @@
                <para>Enter your passphrase to unlock your encrypted partition.</para>
             </step>
             <step>
-               <para>Exit the text console and switch back to the login screen with <keycombo>
-                     <keycap function="alt"/>
-                     <keycap>F7</keycap>
-                  </keycombo>.</para>
+               <para>Exit the text console and switch back to the login screen with <keycombo><keycap function="alt"/><keycap>F7</keycap></keycombo>.</para>
             </step>
             <step>
                <para>Log in as usual.</para>
@@ -665,15 +458,12 @@
             </important>
             <substeps performance="required">
                <step>
-                  <para>Use <command>ping</command>
-                     <replaceable>IP_ADDRESS/HOSTNAME</replaceable> (replace with the host name or IP address of the server) to check whether each one of them is up and responding to the network. If this command is successful, it tells you that the host you were looking for is up and running and that the name service for your network is configured correctly.</para>
-                  <para>If ping fails with <literal>destination host unreachable</literal>, either your system or the desired server is not properly configured or down. Check whether your system is reachable by running <command>ping</command>
-                     <replaceable>IP address</replaceable> or <replaceable>YOUR_HOSTNAME</replaceable> from another machine. If you can reach your machine from another machine, it is the server that is not running or not configured correctly.</para>
+                  <para>Use <command>ping</command><replaceable>IP_ADDRESS/HOSTNAME</replaceable> (replace with the host name or IP address of the server) to check whether each one of them is up and responding to the network. If this command is successful, it tells you that the host you were looking for is up and running and that the name service for your network is configured correctly.</para>
+                  <para>If ping fails with <literal>destination host unreachable</literal>, either your system or the desired server is not properly configured or down. Check whether your system is reachable by running <command>ping</command><replaceable>IP address</replaceable> or <replaceable>YOUR_HOSTNAME</replaceable> from another machine. If you can reach your machine from another machine, it is the server that is not running or not configured correctly.</para>
                   <para>If ping fails with <literal>unknown host</literal>, the name service is not configured correctly or the host name used was incorrect. For further checks on this matter, refer to <xref linkend="st-trouble-config-net-host"/>. If ping still fails, either your network card is not configured correctly or your network hardware is faulty.</para>
                </step>
                <step xml:id="st-trouble-config-net-host">
-                  <para>Use <command>host</command>
-                     <replaceable>HOSTNAME</replaceable> to check whether the host name of the server you are trying to connect to is properly translated into an IP address and vice versa. If this command returns the IP address of this host, the name service is up and running. If the <command>host</command> command fails, check all network configuration files relating to name and address resolution on your host:</para>
+                  <para>Use <command>host</command><replaceable>HOSTNAME</replaceable> to check whether the host name of the server you are trying to connect to is properly translated into an IP address and vice versa. If this command returns the IP address of this host, the name service is up and running. If the <command>host</command> command fails, check all network configuration files relating to name and address resolution on your host:</para>
                   <variablelist>
                      <varlistentry>
                         <term>
@@ -705,13 +495,10 @@ networks: files dns
                </step>
                <step>
                   <para>If your system cannot establish a connection to a network server and you have excluded name service problems from the list of possible culprits, check the configuration of your network card.</para>
-                  <para>Use the command <command>ip addr show</command>
-                     <replaceable>NETWORK_DEVICE</replaceable> to check whether this device was properly configured. Make sure that the <option>inet address</option> with the netmask (<literal>/<replaceable>MASK</replaceable>
-                     </literal>) is configured correctly. An error in the IP address or a missing bit in your network mask would render your network configuration unusable. If necessary, perform this check on the server as well.</para>
+                  <para>Use the command <command>ip addr show</command><replaceable>NETWORK_DEVICE</replaceable> to check whether this device was properly configured. Make sure that the <option>inet address</option> with the netmask (<literal>/<replaceable>MASK</replaceable></literal>) is configured correctly. An error in the IP address or a missing bit in your network mask would render your network configuration unusable. If necessary, perform this check on the server as well.</para>
                </step>
                <step>
-                  <para>If the name service and network hardware are properly configured and running, but certain external network connections still get long timeouts or fail entirely, use <command>traceroute</command>
-                     <replaceable>FULLY_QUALIFIED_DOMAIN_NAME</replaceable> (executed as <systemitem class="username">root</systemitem>) to track the network route these requests are taking. This command lists any gateway (hop) that a request from your machine passes on its way to its destination. It lists the response time of each hop and whether this hop is reachable. Use a combination of traceroute and ping to track down the culprit and let the administrators know.</para>
+                  <para>If the name service and network hardware are properly configured and running, but certain external network connections still get long timeouts or fail entirely, use <command>traceroute</command><replaceable>FULLY_QUALIFIED_DOMAIN_NAME</replaceable> (executed as <systemitem class="username">root</systemitem>) to track the network route these requests are taking. This command lists any gateway (hop) that a request from your machine passes on its way to its destination. It lists the response time of each hop and whether this hop is reachable. Use a combination of traceroute and ping to track down the culprit and let the administrators know.</para>
                </step>
             </substeps>
          </step>

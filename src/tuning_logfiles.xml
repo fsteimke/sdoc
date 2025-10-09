@@ -7,8 +7,7 @@
          xml:id="cha-tuning-syslog">
    <title>System log files</title>
    <info/>
-   <para>System log file analysis is one of the most important tasks when analyzing the system. In fact, looking at the system log files should be the first thing to do when maintaining or troubleshooting a system. <phrase role="productname">SUSE Linux Enterprise Server</phrase> automatically logs almost everything that happens on the system in detail. Since the move to <systemitem class="daemon">systemd</systemitem>, kernel messages and messages of system services registered with <systemitem class="daemon">systemd</systemitem> are logged in <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-      <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). Other log files (mainly those of system applications) are written in plain text and can be easily read using an editor or pager. It is also possible to parse them using scripts. This allows you to filter their content.</para>
+   <para>System log file analysis is one of the most important tasks when analyzing the system. In fact, looking at the system log files should be the first thing to do when maintaining or troubleshooting a system. <phrase role="productname">SUSE Linux Enterprise Server</phrase> automatically logs almost everything that happens on the system in detail. Since the move to <systemitem class="daemon">systemd</systemitem>, kernel messages and messages of system services registered with <systemitem class="daemon">systemd</systemitem> are logged in <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). Other log files (mainly those of system applications) are written in plain text and can be easily read using an editor or pager. It is also possible to parse them using scripts. This allows you to filter their content.</para>
    <sect1 xml:id="sec-tuning-syslog-logs">
       <title>System log files in <filename>/var/log/</filename>
       </title>
@@ -37,8 +36,7 @@
                <filename>apparmor/</filename>
             </term>
             <listitem>
-               <para>AppArmor log files. For more information about AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>AppArmor log files. For more information about AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -46,8 +44,7 @@
                <filename>audit/</filename>
             </term>
             <listitem>
-               <para>Logs from the audit framework. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+               <para>Logs from the audit framework. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
             </listitem>
          </varlistentry>
          <!-- 2014-06-04 tbazant: now part of journald
@@ -230,8 +227,7 @@
                <filename>zypp/</filename>
             </term>
             <listitem>
-               <para>
-                  <systemitem class="library">libzypp</systemitem> log files. Refer to these files for the package installation history.</para>
+               <para><systemitem class="library">libzypp</systemitem> log files. Refer to these files for the package installation history.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -246,27 +242,20 @@
    </sect1>
    <sect1 xml:id="sec-tuning-syslog-view">
       <title>Viewing and parsing log files</title>
-      <para>To view log files, you can use any text editor. There is also a simple YaST module for viewing the system log available in the YaST control center under <menuchoice>
-            <guimenu>Miscellaneous</guimenu>
-            <guimenu>System Log</guimenu>
-         </menuchoice>.</para>
-      <para>For viewing log files in a text console, use the commands <command>less</command> or <command>more</command>. Use <command>head</command> and <command>tail</command> to view the beginning or end of a log file. To view entries appended to a log file in real-time use <command>tail</command>
-         <option>-f</option>. For information about how to use these tools, see their man pages.</para>
+      <para>To view log files, you can use any text editor. There is also a simple YaST module for viewing the system log available in the YaST control center under <menuchoice><guimenu>Miscellaneous</guimenu><guimenu>System Log</guimenu></menuchoice>.</para>
+      <para>For viewing log files in a text console, use the commands <command>less</command> or <command>more</command>. Use <command>head</command> and <command>tail</command> to view the beginning or end of a log file. To view entries appended to a log file in real-time use <command>tail</command><option>-f</option>. For information about how to use these tools, see their man pages.</para>
       <para>To search for strings or regular expressions in log files use <command>grep</command>. <command>awk</command> is useful for parsing and rewriting log files.</para>
    </sect1>
    <sect1 xml:id="sec-tuning-syslog-logrotate">
       <title>Managing log files with <command>logrotate</command>
       </title>
       <para>Log files under <filename>/var/log</filename> grow on a daily basis and quickly become large. <command>logrotate</command> is a tool that helps you manage log files and their growth. It allows automatic rotation, removal, compression, and mailing of log files. Log files can be handled periodically (daily, weekly, or monthly) or when exceeding a particular size.</para>
-      <para>
-         <command>logrotate</command> is run daily by <systemitem class="daemon">systemd</systemitem>, and thus modifies log files only once a day. However, exceptions occur when a log file is modified because of its size, if <command>logrotate</command> is run multiple times a day, or if <option>--force</option> is enabled. Use <filename>/var/lib/misc/logrotate.status</filename> to find out when a particular file was last rotated.</para>
+      <para><command>logrotate</command> is run daily by <systemitem class="daemon">systemd</systemitem>, and thus modifies log files only once a day. However, exceptions occur when a log file is modified because of its size, if <command>logrotate</command> is run multiple times a day, or if <option>--force</option> is enabled. Use <filename>/var/lib/misc/logrotate.status</filename> to find out when a particular file was last rotated.</para>
       <para>The main configuration file of <command>logrotate</command> is <filename>/etc/logrotate.conf</filename>. System packages and programs that produce log files (for example, <systemitem class="resource">apache2</systemitem>) put their own configuration files in the <filename>/etc/logrotate.d/</filename> directory. The content of <filename>/etc/logrotate.d/</filename> is included via <filename>/etc/logrotate.conf</filename>.</para>
       <example xml:id="ex-tuning-syslog-logrotate-config">
          <title>Example for <filename>/etc/logrotate.conf</filename>
          </title>
-         <para>
-            <remark>taroth 2017-12-14: for the sake of using the prompt entities (<prompt>&gt;</prompt> or <prompt role="root">#</prompt>) consistently in our docs: please do not mix several example commands within one screen and do not use '#' to refer to an example command - this makes it impossible to mark the individual commands with a proper prompt</remark>
-         </para>
+         <para><remark>taroth 2017-12-14: for the sake of using the prompt entities (<prompt>&gt;</prompt> or <prompt role="root">#</prompt>) consistently in our docs: please do not mix several example commands within one screen and do not use '#' to refer to an example command - this makes it impossible to mark the individual commands with a proper prompt</remark></para>
          <screen># see "man logrotate" for details
 # rotate log files weekly
 weekly
@@ -686,10 +675,8 @@ FILES
    <sect1 xml:id="sec-tuning-syslog-logwatch">
       <title>Monitoring log files with <command>logwatch</command>
       </title>
-      <para>
-         <command>logwatch</command> is a customizable, pluggable log-monitoring script. It parses system logs, extracts the important information and presents them in a human readable manner. To use <command>logwatch</command>, install the <package>logwatch</package> package.</para>
-      <para>
-         <command>logwatch</command> can either be used at the command line to generate on-the-fly reports, or via <systemitem class="daemon">cron</systemitem> to regularly create custom reports. Reports can either be printed on the screen, saved to a file, or be mailed to a specified address. The latter is especially useful when automatically generating reports via <systemitem class="daemon">cron</systemitem>.</para>
+      <para><command>logwatch</command> is a customizable, pluggable log-monitoring script. It parses system logs, extracts the important information and presents them in a human readable manner. To use <command>logwatch</command>, install the <package>logwatch</package> package.</para>
+      <para><command>logwatch</command> can either be used at the command line to generate on-the-fly reports, or via <systemitem class="daemon">cron</systemitem> to regularly create custom reports. Reports can either be printed on the screen, saved to a file, or be mailed to a specified address. The latter is especially useful when automatically generating reports via <systemitem class="daemon">cron</systemitem>.</para>
       <para>On the command line, you can tell <command>logwatch</command> for which service and time span to generate a report and how much detail should be included:</para>
       <!--<remark>
      taroth 2017-12-14: for the sake of using the prompt entities
@@ -709,11 +696,9 @@ logwatch --service sshd --detail Low --range All --archives --print
 logwatch --service smartd --range 'between 5/5/2005 and 5/7/2005' \
 --mailto root@localhost --print
 </screen>
-      <para>The <option>--range</option> option has got a complex syntax—see <command>logwatch</command>
-         <option>--range help</option> for details. A list of all services that can be queried is available with the following command:</para>
+      <para>The <option>--range</option> option has got a complex syntax—see <command>logwatch</command><option>--range help</option> for details. A list of all services that can be queried is available with the following command:</para>
       <screen><prompt>&gt;</prompt>ls /usr/share/logwatch/default.conf/services/ | sed 's/\.conf//g'</screen>
-      <para>
-         <command>logwatch</command> can be customized to great detail. However, the default configuration should be sufficient. The default configuration files are located under <filename>/usr/share/logwatch/default.conf/</filename>. Never change them because they would get overwritten again with the next update. Rather place custom configuration in <filename>/etc/logwatch/conf/</filename> (you may use the default configuration file as a template, though). A detailed HOWTO on customizing <command>logwatch</command> is available at <filename>/usr/share/doc/packages/logwatch/HOWTO-Customize-LogWatch</filename>. The following configuration files exist:</para>
+      <para><command>logwatch</command> can be customized to great detail. However, the default configuration should be sufficient. The default configuration files are located under <filename>/usr/share/logwatch/default.conf/</filename>. Never change them because they would get overwritten again with the next update. Rather place custom configuration in <filename>/etc/logwatch/conf/</filename> (you may use the default configuration file as a template, though). A detailed HOWTO on customizing <command>logwatch</command> is available at <filename>/usr/share/doc/packages/logwatch/HOWTO-Customize-LogWatch</filename>. The following configuration files exist:</para>
       <variablelist>
          <varlistentry>
             <term>
@@ -908,8 +893,7 @@ $UDPServerRun <replaceable>PORT</replaceable><coref linkend="co-tuning-syslog-se
    </sect1>
    <sect1 xml:id="sec-tuning-syslog-logger">
       <title>Using <command>logger</command> to make system log entries</title>
-      <para>
-         <command>logger</command> is a tool for making entries in the system log. It provides a shell command interface to the rsyslogd system log module. For example, the following line outputs its message in <filename>/var/log/messages</filename> or directly in the journal (if no logging facility is running):</para>
+      <para><command>logger</command> is a tool for making entries in the system log. It provides a shell command interface to the rsyslogd system log module. For example, the following line outputs its message in <filename>/var/log/messages</filename> or directly in the journal (if no logging facility is running):</para>
       <screen><prompt>&gt;</prompt>logger -t Test "This message comes from $USER"</screen>
       <para>Depending on the current user and host name, the log contains a line similar to this:</para>
       <screen>Sep 28 13:09:31 venus Test: This message comes from tux</screen>

@@ -27,8 +27,7 @@
             <para>The difference between fully virtualized and paravirtualized virtual machines is described in <xref linkend="sec-virtualization-introduction-fvpv"/>.</para>
          </listitem>
          <listitem>
-            <para>Detailed information about Kexec/Kdump mechanism is included in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-               <xref linkend="cha-tuning-kexec" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Detailed information about Kexec/Kdump mechanism is included in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kexec" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
          <listitem>
             <para>Refer to the xl.cfg man page (<command>man 5 xl.cfg</command>) for more information on the <command>xl</command> configuration syntax.</para>

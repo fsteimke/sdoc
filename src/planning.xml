@@ -24,8 +24,7 @@
             <para>Will the system run as physical host or as a virtual machine?</para>
          </listitem>
          <listitem>
-            <para>Will the system be exposed to external threats like hacker attacks? Have a look at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="cha-security" xrefstyle="%label &#34;%c&#34;"/> to get an overview of consequences.</para>
+            <para>Will the system be exposed to external threats like hacker attacks? Have a look at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security" xrefstyle="%label &#34;%c&#34;"/> to get an overview of consequences.</para>
          </listitem>
          <listitem>
             <para>How will you get regular updates? All patches are provided online for registered users in the <link xlink:href="https://scc.suse.com/">SUSE Customer Center</link>.</para>
@@ -43,8 +42,7 @@
       </title>
       <para>To make sure that your system will run flawlessly, always try to use certified hardware. The hardware certification process is an ongoing process and the database of certified hardware is updated regularly. Find the search form for certified hardware at <link xlink:href="https://www.suse.com/yessearch/Search.jsp"/>.</para>
       <para>Depending on the number of desired installations, it is beneficial to use installation servers or even completely automatic installations. When using Xen or KVM virtualization technologies, network root file systems or network storage solutions like iSCSI should be considered.</para>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides you with a broad variety of services. Most of the needed configurations can be made with YaST, the SUSE configuration utility. In addition, many manual configurations are described in the corresponding chapters.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> provides you with a broad variety of services. Most of the needed configurations can be made with YaST, the SUSE configuration utility. In addition, many manual configurations are described in the corresponding chapters.</para>
       <para>In addition to the plain software installation, you should consider training the end users of the systems and help desk staff.</para>
       <note>
          <title>Terminology</title>
@@ -63,10 +61,8 @@
       <para>To get technical support and product updates, you need to register and activate your SUSE product with the SUSE Customer Center. We recommend to register during the installation, since this will enable you to install the system with the latest updates and patches available. However, if you are offline or want to skip the registration step, you can complete registration from the running system.</para>
       <para>In case your organization does not provide a local registration server, registering SUSE Linux Enterprise requires a SUSE Customer Center account. In case you do not have one yet, go to the SUSE Customer Center home page (<link xlink:href="https://scc.suse.com/"/>) to create one.</para>
       <para>During the installation you will be asked to enter your registration code. For details, see <xref linkend="sec-yast-install-scc-registration"/>.</para>
-      <para>If you deploy your instances automatically using AutoYaST, you can register the system during the installation by providing the respective information in the AutoYaST control file. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
-         <xref linkend="CreateProfile-Register" xrefstyle="%label &#34;%c&#34;"/>.</para>
-      <para>For registering an already installed system, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-yast-software-register" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>If you deploy your instances automatically using AutoYaST, you can register the system during the installation by providing the respective information in the AutoYaST control file. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="CreateProfile-Register" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For registering an already installed system, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-software-register" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-planning-leanos">
       <title>Changes in installation from SUSE Linux Enterprise Server version 15</title>

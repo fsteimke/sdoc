@@ -37,42 +37,21 @@
             <colspec colnum="3" colname="3" colwidth="60*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>RAID Level</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
-                  <entry>
-                     <para>Performance and Fault Tolerance</para>
-                  </entry>
+                  <entry><para>RAID Level</para></entry>
+                  <entry><para>Description</para></entry>
+                  <entry><para>Performance and Fault Tolerance</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>10 (1+0)</para>
-                  </entry>
-                  <entry>
-                     <para>RAID 0 (stripe) built with RAID 1 (mirror) arrays</para>
-                  </entry>
-                  <entry>
-                     <para>RAID 1+0 provides high levels of I/O performance, data redundancy, and disk fault tolerance. Because each member device in the RAID 0 is mirrored individually, multiple disk failures can be tolerated and data remains available as long as the disks that fail are in different mirrors.</para>
-                     <para>You can optionally configure a spare for each underlying mirrored array, or configure a spare to serve a spare group that serves all mirrors.</para>
-                  </entry>
+                  <entry><para>10 (1+0)</para></entry>
+                  <entry><para>RAID 0 (stripe) built with RAID 1 (mirror) arrays</para></entry>
+                  <entry><para>RAID 1+0 provides high levels of I/O performance, data redundancy, and disk fault tolerance. Because each member device in the RAID 0 is mirrored individually, multiple disk failures can be tolerated and data remains available as long as the disks that fail are in different mirrors.</para><para>You can optionally configure a spare for each underlying mirrored array, or configure a spare to serve a spare group that serves all mirrors.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>10 (0+1)</para>
-                  </entry>
-                  <entry>
-                     <para>RAID 1 (mirror) built with RAID 0 (stripe) arrays</para>
-                  </entry>
-                  <entry>
-                     <para>RAID 0+1 provides high levels of I/O performance and data redundancy, but slightly less fault tolerance than a 1+0. If multiple disks fail on one side of the mirror, then the other mirror is available. However, if disks are lost concurrently on both sides of the mirror, all data is lost.</para>
-                     <para>This solution offers less disk fault tolerance than a 1+0 solution, but if you need to perform maintenance or maintain the mirror on a different site, you can take an entire side of the mirror offline and still have a fully functional storage device. Also, if you lose the connection between the two sites, either site operates independently of the other. That is not true if you stripe the mirrored segments, because the mirrors are managed at a lower level.</para>
-                     <para>If a device fails, the mirror on that side fails because RAID 1 is not fault-tolerant. Create a new RAID 0 to replace the failed side, then resynchronize the mirrors.</para>
-                  </entry>
+                  <entry><para>10 (0+1)</para></entry>
+                  <entry><para>RAID 1 (mirror) built with RAID 0 (stripe) arrays</para></entry>
+                  <entry><para>RAID 0+1 provides high levels of I/O performance and data redundancy, but slightly less fault tolerance than a 1+0. If multiple disks fail on one side of the mirror, then the other mirror is available. However, if disks are lost concurrently on both sides of the mirror, all data is lost.</para><para>This solution offers less disk fault tolerance than a 1+0 solution, but if you need to perform maintenance or maintain the mirror on a different site, you can take an entire side of the mirror offline and still have a fully functional storage device. Also, if you lose the connection between the two sites, either site operates independently of the other. That is not true if you stripe the mirrored segments, because the mirrors are managed at a lower level.</para><para>If a device fails, the mirror on that side fails because RAID 1 is not fault-tolerant. Create a new RAID 0 to replace the failed side, then resynchronize the mirrors.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -93,56 +72,20 @@
                <colspec colnum="3" colname="3" colwidth="3334*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Raw Devices</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 1 (mirror)</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 1+0 (striped mirrors)</para>
-                     </entry>
+                     <entry><para>Raw Devices</para></entry>
+                     <entry><para>RAID 1 (mirror)</para></entry>
+                     <entry><para>RAID 1+0 (striped mirrors)</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <simplelist>
-                           <member>
-                              <filename>/dev/sdb1</filename>
-                           </member>
-                           <member>
-                              <filename>/dev/sdc1</filename>
-                           </member>
-                        </simplelist>
-                     </entry>
-                     <entry>
-                        <para>
-                           <filename>/dev/md0</filename>
-                        </para>
-                     </entry>
-                     <entry morerows="1">
-                        <para>
-                           <filename>/dev/md2</filename>
-                        </para>
-                     </entry>
+                     <entry><simplelist><member><filename>/dev/sdb1</filename></member><member><filename>/dev/sdc1</filename></member></simplelist></entry>
+                     <entry><para><filename>/dev/md0</filename></para></entry>
+                     <entry morerows="1"><para><filename>/dev/md2</filename></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <simplelist>
-                           <member>
-                              <filename>/dev/sdd1</filename>
-                           </member>
-                           <member>
-                              <filename>/dev/sde1</filename>
-                           </member>
-                        </simplelist>
-                     </entry>
-                     <entry>
-                        <para>
-                           <filename>/dev/md1</filename>
-                        </para>
-                     </entry>
+                     <entry><simplelist><member><filename>/dev/sdd1</filename></member><member><filename>/dev/sde1</filename></member></simplelist></entry>
+                     <entry><para><filename>/dev/md1</filename></para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -206,56 +149,20 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
                <colspec colnum="3" colname="3" colwidth="3334*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Raw Devices</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 0 (stripe)</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 0+1 (mirrored stripes)</para>
-                     </entry>
+                     <entry><para>Raw Devices</para></entry>
+                     <entry><para>RAID 0 (stripe)</para></entry>
+                     <entry><para>RAID 0+1 (mirrored stripes)</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <simplelist>
-                           <member>
-                              <filename>/dev/sdb1</filename>
-                           </member>
-                           <member>
-                              <filename>/dev/sdc1</filename>
-                           </member>
-                        </simplelist>
-                     </entry>
-                     <entry>
-                        <para>
-                           <filename>/dev/md0</filename>
-                        </para>
-                     </entry>
-                     <entry morerows="1">
-                        <para>
-                           <filename>/dev/md2</filename>
-                        </para>
-                     </entry>
+                     <entry><simplelist><member><filename>/dev/sdb1</filename></member><member><filename>/dev/sdc1</filename></member></simplelist></entry>
+                     <entry><para><filename>/dev/md0</filename></para></entry>
+                     <entry morerows="1"><para><filename>/dev/md2</filename></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <simplelist>
-                           <member>
-                              <filename>/dev/sdd1</filename>
-                           </member>
-                           <member>
-                              <filename>/dev/sde1</filename>
-                           </member>
-                        </simplelist>
-                     </entry>
-                     <entry>
-                        <para>
-                           <filename>/dev/md1</filename>
-                        </para>
-                     </entry>
+                     <entry><simplelist><member><filename>/dev/sdd1</filename></member><member><filename>/dev/sde1</filename></member></simplelist></entry>
+                     <entry><para><filename>/dev/md1</filename></para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -316,73 +223,36 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
             <colspec colnum="3" colname="3" colwidth="3334*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Feature</para>
-                  </entry>
-                  <entry>
-                     <para>Complex RAID 10</para>
-                  </entry>
-                  <entry>
-                     <para>Nested RAID 10 (1+0)</para>
-                  </entry>
+                  <entry><para>Feature</para></entry>
+                  <entry><para>Complex RAID 10</para></entry>
+                  <entry><para>Nested RAID 10 (1+0)</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>Number of devices</para>
-                  </entry>
-                  <entry>
-                     <para>Allows an even or odd number of component devices</para>
-                  </entry>
-                  <entry>
-                     <para>Requires an even number of component devices</para>
-                  </entry>
+                  <entry><para>Number of devices</para></entry>
+                  <entry><para>Allows an even or odd number of component devices</para></entry>
+                  <entry><para>Requires an even number of component devices</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Component devices</para>
-                  </entry>
-                  <entry>
-                     <para>Managed as a single RAID device</para>
-                  </entry>
-                  <entry>
-                     <para>Manage as a nested RAID device</para>
-                  </entry>
+                  <entry><para>Component devices</para></entry>
+                  <entry><para>Managed as a single RAID device</para></entry>
+                  <entry><para>Manage as a nested RAID device</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Striping</para>
-                  </entry>
-                  <entry>
-                     <para>Striping occurs in the near or far layout on component devices.</para>
-                     <para>The far layout provides sequential read throughput that scales by number of drives, rather than number of RAID 1 pairs.</para>
-                  </entry>
-                  <entry>
-                     <para>Striping occurs consecutively across component devices</para>
-                  </entry>
+                  <entry><para>Striping</para></entry>
+                  <entry><para>Striping occurs in the near or far layout on component devices.</para><para>The far layout provides sequential read throughput that scales by number of drives, rather than number of RAID 1 pairs.</para></entry>
+                  <entry><para>Striping occurs consecutively across component devices</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Multiple copies of data</para>
-                  </entry>
-                  <entry>
-                     <para>Two or more copies, up to the number of devices in the array</para>
-                  </entry>
-                  <entry>
-                     <para>Copies on each mirrored segment</para>
-                  </entry>
+                  <entry><para>Multiple copies of data</para></entry>
+                  <entry><para>Two or more copies, up to the number of devices in the array</para></entry>
+                  <entry><para>Copies on each mirrored segment</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Hot spare devices</para>
-                  </entry>
-                  <entry>
-                     <para>A single spare can service all component devices</para>
-                  </entry>
-                  <entry>
-                     <para>Configure a spare for each underlying mirrored array, or configure a spare to serve a spare group that serves all mirrors.</para>
-                  </entry>
+                  <entry><para>Hot spare devices</para></entry>
+                  <entry><para>A single spare can service all component devices</para></entry>
+                  <entry><para>Configure a spare for each underlying mirrored array, or configure a spare to serve a spare group that serves all mirrors.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -500,8 +370,7 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
                <para>Launch YaST and open the Partitioner.</para>
             </step>
             <step>
-               <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                  <xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+               <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
                <para>For RAID 10 at least four partitions are needed. It is strongly recommended to use partitions stored on different hard disks to decrease the risk of losing data if one is defective. It is recommended to use only partitions of the same size because each segment can contribute only the same amount of space as the smallest sized partition.</para>
             </step>
             <step>
@@ -513,18 +382,17 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
             </step>
             <step>
                <para>Under <guimenu>RAID Type</guimenu>, select <guimenu>RAID 10 (Mirroring and Striping)</guimenu>.</para>
-               <para>You can optionally assign a <guimenu>RAID Name</guimenu> to your RAID. It will make it available as <filename>/dev/md/<replaceable>NAME</replaceable>
-                  </filename>. See <xref linkend="sec-raid-yast-names"/> for more information.</para>
+               <para>You can optionally assign a <guimenu>RAID Name</guimenu> to your RAID. It will make it available as <filename>/dev/md/<replaceable>NAME</replaceable></filename>. See <xref linkend="sec-raid-yast-names"/> for more information.</para>
             </step>
             <step>
                <para>In the <guimenu>Available Devices</guimenu> list, select the desired partitions, then click <guimenu>Add</guimenu> to move them to the <guimenu>Selected Devices</guimenu> list.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/raid10_a.png" width="80%"/>
+                        <imagedata fileref="media/raid10_a.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/raid10_a.png" width="100%"/>
+                        <imagedata fileref="media/raid10_a.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -559,10 +427,10 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/raid10_classify_a.png" width="80%"/>
+                              <imagedata fileref="media/raid10_classify_a.png" width="73%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/raid10_classify_a.png" width="100%"/>
+                              <imagedata fileref="media/raid10_classify_a.png" width="92%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -597,35 +465,14 @@ ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable></screen>
                <colspec colnum="2" colname="2" colwidth="50*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Raw Devices</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 10</para>
-                     </entry>
+                     <entry><para>Raw Devices</para></entry>
+                     <entry><para>RAID 10</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/dev/sdf1</filename>
-                        </para>
-                        <para>
-                           <filename>/dev/sdg1</filename>
-                        </para>
-                        <para>
-                           <filename>/dev/sdh1</filename>
-                        </para>
-                        <para>
-                           <filename>/dev/sdi1</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <filename>/dev/md3</filename>
-                        </para>
-                     </entry>
+                     <entry><para><filename>/dev/sdf1</filename></para><para><filename>/dev/sdg1</filename></para><para><filename>/dev/sdh1</filename></para><para><filename>/dev/sdi1</filename></para></entry>
+                     <entry><para><filename>/dev/md3</filename></para></entry>
                   </row>
                </tbody>
             </tgroup>

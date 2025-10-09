@@ -7,8 +7,7 @@
          xml:id="cha-adminhelp">
    <title>Help and documentation</title>
    <info/>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> comes with several sources of information and documentation, available online or integrated into your installed system.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> comes with several sources of information and documentation, available online or integrated into your installed system.</para>
    <variablelist>
       <varlistentry>
          <term>Product Documentation</term>
@@ -56,8 +55,7 @@
       </sect2>
       <sect2 xml:id="sec-help-onboard-docdir-pkg">
          <title>Package documentation</title>
-         <para>Under <filename>packages</filename>, find the documentation that is included in the software packages installed on your system. For every package, a subdirectory <filename>/usr/share/doc/packages/<replaceable>PACKAGENAME</replaceable>
-            </filename> is created. It often contains README files for the package and sometimes examples, configuration files, or additional scripts. The following list introduces typical files to be found under <filename>/usr/share/doc/packages</filename>. None of these entries are mandatory and many packages only include a few of them.</para>
+         <para>Under <filename>packages</filename>, find the documentation that is included in the software packages installed on your system. For every package, a subdirectory <filename>/usr/share/doc/packages/<replaceable>PACKAGENAME</replaceable></filename> is created. It often contains README files for the package and sometimes examples, configuration files, or additional scripts. The following list introduces typical files to be found under <filename>/usr/share/doc/packages</filename>. None of these entries are mandatory and many packages only include a few of them.</para>
          <variablelist>
             <varlistentry>
                <term>
@@ -157,86 +155,46 @@
          <tgroup cols="2">
             <thead>
                <row>
-                  <entry>
-                     <para>Number</para>
-                  </entry>
-                  <entry>
-                     <para>Description</para>
-                  </entry>
+                  <entry><para>Number</para></entry>
+                  <entry><para>Description</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>1</para>
-                  </entry>
-                  <entry>
-                     <para>Executable programs or shell commands</para>
-                  </entry>
+                  <entry><para>1</para></entry>
+                  <entry><para>Executable programs or shell commands</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>2</para>
-                  </entry>
-                  <entry>
-                     <para>System calls (functions provided by the kernel)</para>
-                  </entry>
+                  <entry><para>2</para></entry>
+                  <entry><para>System calls (functions provided by the kernel)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>3</para>
-                  </entry>
-                  <entry>
-                     <para>Library calls (functions within program libraries)</para>
-                  </entry>
+                  <entry><para>3</para></entry>
+                  <entry><para>Library calls (functions within program libraries)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>4</para>
-                  </entry>
-                  <entry>
-                     <para>Special files (normally found in <filename>/dev</filename>)</para>
-                  </entry>
+                  <entry><para>4</para></entry>
+                  <entry><para>Special files (normally found in <filename>/dev</filename>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>5</para>
-                  </entry>
-                  <entry>
-                     <para>File formats and conventions (<filename>/etc/fstab</filename>)</para>
-                  </entry>
+                  <entry><para>5</para></entry>
+                  <entry><para>File formats and conventions (<filename>/etc/fstab</filename>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>6</para>
-                  </entry>
-                  <entry>
-                     <para>Games</para>
-                  </entry>
+                  <entry><para>6</para></entry>
+                  <entry><para>Games</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>7</para>
-                  </entry>
-                  <entry>
-                     <para>Miscellaneous (including macro packages and conventions), for example, man(7), groff(7)</para>
-                  </entry>
+                  <entry><para>7</para></entry>
+                  <entry><para>Miscellaneous (including macro packages and conventions), for example, man(7), groff(7)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>8</para>
-                  </entry>
-                  <entry>
-                     <para>System administration commands (normally only for <systemitem class="username">root</systemitem>)</para>
-                  </entry>
+                  <entry><para>8</para></entry>
+                  <entry><para>System administration commands (normally only for <systemitem class="username">root</systemitem>)</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>9</para>
-                  </entry>
-                  <entry>
-                     <para>Kernel routines (nonstandard)</para>
-                  </entry>
+                  <entry><para>9</para></entry>
+                  <entry><para>Kernel routines (nonstandard)</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -261,16 +219,13 @@
          <varlistentry>
             <term>User community</term>
             <listitem>
-               <para>
-                  <link xlink:href="https://www.rancher.com/community">SUSE and Rancher Community</link>
-               </para>
+               <para><link xlink:href="https://www.rancher.com/community">SUSE and Rancher Community</link></para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>SUSE blog</term>
             <listitem>
-               <para>The SUSE blog offers articles, tips, Q and A: <link xlink:href="https://www.suse.com/c/blog/"/>
-               </para>
+               <para>The SUSE blog offers articles, tips, Q and A: <link xlink:href="https://www.suse.com/c/blog/"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>

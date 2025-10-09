@@ -73,10 +73,7 @@
       </sect2>
       <sect2 xml:id="sec-sec-prot-general-patching-auto">
          <title>Automatic Online Update</title>
-         <para>YaST also offers the possibility to set up an automatic update. Select <menuchoice>
-               <guimenu>Software</guimenu>
-               <guimenu>Automatic Online Update</guimenu>
-            </menuchoice>. Configure a Daily or a Weekly update. Some patches, such as kernel updates, require user interaction, which would cause the automatic update procedure to stop. Check <guimenu>Skip Interactive Patches</guimenu> for the update procedure to proceed automatically.</para>
+         <para>YaST also offers the possibility to set up an automatic update. Select <menuchoice><guimenu>Software</guimenu><guimenu>Automatic Online Update</guimenu></menuchoice>. Configure a Daily or a Weekly update. Some patches, such as kernel updates, require user interaction, which would cause the automatic update procedure to stop. Check <guimenu>Skip Interactive Patches</guimenu> for the update procedure to proceed automatically.</para>
          <para>In this case, run a manual Online Update from time to install patches that require interaction.</para>
          <para>When <guimenu>Only Download Patches</guimenu> is checked, the patches are downloaded at the specified time but not installed. They must be installed manually using <command>rpm</command>or <command>zypper</command>.</para>
       </sect2>

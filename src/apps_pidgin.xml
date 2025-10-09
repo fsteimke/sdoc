@@ -12,8 +12,7 @@
          <para>Learn how to use the <productname>Pidgin</productname> instant messaging application to chat live with your contacts.</para>
       </abstract>
    </info>
-   <para>
-      <productname>Pidgin</productname> is an instant messaging (IM) client that allows you to connect to multiple accounts simultaneously. Chat live with your contacts, regardless of which IM system they use.</para>
+   <para><productname>Pidgin</productname> is an instant messaging (IM) client that allows you to connect to multiple accounts simultaneously. Chat live with your contacts, regardless of which IM system they use.</para>
    <para>It supports the following instant messaging protocols: AIM, Bonjour, Gadu-Gadu, Google Talk, Groupwise, ICQ, IRC, SIMPLE, XMPP, and Zephyr. Microsoft Office Communicator is also supported if you install the additional package <package>pidgin-plugin-sipe</package>.</para>
    <para>In the following, learn how to set up <productname>Pidgin</productname> and how to communicate with your contacts.</para>
    <sect1 xml:id="sec-gnome-pidgin-start">
@@ -29,10 +28,7 @@
          </title>
          <step>
             <para>If you start <productname>Pidgin</productname> for the first time, a message appears, prompting you to configure an account. Proceed with <guimenu>Add</guimenu> to add your account.</para>
-            <para>If you have already configured an account and want to add a new one or modify existing ones, open this dialog via <menuchoice>
-                  <guimenu>Accounts</guimenu>
-                  <guimenu>Manage Accounts</guimenu>
-               </menuchoice>. Either <guimenu>Add</guimenu> a new account, or <guimenu>Modify</guimenu> or <guimenu>Delete</guimenu> existing ones.</para>
+            <para>If you have already configured an account and want to add a new one or modify existing ones, open this dialog via <menuchoice><guimenu>Accounts</guimenu><guimenu>Manage Accounts</guimenu></menuchoice>. Either <guimenu>Add</guimenu> a new account, or <guimenu>Modify</guimenu> or <guimenu>Delete</guimenu> existing ones.</para>
          </step>
          <step>
             <para>The <guimenu>Add/Modify Account</guimenu> dialog opens. Use the <guimenu>Basic</guimenu> tab to select a protocol and enter or modify your login credentials.</para>
@@ -50,10 +46,7 @@
       <procedure>
          <title>Adding contacts</title>
          <step>
-            <para>To add a contact, click <menuchoice>
-                  <guimenu>Buddies</guimenu>
-                  <guimenu>Add Buddy</guimenu>
-               </menuchoice>.</para>
+            <para>To add a contact, click <menuchoice><guimenu>Buddies</guimenu><guimenu>Add Buddy</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select the <guimenu>Account</guimenu> for which you want to add a contact.</para>
@@ -71,10 +64,7 @@
             <para>Proceed with <guimenu>Add</guimenu>.</para>
          </step>
       </procedure>
-      <para>In case the groups or the newly added contacts are not displayed in the contact list, check the display preferences by clicking <menuchoice>
-            <guimenu>Buddies</guimenu>
-            <guimenu>Show</guimenu>
-         </menuchoice>. Activate <guimenu>Offline Buddies</guimenu> and <guimenu>Empty Groups</guimenu> to make all contacts and groups appear in the <guimenu>Contact List</guimenu>.</para>
+      <para>In case the groups or the newly added contacts are not displayed in the contact list, check the display preferences by clicking <menuchoice><guimenu>Buddies</guimenu><guimenu>Show</guimenu></menuchoice>. Activate <guimenu>Offline Buddies</guimenu> and <guimenu>Empty Groups</guimenu> to make all contacts and groups appear in the <guimenu>Contact List</guimenu>.</para>
       <para>To remove a contact from the list, right-click the name of that contact, select <guimenu>Remove</guimenu> and confirm your choice.</para>
    </sect1>
    <sect1 xml:id="sec-gnome-pidgin-chat">
@@ -85,18 +75,12 @@
       <para>To close a chat session, close the tab or window for it.</para>
       <tip>
          <title>Finding a contact</title>
-         <para>In case you contact list is very long, contacts may be hard to find. Use <keycombo>
-               <keycap function="control"/>
-               <keycap>F</keycap>
-            </keycombo> to open a search box at the bottom of the contact list. Type one or more letters to find a contact. Use <keycap function="down"/> to move to the next result, or <keycap function="up"/> to move to the previous result.</para>
+         <para>In case you contact list is very long, contacts may be hard to find. Use <keycombo><keycap function="control"/><keycap>F</keycap></keycombo> to open a search box at the bottom of the contact list. Type one or more letters to find a contact. Use <keycap function="down"/> to move to the next result, or <keycap function="up"/> to move to the previous result.</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-gnome-pidgin-more">
       <title>More information</title>
-      <para>This chapter only explains the basic configuration and usage option of <productname>Pidgin</productname>. For more information, click <menuchoice>
-            <guimenu>Help</guimenu>
-            <guimenu>Online Help</guimenu>
-         </menuchoice> to open the help in a browser.</para>
+      <para>This chapter only explains the basic configuration and usage option of <productname>Pidgin</productname>. For more information, click <menuchoice><guimenu>Help</guimenu><guimenu>Online Help</guimenu></menuchoice> to open the help in a browser.</para>
       <para>For updates about new features and for the latest information, refer to the home page of the project at <link xlink:href="https://pidgin.im/"/>.</para>
    </sect1>
 </chapter>

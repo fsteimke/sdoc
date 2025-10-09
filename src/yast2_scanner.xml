@@ -14,14 +14,8 @@
          <para>Connect your USB or SCSI scanner to your computer and turn it on.</para>
       </step>
       <step>
-         <para>Start YaST and select <menuchoice>
-               <guimenu>Hardware</guimenu>
-               <guimenu>Scanner</guimenu>
-            </menuchoice>. YaST builds the scanner database and tries to detect your scanner model automatically.</para>
-         <para>If a USB or SCSI scanner is not properly detected, try <menuchoice>
-               <guimenu>Other</guimenu>
-               <guimenu>Restart Detection</guimenu>
-            </menuchoice>.</para>
+         <para>Start YaST and select <menuchoice><guimenu>Hardware</guimenu><guimenu>Scanner</guimenu></menuchoice>. YaST builds the scanner database and tries to detect your scanner model automatically.</para>
+         <para>If a USB or SCSI scanner is not properly detected, try <menuchoice><guimenu>Other</guimenu><guimenu>Restart Detection</guimenu></menuchoice>.</para>
       </step>
       <step>
          <para>To activate the scanner select it from the list of detected scanners and click <guimenu>Edit</guimenu>.</para>
@@ -30,10 +24,7 @@
          <para>Choose your model form the list and click <guimenu>Next</guimenu> and <guimenu>Finish</guimenu>.</para>
       </step>
       <step>
-         <para>Use <menuchoice>
-               <guimenu>Other</guimenu>
-               <guimenu>Test</guimenu>
-            </menuchoice> to make sure you have chosen the correct driver.</para>
+         <para>Use <menuchoice><guimenu>Other</guimenu><guimenu>Test</guimenu></menuchoice> to make sure you have chosen the correct driver.</para>
       </step>
       <step>
          <para>Leave the configuration screen with <guimenu>OK</guimenu>.</para>
@@ -45,22 +36,13 @@
       <para>If your USB device is not properly detected, or your HP All-In-One device is connected to the network, run the HP Device Manager:</para>
       <procedure>
          <step>
-            <para>Start YaST and select <menuchoice>
-                  <guimenu>Hardware</guimenu>
-                  <guimenu>Scanner</guimenu>
-               </menuchoice>. YaST loads the scanner database.</para>
+            <para>Start YaST and select <menuchoice><guimenu>Hardware</guimenu><guimenu>Scanner</guimenu></menuchoice>. YaST loads the scanner database.</para>
          </step>
          <step>
-            <para>Start the HP Device Manager with <menuchoice>
-                  <guimenu>Other</guimenu>
-                  <guimenu>Run hp-setup</guimenu>
-               </menuchoice> and follow the on-screen instructions. After having finished the HP Device Manager, the YaST scanner module automatically restarts the auto detection.</para>
+            <para>Start the HP Device Manager with <menuchoice><guimenu>Other</guimenu><guimenu>Run hp-setup</guimenu></menuchoice> and follow the on-screen instructions. After having finished the HP Device Manager, the YaST scanner module automatically restarts the auto detection.</para>
          </step>
          <step>
-            <para>Test it by choosing <menuchoice>
-                  <guimenu>Other</guimenu>
-                  <guimenu>Test</guimenu>
-               </menuchoice>.</para>
+            <para>Test it by choosing <menuchoice><guimenu>Other</guimenu><guimenu>Test</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Leave the configuration screen with <guimenu>OK</guimenu>.</para>
@@ -69,23 +51,16 @@
    </sect1>
    <sect1 xml:id="sec-yast-hw-scan-network-server">
       <title>Sharing a scanner over the network</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> allows the sharing of a scanner over the network. To do so, configure your scanner as follows:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> allows the sharing of a scanner over the network. To do so, configure your scanner as follows:</para>
       <procedure>
          <step>
             <para>Configure the scanner as described in <xref linkend="sec-yast-hw-scan"/>.</para>
          </step>
          <step>
-            <para>Choose <menuchoice>
-                  <guimenu>Other</guimenu>
-                  <guimenu>Scanning via Network</guimenu>
-               </menuchoice>.</para>
+            <para>Choose <menuchoice><guimenu>Other</guimenu><guimenu>Scanning via Network</guimenu></menuchoice>.</para>
          </step>
          <step>
-            <para>Enter the host names of the clients (separated by a comma) that should be allowed to use the scanner under <menuchoice>
-                  <guimenu>Server Settings</guimenu>
-                  <guimenu>Permitted Clients for saned</guimenu>
-               </menuchoice> and leave the configuration dialog with <guimenu>OK</guimenu>.</para>
+            <para>Enter the host names of the clients (separated by a comma) that should be allowed to use the scanner under <menuchoice><guimenu>Server Settings</guimenu><guimenu>Permitted Clients for saned</guimenu></menuchoice> and leave the configuration dialog with <guimenu>OK</guimenu>.</para>
          </step>
       </procedure>
    </sect1>
@@ -94,23 +69,13 @@
       <para>To use a scanner that is shared over the network, proceed as follows:</para>
       <procedure>
          <step>
-            <para>Start YaST and select <menuchoice>
-                  <guimenu>Hardware</guimenu>
-                  <guimenu>Scanner</guimenu>
-               </menuchoice>.</para>
+            <para>Start YaST and select <menuchoice><guimenu>Hardware</guimenu><guimenu>Scanner</guimenu></menuchoice>.</para>
          </step>
          <step>
-            <para>Open the network scanner configuration menu by <menuchoice>
-                  <guimenu>Other</guimenu>
-                  <guimenu>Scanning via Network</guimenu>
-               </menuchoice>.</para>
+            <para>Open the network scanner configuration menu by <menuchoice><guimenu>Other</guimenu><guimenu>Scanning via Network</guimenu></menuchoice>.</para>
          </step>
          <step>
-            <para>Enter the host name of the machine the scanner is connected to under <menuchoice>
-                  <guimenu>Client Settings</guimenu>
-                  <guimenu>Servers Used for the net Metadriver</guimenu>
-               </menuchoice>
-            </para>
+            <para>Enter the host name of the machine the scanner is connected to under <menuchoice><guimenu>Client Settings</guimenu><guimenu>Servers Used for the net Metadriver</guimenu></menuchoice></para>
          </step>
          <step>
             <para>Leave with <guimenu>OK</guimenu>. The network scanner is now listed in the Scanner Configuration window and is ready to use.</para>

@@ -9,8 +9,7 @@
    </title>
    <info/>
    <para>Software-defined networking (SDN) means separating the system that controls where traffic is sent (the <emphasis>control plane</emphasis>) from the underlying system that forwards traffic to the selected destination (the <emphasis>data plane</emphasis>, also called the <emphasis>forwarding plane</emphasis>). This means that the functions previously fulfilled by a single, usually inflexible switch can now be separated between a switch (data plane) and its controller (control plane). In this model, the controller is programmable and can be very flexible and adapt quickly to changing network conditions.</para>
-   <para>
-      <phrase role="productname">Open vSwitch</phrase> is software that implements a distributed virtual multilayer switch that is compatible with the <!-- phrase to disable hyphenation: --><phrase role="productname">OpenFlow</phrase> protocol. <phrase role="productname">OpenFlow</phrase> allows a controller application to modify the configuration of a switch. <phrase role="productname">OpenFlow</phrase> is layered onto the TCP protocol and is implemented in a range of hardware and software. A single controller can thus drive multiple, very different switches.</para>
+   <para><phrase role="productname">Open vSwitch</phrase> is software that implements a distributed virtual multilayer switch that is compatible with the <!-- phrase to disable hyphenation: --><phrase role="productname">OpenFlow</phrase> protocol. <phrase role="productname">OpenFlow</phrase> allows a controller application to modify the configuration of a switch. <phrase role="productname">OpenFlow</phrase> is layered onto the TCP protocol and is implemented in a range of hardware and software. A single controller can thus drive multiple, very different switches.</para>
    <sect2 xml:id="sec-network-openvswitch-advantage">
       <title>Advantages of <phrase role="productname">Open vSwitch</phrase>
       </title>
@@ -31,12 +30,10 @@
             <remark>Feedback from Éric Bischoff: "[...] isn't that _how OVS works_, rather than _what OVS can do_?" =&gt; Added second sentence. It does ultimately seem like a feature to me, though. Leaving it in for the moment. - sknorr, 2015-10-15</remark>
          </listitem>
          <listitem>
-            <para>
-               <phrase role="productname">Open vSwitch</phrase> implements the GRE protocol (<emphasis>Generic Routing Encapsulation</emphasis>). This allows you, for example, to connect private VM networks to each other.</para>
+            <para><phrase role="productname">Open vSwitch</phrase> implements the GRE protocol (<emphasis>Generic Routing Encapsulation</emphasis>). This allows you, for example, to connect private VM networks to each other.</para>
          </listitem>
          <listitem>
-            <para>
-               <phrase role="productname">Open vSwitch</phrase> can be used on its own, but is designed to integrate with networking hardware and can control hardware switches.</para>
+            <para><phrase role="productname">Open vSwitch</phrase> can be used on its own, but is designed to integrate with networking hardware and can control hardware switches.</para>
          </listitem>
       </itemizedlist>
    </sect2>
@@ -69,8 +66,7 @@
    </sect2>
    <sect2 xml:id="sec-network-openvswitch-userspace">
       <title>Overview of <phrase role="productname">Open vSwitch</phrase> daemons and utilities</title>
-      <para>
-         <phrase role="productname">Open vSwitch</phrase> consists of several components. Among them are a kernel module and various user space components. The kernel module is used for accelerating the data path, but is not necessary for a minimal <phrase role="productname">Open vSwitch</phrase> installation.</para>
+      <para><phrase role="productname">Open vSwitch</phrase> consists of several components. Among them are a kernel module and various user space components. The kernel module is used for accelerating the data path, but is not necessary for a minimal <phrase role="productname">Open vSwitch</phrase> installation.</para>
       <sect3 xml:id="sec-network-openvswitch-daemon">
          <title>Daemons</title>
          <para>The central executables of <phrase role="productname">Open vSwitch</phrase> are its two daemons. When you start the <systemitem>openvswitch</systemitem> service, you are indirectly starting them.</para>
@@ -78,8 +74,7 @@
       </sect3>
       <sect3 xml:id="sec-network-openvswitch-utility">
          <title>Utilities</title>
-         <para>
-            <phrase role="productname">Open vSwitch</phrase> also comes with several utilities that help you work with it. The following list is not exhaustive, but instead describes important commands only.</para>
+         <para><phrase role="productname">Open vSwitch</phrase> also comes with several utilities that help you work with it. The following list is not exhaustive, but instead describes important commands only.</para>
          <!-- Some entries are commented out. These (very subjectively) seemed to be
    less important. - sknorr, 2015-10-12 -->
          <variablelist xml:id="vl-ovs-utility">
@@ -135,9 +130,7 @@
                </term>
                <listitem>
                   <para>Create, modify, visualize, and delete data paths. Using this tool can interfere with <command>ovs-vswitchd</command> also performing data path management. Therefore, it is often used for diagnostics only.</para>
-                  <para>
-                     <command>ovs-dpctl-top</command> creates a <command>top</command>-like visualization for data paths. <remark>Is visualize/ation the right word? - sknorr, 2015-09-30</remark>
-                  </para>
+                  <para><command>ovs-dpctl-top</command> creates a <command>top</command>-like visualization for data paths. <remark>Is visualize/ation the right word? - sknorr, 2015-09-30</remark></para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -229,8 +222,7 @@ OVS_BRIDGE_PORT_DEVICE_1='<replaceable>eth0</replaceable>'<co xml:id="ovs-ifcfg-
             <para>To learn about further options, refer to the man pages of <literal>ifcfg</literal> (<command>man 5 ifcfg</command>) and <literal>ifcfg-ovs-bridge</literal> (<command>man 5 ifcfg-ovs-bridge</command>).</para>
          </step>
          <step>
-            <para>Now start the bridge: <remark>"Start" is weird - sknorr, 2015-10-26</remark>
-            </para>
+            <para>Now start the bridge: <remark>"Start" is weird - sknorr, 2015-10-26</remark></para>
             <screen><prompt role="root">#</prompt><command>wicked</command> ifup <replaceable>br0</replaceable></screen>
             <para>When Wicked is done, it should output the name of the bridge and next to it the state <literal>up</literal>.</para>
          </step>
@@ -290,8 +282,7 @@ BOOTPROTO='none'</screen>
                   <para>Use the tap device (<literal>tap0</literal>) created before.</para>
                </callout>
             </calloutlist>
-            <para>For further information on the usage of KVM/QEMU, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="part-virt-qemu" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For further information on the usage of KVM/QEMU, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="part-virt-qemu" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </step>
       </procedure>
    </sect2>
@@ -322,8 +313,7 @@ BOOTPROTO='none'</screen>
             <para>You can now start or restart the virtual machine as usual.</para>
          </step>
       </procedure>
-      <para>For further information on the usage of <systemitem class="library">libvirt</systemitem>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-         <xref linkend="part-virt-libvirt" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For further information on the usage of <systemitem class="library">libvirt</systemitem>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="part-virt-libvirt" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect2>
    <sect2 xml:id="sec-network-openvswitch-more">
       <title>More information</title>

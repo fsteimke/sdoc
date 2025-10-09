@@ -28,62 +28,30 @@
          <colspec colnum="4" colname="4" colwidth="1250*"/>
          <thead>
             <row>
-               <entry>
-                  <para>Tasks</para>
-               </entry>
-               <entry>
-                  <para>Description</para>
-               </entry>
-               <entry>
-                  <para>Order If Increasing Size</para>
-               </entry>
-               <entry>
-                  <para>Order If Decreasing Size</para>
-               </entry>
+               <entry><para>Tasks</para></entry>
+               <entry><para>Description</para></entry>
+               <entry><para>Order If Increasing Size</para></entry>
+               <entry><para>Order If Decreasing Size</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>Resize each of the component partitions.</para>
-               </entry>
-               <entry>
-                  <para>Increase or decrease the active size of each component partition. You remove only one component partition at a time, modify its size, then return it to the RAID.</para>
-               </entry>
-               <entry>
-                  <para>1</para>
-               </entry>
-               <entry>
-                  <para>2</para>
-               </entry>
+               <entry><para>Resize each of the component partitions.</para></entry>
+               <entry><para>Increase or decrease the active size of each component partition. You remove only one component partition at a time, modify its size, then return it to the RAID.</para></entry>
+               <entry><para>1</para></entry>
+               <entry><para>2</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>Resize the software RAID itself.</para>
-               </entry>
-               <entry>
-                  <para>The RAID does not automatically know about the increases or decreases you make to the underlying component partitions. You must inform it about the new size.</para>
-               </entry>
-               <entry>
-                  <para>2</para>
-               </entry>
-               <entry>
-                  <para>3</para>
-               </entry>
+               <entry><para>Resize the software RAID itself.</para></entry>
+               <entry><para>The RAID does not automatically know about the increases or decreases you make to the underlying component partitions. You must inform it about the new size.</para></entry>
+               <entry><para>2</para></entry>
+               <entry><para>3</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>Resize the file system.</para>
-               </entry>
-               <entry>
-                  <para>You must resize the file system that resides on the RAID. This is possible only for file systems that provide tools for resizing.</para>
-               </entry>
-               <entry>
-                  <para>3</para>
-               </entry>
-               <entry>
-                  <para>1</para>
-               </entry>
+               <entry><para>Resize the file system.</para></entry>
+               <entry><para>You must resize the file system that resides on the RAID. This is possible only for file systems that provide tools for resizing.</para></entry>
+               <entry><para>3</para></entry>
+               <entry><para>1</para></entry>
             </row>
          </tbody>
       </tgroup>
@@ -96,32 +64,14 @@
          <colspec colnum="2" colname="2" colwidth="5001*"/>
          <thead>
             <row>
-               <entry>
-                  <para>RAID Device</para>
-               </entry>
-               <entry>
-                  <para>Component Partitions</para>
-               </entry>
+               <entry><para>RAID Device</para></entry>
+               <entry><para>Component Partitions</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <filename>/dev/md0</filename>
-                  </para>
-               </entry>
-               <entry>
-                  <para>
-                     <filename>/dev/sda1</filename>
-                  </para>
-                  <para>
-                     <filename>/dev/sdb1</filename>
-                  </para>
-                  <para>
-                     <filename>/dev/sdc1</filename>
-                  </para>
-               </entry>
+               <entry><para><filename>/dev/md0</filename></para></entry>
+               <entry><para><filename>/dev/sda1</filename></para><para><filename>/dev/sdb1</filename></para><para><filename>/dev/sdc1</filename></para></entry>
             </row>
          </tbody>
       </tgroup>

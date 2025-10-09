@@ -29,8 +29,7 @@
       <varlistentry>
          <term>Managing Windows files</term>
          <listitem>
-            <para>
-               <phrase role="productname">SUSE Linux Enterprise Server</phrase> can be configured to integrate into an existing Windows network. Your Linux machine then behaves like a Windows client. It takes all account information from the Active Directory domain controller, just as the Windows clients do. Learn more about this in <xref linkend="sec-gnome-network-ad-data"/>.</para>
+            <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> can be configured to integrate into an existing Windows network. Your Linux machine then behaves like a Windows client. It takes all account information from the Active Directory domain controller, just as the Windows clients do. Learn more about this in <xref linkend="sec-gnome-network-ad-data"/>.</para>
          </listitem>
       </varlistentry>
       <varlistentry>
@@ -43,8 +42,7 @@
    <sect1 xml:id="sec-gnomeuser-start-network-connect">
       <title>Connecting to a network</title>
       <para>You can connect to a network with wired and wireless connections. To view your network connection, click the network icon from the right side of the top bar. Then click <guimenu>Wi-Fi not connected</guimenu>, click the name of the network you want and click <guimenu>Connect</guimenu>. Click the connection name to see more details and access the settings.</para>
-      <para>To learn more about connecting to a network, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-nm" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To learn more about connecting to a network, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-nm" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-gnome-network-general">
       <title>General notes on file sharing and network browsing</title>
@@ -66,10 +64,10 @@
          <title>Network file browser</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/network_browser.png" width="100%"/>
+               <imagedata fileref="media/network_browser.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/network_browser.png" width="90%"/>
+               <imagedata fileref="media/network_browser.png" width="82%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -165,10 +163,10 @@
                   <title>Sharing a folder in GNOME Files</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/folder_sharing_1_a.png" width="85%"/>
+                        <imagedata fileref="media/folder_sharing_1_a.png" width="78%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/folder_sharing_1_a.png" width="85%"/>
+                        <imagedata fileref="media/folder_sharing_1_a.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </figure>

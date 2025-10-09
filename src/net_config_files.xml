@@ -48,8 +48,7 @@
       <note>
          <title>
             <command>wicked</command> and the <filename>ifcfg-*</filename> files</title>
-         <para>
-            <command>wicked</command> reads these files if you specify the <literal>compat:</literal> prefix. According to the <phrase role="productname">SUSE Linux Enterprise Server</phrase> default configuration in <filename>/etc/wicked/client.xml</filename>, <command>wicked</command> tries these files before the XML configuration files in <filename>/etc/wicked/ifconfig</filename>.</para>
+         <para><command>wicked</command> reads these files if you specify the <literal>compat:</literal> prefix. According to the <phrase role="productname">SUSE Linux Enterprise Server</phrase> default configuration in <filename>/etc/wicked/client.xml</filename>, <command>wicked</command> tries these files before the XML configuration files in <filename>/etc/wicked/ifconfig</filename>.</para>
          <para>The <option>--ifconfig</option> switch is provided mostly for testing only. If specified, default configuration sources defined in <filename>/etc/wicked/ifconfig</filename> are not applied.</para>
       </note>
       <para>The <filename>ifcfg-*</filename> files include information such as the start mode and the IP address. Possible parameters are described in the manual page of <systemitem>ifup</systemitem>. Additionally, most variables from the <filename>dhcp</filename> and <filename>wireless</filename> files can be used in the <filename>ifcfg-*</filename> files if a general setting should be used for only one interface. However, most of the <filename>/etc/sysconfig/network/config</filename> variables are global and cannot be overridden in <literal>ifcfg</literal> files. For example, <systemitem>NETCONFIG_*</systemitem> variables are global.</para>
@@ -59,7 +58,7 @@ MACVLAN_DEVICE='eth0'
 #MACVLAN_MODE='vepa'
 #LLADDR=02:03:04:05:06:aa</screen>
       <para>For <filename>ifcfg.template</filename>, see <xref linkend="sec-network-manconf-files-config-etc"/>.</para>
-      <para>IBM Z does not support USB. The names of the interface files and network aliases contain IBM Z-specific elements like <literal>qeth</literal>.</para>
+      <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>IBM Z does not support USB. The names of the interface files and network aliases contain IBM Z-specific elements like <literal>qeth</literal>.<phrase role="arch-end">◀</phrase></para>
    </sect3>
    <sect3 xml:id="sec-network-manconf-files-config-etc">
       <title>
@@ -154,8 +153,7 @@ default           204.127.235.41    0.0.0.0            eth0
                <systemitem>NETCONFIG_DNS_FORWARDER</systemitem>
             </term>
             <listitem>
-               <para>the name of the DNS forwarder that needs to be configured, for example <literal>bind</literal> or <literal>resolver</literal>
-               </para>
+               <para>the name of the DNS forwarder that needs to be configured, for example <literal>bind</literal> or <literal>resolver</literal></para>
             </listitem>
          </varlistentry>
          <varlistentry><!-- fate#316048 -->
@@ -196,20 +194,15 @@ nameserver 192.168.1.116</screen>
       <title>
          <filename>/sbin/netconfig</filename>
       </title>
-      <para>
-         <command>netconfig</command> is a modular tool to manage additional network configuration settings. It merges statically defined settings with settings provided by autoconfiguration mechanisms as DHCP or PPP according to a predefined policy. The required changes are applied to the system by calling the netconfig modules that are responsible for modifying a configuration file and restarting a service or a similar action.</para>
-      <para>
-         <command>netconfig</command> recognizes three main actions. The <command>netconfig modify</command> and <command>netconfig remove</command> commands are used by daemons such as DHCP or PPP to provide or remove settings to netconfig. Only the <command>netconfig update</command> command is available for the user:</para>
+      <para><command>netconfig</command> is a modular tool to manage additional network configuration settings. It merges statically defined settings with settings provided by autoconfiguration mechanisms as DHCP or PPP according to a predefined policy. The required changes are applied to the system by calling the netconfig modules that are responsible for modifying a configuration file and restarting a service or a similar action.</para>
+      <para><command>netconfig</command> recognizes three main actions. The <command>netconfig modify</command> and <command>netconfig remove</command> commands are used by daemons such as DHCP or PPP to provide or remove settings to netconfig. Only the <command>netconfig update</command> command is available for the user:</para>
       <variablelist>
          <varlistentry>
             <term>
                <command>modify</command>
             </term>
             <listitem>
-               <para>The <command>netconfig modify</command> command modifies the current interface and service specific dynamic settings and updates the network configuration. Netconfig reads settings from standard input or from a file specified with the <option>--lease-file <replaceable>FILENAME</replaceable>
-                  </option> option and internally stores them until a system reboot (or the next modify or remove action). Already existing settings for the same interface and service combination are overwritten. The interface is specified by the <option>-i <replaceable>INTERFACE_NAME</replaceable>
-                  </option> parameter. The service is specified by the <option>-s <replaceable>SERVICE_NAME</replaceable>
-                  </option> parameter.</para>
+               <para>The <command>netconfig modify</command> command modifies the current interface and service specific dynamic settings and updates the network configuration. Netconfig reads settings from standard input or from a file specified with the <option>--lease-file <replaceable>FILENAME</replaceable></option> option and internally stores them until a system reboot (or the next modify or remove action). Already existing settings for the same interface and service combination are overwritten. The interface is specified by the <option>-i <replaceable>INTERFACE_NAME</replaceable></option> parameter. The service is specified by the <option>-s <replaceable>SERVICE_NAME</replaceable></option> parameter.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -217,9 +210,7 @@ nameserver 192.168.1.116</screen>
                <command>remove</command>
             </term>
             <listitem>
-               <para>The <command>netconfig remove</command> command removes the dynamic settings provided by an editing action for the specified interface and service combination and updates the network configuration. The interface is specified by the <option>-i <replaceable>INTERFACE_NAME</replaceable>
-                  </option> parameter. The service is specified by the <option>-s <replaceable>SERVICE_NAME</replaceable>
-                  </option> parameter.</para>
+               <para>The <command>netconfig remove</command> command removes the dynamic settings provided by an editing action for the specified interface and service combination and updates the network configuration. The interface is specified by the <option>-i <replaceable>INTERFACE_NAME</replaceable></option> parameter. The service is specified by the <option>-s <replaceable>SERVICE_NAME</replaceable></option> parameter.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -227,8 +218,7 @@ nameserver 192.168.1.116</screen>
                <command>update</command>
             </term>
             <listitem>
-               <para><!-- fate#306274 --> The <command>netconfig update</command> command updates the network configuration using current settings. This is useful when the policy or the static configuration has changed. Use the <option>-m <replaceable>MODULE_TYPE</replaceable>
-                  </option> parameter to update a specified service only (<systemitem>dns</systemitem>, <systemitem>nis</systemitem>, or <systemitem>ntp</systemitem>).</para>
+               <para><!-- fate#306274 --> The <command>netconfig update</command> command updates the network configuration using current settings. This is useful when the policy or the static configuration has changed. Use the <option>-m <replaceable>MODULE_TYPE</replaceable></option> parameter to update a specified service only (<systemitem>dns</systemitem>, <systemitem>nis</systemitem>, or <systemitem>ntp</systemitem>).</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -280,61 +270,32 @@ localnet     192.168.0.0</screen>
          <tgroup cols="2" align="left">
             <tbody>
                <row>
-                  <entry>
-                     <para>order <emphasis>hosts</emphasis>, <emphasis>bind</emphasis>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Specifies in which order the services are accessed for the name resolution. Available arguments are (separated by blank spaces or commas):</para>
-                  </entry>
+                  <entry><para>order <emphasis>hosts</emphasis>, <emphasis>bind</emphasis></para></entry>
+                  <entry><para>Specifies in which order the services are accessed for the name resolution. Available arguments are (separated by blank spaces or commas):</para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <emphasis>hosts</emphasis>: searches the <filename>/etc/hosts</filename> file</para>
-                  </entry>
+                  <entry><para><emphasis>hosts</emphasis>: searches the <filename>/etc/hosts</filename> file</para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <emphasis>bind</emphasis>: accesses a name server</para>
-                  </entry>
+                  <entry><para><emphasis>bind</emphasis>: accesses a name server</para></entry>
                </row>
                <row>
                   <entry/>
-                  <entry>
-                     <para>
-                        <emphasis>nis</emphasis>: uses NIS</para>
-                  </entry>
+                  <entry><para><emphasis>nis</emphasis>: uses NIS</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>multi <emphasis>on</emphasis>/<emphasis>off</emphasis>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Defines if a host entered in <filename>/etc/hosts</filename> can have multiple IP addresses.</para>
-                  </entry>
+                  <entry><para>multi <emphasis>on</emphasis>/<emphasis>off</emphasis></para></entry>
+                  <entry><para>Defines if a host entered in <filename>/etc/hosts</filename> can have multiple IP addresses.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>nospoof <emphasis>on</emphasis> spoofalert <emphasis>on</emphasis>/<emphasis>off</emphasis>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>These parameters influence the name server <emphasis>spoofing</emphasis> but do not exert any influence on the network configuration.</para>
-                  </entry>
+                  <entry><para>nospoof <emphasis>on</emphasis> spoofalert <emphasis>on</emphasis>/<emphasis>off</emphasis></para></entry>
+                  <entry><para>These parameters influence the name server <emphasis>spoofing</emphasis> but do not exert any influence on the network configuration.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>trim <emphasis>domainname</emphasis>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>The specified domain name is separated from the host name after host name resolution (as long as the host name includes the domain name). This option is useful only if names from the local domain are in the <filename>/etc/hosts</filename> file, but should still be recognized with the attached domain names.</para>
-                  </entry>
+                  <entry><para>trim <emphasis>domainname</emphasis></para></entry>
+                  <entry><para>The specified domain name is separated from the host name after host name resolution (as long as the host name includes the domain name). This option is useful only if names from the local domain are in the <filename>/etc/hosts</filename> file, but should still be recognized with the attached domain names.</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -385,134 +346,56 @@ shadow:     compat
          <tgroup cols="2" align="left">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <option>aliases</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Mail aliases implemented by <filename>sendmail</filename>; see <command>man</command> <option>5 aliases</option>.</para>
-                  </entry>
+                  <entry><para><option>aliases</option></para></entry>
+                  <entry><para>Mail aliases implemented by <filename>sendmail</filename>; see <command>man</command> <option>5 aliases</option>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>ethers</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Ethernet addresses.</para>
-                  </entry>
+                  <entry><para><option>ethers</option></para></entry>
+                  <entry><para>Ethernet addresses.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>netmasks</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>List of networks and their subnet masks. Only needed, if you use subnetting.</para>
-                  </entry>
+                  <entry><para><option>netmasks</option></para></entry>
+                  <entry><para>List of networks and their subnet masks. Only needed, if you use subnetting.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>group</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>User groups used by <filename>getgrent</filename>. See also the man page for <command>group</command>.</para>
-                  </entry>
+                  <entry><para><option>group</option></para></entry>
+                  <entry><para>User groups used by <filename>getgrent</filename>. See also the man page for <command>group</command>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>hosts</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Host names and IP addresses, used by <filename>gethostbyname</filename> and similar functions.</para>
-                  </entry>
+                  <entry><para><option>hosts</option></para></entry>
+                  <entry><para>Host names and IP addresses, used by <filename>gethostbyname</filename> and similar functions.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>netgroup</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Valid host and user lists in the network for controlling access permissions; see the <systemitem>netgroup(5)</systemitem> man page.</para>
-                  </entry>
+                  <entry><para><option>netgroup</option></para></entry>
+                  <entry><para>Valid host and user lists in the network for controlling access permissions; see the <systemitem>netgroup(5)</systemitem> man page.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>networks</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Network names and addresses, used by <filename>getnetent</filename>.</para>
-                  </entry>
+                  <entry><para><option>networks</option></para></entry>
+                  <entry><para>Network names and addresses, used by <filename>getnetent</filename>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>publickey</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Public and secret keys for Secure_RPC used by NFS and NIS+.</para>
-                  </entry>
+                  <entry><para><option>publickey</option></para></entry>
+                  <entry><para>Public and secret keys for Secure_RPC used by NFS and NIS+.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>passwd</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>User passwords, used by <filename>getpwent</filename>; see the <systemitem>passwd(5)</systemitem> man page.</para>
-                  </entry>
+                  <entry><para><option>passwd</option></para></entry>
+                  <entry><para>User passwords, used by <filename>getpwent</filename>; see the <systemitem>passwd(5)</systemitem> man page.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>protocols</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Network protocols, used by <filename>getprotoent</filename>; see the <systemitem>protocols(5)</systemitem> man page.</para>
-                  </entry>
+                  <entry><para><option>protocols</option></para></entry>
+                  <entry><para>Network protocols, used by <filename>getprotoent</filename>; see the <systemitem>protocols(5)</systemitem> man page.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>rpc</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Remote procedure call names and addresses, used by <filename>getrpcbyname</filename> and similar functions.</para>
-                  </entry>
+                  <entry><para><option>rpc</option></para></entry>
+                  <entry><para>Remote procedure call names and addresses, used by <filename>getrpcbyname</filename> and similar functions.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>services</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Network services, used by <filename>getservent</filename>.</para>
-                  </entry>
+                  <entry><para><option>services</option></para></entry>
+                  <entry><para>Network services, used by <filename>getservent</filename>.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>shadow</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Shadow passwords of users, used by <filename>getspnam</filename>; see the <option>shadow(5)</option> man page.</para>
-                  </entry>
+                  <entry><para><option>shadow</option></para></entry>
+                  <entry><para>Shadow passwords of users, used by <filename>getspnam</filename>; see the <option>shadow(5)</option> man page.</para></entry>
                </row>
                <!--
           automount:  files nis
@@ -527,59 +410,24 @@ shadow:     compat
          <tgroup cols="2" align="left">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <option>files</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>directly access files, for example, <filename>/etc/aliases</filename>
-                     </para>
-                  </entry>
+                  <entry><para><option>files</option></para></entry>
+                  <entry><para>directly access files, for example, <filename>/etc/aliases</filename></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>db</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>access via a database</para>
-                  </entry>
+                  <entry><para><option>db</option></para></entry>
+                  <entry><para>access via a database</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>nis</option>, <option>nisplus</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>NIS, see also <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                        <xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/>
-                     </para>
-                  </entry>
+                  <entry><para><option>nis</option>, <option>nisplus</option></para></entry>
+                  <entry><para>NIS, see also <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>dns</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>can only be used as an extension for <option>hosts</option> and <option>networks</option>
-                     </para>
-                  </entry>
+                  <entry><para><option>dns</option></para></entry>
+                  <entry><para>can only be used as an extension for <option>hosts</option> and <option>networks</option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <option>compat</option>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>can only be used as an extension for <option>passwd</option>, <option>shadow</option> and <option>group</option>
-                     </para>
-                  </entry>
+                  <entry><para><option>compat</option></para></entry>
+                  <entry><para>can only be used as an extension for <option>passwd</option>, <option>shadow</option> and <option>group</option></para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -603,7 +451,6 @@ shadow:     compat
       <title>
          <filename>/etc/hostname</filename>
       </title>
-      <para>
-         <filename>/etc/hostname</filename> contains the fully qualified host name (FQHN). The fully qualified host name is the host name with the domain name attached. This file must contain only one line (in which the host name is set). It is read while the machine is booting.</para>
+      <para><filename>/etc/hostname</filename> contains the fully qualified host name (FQHN). The fully qualified host name is the host name with the domain name attached. This file must contain only one line (in which the host name is set). It is read while the machine is booting.</para>
    </sect3>
 </sect2>

@@ -7,20 +7,17 @@
          xml:id="cha-virt-logs">
    <title>Gathering system information and logs</title>
    <info/>
-   <para>When a virtualization host encounters a problem, it is often necessary to collect a detailed system report, which can be done with the help of the <command>supportconfig</command> tool. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-      <xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for more information about <command>supportconfig</command>.</para>
+   <para>When a virtualization host encounters a problem, it is often necessary to collect a detailed system report, which can be done with the help of the <command>supportconfig</command> tool. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for more information about <command>supportconfig</command>.</para>
    <para>In certain cases, the information gathered by <command>supportconfig</command> is insufficient, and logs generated from a custom logging or debugging configuration may be required to determine the cause of a problem.</para>
    <sect1 xml:id="sec-logs-libvirt">
       <title>
          <systemitem class="library">libvirt</systemitem> log controls</title>
-      <para>
-         <systemitem class="library">libvirt</systemitem> provides logging facilities for both the library and the daemon. The behavior of the logging facility is controlled by adjusting the log level, filter and output settings.</para>
+      <para><systemitem class="library">libvirt</systemitem> provides logging facilities for both the library and the daemon. The behavior of the logging facility is controlled by adjusting the log level, filter and output settings.</para>
       <variablelist>
          <varlistentry>
             <term>Log level</term>
             <listitem>
-               <para>
-                  <systemitem class="library">libvirt</systemitem> log messages are classified into four priority levels: DEBUG, INFO, WARNING and ERROR. The DEBUG level is verbose and capable of generating gigabytes of information in a short time. The volume of log messages progressively decreases with the INFO, WARNING and ERROR log levels. ERROR is the default log level.</para>
+               <para><systemitem class="library">libvirt</systemitem> log messages are classified into four priority levels: DEBUG, INFO, WARNING and ERROR. The DEBUG level is verbose and capable of generating gigabytes of information in a short time. The volume of log messages progressively decreases with the INFO, WARNING and ERROR log levels. ERROR is the default log level.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -39,8 +36,7 @@
       <para>See <link xlink:href="https://libvirt.org/logging.html"/> for more details on <systemitem class="library">libvirt</systemitem>'s log controls.</para>
       <para>A default <systemitem class="library">libvirt</systemitem> installation has the log level set to ERROR, no log filters defined, and log outputs set to journald. Log messages from the <systemitem class="library">libvirt</systemitem> daemon can be viewed with the <command>journalctl</command> command:</para>
       <screen><prompt role="root">#</prompt>journalctl --unit libvirtd</screen>
-      <para>The default log facility settings are fine for normal operations and provide useful messages for applications and users of <systemitem class="library">libvirt</systemitem>, but internal issues often require DEBUG level messages. As an example, consider a potential bug in the interaction between <systemitem class="library">libvirt</systemitem> and the QEMU monitor. In this case, we only need to see the debug messages of the communication between <systemitem class="library">libvirt</systemitem> and QEMU. The following example creates a log filter to select debug messages from the QEMU driver and send them to a file named <filename>/tmp/libvirtd.log</filename>
-      </para>
+      <para>The default log facility settings are fine for normal operations and provide useful messages for applications and users of <systemitem class="library">libvirt</systemitem>, but internal issues often require DEBUG level messages. As an example, consider a potential bug in the interaction between <systemitem class="library">libvirt</systemitem> and the QEMU monitor. In this case, we only need to see the debug messages of the communication between <systemitem class="library">libvirt</systemitem> and QEMU. The following example creates a log filter to select debug messages from the QEMU driver and send them to a file named <filename>/tmp/libvirtd.log</filename></para>
       <screen>
    log_filters="1:qemu.qemu_monitor_json"
    log_outputs="1:file:/tmp/libvirtd.log"

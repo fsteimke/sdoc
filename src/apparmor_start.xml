@@ -24,44 +24,28 @@
       <para>AppArmor is installed and running on any installation of <phrase role="productname">SUSE® Linux Enterprise Server</phrase> by default, regardless of what patterns are installed. The packages listed below are needed for a fully functional instance of AppArmor:</para>
       <itemizedlist spacing="compact" mark="bullet">
          <listitem>
-            <para>
-               <systemitem class="resource">apparmor-docs</systemitem>
-            </para>
+            <para><systemitem class="resource">apparmor-docs</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">apparmor-parser</systemitem>
-            </para>
+            <para><systemitem class="resource">apparmor-parser</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">apparmor-profiles</systemitem>
-            </para>
+            <para><systemitem class="resource">apparmor-profiles</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">apparmor-utils</systemitem>
-            </para>
+            <para><systemitem class="resource">apparmor-utils</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">audit</systemitem>
-            </para>
+            <para><systemitem class="resource">audit</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">libapparmor1</systemitem>
-            </para>
+            <para><systemitem class="resource">libapparmor1</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">perl-libapparmor</systemitem>
-            </para>
+            <para><systemitem class="resource">perl-libapparmor</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">yast2-apparmor</systemitem>
-            </para>
+            <para><systemitem class="resource">yast2-apparmor</systemitem></para>
          </listitem>
       </itemizedlist>
       <tip>
@@ -92,10 +76,7 @@
             <para>Start YaST.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Services Manager</guimenu>
-               </menuchoice>.</para>
+            <para>Select <menuchoice><guimenu>System</guimenu><guimenu>Services Manager</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Mark <literal>apparmor</literal> by clicking its row in the list of services, then click <guimenu>Enable/Disable</guimenu> in the lower part of the window. Check that <guimenu>Enabled</guimenu> changed to <guimenu>Disabled</guimenu> in the <literal>apparmor</literal> row.</para>
@@ -148,17 +129,9 @@
       <para>For each application, perform the following steps to create a profile:</para>
       <procedure xml:id="proc-genprof">
          <step xml:id="st-genprof1">
-            <para>As <systemitem class="username">root</systemitem>, let AppArmor create a rough outline of the application's profile by running <command>aa-genprof</command>
-               <replaceable>PROGRAM_NAME</replaceable>.</para>
-            <para>
-               <emphasis>or</emphasis>
-            </para>
-            <para><!-- this part of YaST is not too useful IMHO - "vi $profile" works better ;-) --> Outline the basic profile by running <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Security and Users</guimenu>
-                  <guimenu>AppArmor Configuration</guimenu>
-                  <guimenu>Manually Add Profile</guimenu>
-               </menuchoice> and specifying the complete path to the application you want to profile.</para>
+            <para>As <systemitem class="username">root</systemitem>, let AppArmor create a rough outline of the application's profile by running <command>aa-genprof</command><replaceable>PROGRAM_NAME</replaceable>.</para>
+            <para><emphasis>or</emphasis></para>
+            <para><!-- this part of YaST is not too useful IMHO - "vi $profile" works better ;-) --> Outline the basic profile by running <menuchoice><guimenu>YaST</guimenu><guimenu>Security and Users</guimenu><guimenu>AppArmor Configuration</guimenu><guimenu>Manually Add Profile</guimenu></menuchoice> and specifying the complete path to the application you want to profile.</para>
             <para>A new basic profile is outlined and put into learning mode, which means that it logs any activity of the program you are executing, but does not yet restrict it.</para>
          </step>
          <step xml:id="st-genprof2">

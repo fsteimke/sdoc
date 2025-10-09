@@ -7,25 +7,21 @@
        xml:id="sec-updater">
    <title>The GNOME package updater</title>
    <info/>
-   <para>SUSE offers a continuous stream of software security patches and updates for your product. They can be installed using tools available with your desktop or by running the <xref linkend="cha-onlineupdate-you" xrefstyle="%c"/>
-      <!-- YaST Online Update --> module. This section describes how to update the system from the GNOME desktop using the <guimenu>Package Updater</guimenu>.</para>
+   <para>SUSE offers a continuous stream of software security patches and updates for your product. They can be installed using tools available with your desktop or by running the <xref linkend="cha-onlineupdate-you" xrefstyle="%c"/><!-- YaST Online Update --> module. This section describes how to update the system from the GNOME desktop using the <guimenu>Package Updater</guimenu>.</para>
    <para>Contrary to the YaST Online Update module, the GNOME <guimenu>Package Updater</guimenu> not only offers to install patches from the update repositories, but also new versions of packages that are already installed. (Patches fix security issues or malfunctions; the functionality and version number is usually not changed. New versions of a package increase the version number and add functionality or introduce major changes.)</para>
    <para>Whenever new patches or package updates are available, GNOME shows a notification in the notification area or on the lock screen.</para>
    <figure>
       <title>Update notification on GNOME desktop</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
+            <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
+            <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>
-   <para>To configure the notification settings for the <guimenu>Package Updater</guimenu>, start GNOME <guimenu>Settings</guimenu> and choose <menuchoice>
-         <guimenu>Notifications</guimenu>
-         <guimenu>Package Updater</guimenu>
-      </menuchoice>.</para>
+   <para>To configure the notification settings for the <guimenu>Package Updater</guimenu>, start GNOME <guimenu>Settings</guimenu> and choose <menuchoice><guimenu>Notifications</guimenu><guimenu>Package Updater</guimenu></menuchoice>.</para>
    <procedure>
       <title>Installing patches and updates with the GNOME package updater</title>
       <step>
@@ -33,10 +29,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/gupdater_updates.png" width="75%"/>
+                  <imagedata fileref="media/gupdater_updates.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/gupdater_updates.png" width="75%"/>
+                  <imagedata fileref="media/gupdater_updates.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

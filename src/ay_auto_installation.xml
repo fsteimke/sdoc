@@ -29,8 +29,7 @@
    <sect1 xml:id="bootmedium">
       <title>Choosing the right boot medium</title>
       <para>There are different methods for booting the client. The computer can boot from its network interface card (NIC) to receive the boot images via DHCP or TFTP. Alternatively a suitable kernel and initrd image can be loaded from a flash disk (for example, a USB stick) or a bootable DVD-ROM.</para>
-      <para>YaST will check for <filename>autoinst.xml</filename> in the root directory of the boot medium or the initrd upon start-up and switch to an automated installation if it was found. In case the control file is named differently or located elsewhere, specify its location on the kernel command line with the parameter <literal>AutoYaST=<replaceable>URL</replaceable>
-         </literal>.</para>
+      <para>YaST will check for <filename>autoinst.xml</filename> in the root directory of the boot medium or the initrd upon start-up and switch to an automated installation if it was found. In case the control file is named differently or located elsewhere, specify its location on the kernel command line with the parameter <literal>AutoYaST=<replaceable>URL</replaceable></literal>.</para>
       <para>Alternatively, you can place the <filename>autoinst.xml</filename> into a device, mounted either physically or virtually, that is labeled <literal>OEMDRV</literal>. In this case, you do not need to specify the location of the <filename>autoinst.xml</filename> on the kernel command line. The <literal>autoinst.xml</literal> must be located in the root directory of the device.</para>
       <sect2 xml:id="bootmedium-flash">
          <title>Booting from a flash disk (for example, a USB stick)</title>
@@ -39,8 +38,7 @@
             <title>Copying the installation medium image to a removable flash disk</title>
             <para>Use the following command to copy the contents of the installation image to a removable flash disk.</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> dd if=<replaceable>IMAGE</replaceable> of=<replaceable>FLASH_DISK</replaceable> bs=4M &amp;&amp; sync</screen>
-            <para>
-               <replaceable>IMAGE</replaceable> needs to be replaced with the path to the <filename>SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> or <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image file. <replaceable>FLASH_DISK</replaceable> needs to be replaced with the flash device. To identify the device, insert it and run:</para>
+            <para><replaceable>IMAGE</replaceable> needs to be replaced with the path to the <filename>SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> or <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image file. <replaceable>FLASH_DISK</replaceable> needs to be replaced with the flash device. To identify the device, insert it and run:</para>
             <screen><prompt role="root">#</prompt>grep -Ff &lt;(hwinfo --disk --short) &lt;(hwinfo --usb --short)
       disk:
       /dev/sdc             General USB Flash Disk</screen>
@@ -58,8 +56,7 @@
       </sect2>
       <sect2 xml:id="bootmedium-pxe">
          <title>Booting via PXE over the network</title>
-         <para>Booting via PXE requires a DHCP and a TFTP server in your network. The computer will then boot without a physical medium. For instructions on setting up the required infrastructure, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="cha-remote-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Booting via PXE requires a DHCP and a TFTP server in your network. The computer will then boot without a physical medium. For instructions on setting up the required infrastructure, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-remote-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
          <para>If you install via PXE, the installation will run in an endless loop. This happens because after the first reboot, the machine performs the PXE boot again and restarts the installation instead of booting from the hard disk for the second stage of the installation.</para>
          <para>There are several ways to solve this problem. You can use an HTTP server to provide the AutoYaST control file. Alternatively, instead of a static control file, run a CGI script on the Web server that provides the control file and changes the TFTP server configuration for your target host. This way, the next PXE boot of the machine will be from the hard disk by default.</para>
          <para>Another way is to use AutoYaST to upload a new PXE boot configuration for the target host via the control file:</para>
@@ -74,16 +71,13 @@
   &lt;pxelinux-dir&gt;/pxelinux.cfg&lt;/pxelinux-dir&gt;
   &lt;filename&gt;__MAC__&lt;/filename&gt;
 &lt;/pxe&gt;</screen>
-         <para>This entry will upload a new configuration for the target host to the TFTP server shortly before the first reboot happens. In most installations the TFTP daemon runs as user <systemitem class="username">nobody</systemitem>. You need to make sure this user has write permissions to the <filename>pxelinux.cfg</filename> directory. You can also configure the file name that will be uploaded. If you use the <quote>magic</quote>
-            <literal>__MAC__</literal> file name, the file name will be the MAC address of your machine like, for example <literal>01-08-00-27-79-49-ee</literal>. If the file name setting is missing, the IP address will be used for the file name.</para>
+         <para>This entry will upload a new configuration for the target host to the TFTP server shortly before the first reboot happens. In most installations the TFTP daemon runs as user <systemitem class="username">nobody</systemitem>. You need to make sure this user has write permissions to the <filename>pxelinux.cfg</filename> directory. You can also configure the file name that will be uploaded. If you use the <quote>magic</quote><literal>__MAC__</literal> file name, the file name will be the MAC address of your machine like, for example <literal>01-08-00-27-79-49-ee</literal>. If the file name setting is missing, the IP address will be used for the file name.</para>
          <para>To do another auto-installation on the same machine, you need to remove the file from the TFTP server.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="invoking-autoinst">
       <title>Invoking the auto-installation process</title>
-      <para>
-         <remark role="fixme">Add a short description</remark>
-      </para>
+      <para><remark role="fixme">Add a short description</remark></para>
       <sect2 xml:id="invoking-autoinst-options">
          <title>Command line options</title>
          <para>Adding the command line variable <literal>autoyast</literal> causes <command>linuxrc</command> to start in automated mode. The <command>linuxrc</command> program searches for a configuration file, which should be distinguished from the main control file, in the following places:</para>
@@ -225,8 +219,7 @@
                   </literal>
                </term>
                <listitem>
-                  <para>Looks for control file in the specified path, relative to the source root directory, for example <literal>file:///autoinst.xml</literal> when the control file is in the top-level directory of any local file system, including mounted external devices such as a CD or USB drive. (This is the same as <literal>file://<replaceable>localhost/autoinst.xml</replaceable>
-                     </literal>.)</para>
+                  <para>Looks for control file in the specified path, relative to the source root directory, for example <literal>file:///autoinst.xml</literal> when the control file is in the top-level directory of any local file system, including mounted external devices such as a CD or USB drive. (This is the same as <literal>file://<replaceable>localhost/autoinst.xml</replaceable></literal>.)</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -235,10 +228,7 @@
                   </literal>
                </term>
                <listitem>
-                  <para>Looks for the control file on a storage device. Do not specify the full path to the device, but the device name only (for example, <literal>device://<replaceable>vda1/autoyast.xml</replaceable>
-                     </literal>). You may also omit specifying the device and trigger <literal>autoyast</literal> to search all devices, for example, <literal>autoyast=device://<replaceable>localhost/autoinst.xml</replaceable>
-                     </literal>, or <literal>autoyast=device:///<replaceable>autoinst.xml</replaceable>
-                     </literal>.</para>
+                  <para>Looks for the control file on a storage device. Do not specify the full path to the device, but the device name only (for example, <literal>device://<replaceable>vda1/autoyast.xml</replaceable></literal>). You may also omit specifying the device and trigger <literal>autoyast</literal> to search all devices, for example, <literal>autoyast=device://<replaceable>localhost/autoinst.xml</replaceable></literal>, or <literal>autoyast=device:///<replaceable>autoinst.xml</replaceable></literal>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -301,8 +291,7 @@
                   </literal>
                </term>
                <listitem>
-                  <para>Retrieve the control file from the installation source: either from the default installation source or from the installation source defined in <literal>install=<replaceable>INSTALLATION_SOURCE_PATH</replaceable>
-                     </literal>.</para>
+                  <para>Retrieve the control file from the installation source: either from the default installation source or from the installation source defined in <literal>install=<replaceable>INSTALLATION_SOURCE_PATH</replaceable></literal>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -343,22 +332,18 @@
                   <para>When using the original installation media (<filename>SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> or <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> is needed), the control file needs to be accessible via flash disk (for example, a USB stick) or network:</para>
                   <formalpara>
                      <title>Flash disk (for example, a USB stick)</title>
-                     <para>Access the control file via the <literal>autoyast=usb://<replaceable>PATH</replaceable>
-                        </literal> option.</para>
+                     <para>Access the control file via the <literal>autoyast=usb://<replaceable>PATH</replaceable></literal> option.</para>
                   </formalpara>
                   <formalpara>
                      <title>Network</title>
-                     <para>Access the control file via the following commands: <literal>autoyast=nfs://..</literal>, <literal>autoyast=ftp://..</literal>, <literal>autoyast=http://..</literal>, <literal>autoyast=https://..</literal>, <literal>autoyast=tftp://..</literal>, or <literal>autoyast=cifs://..</literal>. Network access needs to be defined using the boot options in linuxrc. This can be done via DHCP: <command>netsetup=dhcp autoyast=http://<replaceable>163.122.3.5/autoyast.xml</replaceable>
-                        </command>
-                     </para>
+                     <para>Access the control file via the following commands: <literal>autoyast=nfs://..</literal>, <literal>autoyast=ftp://..</literal>, <literal>autoyast=http://..</literal>, <literal>autoyast=https://..</literal>, <literal>autoyast=tftp://..</literal>, or <literal>autoyast=cifs://..</literal>. Network access needs to be defined using the boot options in linuxrc. This can be done via DHCP: <command>netsetup=dhcp autoyast=http://<replaceable>163.122.3.5/autoyast.xml</replaceable></command></para>
                   </formalpara>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Using a custom installation media</term>
                <listitem>
-                  <para>In this case, you can include the control file directly on the installation media. When placing it in the root directory and naming it <filename>autoinst.xml</filename>, it will automatically be found and used for the installation. Otherwise use <literal>autoyast=file:///<replaceable>PATH</replaceable>
-                     </literal> to specify the path to the control file.</para>
+                  <para>In this case, you can include the control file directly on the installation media. When placing it in the root directory and naming it <filename>autoinst.xml</filename>, it will automatically be found and used for the installation. Otherwise use <literal>autoyast=file:///<replaceable>PATH</replaceable></literal> to specify the path to the control file.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -367,8 +352,7 @@
                   <para>This option is the most important one because installations of multiple machines are usually done using SLP or NFS servers and other network services like BOOTP and DHCP. The easiest way to make the control file available is to place it in the root directory of the installation source, naming it <filename>autoinst.xml</filename>. In this case, it will automatically be found and used for the installation. The control file can also reside in the following places:</para>
                   <formalpara>
                      <title>Flash disk (for example, a USB stick)</title>
-                     <para>Access the control file via the <literal>autoyast=usb://<replaceable>PATH</replaceable>
-                        </literal> option.</para>
+                     <para>Access the control file via the <literal>autoyast=usb://<replaceable>PATH</replaceable></literal> option.</para>
                   </formalpara>
                   <formalpara>
                      <title>Network</title>

@@ -32,10 +32,10 @@
             <title>System Role screen</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -54,10 +54,7 @@
             <title>Installing the KVM environment</title>
             <para>To install the KVM virtualization environment and related tools, proceed as follows:</para>
             <step>
-               <para>Start YaST and select <menuchoice>
-                     <guimenu>Virtualization</guimenu>
-                     <guimenu>Install Hypervisor and Tools</guimenu>
-                  </menuchoice>.</para>
+               <para>Start YaST and select <menuchoice><guimenu>Virtualization</guimenu><guimenu>Install Hypervisor and Tools</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Select <guimenu>KVM server</guimenu> for a minimal installation of QEMU and KVM environment. Select <guimenu>KVM tools</guimenu> to use the <systemitem class="library">libvirt</systemitem>-based management stack as well. Confirm with <guimenu>Accept</guimenu>.</para>
@@ -73,10 +70,7 @@
             <title>Installing the Xen environment</title>
             <para>To install the Xen virtualization environment, proceed as follows:</para>
             <step>
-               <para>Start YaST and select<menuchoice>
-                     <guimenu>Virtualization</guimenu>
-                     <guimenu>Install Hypervisor and Tools</guimenu>
-                  </menuchoice>.</para>
+               <para>Start YaST and select<menuchoice><guimenu>Virtualization</guimenu><guimenu>Install Hypervisor and Tools</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Select <guimenu>Xen server</guimenu> for a minimal installation of Xen environment. Select <guimenu>Xen tools</guimenu> to use the <systemitem class="library">libvirt</systemitem>-based management stack as well. Confirm with <guimenu>Accept</guimenu>.</para>
@@ -88,8 +82,7 @@
                <para>After the setup has been finished, you need to reboot the machine with the <emphasis>Xen kernel</emphasis>.</para>
                <tip>
                   <title>Default boot kernel</title>
-                  <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-grub2-yast2-config" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-yast2-config" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </tip>
             </step>
          </procedure>

@@ -8,8 +8,7 @@
    <title>Masquerading and firewalls</title>
    <info/>
    <para>Whenever Linux is used in a network environment, you can use the kernel functions that allow the manipulation of network packets to maintain a separation between internal and external network areas. The Linux <systemitem>netfilter</systemitem> framework provides the means to establish an effective firewall that keeps different networks apart. Using iptables—a generic table structure for the definition of rule sets—precisely controls the packets allowed to pass a network interface. Such a packet filter can be set up using <systemitem class="daemon">firewalld</systemitem> and its graphical interface <command>firewall-config</command>.</para>
-   <para>
-      <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA introduces <systemitem class="daemon">firewalld</systemitem> as the new default software firewall, replacing SuSEfirewall2. This chapter provides guidance for configuring <systemitem class="daemon">firewalld</systemitem>, and migrating from SuSEfirewall2 for users who have upgraded from older <phrase role="productname">SUSE Linux Enterprise Server</phrase> releases.</para>
+   <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA introduces <systemitem class="daemon">firewalld</systemitem> as the new default software firewall, replacing SuSEfirewall2. This chapter provides guidance for configuring <systemitem class="daemon">firewalld</systemitem>, and migrating from SuSEfirewall2 for users who have upgraded from older <phrase role="productname">SUSE Linux Enterprise Server</phrase> releases.</para>
    <sect1 xml:id="sec-security-firewall-iptables">
       <title>Packet filtering with iptables</title>
       <para>This section discusses the low-level details of packet filtering. The components <systemitem>netfilter</systemitem> and <systemitem>iptables</systemitem> are responsible for the filtering and manipulation of network packets and for network address translation (NAT). The filtering criteria and any actions associated with them are stored in chains, which must be matched one after another by individual network packets as they arrive. The chains to match are stored in tables. The <command>iptables</command> command allows you to alter these tables and rule sets.</para>
@@ -67,25 +66,23 @@
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>
-         <xref linkend="fig-fire-table"/> illustrates the paths along which a network packet may travel on a given system. For the sake of simplicity, the figure lists tables as parts of chains, but in reality these chains are held within the tables themselves.</para>
+      <para><xref linkend="fig-fire-table"/> illustrates the paths along which a network packet may travel on a given system. For the sake of simplicity, the figure lists tables as parts of chains, but in reality these chains are held within the tables themselves.</para>
       <para>In the simplest case, an incoming packet destined for the system itself arrives at the <literal>eth0</literal> interface. The packet is first referred to the <literal>PREROUTING</literal> chain of the <literal>mangle</literal> table then to the <literal>PREROUTING</literal> chain of the <literal>nat</literal> table. The following step, concerning the routing of the packet, determines that the actual target of the packet is a process of the system itself. After passing the <literal>INPUT</literal> chains of the <literal>mangle</literal> and the <literal>filter</literal> table, the packet finally reaches its target, provided that the rules of the <literal>filter</literal> table allow this.</para>
       <figure xml:id="fig-fire-table">
          <title>iptables: a packet's possible paths</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata width="75%" fileref="media/fire_tables.svg"/>
+               <imagedata width="69%" fileref="media/fire_tables.svg"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata width="100%" fileref="media/fire_tables.png"/>
+               <imagedata width="92%" fileref="media/fire_tables.png"/>
             </imageobject>
          </mediaobject>
       </figure>
    </sect1>
    <sect1 xml:id="sec-security-firewall-masq">
       <title>Masquerading basics</title>
-      <para>Masquerading is the Linux-specific form of NAT (network address translation) and can be used to connect a small LAN with the Internet. LAN hosts use IP addresses from the private range (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-network-addresses-route" xrefstyle="%label &#34;%c&#34;"/>) and on the Internet official IP addresses are used. To be able to connect to the Internet, a LAN host's private address is translated to an official one. This is done on the router, which acts as the gateway between the LAN and the Internet. The underlying principle is a simple one: The router has more than one network interface, typically a network card and a separate interface connecting with the Internet. While the latter links the router with the outside world, one or several others link it with the LAN hosts. With these hosts in the local network connected to the network card (such as <literal>eth0</literal>) of the router, they can send any packets not destined for the local network to their default gateway or router.</para>
+      <para>Masquerading is the Linux-specific form of NAT (network address translation) and can be used to connect a small LAN with the Internet. LAN hosts use IP addresses from the private range (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-addresses-route" xrefstyle="%label &#34;%c&#34;"/>) and on the Internet official IP addresses are used. To be able to connect to the Internet, a LAN host's private address is translated to an official one. This is done on the router, which acts as the gateway between the LAN and the Internet. The underlying principle is a simple one: The router has more than one network interface, typically a network card and a separate interface connecting with the Internet. While the latter links the router with the outside world, one or several others link it with the LAN hosts. With these hosts in the local network connected to the network card (such as <literal>eth0</literal>) of the router, they can send any packets not destined for the local network to their default gateway or router.</para>
       <important>
          <title>Using the correct network mask</title>
          <para>When configuring your network, make sure both the broadcast address and the netmask are the same for all local hosts. Failing to do so prevents packets from being routed properly.</para>
@@ -97,8 +94,7 @@
    </sect1>
    <sect1 xml:id="sec-security-firewall-fw">
       <title>Firewalling basics</title>
-      <para>
-         <emphasis>Firewall</emphasis> is probably the term most widely used to describe a mechanism that controls the data flow between networks. Strictly speaking, the mechanism described in this section is called a <emphasis>packet filter</emphasis>. A packet filter regulates the data flow according to certain criteria, such as protocols, ports, and IP addresses. This allows you to block packets that, according to their addresses, are not supposed to reach your network. To allow public access to your Web server, for example, explicitly open the corresponding port. However, a packet filter does not scan the contents of packets with legitimate addresses, such as those directed to your Web server. For example, if incoming packets were intended to compromise a CGI program on your Web server, the packet filter would still let them through.</para>
+      <para><emphasis>Firewall</emphasis> is probably the term most widely used to describe a mechanism that controls the data flow between networks. Strictly speaking, the mechanism described in this section is called a <emphasis>packet filter</emphasis>. A packet filter regulates the data flow according to certain criteria, such as protocols, ports, and IP addresses. This allows you to block packets that, according to their addresses, are not supposed to reach your network. To allow public access to your Web server, for example, explicitly open the corresponding port. However, a packet filter does not scan the contents of packets with legitimate addresses, such as those directed to your Web server. For example, if incoming packets were intended to compromise a CGI program on your Web server, the packet filter would still let them through.</para>
       <para>A more effective but more complex mechanism is the combination of several types of systems, such as a packet filter interacting with an application gateway or proxy. In this case, the packet filter rejects any packets destined for disabled ports. Packets that are directed to the application gateway are accepted. This gateway or proxy pretends to be the actual client of the server. In a sense, such a proxy could be considered a masquerading host on the protocol level used by the application. One example for such a proxy is Squid, an HTTP and FTP proxy server. To use Squid, the browser must be configured to communicate via the proxy. Any HTTP pages or FTP files requested are served from the proxy cache and objects not found in the cache are fetched from the Internet by the proxy.</para>
       <para>The following section focuses on the packet filter that comes with <phrase role="productname">SUSE Linux Enterprise Server</phrase>. For further information about packet filtering and firewalling, read the <link xlink:href="https://tldp.org/HOWTO/Firewall-HOWTO.html">Firewall HOWTO</link>.</para>
    </sect1>
@@ -109,13 +105,10 @@
       <note>
          <title>
             <systemitem class="daemon">firewalld</systemitem> replaces SuSEfirewall2</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA introduces <systemitem class="daemon">firewalld</systemitem> as the new default software firewall, replacing SuSEfirewall2. If you are upgrading from a release older than <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA, SuSEfirewall2 will be unchanged and you must manually upgrade to <systemitem class="daemon">firewalld</systemitem> (see <xref linkend="sec-security-firewall-upgrade"/>).</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA introduces <systemitem class="daemon">firewalld</systemitem> as the new default software firewall, replacing SuSEfirewall2. If you are upgrading from a release older than <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA, SuSEfirewall2 will be unchanged and you must manually upgrade to <systemitem class="daemon">firewalld</systemitem> (see <xref linkend="sec-security-firewall-upgrade"/>).</para>
       </note>
-      <para>
-         <systemitem class="daemon">firewalld</systemitem> is a daemon that maintains the system's <command>iptables</command> rules and offers a D-Bus interface for operating on them. It comes with a command line utility <command>firewall-cmd</command> and a graphical user interface <command>firewall-config</command> for interacting with it. Since <systemitem class="daemon">firewalld</systemitem> is running in the background and provides a well defined interface it allows other applications to request changes to the iptables rules, for example to set up virtual machine networking.</para>
-      <para>
-         <systemitem class="daemon">firewalld</systemitem> implements different security zones. Several predefined zones like <literal>internal</literal> and <literal>public</literal> exist. The administrator can define additional custom zones if desired. Each zone contains its own set of iptables rules. Each network interface is a member of exactly one zone. Individual connections can also be assigned to a zone based on the source addresses.</para>
+      <para><systemitem class="daemon">firewalld</systemitem> is a daemon that maintains the system's <command>iptables</command> rules and offers a D-Bus interface for operating on them. It comes with a command line utility <command>firewall-cmd</command> and a graphical user interface <command>firewall-config</command> for interacting with it. Since <systemitem class="daemon">firewalld</systemitem> is running in the background and provides a well defined interface it allows other applications to request changes to the iptables rules, for example to set up virtual machine networking.</para>
+      <para><systemitem class="daemon">firewalld</systemitem> implements different security zones. Several predefined zones like <literal>internal</literal> and <literal>public</literal> exist. The administrator can define additional custom zones if desired. Each zone contains its own set of iptables rules. Each network interface is a member of exactly one zone. Individual connections can also be assigned to a zone based on the source addresses.</para>
       <para>Each zone represents a certain level of trust. For example the <literal>public</literal> zone is not trusted, because other computers in this network are not under your control (suitable for Internet or wireless hotspot connections). On the other hand the <literal>internal</literal> zone is used for networks that <emphasis>are</emphasis> under your control, like a home or company network. By utilizing zones this way, a host can offer different kinds of services to trusted networks and untrusted networks in a defined way.</para>
       <para>For more information about the predefined zones and their meaning in <systemitem class="daemon">firewalld</systemitem>, refer to its manual at <link xlink:href="https://www.firewalld.org/documentation/zone/predefined-zones.html"/>.</para>
       <note>
@@ -142,8 +135,7 @@
          <title>Configuring the firewall on the command line</title>
          <sect3>
             <title>Firewall start-up</title>
-            <para>
-               <systemitem class="daemon">firewalld</systemitem> will be installed and enabled by default. It is a regular <systemitem class="daemon">systemd</systemitem> service that can be configured via <command>systemctl</command> or the YaST Services Manager.</para>
+            <para><systemitem class="daemon">firewalld</systemitem> will be installed and enabled by default. It is a regular <systemitem class="daemon">systemd</systemitem> service that can be configured via <command>systemctl</command> or the YaST Services Manager.</para>
             <important>
                <title>Automatic firewall configuration</title>
                <para>After the installation, YaST automatically starts <systemitem class="daemon">firewalld</systemitem> and leaves all interfaces in the default <literal>public</literal> zone. If a server application is configured and activated on the system, YaST can adjust the firewall rules via the options <guimenu>Open Ports on Selected Interface in Firewall</guimenu> or <guimenu>Open Ports on Firewall</guimenu> in the server configuration modules. Some server module dialogs include a <guimenu>Firewall Details</guimenu> button for activating additional services and ports.</para>
@@ -183,8 +175,7 @@ dmz
          </sect3>
          <sect3 xml:id="sec-security-firewall-firewalld-cmd-ports">
             <title>Making network services accessible</title>
-            <para>
-               <systemitem class="daemon">firewalld</systemitem> has a concept of <emphasis>services</emphasis>. A service consists of definitions of ports and protocols. These definitions logically belong together in the context of a given network service like a Web or mail server protocol. The following commands can be used to get information about predefined services and their details:</para>
+            <para><systemitem class="daemon">firewalld</systemitem> has a concept of <emphasis>services</emphasis>. A service consists of definitions of ports and protocols. These definitions logically belong together in the context of a given network service like a Web or mail server protocol. The following commands can be used to get information about predefined services and their details:</para>
             <screen><prompt role="root">#</prompt><command>firewall-cmd --get-services</command>
 [...] dhcp dhcpv6 dhcpv6-client dns docker-registry [...]
 <prompt role="root">#</prompt><command>firewall-cmd --info-service dhcp</command>
@@ -202,21 +193,18 @@ dhcp
             <para>For removal use the counterpart command <literal>--remove-port</literal>.</para>
             <tip>
                <title>Temporarily opening a service or port</title>
-               <para>
-                  <systemitem class="daemon">firewalld</systemitem> supports a <literal>--timeout</literal> parameter that allows to open a service or port for a limited time duration. This can be helpful for quick testing and making sure that closing the service or port is not forgotten. To allow the <literal>imap</literal> service in the <literal>internal</literal> zone for 5 minutes, you would call</para>
+               <para><systemitem class="daemon">firewalld</systemitem> supports a <literal>--timeout</literal> parameter that allows to open a service or port for a limited time duration. This can be helpful for quick testing and making sure that closing the service or port is not forgotten. To allow the <literal>imap</literal> service in the <literal>internal</literal> zone for 5 minutes, you would call</para>
                <screen><prompt role="root">#</prompt><command>firewall-cmd --add-service=imap --zone=internal --timeout=5m</command></screen>
             </tip>
          </sect3>
          <sect3>
             <title>Lockdown mode</title>
-            <para>
-               <systemitem class="daemon">firewalld</systemitem> offers a <emphasis>lockdown mode</emphasis> that prevents changes to the firewall rules while it is active. Since applications can automatically change the firewall rules via the D-Bus interface, and depending on the PolicyKit rules regular users may be able to do the same, it can be helpful to prevent changes in some situations. You can find more information about this at <link xlink:href="https://fedoraproject.org/wiki/Features/FirewalldLockdown"/>.</para>
+            <para><systemitem class="daemon">firewalld</systemitem> offers a <emphasis>lockdown mode</emphasis> that prevents changes to the firewall rules while it is active. Since applications can automatically change the firewall rules via the D-Bus interface, and depending on the PolicyKit rules regular users may be able to do the same, it can be helpful to prevent changes in some situations. You can find more information about this at <link xlink:href="https://fedoraproject.org/wiki/Features/FirewalldLockdown"/>.</para>
             <para>It is important to understand that the lockdown mode feature provides no real security, but merely protection against accidental or benign attempts to change the firewall. The way the lockdown mode is currently implemented in <systemitem class="daemon">firewalld</systemitem> provides no security against malicious intent, as is pointed out at <link xlink:href="https://seclists.org/oss-sec/2017/q3/139"/>.</para>
          </sect3>
          <sect3>
             <title>Adding custom <command>iptables</command> rules</title>
-            <para>
-               <systemitem class="daemon">firewalld</systemitem> claims exclusive control over the host's <systemitem>netfilter</systemitem> rules. You should never modify firewall rules using other tools like <command>iptables</command>. Doing so could confuse <systemitem class="daemon">firewalld</systemitem> and break security or functionality.</para>
+            <para><systemitem class="daemon">firewalld</systemitem> claims exclusive control over the host's <systemitem>netfilter</systemitem> rules. You should never modify firewall rules using other tools like <command>iptables</command>. Doing so could confuse <systemitem class="daemon">firewalld</systemitem> and break security or functionality.</para>
             <para>If you need to add custom firewall rules that aren't covered by <systemitem class="daemon">firewalld</systemitem> features then there are two ways to do so. To directly pass raw <command>iptables</command> syntax you can use the <literal>--direct</literal> option. It expects the table, chain, and priority as initial arguments and the rest of the command line is passed as is to <command>iptables</command>. The following example adds a connection tracking rule for the forwarding filter table:</para>
             <screen><prompt role="root">#</prompt><command>firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i eth0 -o eth1 \ -p tcp --dport 80 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT</command></screen>
             <para>Additionally, <systemitem class="daemon">firewalld</systemitem> implements so called <emphasis>rich rules</emphasis>, an extended syntax for specifying <command>iptables</command> rules in an easier way. You can find the syntax specification at <link xlink:href="https://www.firewalld.org/documentation/man-pages/firewalld.richlanguage.html"/>. The following example drops all IPv4 packets originating from a certain source address:</para>
@@ -224,8 +212,7 @@ dhcp
          </sect3>
          <sect3>
             <title>Routing, forwarding, and masquerading</title>
-            <para>
-               <systemitem class="daemon">firewalld</systemitem> is not designed to run as a fully fledged router. The basic functionality for typical home router setups is available. For a corporate production router you should not use <systemitem class="daemon">firewalld</systemitem>, however, but use dedicated router and firewall devices instead. The following provides just a few pointers on what to look for to utilize routing in <systemitem class="daemon">firewalld</systemitem>:</para>
+            <para><systemitem class="daemon">firewalld</systemitem> is not designed to run as a fully fledged router. The basic functionality for typical home router setups is available. For a corporate production router you should not use <systemitem class="daemon">firewalld</systemitem>, however, but use dedicated router and firewall devices instead. The following provides just a few pointers on what to look for to utilize routing in <systemitem class="daemon">firewalld</systemitem>:</para>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
                   <para>First of all IP forwarding needs to be enabled as outlined in <xref linkend="sec-security-firewall-masq"/>.</para>
@@ -235,8 +222,7 @@ dhcp
                   <screen><prompt role="root">#</prompt><command>firewall-cmd --zone=external --add-masquerade</command></screen>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem class="daemon">firewalld</systemitem> can also enable port forwarding. The following command forwards local TCP connections on port 80 to another host:</para>
+                  <para><systemitem class="daemon">firewalld</systemitem> can also enable port forwarding. The following command forwards local TCP connections on port 80 to another host:</para>
                   <screen><?dbfo keep-together="always"?><prompt role="root">#</prompt><command>firewall-cmd --zone=public \ --add-forward-port=port=80:proto=tcp:toport=80:toaddr=192.168.1.10</command></screen>
                </listitem>
             </itemizedlist>
@@ -261,22 +247,14 @@ dhcp
                   <colspec colnum="3" colname="3" colwidth="2*"/>
                   <thead>
                      <row>
-                        <entry>
-                           <para>File Path</para>
-                        </entry>
-                        <entry>
-                           <para>Variable Name</para>
-                        </entry>
-                        <entry>
-                           <para>Example Value</para>
-                        </entry>
+                        <entry><para>File Path</para></entry>
+                        <entry><para>Variable Name</para></entry>
+                        <entry><para>Example Value</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry morerows="4">
-                           <filename>/etc/sysconfig/nfs</filename>
-                        </entry>
+                        <entry morerows="4"><filename>/etc/sysconfig/nfs</filename></entry>
                         <entry>MOUNTD_PORT</entry>
                         <entry>21001</entry>
                      </row>
@@ -297,16 +275,12 @@ dhcp
                         <entry>21004</entry>
                      </row>
                      <row>
-                        <entry>
-                           <filename>/etc/sysconfig/ypbind</filename>
-                        </entry>
+                        <entry><filename>/etc/sysconfig/ypbind</filename></entry>
                         <entry>YPBIND_OPTIONS</entry>
                         <entry>-p 24500</entry>
                      </row>
                      <row>
-                        <entry morerows="2">
-                           <filename>/etc/sysconfig/ypserv</filename>
-                        </entry>
+                        <entry morerows="2"><filename>/etc/sysconfig/ypserv</filename></entry>
                         <entry>YPXFRD_ARGS</entry>
                         <entry>-p 24501</entry>
                      </row>
@@ -380,9 +354,7 @@ nfs-rpc
                   <para>The <command>nft</command> command line tool compiles into VM bytecode in netlink format. During the rule set retrieval, the VM bytecode in netlink format is translated back into the original ruleset representation.</para>
                </listitem>
             </itemizedlist>
-            <para>
-               <emphasis role="bold">A basic nftables configuration file:</emphasis>
-            </para>
+            <para><emphasis role="bold">A basic nftables configuration file:</emphasis></para>
             <screen><prompt>&gt;</prompt> cat /etc/nftables.conf
     #!/usr/sbin/nft -f
 
@@ -405,9 +377,7 @@ nfs-rpc
     }
   </screen>
             <para>In the above example, all traffic is allowed because all chains have the policy <emphasis>accept</emphasis>. Note that, in reality, this is a bad practice, as firewalls should deny traffic by default.</para>
-            <para>
-               <emphasis role="bold">A basic nftables configuration file with masquerade:</emphasis>
-            </para>
+            <para><emphasis role="bold">A basic nftables configuration file with masquerade:</emphasis></para>
             <screen><prompt>&gt;</prompt> cat /etc/nftables.conf
     #!/sbin/nft -f
 
@@ -426,9 +396,7 @@ nfs-rpc
     }
   </screen>
             <para>If you have a static IP, it would be slightly faster to use source nat (SNAT) instead of masquerade. The router replaces the source with a predefined IP instead of looking up the outgoing IP for every packet.</para>
-            <para>
-               <emphasis role="bold">An nftables configuration file with some rules applied:</emphasis>
-            </para>
+            <para><emphasis role="bold">An nftables configuration file with some rules applied:</emphasis></para>
             <screen><prompt>&gt;</prompt> cat /etc/nftables.conf
     #!/usr/sbin/nft -f
 
@@ -491,12 +459,10 @@ table inet filter {
                <para>For more information about nftables, see:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>Upstream documentation <link xlink:href="https://www.netfilter.org/projects/nftables/index.html"/>
-                     </para>
+                     <para>Upstream documentation <link xlink:href="https://www.netfilter.org/projects/nftables/index.html"/></para>
                   </listitem>
                   <listitem>
-                     <para>nftables man page <link xlink:href="https://www.netfilter.org/projects/nftables/manpage.html"/>
-                     </para>
+                     <para>nftables man page <link xlink:href="https://www.netfilter.org/projects/nftables/manpage.html"/></para>
                   </listitem>
                </itemizedlist>
             </sect4>
@@ -510,8 +476,7 @@ table inet filter {
          <para>See the <citetitle>Firewall Configuration</citetitle> section of the AutoYaST Guide to learn how to create a <systemitem class="daemon">firewalld</systemitem> configuration for AutoYaST.</para>
       </note>
       <remark>FIXME: Very unsure if the following upgrade scenario has _any_ bearing on Leap 15.2 anymore, since we don't even support upgrades from anything before Leap 15.1. Not sure whether to just profile away the entire section. - sknorr, 2020-07-02</remark>
-      <para>When upgrading from any service pack of <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 to <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase>, SuSEfirewall2 is not changed and remains active. There is no automatic migration, so you must migrate to <systemitem class="daemon">firewalld</systemitem> manually. <systemitem class="daemon">firewalld</systemitem> includes a helper migration script, <command>susefirewall2-to-firewalld</command>. Depending on the complexity of your SuSEfirewall2 configuration, the script may perform a perfect migration, or it may fail. Most likely it will partially succeed and you have to review your new <systemitem class="daemon">firewalld</systemitem> configuration and make adjustments.</para>
+      <para>When upgrading from any service pack of <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 to <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>, SuSEfirewall2 is not changed and remains active. There is no automatic migration, so you must migrate to <systemitem class="daemon">firewalld</systemitem> manually. <systemitem class="daemon">firewalld</systemitem> includes a helper migration script, <command>susefirewall2-to-firewalld</command>. Depending on the complexity of your SuSEfirewall2 configuration, the script may perform a perfect migration, or it may fail. Most likely it will partially succeed and you have to review your new <systemitem class="daemon">firewalld</systemitem> configuration and make adjustments.</para>
       <para>The resulting configuration makes <systemitem class="daemon">firewalld</systemitem> behave somewhat like SuSEfirewall2. To take full advantage of <systemitem class="daemon">firewalld</systemitem>'s features, you may elect to create a new configuration, rather than trying to migrate your old configuration. It is safe to run the <command>susefirewall2-to-firewalld</command> script with no options, as it makes no permanent changes to your system. However, if you are administering the system remotely you could get locked out.</para>
       <para>Install and run <command>susefirewall2-to-firewalld</command>:</para>
       <screen><prompt role="root">#</prompt>zypper in susefirewall2-to-firewalld

@@ -16,8 +16,7 @@
       </productname>
       <date><?dbtimestamp format="B d, Y"?></date>
       <abstract>
-         <para>This Quick Start guides you step by step through the installation of <phrase role="productname">SUSE® Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>.</para>
+         <para>This Quick Start guides you step by step through the installation of <phrase role="productname">SUSE® Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
       </abstract>
       <meta name="title">Installation Quick Start</meta>
       <meta name="series">Products &amp; Solutions</meta>
@@ -30,8 +29,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
@@ -42,28 +40,16 @@
       <para>Use the following procedures to install the product on all supported hardware platforms. They assume you have successfully booted/IPLed into the installation system. For more detailed installation instructions and deployment strategies, refer to <xref linkend="book-deployment"/>. For platform-specific preparations required to boot or IPL into the installation system, refer to the following parts of the aforementioned guide:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="cha-x86" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-x86" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="cha-aarch64" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-aarch64" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="cha-power" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-power" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="cha-zseries" xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-zseries" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
       </itemizedlist>
       <sect2 xml:id="sec-sle-installquick-unified-installer">
@@ -73,9 +59,7 @@
       <sect2 xml:id="sec-sle-installquick-install-offline">
          <title>Installing offline or without registration</title>
          <para>The default installation medium SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso is optimized for size and does not contain any modules and extensions. Therefore, the installation requires network access to register your product and retrieve repository data for the modules and extensions.</para>
-         <para>For installation without registering the system, use the <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image from <link xlink:href="https://www.suse.com/download/sles/"/> and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-scc-registration-none"
-                  xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>For installation without registering the system, use the <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image from <link xlink:href="https://www.suse.com/download/sles/"/> and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-scc-registration-none" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
          <!-- cwickert 2020-03-11: Old content from the 'offline' section -->
          <!--
    <para>
@@ -98,8 +82,7 @@
             <title>Copying the installation media image to a removable flash disk</title>
             <para>Use the following command to copy the contents of the installation image to a removable flash disk.</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> dd if=<replaceable>IMAGE</replaceable> of=<replaceable>FLASH_DISK</replaceable> bs=4M &amp;&amp; sync</screen>
-            <para>
-               <replaceable>IMAGE</replaceable> needs to be replaced with the path to the <filename>SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> or <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image file. <replaceable>FLASH_DISK</replaceable> needs to be replaced with the flash device. To identify the device, insert it and run:</para>
+            <para><replaceable>IMAGE</replaceable> needs to be replaced with the path to the <filename>SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> or <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image file. <replaceable>FLASH_DISK</replaceable> needs to be replaced with the flash device. To identify the device, insert it and run:</para>
             <screen><prompt role="root">#</prompt>grep -Ff &lt;(hwinfo --disk --short) &lt;(hwinfo --usb --short)
 disk:
   /dev/sdc             General USB Flash Disk</screen>
@@ -184,10 +167,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_product.png" width="100%"/>
+                  <imagedata fileref="media/install_product.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_product.png" width="100%"/>
+                  <imagedata fileref="media/install_product.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -211,22 +194,8 @@ disk:
          <tip>
             <title>Light and high-contrast themes</title>
             <para>If you have difficulties reading the labels in the installer, you can change the widget colors and theme.</para>
-            <para>Click the <inlinemediaobject>
-                  <imageobject outputformat="print">
-                     <imagedata fileref="media/yast-day-night-mode.svg" width="4mm"/>
-                  </imageobject>
-                  <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast-day-night-mode.svg" width="4mm"/>
-                  </imageobject>
-               </inlinemediaobject> button or press <keycombo>
-                  <keycap function="shift"/>
-                  <keycap>F3</keycap>
-               </keycombo> to open a theme selection dialog. Select a theme from the list and <guimenu>Close</guimenu> the dialog.</para>
-            <para>
-               <keycombo>
-                  <keycap function="shift"/>
-                  <keycap>F4</keycap>
-               </keycombo> switches to the color scheme for vision-impaired users. Press the buttons again to switch back to the default scheme.</para>
+            <para>Click the <inlinemediaobject><imageobject outputformat="print"><imagedata fileref="media/yast-day-night-mode.svg" width="4mm"/></imageobject><imageobject outputformat="screen"><imagedata fileref="media/yast-day-night-mode.svg" width="4mm"/></imageobject></inlinemediaobject> button or press <keycombo><keycap function="shift"/><keycap>F3</keycap></keycombo> to open a theme selection dialog. Select a theme from the list and <guimenu>Close</guimenu> the dialog.</para>
+            <para><keycombo><keycap function="shift"/><keycap>F4</keycap></keycombo> switches to the color scheme for vision-impaired users. Press the buttons again to switch back to the default scheme.</para>
          </tip>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-license">
@@ -234,10 +203,10 @@ disk:
          <informalfigure><!-- FIXME cwickert 2025-01-31: Update screenshot for SLE 15 SP7 GA -->
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_license_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_license_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_license_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_license_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -248,44 +217,41 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_network.png" width="100%"/>
+                  <imagedata fileref="media/install_network.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_network.png" width="100%"/>
+                  <imagedata fileref="media/install_network.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
          <para>A system analysis is performed, where the installer probes for storage devices and tries to find other installed systems. If the network was automatically configured via DHCP during the start of the installation, you will be taken to the registration step.</para>
-         <para>If the network is not yet configured, the <guimenu>Network Settings</guimenu> dialog opens. Choose a network interface from the list and configure it with <guimenu>Edit</guimenu>. Alternatively, <guimenu>Add</guimenu> an interface manually. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-network" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/> for more information. If you prefer to do an installation without network access, skip this step without making any changes and proceed with <guimenu>Next</guimenu>.</para>
+         <para>If the network is not yet configured, the <guimenu>Network Settings</guimenu> dialog opens. Choose a network interface from the list and configure it with <guimenu>Edit</guimenu>. Alternatively, <guimenu>Add</guimenu> an interface manually. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-network" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/> for more information. If you prefer to do an installation without network access, skip this step without making any changes and proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
-      <sect2 xml:id="sec-sle-installquick-install-hdd">
+      <sect2 arch="zseries" xml:id="sec-sle-installquick-install-hdd">
          <title>IBM Z: disk activation</title>
          <para>Skip this step if you are not installing on IBM Z hardware.</para>
          <remark>cwickert 2020-03-11: Update this screenshot before SLE 15 SP2 release</remark>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
+                  <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
+                  <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
-         <para>Configure the attached hard disks. Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for the installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. Proceed with <guimenu>Next</guimenu> to set up the selected disk type. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-s390-part" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Configure the attached hard disks. Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for the installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. Proceed with <guimenu>Next</guimenu> to set up the selected disk type. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-s390-part" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-register">
          <title>Registration</title>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -318,10 +284,7 @@ disk:
                      <title>Skipping the registration</title>
                      <para>Your system and extensions need to be registered in order to retrieve updates and to be eligible for support. Skipping the registration is only possible when installing from the <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image.</para>
                   </important>
-                  <para>If you do not register during the installation, you can do so at any time later from the running system. To do so, run <menuchoice>
-                        <guimenu>YaST</guimenu>
-                        <guimenu>Product Registration</guimenu>
-                     </menuchoice> or the command-line tool <command>SUSEConnect</command>.</para>
+                  <para>If you do not register during the installation, you can do so at any time later from the running system. To do so, run <menuchoice><guimenu>YaST</guimenu><guimenu>Product Registration</guimenu></menuchoice> or the command-line tool <command>SUSEConnect</command>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -340,10 +303,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -356,56 +319,49 @@ disk:
                <term>Basesystem Module</term>
                <listitem>
                   <para>This module adds a basic system on top of the Unified Installer. It is required by all other modules and extensions. The scope of an installation that only contains the base system is comparable to the installation pattern <citetitle>minimal system</citetitle> of previous <phrase role="productname">SUSE Linux Enterprise Server</phrase> versions. This module is selected for installation by default and should not be deselected.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> None</para>
+                  <para><emphasis>Dependencies:</emphasis> None</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Certifications Module</term>
                <listitem>
                   <para>Contains the FIPS certification packages.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Server Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Confidential Computing Technical Preview</term>
                <listitem>
                   <para>Contains packages related to confidential computing.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Containers Module</term>
                <listitem>
                   <para>Contains support and tools for containers.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Desktop Applications Module</term>
                <listitem>
                   <para>Adds a graphical user interface and essential desktop applications to the system.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Development Tools Module</term>
                <listitem>
                   <para>Contains compilers (including <package>gcc</package>) and libraries required for compiling and debugging applications. Replaces the former Software Development Kit (SDK).</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>High Performance Computing (HPC) Module</term>
                <listitem>
                   <para>Provides specific tools commonly used for high performance, numerically intensive workloads.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -413,8 +369,7 @@ disk:
                <listitem>
                   <para>Helps you with migrating applications from earlier versions of <phrase role="productname">SUSE Linux Enterprise Server</phrase> and other systems to SLES <phrase role="productnumber">15 SP7</phrase>, by providing packages which are discontinued on SUSE Linux Enterprise. Packages in this module are selected based on the requirement for migration and the level of complexity of configuration.</para>
                   <para>This module is recommended when migrating from a previous product version.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -422,88 +377,77 @@ disk:
                <listitem>
                   <para>Contains the NVIDIA CUDA (Compute Unified Device Architecture) drivers.</para>
                   <para>The software in this module is provided by NVIDIA under the <link xlink:href="http://docs.nvidia.com/cuda/eula/">CUDA End User License Agreement</link> and is not supported by SUSE.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Public Cloud Module</term>
                <listitem>
                   <para>Contains all tools required to create images for deploying <phrase role="productname">SUSE Linux Enterprise Server</phrase> in cloud environments such as Amazon Web Services (AWS), Microsoft Azure, Google Compute Platform, or OpenStack.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Python 3 Module</term>
                <listitem>
                   <para>This module contains the most recent version of the selected Python 3 packages.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>SAP Business One Server</term>
                <listitem>
                   <para>This module contains packages and system configuration specific to SAP Business One Server. It is maintained and supported by the SUSE Linux Enterprise Server product subscription.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications, Desktop Applications, Development Tools</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications, Desktop Applications, Development Tools</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Server Applications Module</term>
                <listitem>
                   <para>Adds server functionality by providing network services such as DHCP server, name server, or Web server. This module is selected for installation by default; deselecting it is not recommended.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>SUSE Linux Enterprise High Availability</term>
                <listitem>
                   <para>Adds clustering support for mission critical setups to <phrase role="productname">SUSE Linux Enterprise Server</phrase>. This extension requires a separate license key.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>SUSE Linux Enterprise Live Patching</term>
                <listitem>
                   <para>Adds support for performing critical patching without having to shut down the system. This extension requires a separate license key.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>SUSE Linux Enterprise Workstation Extension</term>
                <listitem>
                   <para>Extends the functionality of <phrase role="productname">SUSE Linux Enterprise Server</phrase> with packages from SUSE Linux Enterprise Desktop, like additional desktop applications (office suite, e-mail client, graphical editor, etc.) and libraries. It allows to combine both products to create a fully featured workstation. This extension requires a separate license key.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>SUSE Package Hub</term>
                <listitem>
                   <para>Provides access to packages for <phrase role="productname">SUSE Linux Enterprise Server</phrase> maintained by the openSUSE community. These packages are delivered without L3 support and do not interfere with the supportability of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. For more information, refer to <link xlink:href="https://packagehub.suse.com/"/>.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Transactional Server Module</term>
                <listitem>
                   <para>Adds support for transactional updates. Updates are either applied to the system all together in a single transaction, or not. This happens without influencing the running system. If an update fails, or if the successful update is deemed to be incompatible or otherwise incorrect, it can be discarded to immediately return the system to its previous functioning state.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>Web and Scripting Module</term>
                <listitem>
                   <para>Contains packages intended for a running Web server.</para>
-                  <para>
-                     <emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
+                  <para><emphasis>Dependencies:</emphasis> Basesystem, Server Applications</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -520,10 +464,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_addon.png" width="100%"/>
+                  <imagedata fileref="media/install_addon.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_addon.png" width="100%"/>
+                  <imagedata fileref="media/install_addon.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -540,10 +484,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -558,10 +502,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -581,8 +525,7 @@ disk:
                   <guimenu>Expert partitioner</guimenu>
                </term>
                <listitem>
-                  <para>Opens the <guimenu>Expert Partitioner</guimenu> described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                     <xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/>. This gives you full control over the partitioning setup and lets you create a custom setup. This option is intended for experts.</para>
+                  <para>Opens the <guimenu>Expert Partitioner</guimenu> described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/>. This gives you full control over the partitioning setup and lets you create a custom setup. This option is intended for experts.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -617,32 +560,30 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_timezone.png" width="100%"/>
+                  <imagedata fileref="media/install_timezone.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_timezone.png" width="100%"/>
+                  <imagedata fileref="media/install_timezone.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
-         <para>Select the clock and time zone to use in your system. To manually adjust the time or to configure an NTP server for time synchronization, choose <guimenu>Other Settings</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-date-time" xrefstyle="%label &#34;%c&#34;"/> for detailed information. Proceed with <guimenu>Next</guimenu>.</para>
+         <para>Select the clock and time zone to use in your system. To manually adjust the time or to configure an NTP server for time synchronization, choose <guimenu>Other Settings</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-date-time" xrefstyle="%label &#34;%c&#34;"/> for detailed information. Proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-user">
          <title>Local user</title>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_user.png" width="100%"/>
+                  <imagedata fileref="media/install_user.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_user.png" width="100%"/>
+                  <imagedata fileref="media/install_user.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
          <para>To create a local user, type the first and last name in the <guimenu>User’s Full Name</guimenu> field, the login name in the <guimenu>Username</guimenu> field, and the password in the <guimenu>Password</guimenu> field.</para>
          <para>The password should be at least eight characters long and should contain both uppercase and lowercase letters and numbers. The maximum length for passwords is 72 characters, and passwords are case-sensitive.</para>
-         <para>For security reasons, it is also strongly recommended <emphasis>not</emphasis> to enable the <guimenu>Automatic Login</guimenu>. You should also <emphasis>not</emphasis>
-            <guimenu>Use this Password for the System Administrator</guimenu> but rather provide a separate <systemitem class="username">root</systemitem> password in the next installation step.</para>
+         <para>For security reasons, it is also strongly recommended <emphasis>not</emphasis> to enable the <guimenu>Automatic Login</guimenu>. You should also <emphasis>not</emphasis><guimenu>Use this Password for the System Administrator</guimenu> but rather provide a separate <systemitem class="username">root</systemitem> password in the next installation step.</para>
          <para>If you install on a system where a previous Linux installation was found, you may <guimenu>Import User Data from a Previous Installation</guimenu>. Click <guimenu>Choose User</guimenu> for a list of available user accounts. Select one or more users.</para>
          <para>In an environment where users are centrally managed (for example, by NIS or LDAP), you can skip the creation of local users. Select <guimenu>Skip User Creation</guimenu> in this case.</para>
          <para>Proceed with <guimenu>Next</guimenu>.</para>
@@ -653,10 +594,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_root.png" width="100%"/>
+                  <imagedata fileref="media/install_root.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_root.png" width="100%"/>
+                  <imagedata fileref="media/install_root.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -666,8 +607,7 @@ disk:
             <title>Passwords and keyboard layout</title>
             <para>It is recommended to only use US ASCII characters. In case of a system error or when you need to start your system in rescue mode, the keyboard may not be localized.</para>
          </tip>
-         <para>If you want to access the system remotely via SSH using a public key, import a key from a removable media or an existing partition. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-            <xref linkend="sec-yast-install-user-root" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+         <para>If you want to access the system remotely via SSH using a public key, import a key from a removable media or an existing partition. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-user-root" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
          <para>Proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-inst-settings">
@@ -675,10 +615,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_summary_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_summary_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_summary_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_summary_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -700,8 +640,7 @@ disk:
                </term>
                <listitem>
                   <para>The scope of the installation is defined by the modules and extensions you have chosen for this installation. However, depending on your selection, not all packages available in a module are selected for installation.</para>
-                  <para>Clicking <guimenu>Software</guimenu> opens the <guimenu>Software Selection and System Tasks</guimenu> screen, where you can change the software selection by selecting or deselecting patterns. Each pattern contains several software packages needed for specific functions (for example, <guimenu>KVM Host Server</guimenu>). For a more detailed selection based on software packages to install, select <guimenu>Details</guimenu> to switch to the YaST <guimenu>Software Manager</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>Clicking <guimenu>Software</guimenu> opens the <guimenu>Software Selection and System Tasks</guimenu> screen, where you can change the software selection by selecting or deselecting patterns. Each pattern contains several software packages needed for specific functions (for example, <guimenu>KVM Host Server</guimenu>). For a more detailed selection based on software packages to install, select <guimenu>Details</guimenu> to switch to the YaST <guimenu>Software Manager</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -709,8 +648,7 @@ disk:
                   <guimenu>Booting</guimenu>
                </term>
                <listitem>
-                  <para>This section shows the boot loader configuration. Changing the defaults is only recommended if really needed. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+                  <para>This section shows the boot loader configuration. Changing the defaults is only recommended if really needed. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -718,16 +656,13 @@ disk:
                   <guimenu>Security</guimenu>
                </term>
                <listitem>
-                  <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command-line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="vle-grub2-yast2-cpu-mitigations" xrefstyle="%label &#34;%c&#34;"/>.</para>
-                  <para>By default, the <guimenu>Firewall</guimenu> is enabled on all configured network interfaces. To completely disable <systemitem class="daemon">firewalld</systemitem>, click <guimenu>disable</guimenu> (not recommended). Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                     <xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for configuration details.</para>
+                  <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command-line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vle-grub2-yast2-cpu-mitigations" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>By default, the <guimenu>Firewall</guimenu> is enabled on all configured network interfaces. To completely disable <systemitem class="daemon">firewalld</systemitem>, click <guimenu>disable</guimenu> (not recommended). Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for configuration details.</para>
                   <note>
                      <title>Firewall settings for receiving updates</title>
                      <para>If your system is behind a firewall that blocks outgoing traffic, make sure to allow connections to <uri>https://scc.suse.com/</uri> and <uri>https://updates.suse.com</uri> on ports 80 and 443 in order to receive updates. For more information, such as IP addresses and proxy server configuration, refer to <link xlink:href="https://www.suse.com/support/kb/doc/?id=000021034"/>.</para>
                   </note>
-                  <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                     <xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
                   <para>The default <guimenu>Major Linux Security Module</guimenu> is <guimenu>AppAmpor</guimenu>. To disable it, select <guimenu>None</guimenu> as module in the <guimenu>Security</guimenu> settings.</para>
                </listitem>
             </varlistentry>
@@ -740,9 +675,7 @@ disk:
                </term>
                <listitem>
                   <para>Click to <guimenu>enable</guimenu> the <literal>Defense Information Systems Agency STIG</literal> security policy. If any installation settings are incompatible with the policy, you will be prompted to modify them accordingly. Some settings can be adjusted automatically, others require user input.</para>
-                  <para>Enabling a security profile enables a full SCAP remediation on first boot. You can also perform a <guimenu>scan only</guimenu> or <guimenu>do nothing</guimenu> and manually remediate the system later with OpenSCAP. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                     <xref linkend="sec-yast-install-proposal-security-profile"
-                           xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Enabling a security profile enables a full SCAP remediation on first boot. You can also perform a <guimenu>scan only</guimenu> or <guimenu>do nothing</guimenu> and manually remediate the system later with OpenSCAP. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-proposal-security-profile" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -750,8 +683,7 @@ disk:
                   <guimenu>Network configuration</guimenu>
                </term>
                <listitem>
-                  <para>Displays the current network configuration. By default, <command>wicked</command> is used for server installations and NetworkManager for desktop workloads. Click <guimenu>Network Configuration</guimenu> to change the settings. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Displays the current network configuration. By default, <command>wicked</command> is used for server installations and NetworkManager for desktop workloads. Click <guimenu>Network Configuration</guimenu> to change the settings. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
                   <important>
                      <title>Support for NetworkManager</title>
                      <para>SUSE only supports NetworkManager for desktop workloads with SLED or the Workstation extension. All server certifications are done with <command>wicked</command> as the network configuration tool, and using NetworkManager may invalidate them. NetworkManager is not supported by SUSE for server workloads.</para>
@@ -763,8 +695,7 @@ disk:
                   <guimenu>Kdump</guimenu>
                </term>
                <listitem>
-                  <para>Kdump saves the memory image (<quote>core dump</quote>) to the file system in case the kernel crashes. This enables you to find the cause of the crash by debugging the dump file. Kdump is preconfigured and enabled by default. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-                     <xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>Kdump saves the memory image (<quote>core dump</quote>) to the file system in case the kernel crashes. This enables you to find the cause of the crash by debugging the dump file. Kdump is preconfigured and enabled by default. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -780,8 +711,7 @@ disk:
                   <guimenu>System</guimenu>
                </term>
                <listitem>
-                  <para>View detailed hardware information by clicking <guimenu>System</guimenu>. In the resulting screen you can also change <guimenu>Kernel Settings</guimenu>—see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-                     <xref linkend="sec-yast-install-proposal-system" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>View detailed hardware information by clicking <guimenu>System</guimenu>. In the resulting screen you can also change <guimenu>Kernel Settings</guimenu>—see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-proposal-system" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -791,10 +721,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_confirm_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_confirm_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -805,10 +735,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_perform_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_perform_sles.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_perform_sles.png" width="100%"/>
+                  <imagedata fileref="media/install_perform_sles.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

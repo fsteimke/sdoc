@@ -51,55 +51,26 @@
             <tgroup cols="2">
                <thead>
                   <row>
-                     <entry>
-                        <para>File</para>
-                     </entry>
-                     <entry>
-                        <para>Description</para>
-                     </entry>
+                     <entry><para>File</para></entry>
+                     <entry><para>Description</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/etc/profile</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Do not modify this file, otherwise your modifications may be destroyed during your next update.</para>
-                     </entry>
+                     <entry><para><filename>/etc/profile</filename></para></entry>
+                     <entry><para>Do not modify this file, otherwise your modifications may be destroyed during your next update.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/etc/profile.local</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Use this file if you extend <filename>/etc/profile</filename>
-                        </para>
-                     </entry>
+                     <entry><para><filename>/etc/profile.local</filename></para></entry>
+                     <entry><para>Use this file if you extend <filename>/etc/profile</filename></para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/etc/profile.d/</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Contains system-wide configuration files for specific programs</para>
-                     </entry>
+                     <entry><para><filename>/etc/profile.d/</filename></para></entry>
+                     <entry><para>Contains system-wide configuration files for specific programs</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>~/.profile</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Insert user specific configuration for login shells here</para>
-                     </entry>
+                     <entry><para><filename>~/.profile</filename></para></entry>
+                     <entry><para>Insert user specific configuration for login shells here</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -110,34 +81,16 @@
             <tgroup cols="2">
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/etc/bash.bashrc</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Do not modify this file, otherwise your modifications may be destroyed during your next update.</para>
-                     </entry>
+                     <entry><para><filename>/etc/bash.bashrc</filename></para></entry>
+                     <entry><para>Do not modify this file, otherwise your modifications may be destroyed during your next update.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>/etc/bash.bashrc.local</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Use this file to insert your system-wide modifications for Bash only</para>
-                     </entry>
+                     <entry><para><filename>/etc/bash.bashrc.local</filename></para></entry>
+                     <entry><para>Use this file to insert your system-wide modifications for Bash only</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>~/.bashrc</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Insert user specific configuration here</para>
-                     </entry>
+                     <entry><para><filename>~/.bashrc</filename></para></entry>
+                     <entry><para>Insert user specific configuration here</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -148,44 +101,22 @@
             <tgroup cols="2">
                <thead>
                   <row>
-                     <entry>
-                        <para>File</para>
-                     </entry>
-                     <entry>
-                        <para>Description</para>
-                     </entry>
+                     <entry><para>File</para></entry>
+                     <entry><para>Description</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>~/.bash_history</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Contains a list of all commands you have typed</para>
-                     </entry>
+                     <entry><para><filename>~/.bash_history</filename></para></entry>
+                     <entry><para>Contains a list of all commands you have typed</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>~/.bash_logout</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Executed when logging out</para>
-                     </entry>
+                     <entry><para><filename>~/.bash_logout</filename></para></entry>
+                     <entry><para>Executed when logging out</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <filename>~/.alias</filename>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>User defined aliases of frequently used commands. See <command>man 1 alias</command> for more details about defining aliases.</para>
-                     </entry>
+                     <entry><para><filename>~/.alias</filename></para></entry>
+                     <entry><para>User defined aliases of frequently used commands. See <command>man 1 alias</command> for more details about defining aliases.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -376,85 +307,36 @@ echo "Hello World" <co xml:id="co-adm-shell-echo"/></screen>
          <tgroup cols="2">
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <envar>HOME</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>the home directory of the current user</para>
-                  </entry>
+                  <entry><para><envar>HOME</envar></para></entry>
+                  <entry><para>the home directory of the current user</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>HOST</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>the current host name</para>
-                  </entry>
+                  <entry><para><envar>HOST</envar></para></entry>
+                  <entry><para>the current host name</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>LANG</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>when a tool is localized, it uses the language from this environment variable. English can also be set to <literal>C</literal>
-                     </para>
-                  </entry>
+                  <entry><para><envar>LANG</envar></para></entry>
+                  <entry><para>when a tool is localized, it uses the language from this environment variable. English can also be set to <literal>C</literal></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>PATH</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>the search path of the shell, a list of directories separated by colon</para>
-                  </entry>
+                  <entry><para><envar>PATH</envar></para></entry>
+                  <entry><para>the search path of the shell, a list of directories separated by colon</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>PS1</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>specifies the normal prompt printed before each command</para>
-                  </entry>
+                  <entry><para><envar>PS1</envar></para></entry>
+                  <entry><para>specifies the normal prompt printed before each command</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>PS2</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>specifies the secondary prompt printed when you execute a multi-line command</para>
-                  </entry>
+                  <entry><para><envar>PS2</envar></para></entry>
+                  <entry><para>specifies the secondary prompt printed when you execute a multi-line command</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>PWD</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>current working directory</para>
-                  </entry>
+                  <entry><para><envar>PWD</envar></para></entry>
+                  <entry><para>current working directory</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <envar>USER</envar>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>the current user</para>
-                  </entry>
+                  <entry><para><envar>USER</envar></para></entry>
+                  <entry><para>the current user</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -707,20 +589,16 @@ done</screen>
       <para>Important information about Bash is provided in the man pages <command>man bash</command>. More about this topic can be found in the following list:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/>—Bash Guide for Beginners</para>
+            <para><link xlink:href="https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/>—Bash Guide for Beginners</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/>—BASH Programming - Introduction HOW-TO</para>
+            <para><link xlink:href="https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/>—BASH Programming - Introduction HOW-TO</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://tldp.org/LDP/abs/html/index.html"/>—Advanced Bash-Scripting Guide</para>
+            <para><link xlink:href="https://tldp.org/LDP/abs/html/index.html"/>—Advanced Bash-Scripting Guide</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.grymoire.com/Unix/Sh.html"/>—Sh - the Bourne Shell</para>
+            <para><link xlink:href="https://www.grymoire.com/Unix/Sh.html"/>—Sh - the Bourne Shell</para>
          </listitem>
       </itemizedlist>
    </sect1>

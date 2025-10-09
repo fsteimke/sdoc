@@ -70,30 +70,27 @@ CPU Load Average:         7 (3%) with 2 CPUs
          <para>After having created a service request number, you can upload your Supportconfig archives to Global Technical Support as described in <xref linkend="pro-admsupport-submit-yast"/> or <xref linkend="pro-admsupport-submit-cli"/>. Use one of the following upload targets:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para><!-- TODO: Fix outdated links --> North America: FTP <link xlink:href="ftp://support-ftp.us.suse.com/incoming/"/>
-               </para>
+               <para><!-- TODO: Fix outdated links --> North America: FTP <link xlink:href="ftp://support-ftp.us.suse.com/incoming/"/></para>
             </listitem>
             <listitem>
-               <para>EMEA, Europe, the Middle East and Africa: FTP <link xlink:href="ftp://support-ftp.emea.suse.com/incoming"/>
-               </para>
+               <para>EMEA, Europe, the Middle East and Africa: FTP <link xlink:href="ftp://support-ftp.emea.suse.com/incoming"/></para>
             </listitem>
          </itemizedlist>
          <para>Alternatively, you can manually attach the TAR archive to your service request using the service request URL: <link xlink:href="https://scc.suse.com/support/requests"/>.</para>
       </sect2>
       <sect2 xml:id="sec-admsupport-yast">
          <title>Creating a supportconfig archive with YaST</title>
-         <para>To use YaST to gather your system information, proceed as follows: <remark>2008-11-20 toms: YaST asks the user to open a URL as root(!). This happens when the users clicks on <guimenu>Open</guimenu> (Open Support Center/ This starts a browser with Support Center Portal). I do not think we should describe this and only <emphasis>use</emphasis> the above URL as a normal user for security reasons.</remark>
-         </para>
+         <para>To use YaST to gather your system information, proceed as follows: <remark>2008-11-20 toms: YaST asks the user to open a URL as root(!). This happens when the users clicks on <guimenu>Open</guimenu> (Open Support Center/ This starts a browser with Support Center Portal). I do not think we should describe this and only <emphasis>use</emphasis> the above URL as a normal user for security reasons.</remark></para>
          <procedure>
             <step>
                <para>Start YaST and open the <guimenu>Support</guimenu> module.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_support_main.png" width="70%"/>
+                        <imagedata fileref="media/yast2_support_main.png" width="64%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_support_main.png" width="60%"/>
+                        <imagedata fileref="media/yast2_support_main.png" width="55%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -117,10 +114,10 @@ CPU Load Average:         7 (3%) with 2 CPUs
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_support_conf.png" width="90%"/>
+                        <imagedata fileref="media/yast2_support_conf.png" width="82%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_support_conf.png" width="80%"/>
+                        <imagedata fileref="media/yast2_support_conf.png" width="73%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -201,8 +198,7 @@ CPU Load Average:         7 (3%) with 2 CPUs
                <para>Wait for the tool to complete the operation.</para>
             </step>
             <step>
-               <para>The default archive location is <filename>/var/log</filename>, with the file name format being <filename>scc_<replaceable>HOST</replaceable>_<replaceable>DATE</replaceable>_<replaceable>TIME</replaceable>.tbz</filename>
-               </para>
+               <para>The default archive location is <filename>/var/log</filename>, with the file name format being <filename>scc_<replaceable>HOST</replaceable>_<replaceable>DATE</replaceable>_<replaceable>TIME</replaceable>.tbz</filename></para>
             </step>
          </procedure>
       </sect2>
@@ -264,8 +260,7 @@ Creating Tar Ball
       </sect2>
       <sect2 xml:id="sec-admsupport-options">
          <title>Common supportconfig options</title>
-         <para>The <command>supportconfig</command> utility is usually called without any options. Display a list of all options with <command>supportconfig</command>
-            <option>-h</option> or refer to the man page. The following list gives a brief overview of common use cases:</para>
+         <para>The <command>supportconfig</command> utility is usually called without any options. Display a list of all options with <command>supportconfig</command><option>-h</option> or refer to the man page. The following list gives a brief overview of common use cases:</para>
          <variablelist>
             <varlistentry>
                <term>Reducing the size of the information being gathered</term>
@@ -376,8 +371,7 @@ Creating Tar Ball
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>
-            <xref linkend="tab-admsupport-features-and-filenames"/> lists all available features and their file names. Further service packs can extend the list, as can plug-ins.</para>
+         <para><xref linkend="tab-admsupport-features-and-filenames"/> lists all available features and their file names. Further service packs can extend the list, as can plug-ins.</para>
          <table xml:id="tab-admsupport-features-and-filenames">
             <title>Comparison of features and file names in the TAR archive</title>
             <tgroup cols="2">
@@ -389,436 +383,220 @@ Creating Tar Ball
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <parameter>APPARMOR</parameter>
-                     </entry>
-                     <entry>
-                        <filename>security-apparmor.txt</filename>
-                     </entry>
+                     <entry><parameter>APPARMOR</parameter></entry>
+                     <entry><filename>security-apparmor.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>AUDIT</parameter>
-                     </entry>
-                     <entry>
-                        <filename>security-audit.txt</filename>
-                     </entry>
+                     <entry><parameter>AUDIT</parameter></entry>
+                     <entry><filename>security-audit.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>AUTOFS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-autofs.txt</filename>
-                     </entry>
+                     <entry><parameter>AUTOFS</parameter></entry>
+                     <entry><filename>fs-autofs.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>BOOT</parameter>
-                     </entry>
-                     <entry>
-                        <filename>boot.txt</filename>
-                     </entry>
+                     <entry><parameter>BOOT</parameter></entry>
+                     <entry><filename>boot.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>BTRFS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-btrfs.txt</filename>
-                     </entry>
+                     <entry><parameter>BTRFS</parameter></entry>
+                     <entry><filename>fs-btrfs.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DAEMONS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>systemd.txt</filename>
-                     </entry>
+                     <entry><parameter>DAEMONS</parameter></entry>
+                     <entry><filename>systemd.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>CIMOM</parameter>
-                     </entry>
-                     <entry>
-                        <filename>cimom.txt</filename>
-                     </entry>
+                     <entry><parameter>CIMOM</parameter></entry>
+                     <entry><filename>cimom.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>CRASH</parameter>
-                     </entry>
-                     <entry>
-                        <filename>crash.txt</filename>
-                     </entry>
+                     <entry><parameter>CRASH</parameter></entry>
+                     <entry><filename>crash.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>CRON</parameter>
-                     </entry>
-                     <entry>
-                        <filename>cron.txt</filename>
-                     </entry>
+                     <entry><parameter>CRON</parameter></entry>
+                     <entry><filename>cron.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DHCP</parameter>
-                     </entry>
-                     <entry>
-                        <filename>dhcp.txt</filename>
-                     </entry>
+                     <entry><parameter>DHCP</parameter></entry>
+                     <entry><filename>dhcp.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DISK</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-diskio.txt</filename>
-                     </entry>
+                     <entry><parameter>DISK</parameter></entry>
+                     <entry><filename>fs-diskio.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DNS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>dns.txt</filename>
-                     </entry>
+                     <entry><parameter>DNS</parameter></entry>
+                     <entry><filename>dns.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DOCKER</parameter>
-                     </entry>
-                     <entry>
-                        <filename>docker.txt</filename>
-                     </entry>
+                     <entry><parameter>DOCKER</parameter></entry>
+                     <entry><filename>docker.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>DRBD</parameter>
-                     </entry>
-                     <entry>
-                        <filename>drbd.txt</filename>
-                     </entry>
+                     <entry><parameter>DRBD</parameter></entry>
+                     <entry><filename>drbd.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>ENV</parameter>
-                     </entry>
-                     <entry>
-                        <filename>env.txt</filename>
-                     </entry>
+                     <entry><parameter>ENV</parameter></entry>
+                     <entry><filename>env.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>ETC</parameter>
-                     </entry>
-                     <entry>
-                        <filename>etc.txt</filename>
-                     </entry>
+                     <entry><parameter>ETC</parameter></entry>
+                     <entry><filename>etc.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>HA</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ha.txt</filename>
-                     </entry>
+                     <entry><parameter>HA</parameter></entry>
+                     <entry><filename>ha.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>HAPROXY</parameter>
-                     </entry>
-                     <entry>
-                        <filename>haproxy.txt</filename>
-                     </entry>
+                     <entry><parameter>HAPROXY</parameter></entry>
+                     <entry><filename>haproxy.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>HISTORY</parameter>
-                     </entry>
-                     <entry>
-                        <filename>shell_history.txt</filename>
-                     </entry>
+                     <entry><parameter>HISTORY</parameter></entry>
+                     <entry><filename>shell_history.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>IB</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ib.txt</filename>
-                     </entry>
+                     <entry><parameter>IB</parameter></entry>
+                     <entry><filename>ib.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>IMAN</parameter>
-                     </entry>
-                     <entry>
-                        <filename>novell-iman.txt</filename>
-                     </entry>
+                     <entry><parameter>IMAN</parameter></entry>
+                     <entry><filename>novell-iman.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>ISCSI</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-iscsi.txt</filename>
-                     </entry>
+                     <entry><parameter>ISCSI</parameter></entry>
+                     <entry><filename>fs-iscsi.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>LDAP</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ldap.txt</filename>
-                     </entry>
+                     <entry><parameter>LDAP</parameter></entry>
+                     <entry><filename>ldap.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>LIVEPATCH</parameter>
-                     </entry>
-                     <entry>
-                        <filename>kernel-livepatch.txt</filename>
-                     </entry>
+                     <entry><parameter>LIVEPATCH</parameter></entry>
+                     <entry><filename>kernel-livepatch.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>LVM</parameter>
-                     </entry>
-                     <entry>
-                        <filename>lvm.txt</filename>
-                     </entry>
+                     <entry><parameter>LVM</parameter></entry>
+                     <entry><filename>lvm.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>MEM</parameter>
-                     </entry>
-                     <entry>
-                        <filename>memory.txt</filename>
-                     </entry>
+                     <entry><parameter>MEM</parameter></entry>
+                     <entry><filename>memory.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>MOD</parameter>
-                     </entry>
-                     <entry>
-                        <filename>modules.txt</filename>
-                     </entry>
+                     <entry><parameter>MOD</parameter></entry>
+                     <entry><filename>modules.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>MPIO</parameter>
-                     </entry>
-                     <entry>
-                        <filename>mpio.txt</filename>
-                     </entry>
+                     <entry><parameter>MPIO</parameter></entry>
+                     <entry><filename>mpio.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>NET</parameter>
-                     </entry>
-                     <entry>
-                        <filename>network-*.txt</filename>
-                     </entry>
+                     <entry><parameter>NET</parameter></entry>
+                     <entry><filename>network-*.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>NFS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>nfs.txt</filename>
-                     </entry>
+                     <entry><parameter>NFS</parameter></entry>
+                     <entry><filename>nfs.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>NTP</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ntp.txt</filename>
-                     </entry>
+                     <entry><parameter>NTP</parameter></entry>
+                     <entry><filename>ntp.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>NVME</parameter>
-                     </entry>
-                     <entry>
-                        <filename>nvme.txt</filename>
-                     </entry>
+                     <entry><parameter>NVME</parameter></entry>
+                     <entry><filename>nvme.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>OCFS2</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ocfs2.txt</filename>
-                     </entry>
+                     <entry><parameter>OCFS2</parameter></entry>
+                     <entry><filename>ocfs2.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>OFILES</parameter>
-                     </entry>
-                     <entry>
-                        <filename>open-files.txt</filename>
-                     </entry>
+                     <entry><parameter>OFILES</parameter></entry>
+                     <entry><filename>open-files.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>PRINT</parameter>
-                     </entry>
-                     <entry>
-                        <filename>print.txt</filename>
-                     </entry>
+                     <entry><parameter>PRINT</parameter></entry>
+                     <entry><filename>print.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>PROC</parameter>
-                     </entry>
-                     <entry>
-                        <filename>proc.txt</filename>
-                     </entry>
+                     <entry><parameter>PROC</parameter></entry>
+                     <entry><filename>proc.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SAR</parameter>
-                     </entry>
-                     <entry>
-                        <filename>sar.txt</filename>
-                     </entry>
+                     <entry><parameter>SAR</parameter></entry>
+                     <entry><filename>sar.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SLERT</parameter>
-                     </entry>
-                     <entry>
-                        <filename>slert.txt</filename>
-                     </entry>
+                     <entry><parameter>SLERT</parameter></entry>
+                     <entry><filename>slert.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SLP</parameter>
-                     </entry>
-                     <entry>
-                        <filename>slp.txt</filename>
-                     </entry>
+                     <entry><parameter>SLP</parameter></entry>
+                     <entry><filename>slp.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SMT</parameter>
-                     </entry>
-                     <entry>
-                        <filename>smt.txt</filename>
-                     </entry>
+                     <entry><parameter>SMT</parameter></entry>
+                     <entry><filename>smt.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SMART</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-smartmon.txt</filename>
-                     </entry>
+                     <entry><parameter>SMART</parameter></entry>
+                     <entry><filename>fs-smartmon.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SMB</parameter>
-                     </entry>
-                     <entry>
-                        <filename>samba.txt</filename>
-                     </entry>
+                     <entry><parameter>SMB</parameter></entry>
+                     <entry><filename>samba.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SRAID</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-softraid.txt</filename>
-                     </entry>
+                     <entry><parameter>SRAID</parameter></entry>
+                     <entry><filename>fs-softraid.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SSH</parameter>
-                     </entry>
-                     <entry>
-                        <filename>ssh.txt</filename>
-                     </entry>
+                     <entry><parameter>SSH</parameter></entry>
+                     <entry><filename>ssh.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SSSD</parameter>
-                     </entry>
-                     <entry>
-                        <filename>sssd.txt</filename>
-                     </entry>
+                     <entry><parameter>SSSD</parameter></entry>
+                     <entry><filename>sssd.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SYSCONFIG</parameter>
-                     </entry>
-                     <entry>
-                        <filename>sysconfig.txt</filename>
-                     </entry>
+                     <entry><parameter>SYSCONFIG</parameter></entry>
+                     <entry><filename>sysconfig.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>SYSFS</parameter>
-                     </entry>
-                     <entry>
-                        <filename>sysfs.txt</filename>
-                     </entry>
+                     <entry><parameter>SYSFS</parameter></entry>
+                     <entry><filename>sysfs.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>TRANSACTIONAL</parameter>
-                     </entry>
-                     <entry>
-                        <filename>transactional-update.txt</filename>
-                     </entry>
+                     <entry><parameter>TRANSACTIONAL</parameter></entry>
+                     <entry><filename>transactional-update.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>TUNED</parameter>
-                     </entry>
-                     <entry>
-                        <filename>tuned.txt</filename>
-                     </entry>
+                     <entry><parameter>TUNED</parameter></entry>
+                     <entry><filename>tuned.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>UDEV</parameter>
-                     </entry>
-                     <entry>
-                        <filename>udev.txt</filename>
-                     </entry>
+                     <entry><parameter>UDEV</parameter></entry>
+                     <entry><filename>udev.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>UFILES</parameter>
-                     </entry>
-                     <entry>
-                        <filename>fs-files-additional.txt</filename>
-                     </entry>
+                     <entry><parameter>UFILES</parameter></entry>
+                     <entry><filename>fs-files-additional.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>UP</parameter>
-                     </entry>
-                     <entry>
-                        <filename>updates.txt</filename>
-                     </entry>
+                     <entry><parameter>UP</parameter></entry>
+                     <entry><filename>updates.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>WEB</parameter>
-                     </entry>
-                     <entry>
-                        <filename>web.txt</filename>
-                     </entry>
+                     <entry><parameter>WEB</parameter></entry>
+                     <entry><filename>web.txt</filename></entry>
                   </row>
                   <row>
-                     <entry>
-                        <parameter>X</parameter>
-                     </entry>
-                     <entry>
-                        <filename>x.txt</filename>
-                     </entry>
+                     <entry><parameter>X</parameter></entry>
+                     <entry><filename>x.txt</filename></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -847,15 +625,14 @@ Creating Tar Ball
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_support_conf_upload.png" width="70%"/>
+                     <imagedata fileref="media/yast2_support_conf_upload.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_support_conf_upload.png" width="60%"/>
+                     <imagedata fileref="media/yast2_support_conf_upload.png" width="55%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
-            <para>
-               <remark>taroth 2014-04-11: this does not make sense to me - why does the YaST module *not* ask for the SR number now? and lets you continue after specifying an upload target (but no RC or customer info)? I would expect it to *check* if an SR has been entered and otherwise show an error message - filed http://bugzilla.suse.com/show_bug.cgi?id=880943 for this, unfortunately it was rejected for technical reasons</remark> Proceed with <guimenu>Next</guimenu>.</para>
+            <para><remark>taroth 2014-04-11: this does not make sense to me - why does the YaST module *not* ask for the SR number now? and lets you continue after specifying an upload target (but no RC or customer info)? I would expect it to *check* if an SR has been entered and otherwise show an error message - filed http://bugzilla.suse.com/show_bug.cgi?id=880943 for this, unfortunately it was rejected for technical reasons</remark> Proceed with <guimenu>Next</guimenu>.</para>
          </step>
          <step>
             <para>Click <guimenu>Finish</guimenu>.</para>
@@ -909,10 +686,10 @@ Creating Tar Ball
             <title>HTML report generated by SCA tool</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/sca_tool_report_html.png" width="100%"/>
+                  <imagedata fileref="media/sca_tool_report_html.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/sca_tool_report_html.png" width="100%"/>
+                  <imagedata fileref="media/sca_tool_report_html.png" width="92%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -934,8 +711,7 @@ Creating Tar Ball
                   <command>sudo scatool </command>
                   <option>-s</option> <option>-o</option> <replaceable>/opt/sca/reports/</replaceable> </term>
                <listitem>
-                  <para>Same as <command>sudo scatool</command>
-                     <option>-s</option>, only that the HTML report is written to the path specified with <option>-o</option>.</para>
+                  <para>Same as <command>sudo scatool</command><option>-s</option>, only that the HTML report is written to the path specified with <option>-o</option>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -1000,13 +776,7 @@ vsftpd yast2 yast2-ftp-server
 <prompt>&gt;</prompt><command>sudo</command> yast ftp-server</screen>
                </step>
                <step>
-                  <para>In YaST FTP Server, select <menuchoice>
-                        <guimenu>Authentication</guimenu>
-                        <guimenu>Enable Upload</guimenu>
-                        <guimenu>Anonymous Can Upload</guimenu>
-                        <guimenu>Finish</guimenu>
-                        <guimenu>Yes</guimenu>
-                     </menuchoice> to <guimenu>Create /srv/ftp/upload</guimenu>.</para>
+                  <para>In YaST FTP Server, select <menuchoice><guimenu>Authentication</guimenu><guimenu>Enable Upload</guimenu><guimenu>Anonymous Can Upload</guimenu><guimenu>Finish</guimenu><guimenu>Yes</guimenu></menuchoice> to <guimenu>Create /srv/ftp/upload</guimenu>.</para>
                </step>
                <step>
                   <para>Execute the following commands:</para>
@@ -1085,9 +855,7 @@ vsftpd yast2 yast2-ftp-server
                <para>It can be used to configure the following options you have for uploading the Supportconfig archives from your machines to the SCA appliance:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <command>scp</command>
-                     </para>
+                     <para><command>scp</command></para>
                   </listitem>
                   <listitem>
                      <para>anonymous FTP server</para>
@@ -1175,10 +943,10 @@ vsftpd yast2 yast2-ftp-server
                         <title>HTML report generated by SCA appliance</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/sca_appl_report_html.png" width="100%"/>
+                              <imagedata fileref="media/sca_appl_report_html.png" width="92%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/sca_appl_report_html.png" width="100%"/>
+                              <imagedata fileref="media/sca_appl_report_html.png" width="92%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -1372,18 +1140,13 @@ vsftpd yast2 yast2-ftp-server
                   <para>Copy the following data to another machine or an external storage medium:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <filename>sca-backup-*sql.gz</filename>
-                        </para>
+                        <para><filename>sca-backup-*sql.gz</filename></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <filename>sdp-backup-*sql.gz</filename>
-                        </para>
+                        <para><filename>sdp-backup-*sql.gz</filename></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <filename>/usr/lib/sca/patterns/local</filename> (only needed if you have created custom patterns)</para>
+                        <para><filename>/usr/lib/sca/patterns/local</filename> (only needed if you have created custom patterns)</para>
                      </listitem>
                   </itemizedlist>
                </step>
@@ -1448,18 +1211,13 @@ vsftpd yast2 yast2-ftp-server
       <para>An important requirement for every enterprise operating system is the level of support you receive for your environment. Kernel modules are the most relevant connector between hardware (<quote>controllers</quote>) and the operating system. Every kernel module in SUSE Linux Enterprise has a <literal>supported</literal> flag that can take three possible values:</para>
       <itemizedlist mark="bullet" spacing="normal"><!-- bnc#892346: be more explicit -->
          <listitem>
-            <para>
-               <quote>yes</quote>, thus <literal>supported</literal>
-            </para>
+            <para><quote>yes</quote>, thus <literal>supported</literal></para>
          </listitem>
          <listitem>
-            <para>
-               <quote>external</quote>, thus <literal>supported</literal>
-            </para>
+            <para><quote>external</quote>, thus <literal>supported</literal></para>
          </listitem>
          <listitem>
-            <para>(empty, not set), thus <literal>unsupported</literal>
-            </para>
+            <para>(empty, not set), thus <literal>unsupported</literal></para>
          </listitem>
       </itemizedlist>
       <para>The following rules apply:</para>
@@ -1484,8 +1242,7 @@ vsftpd yast2 yast2-ftp-server
                <para>Linux kernel: The value of <filename>/proc/sys/kernel/unsupported</filename> defaults to <literal>2</literal> on SUSE Linux Enterprise <phrase role="productnumber">15 SP7</phrase> (<literal>do not warn in syslog when loading unsupported modules</literal>). This default is used in the installer and in the installed system.</para>
             </listitem>
             <listitem>
-               <para>
-                  <command>modprobe</command>: The <command>modprobe</command> utility for checking module dependencies and loading modules appropriately checks for the value of the <literal>supported</literal> flag. If the value is <quote>yes</quote> or <quote>external</quote> the module will be loaded, otherwise it will not. For information on how to override this behavior, see <xref linkend="sec-admsupport-kernel-unsupported"/>.</para>
+               <para><command>modprobe</command>: The <command>modprobe</command> utility for checking module dependencies and loading modules appropriately checks for the value of the <literal>supported</literal> flag. If the value is <quote>yes</quote> or <quote>external</quote> the module will be loaded, otherwise it will not. For information on how to override this behavior, see <xref linkend="sec-admsupport-kernel-unsupported"/>.</para>
                <note>
                   <title>Support</title>
                   <para>SUSE does not generally support the removal of storage modules via <command>modprobe -r</command>.</para>
@@ -1499,8 +1256,7 @@ vsftpd yast2 yast2-ftp-server
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
                <para>To override the default, copy <filename>/lib/modprobe.d/10-unsupported-modules.conf</filename> to <filename>/etc/modprobe.d/10-unsupported-modules.conf</filename> and change the value of the variable <varname>allow_unsupported_modules</varname> from <literal>0</literal> to <literal>1</literal>. Do not edit <filename>/lib/modprobe.d/10-unsupported-modules.conf</filename> directly; any changes will be overwritten whenever the <package>suse-module-tools</package> package is updated.</para>
-               <para>If an unsupported module is needed in the initrd, do not forget to run <command>dracut</command>
-                  <option>-f</option> to update the initrd.</para>
+               <para>If an unsupported module is needed in the initrd, do not forget to run <command>dracut</command><option>-f</option> to update the initrd.</para>
                <para>If you only want to try loading a module once, you can use the <option>--allow-unsupported-modules</option> option with <command>modprobe</command>. For more information, see the comments in <filename>/lib/modprobe.d/10-unsupported-modules.conf</filename> and the <command>modprobe</command> man page.</para>
             </listitem>
             <listitem>
@@ -1514,51 +1270,38 @@ vsftpd yast2 yast2-ftp-server
       <title>More information</title>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>man supportconfig</command>—The <command>supportconfig</command> man page.</para>
+            <para><command>man supportconfig</command>—The <command>supportconfig</command> man page.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man supportconfig.conf</command>—The man page of the Supportconfig configuration file.</para>
+            <para><command>man supportconfig.conf</command>—The man page of the Supportconfig configuration file.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man scatool</command>—The <command>scatool</command> man page.</para>
+            <para><command>man scatool</command>—The <command>scatool</command> man page.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man scadb</command>—The <command>scadb</command> man page.</para>
+            <para><command>man scadb</command>—The <command>scadb</command> man page.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>man setup-sca</command>—The <command>setup-sca</command> man page.</para>
+            <para><command>man setup-sca</command>—The <command>setup-sca</command> man page.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://mariadb.com/kb/en/"/>—The MariaDB documentation.</para>
+            <para><link xlink:href="https://mariadb.com/kb/en/"/>—The MariaDB documentation.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://httpd.apache.org/docs/"/> and <xref linkend="cha-apache2"/>—Documentation about the Apache Web server.</para>
+            <para><link xlink:href="https://httpd.apache.org/docs/"/> and <xref linkend="cha-apache2"/>—Documentation about the Apache Web server.</para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="cha-ftp"/>—Documentation of how to set up an FTP server.</para>
+            <para><xref linkend="cha-ftp"/>—Documentation of how to set up an FTP server.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.suse.com/c/sca-pattern-development/"/>—Instructions on how to create (and test) your own SCA patterns.</para>
+            <para><link xlink:href="https://www.suse.com/c/sca-pattern-development/"/>—Instructions on how to create (and test) your own SCA patterns.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://community.microfocus.com/img/gw/groupwise/w/tips/34308/create-your-own-supportconfig-plugin"/>—Create Your Own Supportconfig Plugin.</para>
+            <para><link xlink:href="https://community.microfocus.com/img/gw/groupwise/w/tips/34308/create-your-own-supportconfig-plugin"/>—Create Your Own Supportconfig Plugin.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.suse.com/c/creating-a-central-supportconfig-repository/"/>—Creating a Central Supportconfig Repository.</para>
-            <para>
-               <remark>taroth 2014-04-25: jrecord, should we still refer to the three articles above?</remark>
-            </para>
+            <para><link xlink:href="https://www.suse.com/c/creating-a-central-supportconfig-repository/"/>—Creating a Central Supportconfig Repository.</para>
+            <para><remark>taroth 2014-04-25: jrecord, should we still refer to the three articles above?</remark></para>
          </listitem>
       </itemizedlist>
    </sect1>

@@ -11,9 +11,7 @@
    <para>The purpose of RAID (redundant array of independent disks) is to combine several hard disk partitions into one large virtual hard disk to optimize performance, data security, or both. Most RAID controllers use the SCSI protocol, because it can address a larger number of hard disks in a more effective way than the IDE protocol and is more suitable for parallel processing of commands. There are some RAID controllers that support IDE or SATA hard disks. Software RAID provides the advantages of RAID systems without the additional cost of hardware RAID controllers. However, this requires some CPU time and has memory requirements that make it unsuitable for real high performance computers.</para>
    <important>
       <title>RAID on cluster file systems</title>
-      <para>Software RAID underneath clustered file systems needs to be set up using a cluster multi-device (Cluster MD). Refer to the <link xlink:href="https://documentation.suse.com/sle-ha/15-SP2/html/SLE-HA-all/cha-ha-cluster-md.html">
-            <citetitle>Administration Guide for SUSE Linux Enterprise High Availability</citetitle>
-         </link>.</para>
+      <para>Software RAID underneath clustered file systems needs to be set up using a cluster multi-device (Cluster MD). Refer to the <link xlink:href="https://documentation.suse.com/sle-ha/15-SP2/html/SLE-HA-all/cha-ha-cluster-md.html"><citetitle>Administration Guide for SUSE Linux Enterprise High Availability</citetitle></link>.</para>
    </important>
    <para>SUSE Linux Enterprise offers the option of combining several hard disks into one soft RAID system. RAID implies several strategies for combining several hard disks in a RAID system, each with different goals, advantages, and characteristics. These variations are commonly known as <emphasis>RAID levels</emphasis>.</para>
    <sect1 xml:id="sec-raid-intro">
@@ -52,61 +50,31 @@
                <colspec colnum="3" colname="3" colwidth="3334*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Feature</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 5</para>
-                     </entry>
-                     <entry>
-                        <para>RAID 6</para>
-                     </entry>
+                     <entry><para>Feature</para></entry>
+                     <entry><para>RAID 5</para></entry>
+                     <entry><para>RAID 6</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Number of devices</para>
-                     </entry>
-                     <entry>
-                        <para>N+1, minimum of 3</para>
-                     </entry>
-                     <entry>
-                        <para>N+2, minimum of 4</para>
-                     </entry>
+                     <entry><para>Number of devices</para></entry>
+                     <entry><para>N+1, minimum of 3</para></entry>
+                     <entry><para>N+2, minimum of 4</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Parity</para>
-                     </entry>
-                     <entry>
-                        <para>Distributed, single</para>
-                     </entry>
-                     <entry>
-                        <para>Distributed, dual</para>
-                     </entry>
+                     <entry><para>Parity</para></entry>
+                     <entry><para>Distributed, single</para></entry>
+                     <entry><para>Distributed, dual</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Performance</para>
-                     </entry>
-                     <entry>
-                        <para>Medium impact on write and rebuild</para>
-                     </entry>
-                     <entry>
-                        <para>More impact on sequential write than RAID 5</para>
-                     </entry>
+                     <entry><para>Performance</para></entry>
+                     <entry><para>Medium impact on write and rebuild</para></entry>
+                     <entry><para>More impact on sequential write than RAID 5</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Fault-tolerance</para>
-                     </entry>
-                     <entry>
-                        <para>Failure of one component device</para>
-                     </entry>
-                     <entry>
-                        <para>Failure of two component devices</para>
-                     </entry>
+                     <entry><para>Fault-tolerance</para></entry>
+                     <entry><para>Failure of one component device</para></entry>
+                     <entry><para>Failure of two component devices</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -125,8 +93,7 @@
             <para>Launch YaST and open the <guimenu>Partitioner</guimenu>.</para>
          </step>
          <step>
-            <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+            <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
             <para>It is strongly recommended to use partitions stored on different hard disks to decrease the risk of losing data if one is defective (RAID 1 and 5) and to optimize the performance of RAID 0.</para>
             <para>For RAID 0 at least two partitions are needed. RAID 1 requires exactly two partitions, while at least three partitions are required for RAID 5. A RAID 6 setup requires at least four partitions. It is recommended to use only partitions of the same size because each segment can contribute only the same amount of space as the smallest sized partition.</para>
          </step>
@@ -139,16 +106,15 @@
          </step>
          <step>
             <para>Select a <guimenu>RAID Type</guimenu> and <guimenu>Add</guimenu> an appropriate number of partitions from the <guimenu>Available Devices</guimenu> dialog.</para>
-            <para>You can optionally assign a <guimenu>RAID Name</guimenu> to your RAID. It will make it available as <filename>/dev/md/<replaceable>NAME</replaceable>
-               </filename>. See <xref linkend="sec-raid-yast-names"/> for more information.</para>
+            <para>You can optionally assign a <guimenu>RAID Name</guimenu> to your RAID. It will make it available as <filename>/dev/md/<replaceable>NAME</replaceable></filename>. See <xref linkend="sec-raid-yast-names"/> for more information.</para>
             <figure xml:id="fig-yast2-raid3">
                <title>Example RAID 5 configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_raid3_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_raid3_a.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_raid3_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_raid3_a.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -182,9 +148,7 @@
             <varlistentry>
                <term>Providing a named link to the device</term>
                <listitem>
-                  <para>You can optionally specify a name for the RAID device when creating it with YaST or on the command line with <command>mdadm --create '/dev/md/</command>
-                     <replaceable>NAME</replaceable>'. The device name will still be <literal>mdN</literal>, but a link <filename>/dev/md/<replaceable>NAME</replaceable>
-                     </filename> will be created:</para>
+                  <para>You can optionally specify a name for the RAID device when creating it with YaST or on the command line with <command>mdadm --create '/dev/md/</command><replaceable>NAME</replaceable>'. The device name will still be <literal>mdN</literal>, but a link <filename>/dev/md/<replaceable>NAME</replaceable></filename> will be created:</para>
                   <screen><prompt>&gt;</prompt>ls -og /dev/md
 total 0
 lrwxrwxrwx 1 8 Dec  9 15:11 myRAID -&gt; ../md127</screen>
@@ -227,13 +191,10 @@ lrwxrwxrwx 1 8 Dec  9 15:11 myRAID -&gt; ../md127</screen>
       <para>Configuration instructions and more details for soft RAID can be found in the HOWTOs at:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <citetitle>The Linux RAID wiki</citetitle>: <link xlink:href="https://raid.wiki.kernel.org/"/>
-            </para>
+            <para><citetitle>The Linux RAID wiki</citetitle>: <link xlink:href="https://raid.wiki.kernel.org/"/></para>
          </listitem>
          <listitem>
-            <para>
-               <citetitle>The Software RAID HOWTO</citetitle> in the <filename>/usr/share/doc/packages/mdadm/Software-RAID.HOWTO.html</filename> file</para>
+            <para><citetitle>The Software RAID HOWTO</citetitle> in the <filename>/usr/share/doc/packages/mdadm/Software-RAID.HOWTO.html</filename> file</para>
          </listitem>
       </itemizedlist>
       <para>Linux RAID mailing lists are also available, such as <citetitle>linux-raid</citetitle> at <link xlink:href="https://marc.info/?l=linux-raid"/>.</para>

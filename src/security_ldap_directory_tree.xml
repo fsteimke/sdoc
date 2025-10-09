@@ -20,18 +20,17 @@
       <title>Structure of an LDAP directory</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/ldap_tree.svg" width="85%"/>
+            <imagedata fileref="media/ldap_tree.svg" width="78%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/ldap_tree.png" width="85%"/>
+            <imagedata fileref="media/ldap_tree.png" width="78%"/>
          </imageobject>
       </mediaobject>
    </figure>
    <para>The complete diagram is a fictional directory information tree. The entries on three levels are depicted. Each entry corresponds to one box in the image. The complete, valid <emphasis>distinguished name</emphasis> for the fictional employee <systemitem class="username">Geeko Linux</systemitem>, in this case, is <literal>cn=Geeko Linux,ou=doc,dc=example,dc=com</literal>. It is composed by adding the RDN <literal>cn=Geeko Linux</literal> to the DN of the preceding entry <literal>ou=doc,dc=example,dc=com</literal>.</para>
    <!-- ke: yes, these things are called "Schema" -->
    <para>The types of objects that can be stored in the DIT are globally determined following a <emphasis>Schema</emphasis>. The type of an object is determined by the <emphasis>object class</emphasis>. The object class determines what attributes the relevant object must or may be assigned. The Schema contains all object classes and attributes which can be used by the LDAP server. Attributes are a structured data type. Their syntax, ordering and other behavior is defined by the Schema. LDAP servers supply a core set of Schemas which can work in a broad variety of environments. If a custom Schema is required, you can upload it to an LDAP server.</para>
-   <para>
-      <xref linkend="tab-ldap-schema"/> offers a small overview of the object classes from <filename>00core.ldif</filename> and <filename>06inetorgperson.ldif</filename> used in the example, including required attributes (Req. Attr.) and valid attribute values. After installing 389 Directory Server, these can be found in <filename>/usr/share/dirsrv/schema</filename>. <!-- intro abbrev "Req. Attr." too shorten the table header --></para>
+   <para><xref linkend="tab-ldap-schema"/> offers a small overview of the object classes from <filename>00core.ldif</filename> and <filename>06inetorgperson.ldif</filename> used in the example, including required attributes (Req. Attr.) and valid attribute values. After installing 389 Directory Server, these can be found in <filename>/usr/share/dirsrv/schema</filename>. <!-- intro abbrev "Req. Attr." too shorten the table header --></para>
    <table xml:id="tab-ldap-schema">
       <title>Commonly used object classes and attributes</title>
       <tgroup cols="4">
@@ -41,82 +40,35 @@
          <colspec colname="c4" colwidth="14*"/>
          <thead>
             <row>
-               <entry>
-                  <para>Object Class</para>
-               </entry>
-               <entry>
-                  <para>Meaning</para>
-               </entry>
-               <entry>
-                  <para>Example Entry</para>
-               </entry>
-               <entry>
-                  <para>Req. Attr.</para>
-               </entry>
+               <entry><para>Object Class</para></entry>
+               <entry><para>Meaning</para></entry>
+               <entry><para>Example Entry</para></entry>
+               <entry><para>Req. Attr.</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>
-                     <literal>domain</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>name components of the domain</para>
-               </entry>
-               <entry>
-                  <para>example</para>
-               </entry>
-               <entry>
-                  <para>displayName</para>
-               </entry>
+               <entry><para><literal>domain</literal></para></entry>
+               <entry><para>name components of the domain</para></entry>
+               <entry><para>example</para></entry>
+               <entry><para>displayName</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>organizationalUnit</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>organizational unit</para>
-               </entry>
-               <entry>
-                  <para>
-                     <literal>documentationdept</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>
-                     <literal>ou</literal>
-                  </para>
-               </entry>
+               <entry><para><literal>organizationalUnit</literal></para></entry>
+               <entry><para>organizational unit</para></entry>
+               <entry><para><literal>documentationdept</literal></para></entry>
+               <entry><para><literal>ou</literal></para></entry>
             </row>
             <row>
-               <entry>
-                  <para>
-                     <literal>nsPerson</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>person-related data for the intranet or Internet</para>
-               </entry>
-               <entry>
-                  <para>
-                     <literal>Tux Linux</literal>
-                  </para>
-               </entry>
-               <entry>
-                  <para>
-                     <literal>cn</literal>
-                  </para>
-               </entry>
+               <entry><para><literal>nsPerson</literal></para></entry>
+               <entry><para>person-related data for the intranet or Internet</para></entry>
+               <entry><para><literal>Tux Linux</literal></para></entry>
+               <entry><para><literal>cn</literal></para></entry>
             </row>
          </tbody>
       </tgroup>
    </table>
-   <para>
-      <xref linkend="aus-ldap-schema-help"/> shows an excerpt from a Schema directive with explanations.</para>
+   <para><xref linkend="aus-ldap-schema-help"/> shows an excerpt from a Schema directive with explanations.</para>
    <example xml:id="aus-ldap-schema-help">
       <title>Excerpt from CN=schema</title>
       <screen>attributetype (1.2.840.113556.1.2.102 NAME 'memberOf' <co xml:id="co-ldap-schema-core-att-type"/>

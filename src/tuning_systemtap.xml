@@ -60,8 +60,7 @@
       </sect2>
       <sect2 xml:id="sec-tuning-systemtap-concept-tapsets">
          <title>Tapsets</title>
-         <para>
-            <remark>sknorr, 2014-08-21: "tapsets are a library" sounds wrong... to me, it would make more sense if there was a "library of tapsets," i.e. a collection of systemtap scripts.</remark> Tapsets are a library of pre-written probes and functions that can be used in SystemTap scripts. When a user runs a SystemTap script, SystemTap checks the script's probe events and handlers against the tapset library. SystemTap then loads the corresponding probes and functions before translating the script to C. Like SystemTap scripts themselves, tapsets use the file name extension <filename>*.stp</filename>. <!--The standard library of tapsets is located in /usr/share/systemtap/tapset/ by default.--></para>
+         <para><remark>sknorr, 2014-08-21: "tapsets are a library" sounds wrong... to me, it would make more sense if there was a "library of tapsets," i.e. a collection of systemtap scripts.</remark> Tapsets are a library of pre-written probes and functions that can be used in SystemTap scripts. When a user runs a SystemTap script, SystemTap checks the script's probe events and handlers against the tapset library. SystemTap then loads the corresponding probes and functions before translating the script to C. Like SystemTap scripts themselves, tapsets use the file name extension <filename>*.stp</filename>. <!--The standard library of tapsets is located in /usr/share/systemtap/tapset/ by default.--></para>
          <para>However, unlike SystemTap scripts, tapsets are not meant for direct execution. They constitute the library from which other scripts can pull definitions. Thus, the tapset library is an abstraction layer designed to make it easier for users to define events and functions. Tapsets provide aliases for functions that users could want to specify as an event. Knowing the proper alias is often easier than remembering specific kernel functions that may vary between kernel versions.</para>
       </sect2>
       <sect2 xml:id="sec-tuning-systemtap-concept-cmd">
@@ -236,8 +235,7 @@
    overview of the packages you need.--> As SystemTap needs information about the kernel, some additional kernel-related packages must be installed. For each kernel you want to probe with SystemTap, you need to install a set of the following packages. This set should exactly match the kernel version and flavor (indicated by <literal>*</literal> in the overview below).</para>
       <important>
          <title>Repository for packages with debugging information</title>
-         <para>If you subscribed your system for online updates, you can find <quote>debuginfo</quote> packages in the <literal>*-Debuginfo-Updates</literal> online installation repository relevant for <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>. Use YaST to enable the repository.</para>
+         <para>If you subscribed your system for online updates, you can find <quote>debuginfo</quote> packages in the <literal>*-Debuginfo-Updates</literal> online installation repository relevant for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>. Use YaST to enable the repository.</para>
       </important>
       <!--taroth 2011-10-17: commenting for now (systemtap 1.5): original location of the para-->
       <!--<para>
@@ -253,45 +251,30 @@
       <para><!--For this setup,...--> For the classic SystemTap setup, install the following packages (using either YaST or <command>zypper</command>).</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <systemitem class="resource">systemtap</systemitem>
-            </para>
+            <para><systemitem class="resource">systemtap</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">systemtap-server</systemitem>
-            </para>
+            <para><systemitem class="resource">systemtap-server</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">systemtap-docs</systemitem> (optional)</para>
+            <para><systemitem class="resource">systemtap-docs</systemitem> (optional)</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">kernel-*-base</systemitem>
-            </para>
+            <para><systemitem class="resource">kernel-*-base</systemitem></para>
          </listitem>
          <!--taroth 2011-10-07: just for the records: debuginfo pkgs are
            internally available from DVD3-->
          <listitem>
-            <para>
-               <systemitem class="resource">kernel-*-debuginfo</systemitem>
-            </para>
+            <para><systemitem class="resource">kernel-*-debuginfo</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">kernel-*-devel</systemitem>
-            </para>
+            <para><systemitem class="resource">kernel-*-devel</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">kernel-source-*</systemitem>
-            </para>
+            <para><systemitem class="resource">kernel-source-*</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="resource">gcc</systemitem>
-            </para>
+            <para><systemitem class="resource">gcc</systemitem></para>
          </listitem>
       </itemizedlist>
       <!--taroth 2011-10-17: moved para here, change to original location after update
@@ -327,8 +310,7 @@ Pass <coref linkend="co-tuning-stap-pass5"/>: run completed in 10usr/20sys/257re
             <para>After the SystemTap session is terminated, the probes are disabled, and the kernel module is unloaded.</para>
          </callout>
       </calloutlist>
-      <para>In case any error messages appear during the test, check the output for hints about any missing packages and make sure they are installed correctly. Rebooting and loading the appropriate kernel may also be needed. <remark>jw 2010-09-23, while I am at it: I have two useful smoke tests, to verify if an installation is working, see http://docserv.suse.de/HOWTO/systemtap If you install systemtap on an older system, the debuginfo and devel packages are likely to be newer than your installed kernel. Finding the correct versions for a given kernel might be challenging. I usually circumvent this by upgrading the kernel.</remark>
-      </para>
+      <para>In case any error messages appear during the test, check the output for hints about any missing packages and make sure they are installed correctly. Rebooting and loading the appropriate kernel may also be needed. <remark>jw 2010-09-23, while I am at it: I have two useful smoke tests, to verify if an installation is working, see http://docserv.suse.de/HOWTO/systemtap If you install systemtap on an older system, the debuginfo and devel packages are likely to be newer than your installed kernel. Finding the correct versions for a given kernel might be challenging. I usually circumvent this by upgrading the kernel.</remark></para>
       <!-- </sect2>-->
       <!-- <sect2 id="sec-tuning-systemtap-setup-client-server">
    <title>Client-server setup</title>
@@ -1036,17 +1018,13 @@ root  4700  4160  0 18:05 ttyS0  00:00:00 grep avahi</screen>
                   <para>String to be printed by the <literal>printf</literal> function, followed by a line break (<literal>/n</literal>).</para>
                </callout>
                <callout arearefs="co-tuning-stap-handler-function-exit">
-                  <para>Second function defined in the handler: the <literal>exit()</literal> function. Note that the SystemTap script will continue to run until the <literal>exit()</literal> function executes. If you want to stop the execution of the script before, stop it manually by pressing <keycombo>
-                        <keycap function="control"/>
-                        <keycap>C</keycap>
-                     </keycombo>.</para>
+                  <para>Second function defined in the handler: the <literal>exit()</literal> function. Note that the SystemTap script will continue to run until the <literal>exit()</literal> function executes. If you want to stop the execution of the script before, stop it manually by pressing <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.</para>
                </callout>
                <callout arearefs="co-tuning-stap-handler-end">
                   <para>End of the handler definition, indicated by <literal>}</literal>.</para>
                </callout>
             </calloutlist>
-            <para>The event <literal>begin</literal>
-               <xref linkend="co-tuning-stap-event-begin" xrefstyle="%label"/> (the start of the SystemTap session) triggers the handler enclosed in <literal>{ }</literal>. Here, that is the <literal>printf</literal> function <xref linkend="co-tuning-stap-handler-function-printf" xrefstyle="%label"/>. In this case, it prints <literal>hello world</literal> followed by a new line <xref linkend="co-tuning-stap-handler-string" xrefstyle="%label"/>. Then, the script exits.</para>
+            <para>The event <literal>begin</literal><xref linkend="co-tuning-stap-event-begin" xrefstyle="%label"/> (the start of the SystemTap session) triggers the handler enclosed in <literal>{ }</literal>. Here, that is the <literal>printf</literal> function <xref linkend="co-tuning-stap-handler-function-printf" xrefstyle="%label"/>. In this case, it prints <literal>hello world</literal> followed by a new line <xref linkend="co-tuning-stap-handler-string" xrefstyle="%label"/>. Then, the script exits.</para>
          </example>
          <para>If your statement block holds several statements, SystemTap executes these statements in sequence—you do not need to insert special separators or terminators between multiple statements. A statement block can also be nested within another statement blocks. Generally, statement blocks in SystemTap scripts use the same syntax and semantics as in the C programming language.</para>
       </sect2>
@@ -1059,8 +1037,7 @@ root  4700  4160  0 18:05 ttyS0  00:00:00 grep avahi</screen>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
                <para>Synchronous events: Occur when any process executes an instruction at a particular location in kernel code. This gives other events a reference point (instruction address) from which more contextual data may be available.</para>
-               <para>An example for a synchronous event is <literal>vfs.<replaceable>FILE_OPERATION</replaceable>
-                  </literal>: The entry to the <replaceable>FILE_OPERATION</replaceable> event for Virtual File System (VFS). For example, in <xref linkend="sec-tuning-systemtap-setup"/>, <literal>read</literal> is the <replaceable>FILE_OPERATION</replaceable> event used for VFS. <!--taroth 2011-10-17: sysemtap 1.5, original linkend--><!-- <xref  linkend="sec-tuning-systemtap-setup-classic"/>--><!--If you also
+               <para>An example for a synchronous event is <literal>vfs.<replaceable>FILE_OPERATION</replaceable></literal>: The entry to the <replaceable>FILE_OPERATION</replaceable> event for Virtual File System (VFS). For example, in <xref linkend="sec-tuning-systemtap-setup"/>, <literal>read</literal> is the <replaceable>FILE_OPERATION</replaceable> event used for VFS. <!--taroth 2011-10-17: sysemtap 1.5, original linkend--><!-- <xref  linkend="sec-tuning-systemtap-setup-classic"/>--><!--If you also
       want to monitor the exit of the <replaceable>FILE_OPERATION</replaceable>
       operation, append a <literal>.return</literal> to the event (for example,
        <literal>vfs.read.return</literal>).--></para>
@@ -1301,20 +1278,14 @@ probe kernel.function("tcp_accept").return?,
       </itemizedlist>
       <para>To run the script, execute</para>
       <screen>stap /usr/share/doc/packages/systemtap/examples/network/tcp_connections.stp</screen>
-      <para>and follow the output on the screen. To manually stop the script, press <keycombo>
-            <keycap function="control"/>
-            <keycap>C</keycap>
-         </keycombo>.</para>
+      <para>and follow the output on the screen. To manually stop the script, press <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.</para>
    </sect1>
    <!--taroth 2013-11-22: http://doccomments.provo.novell.com/admin/viewcomment/14466-->
    <sect1 xml:id="sec-tuning-systemtap-userspace">
       <title>User space probing</title>
-      <para>
-         <remark>taroth 2013-12-05: this will need adjustment for SLE 12 where user-space probes will use uprobes/uretprobes instead (which are in mainline) - according to tonyj everything except itrace is supposed to work</remark> For debugging user space applications (like DTrace can do), <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase> supports user space probing with SystemTap. Custom probe points can be inserted in any user space application. Thus, SystemTap lets you use both kernel space and user space probes to debug the behavior of the whole system.</para>
+      <para><remark>taroth 2013-12-05: this will need adjustment for SLE 12 where user-space probes will use uprobes/uretprobes instead (which are in mainline) - according to tonyj everything except itrace is supposed to work</remark> For debugging user space applications (like DTrace can do), <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> supports user space probing with SystemTap. Custom probe points can be inserted in any user space application. Thus, SystemTap lets you use both kernel space and user space probes to debug the behavior of the whole system.</para>
       <para>To get the required utrace infrastructure and the uprobes kernel module for user space probing, you need to install the <systemitem class="resource">kernel-trace</systemitem> package in addition to the packages listed in <xref linkend="sec-tuning-systemtap-setup"/>.</para>
-      <para>
-         <command>utrace</command> implements a framework for controlling user space tasks. It provides an interface that can be used by various tracing <quote>engines</quote>, implemented as loadable kernel modules. The engines register callback functions for specific events, then attach to whichever thread they want to trace. As the callbacks are made from <quote>safe</quote> places in the kernel, this allows for great leeway in the kinds of processing the functions can do. Several events can be watched via utrace. For example, you can observe events such as system call entry and exit, fork(), and signals being sent to the task. More details about the utrace infrastructure are available at <link xlink:href="https://sourceware.org/systemtap/wiki/utrace"/>.</para>
+      <para><command>utrace</command> implements a framework for controlling user space tasks. It provides an interface that can be used by various tracing <quote>engines</quote>, implemented as loadable kernel modules. The engines register callback functions for specific events, then attach to whichever thread they want to trace. As the callbacks are made from <quote>safe</quote> places in the kernel, this allows for great leeway in the kinds of processing the functions can do. Several events can be watched via utrace. For example, you can observe events such as system call entry and exit, fork(), and signals being sent to the task. More details about the utrace infrastructure are available at <link xlink:href="https://sourceware.org/systemtap/wiki/utrace"/>.</para>
       <para>SystemTap includes support for probing the entry into and return from a function in user space processes, probing predefined markers in user space code, and monitoring user-process events.</para>
       <para>To check if the currently running kernel provides the needed utrace support, use the following command:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> grep CONFIG_UTRACE /boot/config-`uname -r`</screen>

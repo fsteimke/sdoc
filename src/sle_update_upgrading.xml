@@ -63,10 +63,10 @@
          <title>Overview of supported upgrade paths</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/upgrade-paths_sles.svg" width="100%"/>
+               <imagedata fileref="media/upgrade-paths_sles.svg" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/upgrade-paths_sles.png" width="80%"/>
+               <imagedata fileref="media/upgrade-paths_sles.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -82,13 +82,7 @@
             <term>Upgrading from <phrase role="productname">SUSE Linux Enterprise Server</phrase> 11</term>
             <listitem>
                <para>Upgrading from <phrase role="productname">SLES</phrase> 11  directly is not supported. You need at least <phrase role="productname">SLES</phrase> 11 SP4 and you can only upgrade to <phrase role="productname">SLES</phrase> 15 SP3 before you can proceed to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
-               <para>If you cannot do a fresh installation, first, upgrade your installed <phrase role="productname">SLES</phrase> 11 service pack to <phrase role="productname">SLES</phrase> 11 SP4. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/11-SP4/html/SLES-all/book-sle-deployment.html">
-                     <citetitle>
-                        <phrase role="productname">SLES</phrase> 11 SP4 Deployment Guide</citetitle>
-                  </link>. Next, perform an offline upgrade to <phrase role="productname">SLES</phrase> 15 SP3. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/15-SP3/html/SLES-all/book-sle-deployment.html">
-                     <citetitle>
-                        <phrase role="productname">SLES</phrase> 15 SP3 Deployment Guide</citetitle>
-                  </link>. Then, follow the instructions in this guide to upgrade to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>If you cannot do a fresh installation, first, upgrade your installed <phrase role="productname">SLES</phrase> 11 service pack to <phrase role="productname">SLES</phrase> 11 SP4. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/11-SP4/html/SLES-all/book-sle-deployment.html"><citetitle><phrase role="productname">SLES</phrase> 11 SP4 Deployment Guide</citetitle></link>. Next, perform an offline upgrade to <phrase role="productname">SLES</phrase> 15 SP3. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/15-SP3/html/SLES-all/book-sle-deployment.html"><citetitle><phrase role="productname">SLES</phrase> 15 SP3 Deployment Guide</citetitle></link>. Then, follow the instructions in this guide to upgrade to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
             </listitem>
          </varlistentry>
          <!-- SLE 12 -->
@@ -96,11 +90,7 @@
             <term>Upgrading from <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 GA / SP1 / SP2 / SP3 / SP4</term>
             <listitem>
                <para>Upgrading from <phrase role="productname">SLES</phrase> 12 SP4 or older service packs directly is not supported. You need at least <phrase role="productname">SLES</phrase> 12 SP5 before you can proceed to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
-               <para>If you cannot do a fresh installation, first, upgrade your installed <phrase role="productname">SLES</phrase> 12 service pack to <phrase role="productname">SLES</phrase> 12 SP5. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/12-SP5/html/SLES-all/book-sle-deployment.html">
-                     <citetitle>
-                        <phrase role="productname">SLES</phrase> 12 SP5 Deployment Guide</citetitle>
-                  </link>
-               </para>
+               <para>If you cannot do a fresh installation, first, upgrade your installed <phrase role="productname">SLES</phrase> 12 service pack to <phrase role="productname">SLES</phrase> 12 SP5. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/12-SP5/html/SLES-all/book-sle-deployment.html"><citetitle><phrase role="productname">SLES</phrase> 12 SP5 Deployment Guide</citetitle></link></para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -123,10 +113,7 @@
             <term>Upgrading from <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP1 / SP2 / SP3 with LTSS or ESPOS</term>
             <listitem>
                <para>Upgrading from <phrase role="productname">SLES</phrase> 15 SP1, SP2, or SP3 with LTSS or ESPOS directly is not supported. You need at least <phrase role="productname">SLES</phrase> 15 SP4 with LTSS or ESPOS before you can proceed to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
-               <para>First, upgrade your installed <phrase role="productname">SLES</phrase> 15 service pack to <phrase role="productname">SLES</phrase> 15 SP4. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/15-SP4/html/SLES-all/book-sle-upgrade.html">
-                     <citetitle>
-                        <phrase role="productname">SLES</phrase> 15 SP4 Upgrade Guide</citetitle>
-                  </link>. Then, follow the instructions in this guide to upgrade to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>First, upgrade your installed <phrase role="productname">SLES</phrase> 15 service pack to <phrase role="productname">SLES</phrase> 15 SP4. This upgrade is described in the <link xlink:href="https://doc.suse.com/sles/15-SP4/html/SLES-all/book-sle-upgrade.html"><citetitle><phrase role="productname">SLES</phrase> 15 SP4 Upgrade Guide</citetitle></link>. Then, follow the instructions in this guide to upgrade to <phrase role="productname">SLES</phrase> <phrase role="productnumber">15 SP7</phrase>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -146,9 +133,7 @@
          <varlistentry>
             <term>Upgrading SUSE Linux Enterprise public cloud guests</term>
             <listitem>
-               <para>For instructions on upgrading SLE guests in public clouds, see <link xlink:href="https://doc.suse.com/suse-distribution-migration-system/1.0/single-html/distribution-migration-system/">
-                     <citetitle>Using the SUSE Distribution Migration System</citetitle>
-                  </link>.</para>
+               <para>For instructions on upgrading SLE guests in public clouds, see <link xlink:href="https://doc.suse.com/suse-distribution-migration-system/1.0/single-html/distribution-migration-system/"><citetitle>Using the SUSE Distribution Migration System</citetitle></link>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>

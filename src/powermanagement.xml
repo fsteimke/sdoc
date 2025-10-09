@@ -7,7 +7,7 @@
          xml:id="cha-power-mgmt">
    <title>Power management</title>
    <info/>
-   <para>The features and hardware described in this chapter do not exist on IBM Z, making this chapter irrelevant for these platforms.</para>
+   <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>The features and hardware described in this chapter do not exist on IBM Z, making this chapter irrelevant for these platforms.<phrase role="arch-end">◀</phrase></para>
    <para>Power management is especially important on laptop computers, but is also useful on other systems. ACPI (Advanced Configuration and Power Interface) is available on all modern computers (laptops, desktops and servers). Power management technologies require suitable hardware and BIOS routines. Most laptops and many modern desktops and servers meet these requirements. It is also possible to control CPU frequency scaling to save power or decrease noise.</para>
    <sect1 xml:id="sec-power-mgmt-save">
       <title>Power saving functions</title>
@@ -60,8 +60,7 @@
    </sect1>
    <sect1 xml:id="sec-power-mgmt-acpi">
       <title>Advanced configuration and power interface (ACPI)</title>
-      <para>ACPI was designed to enable the operating system to set up and control the individual hardware components. ACPI supersedes both Power Management Plug and Play (PnP) and Advanced Power Management (APM). It delivers information about the battery, AC adapter, temperature, fan and system events, like <quote>close lid</quote> or <quote>battery low.</quote>
-      </para>
+      <para>ACPI was designed to enable the operating system to set up and control the individual hardware components. ACPI supersedes both Power Management Plug and Play (PnP) and Advanced Power Management (APM). It delivers information about the battery, AC adapter, temperature, fan and system events, like <quote>close lid</quote> or <quote>battery low.</quote></para>
       <para>The BIOS provides tables containing information about the individual components and hardware access methods. The operating system uses this information for tasks like assigning interrupts or activating and deactivating components. Because the operating system executes commands stored into the BIOS, the functionality depends on the BIOS implementation. The tables ACPI can detect and load are reported in journald. See <xref linkend="cha-journalctl"/> for more information on viewing the journal log messages. See <xref linkend="sec-power-mgmt-acpi-trouble"/> for more information about troubleshooting ACPI problems.</para>
       <sect2 xml:id="sec-power-mgmt-acpi-powernow">
          <title>Controlling the CPU performance</title>
@@ -80,8 +79,7 @@
          <para>Depending on the operating mode of the computer, these methods can be combined. Saving energy also means that the system heats up less and the fans are activated less frequently.</para>
          <para>Frequency scaling and throttling are only relevant if the processor is busy, because the most economic C-state is applied anyway when the processor is idle. If the CPU is busy, frequency scaling is the recommended power saving method. Often the processor only works with a partial load. In this case, it can be run with a lower frequency. Dynamic frequency scaling controlled by the kernel on-demand governor is the best approach.</para>
          <para>Throttling should be used as the last resort, for example, to extend the battery operation time despite a high system load. However, certain systems do not run smoothly when they are throttled too much. Moreover, CPU throttling does not make sense if the CPU has little to do.</para>
-         <para>For in-depth information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-            <xref linkend="cha-tuning-power" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For in-depth information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-power" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </sect2>
       <sect2 xml:id="sec-power-mgmt-acpi-trouble">
          <title>Troubleshooting</title>
@@ -112,20 +110,17 @@
             <para>Certain newer machines (especially SMP systems and AMD64 systems) need ACPI for configuring the hardware correctly. On these machines, disabling ACPI can cause problems.</para>
          </warning>
          <para>Sometimes, the machine is confused by hardware that is attached over USB or FireWire. If a machine refuses to boot, unplug all unneeded hardware and try again.</para>
-         <para>Monitor the boot messages of the system with the command <command>dmesg -T</command>
-            <option>| grep -2i acpi</option> (or all messages, because the problem may not be caused by ACPI) after booting. If an error occurs while parsing an ACPI table, the most important table—the DSDT (<emphasis>Differentiated System Description Table</emphasis>)—can be replaced with an improved version. In this case, the faulty DSDT of the BIOS is ignored. The procedure is described in <xref linkend="sec-power-mgmt-faq"/>.</para>
+         <para>Monitor the boot messages of the system with the command <command>dmesg -T</command><option>| grep -2i acpi</option> (or all messages, because the problem may not be caused by ACPI) after booting. If an error occurs while parsing an ACPI table, the most important table—the DSDT (<emphasis>Differentiated System Description Table</emphasis>)—can be replaced with an improved version. In this case, the faulty DSDT of the BIOS is ignored. The procedure is described in <xref linkend="sec-power-mgmt-faq"/>.</para>
          <para>In the kernel configuration, there is a switch for activating ACPI debug messages. If a kernel with ACPI debugging is compiled and installed, detailed information is issued.</para>
          <para>If you experience BIOS or hardware problems, it is always advisable to contact the manufacturers. Especially if they do not always provide assistance for Linux, they should be confronted with the problems. Manufacturers only take the issue seriously if they realize that an adequate number of their customers use Linux.</para>
          <sect3 xml:id="sec-power-mgmt-acpi-trouble-info">
             <title>More information</title>
             <itemizedlist mark="bullet" spacing="normal">
                <listitem>
-                  <para>
-                     <link xlink:href="https://tldp.org/HOWTO/ACPI-HOWTO/"/> (detailed ACPI HOWTO, contains DSDT patches)</para>
+                  <para><link xlink:href="https://tldp.org/HOWTO/ACPI-HOWTO/"/> (detailed ACPI HOWTO, contains DSDT patches)</para>
                </listitem>
                <listitem>
-                  <para>
-                     <link xlink:href="https://uefi.org/specifications"/> (Advanced Configuration &amp; Power Interface Specification)</para>
+                  <para><link xlink:href="https://uefi.org/specifications"/> (Advanced Configuration &amp; Power Interface Specification)</para>
                </listitem>
             </itemizedlist>
          </sect3>
@@ -134,9 +129,7 @@
    <sect1 xml:id="sec-power-mgmt-silenthd">
       <title>Rest for the hard disk</title>
       <para>In Linux, the hard disk can be put to sleep entirely if it is not needed or it can be run in a more economic or quieter mode. On modern laptops, you do not need to switch off the hard disks manually, because they automatically enter an economic operating mode whenever they are not needed. However, if you want to maximize power savings, test the following methods, using the <command>hdparm</command> command.</para>
-      <para>It can be used to modify hard disk settings. The option <option>-y</option> instantly switches the hard disk to the standby mode. <option>-Y</option> puts it to sleep. <command>hdparm</command>
-         <option>-S</option>
-         <replaceable>X</replaceable> causes the hard disk to be spun down after a certain period of inactivity. Replace <replaceable>X</replaceable> as follows: <literal>0</literal> disables this mechanism, causing the hard disk to run continuously. Values from <literal>1</literal> to <literal>240</literal> are multiplied by 5 seconds. Values from <literal>241</literal> to <literal>251</literal> correspond to 1 to 11 times 30 minutes.</para>
+      <para>It can be used to modify hard disk settings. The option <option>-y</option> instantly switches the hard disk to the standby mode. <option>-Y</option> puts it to sleep. <command>hdparm</command><option>-S</option><replaceable>X</replaceable> causes the hard disk to be spun down after a certain period of inactivity. Replace <replaceable>X</replaceable> as follows: <literal>0</literal> disables this mechanism, causing the hard disk to run continuously. Values from <literal>1</literal> to <literal>240</literal> are multiplied by 5 seconds. Values from <literal>241</literal> to <literal>251</literal> correspond to 1 to 11 times 30 minutes.</para>
       <para>Internal power saving options of the hard disk can be controlled with the option <literal>-B</literal>. Select a value from <literal>0</literal> to <literal>255</literal> for maximum saving to maximum throughput. The result depends on the hard disk used and is difficult to assess. To make a hard disk quieter, use the option <literal>-M</literal>. Select a value from <literal>128</literal> to <literal>254</literal> for quiet to fast.</para>
       <para>Often, it is not so easy to put the hard disk to sleep. In Linux, multiple processes write to the hard disk, waking it up repeatedly. Therefore, it is important to understand how Linux handles data that needs to be written to the hard disk. First, all data is buffered in the RAM. This buffer is monitored by the <systemitem class="daemon">pdflush</systemitem> daemon. When the data reaches a certain age limit or when the buffer is filled to a certain degree, the buffer content is flushed to the hard disk. The buffer size is dynamic and depends on the size of the memory and the system load. By default, pdflush is set to short intervals to achieve maximum data integrity. It checks the buffer every 5 seconds and writes the data to the hard disk. The following variables are interesting:</para>
       <variablelist>

@@ -42,31 +42,19 @@
       <title>Setting up the system with a software RAID device for the root (<filename>/</filename>) partition</title>
       <procedure>
          <step>
-            <para>Start the installation with YaST and proceed as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-               <xref linkend="cha-install" xrefstyle="%label &#34;%c&#34;"/> until you reach the <guimenu>Suggested Partitioning</guimenu> step.</para>
+            <para>Start the installation with YaST and proceed as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-install" xrefstyle="%label &#34;%c&#34;"/> until you reach the <guimenu>Suggested Partitioning</guimenu> step.</para>
          </step>
          <step>
             <para>Click <guimenu>Expert Partitioner</guimenu> to open the custom partitioning tool. You can use the suggested proposal, or you can use the existing proposal.</para>
          </step>
          <step>
-            <para>(Optional) If there are iSCSI target devices that you want to use, you need to enable the iSCSI Initiator software by choosing <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Configure</guimenu>
-                  <guimenu>Configure iSCSI</guimenu>
-               </menuchoice> from the upper-left section of the screen. Refer to <xref linkend="cha-iscsi"/> for further details.</para>
+            <para>(Optional) If there are iSCSI target devices that you want to use, you need to enable the iSCSI Initiator software by choosing <menuchoice><guimenu>System</guimenu><guimenu>Configure</guimenu><guimenu>Configure iSCSI</guimenu></menuchoice> from the upper-left section of the screen. Refer to <xref linkend="cha-iscsi"/> for further details.</para>
          </step>
          <step>
-            <para>(Optional) If there are FCoE target devices that you want to use, you need to configure the interface by clicking <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Configure</guimenu>
-                  <guimenu>Configure FCoE</guimenu>
-               </menuchoice> from the upper left section of the screen.</para>
+            <para>(Optional) If there are FCoE target devices that you want to use, you need to configure the interface by clicking <menuchoice><guimenu>System</guimenu><guimenu>Configure</guimenu><guimenu>Configure FCoE</guimenu></menuchoice> from the upper left section of the screen.</para>
          </step>
          <step>
-            <para>(Optional) If you need to discard the partitioning changes, click <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Rescan Devices</guimenu>
-               </menuchoice>.</para>
+            <para>(Optional) If you need to discard the partitioning changes, click <menuchoice><guimenu>System</guimenu><guimenu>Rescan Devices</guimenu></menuchoice>.</para>
          </step>
          <!-- There is no Configure Multipath now? 
     <step>
@@ -178,10 +166,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/raid_yast_install2_a.png" width="80%"/>
+                           <imagedata fileref="media/raid_yast_install2_a.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/raid_yast_install2_a.png" width="100%"/>
+                           <imagedata fileref="media/raid_yast_install2_a.png" width="92%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -202,10 +190,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/raid_yast_install3_a.png" width="80%"/>
+                           <imagedata fileref="media/raid_yast_install3_a.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/raid_yast_install3_a.png" width="100%"/>
+                           <imagedata fileref="media/raid_yast_install3_a.png" width="92%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -219,10 +207,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/raid_yast_install_editraid.png" width="80%"/>
+                           <imagedata fileref="media/raid_yast_install_editraid.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/raid_yast_install_editraid.png" width="100%"/>
+                           <imagedata fileref="media/raid_yast_install_editraid.png" width="92%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -235,10 +223,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/raid_yast_install_filesystem.png" width="80%"/>
+                           <imagedata fileref="media/raid_yast_install_filesystem.png" width="73%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/raid_yast_install_filesystem.png" width="100%"/>
+                           <imagedata fileref="media/raid_yast_install_filesystem.png" width="92%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -271,10 +259,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/raid_yast_install_swap.png" width="80%"/>
+                     <imagedata fileref="media/raid_yast_install_swap.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/raid_yast_install_swap.png" width="100%"/>
+                     <imagedata fileref="media/raid_yast_install_swap.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -284,10 +272,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/raid_yast_install_boot.png" width="80%"/>
+                     <imagedata fileref="media/raid_yast_install_boot.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/raid_yast_install_boot.png" width="100%"/>
+                     <imagedata fileref="media/raid_yast_install_boot.png" width="92%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -295,10 +283,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/raid_yast_install3_b.png" width="70%"/>
+                     <imagedata fileref="media/raid_yast_install3_b.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/raid_yast_install3_b.png" width="70%"/>
+                     <imagedata fileref="media/raid_yast_install3_b.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

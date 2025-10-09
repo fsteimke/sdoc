@@ -34,8 +34,7 @@
       </itemizedlist>
       <note>
          <title>Second stage</title>
-         <para>A regular installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase> is performed in a single stage. The auto-installation process, however, is divided into two stages. After the installation and main configuration of the basic system, it is booted into a second stage to perform any post-installation configuration steps.</para>
+         <para>A regular installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> is performed in a single stage. The auto-installation process, however, is divided into two stages. After the installation and main configuration of the basic system, it is booted into a second stage to perform any post-installation configuration steps.</para>
          <para>The packages <literal>autoyast2</literal> and <literal>autoyast2-installation</literal> need to be installed to run the second stage in the installed system correctly. Otherwise an error will be shown before booting into the installed system.</para>
          <para>The second stage runs only if it is strictly necessary, and the second stage can be turned off completely with the <literal>second_stage</literal> parameter:</para>
          <screen>&lt;general&gt;

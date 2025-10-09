@@ -48,32 +48,23 @@
       <para>The Linux boot process consists of several stages, each represented by a different component:</para>
       <orderedlist>
          <listitem>
-            <para>
-               <xref linkend="sec-boot-proc-initialization"/>
-            </para>
+            <para><xref linkend="sec-boot-proc-initialization"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="sec-boot-proc-kernel"/>
-            </para>
+            <para><xref linkend="sec-boot-proc-kernel"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="sec-boot-initramfs"/>
-            </para>
+            <para><xref linkend="sec-boot-initramfs"/></para>
          </listitem>
          <listitem>
-            <para>
-               <xref linkend="sec-boot-systemd"/>
-            </para>
+            <para><xref linkend="sec-boot-systemd"/></para>
          </listitem>
       </orderedlist>
       <sect2 xml:id="sec-boot-proc-initialization">
          <title>The initialization and boot loader phase</title>
          <para>During the initialization phase, the machine's hardware is set up, and the devices are prepared. This process differs across hardware architectures.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> uses the boot loader GRUB 2 on all architectures. Depending on the architecture and firmware, starting the GRUB 2 boot loader can be a multi-step process. The purpose of the boot loader is to load the kernel and the initial, RAM-based file system (initramfs). For more information about GRUB 2, refer to <xref linkend="cha-grub2"/>.</para>
-         <sect3 xml:id="sec-boot-proc-initialization-x86-aarch">
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> uses the boot loader GRUB 2 on all architectures. Depending on the architecture and firmware, starting the GRUB 2 boot loader can be a multi-step process. The purpose of the boot loader is to load the kernel and the initial, RAM-based file system (initramfs). For more information about GRUB 2, refer to <xref linkend="cha-grub2"/>.</para>
+         <sect3 xml:id="sec-boot-proc-initialization-x86-aarch" arch="x86_64;aarch64">
             <title>Initialization and boot loader phase on AArch64 and AMD64/Intel 64</title>
             <para>After turning on the computer, the BIOS or the UEFI initializes the screen and keyboard, and tests the main memory. Up to this stage, the machine does not access any mass storage media. Subsequently, the information about the current date, time and the most important peripherals are loaded from the CMOS values. When the boot media and its geometry are recognized, the system control passes from the BIOS/UEFI to the boot loader.</para>
             <para>On a machine equipped with a traditional BIOS, only code from the first physical 512-byte data sector (the Master Boot Record, MBR) of the boot disk can be loaded. Only a minimal GRUB 2 fits into the MBR. Its sole purpose is to load a GRUB 2 core image containing file system drivers from the gap between the MBR and the first partition (MBR partition table) or from the BIOS boot partition (GPT partition table). This image contains file system drivers and therefore is able to access <filename>/boot</filename> located on the root file system. <filename>/boot</filename> contains additional modules for GRUB 2 core as well as the kernel and the initramfs image. When it has access to this partition, GRUB 2 loads the kernel and the initramfs image into memory and hands control over to the kernel.</para>
@@ -81,13 +72,12 @@
             <para>On machines with UEFI the boot process is much simpler than on machines with a traditional BIOS. The firmware is able to read from a FAT formatted system partition of disks with a GPT partition table. This EFI system-partition (in the running system mounted as <filename>/boot/efi</filename>) holds enough space to host a fully fledged GRUB 2 which is directly loaded and executed by the firmware.</para>
             <para>If the BIOS/UEFI supports network booting, it is also possible to configure a boot server that provides the boot loader. The system can then be booted via PXE. The BIOS/UEFI acts as the boot loader. It gets the boot image from the boot server and starts the system, independent of local hard disks.</para>
          </sect3>
-         <sect3 xml:id="sec-boot-proc-initialization-zsystems">
+         <sect3 xml:id="sec-boot-proc-initialization-zsystems" arch="zseries">
             <title>Initialization and boot loader phase on IBM Z</title>
             <para>On IBM Z the boot process must be initialized by a boot loader called <command>zipl</command> (z initial program load). Although <command>zipl</command> supports reading from multiple file systems, it does not support the SLE default file system (Btrfs) or booting from snapshots. <phrase role="productname">SUSE Linux Enterprise Server</phrase> therefore uses a two-stage boot process that ensures full Btrfs support at boot-time:</para>
             <procedure>
                <step>
-                  <para>
-                     <command>zipl</command> boots from the partition <filename>/boot/zipl</filename>, which can be formatted with the Ext2, Ext3, Ext4, or XFS file system. This partition contains a minimal kernel and an initramfs that are loaded into memory. The initramfs contains a Btrfs driver (among others) and the boot loader GRUB 2. The kernel is started with a parameter <literal>initgrub</literal>, which tells it to start GRUB 2.</para>
+                  <para><command>zipl</command> boots from the partition <filename>/boot/zipl</filename>, which can be formatted with the Ext2, Ext3, Ext4, or XFS file system. This partition contains a minimal kernel and an initramfs that are loaded into memory. The initramfs contains a Btrfs driver (among others) and the boot loader GRUB 2. The kernel is started with a parameter <literal>initgrub</literal>, which tells it to start GRUB 2.</para>
                </step>
                <step>
                   <para>The kernel mounts the root file system, so <filename>/boot</filename> becomes accessible. Now GRUB 2 is started from the initramfs. It reads its configuration from <filename>/boot/grub2/grub.cfg</filename> and loads the final kernel and initramfs from <filename>/boot</filename>. The new kernel now gets loaded via Kexec.</para>
@@ -101,8 +91,7 @@
          <para>After the kernel has set up memory management and has detected the CPU type and its features, it initializes the hardware and mounts the temporary root file system from the memory that was loaded with the <systemitem>initramfs</systemitem>.</para>
          <sect3 xml:id="sec-boot-initrd">
             <title>The <systemitem>initramfs</systemitem> file</title>
-            <para>
-               <systemitem>initramfs</systemitem> (initial RAM file system) is a small cpio archive that the kernel can load into a RAM disk. It is located at <filename>/boot/initrd</filename>. It can be created with a tool called <command>dracut</command>—refer to <command>man 8 dracut</command> for details.</para>
+            <para><systemitem>initramfs</systemitem> (initial RAM file system) is a small cpio archive that the kernel can load into a RAM disk. It is located at <filename>/boot/initrd</filename>. It can be created with a tool called <command>dracut</command>—refer to <command>man 8 dracut</command> for details.</para>
             <para>The <systemitem>initramfs</systemitem> provides a minimal Linux environment that enables the execution of programs before the actual root file system is mounted. This minimal Linux environment is loaded into memory by BIOS or UEFI routines and does not have specific hardware requirements other than sufficient memory. The <systemitem>initramfs</systemitem> archive must always provide an executable named <systemitem>init</systemitem> that executes the <systemitem class="daemon">systemd</systemitem> daemon on the root file system for the boot process to proceed.</para>
             <para>Before the root file system can be mounted and the operating system can be started, the kernel needs the corresponding drivers to access the device on which the root file system is located. These drivers may include special drivers for certain kinds of hard disks or even network drivers to access a network file system. The needed modules for the root file system are loaded by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. After the modules are loaded, <systemitem class="service">udev</systemitem> provides the <systemitem>initramfs</systemitem> with the needed devices. Later in the boot process, after changing the root file system, it is necessary to regenerate the devices. This is done by the <systemitem class="daemon">systemd</systemitem> unit <filename>systemd-udev-trigger.service</filename>.</para>
             <sect4 xml:id="sec-boot-initrd-regenerate">
@@ -160,14 +149,13 @@
                   <step>
                      <para>Generate a new <systemitem>initramfs</systemitem> file with <command>dracut</command>, replacing <replaceable>MY_INITRAMFS</replaceable> with a file name of your choice:</para>
                      <screen><prompt role="root">#</prompt>dracut <replaceable>MY_INITRAMFS</replaceable></screen>
-                     <para>Alternatively, run <command>dracut -f</command>
-                        <replaceable>FILENAME</replaceable> to replace an existing init file.</para>
+                     <para>Alternatively, run <command>dracut -f</command><replaceable>FILENAME</replaceable> to replace an existing init file.</para>
                   </step>
                   <step>
                      <para>(Skip this step if you ran <command>dracut -f</command> in the previous step.) Create a symbolic link from the <systemitem>initramfs</systemitem> file you created in the previous step to <systemitem>initrd</systemitem>:</para>
                      <screen><prompt role="root">#</prompt> ln -sf <replaceable>MY_INITRAMFS</replaceable><systemitem>initrd</systemitem></screen>
                   </step>
-                  <step>
+                  <step arch="zseries">
                      <para>On the IBM Z architecture, additionally run <command>grub2-install</command>.</para>
                   </step>
                </procedure>
@@ -201,8 +189,7 @@
                <term>Managing the network configuration</term>
                <listitem>
                   <para>If you configured your system to use a network-mounted root file system (mounted via NFS), <systemitem>init</systemitem> must make sure that the proper network drivers are loaded and that they are set up to allow access to the root file system.</para>
-                  <para>If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports booting from a secondary iSCSI target if the primary target is not available. For more details regarding configuration of the booting iSCSI target refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-iscsi-initiator-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports booting from a secondary iSCSI target if the primary target is not available. For more details regarding configuration of the booting iSCSI target refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-iscsi-initiator-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </listitem>
             </varlistentry>
          </variablelist>

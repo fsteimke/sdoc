@@ -11,8 +11,7 @@
    <para>Before you can install guest virtual machines, you need to prepare the VM Host Server to provide the guests with the resources that they need for their operation. Specifically, you need to configure:</para>
    <itemizedlist>
       <listitem>
-         <para>
-            <emphasis>Networking</emphasis> so that guests can make use of the network connection provided the host.</para>
+         <para><emphasis>Networking</emphasis> so that guests can make use of the network connection provided the host.</para>
       </listitem>
       <listitem>
          <para>A <emphasis>storage pool</emphasis> reachable from the host so that the guests can store their disk images.</para>
@@ -50,11 +49,7 @@
                <para>To add a network bridge on VM Host Server, follow these steps:</para>
                <procedure>
                   <step>
-                     <para>Start <menuchoice>
-                           <guimenu>YaST</guimenu>
-                           <guimenu>System</guimenu>
-                           <guimenu>Network Settings</guimenu>
-                        </menuchoice>.</para>
+                     <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>.</para>
                   </step>
                   <step>
                      <para>Activate the <guimenu>Overview</guimenu> tab and click <guimenu>Add</guimenu>.</para>
@@ -81,11 +76,7 @@
                <para>To delete an existing network bridge, follow these steps:</para>
                <procedure>
                   <step>
-                     <para>Start <menuchoice>
-                           <guimenu>YaST</guimenu>
-                           <guimenu>System</guimenu>
-                           <guimenu>Network Settings</guimenu>
-                        </menuchoice>.</para>
+                     <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>.</para>
                   </step>
                   <step>
                      <para>Select the bridge device you want to delete from the list in the <guimenu>Overview</guimenu> tab.</para>
@@ -116,8 +107,7 @@
 [...]
 virbr_test  1 PVID Egress Untagged
 </screen>
-                     <para>
-                        <literal>virbr_test</literal> is present, but is not associated with any physical network interface.</para>
+                     <para><literal>virbr_test</literal> is present, but is not associated with any physical network interface.</para>
                   </step>
                   <step>
                      <para>Bring the network bridge up and add a network interface to the bridge:</para>
@@ -214,18 +204,14 @@ Connection successfully activated (master waiting for slaves) \
             <title>Using VLAN interfaces</title>
             <para>Sometimes it is necessary to create a private connection either between two VM Host Servers or between VM Guest systems. For example, to migrate a VM Guest to hosts in a different network segment. Or to create a private bridge that only VM Guest systems may connect to (even when running on different VM Host Server systems). An easy way to build such connections is to set up VLAN networks.</para>
             <para>VLAN interfaces are commonly set up on the VM Host Server. They either interconnect the different VM Host Server systems, or they may be set up as a physical interface to an otherwise virtual-only bridge. It is even possible to create a bridge with a VLAN as a physical interface that has no IP address in the VM Host Server. That way, the guest systems have no possibility to access the host over this network.</para>
-            <para>Run the YaST module <menuchoice>
-                  <guimenu>System</guimenu>
-                  <guimenu>Network Settings</guimenu>
-               </menuchoice>. Follow this procedure to set up the VLAN device:</para>
+            <para>Run the YaST module <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>. Follow this procedure to set up the VLAN device:</para>
             <procedure>
                <title>Setting up VLAN interfaces with YaST</title>
                <step>
                   <para>Click <guimenu>Add</guimenu> to create a new network interface.</para>
                </step>
                <step>
-                  <para>In the <guimenu>Hardware Dialog</guimenu>, select <guimenu>Device Type</guimenu>
-                     <guimenu>VLAN</guimenu>.</para>
+                  <para>In the <guimenu>Hardware Dialog</guimenu>, select <guimenu>Device Type</guimenu><guimenu>VLAN</guimenu>.</para>
                </step>
                <step>
                   <para>Change the value of <guimenu>Configuration Name</guimenu> to the ID of your VLAN. Be aware VLAN ID <literal>1</literal> is commonly used for management purposes.</para>
@@ -249,11 +235,9 @@ Connection successfully activated (master waiting for slaves) \
       </sect2>
       <sect2 xml:id="libvirt-networks-virtual">
          <title>Virtual networks</title>
-         <para>
-            <systemitem class="library">libvirt</systemitem>-managed virtual networks are similar to bridged networks, but typically have no Layer 2 connection to the VM Host Server. Connectivity to the VM Host Server's physical network is accomplished with Layer 3 forwarding, which introduces additional packet processing on the VM Host Server as compared to a Layer 2 bridged network. Virtual networks also provide DHCP and DNS services for VM Guests. For more information on <systemitem class="library">libvirt</systemitem> virtual networks, see the <citetitle>Network XML format</citetitle> documentation at <link xlink:href="https://libvirt.org/formatnetwork.html"/>.</para>
+         <para><systemitem class="library">libvirt</systemitem>-managed virtual networks are similar to bridged networks, but typically have no Layer 2 connection to the VM Host Server. Connectivity to the VM Host Server's physical network is accomplished with Layer 3 forwarding, which introduces additional packet processing on the VM Host Server as compared to a Layer 2 bridged network. Virtual networks also provide DHCP and DNS services for VM Guests. For more information on <systemitem class="library">libvirt</systemitem> virtual networks, see the <citetitle>Network XML format</citetitle> documentation at <link xlink:href="https://libvirt.org/formatnetwork.html"/>.</para>
          <para>A standard <systemitem class="library">libvirt</systemitem> installation on <phrase role="productname">SUSE Linux Enterprise Server</phrase> already comes with a predefined virtual network named <literal>default</literal>. It provides DHCP and DNS services for the network, along with connectivity to the VM Host Server's physical network using the network address translation (NAT) forwarding mode. Although it is predefined, the <literal>default</literal> virtual network needs to be explicitly enabled by the administrator. For more information on the forwarding modes supported by <systemitem class="library">libvirt</systemitem>, see the <citetitle>Connectivity</citetitle> section of the <citetitle>Network XML format</citetitle> documentation at <link xlink:href="https://libvirt.org/formatnetwork.html#elementsConnect"/>.</para>
-         <para>
-            <systemitem class="library">libvirt</systemitem>-managed virtual networks can be used to satisfy a wide range of use cases, but are commonly used on VM Host Servers that have a wireless connection or dynamic/sporadic network connectivity, such as laptops. Virtual networks are also useful when the VM Host Server's network has limited IP addresses, allowing forwarding of packets between the virtual network and the VM Host Server's network. However, most server use cases are better suited for the network bridge configuration, where VM Guests are connected to the VM Host Server's LAN.</para>
+         <para><systemitem class="library">libvirt</systemitem>-managed virtual networks can be used to satisfy a wide range of use cases, but are commonly used on VM Host Servers that have a wireless connection or dynamic/sporadic network connectivity, such as laptops. Virtual networks are also useful when the VM Host Server's network has limited IP addresses, allowing forwarding of packets between the virtual network and the VM Host Server's network. However, most server use cases are better suited for the network bridge configuration, where VM Guests are connected to the VM Host Server's LAN.</para>
          <warning>
             <title>Enabling forwarding mode</title>
             <para>Enabling forwarding mode in a <systemitem class="library">libvirt</systemitem> virtual network enables forwarding in the VM Host Server by setting <filename>/proc/sys/net/ipv4/ip_forward</filename> and <filename>/proc/sys/net/ipv6/conf/all/forwarding</filename> to 1, which turns the VM Host Server into a router. Restarting the VM Host Server's network may reset the values and disable forwarding. To avoid this behavior, explicitly enable forwarding in the VM Host Server by editing the <filename>/etc/sysctl.conf</filename> file and adding:</para>
@@ -275,10 +259,10 @@ Connection successfully activated (master waiting for slaves) \
                         <title>Connection details</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/libvirt_vmm_conndetails.png" width="45%"/>
+                              <imagedata fileref="media/libvirt_vmm_conndetails.png" width="41%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/libvirt_vmm_conndetails.png" width="45%"/>
+                              <imagedata fileref="media/libvirt_vmm_conndetails.png" width="41%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -292,10 +276,10 @@ Connection successfully activated (master waiting for slaves) \
                         <title>Create virtual network</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/libvirt_vmm_vnet_ipv4.png" width="45%"/>
+                              <imagedata fileref="media/libvirt_vmm_vnet_ipv4.png" width="41%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/libvirt_vmm_vnet_ipv4.png" width="45%"/>
+                              <imagedata fileref="media/libvirt_vmm_vnet_ipv4.png" width="41%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -313,9 +297,7 @@ Connection successfully activated (master waiting for slaves) \
                      <para>To specify a different domain name than the name of the virtual network, select <guimenu>Custom</guimenu> under <guimenu>DNS domain name</guimenu> and enter it here.</para>
                   </step>
                   <step>
-                     <para>Click <guimenu>Finish</guimenu> to create the new virtual network. On the VM Host Server, a new virtual network bridge <literal>virbr<replaceable>X</replaceable>
-                        </literal> is available, which corresponds to the newly created virtual network. You can check with <command>bridge link</command>. <systemitem class="library">libvirt</systemitem> automatically adds iptables rules to allow traffic to/from guests attached to the new <emphasis>virbr<replaceable>X</replaceable>
-                        </emphasis> device.</para>
+                     <para>Click <guimenu>Finish</guimenu> to create the new virtual network. On the VM Host Server, a new virtual network bridge <literal>virbr<replaceable>X</replaceable></literal> is available, which corresponds to the newly created virtual network. You can check with <command>bridge link</command>. <systemitem class="library">libvirt</systemitem> automatically adds iptables rules to allow traffic to/from guests attached to the new <emphasis>virbr<replaceable>X</replaceable></emphasis> device.</para>
                   </step>
                </procedure>
             </sect4>
@@ -406,8 +388,7 @@ Networking (help keyword 'network'):
         net-undefine                   undefine an inactive network
         net-update                     update parts of an existing network's configuration
  net-uuid                       convert a network name to network UUID</screen>
-            <para>To view brief help information for a specific <command>virsh</command> command, run <command>virsh help <replaceable>VIRSH_COMMAND</replaceable>
-               </command>:</para>
+            <para>To view brief help information for a specific <command>virsh</command> command, run <command>virsh help <replaceable>VIRSH_COMMAND</replaceable></command>:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> virsh help net-create
   NAME
     net-create - create a network from an XML file
@@ -541,8 +522,7 @@ Networking (help keyword 'network'):
 ----------------------------------------------------
  1     nated_sles12sp3                running
  ...</screen>
-               <para>To get a list of interfaces of a running domain, run <option>domifaddr <replaceable>DOMAIN</replaceable>
-                  </option>, or optionally specify the interface to limit the output to this interface. By default, it additionally outputs their IP and MAC addresses:</para>
+               <para>To get a list of interfaces of a running domain, run <option>domifaddr <replaceable>DOMAIN</replaceable></option>, or optionally specify the interface to limit the output to this interface. By default, it additionally outputs their IP and MAC addresses:</para>
                <screen><prompt>&gt;</prompt><command>sudo</command> virsh domifaddr nated_sles12sp3 --interface vnet0 --source lease
  Name       MAC address          Protocol     Address
 -------------------------------------------------------------------------------
@@ -603,8 +583,7 @@ Network vnet_isolated has been undefined</screen>
          <title>CD/DVD ISO images</title>
          <para>To be able to access CD/DVD ISO images on the VM Host Server from remote clients, they also need to be placed in a storage pool.</para>
       </tip>
-      <para>
-         <systemitem class="library">libvirt</systemitem> knows two different types of storage: volumes and pools.</para>
+      <para><systemitem class="library">libvirt</systemitem> knows two different types of storage: volumes and pools.</para>
       <variablelist>
          <varlistentry>
             <term>Storage volume</term>
@@ -696,8 +675,7 @@ Syncing disks.</screen>
                   <varlistentry>
                      <term>SCSI host adapter (<guimenu>scsi</guimenu>)</term>
                      <listitem>
-                        <para>Use an SCSI host adapter in almost the same way as an iSCSI target. We recommend to use a device name from <filename>/dev/disk/by-*</filename> rather than <filename>/dev/sd<replaceable>X</replaceable>
-                           </filename>. The latter can change, for example, when adding or removing hard disks. Volume creation on iSCSI pools is not supported. Instead, each existing LUN (Logical Unit Number) represents a volume.</para>
+                        <para>Use an SCSI host adapter in almost the same way as an iSCSI target. We recommend to use a device name from <filename>/dev/disk/by-*</filename> rather than <filename>/dev/sd<replaceable>X</replaceable></filename>. The latter can change, for example, when adding or removing hard disks. Volume creation on iSCSI pools is not supported. Instead, each existing LUN (Logical Unit Number) represents a volume.</para>
                      </listitem>
                   </varlistentry>
                </variablelist>
@@ -771,8 +749,7 @@ done</screen>
                      <screen><prompt>&gt;</prompt>virsh pool-delete <replaceable>POOL</replaceable></screen>
                      <warning>
                         <title>Deleting storage pools</title>
-                        <para>See <xref linkend="deleting-storage-pools"/>
-                        </para>
+                        <para>See <xref linkend="deleting-storage-pools"/></para>
                      </warning>
                   </listitem>
                </varlistentry>
@@ -799,8 +776,7 @@ done</screen>
          </sect3>
          <sect3 xml:id="sec-libvirt-storage-virsh-add-volumes">
             <title>Adding volumes to a storage pool</title>
-            <para>
-               <command>virsh</command> offers two ways to add volumes to storage pools: either from an XML definition with <literal>vol-create</literal> and <literal>vol-create-from</literal> or via command line arguments with <literal>vol-create-as</literal>. The first two methods are currently not supported by SUSE, therefore this section focuses on the subcommand <literal>vol-create-as</literal>.</para>
+            <para><command>virsh</command> offers two ways to add volumes to storage pools: either from an XML definition with <literal>vol-create</literal> and <literal>vol-create-from</literal> or via command line arguments with <literal>vol-create-as</literal>. The first two methods are currently not supported by SUSE, therefore this section focuses on the subcommand <literal>vol-create-as</literal>.</para>
             <para>To add a volume to an existing pool, enter the following command:</para>
             <screen><prompt>&gt;</prompt>virsh vol-create-as <replaceable>POOL</replaceable><co xml:id="co-vol-create-as-pool"/><replaceable>NAME</replaceable><co xml:id="co-vol-create-as-name"/> 12G --format<co xml:id="co-vol-create-as-capacity"/><replaceable>raw|qcow2</replaceable><co xml:id="co-vol-create-as-format"/> --allocation 4G<co xml:id="co-vol-create-as-alloc"/></screen>
             <calloutlist>
@@ -842,8 +818,7 @@ done</screen>
             <title>Deleting volumes from a storage pool</title>
             <para>To permanently delete a volume from a pool, use the subcommand <literal>vol-delete</literal>:</para>
             <screen><prompt>&gt;</prompt>virsh vol-delete <replaceable>NAME</replaceable> --pool <replaceable>POOL</replaceable></screen>
-            <para>
-               <option>--pool</option> is optional. <systemitem class="library">libvirt</systemitem> tries to locate the volume automatically. If that fails, specify this parameter.</para>
+            <para><option>--pool</option> is optional. <systemitem class="library">libvirt</systemitem> tries to locate the volume automatically. If that fails, specify this parameter.</para>
             <warning>
                <title>No checks upon volume deletion</title>
                <para>A volume is deleted in any case, regardless of whether it is currently used in an active or inactive VM Guest. There is no way to recover a deleted volume.</para>
@@ -902,8 +877,7 @@ done</screen>
                   <title>
                      <command>virsh attach-device</command>
                   </title>
-                  <para>
-                     <command>virsh attach-device</command> is the more generic form of <command>virsh attach-disk</command>. You can use it to attach other types of devices to a domain.</para>
+                  <para><command>virsh attach-device</command> is the more generic form of <command>virsh attach-disk</command>. You can use it to attach other types of devices to a domain.</para>
                </tip>
             </sect4>
          </sect3>
@@ -918,17 +892,14 @@ done</screen>
       </sect2>
       <sect2 xml:id="sec-libvirt-storage-vmm">
          <title>Managing storage with Virtual Machine Manager</title>
-         <para>The Virtual Machine Manager provides a graphical interface—the Storage Manager—to manage storage volumes and pools. To access it, either right-click a connection and choose <guimenu>Details</guimenu>, or highlight a connection and choose <menuchoice>
-               <guimenu>Edit</guimenu>
-               <guimenu>Connection Details</guimenu>
-            </menuchoice>. Select the <guimenu>Storage</guimenu> tab.</para>
+         <para>The Virtual Machine Manager provides a graphical interface—the Storage Manager—to manage storage volumes and pools. To access it, either right-click a connection and choose <guimenu>Details</guimenu>, or highlight a connection and choose <menuchoice><guimenu>Edit</guimenu><guimenu>Connection Details</guimenu></menuchoice>. Select the <guimenu>Storage</guimenu> tab.</para>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt_virt-manager_storage.png" width="60%"/>
+                  <imagedata fileref="media/virt_virt-manager_storage.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt_virt-manager_storage.png" width="60%"/>
+                  <imagedata fileref="media/virt_virt-manager_storage.png" width="55%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -944,10 +915,10 @@ done</screen>
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/virt_virt-manager_storage_add.png" width="60%"/>
+                           <imagedata fileref="media/virt_virt-manager_storage_add.png" width="55%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/virt_virt-manager_storage_add.png" width="60%"/>
+                           <imagedata fileref="media/virt_virt-manager_storage_add.png" width="55%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -966,8 +937,7 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: specify an existing directory.</para>
+                                 <para><guimenu>Target Path</guimenu>: specify an existing directory.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -980,14 +950,10 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Format</guimenu>: format of the device's partition table. Using <guimenu>auto</guimenu> should normally work. If not, get the required format by running the command <command>parted</command>
-                                    <option>-l</option> on the VM Host Server.</para>
+                                 <para><guimenu>Format</guimenu>: format of the device's partition table. Using <guimenu>auto</guimenu> should normally work. If not, get the required format by running the command <command>parted</command><option>-l</option> on the VM Host Server.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source Path</guimenu>: path to the device. It is recommended to use a device name from <filename>/dev/disk/by-*</filename> rather than the simple <filename>/dev/sd<replaceable>X</replaceable>
-                                    </filename>, since the latter can change, for example, when adding or removing hard disks. You need to specify the path that resembles the whole disk, not a partition on the disk (if existing).</para>
+                                 <para><guimenu>Source Path</guimenu>: path to the device. It is recommended to use a device name from <filename>/dev/disk/by-*</filename> rather than the simple <filename>/dev/sd<replaceable>X</replaceable></filename>, since the latter can change, for example, when adding or removing hard disks. You need to specify the path that resembles the whole disk, not a partition on the disk (if existing).</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1000,17 +966,13 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: mount point on the VM Host Server file system.</para>
+                                 <para><guimenu>Target Path</guimenu>: mount point on the VM Host Server file system.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Format:</guimenu> file system format of the device. The default value <literal>auto</literal> should work.</para>
+                                 <para><guimenu>Format:</guimenu> file system format of the device. The default value <literal>auto</literal> should work.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source Path</guimenu>: path to the device file. It is recommended to use a device name from <filename>/dev/disk/by-*</filename> rather than <filename>/dev/sd<replaceable>X</replaceable>
-                                    </filename>, because the latter can change, for example, when adding or removing hard disks.</para>
+                                 <para><guimenu>Source Path</guimenu>: path to the device file. It is recommended to use a device name from <filename>/dev/disk/by-*</filename> rather than <filename>/dev/sd<replaceable>X</replaceable></filename>, because the latter can change, for example, when adding or removing hard disks.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1027,20 +989,16 @@ done</screen>
                            <screen><emphasis role="bold">IP_ADDRESS</emphasis>:PORT,TPGT <emphasis role="bold">TARGET_NAME_(IQN)</emphasis></screen>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: the directory containing the device file. Use <literal>/dev/disk/by-path</literal> (default) or <literal>/dev/disk/by-id</literal>.</para>
+                                 <para><guimenu>Target Path</guimenu>: the directory containing the device file. Use <literal>/dev/disk/by-path</literal> (default) or <literal>/dev/disk/by-id</literal>.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Host Name</guimenu>: host name or IP address of the iSCSI server.</para>
+                                 <para><guimenu>Host Name</guimenu>: host name or IP address of the iSCSI server.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source IQN</guimenu>: the iSCSI target name (iSCSI Qualified Name).</para>
+                                 <para><guimenu>Source IQN</guimenu>: the iSCSI target name (iSCSI Qualified Name).</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Initiator IQN</guimenu>: the iSCSI initiator name.</para>
+                                 <para><guimenu>Initiator IQN</guimenu>: the iSCSI initiator name.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1053,8 +1011,7 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Volgroup Name</guimenu>: specify the device path of an existing volume group.</para>
+                                 <para><guimenu>Volgroup Name</guimenu>: specify the device path of an existing volume group.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1067,8 +1024,7 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: support for multipathing is currently limited to making all multipath devices available. Therefore, specify an arbitrary string here. The path is required, otherwise the XML parser fails.</para>
+                                 <para><guimenu>Target Path</guimenu>: support for multipathing is currently limited to making all multipath devices available. Therefore, specify an arbitrary string here. The path is required, otherwise the XML parser fails.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1081,16 +1037,13 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: mount point on the VM Host Server file system.</para>
+                                 <para><guimenu>Target Path</guimenu>: mount point on the VM Host Server file system.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Host Name</guimenu>: IP address or host name of the server exporting the network file system.</para>
+                                 <para><guimenu>Host Name</guimenu>: IP address or host name of the server exporting the network file system.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source Path</guimenu>: directory on the server that is being exported.</para>
+                                 <para><guimenu>Source Path</guimenu>: directory on the server that is being exported.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1103,12 +1056,10 @@ done</screen>
                         <listitem>
                            <itemizedlist>
                               <listitem>
-                                 <para>
-                                    <guimenu>Host Name</guimenu>: host name of the server with an exported RADOS block device.</para>
+                                 <para><guimenu>Host Name</guimenu>: host name of the server with an exported RADOS block device.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source Name</guimenu>: name of the RADOS block device on the server.</para>
+                                 <para><guimenu>Source Name</guimenu>: name of the RADOS block device on the server.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>
@@ -1121,12 +1072,10 @@ done</screen>
                         <listitem>
                            <itemizedlist mark="bullet" spacing="normal">
                               <listitem>
-                                 <para>
-                                    <guimenu>Target Path</guimenu>: directory containing the device file. Use <literal>/dev/disk/by-path</literal> (default) or <literal>/dev/disk/by-id</literal>.</para>
+                                 <para><guimenu>Target Path</guimenu>: directory containing the device file. Use <literal>/dev/disk/by-path</literal> (default) or <literal>/dev/disk/by-id</literal>.</para>
                               </listitem>
                               <listitem>
-                                 <para>
-                                    <guimenu>Source Path</guimenu>: name of the SCSI adapter.</para>
+                                 <para><guimenu>Source Path</guimenu>: name of the SCSI adapter.</para>
                               </listitem>
                            </itemizedlist>
                         </listitem>

@@ -53,8 +53,7 @@
             <para>This is also true for CD-ROM or floppy images that are connected during the move. However, you can disconnect them before the move as described in <xref linkend="sec-libvirt-config-cdrom-media-change"/>.</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="daemon">libvirtd</systemitem> needs to run on both VM Host Servers and you must be able to open a remote <systemitem class="library">libvirt</systemitem> connection between the target and the source host (or vice versa). Refer to <xref linkend="sec-libvirt-connect-remote"/> for details.</para>
+            <para><systemitem class="daemon">libvirtd</systemitem> needs to run on both VM Host Servers and you must be able to open a remote <systemitem class="library">libvirt</systemitem> connection between the target and the source host (or vice versa). Refer to <xref linkend="sec-libvirt-connect-remote"/> for details.</para>
          </listitem>
          <listitem>
             <para>If a firewall is running on the target host, ports need to be opened to allow the migration. If you do not specify a port during the migration process, <systemitem class="library">libvirt</systemitem> chooses one from the range 49152:49215. Make sure that either this range (recommended) or a dedicated port of your choice is opened in the firewall on the <emphasis>target host</emphasis>.</para>
@@ -133,8 +132,7 @@
    <sect1 xml:id="sec-libvirt-admin-migrate-virsh">
       <title>Migrating with <command>virsh</command>
       </title>
-      <para>To migrate a VM Guest with <command>virsh</command>
-         <option>migrate</option>, you need to have direct or remote shell access to the VM Host Server, because the command needs to be run on the host. The migration command looks like this:</para>
+      <para>To migrate a VM Guest with <command>virsh</command><option>migrate</option>, you need to have direct or remote shell access to the VM Host Server, because the command needs to be run on the host. The migration command looks like this:</para>
       <screen><prompt>&gt;</prompt>virsh migrate [OPTIONS] <replaceable>VM_ID_or_NAME</replaceable><replaceable>CONNECTION_URI</replaceable> [--migrateuri tcp://<replaceable>REMOTE_HOST:PORT</replaceable>]</screen>
       <para>The most important options are listed below. See <command>virsh help migrate</command> for a full list.</para>
       <variablelist>

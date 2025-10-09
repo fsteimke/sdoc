@@ -9,8 +9,7 @@
    <info>
       <abstract>
          <para>To get technical support and product updates, you need to register and activate <phrase role="productname">SUSE Linux Enterprise Server</phrase> with the SUSE Customer Center. It is recommended to register during the installation, since this will enable you to install the system with the latest updates and patches available. However, if you are offline or want to skip the registration step, you can register at any time later from the installed system.</para>
-         <para>Modules and extensions add features to your system and allow you to customize the system according to your needs. These components also need to be registered and can be managed with YaST or command line tools. For more details also refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase>
-            <xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Modules and extensions add features to your system and allow you to customize the system according to your needs. These components also need to be registered and can be managed with YaST or command line tools. For more details also refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </abstract>
    </info>
    <note>
@@ -29,19 +28,14 @@
    </sect1>
    <sect1 xml:id="sec-register-sle-ay">
       <title>Registering during automated deployment</title>
-      <para>If you deploy your instances automatically using AutoYaST, you can register the system during the installation by providing the respective information in the AutoYaST control file. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
-         <xref linkend="CreateProfile-Register" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>If you deploy your instances automatically using AutoYaST, you can register the system during the installation by providing the respective information in the AutoYaST control file. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="CreateProfile-Register" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
    </sect1>
    <sect1 xml:id="sec-register-sle-system">
       <title>Registering from the installed system</title>
       <para>If you skipped the registration during the installation or want to re-register your system, you can do it at any time using the YaST module <guimenu>Product Registration</guimenu> or the command-line tool <command>SUSEConnect</command>.</para>
       <sect2 xml:id="sec-register-sle-system-yast">
          <title>Registering with YaST</title>
-         <para>To register the system start <menuchoice>
-               <guimenu>YaST</guimenu>
-               <guimenu>Software</guimenu>
-               <guimenu>Product Registration</guimenu>
-            </menuchoice>. First register <phrase role="productname">SUSE Linux Enterprise Server</phrase>, then choose the modules and extensions you want to make available.</para>
+         <para>To register the system start <menuchoice><guimenu>YaST</guimenu><guimenu>Software</guimenu><guimenu>Product Registration</guimenu></menuchoice>. First register <phrase role="productname">SUSE Linux Enterprise Server</phrase>, then choose the modules and extensions you want to make available.</para>
          <important>
             <title>Modules and extensions</title>
             <para>If you installed the system from the SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso media and skipped the registration, make sure to register all the modules and extensions you have chosen during the installation. You will only receive security updates and patches for modules and extensions that have been registered.</para>
@@ -49,18 +43,14 @@
          <procedure>
             <title>Product registration with YaST</title>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Product Registration</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Software</guimenu><guimenu>Product Registration</guimenu></menuchoice>.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_register_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_register_sles.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_register_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_register_sles.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -77,10 +67,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -96,10 +86,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_install_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_extension_install_sles.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_install_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_extension_install_sles.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -109,8 +99,7 @@
       </sect2>
       <sect2 xml:id="sec-register-sle-system-suseconnect">
          <title>Registering with SUSEConnect</title>
-         <para>Registering the system, along with modules and extensions, can be done from the command line using <command>SUSEConnect</command>. For information on that topic, refer to the inline documentation with <command>man 8 SUSEConnect</command>
-         </para>
+         <para>Registering the system, along with modules and extensions, can be done from the command line using <command>SUSEConnect</command>. For information on that topic, refer to the inline documentation with <command>man 8 SUSEConnect</command></para>
          <procedure>
             <title>Product registration with SUSEConnect</title>
             <step>
@@ -122,8 +111,7 @@
                <para>This process will register the <guimenu>Basesystem Module</guimenu> and <guimenu>Server Applications Module</guimenu> and add the associated repositories to your system.</para>
             </step>
             <step>
-               <para>
-                  <phrase role="productname">SUSE Linux Enterprise Server</phrase> including the two default repositories is now registered. In case you want to register additional modules or extensions, proceed as outlined in <xref linkend="sec-register-sle-add-modules"/>.</para>
+               <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> including the two default repositories is now registered. In case you want to register additional modules or extensions, proceed as outlined in <xref linkend="sec-register-sle-add-modules"/>.</para>
             </step>
          </procedure>
          <tip>
@@ -139,24 +127,19 @@
    <sect1 xml:id="sec-register-sle-add-modules">
       <title>Managing modules and extensions in a running system</title>
       <remark>No YaST and just one module for SLE Micro (Live patching).</remark>
-      <para>You can add and remove modules and extensions even after a system is installed and registered. You can use either YaST or <command>SUSEConnect</command> to do that. For additional information, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase>
-         <xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>You can add and remove modules and extensions even after a system is installed and registered. You can use either YaST or <command>SUSEConnect</command> to do that. For additional information, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <sect2 xml:id="sec-register-sle-add-modules-yast">
          <title>Adding modules and extensions with YaST</title>
          <procedure>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Software</guimenu>
-                     <guimenu>System Extensions</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Software</guimenu><guimenu>System Extensions</guimenu></menuchoice>.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -181,18 +164,14 @@
          <title>Deleting modules and extensions with YaST</title>
          <procedure>
             <step>
-               <para>Start <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>Software</guimenu>
-                     <guimenu>Add-On Products</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Software</guimenu><guimenu>Add-On Products</guimenu></menuchoice>.</para>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="92%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -280,20 +259,9 @@ https://www.suse.com/products/server/features/modules.html</screen>
          </warning>
          <important>
             <title>No automatic installation or removal of packages</title>
-            <para>
-               <command>SUSEConnect</command> only adds or removes modules and extensions. It registers or derigisters the components and enables or disables their repositories, but it does not install or remove any packages. If you want this to be done automatically, use YaST to manage modules and extensions.</para>
-            <para>When adding a module or extension, <command>SUSEConnect</command> does not install default packages or patterns. To do this manually, use Zypper or <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice>.</para>
-            <para>When deleting a module or extension, <command>SUSEConnect</command> does not perform a cleanup. Packages from the module or extension remain installed on the system, but are longer updated from a repository. To list these <quote>orphaned</quote> packages, run <command>zypper packages --orphaned</command>. To remove one or more packages, run <command>zypper remove PACKAGE [ANOTHER_PACKAGE]</command>. Alternatively use <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Software Management</guimenu>
-               </menuchoice> and then <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Package Classification</guimenu>
-                  <guimenu>Orphaned Packages</guimenu>
-               </menuchoice> to list and delete orphaned packages.</para>
+            <para><command>SUSEConnect</command> only adds or removes modules and extensions. It registers or derigisters the components and enables or disables their repositories, but it does not install or remove any packages. If you want this to be done automatically, use YaST to manage modules and extensions.</para>
+            <para>When adding a module or extension, <command>SUSEConnect</command> does not install default packages or patterns. To do this manually, use Zypper or <menuchoice><guimenu>YaST</guimenu><guimenu>Software Management</guimenu></menuchoice>.</para>
+            <para>When deleting a module or extension, <command>SUSEConnect</command> does not perform a cleanup. Packages from the module or extension remain installed on the system, but are longer updated from a repository. To list these <quote>orphaned</quote> packages, run <command>zypper packages --orphaned</command>. To remove one or more packages, run <command>zypper remove PACKAGE [ANOTHER_PACKAGE]</command>. Alternatively use <menuchoice><guimenu>YaST</guimenu><guimenu>Software Management</guimenu></menuchoice> and then <menuchoice><guimenu>View</guimenu><guimenu>Package Classification</guimenu><guimenu>Orphaned Packages</guimenu></menuchoice> to list and delete orphaned packages.</para>
          </important>
          <warning>
             <title>No updates for packages from deleted modules and extensions</title>
@@ -306,12 +274,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
       <para>From version 0.3.33, the SUSEConnect package ships with two <systemitem class="daemon">systemd</systemitem> units:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <filename>suseconnect-keepalive.service</filename>: a service which runs the command <command>SUSEConnect --keep-alive</command> on demand.</para>
+            <para><filename>suseconnect-keepalive.service</filename>: a service which runs the command <command>SUSEConnect --keep-alive</command> on demand.</para>
          </listitem>
          <listitem>
-            <para>
-               <filename>suseconnect-keepalive.timer</filename>: a timer which runs the service <filename>suseconnect-keepalive.service</filename> once a day.</para>
+            <para><filename>suseconnect-keepalive.timer</filename>: a timer which runs the service <filename>suseconnect-keepalive.service</filename> once a day.</para>
          </listitem>
       </itemizedlist>
       <para>These units are responsible for keeping the system information up-to-date with the SUSE Customer Center or registration server, and to provide accurate data about subscription usage.</para>

@@ -110,19 +110,13 @@ options loop max_loop=x
       <para>There are scripts that can help with managing advanced storage scenarios such as disk environments provided by <command>dmmd</command> (<quote>device mapper—multi disk</quote>) including LVM environments built upon a software RAID set, or a software RAID set built upon an LVM environment. These scripts are part of the <package>xen-tools</package> package. After installation, they can be found in <filename>/etc/xen/scripts</filename>:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <command>block-dmmd</command>
-            </para>
+            <para><command>block-dmmd</command></para>
          </listitem>
          <listitem>
-            <para>
-               <command>block-drbd-probe</command>
-            </para>
+            <para><command>block-drbd-probe</command></para>
          </listitem>
          <listitem>
-            <para>
-               <command>block-npiv</command>
-            </para>
+            <para><command>block-npiv</command></para>
          </listitem>
       </itemizedlist>
       <para>The scripts allow for external commands to perform specific action, or series of actions of the block devices before serving them up to a guest.</para>

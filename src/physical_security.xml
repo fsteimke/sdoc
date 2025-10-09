@@ -31,8 +31,7 @@
       <title>Locking down the BIOS</title>
       <tip>
          <title>Secure boot</title>
-         <para>This section describes basic methods to secure the boot process. To find out about more advanced boot protection using UEFI and the secure boot feature, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="sec-uefi-secboot" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>This section describes basic methods to secure the boot process. To find out about more advanced boot protection using UEFI and the secure boot feature, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-uefi-secboot" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </tip>
       <para>The BIOS (Basic Input/Output System) or its successor UEFI (Unified Extensible Firmware Interface) is the lowest level of software/firmware on PC class systems. Other hardware types (POWER, IBM Z) that run Linux have low-level firmware that performs similar functions as the PC BIOS. When this document references the BIOS, it means BIOS and/or UEFI. The BIOS dictates system configuration, puts the system into a well defined state and provides routines for accessing low-level hardware. The BIOS executes the configured Linux boot loader (like GRUB 2) to boot the host.</para>
       <para>Most BIOS implementations can be configured to prevent unauthorized users from manipulating system and boot settings. This is typically done by setting a BIOS administrator or boot password. The administrator password needs to be entered for changing the system configuration but the boot password is required during every normal boot. For most use cases, it is enough to set an administrator password and restrict booting to the built-in hard disk. This way an attacker is not able to simply boot a Linux live CD or flash drive, for example. Although this does not provide a high level of security (a BIOS can be reset, removed or modified—assuming case access), it can be another deterrent.</para>
@@ -62,8 +61,7 @@
       </important>
       <sect2 xml:id="sec-sec-prot-general-retiring-scrub">
          <title>scrub: disk overwrite utility</title>
-         <para>
-            <command>scrub</command> overwrites hard disks, files and other devices with repeating patterns intended to make recovering data from these devices more difficult. It operates in three basic modes: on a character or block device, on a file, or on a specified directory. For more information, see the manual page <command>man 1 scrub</command>.</para>
+         <para><command>scrub</command> overwrites hard disks, files and other devices with repeating patterns intended to make recovering data from these devices more difficult. It operates in three basic modes: on a character or block device, on a file, or on a specified directory. For more information, see the manual page <command>man 1 scrub</command>.</para>
          <variablelist>
             <title>Supported scrub methods</title>
             <varlistentry>
@@ -199,8 +197,7 @@ polkit.addRule(function(action, subject) {
             <screen><prompt role="root">#</prompt>systemctl restart udisks2</screen>
          </step>
          <step>
-            <para>Restart <systemitem>polkit</systemitem>
-            </para>
+            <para>Restart <systemitem>polkit</systemitem></para>
             <screen><prompt role="root">#</prompt>systemctl restart polkit</screen>
          </step>
       </procedure>
@@ -359,24 +356,19 @@ IPCAllowedGroups=wheel</screen>
          <para>To know more about USBGuard, see:</para>
          <itemizedlist>
             <listitem>
-               <para>The upstream documentation at <link xlink:href="https://usbguard.github.io/"/>
-               </para>
+               <para>The upstream documentation at <link xlink:href="https://usbguard.github.io/"/></para>
             </listitem>
             <listitem>
-               <para>man <emphasis>usbguard</emphasis>
-               </para>
+               <para>man <emphasis>usbguard</emphasis></para>
             </listitem>
             <listitem>
-               <para>man <emphasis>usbguard-rules.conf</emphasis>
-               </para>
+               <para>man <emphasis>usbguard-rules.conf</emphasis></para>
             </listitem>
             <listitem>
-               <para>man <emphasis>usbguard-daemon</emphasis>
-               </para>
+               <para>man <emphasis>usbguard-daemon</emphasis></para>
             </listitem>
             <listitem>
-               <para>man <emphasis>usbguard-daemon.conf</emphasis>
-               </para>
+               <para>man <emphasis>usbguard-daemon.conf</emphasis></para>
             </listitem>
          </itemizedlist>
       </sect2>

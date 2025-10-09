@@ -31,8 +31,7 @@
       <varlistentry>
          <term>initiatorname</term>
          <listitem>
-            <para>
-               <literal>InitiatorName</literal> is a value from <filename>/etc/iscsi/initiatorname.iscsi</filename>. In case you have iBFT, this value will be added from there and you are only able to change it in the BIOS setup.</para>
+            <para><literal>InitiatorName</literal> is a value from <filename>/etc/iscsi/initiatorname.iscsi</filename>. In case you have iBFT, this value will be added from there and you are only able to change it in the BIOS setup.</para>
          </listitem>
       </varlistentry>
       <varlistentry>

@@ -47,100 +47,42 @@
                <colspec colnum="4" colname="4" colwidth="2500*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>File System</para>
-                     </entry>
-                     <entry>
-                        <para>Utility</para>
-                     </entry>
-                     <entry>
-                        <para>Increase Size (Grow)</para>
-                     </entry>
-                     <entry>
-                        <para>Decrease Size (Shrink)</para>
-                     </entry>
+                     <entry><para>File System</para></entry>
+                     <entry><para>Utility</para></entry>
+                     <entry><para>Increase Size (Grow)</para></entry>
+                     <entry><para>Decrease Size (Shrink)</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Btrfs</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <command>btrfs filesystem resize</command>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Online</para>
-                     </entry>
-                     <entry>
-                        <para>Online</para>
-                     </entry>
+                     <entry><para>Btrfs</para></entry>
+                     <entry><para><command>btrfs filesystem resize</command></para></entry>
+                     <entry><para>Online</para></entry>
+                     <entry><para>Online</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>XFS</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <command>xfs_growfs</command>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Online</para>
-                     </entry>
-                     <entry>
-                        <para>Not supported</para>
-                     </entry>
+                     <entry><para>XFS</para></entry>
+                     <entry><para><command>xfs_growfs</command></para></entry>
+                     <entry><para>Online</para></entry>
+                     <entry><para>Not supported</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Ext2</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <command>resize2fs</command>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Online or offline</para>
-                     </entry>
-                     <entry>
-                        <para>Offline only</para>
-                     </entry>
+                     <entry><para>Ext2</para></entry>
+                     <entry><para><command>resize2fs</command></para></entry>
+                     <entry><para>Online or offline</para></entry>
+                     <entry><para>Offline only</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Ext3</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <command>resize2fs</command>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Online or offline</para>
-                     </entry>
-                     <entry>
-                        <para>Offline only</para>
-                     </entry>
+                     <entry><para>Ext3</para></entry>
+                     <entry><para><command>resize2fs</command></para></entry>
+                     <entry><para>Online or offline</para></entry>
+                     <entry><para>Offline only</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Ext4</para>
-                     </entry>
-                     <entry>
-                        <para>
-                           <command>resize2fs</command>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Online or offline</para>
-                     </entry>
-                     <entry>
-                        <para>Offline only</para>
-                     </entry>
+                     <entry><para>Ext4</para></entry>
+                     <entry><para><command>resize2fs</command></para></entry>
+                     <entry><para>Online or offline</para></entry>
+                     <entry><para>Offline only</para></entry>
                   </row>
                </tbody>
             </tgroup>

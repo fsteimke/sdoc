@@ -28,8 +28,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
@@ -58,8 +57,7 @@
    </sect1>
    <sect1 xml:id="sec-amd-sev-vmreqs">
       <title>VM requirements</title>
-      <para>The VM must be the modern <literal>Q35</literal> machine type and must use UEFI firmware. <systemitem class="library">libvirt</systemitem> can automatically select an appropriate SEV or SEV-ES enabled UEFI firmware, or one can be specified manually. Currently, the only firmware supported are <filename>/usr/share/qemu/ovmf-x86_64-sev.bin</filename> and <filename>/usr/share/qemu/ovmf-x86_64-sev-code.bin</filename>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-         <xref linkend="cha-kvm-inst-virtman-advanced-uefi" xrefstyle="%label &#34;%c&#34;"/> for more details on using UEFI firmware and the auto-selection feature.</para>
+      <para>The VM must be the modern <literal>Q35</literal> machine type and must use UEFI firmware. <systemitem class="library">libvirt</systemitem> can automatically select an appropriate SEV or SEV-ES enabled UEFI firmware, or one can be specified manually. Currently, the only firmware supported are <filename>/usr/share/qemu/ovmf-x86_64-sev.bin</filename> and <filename>/usr/share/qemu/ovmf-x86_64-sev-code.bin</filename>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-kvm-inst-virtman-advanced-uefi" xrefstyle="%label &#34;%c&#34;"/> for more details on using UEFI firmware and the auto-selection feature.</para>
       <note>
          <title>No IDE support in Q35</title>
          <para>The Q35 machine type does not have an IDE controller and does not support IDE disks.</para>
@@ -134,78 +132,42 @@
             <colspec colnum="2" colname="2" colwidth="80*"/>
             <thead>
                <row>
-                  <entry>
-                     <para>Bits</para>
-                  </entry>
-                  <entry>
-                     <para>Definition</para>
-                  </entry>
+                  <entry><para>Bits</para></entry>
+                  <entry><para>Definition</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>0</para>
-                  </entry>
-                  <entry>
-                     <para>If set, debugging of the guest is disallowed</para>
-                  </entry>
+                  <entry><para>0</para></entry>
+                  <entry><para>If set, debugging of the guest is disallowed</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>1</para>
-                  </entry>
-                  <entry>
-                     <para>If set, sharing keys with other guests is disallowed</para>
-                  </entry>
+                  <entry><para>1</para></entry>
+                  <entry><para>If set, sharing keys with other guests is disallowed</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>2</para>
-                  </entry>
-                  <entry>
-                     <para>If set, SEV-ES is required</para>
-                  </entry>
+                  <entry><para>2</para></entry>
+                  <entry><para>If set, SEV-ES is required</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>3</para>
-                  </entry>
-                  <entry>
-                     <para>If set, sending the guest to another platform is disallowed</para>
-                  </entry>
+                  <entry><para>3</para></entry>
+                  <entry><para>If set, sending the guest to another platform is disallowed</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>4</para>
-                  </entry>
-                  <entry>
-                     <para>If set, the guest must not be transmitted to another platform that is not in the domain</para>
-                  </entry>
+                  <entry><para>4</para></entry>
+                  <entry><para>If set, the guest must not be transmitted to another platform that is not in the domain</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>5</para>
-                  </entry>
-                  <entry>
-                     <para>If set, the guest must not be transmitted to another platform that is not SEV-capable</para>
-                  </entry>
+                  <entry><para>5</para></entry>
+                  <entry><para>If set, the guest must not be transmitted to another platform that is not SEV-capable</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>6-15</para>
-                  </entry>
-                  <entry>
-                     <para>Reserved</para>
-                  </entry>
+                  <entry><para>6-15</para></entry>
+                  <entry><para>Reserved</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>16-32</para>
-                  </entry>
-                  <entry>
-                     <para>The guest must not be transmitted to another platform with a lower firmware version</para>
-                  </entry>
+                  <entry><para>16-32</para></entry>
+                  <entry><para>The guest must not be transmitted to another platform with a lower firmware version</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -213,8 +175,7 @@
    </sect1>
    <sect1 xml:id="sec-amd-sev-vminst">
       <title>VM installation</title>
-      <para>
-         <command>virt-install</command> supports the installation of SEV and SEV-ES virtual machines. In addition to your standard installation parameters, provide <command>virt-install</command> with options to satisfy the VM requirements and the <literal>--launchSecurity</literal> option.</para>
+      <para><command>virt-install</command> supports the installation of SEV and SEV-ES virtual machines. In addition to your standard installation parameters, provide <command>virt-install</command> with options to satisfy the VM requirements and the <literal>--launchSecurity</literal> option.</para>
       <para>The following example starts a network installation of a SLES 15 SP4 virtual machine protected with SEV-ES.</para>
       <screen>
    virt-install --name sles15sp4-sev-es --location http://192.168.0.1/install/sles15sp4/x86_64 --disk size=20 --network=bridge=br0,model=virtio,rom.bar=off <co xml:id="sec-amd-sev-ex-rombar"/> --vcpus 4 --memory 4096 --noautoconsole --events on_reboot=destroy --machine q35 --memtune hard_limit=4563402 --launchSecurity sev,policy=0x07 <co xml:id="sec-amd-sev-ex-launchsec"/> --boot firmware=efi <co xml:id="sec-amd-sev-ex-fw"/> --vnc --serial pty
@@ -236,8 +197,7 @@
       <para>VM attestation is the process of verifying that trusted software components are correctly instantiated on a trusted compute platform. The process typically involves starting a VM in a paused state, retrieving a launch measurement of the instantiated software components, verifying the measurement, then providing a disk password or other key to unlock the VM and resume the paused boot process. The launch measurement includes cryptographic artifacts provided by the VM owner, with the cryptographic root of trust being the AMD SEV platform. The VM owner can be confident their software components have not been compromised and are running on a trusted platform once the launch measurement has been verified.</para>
       <para>The overall attestation process is moderately complex with plenty of opportunity for error. Care must be taken to ensure the process itself is secure. For example, a secure attestation process cannot be executed directly on the hypervisor running the VM, since the goal is to demonstrate the hypervisor has not acted maliciously and contaminated the VM.</para>
       <para>Although all the information and APIs required for attestation exist in SLES 15 SP4, SLES 15 SP5 introduces a simple utility called <command>virt-qemu-sev-validate</command> that can be used to satisfy several attestation use cases. For example, automated tests in quality assurance and small <systemitem class="library">libvirt</systemitem>+KVM deployments that are not managed by large, commercial management stacks.</para>
-      <para>
-         <command>virt-qemu-sev-vailidate</command> is included in the <literal>libvirt-client-qemu</literal> package and supports both offline and online attestation modes. <command>virt-qemu-sev-validate</command> requires all input for attestation as command-line parameters. Assuming it is invoked on a trusted machine, the results of <command>virt-qemu-sev-validate</command> can be trusted since no information is retrieved from untrusted sources. Online mode is less secure, particularly when executed directly on the hypervisor running the VM.</para>
+      <para><command>virt-qemu-sev-vailidate</command> is included in the <literal>libvirt-client-qemu</literal> package and supports both offline and online attestation modes. <command>virt-qemu-sev-validate</command> requires all input for attestation as command-line parameters. Assuming it is invoked on a trusted machine, the results of <command>virt-qemu-sev-validate</command> can be trusted since no information is retrieved from untrusted sources. Online mode is less secure, particularly when executed directly on the hypervisor running the VM.</para>
       <para>Regardless of mode, the attestation process of a <systemitem class="library">libvirt</systemitem>+KVM VM starts with creating a VM or Guest Owner (GO) certificate and session blob that is unique for each start of the VM. The certificate and blob can be created with the <command>sevctl</command> utility, available in the <literal>sevctl</literal> package. The following example illustrates the use of the <command>sevctl session</command> command to create all the prelaunch SEV-related artifacts. The <replaceable>NAME</replaceable> parameter is optional and allows a prefix to be specified for the artifact file names. Using the VM name as a prefix is convenient for matching artifacts with VMs later. The path to the platform Diffie-Hellman (DH) certificate and the desired SEV policy are required parameters.</para>
       <screen><prompt role="root">#</prompt>sevctl session --name test-sev /data/sev/pdh.cert 7</screen>
       <para>The <command>sevctl session</command> command produces four files: tik.bin, tek.bin, godh.b64 and session.b64. If the optional <replaceable>NAME</replaceable> parameter was used, the files are prefixed with the specified value. The transport integrity key (tik.bin) and transport encryption key (tek.bin) are used in the verification stage of the attestation process. The guest owner Diffie-Hellman key (godh.b64) and session blob (session.b64) are copied to the VM XML configuration before starting the VM. See the <tag class="element">dhCert</tag> and <tag class="element">session</tag> subelements of the <tag class="element">launchSecurity</tag> element in the VM configuration section for more details.</para>
@@ -315,29 +275,19 @@ spec:
       <title>More information</title>
       <itemizedlist>
          <listitem>
-            <para>
-               <link xlink:href="https://developer.amd.com/sev"/> — AMD-SEV landing page</para>
+            <para><link xlink:href="https://developer.amd.com/sev"/> — AMD-SEV landing page</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.amd.com/system/files/TechDocs/55766_SEV-KM_API_Specification.pdf">AMD SEV-KM API Specification (PDF)</link>
-            </para>
+            <para><link xlink:href="https://www.amd.com/system/files/TechDocs/55766_SEV-KM_API_Specification.pdf">AMD SEV-KM API Specification (PDF)</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://github.com/AMDESE/AMDSEV/">AMD SEV GitHub repository containing examples and tools</link>
-            </para>
+            <para><link xlink:href="https://github.com/AMDESE/AMDSEV/">AMD SEV GitHub repository containing examples and tools</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://libvirt.org/formatdomain.html#sev">libvirt SEV configuration settings</link>
-            </para>
+            <para><link xlink:href="https://libvirt.org/formatdomain.html#sev">libvirt SEV configuration settings</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://libvirt.org/kbase/launch_security_sev.html">
-                  <systemitem class="library">libvirt</systemitem> knowledge base article on AMD SEV</link>
-            </para>
+            <para><link xlink:href="https://libvirt.org/kbase/launch_security_sev.html"><systemitem class="library">libvirt</systemitem> knowledge base article on AMD SEV</link></para>
          </listitem>
       </itemizedlist>
    </sect1>

@@ -58,10 +58,10 @@
                <title>On-screen keyboard</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/gnome_onscreen_kbd.png" width="100%"/>
+                     <imagedata fileref="media/gnome_onscreen_kbd.png" width="92%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/gnome_onscreen_kbd.png" width="80%"/>
+                     <imagedata fileref="media/gnome_onscreen_kbd.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -69,30 +69,22 @@
             <para>To temporarily hide the keyboard, press the button with the arrow down icon. The keyboard is shown again automatically in the next situation where you can use it. To change your keyboard layout or change <guimenu>Region &amp; Language</guimenu> settings, press the button with the flag icon.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Enable by Keyboard</guimenu> allows you to turn accessibility features on or off using keyboard shortcuts.</para>
+            <para><guimenu>Enable by Keyboard</guimenu> allows you to turn accessibility features on or off using keyboard shortcuts.</para>
          </listitem>
          <listitem>
             <para>Under <guimenu>Cursor Blinking</guimenu>, you can configure if and at which speed the cursor blinks in text boxes (for example, in a terminal).</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Blink Speed</guimenu> is an adjustable slider to set how quickly the cursor blinks, ranging from Slow to Fast.</para>
+            <para><guimenu>Blink Speed</guimenu> is an adjustable slider to set how quickly the cursor blinks, ranging from Slow to Fast.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Test Entry</guimenu> is a field where you can test cursor behavior.</para>
+            <para><guimenu>Test Entry</guimenu> is a field where you can test cursor behavior.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Repeat Keys</guimenu> lets you configure if and when a key is repeated when it is pressed for a longer time. You can either turn this feature <guimenu>Off</guimenu> or configure a <guimenu>Delay</guimenu> and the <guimenu>Speed</guimenu> by which keys are repeated.</para>
+            <para><guimenu>Repeat Keys</guimenu> lets you configure if and when a key is repeated when it is pressed for a longer time. You can either turn this feature <guimenu>Off</guimenu> or configure a <guimenu>Delay</guimenu> and the <guimenu>Speed</guimenu> by which keys are repeated.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Sticky Keys</guimenu> allows you to type key combinations one key at a time rather than having to hold down all keys at once. For example, the <keycombo>
-                  <keycap function="alt"/>
-                  <keycap function="tab"/>
-               </keycombo> shortcut switches between windows.</para>
+            <para><guimenu>Sticky Keys</guimenu> allows you to type key combinations one key at a time rather than having to hold down all keys at once. For example, the <keycombo><keycap function="alt"/><keycap function="tab"/></keycombo> shortcut switches between windows.</para>
             <para>With sticky keys turned off, you need to hold down both keys at the same time. With sticky keys turned on, press <keycap function="alt"/> and then <keycap function="tab"/> to do the same.</para>
          </listitem>
          <listitem>
@@ -105,16 +97,13 @@
             <para>The <guimenu>Pointing &amp; Clicking</guimenu> section includes:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <guimenu>Mouse Keys</guimenu>: When enabled, it allows users to control the mouse pointer using the numeric keypad on the keyboard.</para>
+                  <para><guimenu>Mouse Keys</guimenu>: When enabled, it allows users to control the mouse pointer using the numeric keypad on the keyboard.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Locate Pointer</guimenu>: When enabled, it reveals the pointer location by pressing left <keycap>Ctrl</keycap>.</para>
+                  <para><guimenu>Locate Pointer</guimenu>: When enabled, it reveals the pointer location by pressing left <keycap>Ctrl</keycap>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Double-Click Delay</guimenu> is a slider adjustment that lets users set how quickly they need to click twice for a double-click to register, ranging from Short to Long.</para>
+                  <para><guimenu>Double-Click Delay</guimenu> is a slider adjustment that lets users set how quickly they need to click twice for a double-click to register, ranging from Short to Long.</para>
                </listitem>
                <listitem>
                   <para>In the <guimenu>Click Assist</guimenu> section, you can enable <guimenu>Simulated Secondary Click</guimenu> to activate the secondary click (usually the right mouse button) by holding down the primary button. This is useful if you find it difficult to move your fingers individually on one hand, or if your pointing device only has a single button.</para>
@@ -131,8 +120,7 @@
       <para>In the <guimenu>Zoom</guimenu> section of the <guimenu>Accessibility</guimenu> dialog, you can enable features that help people with visual impairments.</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <guimenu>Desktop Zoom</guimenu> allows you to magnify the entire screen.</para>
+            <para><guimenu>Desktop Zoom</guimenu> allows you to magnify the entire screen.</para>
          </listitem>
          <listitem>
             <para>The <guimenu>Magnifier</guimenu> section offers detailed configuration options, including <guimenu>Magnifier View</guimenu>, <guimenu>Screen Area</guimenu> and <guimenu>Follow Behavior</guimenu>.</para>
@@ -141,8 +129,7 @@
             <para>The <guimenu>Crosshairs</guimenu> section includes options like <guimenu>Overlap Mouse Cursor</guimenu>, <guimenu>Thickness</guimenu> and <guimenu>Length</guimenu> sliders and <guimenu>Color</guimenu>.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Color Filters</guimenu> offers the <guimenu>Inverted</guimenu> option to invert colors in the magnifier region, and <guimenu>Brightness</guimenu>, <guimenu>Contrast</guimenu> and <guimenu>Color</guimenu> options to adjust color effects.</para>
+            <para><guimenu>Color Filters</guimenu> offers the <guimenu>Inverted</guimenu> option to invert colors in the magnifier region, and <guimenu>Brightness</guimenu>, <guimenu>Contrast</guimenu> and <guimenu>Color</guimenu> options to adjust color effects.</para>
          </listitem>
       </itemizedlist>
    </sect1>

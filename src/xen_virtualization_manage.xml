@@ -12,14 +12,12 @@
       <title>XL—Xen management tool</title>
       <para>The <command>xl</command> program is a tool for managing Xen guest domains. It is part of the <package>xen-tools</package> package. <command>xl</command> is based on the LibXenlight library, and can be used for general domain management, such as domain creation, listing, pausing or shutting down. You need to be <systemitem class="username">root</systemitem> to execute <command>xl</command> commands.</para>
       <note>
-         <para>
-            <command>xl</command> can only manage running guest domains specified by their configuration file. If a guest domain is not running, you cannot manage it with <command>xl</command>.</para>
+         <para><command>xl</command> can only manage running guest domains specified by their configuration file. If a guest domain is not running, you cannot manage it with <command>xl</command>.</para>
       </note>
       <tip>
          <para>To allow users to continue to have managed guest domains in the way the obsolete <command>xm</command> command allowed, we now recommend using <systemitem class="library">libvirt</systemitem>'s <command>virsh</command> and <command>virt-manager</command> tools. For more information, see <xref linkend="part-virt-libvirt"/>.</para>
       </tip>
-      <para>
-         <command>xl</command> operations rely upon <systemitem>xenstored</systemitem> and <systemitem>xenconsoled</systemitem> services. Make sure you start</para>
+      <para><command>xl</command> operations rely upon <systemitem>xenstored</systemitem> and <systemitem>xenconsoled</systemitem> services. Make sure you start</para>
       <screen><prompt>&gt;</prompt>systemctl start xencommons</screen>
       <para>at boot time to initialize all the daemons required by <command>xl</command>.</para>
       <tip>
@@ -41,20 +39,16 @@ opensuse                                   512     1                  12.9
       <para>Other useful <command>xl</command> commands include:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>xl create</command> creates a virtual machine from a given configuration file.</para>
+            <para><command>xl create</command> creates a virtual machine from a given configuration file.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>xl reboot</command>reboots a virtual machine.</para>
+            <para><command>xl reboot</command>reboots a virtual machine.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>xl destroy</command> immediately terminates a virtual machine.</para>
+            <para><command>xl destroy</command> immediately terminates a virtual machine.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>xl block-list</command> displays all virtual block devices attached to a virtual machine.</para>
+            <para><command>xl block-list</command> displays all virtual block devices attached to a virtual machine.</para>
          </listitem>
       </itemizedlist>
       <sect2 xml:id="sec-xen-manage-xl-cfg-file">
@@ -233,28 +227,22 @@ boot = "n"</screen>
       <para>A virtual machine’s state can be displayed by viewing the results of the <command>xl list</command> command, which abbreviates the state using a single character.</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>r</command> - running - The virtual machine is currently running and consuming allocated resources.</para>
+            <para><command>r</command> - running - The virtual machine is currently running and consuming allocated resources.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>b</command> - blocked - The virtual machine’s processor is not running and not able to run. It is either waiting for I/O or has stopped working.</para>
+            <para><command>b</command> - blocked - The virtual machine’s processor is not running and not able to run. It is either waiting for I/O or has stopped working.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>p</command> - paused - The virtual machine is paused. It does not interact with the hypervisor but still maintains its allocated resources, such as memory.</para>
+            <para><command>p</command> - paused - The virtual machine is paused. It does not interact with the hypervisor but still maintains its allocated resources, such as memory.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>s</command> - shutdown - The guest operating system is in the process of being shut down, rebooted, or suspended, and the virtual machine is being stopped.</para>
+            <para><command>s</command> - shutdown - The guest operating system is in the process of being shut down, rebooted, or suspended, and the virtual machine is being stopped.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>c</command> - crashed - The virtual machine has crashed and is not running.</para>
+            <para><command>c</command> - crashed - The virtual machine has crashed and is not running.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>d</command> - dying - The virtual machine is shutting down or crashing.</para>
+            <para><command>d</command> - dying - The virtual machine is shutting down or crashing.</para>
          </listitem>
       </itemizedlist>
    </sect1>

@@ -18,46 +18,26 @@
          <colspec colnum="2" colname="2" colwidth="70*"/>
          <thead>
             <row>
-               <entry>
-                  <para>RAID Type</para>
-               </entry>
-               <entry>
-                  <para>Allowable Number of Slots Missing</para>
-               </entry>
+               <entry><para>RAID Type</para></entry>
+               <entry><para>Allowable Number of Slots Missing</para></entry>
             </row>
          </thead>
          <tbody>
             <row>
-               <entry>
-                  <para>RAID 1</para>
-               </entry>
-               <entry>
-                  <para>All but one device</para>
-               </entry>
+               <entry><para>RAID 1</para></entry>
+               <entry><para>All but one device</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>RAID 4</para>
-               </entry>
-               <entry>
-                  <para>One slot</para>
-               </entry>
+               <entry><para>RAID 4</para></entry>
+               <entry><para>One slot</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>RAID 5</para>
-               </entry>
-               <entry>
-                  <para>One slot</para>
-               </entry>
+               <entry><para>RAID 5</para></entry>
+               <entry><para>One slot</para></entry>
             </row>
             <row>
-               <entry>
-                  <para>RAID 6</para>
-               </entry>
-               <entry>
-                  <para>One or two slots</para>
-               </entry>
+               <entry><para>RAID 6</para></entry>
+               <entry><para>One or two slots</para></entry>
             </row>
          </tbody>
       </tgroup>

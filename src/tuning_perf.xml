@@ -71,9 +71,7 @@
    <sect1 xml:id="sec-perf-subcommand">
       <title>Perf subcommands</title>
       <para>To gather the required information, the <command>perf</command> tool has several subcommands. This section gives an overview of the most often used commands.</para>
-      <para>To see help in the form of a man page for any of the subcommands, use either <command>perf help</command>
-         <replaceable>SUBCOMMAND</replaceable> or <command>man perf-</command>
-         <replaceable>SUBCOMMAND</replaceable>.</para>
+      <para>To see help in the form of a man page for any of the subcommands, use either <command>perf help</command><replaceable>SUBCOMMAND</replaceable> or <command>man perf-</command><replaceable>SUBCOMMAND</replaceable>.</para>
       <variablelist>
          <varlistentry>
             <term>
@@ -144,10 +142,7 @@
       <screen><prompt role="root">#</prompt><command>perf</command> stat -e <replaceable>EVENT</replaceable> -a</screen>
       <para>To count multiple types of events at once, list them separated by commas. For example, to count <systemitem>cpu-cycles</systemitem> and <systemitem>instructions</systemitem>, use:</para>
       <screen><prompt role="root">#</prompt><command>perf</command> stat -e cpu-cycles,instructions -a</screen>
-      <para>To stop the session, press <keycombo>
-            <keycap function="control"/>
-            <keycap>C</keycap>
-         </keycombo>.</para>
+      <para>To stop the session, press <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.</para>
       <remark>Input from Tony Jones: "perhaps cover case where #events &gt; #pmus so kernel time slices (i.e [xx.yy%] in output)" - sknorr, 2015-10-30</remark>
       <para>You can also count the number of occurrences of an event within a particular time:</para>
       <screen><prompt role="root">#</prompt><command>perf</command> stat -e <replaceable>EVENT</replaceable> -a -- sleep <replaceable>TIME</replaceable></screen>
@@ -170,10 +165,7 @@
          <listitem>
             <para>To create a report for an already running process, use:</para>
             <screen><prompt role="root">#</prompt><command>perf</command> record -p <replaceable>PID</replaceable></screen>
-            <para>Replace <replaceable>PID</replaceable> with a process ID. To stop the session, press <keycombo>
-                  <keycap function="control"/>
-                  <keycap>C</keycap>
-               </keycombo>.</para>
+            <para>Replace <replaceable>PID</replaceable> with a process ID. To stop the session, press <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.</para>
          </listitem>
       </itemizedlist>
       <para>Now you can view the gathered data (<filename>perf.data</filename>) using:</para>
@@ -186,8 +178,7 @@
       <remark>Feedback on this from Mel Gorman: "[D]o not get into this. You could write a small book on the subject and still not cover all the details." - sknorr, 2015-10-16</remark>
       <para>If you prefer a graphical interface, try the GTK+ interface of Perf:</para>
       <screen><prompt>&gt;</prompt><command>perf</command> report --gtk</screen>
-      <para>However, the GTK+ interface is limited in functionality. <remark>It provides a scrollable list and tabs and not much else. - sknorr, 2015-10-30</remark>
-      </para>
+      <para>However, the GTK+ interface is limited in functionality. <remark>It provides a scrollable list and tabs and not much else. - sknorr, 2015-10-30</remark></para>
    </sect1>
    <sect1 xml:id="sec-perf-more">
       <title>More information</title>

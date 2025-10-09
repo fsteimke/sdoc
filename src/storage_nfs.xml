@@ -9,8 +9,7 @@
    <info>
       <abstract>
          <para>The <emphasis>Network File System</emphasis> (<emphasis>NFS</emphasis>) is a protocol that allows access to files on a server in a manner similar to accessing local files.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> installs NFS v4.2, which introduces support for sparse files, file pre-allocation, server-side clone and copy, application data block (ADB), and labeled NFS for mandatory access control (MAC) (requires MAC on both client and server).</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> installs NFS v4.2, which introduces support for sparse files, file pre-allocation, server-side clone and copy, application data block (ADB), and labeled NFS for mandatory access control (MAC) (requires MAC on both client and server).</para>
       </abstract>
    </info>
    <sect1 xml:id="sec-nfs-overview">
@@ -18,8 +17,7 @@
       <para>The <emphasis>Network File System</emphasis> (NFS) is a standardized, well-proven and widely supported network protocol that allows sharing files between separate hosts.</para>
       <para>The <emphasis>Network Information Service</emphasis> (NIS) can be used to have centralized user management in the network. Combining NFS and NIS allows using file and directory permissions for access control in the network. NFS with NIS makes a network transparent to the user.</para>
       <para>In the default configuration, NFS completely trusts the network and thus any machine that is connected to a trusted network. Any user with administrator privileges on any computer with physical access to any network the NFS server trusts can access any files that the server makes available.</para>
-      <para>Often, this level of security is perfectly satisfactory, such as when the network that is trusted is truly private, often localized to a single cabinet or machine room, and no unauthorized access is possible. In other cases, the need to trust a whole subnet as a unit is restrictive, and there is a need for more fine-grained trust. To meet the need in these cases, NFS supports various security levels using the <emphasis>Kerberos</emphasis> infrastructure. Kerberos requires NFSv4, which is used by default. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-         <xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Often, this level of security is perfectly satisfactory, such as when the network that is trusted is truly private, often localized to a single cabinet or machine room, and no unauthorized access is possible. In other cases, the need to trust a whole subnet as a unit is restrictive, and there is a need for more fine-grained trust. To meet the need in these cases, NFS supports various security levels using the <emphasis>Kerberos</emphasis> infrastructure. Kerberos requires NFSv4, which is used by default. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <para>The following are terms used in the YaST module.</para>
       <variablelist>
          <varlistentry>
@@ -69,10 +67,7 @@
    <!-- == osuse and SLES ============================================ -->
    <sect1 xml:id="sec-nfs-installation">
       <title>Installing NFS server</title>
-      <para>The NFS server is not part of the default installation. To install the NFS server using YaST, choose <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Software Management</guimenu>
-         </menuchoice>, select <guimenu>Patterns</guimenu>, and enable the <guimenu>File Server</guimenu> option in the <guimenu>Server Functions</guimenu> section. Click <guimenu>Accept</guimenu> to install the required packages.</para>
+      <para>The NFS server is not part of the default installation. To install the NFS server using YaST, choose <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>, select <guimenu>Patterns</guimenu>, and enable the <guimenu>File Server</guimenu> option in the <guimenu>Server Functions</guimenu> section. Click <guimenu>Accept</guimenu> to install the required packages.</para>
       <para>The pattern does not include the YaST module for the NFS Server. After the pattern installation is complete, install the module by running:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper in yast2-nfs-server</command></screen>
       <para>Like NIS, NFS is a client/server system. However, a machine can be both—it can supply file systems over the network (export) and mount file systems from other hosts (import).</para>
@@ -87,18 +82,15 @@
          <procedure xml:id="pro-nfs-export-yast2-nfs">
             <title>Setting up an NFS server</title>
             <step>
-               <para>Start YaST and select <menuchoice>
-                     <guimenu>Network Services</guimenu>
-                     <guimenu>NFS Server</guimenu>
-                  </menuchoice>; see <xref linkend="fig-inst-nfsserver1"/>. You may be prompted to install additional software.</para>
+               <para>Start YaST and select <menuchoice><guimenu>Network Services</guimenu><guimenu>NFS Server</guimenu></menuchoice>; see <xref linkend="fig-inst-nfsserver1"/>. You may be prompted to install additional software.</para>
                <figure xml:id="fig-inst-nfsserver1">
                   <title>NFS server configuration tool</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="75%"/>
+                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="75%"/>
+                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -170,20 +162,16 @@
                   <para>In this example, the following values for <replaceable>HOST</replaceable> are used:</para>
                   <itemizedlist>
                      <listitem>
-                        <para>
-                           <literal>*</literal>: exports to all clients on the network</para>
+                        <para><literal>*</literal>: exports to all clients on the network</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>*.department1.example.com</literal>: only exports to clients on the *.department1.example.com domain</para>
+                        <para><literal>*.department1.example.com</literal>: only exports to clients on the *.department1.example.com domain</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>192.168.1.0/24</literal>: only exports to clients with IP addresses in the range of 192.168.1.0/24</para>
+                        <para><literal>192.168.1.0/24</literal>: only exports to clients with IP addresses in the range of 192.168.1.0/24</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>192.168.1.2</literal>: only exports to the machine with the IP address 192.168.1.2</para>
+                        <para><literal>192.168.1.2</literal>: only exports to the machine with the IP address 192.168.1.2</para>
                      </listitem>
                   </itemizedlist>
                   <para>If you are creating exports of a Btrfs file system, we strongly recommend adding the option <literal>subtree_check</literal> to each export for security reasons.</para>
@@ -251,8 +239,7 @@ Nobody-Group = nobody</screen>
          <para>To use Kerberos authentication for NFS, Generic Security Services (GSS) must be enabled. Select <guimenu>Enable GSS Security</guimenu> in the initial YaST NFS Server dialog. You must have a working Kerberos server to use this feature. YaST does not set up the server but only uses the provided functionality. To use Kerberos authentication in addition to the YaST configuration, complete at least the following steps before running the NFS configuration:</para>
          <procedure>
             <step>
-               <para>Make sure that both the server and the client are in the same Kerberos domain. They must access the same KDC (Key Distribution Center) server and share their <filename>krb5.keytab</filename> file (the default location on any machine is <filename>/etc/krb5.keytab</filename>). For more information about Kerberos, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Make sure that both the server and the client are in the same Kerberos domain. They must access the same KDC (Key Distribution Center) server and share their <filename>krb5.keytab</filename> file (the default location on any machine is <filename>/etc/krb5.keytab</filename>). For more information about Kerberos, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </step>
             <step>
                <para>Start the gssd service on the client with <command>systemctl start rpc-gssd.service</command>.</para>
@@ -300,8 +287,7 @@ Nobody-Group = nobody</screen>
          <tip>
             <title>NFS as a root file system</title>
             <para>On (diskless) systems where the root partition is mounted via network as an NFS share, you need to be careful when configuring the network device with which the NFS share is accessible.</para>
-            <para>When shutting down or rebooting the system, the default processing order is to turn off network connections then unmount the root partition. With NFS root, this order causes problems as the root partition cannot be cleanly unmounted as the network connection to the NFS share is already deactivated. To prevent the system from deactivating the relevant network device, open the network device configuration tab as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="sec-network-yast-change-start" xrefstyle="%label &#34;%c&#34;"/> and choose <guimenu>On NFSroot</guimenu> in the <guimenu>Device Activation</guimenu> pane.</para>
+            <para>When shutting down or rebooting the system, the default processing order is to turn off network connections then unmount the root partition. With NFS root, this order causes problems as the root partition cannot be cleanly unmounted as the network connection to the NFS share is already deactivated. To prevent the system from deactivating the relevant network device, open the network device configuration tab as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast-change-start" xrefstyle="%label &#34;%c&#34;"/> and choose <guimenu>On NFSroot</guimenu> in the <guimenu>Device Activation</guimenu> pane.</para>
          </tip>
          <!--
         <figure id="fig-yast2-nfs-client">
@@ -381,8 +367,7 @@ nfs4mount -fstype=nfs4 server2:/</screen>
             </listitem>
          </itemizedlist>
          <para>The metadata and the storage servers form a single, logical NFS server. When a client wants to read or write, the metadata server tells the NFSv4 client which storage server to use to access the file chunks. The client can access the data directly on the server.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports pNFS on the client side only.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports pNFS on the client side only.</para>
          <sect3 xml:id="sec-nfs-pnfs-yast">
             <title>Configuring pNFS client with YaST</title>
             <para>Proceed as described in <xref linkend="pro-nfs-import-yast2"/>, but click the <guimenu>pNFS (v4.2)</guimenu> check box and optionally <guimenu>NFSv4 share</guimenu>. YaST will do all the necessary steps and will write all the required options in the file <filename>/etc/exports</filename>.</para>
@@ -415,29 +400,19 @@ firewall-cmd --reload</screen>
          <para>NFS 3 requires the following services:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <systemitem class="daemon">portmapper</systemitem>
-               </para>
+               <para><systemitem class="daemon">portmapper</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="daemon">nfsd</systemitem>
-               </para>
+               <para><systemitem class="daemon">nfsd</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="daemon">mountd</systemitem>
-               </para>
+               <para><systemitem class="daemon">mountd</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="daemon">lockd</systemitem>
-               </para>
+               <para><systemitem class="daemon">lockd</systemitem></para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem class="daemon">statd</systemitem>
-               </para>
+               <para><systemitem class="daemon">statd</systemitem></para>
             </listitem>
          </itemizedlist>
          <para>These services are operated by <systemitem>rpcbind</systemitem>, which, by default, dynamically assigns ports. To allow access to these services behind a firewall, they need to be configured to run on a static port first. These ports need to be opened in the firewall(s) afterwards.</para>
@@ -454,33 +429,19 @@ firewall-cmd --reload</screen>
                         <colspec colnum="2" colname="2" colwidth="30*"/>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>Port</para>
-                              </entry>
-                              <entry>
-                                 <para>111</para>
-                              </entry>
+                              <entry><para>Port</para></entry>
+                              <entry><para>111</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Protocol(s)</para>
-                              </entry>
-                              <entry>
-                                 <para>TCP, UDP</para>
-                              </entry>
+                              <entry><para>Protocol(s)</para></entry>
+                              <entry><para>TCP, UDP</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Runs on</para>
-                              </entry>
-                              <entry>
-                                 <para>Client, Server</para>
-                              </entry>
+                              <entry><para>Runs on</para></entry>
+                              <entry><para>Client, Server</para></entry>
                            </row>
                            <row>
-                              <entry namest="1" nameend="2">
-                                 <screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=rpc-bind --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen>
-                              </entry>
+                              <entry namest="1" nameend="2"><screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=rpc-bind --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -499,33 +460,19 @@ firewall-cmd --reload</screen>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>Port</para>
-                              </entry>
-                              <entry>
-                                 <para>2049</para>
-                              </entry>
+                              <entry><para>Port</para></entry>
+                              <entry><para>2049</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Protocol(s)</para>
-                              </entry>
-                              <entry>
-                                 <para>TCP, UDP</para>
-                              </entry>
+                              <entry><para>Protocol(s)</para></entry>
+                              <entry><para>TCP, UDP</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Runs on</para>
-                              </entry>
-                              <entry>
-                                 <para>Server</para>
-                              </entry>
+                              <entry><para>Runs on</para></entry>
+                              <entry><para>Server</para></entry>
                            </row>
                            <row>
-                              <entry namest="1" nameend="2">
-                                 <screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=nfs3 --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen>
-                              </entry>
+                              <entry namest="1" nameend="2"><screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=nfs3 --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -544,35 +491,19 @@ firewall-cmd --reload</screen>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>Port</para>
-                              </entry>
-                              <entry>
-                                 <para>
-                                    <replaceable>20048</replaceable>
-                                 </para>
-                              </entry>
+                              <entry><para>Port</para></entry>
+                              <entry><para><replaceable>20048</replaceable></para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Protocol(s)</para>
-                              </entry>
-                              <entry>
-                                 <para>TCP, UDP</para>
-                              </entry>
+                              <entry><para>Protocol(s)</para></entry>
+                              <entry><para>TCP, UDP</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Runs on</para>
-                              </entry>
-                              <entry>
-                                 <para>Server</para>
-                              </entry>
+                              <entry><para>Runs on</para></entry>
+                              <entry><para>Server</para></entry>
                            </row>
                            <row>
-                              <entry namest="1" nameend="2">
-                                 <screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=mountd --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen>
-                              </entry>
+                              <entry namest="1" nameend="2"><screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-service=mountd --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -603,35 +534,19 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>Port</para>
-                              </entry>
-                              <entry>
-                                 <para>
-                                    <replaceable>NNNNN</replaceable>
-                                 </para>
-                              </entry>
+                              <entry><para>Port</para></entry>
+                              <entry><para><replaceable>NNNNN</replaceable></para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Protocol(s)</para>
-                              </entry>
-                              <entry>
-                                 <para>TCP, UDP</para>
-                              </entry>
+                              <entry><para>Protocol(s)</para></entry>
+                              <entry><para>TCP, UDP</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Runs on</para>
-                              </entry>
-                              <entry>
-                                 <para>Client, Server</para>
-                              </entry>
+                              <entry><para>Runs on</para></entry>
+                              <entry><para>Client, Server</para></entry>
                            </row>
                            <row>
-                              <entry namest="1" nameend="2">
-                                 <screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-port=<replaceable>NNNNN</replaceable>/{tcp,udp} --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen>
-                              </entry>
+                              <entry namest="1" nameend="2"><screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-port=<replaceable>NNNNN</replaceable>/{tcp,udp} --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -661,35 +576,19 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
                         <tbody>
                            <row>
-                              <entry>
-                                 <para>Port</para>
-                              </entry>
-                              <entry>
-                                 <para>
-                                    <replaceable>NNNNN</replaceable>
-                                 </para>
-                              </entry>
+                              <entry><para>Port</para></entry>
+                              <entry><para><replaceable>NNNNN</replaceable></para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Protocol(s)</para>
-                              </entry>
-                              <entry>
-                                 <para>TCP, UDP</para>
-                              </entry>
+                              <entry><para>Protocol(s)</para></entry>
+                              <entry><para>TCP, UDP</para></entry>
                            </row>
                            <row>
-                              <entry>
-                                 <para>Runs on</para>
-                              </entry>
-                              <entry>
-                                 <para>Client, Server</para>
-                              </entry>
+                              <entry><para>Runs on</para></entry>
+                              <entry><para>Client, Server</para></entry>
                            </row>
                            <row>
-                              <entry namest="1" nameend="2">
-                                 <screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-port=<replaceable>NNNNN</replaceable>/{tcp,udp} --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen>
-                              </entry>
+                              <entry namest="1" nameend="2"><screen><prompt>&gt;</prompt><command>sudo</command> firewall-cmd --add-port=<replaceable>NNNNN</replaceable>/{tcp,udp} --permanent --zone=<replaceable>ACTIVE_ZONE</replaceable></screen></entry>
                            </row>
                         </tbody>
                      </tgroup>
@@ -715,19 +614,13 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
       <para>When using NFSv4, Draft POSIX ACLs cannot be used even in emulation and NFSv4 ACLs need to be used directly; that means while <command>setfacl</command> can work on NFSv3, it cannot work on NFSv4. To allow NFSv4 ACLs to be used on an NFSv4 file system, <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides the <filename>nfs4-acl-tools</filename> package, which contains the following:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>nfs4-getfacl</command>
-            </para>
+            <para><command>nfs4-getfacl</command></para>
          </listitem>
          <listitem>
-            <para>
-               <command>nfs4-setfacl</command>
-            </para>
+            <para><command>nfs4-setfacl</command></para>
          </listitem>
          <listitem>
-            <para>
-               <command>nfs4-editacl</command>
-            </para>
+            <para><command>nfs4-editacl</command></para>
          </listitem>
       </itemizedlist>
       <para>These operate in a generally similar way to <command>getfacl</command> and <command>setfacl</command> for examining and modifying NFSv4 ACLs. These commands are effective only if the file system on the NFS server provides full support for NFSv4 ACLs. Any limitation imposed by the server will affect programs running on the client in that some particular combinations of Access Control Entries (ACEs) might not be possible.</para>
@@ -740,19 +633,16 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
       <para>In addition to the man pages of <command>exports</command>, <command>nfs</command>, and <command>mount</command>, information about configuring an NFS server and client is available in <filename>/usr/share/doc/packages/nfsidmap/README</filename>. For further documentation online, refer to the following Web sites:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>For general information about network security, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For general information about network security, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
          <listitem>
             <para>Refer to <xref linkend="sec-autofs-nfs"/> if you need to automatically mount NFS exports.</para>
          </listitem>
          <listitem>
-            <para>For more details about configuring NFS by using AutoYaST, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
-               <xref linkend="ay-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more details about configuring NFS by using AutoYaST, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="ay-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
          <listitem>
-            <para>For instructions about securing NFS exports with Kerberos, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-               <xref linkend="sec-security-kerberos-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For instructions about securing NFS exports with Kerberos, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-kerberos-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </listitem>
          <listitem>
             <para>Find the detailed technical documentation online at <link xlink:href="https://nfs.sourceforge.net/">SourceForge</link>.</para>
@@ -813,10 +703,7 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
                <para>In case you do not get any <command>strace</command> of the reproduction step, note the time when the problem was reproduced. Check the <filename>/var/log/messages</filename> log file to isolate the problem.</para>
             </step>
             <step>
-               <para>Once the problem has been reproduced, stop <command>tcpdump</command> running in your terminal by pressing <keycombo>
-                     <keycap>CTRL</keycap>
-                     <keycap>c</keycap>
-                  </keycombo>. If the <command>strace</command> command resulted in a hang, also terminate the <command>strace</command> command.</para>
+               <para>Once the problem has been reproduced, stop <command>tcpdump</command> running in your terminal by pressing <keycombo><keycap>CTRL</keycap><keycap>c</keycap></keycombo>. If the <command>strace</command> command resulted in a hang, also terminate the <command>strace</command> command.</para>
             </step>
             <step>
                <para>An administrator with experience in analyzing packet traces and <command>strace</command> data can now inspect data in <filename>/tmp/nfs-demo.cap</filename> and <filename>/tmp/nfs-strace.out</filename>.</para>

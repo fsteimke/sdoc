@@ -14,14 +14,8 @@
    </info>
    <sect1 xml:id="sec-installation-troubleshooting-checking-media">
       <title>Checking media</title>
-      <para>If you encounter any problems using the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation media, check its integrity. Boot from the media and choose <menuchoice>
-            <guimenu>More</guimenu>
-            <guimenu>Check Installation Media</guimenu>
-         </menuchoice> from the boot menu. A minimal system boots and lets you choose which device to check. Select the respective device and confirm with <guimenu>OK</guimenu> to perform the check.</para>
-      <para>On a running system, start YaST and choose <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Media Check</guimenu>
-         </menuchoice>. Insert the medium and click <guimenu>Start Check</guimenu>. The integrity check may take time.</para>
+      <para>If you encounter any problems using the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation media, check its integrity. Boot from the media and choose <menuchoice><guimenu>More</guimenu><guimenu>Check Installation Media</guimenu></menuchoice> from the boot menu. A minimal system boots and lets you choose which device to check. Select the respective device and confirm with <guimenu>OK</guimenu> to perform the check.</para>
+      <para>On a running system, start YaST and choose <menuchoice><guimenu>Software</guimenu><guimenu>Media Check</guimenu></menuchoice>. Insert the medium and click <guimenu>Start Check</guimenu>. The integrity check may take time.</para>
       <para>If errors are detected during the check, do not use this medium for installation. Media problems may, for example, occur when having burned the medium on DVD yourself. Burning the media at a low speed (4x) helps to avoid problems.</para>
    </sect1>
    <sect1 xml:id="sec-installation-troubleshooting-dvd">
@@ -46,14 +40,10 @@
                <para>You can use a USB flash drive if the machine lacks a DVD drive and a network connection. For details, see:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <xref linkend="sec-x86-media"/>
-                     </para>
+                     <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase><xref linkend="sec-x86-media"/><phrase role="arch-end">◀</phrase></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <xref linkend="sec-aarch64-media"/>
-                     </para>
+                     <para arch="aarch64"><phrase role="arch-start">aarch64 ▶</phrase><xref linkend="sec-aarch64-media"/><phrase role="arch-end">◀</phrase></para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -81,10 +71,7 @@
       <procedure>
          <title>Changing the boot sequence in an SCSI BIOS (Adaptec host adapter)</title>
          <step>
-            <para>Open the setup by pressing <keycombo>
-                  <keycap function="control"/>
-                  <keycap>A</keycap>
-               </keycombo>.</para>
+            <para>Open the setup by pressing <keycombo><keycap function="control"/><keycap>A</keycap></keycombo>.</para>
          </step>
          <step>
             <para>Select <guimenu>Disk Utilities</guimenu>. The connected hardware components are now displayed.</para>
@@ -111,10 +98,10 @@
          <title>US keyboard layout</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/keyboard_us.svg" width="75%"/>
+               <imagedata fileref="media/keyboard_us.svg" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/keyboard_us.svg" width="75%"/>
+               <imagedata fileref="media/keyboard_us.svg" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -125,11 +112,7 @@
       <para>If installation fails using the standard <guimenu>Installation</guimenu> mode, try the following.</para>
       <procedure>
          <step>
-            <para>With the installation media still in the drive, reboot the machine with <keycombo>
-                  <keycap function="control"/>
-                  <keycap function="alt"/>
-                  <keycap function="delete"/>
-               </keycombo> or using the hardware reset button.</para>
+            <para>With the installation media still in the drive, reboot the machine with <keycombo><keycap function="control"/><keycap function="alt"/><keycap function="delete"/></keycombo> or using the hardware reset button.</para>
          </step>
          <step>
             <para>When the boot screen appears, press <keycap>F5</keycap>, use the arrow keyboard keys to navigate to <guimenu>No ACPI</guimenu>, and press <keycap function="enter"/> to boot and initiate the installation process. This option disables the support for ACPI power management techniques.</para>
@@ -314,7 +297,6 @@
    </sect1>
    <sect1 xml:id="sec-installation-troubleshooting-log">
       <title>Log files</title>
-      <para>For more information about log files created during installation, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-admsupport-install" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information about log files created during installation, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-admsupport-install" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
 </chapter>

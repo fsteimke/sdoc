@@ -14,10 +14,7 @@
    <procedure xml:id="pro-security-yastvpn-server">
       <title>Setting up an IPsec server</title>
       <step>
-         <para>To start the YaST VPN module, select <menuchoice>
-               <guimenu>Applications</guimenu>
-               <guimenu>VPN Gateways and Clients</guimenu>
-            </menuchoice>.</para>
+         <para>To start the YaST VPN module, select <menuchoice><guimenu>Applications</guimenu><guimenu>VPN Gateways and Clients</guimenu></menuchoice>.</para>
       </step>
       <step>
          <para>Under <guimenu>Global Configuration</guimenu>, activate <guimenu>Enable VPN Daemon</guimenu>.</para>

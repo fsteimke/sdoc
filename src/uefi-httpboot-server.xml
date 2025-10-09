@@ -69,9 +69,7 @@ subnet 192.168.111.0 netmask 255.255.255.0 {
 }</screen>
             <para>Note that the DHCPv4 server must use the <literal>HTTPClient</literal> parameter for the vendor class ID, as the client uses it to identify an HTTP Boot offer.</para>
             <para>Start the DHCP daemon:</para>
-            <para>
-               <literal>systemctl start dhcpd</literal>
-            </para>
+            <para><literal>systemctl start dhcpd</literal></para>
          </sect3>
          <sect3 xml:id="httpboot-dhcpv6-server">
             <title>Configuring the DHCPv6 server</title>
@@ -138,9 +136,7 @@ subclass "HTTPClient" "HTTPClient:Arch:00016" {
             <sect4 xml:id="httpboot-firewall">
                <title>Configuring firewall</title>
                <para>If DHCPv6 packets are dropped by the RP filter in the firewall, check its log. In case it contains the <literal>rpfilter_DROP</literal> entry, disable the filter using the following configuration in <filename>/etc/firewalld/firewalld.conf</filename>:</para>
-               <para>
-                  <literal>IPv6_rpfilter=no</literal>
-               </para>
+               <para><literal>IPv6_rpfilter=no</literal></para>
             </sect4>
          </sect3>
          <sect3 xml:id="httpboot-tftp-server">
@@ -149,8 +145,7 @@ subclass "HTTPClient" "HTTPClient:Arch:00016" {
             <screen> systemctl start tftp.socket
 systemctl start tftp.service</screen>
             <para>It is also necessary to install a specific <package>tftpboot-installation</package> package for use with PXE Boot. Run the <command>zypper se tftpboot</command> command, to list of the available <package>tftp-installation</package> packages, then install the package for the desired system version and architecture, for example <package>tftpboot-installation-SLE-15-SP3-x86_64</package> For example, <package>tftpboot-installation-SLE-<replaceable>VERSION</replaceable>-x86_64</package> (replace <replaceable>VERSION</replaceable> with the actual version). Copy the content of the <filename>SLE-<replaceable>VERSION</replaceable>-x86_64</filename> directory to the root directory of the TFTP server:</para>
-            <para>For more information, refer to <filename>/usr/share/tftpboot-installation/SLE-<replaceable>VERSION</replaceable>-x86_64/README</filename>
-            </para>
+            <para>For more information, refer to <filename>/usr/share/tftpboot-installation/SLE-<replaceable>VERSION</replaceable>-x86_64/README</filename></para>
          </sect3>
          <sect3 xml:id="httpboot-http-server">
             <title>Setting up the HTTP server</title>
@@ -203,8 +198,7 @@ $SERVER["socket"] == "[::]:80" {  }</screen>
                <title>Enabling SSL support in lighttpd</title>
                <para>Since lighttpd needs the private key and the certificate in the same file, unify them using the following command:</para>
                <screen>cat <replaceable>CERTIFICATE</replaceable>.crt server.key &gt; <replaceable>CERTIFICATE</replaceable>.pem</screen>
-               <para>Copy <filename>
-                     <replaceable>CERTIFICATE</replaceable>.pem</filename> to the <filename>/etc/ssl/private/</filename> directory.</para>
+               <para>Copy <filename><replaceable>CERTIFICATE</replaceable>.pem</filename> to the <filename>/etc/ssl/private/</filename> directory.</para>
                <screen>cp server-almighty.pem /etc/ssl/private/
 chown -R root:lighttpd /etc/ssl/private/server-almighty.pem
 chmod 640 /etc/ssl/private/server-almighty.pem</screen>

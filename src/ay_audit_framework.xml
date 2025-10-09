@@ -78,9 +78,7 @@
          </term>
          <listitem>
             <para>Number of log files.</para>
-            <para>
-               <literal>max_log_file_action</literal> needs to be set to <literal>ROTATE</literal>
-            </para>
+            <para><literal>max_log_file_action</literal> needs to be set to <literal>ROTATE</literal></para>
          </listitem>
       </varlistentry>
       <varlistentry>

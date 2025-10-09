@@ -8,14 +8,10 @@
    <title>Import Xen domain configuration into <systemitem class="library">libvirt</systemitem>
    </title>
    <info/>
-   <para>
-      <command>xen2libvirt</command> is a command line tool to import legacy Xen domain configuration into the <systemitem class="library">libvirt</systemitem> virtualization library (see The Virtualization book for more information on <systemitem class="library">libvirt</systemitem>). xen2libvirt provides an easy way to import domains managed by the deprecated <command>xm</command>/xend tool stack into the new <systemitem class="library">libvirt</systemitem>/libxl tool stack. Several domains can be imported at once using its <option>--recursive mode</option>
-   </para>
-   <para>
-      <command>xen2libvirt</command> is included in the <systemitem>xen-tools</systemitem> package. If needed, install it with</para>
+   <para><command>xen2libvirt</command> is a command line tool to import legacy Xen domain configuration into the <systemitem class="library">libvirt</systemitem> virtualization library (see The Virtualization book for more information on <systemitem class="library">libvirt</systemitem>). xen2libvirt provides an easy way to import domains managed by the deprecated <command>xm</command>/xend tool stack into the new <systemitem class="library">libvirt</systemitem>/libxl tool stack. Several domains can be imported at once using its <option>--recursive mode</option></para>
+   <para><command>xen2libvirt</command> is included in the <systemitem>xen-tools</systemitem> package. If needed, install it with</para>
    <screen><prompt>&gt;</prompt><command>sudo</command> zypper install xen-tools</screen>
-   <para>
-      <command>xen2libvirt</command> general syntax is</para>
+   <para><command>xen2libvirt</command> general syntax is</para>
    <screen>xen2libvirt &lt;options&gt; <replaceable>/path/to/domain/config</replaceable></screen>
    <para>where <option>options</option> can be:</para>
    <variablelist>

@@ -48,8 +48,7 @@
    <screen>LANG=&lt;language&gt;[[_&lt;COUNTRY&gt;].&lt;Encoding&gt;[@&lt;Modifier&gt;]]</screen>
    <sect2 xml:id="sec-suse-l10n-settings">
       <title>System-wide locale settings</title>
-      <para>
-         <systemitem class="daemon">systemd</systemitem> reads <filename>/etc/locale.conf</filename> at early boot. The locale settings configured in this file are inherited by every service or user, unless there are individual settings.</para>
+      <para><systemitem class="daemon">systemd</systemitem> reads <filename>/etc/locale.conf</filename> at early boot. The locale settings configured in this file are inherited by every service or user, unless there are individual settings.</para>
       <note>
          <title>Behavior of older configuration files under <phrase role="productname">SUSE Linux Enterprise Server</phrase>
             <phrase role="productname">SUSE Linux Enterprise Server</phrase>
@@ -154,26 +153,14 @@ LC_COLLATE=C</screen>
       <title>Settings for language support</title>
       <para>Files in the category <emphasis>Messages</emphasis> are, as a rule, only stored in the corresponding language directory (like <filename>en</filename>) to have a fallback. If you set <systemitem>LANG</systemitem> to <literal>en_US</literal> and the message file in <filename>/usr/share/locale/en_US/LC_MESSAGES</filename> does not exist, it falls back to <filename>/usr/share/locale/en/LC_MESSAGES</filename>.</para>
       <para>A fallback chain can also be defined, for example, for Breton to French or for Galician to Spanish to Portuguese:</para>
-      <para>
-         <systemitem>LANGUAGE="br_FR:fr_FR"</systemitem>
-      </para>
-      <para>
-         <systemitem>LANGUAGE="gl_ES:es_ES:pt_PT"</systemitem>
-      </para>
+      <para><systemitem>LANGUAGE="br_FR:fr_FR"</systemitem></para>
+      <para><systemitem>LANGUAGE="gl_ES:es_ES:pt_PT"</systemitem></para>
       <para>If desired, use the Norwegian variants Nynorsk and Bokmål instead (with additional fallback to <literal>no</literal>):</para>
-      <para>
-         <systemitem>LANG="nn_NO"</systemitem>
-      </para>
-      <para>
-         <systemitem>LANGUAGE="nn_NO:nb_NO:no"</systemitem>
-      </para>
+      <para><systemitem>LANG="nn_NO"</systemitem></para>
+      <para><systemitem>LANGUAGE="nn_NO:nb_NO:no"</systemitem></para>
       <para>or</para>
-      <para>
-         <systemitem>LANG="nb_NO"</systemitem>
-      </para>
-      <para>
-         <systemitem>LANGUAGE="nb_NO:nn_NO:no"</systemitem>
-      </para>
+      <para><systemitem>LANG="nb_NO"</systemitem></para>
+      <para><systemitem>LANGUAGE="nb_NO:nn_NO:no"</systemitem></para>
       <para>In Norwegian, <systemitem>LC_TIME</systemitem> is also treated differently.</para>
       <remark>The following example does not make sense for 'en'; that's why I use 'de' as an example here. -ke-</remark>
       <!-- Translators: Please, use this 'de' example as-is -->
@@ -183,8 +170,7 @@ LC_COLLATE=C</screen>
       <title>More information</title>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <emphasis>The GNU C Library Reference Manual</emphasis>, Chapter <quote>Locales and Internationalization</quote>. It is included in the package <package>glibc-info</package>.</para>
+            <para><emphasis>The GNU C Library Reference Manual</emphasis>, Chapter <quote>Locales and Internationalization</quote>. It is included in the package <package>glibc-info</package>.</para>
          </listitem>
          <listitem>
             <para>Markus Kuhn, <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis>, currently at <link xlink:href="https://www.cl.cam.ac.uk/~mgk25/unicode.html"/>.</para>

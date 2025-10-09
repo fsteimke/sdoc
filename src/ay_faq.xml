@@ -13,8 +13,7 @@
             <para>How do I invoke an AutoYaST installation?</para>
          </question>
          <answer>
-            <para>On all <phrase role="productname">SUSE Linux Enterprise Server</phrase> versions, the automatic installation gets invoked by adding <literal>autoyast=&lt;PATH_TO_PROFILE&gt;</literal> to the kernel parameter list. So for example adding <literal>autoyast=<replaceable>http://MYSERVER/MYCONFIG.xml</replaceable>
-               </literal> will start an automatic installation where the profile with the AutoYaST configuration gets fetched from the Web server <literal>myserver</literal>. See <xref linkend="invoking-autoinst"/> for more information.</para>
+            <para>On all <phrase role="productname">SUSE Linux Enterprise Server</phrase> versions, the automatic installation gets invoked by adding <literal>autoyast=&lt;PATH_TO_PROFILE&gt;</literal> to the kernel parameter list. So for example adding <literal>autoyast=<replaceable>http://MYSERVER/MYCONFIG.xml</replaceable></literal> will start an automatic installation where the profile with the AutoYaST configuration gets fetched from the Web server <literal>myserver</literal>. See <xref linkend="invoking-autoinst"/> for more information.</para>
          </answer>
       </qandaentry>
       <qandaentry xml:id="qa-ay-profile">
@@ -30,14 +29,7 @@
             <para>How do I create an AutoYaST profile?</para>
          </question>
          <answer>
-            <para>The easiest way to create an AutoYaST profile is to use an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> system as a template. On an already installed system, start <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Miscellaneous</guimenu>
-                  <guimenu>Autoinstallation</guimenu>
-               </menuchoice>. Now select <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Create Reference Profile</guimenu>
-               </menuchoice> from the menu. Choose the system components you want to include in the profile. Alternatively, create a profile containing the complete system configuration by running <command>sudo yast clone_system</command> from the command line.</para>
+            <para>The easiest way to create an AutoYaST profile is to use an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> system as a template. On an already installed system, start <menuchoice><guimenu>YaST</guimenu><guimenu>Miscellaneous</guimenu><guimenu>Autoinstallation</guimenu></menuchoice>. Now select <menuchoice><guimenu>Tools</guimenu><guimenu>Create Reference Profile</guimenu></menuchoice> from the menu. Choose the system components you want to include in the profile. Alternatively, create a profile containing the complete system configuration by running <command>sudo yast clone_system</command> from the command line.</para>
             <para>Both methods will create the file <filename>/root/autoinst.xml</filename>. The version created on the command line can be used to set up an identical clone of the system on which the profile was created. However, usually you will want to adjust the file to make it possible to install several machines that are very similar, but not identical. This can be done by adjusting the profile using your favorite text/XML editor.</para>
          </answer>
       </qandaentry>
@@ -134,12 +126,10 @@ mv /var/run/zypp.sav /var/run/zypp.pid
       </qandaentry>
       <qandaentry xml:id="qa-ay-insecure">
          <question>
-            <para>
-               <command>linuxrc</command> blocks the installation with <literal>File not signed</literal>. I need to manually interact.</para>
+            <para><command>linuxrc</command> blocks the installation with <literal>File not signed</literal>. I need to manually interact.</para>
          </question>
          <answer>
-            <para>
-               <command>linuxrc</command> found an unsigned file, such as a driver update. To use an unsigned file, you can suppress that message by passing <literal>insecure=1</literal> to the <command>linuxrc</command> parameter list (together with the <literal>autoyast=...</literal> parameter).</para>
+            <para><command>linuxrc</command> found an unsigned file, such as a driver update. To use an unsigned file, you can suppress that message by passing <literal>insecure=1</literal> to the <command>linuxrc</command> parameter list (together with the <literal>autoyast=...</literal> parameter).</para>
          </answer>
       </qandaentry>
       <qandaentry xml:id="qa-ay-net">

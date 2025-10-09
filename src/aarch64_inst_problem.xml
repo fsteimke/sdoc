@@ -21,18 +21,13 @@
          <varlistentry>
             <term>The system hangs</term>
             <listitem>
-               <para>Change the console on your system so that the kernel outputs are visible. Be sure to check the last few lines of output. This is normally done by pressing <keycombo>
-                     <keycap function="control"/>
-                     <keycap function="alt"/>
-                     <keycap>F10</keycap>
-                  </keycombo>. If you cannot resolve the problem, consult the <phrase role="productname">SUSE Linux Enterprise Server</phrase> support staff. To log all system messages at boot time, use a serial connection as described in <xref linkend="sec-x86-prep-installation-methods"/>.</para>
+               <para>Change the console on your system so that the kernel outputs are visible. Be sure to check the last few lines of output. This is normally done by pressing <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F10</keycap></keycombo>. If you cannot resolve the problem, consult the <phrase role="productname">SUSE Linux Enterprise Server</phrase> support staff. To log all system messages at boot time, use a serial connection as described in <xref linkend="sec-x86-prep-installation-methods"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Boot disk</term>
             <listitem>
-               <para>The boot disk is a useful interim solution for boot issues. If you have difficulties setting the other configurations, or if you want to postpone the decision regarding the final boot mechanism, use a boot disk. For more details on creating boot disks, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="vle-grub2-mkrescue" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>The boot disk is a useful interim solution for boot issues. If you have difficulties setting the other configurations, or if you want to postpone the decision regarding the final boot mechanism, use a boot disk. For more details on creating boot disks, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vle-grub2-mkrescue" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -42,15 +37,7 @@
       <para>If an unexpected problem occurs during installation, information is needed to determine the cause of the problem. Use the following directions to help with troubleshooting:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>Check the outputs on the various consoles. You can switch consoles with the key combination <keycombo>
-                  <keycap function="control"/>
-                  <keycap function="alt"/>
-                  <keycap>Fn</keycap>
-               </keycombo>. For example, obtain a shell in which to execute various commands by pressing <keycombo>
-                  <keycap function="control"/>
-                  <keycap function="alt"/>
-                  <keycap>F2</keycap>
-               </keycombo>.</para>
+            <para>Check the outputs on the various consoles. You can switch consoles with the key combination <keycombo><keycap function="control"/><keycap function="alt"/><keycap>Fn</keycap></keycombo>. For example, obtain a shell in which to execute various commands by pressing <keycombo><keycap function="control"/><keycap function="alt"/><keycap>F2</keycap></keycombo>.</para>
          </listitem>
          <listitem>
             <para>Try launching the installation with <quote>Safe Settings</quote> (press <keycap>F5</keycap> on the installation screen and choose <guimenu>Safe Settings</guimenu>). If the installation works without problems in this case, there is an incompatibility that causes either <systemitem>ACPI</systemitem> or <systemitem>APIC</systemitem> to fail. In some cases, a firmware update fixes this problem.</para>

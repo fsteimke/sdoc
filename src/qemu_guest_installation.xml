@@ -11,8 +11,7 @@
    <warning>
       <title>
          <command>qemu-system-ARCH</command> and libvirt</title>
-      <para>
-         <xref linkend="gloss-vt-vm"/>s created with <command>qemu-system-ARCH</command> are not visible for the <systemitem class="library">libvirt</systemitem>-based tools.</para>
+      <para><xref linkend="gloss-vt-vm"/>s created with <command>qemu-system-ARCH</command> are not visible for the <systemitem class="library">libvirt</systemitem>-based tools.</para>
    </warning>
    <sect1 xml:id="cha-qemu-guest-inst-qemu-kvm">
       <title>Basic installation with <command>qemu-system-ARCH</command>
@@ -47,8 +46,7 @@
             <para>Name of the virtual machine that is displayed in the window caption and be used for the VNC server. This name must be unique.</para>
          </callout>
          <callout arearefs="co-qemu-kvm-type">
-            <para>Specifies the machine type. Use <command>qemu-system-ARCH</command>
-               <option>-M ?</option> to display a list of valid parameters. <literal>pc</literal> is the default <guimenu>Standard PC</guimenu>.</para>
+            <para>Specifies the machine type. Use <command>qemu-system-ARCH</command><option>-M ?</option> to display a list of valid parameters. <literal>pc</literal> is the default <guimenu>Standard PC</guimenu>.</para>
          </callout>
          <callout arearefs="co-qemu-kvm-memory">
             <para>Maximum amount of memory for the virtual machine.</para>
@@ -89,8 +87,7 @@
       <para>In the previous section (see <xref linkend="cha-qemu-guest-inst-qemu-kvm"/>), we used the <command>qemu-img</command> command to create an image of a hard disk. You can, however, use <command>qemu-img</command> for general disk image manipulation. This section introduces <command>qemu-img</command> subcommands to help manage the disk images flexibly.</para>
       <sect2 xml:id="cha-qemu-guest-inst-qemu-img-general-invocation">
          <title>General information on qemu-img invocation</title>
-         <para>
-            <command>qemu-img</command> uses subcommands (like <command>zypper</command> does) to do specific tasks. Each subcommand understands a different set of options. Certain options are general and used by more of these subcommands, while others are unique to the related subcommand. See the qemu-img man page (<command>man 1 qemu-img</command>) for a list of all supported options. <command>qemu-img</command> uses the following general syntax:</para>
+         <para><command>qemu-img</command> uses subcommands (like <command>zypper</command> does) to do specific tasks. Each subcommand understands a different set of options. Certain options are general and used by more of these subcommands, while others are unique to the related subcommand. See the qemu-img man page (<command>man 1 qemu-img</command>) for a list of all supported options. <command>qemu-img</command> uses the following general syntax:</para>
          <screen><prompt>&gt;</prompt>qemu-img subcommand [options]</screen>
          <para>and supports the following subcommands:</para>
          <variablelist>
@@ -228,8 +225,7 @@ disk size: 0
          </sect3>
          <sect3 xml:id="cha-qemu-guest-inst-qemu-img-create-convert">
             <title>qemu-img convert</title>
-            <para>Use <command>qemu-img convert</command> to convert disk images to another format. To get a complete list of image formats supported by QEMU, run <command>qemu-img</command>
-               <option>-h</option> and look at the last line of the output. The command uses the following syntax:</para>
+            <para>Use <command>qemu-img convert</command> to convert disk images to another format. To get a complete list of image formats supported by QEMU, run <command>qemu-img</command><option>-h</option> and look at the last line of the output. The command uses the following syntax:</para>
             <screen><prompt>&gt;</prompt>qemu-img convert -c<co xml:id="co-qemu-img-convert-c"/> -f fmt<co xml:id="co-qemu-img-convert-fmt"/> -O out_fmt<co xml:id="co-qemu-img-convert-ofmt"/> -o options<co xml:id="co-qemu-img-convert-o"/> fname<co xml:id="co-qemu-img-convert-fname"/> out_fname<co xml:id="co-qemu-img-convert-ofname"/></screen>
             <calloutlist>
                <callout arearefs="co-qemu-img-convert-c">
@@ -302,8 +298,7 @@ ERROR: invalid cluster offset=0x34ab0000
          </sect3>
          <sect3 xml:id="qemu-qcow2-advanced-options">
             <title>Advanced options for the qcow2 file format</title>
-            <para>
-               <emphasis>qcow2</emphasis> is the main disk image format used by QEMU. Its size grows on demand, and the disk space is only allocated when it is needed by the virtual machine.</para>
+            <para><emphasis>qcow2</emphasis> is the main disk image format used by QEMU. Its size grows on demand, and the disk space is only allocated when it is needed by the virtual machine.</para>
             <para>A qcow2 formatted file is organized in units of constant size. These units are called <emphasis>clusters</emphasis>. Viewed from the guest side, the virtual disk is also divided into clusters of the same size. QEMU defaults to 64 kB clusters, but you can specify a different value when creating a new image:</para>
             <screen><prompt>&gt;</prompt>qemu-img create -f qcow2 -o cluster_size=128K virt_disk.qcow2 4G</screen>
             <para>A qcow2 image contains a set of tables organized in two levels that are called the L1 and L2 tables. There is just one L1 table per disk image, while there can be many L2 tables depending on how big the image is.</para>
@@ -367,12 +362,10 @@ ERROR: invalid cluster offset=0x34ab0000
       </sect2>
       <sect2 xml:id="cha-qemu-guest-inst-qemu-img-snapshots">
          <title>Managing snapshots of virtual machines with qemu-img</title>
-         <para>
-            <xref linkend="gloss-vt-vm"/> snapshots are snapshots of the complete environment in which a VM Guest is running. The snapshot includes the state of the processor (CPU), memory (RAM), devices, and all writable disks.</para>
+         <para><xref linkend="gloss-vt-vm"/> snapshots are snapshots of the complete environment in which a VM Guest is running. The snapshot includes the state of the processor (CPU), memory (RAM), devices, and all writable disks.</para>
          <para>Snapshots are helpful when you need to save your virtual machine in a particular state. For example, after you configured network services on a virtualized server and want to quickly start the virtual machine in the same state you last saved it. Or you can create a snapshot after the virtual machine has been powered off to create a backup state before you try something experimental and make VM Guest unstable. This section introduces the latter case, while the former is described in <xref linkend="cha-qemu-monitor"/>.</para>
          <para>To use snapshots, your VM Guest must contain at least one writable hard disk image in <literal>qcow2</literal> format. This device is normally the first virtual hard disk.</para>
-         <para>
-            <xref linkend="gloss-vt-vm"/> snapshots are created with the <literal>savevm</literal> command in the interactive QEMU monitor. To make identifying a particular snapshot easier, you can assign it a <emphasis>tag</emphasis>. For more information on QEMU monitor, see <xref linkend="cha-qemu-monitor"/>.</para>
+         <para><xref linkend="gloss-vt-vm"/> snapshots are created with the <literal>savevm</literal> command in the interactive QEMU monitor. To make identifying a particular snapshot easier, you can assign it a <emphasis>tag</emphasis>. For more information on QEMU monitor, see <xref linkend="cha-qemu-monitor"/>.</para>
          <para>Once your <literal>qcow2</literal> disk image contains saved snapshots, you can inspect them with the <command>qemu-img snapshot</command> command.</para>
          <warning>
             <title>Shut down the VM Guest</title>
@@ -380,8 +373,7 @@ ERROR: invalid cluster offset=0x34ab0000
          </warning>
          <sect3 xml:id="cha-qemu-guest-inst-qemu-img-snapshots-l">
             <title>Listing existing snapshots</title>
-            <para>Use <command>qemu-img snapshot -l</command>
-               <replaceable>DISK_IMAGE</replaceable> to view a list of all existing snapshots saved in the <literal>disk_image</literal> image. You can get the list even while the VM Guest is running.</para>
+            <para>Use <command>qemu-img snapshot -l</command><replaceable>DISK_IMAGE</replaceable> to view a list of all existing snapshots saved in the <literal>disk_image</literal> image. You can get the list even while the VM Guest is running.</para>
             <screen><prompt>&gt;</prompt>qemu-img snapshot -l /images/sles.qcow2
 Snapshot list:
 ID<co xml:id="co-qemu-img-snapshot-l-id"/>       TAG<co xml:id="co-qemu-img-snapshot-l-tag"/>               VM SIZE<co xml:id="co-qemu-img-snapshot-l-size"/>        DATE<co xml:id="co-qemu-img-snapshot-l-date"/>          VM CLOCK<co xml:id="co-qemu-img-snapshot-l-clock"/>
@@ -409,9 +401,7 @@ ID<co xml:id="co-qemu-img-snapshot-l-id"/>       TAG<co xml:id="co-qemu-img-snap
          </sect3>
          <sect3 xml:id="cha-qemu-guest-inst-qemu-img-snapshots-c">
             <title>Creating snapshots of a powered-off virtual machine</title>
-            <para>Use <command>qemu-img snapshot -c</command>
-               <replaceable>SNAPSHOT_TITLE</replaceable>
-               <replaceable>DISK_IMAGE</replaceable> to create a snapshot of the current state of a virtual machine that was previously powered off.</para>
+            <para>Use <command>qemu-img snapshot -c</command><replaceable>SNAPSHOT_TITLE</replaceable><replaceable>DISK_IMAGE</replaceable> to create a snapshot of the current state of a virtual machine that was previously powered off.</para>
             <screen><prompt>&gt;</prompt>qemu-img snapshot -c backup_snapshot /images/sles.qcow2</screen>
             <screen><prompt>&gt;</prompt>qemu-img snapshot -l /images/sles.qcow2
 Snapshot list:
@@ -430,9 +420,7 @@ ID        TAG                 VM SIZE                DATE       VM CLOCK
          </sect3>
          <sect3 xml:id="cha-qemu-guest-inst-qemu-img-snapshots-d">
             <title>Deleting snapshots</title>
-            <para>Use <command>qemu-img snapshot -d</command>
-               <replaceable>SNAPSHOT_ID</replaceable>
-               <replaceable>DISK_IMAGE</replaceable> to delete old or unneeded snapshots of a virtual machine. This saves disk space inside the <literal>qcow2</literal> disk image as the space occupied by the snapshot data is restored:</para>
+            <para>Use <command>qemu-img snapshot -d</command><replaceable>SNAPSHOT_ID</replaceable><replaceable>DISK_IMAGE</replaceable> to delete old or unneeded snapshots of a virtual machine. This saves disk space inside the <literal>qcow2</literal> disk image as the space occupied by the snapshot data is restored:</para>
             <screen><prompt>&gt;</prompt>qemu-img snapshot -d 2 /images/sles.qcow2</screen>
          </sect3>
       </sect2>
@@ -529,9 +517,7 @@ Disk identifier: 0x000ceca8
                </step>
                <step>
                   <para>Calculate the partition start offset:</para>
-                  <para>
-                     <literal>sector_size * sector_start = 512 * 1542240 = 789626880</literal>
-                  </para>
+                  <para><literal>sector_size * sector_start = 512 * 1542240 = 789626880</literal></para>
                </step>
                <step>
                   <para>Delete the loop and mount the partition inside the disk image with the calculated offset on a prepared directory.</para>

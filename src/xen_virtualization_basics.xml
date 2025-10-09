@@ -39,8 +39,7 @@
                <para>The virtual machine host environment, also called <emphasis>Dom0</emphasis> or controlling domain, is composed of several components, such as:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides a graphical and a command line environment to manage the virtual machine host components and its virtual machines.</para>
+                     <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> provides a graphical and a command line environment to manage the virtual machine host components and its virtual machines.</para>
                      <note>
                         <para>The term <quote>Dom0</quote> refers to a special domain that provides the management environment. This may be run either in graphical or in command line mode.</para>
                      </note>
@@ -86,10 +85,10 @@
          <title>Xen virtualization architecture</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/xen_master_fong_a.png" width="100%"/>
+               <imagedata fileref="media/xen_master_fong_a.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/xen_master_fong_a.png" width="100%"/>
+               <imagedata fileref="media/xen_master_fong_a.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>

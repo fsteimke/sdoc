@@ -52,8 +52,7 @@
          <listitem>
             <para>Load the kernel to the address space of a production kernel for a regular reboot:</para>
             <screen><prompt role="root">#</prompt><command>kexec</command><option>-l</option><replaceable>KERNEL_IMAGE</replaceable></screen>
-            <para>You can later boot to this kernel with <command>kexec</command>
-               <option>-e</option>.</para>
+            <para>You can later boot to this kernel with <command>kexec</command><option>-e</option>.</para>
          </listitem>
          <listitem>
             <para>Load the kernel to a reserved area of memory:</para>
@@ -65,23 +64,12 @@
       <para>To reserve the area, append the option <option>crashkernel</option> to the boot command line of the production kernel. To determine the necessary values for <option>crashkernel</option>, follow the instructions in <xref linkend="sec-tuning-kexec-crashkernel"/>.</para>
       <para>This is not a parameter of the capture kernel. The capture kernel does not use Kexec.</para>
       <para>The capture kernel is loaded to the reserved area and waits for the kernel to crash. Then, Kdump tries to invoke the capture kernel because the production kernel is no longer reliable at this stage. This means that even Kdump can fail.</para>
-      <para>To load the capture kernel, you need to include the kernel boot parameters. In most cases, the initial RAM file system is used for booting. You can specify it with <option>--initrd</option>
-         <literal>=</literal>
-         <replaceable>FILENAME</replaceable>. With <option>--append</option>
-         <literal>=</literal>
-         <replaceable>CMDLINE</replaceable>, you append options to the command line of the kernel to boot.</para>
-      <para>It is required to include the command line of the production kernel. You can simply copy the command line with <option>--append</option>
-         <literal>=</literal>
-         <replaceable>"$(cat /proc/cmdline)"</replaceable> or add more options with <option>--append</option>
-         <literal>=</literal>
-         <replaceable>"$(cat /proc/cmdline) more_options"</replaceable>.</para>
+      <para>To load the capture kernel, you need to include the kernel boot parameters. In most cases, the initial RAM file system is used for booting. You can specify it with <option>--initrd</option><literal>=</literal><replaceable>FILENAME</replaceable>. With <option>--append</option><literal>=</literal><replaceable>CMDLINE</replaceable>, you append options to the command line of the kernel to boot.</para>
+      <para>It is required to include the command line of the production kernel. You can simply copy the command line with <option>--append</option><literal>=</literal><replaceable>"$(cat /proc/cmdline)"</replaceable> or add more options with <option>--append</option><literal>=</literal><replaceable>"$(cat /proc/cmdline) more_options"</replaceable>.</para>
       <para>For example, to load the <filename>/boot/vmlinuz-6.4.0-150700.38-default</filename> kernel image with the command line of the currently running production kernel and the <filename>/boot/initrd</filename> file, run the following command:</para>
       <screen><prompt role="root">#</prompt> kexec -l /boot/vmlinuz-6.4.0-150700.38-default \
  --append="$(cat /proc/cmdline)" --initrd=/boot/initrd</screen>
-      <para>You can always unload the previously loaded kernel. To unload a kernel that was loaded with the <option>-l</option> option, use the <command>kexec</command>
-         <option>-u</option> command. To unload a crash kernel loaded with the <option>-p</option> option, use <command>kexec</command>
-         <option>-p</option>
-         <option>-u</option> command.</para>
+      <para>You can always unload the previously loaded kernel. To unload a kernel that was loaded with the <option>-l</option> option, use the <command>kexec</command><option>-u</option> command. To unload a crash kernel loaded with the <option>-p</option> option, use <command>kexec</command><option>-p</option><option>-u</option> command.</para>
    </sect1>
    <sect1 xml:id="sec-tuning-kexec-crashkernel">
       <title>Calculating <option>crashkernel</option> allocation size</title>
@@ -105,10 +93,8 @@ MaxHigh: 45824 </screen>
             <para>Take note of the values of <literal>Low</literal> and <literal>High</literal>.</para>
             <note>
                <title>Significance of <literal>Low</literal> and <literal>High</literal> values</title>
-               <para>On AMD64/Intel 64 computers, the <literal>High</literal> value stands for the memory reservation for all available memory. The <literal>Low</literal> value stands for the memory reservation in the DMA32 zone, that is, all the memory up to the 4 GB mark. <remark>Petr Tesarik says in bsc#948565 that High means "all memory". This is not true in SLE 12 SP1 RC1, but fixed for SLE 12 SP1 RC2. - sknorr, 2015-10-05</remark>
-               </para>
-               <para>
-                  <remark>The following is confusing, but probably true ( https://bugzilla.suse.com/show_bug.cgi?id=948565#c6 ). - sknorr, 2015-10-05</remark> SIZE_LOW is the amount of memory required by 32-bit-only devices. The kernel allocates 64M for DMA32 bounce buffers. If your server does not have any 32-bit-only devices, everything should work with the default allocation of 72M for <literal>SIZE_LOW</literal>. A possible exception to this is on NUMA machines, which may make it appear that more <literal>Low</literal> memory is needed. The Kdump kernel may be booted with <literal>numa=off</literal> to make sure normal kernel allocations do not use <literal>Low</literal> memory.</para>
+               <para>On AMD64/Intel 64 computers, the <literal>High</literal> value stands for the memory reservation for all available memory. The <literal>Low</literal> value stands for the memory reservation in the DMA32 zone, that is, all the memory up to the 4 GB mark. <remark>Petr Tesarik says in bsc#948565 that High means "all memory". This is not true in SLE 12 SP1 RC1, but fixed for SLE 12 SP1 RC2. - sknorr, 2015-10-05</remark></para>
+               <para><remark>The following is confusing, but probably true ( https://bugzilla.suse.com/show_bug.cgi?id=948565#c6 ). - sknorr, 2015-10-05</remark> SIZE_LOW is the amount of memory required by 32-bit-only devices. The kernel allocates 64M for DMA32 bounce buffers. If your server does not have any 32-bit-only devices, everything should work with the default allocation of 72M for <literal>SIZE_LOW</literal>. A possible exception to this is on NUMA machines, which may make it appear that more <literal>Low</literal> memory is needed. The Kdump kernel may be booted with <literal>numa=off</literal> to make sure normal kernel allocations do not use <literal>Low</literal> memory.</para>
             </note>
          </step>
          <step>
@@ -317,8 +303,7 @@ cio_ignore=all,!da5d,!f500-f502</screen>
          <para>After configuring Kdump with the default values, check if it works as expected. Make sure that no users are currently logged in and no important services are running on your system. Then follow these steps:</para>
          <procedure>
             <step>
-               <para>Switch to the rescue target with <command>systemctl isolate rescue.target</command>
-               </para>
+               <para>Switch to the rescue target with <command>systemctl isolate rescue.target</command></para>
             </step>
             <step>
                <para>Restart the Kdump service:</para>
@@ -350,10 +335,10 @@ cio_ignore=all,!da5d,!f500-f502</screen>
             <title>YaST Kdump module: start-up page</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_kdump_startup.png" width="60%"/>
+                  <imagedata fileref="media/yast2_kdump_startup.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_kdump_startup.png" width="70%"/>
+                  <imagedata fileref="media/yast2_kdump_startup.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -391,8 +376,7 @@ cio_ignore=all,!da5d,!f500-f502</screen>
          <para>Dump files usually contain sensitive data which should be protected from unauthorized disclosure. To allow transmission of such data over an insecure network, Kdump can save dump files to a remote machine using the SSH protocol.</para>
          <procedure>
             <step>
-               <para>The target host identity must be known to Kdump. This is needed to ensure that sensitive data is never sent to an imposter. When Kdump generates a new <systemitem>initrd</systemitem>, it runs <command>ssh-keygen -F <replaceable>TARGET_HOST</replaceable>
-                  </command> to query the target host's identity. This works only if <replaceable>TARGET_HOST</replaceable> public key is already known. An easy way to achieve that is to make an SSH connection to <replaceable>TARGET_HOST</replaceable> as <systemitem class="username">root</systemitem> on the Kdump host.</para>
+               <para>The target host identity must be known to Kdump. This is needed to ensure that sensitive data is never sent to an imposter. When Kdump generates a new <systemitem>initrd</systemitem>, it runs <command>ssh-keygen -F <replaceable>TARGET_HOST</replaceable></command> to query the target host's identity. This works only if <replaceable>TARGET_HOST</replaceable> public key is already known. An easy way to achieve that is to make an SSH connection to <replaceable>TARGET_HOST</replaceable> as <systemitem class="username">root</systemitem> on the Kdump host.</para>
             </step>
             <step>
                <para>Kdump must be able to authenticate to the target machine. Only public key authentication is currently available. By default, Kdump uses <systemitem class="username">root</systemitem>'s private key, but it is advisable to make a separate key for Kdump. This can be done with <command>ssh-keygen</command>:</para>
@@ -457,8 +441,7 @@ cio_ignore=all,!da5d,!f500-f502</screen>
       <screen><prompt>&gt;</prompt><command>zypper</command> se kernel | <command>grep</command> debug</screen>
       <important>
          <title>Repository for packages with debugging information</title>
-         <para>If you subscribed your system for online updates, you can find <quote>debuginfo</quote> packages in the <literal>*-Debuginfo-Updates</literal> online installation repository relevant for <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>. Use YaST to enable the repository.</para>
+         <para>If you subscribed your system for online updates, you can find <quote>debuginfo</quote> packages in the <literal>*-Debuginfo-Updates</literal> online installation repository relevant for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>. Use YaST to enable the repository.</para>
       </important>
       <para>To open the captured dump in <command>crash</command> on the machine that produced the dump, use a command like this:</para>
       <screen><command>crash</command><replaceable>/boot/vmlinux-6.4.0-150700.38-default.gz</replaceable> \
@@ -466,8 +449,7 @@ cio_ignore=all,!da5d,!f500-f502</screen>
       <para>The first parameter represents the kernel image. The second parameter is the dump file captured by Kdump. You can find this file under <filename>/var/crash</filename> by default.</para>
       <tip>
          <title>Getting basic information from a kernel crash dump</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> ships with the utility <command>kdumpid</command> (included in a package with the same name) for identifying unknown kernel dumps. It can be used to extract basic information such as architecture and kernel release. It supports lkcd, diskdump, Kdump files and ELF dumps. When called with the <option>-v</option> switch it tries to extract additional information such as machine type, kernel banner string and kernel configuration flavor.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> ships with the utility <command>kdumpid</command> (included in a package with the same name) for identifying unknown kernel dumps. It can be used to extract basic information such as architecture and kernel release. It supports lkcd, diskdump, Kdump files and ELF dumps. When called with the <option>-v</option> switch it tries to extract additional information such as machine type, kernel banner string and kernel configuration flavor.</para>
       </tip>
       <sect2 xml:id="cha-tuning-kdump-analyze-binformat">
          <title>Kernel binary formats</title>
@@ -500,8 +482,7 @@ cio_ignore=all,!da5d,!f500-f502</screen>
             <title>POWER</title>
             <para>The <systemitem>yaboot</systemitem> boot loader on POWER also supports loading ELF images, but not compressed ones. In the POWER kernel package, there is an ELF Linux kernel file <filename>vmlinux</filename>. Considering <command>crash</command>, this is the easiest architecture.</para>
             <para>If you decide to analyze the dump on another machine, you must check both the architecture of the computer and the files necessary for debugging.</para>
-            <para>You can analyze the dump on another computer only if it runs a Linux system of the same architecture. To check the compatibility, use the command <command>uname</command>
-               <option>-i</option> on both computers and compare the outputs.</para>
+            <para>You can analyze the dump on another computer only if it runs a Linux system of the same architecture. To check the compatibility, use the command <command>uname</command><option>-i</option> on both computers and compare the outputs.</para>
             <para>If you are going to analyze the dump on another computer, you also need the appropriate files from the <systemitem>kernel</systemitem> and <systemitem>kernel debug</systemitem> packages.</para>
             <procedure>
                <step>
@@ -587,10 +568,7 @@ PID: 9446   TASK: ffff88003a57c3c0  CPU: 1   COMMAND: "bash"
    </sect1>
    <sect1 xml:id="cha-tuning-kdump-advanced">
       <title>Advanced Kdump configuration</title>
-      <para>The configuration for Kdump is stored in <filename>/etc/sysconfig/kdump</filename>. You can also use YaST to configure it. Kdump configuration options are available under <menuchoice>
-            <guimenu>System</guimenu>
-            <guimenu>Kernel Kdump</guimenu>
-         </menuchoice> in <guimenu>YaST Control Center</guimenu>. The following Kdump options may be useful for you.</para>
+      <para>The configuration for Kdump is stored in <filename>/etc/sysconfig/kdump</filename>. You can also use YaST to configure it. Kdump configuration options are available under <menuchoice><guimenu>System</guimenu><guimenu>Kernel Kdump</guimenu></menuchoice> in <guimenu>YaST Control Center</guimenu>. The following Kdump options may be useful for you.</para>
       <para>You can change the directory for the kernel dumps with the <option>KDUMP_SAVEDIR</option> option. Keep in mind that the size of kernel dumps can be large. Kdump refuses to save the dump if the free disk space, subtracted by the estimated dump size, drops below the value specified by the <option>KDUMP_FREE_DISK_SIZE</option> option. <option>KDUMP_SAVEDIR</option> understands the URL format <replaceable>PROTOCOL://SPECIFICATION</replaceable>, where <replaceable>PROTOCOL</replaceable> is one of <option>file</option>, <option>ftp</option>, <option>sftp</option>, <option>nfs</option> or <option>cifs</option>, and <option>specification</option> varies for each protocol. For example, to save kernel dump on an FTP server, use the following URL as a template: <option>ftp://username:password@ftp.example.com:123/var/crash</option>.</para>
       <para>Kernel dumps are large and contain many pages that are not necessary for analysis. With <option>KDUMP_DUMPLEVEL</option> option, you can omit such pages. The option understands numeric value between 0 and 31. If you specify <replaceable>0</replaceable>, the dump size is the largest. If you specify <replaceable>31</replaceable>, it produces the smallest dump. For a complete table of possible values, see the manual page of <command>kdump</command> (<command>man 7 kdump</command>).</para>
       <para>Sometimes it is useful to make the size of the kernel dump smaller. For example, you can do so to transfer the dump over the network or to save disk space in the dump directory. This can be done with <option>KDUMP_DUMPFORMAT</option> set to <literal>compressed</literal>. The <command>crash</command> utility supports dynamic decompression of the compressed dumps.</para>
@@ -625,8 +603,7 @@ PID: 9446   TASK: ffff88003a57c3c0  CPU: 1   COMMAND: "bash"
             <para>In addition to the info page of GDB (<command>info gdb</command>), there are printable guides at <link xlink:href="https://sourceware.org/gdb/documentation/"/> .</para>
          </listitem>
          <listitem>
-            <para>The crash utility features a comprehensive online help. Use <command>help</command>
-               <replaceable>COMMAND</replaceable> to display the online help for <command>command</command>.</para>
+            <para>The crash utility features a comprehensive online help. Use <command>help</command><replaceable>COMMAND</replaceable> to display the online help for <command>command</command>.</para>
          </listitem>
          <listitem>
             <para>If you have the necessary Perl skills, you can use Alicia to make the debugging easier. This Perl-based front-end to the crash utility can be found at <link xlink:href="https://alicia.sourceforge.net/"/> .</para>

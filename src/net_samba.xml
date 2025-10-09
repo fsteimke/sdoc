@@ -23,7 +23,7 @@
             <term>SMB protocol</term>
             <listitem>
                <para>Samba uses the SMB (server message block) protocol, which is based on <phrase role="productname">NetBIOS</phrase> services. Microsoft released the protocol so that software from other manufacturers could establish connections to servers running Microsoft operating systems. Samba implements the SMB protocol on top of the TCP/IP protocol, which means that TCP/IP must be installed and enabled on all clients.</para>
-               <tip>
+               <tip arch="zseries">
                   <title>IBM Z: NetBIOS support</title>
                   <para>IBM Z merely supports SMB over TCP/IP. NetBIOS support is not available on these systems.</para>
                </tip>
@@ -39,8 +39,7 @@
          <varlistentry>
             <term>NetBIOS</term>
             <listitem>
-               <para>
-                  <phrase role="productname">NetBIOS</phrase> is a software interface (API) designed for name resolution and communication between computers on a network. It enables machines connected to the network to reserve names for themselves. After reservation, these machines can be addressed by name. There is no central process that checks names. Any machine on the network can reserve as many names as it wants, as long as the names are not already in use. NetBIOS can be implemented on top of different network protocols. One relatively simple, non-routable implementation is called <phrase role="productname">NetBEUI</phrase>. (This is often confused with the NetBIOS API.) NetBIOS is also supported on top of the Novell IPX/SPX protocol. Since version 3.2, Samba supports NetBIOS over both IPv4 and IPv6.</para>
+               <para><phrase role="productname">NetBIOS</phrase> is a software interface (API) designed for name resolution and communication between computers on a network. It enables machines connected to the network to reserve names for themselves. After reservation, these machines can be addressed by name. There is no central process that checks names. Any machine on the network can reserve as many names as it wants, as long as the names are not already in use. NetBIOS can be implemented on top of different network protocols. One relatively simple, non-routable implementation is called <phrase role="productname">NetBEUI</phrase>. (This is often confused with the NetBIOS API.) NetBIOS is also supported on top of the Novell IPX/SPX protocol. Since version 3.2, Samba supports NetBIOS over both IPv4 and IPv6.</para>
                <para>The NetBIOS names sent via TCP/IP have nothing in common with the names used in <filename>/etc/hosts</filename> or those defined by DNS. NetBIOS uses its own, completely independent naming convention. However, we recommend using names that correspond to DNS host names, to make administration easier, or to use DNS natively. This is the default used by Samba.</para>
             </listitem>
          </varlistentry>
@@ -73,13 +72,7 @@
    </sect1>
    <sect1 xml:id="sec-samba-install">
       <title>Installing a Samba server</title>
-      <para>To install a Samba server, start YaST and select <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Software Management</guimenu>
-         </menuchoice>. Choose <menuchoice>
-            <guimenu>View</guimenu>
-            <guimenu>Patterns</guimenu>
-         </menuchoice> and select <guimenu>File Server</guimenu>. Confirm the installation of the required packages to finish the installation process.</para>
+      <para>To install a Samba server, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>. Choose <menuchoice><guimenu>View</guimenu><guimenu>Patterns</guimenu></menuchoice> and select <guimenu>File Server</guimenu>. Confirm the installation of the required packages to finish the installation process.</para>
    </sect1>
    <sect1 xml:id="sec-samba-serv-start">
       <title>Starting and stopping Samba</title>
@@ -89,8 +82,7 @@
          <title>
             <systemitem>winbind</systemitem>
          </title>
-         <para>
-            <systemitem>winbind</systemitem> is an independent service and is also offered as an individual <systemitem>samba-winbind</systemitem> package.</para>
+         <para><systemitem>winbind</systemitem> is an independent service and is also offered as an individual <systemitem>samba-winbind</systemitem> package.</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-samba-serv-inst">
@@ -98,10 +90,7 @@
       <para>A Samba server in <phrase role="productname">SUSE® Linux Enterprise Server</phrase> can be configured in two different ways: with YaST or manually. Manual configuration offers a higher level of detail, but lacks the convenience of the YaST GUI.</para>
       <sect2 xml:id="sec-samba-yast2-conf">
          <title>Configuring a Samba server with YaST</title>
-         <para>To configure a Samba server, start YaST and select <menuchoice>
-               <guimenu>Network Services</guimenu>
-               <guimenu>Samba Server</guimenu>
-            </menuchoice>.</para>
+         <para>To configure a Samba server, start YaST and select <menuchoice><guimenu>Network Services</guimenu><guimenu>Samba Server</guimenu></menuchoice>.</para>
          <sect3 xml:id="sec-samba-yast2-conf-inst">
             <title>Initial Samba configuration</title>
             <para>When starting the module for the first time, the <guimenu>Samba Installation</guimenu> dialog starts, prompting you to make a few basic decisions concerning the administration of the server. At the end of the configuration, it prompts for the Samba administrator password (<guimenu>Samba Root Password</guimenu>). For later starts, the <guimenu>Samba Configuration</guimenu> dialog appears.</para>
@@ -141,8 +130,7 @@
             <sect4 xml:id="sec-samba-yast2-conf-adv-shares">
                <title>Shares</title>
                <para>In the <guimenu>Shares</guimenu> tab, determine the Samba shares to activate. There are some predefined shares, like homes and printers. Use <guimenu>Toggle Status</guimenu> to switch between <guimenu>Active</guimenu> and <guimenu>Inactive</guimenu>. Click <guimenu>Add</guimenu> to add new shares and <guimenu>Delete</guimenu> to delete the selected share.</para>
-               <para>
-                  <guimenu>Allow Users to Share Their Directories</guimenu> enables members of the group in <guimenu>Permitted Group</guimenu> to share directories they own with other users. For example, <systemitem>users</systemitem> for a local scope or <systemitem>DOMAIN\Users</systemitem> for a domain scope. The user also must make sure that the file system permissions allow access. With <guimenu>Maximum Number of Shares</guimenu>, limit the total amount of shares that may be created. To permit access to user shares without authentication, enable <guimenu>Allow Guest Access</guimenu>.</para>
+               <para><guimenu>Allow Users to Share Their Directories</guimenu> enables members of the group in <guimenu>Permitted Group</guimenu> to share directories they own with other users. For example, <systemitem>users</systemitem> for a local scope or <systemitem>DOMAIN\Users</systemitem> for a domain scope. The user also must make sure that the file system permissions allow access. With <guimenu>Maximum Number of Shares</guimenu>, limit the total amount of shares that may be created. To permit access to user shares without authentication, enable <guimenu>Allow Guest Access</guimenu>.</para>
             </sect4>
             <sect4 xml:id="sec-samba-yast2-conf-adv-identity">
                <title>Identity</title>
@@ -158,8 +146,7 @@
             <sect4 xml:id="sec-samba-yast2-conf-adv-ldap">
                <title>LDAP settings</title>
                <para>In the tab <guimenu>LDAP Settings</guimenu>, you can determine the LDAP server to use for authentication. To test the connection to your LDAP server, click <guimenu>Test Connection</guimenu>. To set expert LDAP settings or use default values, click <guimenu>Advanced Settings</guimenu>.</para>
-               <para>For more information about LDAP configuration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="cha-security-ldap" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>For more information about LDAP configuration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-ldap" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </sect4>
          </sect3>
       </sect2>
@@ -197,8 +184,7 @@
                      <literal>workgroup = WORKGROUP</literal>
                   </term>
                   <listitem>
-                     <para>This line assigns the Samba server to a workgroup. Replace <literal>WORKGROUP</literal> with an appropriate workgroup in your networking environment. Your Samba server appears under its DNS name unless this name has been assigned to some other machine in the network. If the DNS name is not available, set the server name using <literal>netbiosname=<replaceable>MYNAME</replaceable>
-                        </literal>. For more details about this parameter, see the <systemitem>smb.conf</systemitem> man page.</para>
+                     <para>This line assigns the Samba server to a workgroup. Replace <literal>WORKGROUP</literal> with an appropriate workgroup in your networking environment. Your Samba server appears under its DNS name unless this name has been assigned to some other machine in the network. If the DNS name is not available, set the server name using <literal>netbiosname=<replaceable>MYNAME</replaceable></literal>. For more details about this parameter, see the <systemitem>smb.conf</systemitem> man page.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
@@ -251,8 +237,7 @@
                               <option>path = /media/cdrom</option>
                            </term>
                            <listitem>
-                              <para>
-                                 <option>path</option> exports the directory <filename>/media/cdrom</filename>.</para>
+                              <para><option>path</option> exports the directory <filename>/media/cdrom</filename>.</para>
                            </listitem>
                         </varlistentry>
                      </variablelist>
@@ -286,8 +271,7 @@
                               <option>valid users = %S</option>
                            </term>
                            <listitem>
-                              <para>
-                                 <literal>%S</literal> is replaced with the concrete name of the share when a connection has been successfully established. For a <option>[homes]</option> share, this is always the user name. As a consequence, access rights to a user's share are restricted exclusively to that user.</para>
+                              <para><literal>%S</literal> is replaced with the concrete name of the share when a connection has been successfully established. For a <option>[homes]</option> share, this is always the user name. As a consequence, access rights to a user's share are restricted exclusively to that user.</para>
                            </listitem>
                         </varlistentry>
                         <varlistentry>
@@ -356,10 +340,7 @@
       <para>Clients can only access the Samba server via TCP/IP. NetBEUI and NetBIOS via IPX cannot be used with Samba.</para>
       <sect2 xml:id="sec-samba-client-inst-yast">
          <title>Configuring a Samba client with YaST</title>
-         <para>Configure a Samba client to access resources (files or printers) on the Samba or Windows server. Enter the Windows or Active Directory domain or workgroup in the dialog <menuchoice>
-               <guimenu>Network Services</guimenu>
-               <guimenu>Windows Domain Membership</guimenu>
-            </menuchoice>. If you activate <guimenu>Also Use SMB Information for Linux Authentication</guimenu>, the user authentication runs over the Samba, Windows, or Kerberos server.</para>
+         <para>Configure a Samba client to access resources (files or printers) on the Samba or Windows server. Enter the Windows or Active Directory domain or workgroup in the dialog <menuchoice><guimenu>Network Services</guimenu><guimenu>Windows Domain Membership</guimenu></menuchoice>. If you activate <guimenu>Also Use SMB Information for Linux Authentication</guimenu>, the user authentication runs over the Samba, Windows, or Kerberos server.</para>
          <para>Click <guimenu>Expert Settings</guimenu> for advanced configuration options. For example, use the <guimenu>Mount Server Directories</guimenu> table to enable mounting the server home directory automatically with authentication. This way users can access their home directories when hosted on CIFS. For details, see the <systemitem>pam_mount</systemitem> man page.</para>
          <para>After completing all settings, confirm the dialog to finish the configuration.</para>
       </sect2>
@@ -409,8 +390,7 @@
     domain logons = Yes
     domain master = Yes</screen>
       </example>
-      <para>It is necessary to prepare user accounts and passwords in an encryption format that conforms to Windows. Do this with the command <command>smbpasswd</command>
-         <option>-a name</option>. Create the domain account for the computers required by the Windows domain concept with the following commands:</para>
+      <para>It is necessary to prepare user accounts and passwords in an encryption format that conforms to Windows. Do this with the command <command>smbpasswd</command><option>-a name</option>. Create the domain account for the computers required by the Windows domain concept with the following commands:</para>
       <screen>useradd hostname
 smbpasswd -a -m hostname</screen>
       <para>With the <command>useradd</command> command, a dollar sign is added. The command <command>smbpasswd</command> inserts this automatically when the parameter <option>-m</option> is used. The commented configuration example (<filename>/usr/share/doc/packages/samba/examples/smb.conf.SUSE</filename>) contains settings that automate this task.</para>
@@ -429,10 +409,7 @@ smbpasswd -a -m hostname</screen>
             <para>Log in as <systemitem class="username">root</systemitem> and start YaST.</para>
          </step>
          <step>
-            <para>Start <menuchoice>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>Windows Domain Membership</guimenu>
-               </menuchoice>.</para>
+            <para>Start <menuchoice><guimenu>Network Services</guimenu><guimenu>Windows Domain Membership</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Enter the domain to join in the <guimenu>Domain or Workgroup</guimenu> field in the <guimenu>Windows Domain Membership</guimenu> screen.</para>
@@ -440,7 +417,7 @@ smbpasswd -a -m hostname</screen>
                <title>Determining Windows domain membership</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/ad_sambaclient.png" width="75%"/>
+                     <imagedata fileref="media/ad_sambaclient.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/ad_sambaclient.png"/>
@@ -466,12 +443,10 @@ smbpasswd -a -m hostname</screen>
       </tip>
       <sect2 xml:id="sec-realmd-ad">
          <title>Using <command>realmd</command> to manage Active Directory</title>
-         <para>
-            <command>realmd</command> is a DBus service that allows you to configure network authentication and domain membership.</para>
+         <para><command>realmd</command> is a DBus service that allows you to configure network authentication and domain membership.</para>
          <sect3 xml:id="sec-realmd-discovery">
             <title>Discovering Active Directory domains</title>
-            <para>
-               <command>realmd</command> discovers which domains or realms can be used or configured by checking the DNS SRV records. Ensure that a DNS SRV record is available for the Active Directory domain to be discovered; <emphasis>domain.example.com</emphasis> in the following example:</para>
+            <para><command>realmd</command> discovers which domains or realms can be used or configured by checking the DNS SRV records. Ensure that a DNS SRV record is available for the Active Directory domain to be discovered; <emphasis>domain.example.com</emphasis> in the following example:</para>
             <screen>_ldap._tcp.dc._msdcs.domain.example.com.</screen>
             <para>The DNS records should be created automatically by the DNS server that comes with the Active Directory.</para>
             <para>To discover a particular domain name, run the command:</para>
@@ -550,16 +525,12 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
       </sect2>
       <sect2 xml:id="sec-samba-advanced-compress">
          <title>Transparent file compression on Btrfs</title>
-         <para>Samba allows clients to remotely manipulate file and directory compression flags for shares placed on the Btrfs file system. Windows Explorer provides the ability to flag files/directories for transparent compression via the <menuchoice>
-               <guimenu>File</guimenu>
-               <guimenu>Properties</guimenu>
-               <guimenu>Advanced</guimenu>
-            </menuchoice> dialog:</para>
+         <para>Samba allows clients to remotely manipulate file and directory compression flags for shares placed on the Btrfs file system. Windows Explorer provides the ability to flag files/directories for transparent compression via the <menuchoice><guimenu>File</guimenu><guimenu>Properties</guimenu><guimenu>Advanced</guimenu></menuchoice> dialog:</para>
          <figure>
             <title>Windows Explorer <guimenu>Advanced Attributes</guimenu> dialog</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/samba_win_expl_advattr.png" width="75%"/>
+                  <imagedata fileref="media/samba_win_expl_advattr.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/samba_win_expl_advattr.png"/>
@@ -572,7 +543,7 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
             <title>Windows Explorer directory listing with compressed files</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/samba_win_expl_view_compressed.png" width="75%"/>
+                  <imagedata fileref="media/samba_win_expl_view_compressed.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/samba_win_expl_view_compressed.png"/>
@@ -581,11 +552,7 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
          </figure>
          <para>You can enable Samba share compression either manually by adding</para>
          <screen>vfs objects = btrfs</screen>
-         <para>to the share configuration in <filename>/etc/samba/smb.conf</filename>, or using YaST: <menuchoice>
-               <guimenu>Network Services</guimenu>
-               <guimenu>Samba Server</guimenu>
-               <guimenu>Add</guimenu>
-            </menuchoice>, and checking <guimenu>Utilize Btrfs Features</guimenu>.</para>
+         <para>to the share configuration in <filename>/etc/samba/smb.conf</filename>, or using YaST: <menuchoice><guimenu>Network Services</guimenu><guimenu>Samba Server</guimenu><guimenu>Add</guimenu></menuchoice>, and checking <guimenu>Utilize Btrfs Features</guimenu>.</para>
          <para>A general overview of compression on Btrfs can be found in <xref linkend="sec-filesystems-major-btrfs-compress"/>.</para>
       </sect2>
       <sect2 xml:id="sec-samba-advanced-snapshots">
@@ -602,18 +569,13 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
                <listitem>
                   <para>The SMB network share path has a related Snapper configuration file. You can create the snapper file with</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> snapper -c &lt;cfg_name&gt; create-config <option>/path/to/share</option></screen>
-                  <para>For more information on Snapper, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>For more information on Snapper, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </listitem>
                <listitem>
                   <para>The snapshot directory tree must allow access for relevant users. For more information, see the PERMISSIONS section of the vfs_snapper manual page (<command>man 8 vfs_snapper</command>).</para>
                </listitem>
             </itemizedlist>
-            <para>To support remote snapshots, you need to modify the <filename>/etc/samba/smb.conf</filename> file. You can do this either with <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>Samba Server</guimenu>
-               </menuchoice>, or manually by enhancing the relevant share section with</para>
+            <para>To support remote snapshots, you need to modify the <filename>/etc/samba/smb.conf</filename> file. You can do this either with <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>Samba Server</guimenu></menuchoice>, or manually by enhancing the relevant share section with</para>
             <screen>vfs objects = snapper</screen>
             <para>Note that you need to restart the Samba service for manual changes to <filename>smb.conf</filename> to take effect:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> systemctl restart nmb smb</screen>
@@ -621,7 +583,7 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
                <title>Adding a new Samba share with snapshots enabled</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_samba_snapshot.png" width="75%"/>
+                     <imagedata fileref="media/yast2_samba_snapshot.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/yast2_samba_snapshot.png"/>
@@ -633,7 +595,7 @@ drwxrwxrwx. 2 root    root    0 Oct 24 22:31 subfolder
                <title>The <guimenu>Previous versions</guimenu> tab in Windows explorer</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/samba_winexpl_previous_versions.png" width="75%"/>
+                     <imagedata fileref="media/samba_winexpl_previous_versions.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/samba_winexpl_previous_versions.png"/>
@@ -842,8 +804,7 @@ No shadow copies found in system.</screen>
          <listitem>
             <formalpara>
                <title>Man pages:</title>
-               <para>To see a list of all <command>man</command> pages installed with the package <package>samba</package>, run <command>apropos samba</command>. Open any of the man pages with <command>man <replaceable>NAME_OF_MAN_PAGE</replaceable>
-                  </command>.</para>
+               <para>To see a list of all <command>man</command> pages installed with the package <package>samba</package>, run <command>apropos samba</command>. Open any of the man pages with <command>man <replaceable>NAME_OF_MAN_PAGE</replaceable></command>.</para>
             </formalpara>
          </listitem>
          <listitem>

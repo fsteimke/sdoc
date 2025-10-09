@@ -15,8 +15,7 @@
    <important>
       <title>
          <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP7 and FIPS 140-3</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP7 will be submitted for Common Criteria certification but will not be submitted for NIST FIPS 140-3 certification. For more information, see <link xlink:href="https://www.suse.com/support/security/certifications/"/>.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 SP7 will be submitted for Common Criteria certification but will not be submitted for NIST FIPS 140-3 certification. For more information, see <link xlink:href="https://www.suse.com/support/security/certifications/"/>.</para>
    </important>
    <sect1 xml:id="sec-fips-concept">
       <title>FIPS overview</title>
@@ -95,12 +94,10 @@ Please reboot the system for the setting to take effect.
       <para>You can also use the following options:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <literal>--no-bootcfg</literal>: The tool does not reconfigure the boot loader but instead prints the options that need to be added to the kernel command line. Exception: It still attempts to execute <command>zipl</command> on <literal>s390x</literal>, as the system might become unbootable otherwise.</para>
+            <para><literal>--no-bootcfg</literal>: The tool does not reconfigure the boot loader but instead prints the options that need to be added to the kernel command line. Exception: It still attempts to execute <command>zipl</command> on <literal>s390x</literal>, as the system might become unbootable otherwise.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>--is-enabled</literal>: Checks the system FIPS mode status and returns a failure error code if disabled (2) or inconsistent (1).</para>
+            <para><literal>--is-enabled</literal>: Checks the system FIPS mode status and returns a failure error code if disabled (2) or inconsistent (1).</para>
          </listitem>
       </itemizedlist>
    </sect1>
@@ -178,20 +175,16 @@ Please reboot the system for the setting to take effect.
       <para>For more information, refer to:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>Man 8 <literal>fips-mode-setup</literal>
-            </para>
+            <para>Man 8 <literal>fips-mode-setup</literal></para>
          </listitem>
          <listitem>
-            <para>Man 8 <literal>fips-finish-install</literal>
-            </para>
+            <para>Man 8 <literal>fips-finish-install</literal></para>
          </listitem>
          <listitem>
-            <para>Man 7 <literal>crypto-policies</literal>
-            </para>
+            <para>Man 7 <literal>crypto-policies</literal></para>
          </listitem>
          <listitem>
-            <para>Man 8 <literal>update-crypto-policies</literal>
-            </para>
+            <para>Man 8 <literal>update-crypto-policies</literal></para>
          </listitem>
       </itemizedlist>
    </sect1>

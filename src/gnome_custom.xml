@@ -14,16 +14,13 @@
    <para>You can change the way the GNOME desktop looks and behaves to suit your personal tastes and needs. Some possible changes of settings are:</para>
    <itemizedlist mark="bullet" spacing="normal">
       <listitem>
-         <para>Desktop background, as described in <xref linkend="sec-gnome-settings-look-deskback"/>
-         </para>
+         <para>Desktop background, as described in <xref linkend="sec-gnome-settings-look-deskback"/></para>
       </listitem>
       <listitem>
-         <para>Keyboard and mouse configuration, as described in <xref linkend="sec-gnome-settings-hardware-keyboard"/> and <xref linkend="sec-gnome-settings-hardware-mouse"/>
-         </para>
+         <para>Keyboard and mouse configuration, as described in <xref linkend="sec-gnome-settings-hardware-keyboard"/> and <xref linkend="sec-gnome-settings-hardware-mouse"/></para>
       </listitem>
       <listitem>
-         <para>Sounds, as described in <xref linkend="sec-gnome-settings-hardware-audio"/>
-         </para>
+         <para>Sounds, as described in <xref linkend="sec-gnome-settings-hardware-audio"/></para>
       </listitem>
    </itemizedlist>
    <para>These settings and others can be changed in the GNOME <guimenu>Settings</guimenu> dialog. It focuses on look and feel, personal settings and preferences of your GNOME desktop.</para>
@@ -40,10 +37,10 @@
                <title>GNOME Background settings</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/preferences_background.png" width="80%"/>
+                     <imagedata fileref="media/preferences_background.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/preferences_background.png" width="80%"/>
+                     <imagedata fileref="media/preferences_background.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -62,18 +59,15 @@
    </sect1>
    <sect1 xml:id="sec-gnome-settings-lang">
       <title>Configuring language settings</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> can be configured to use any of several languages. The language setting determines the language of dialogs and menus and can also determine the keyboard and clock layout.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> can be configured to use any of several languages. The language setting determines the language of dialogs and menus and can also determine the keyboard and clock layout.</para>
       <para>To configure your language settings, right-click the desktop and choose <guimenu>Settings</guimenu>. Now choose <guimenu>Region &amp; Language</guimenu>. This dialog window has two sections: <guimenu>Your Account</guimenu> that controls personal language and format settings for the current user, and <guimenu>Login Screen</guimenu> that manages language settings applied to the system login screen that all users can see.</para>
       <para>Here you can choose:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <guimenu>Language</guimenu>. Choose a language from the list. For the change to take effect, you are prompted to <guimenu>Restart</guimenu> the desktop session. To do so, you must log out of your session and log back in afterward.</para>
+            <para><guimenu>Language</guimenu>. Choose a language from the list. For the change to take effect, you are prompted to <guimenu>Restart</guimenu> the desktop session. To do so, you must log out of your session and log back in afterward.</para>
          </listitem>
          <listitem>
-            <para>
-               <guimenu>Formats</guimenu>: To change the formats for date, number, currency and related options, choose a country from the list. For the change to take effect, you must log out of your session and log back in afterward.</para>
+            <para><guimenu>Formats</guimenu>: To change the formats for date, number, currency and related options, choose a country from the list. For the change to take effect, you must log out of your session and log back in afterward.</para>
          </listitem>
       </itemizedlist>
       <note>
@@ -84,10 +78,7 @@
                <para>To change input methods, select <guimenu>Keyboard</guimenu> in the navigation pane of the <guimenu>Settings</guimenu> dialog.</para>
             </listitem>
             <listitem>
-               <para>To change the key combination that switches between input methods, use <menuchoice>
-                     <guimenu>Keyboard</guimenu>
-                     <guimenu>Keyboard Shortcuts</guimenu>
-                  </menuchoice>. Then select the category <guimenu>Typing</guimenu> and the entry <guimenu>Switch to next input source</guimenu>.</para>
+               <para>To change the key combination that switches between input methods, use <menuchoice><guimenu>Keyboard</guimenu><guimenu>Keyboard Shortcuts</guimenu></menuchoice>. Then select the category <guimenu>Typing</guimenu> and the entry <guimenu>Switch to next input source</guimenu>.</para>
             </listitem>
          </itemizedlist>
       </note>
@@ -95,10 +86,7 @@
    <sect1 xml:id="sec-gnome-settings-hardware-keyboard">
       <title>Configuring the keyboard</title>
       <para>Refer to <xref linkend="sec-general-accessibility-mobility"/> for additional settings, such as key auto-repetition and cursor blink rate, and accessibility features. To configure your keyboard layout, refer to <xref linkend="sec-gnome-settings-lang"/>.</para>
-      <para>To modify keyboard shortcuts, right-click the desktop and choose <guimenu>Settings</guimenu>. Now select <menuchoice>
-            <guimenu>Keyboard</guimenu>
-            <guimenu>Keyboard Shortcuts</guimenu>
-         </menuchoice>.</para>
+      <para>To modify keyboard shortcuts, right-click the desktop and choose <guimenu>Settings</guimenu>. Now select <menuchoice><guimenu>Keyboard</guimenu><guimenu>Keyboard Shortcuts</guimenu></menuchoice>.</para>
       <para>This dialog shows the keyboard shortcuts that are configured for your system. To edit a key combination, click the entry that you want to change. To set a new key combination, press the respective keys. To disable a shortcut, press <keycap function="backspace"/> instead.</para>
    </sect1>
    <sect1 xml:id="sec-gnome-settings-xmodmap">
@@ -114,18 +102,15 @@
             <para>Assign a compose key using the <guimenu>Tweaks</guimenu> tool in the <guimenu>Activities</guimenu> overview. Press this key in sequence with one or two additional keys to print a special character. The keys must be pressed in the correct sequence, starting with the compose key.</para>
          </listitem>
          <listitem>
-            <para>In the <guimenu>Tweaks</guimenu> tool, navigate to <menuchoice>
-                  <guimenu>Keyboard</guimenu>
-                  <guimenu>Compose Key</guimenu>
-               </menuchoice> and select your command key:</para>
+            <para>In the <guimenu>Tweaks</guimenu> tool, navigate to <menuchoice><guimenu>Keyboard</guimenu><guimenu>Compose Key</guimenu></menuchoice> and select your command key:</para>
             <figure xml:id="fig-gnome-settings-keyboard-compose">
                <title>Enabling the compose key in Tweaks</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
+                     <imagedata fileref="media/gnome-tweaks-compose.png" width="73%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
+                     <imagedata fileref="media/gnome-tweaks-compose.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -137,8 +122,7 @@
       &lt;Multi_key&gt; &lt;a&gt; : "α"
       &lt;Multi_key&gt; &lt;b&gt; : "β"
       &lt;Multi_key&gt; &lt;exclam&gt;  : "¡"</screen>
-            <para>
-               <literal>include "%L"</literal> includes the default compose file for your locale, for example, <filename>/usr/share/X11/locale/en_US.UTF-8</filename>.</para>
+            <para><literal>include "%L"</literal> includes the default compose file for your locale, for example, <filename>/usr/share/X11/locale/en_US.UTF-8</filename>.</para>
             <para>The remaining lines specify the compose key, the other key presses, and the symbols they are intended to print.</para>
          </listitem>
          <listitem>
@@ -216,10 +200,10 @@
             <guimenu>Mouse and Touchpad</guimenu> settings dialog</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/preferences_mouse.png" width="80%"/>
+               <imagedata fileref="media/preferences_mouse.png" width="73%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/preferences_mouse.png" width="80%"/>
+               <imagedata fileref="media/preferences_mouse.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -251,10 +235,10 @@
             <title>Single monitor settings dialog</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/preferences_screen_single.png" width="100%"/>
+                  <imagedata fileref="media/preferences_screen_single.png" width="92%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/preferences_screen_single.png" width="80%"/>
+                  <imagedata fileref="media/preferences_screen_single.png" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -370,10 +354,10 @@ commented out the screen. Texts taken from GNOME help.
          <title>Configuring sound settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/sound_devices.png" width="100%"/>
+               <imagedata fileref="media/sound_devices.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/sound_devices.png" width="80%"/>
+               <imagedata fileref="media/sound_devices.png" width="73%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -390,10 +374,10 @@ commented out the screen. Texts taken from GNOME help.
                <title>Default Apps</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/preferences_preferred_apps.png" width="100%"/>
+                     <imagedata fileref="media/preferences_preferred_apps.png" width="92%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/preferences_preferred_apps.png" width="80%"/>
+                     <imagedata fileref="media/preferences_preferred_apps.png" width="73%"/>
                   </imageobject>
                </mediaobject>
             </figure>

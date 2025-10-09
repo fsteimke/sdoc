@@ -30,26 +30,17 @@
    <para>Apart from providing a core virtualization infrastructure and processor-specific drivers, QEMU also provides an architecture-specific user space program for managing VM Guests. Depending on the architecture this program is one of:</para>
    <itemizedlist mark="bullet" spacing="normal">
       <listitem>
-         <para>
-            <command>qemu-system-i386</command>
-         </para>
+         <para><command>qemu-system-i386</command></para>
       </listitem>
       <listitem>
-         <para>
-            <command>qemu-system-s390x</command>
-         </para>
+         <para><command>qemu-system-s390x</command></para>
       </listitem>
       <listitem>
-         <para>
-            <command>qemu-system-x86_64</command>
-         </para>
+         <para><command>qemu-system-x86_64</command></para>
       </listitem>
       <listitem>
-         <para>
-            <command>qemu-system-aarch64</command>
-         </para>
+         <para><command>qemu-system-aarch64</command></para>
       </listitem>
    </itemizedlist>
-   <para>In the following this command is called <command>qemu-system-<replaceable>ARCH</replaceable>
-      </command>; in examples the <command>qemu-system-x86_64</command> command is used.</para>
+   <para>In the following this command is called <command>qemu-system-<replaceable>ARCH</replaceable></command>; in examples the <command>qemu-system-x86_64</command> command is used.</para>
 </chapter>

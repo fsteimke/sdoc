@@ -7,14 +7,11 @@
          xml:id="cha-64bit">
    <title>32-bit and 64-bit applications in a 64-bit system environment</title>
    <info/>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> is available for several 64-bit platforms. The developers have not ported all 32-bit applications to 64-bit systems. This chapter offers a brief overview of 32-bit support implementation on 64-bit <phrase role="productname">SUSE Linux Enterprise Server</phrase> platforms.</para>
-   <para>
-      <phrase role="productname">SUSE Linux Enterprise Server</phrase> for the 64-bit platforms POWER, IBM Z and AMD64/Intel 64 is designed so that existing 32-bit applications run in the 64-bit environment <quote>out-of-the-box.</quote> The corresponding 32-bit platforms are POWER for POWER, and x86 for AMD64/Intel 64. This support means that you can continue to use your preferred 32-bit applications without waiting for a corresponding 64-bit port to become available. The current POWER system runs most applications in 32-bit mode, but you can run 64-bit applications.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> is available for several 64-bit platforms. The developers have not ported all 32-bit applications to 64-bit systems. This chapter offers a brief overview of 32-bit support implementation on 64-bit <phrase role="productname">SUSE Linux Enterprise Server</phrase> platforms.</para>
+   <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> for the 64-bit platforms POWER, IBM Z and AMD64/Intel 64 is designed so that existing 32-bit applications run in the 64-bit environment <quote>out-of-the-box.</quote> The corresponding 32-bit platforms are POWER for POWER, and x86 for AMD64/Intel 64. This support means that you can continue to use your preferred 32-bit applications without waiting for a corresponding 64-bit port to become available. The current POWER system runs most applications in 32-bit mode, but you can run 64-bit applications.</para>
    <note>
       <title>No support for building 32-bit applications</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not support compilation of 32-bit applications. It only offers runtime support for 32-bit binaries.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> does not support compilation of 32-bit applications. It only offers runtime support for 32-bit binaries.</para>
    </note>
    <sect1 xml:id="sec-64bit-runt">
       <title>Runtime support</title>

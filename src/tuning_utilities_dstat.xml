@@ -10,8 +10,7 @@
          <command>dstat</command>
       </title>
    </info>
-   <para>
-      <command>dstat</command> is a replacement for tools such as <command>vmstat</command>, <command>iostat</command>, <command>netstat</command>, or <command>ifstat</command>. <command>dstat</command> displays information about the system resources in real time. For example, you can compare disk usage in combination with interrupts from the IDE controller, or compare network bandwidth with the disk throughput (in the same interval).</para>
+   <para><command>dstat</command> is a replacement for tools such as <command>vmstat</command>, <command>iostat</command>, <command>netstat</command>, or <command>ifstat</command>. <command>dstat</command> displays information about the system resources in real time. For example, you can compare disk usage in combination with interrupts from the IDE controller, or compare network bandwidth with the disk throughput (in the same interval).</para>
    <para>By default, its output is presented in readable tables. Alternatively, CSV output can be produced which is suitable as a spreadsheet import format.</para>
    <para>It is written in Python and can be enhanced with plug-ins.</para>
    <para>This is the general syntax:</para>
@@ -46,8 +45,7 @@ usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
             <option>-v</option>, <option>--vmstat</option>
          </term>
          <listitem>
-            <para>equal to <option>-pmgdsc</option>, <option>-D total</option>
-            </para>
+            <para>equal to <option>-pmgdsc</option>, <option>-D total</option></para>
          </listitem>
       </varlistentry>
    </variablelist>

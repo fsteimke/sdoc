@@ -39,50 +39,26 @@
          <tgroup cols="3">
             <thead>
                <row>
-                  <entry>
-                     <para>Method</para>
-                  </entry>
-                  <entry>
-                     <para>Complexity</para>
-                  </entry>
-                  <entry>
-                     <para>Comments</para>
-                  </entry>
+                  <entry><para>Method</para></entry>
+                  <entry><para>Complexity</para></entry>
+                  <entry><para>Comments</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>Ethernet</para>
-                  </entry>
-                  <entry>
-                     <para>low</para>
-                  </entry>
-                  <entry>
-                     <para>All block device traffic goes over the same Ethernet interface as the network traffic. This may be limiting the performance of the guest.</para>
-                  </entry>
+                  <entry><para>Ethernet</para></entry>
+                  <entry><para>low</para></entry>
+                  <entry><para>All block device traffic goes over the same Ethernet interface as the network traffic. This may be limiting the performance of the guest.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>Ethernet dedicated to storage.</para>
-                  </entry>
-                  <entry>
-                     <para>medium</para>
-                  </entry>
-                  <entry>
-                     <para>Running the storage traffic over a dedicated Ethernet interface may eliminate a bottleneck on the server side. However, planning your own network with your own IP address range and a VLAN dedicated to storage requires certain considerations.</para>
-                  </entry>
+                  <entry><para>Ethernet dedicated to storage.</para></entry>
+                  <entry><para>medium</para></entry>
+                  <entry><para>Running the storage traffic over a dedicated Ethernet interface may eliminate a bottleneck on the server side. However, planning your own network with your own IP address range and a VLAN dedicated to storage requires certain considerations.</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>NPIV</para>
-                  </entry>
-                  <entry>
-                     <para>high</para>
-                  </entry>
-                  <entry>
-                     <para>NPIV is a method to virtualize Fibre channel connections. This is available with adapters that support a data rate of at least 4 Gbit/s and allows the setup of complex storage systems.</para>
-                  </entry>
+                  <entry><para>NPIV</para></entry>
+                  <entry><para>high</para></entry>
+                  <entry><para>NPIV is a method to virtualize Fibre channel connections. This is available with adapters that support a data rate of at least 4 Gbit/s and allows the setup of complex storage systems.</para></entry>
                </row>
             </tbody>
          </tgroup>

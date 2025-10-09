@@ -12,24 +12,19 @@
    <para>Except for <literal>init scripts</literal>, all scripts must be included in the <literal>&lt;scripts&gt;</literal> section.</para>
    <itemizedlist mark="bullet" spacing="normal">
       <listitem>
-         <para>
-            <literal>pre-scripts</literal> (very early, before anything else really happens)</para>
+         <para><literal>pre-scripts</literal> (very early, before anything else really happens)</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>postpartitioning-scripts</literal> (after partitioning and mounting to <filename>/mnt</filename> but before RPM installation)</para>
+         <para><literal>postpartitioning-scripts</literal> (after partitioning and mounting to <filename>/mnt</filename> but before RPM installation)</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>chroot-scripts</literal> (after the package installation, before the first boot)</para>
+         <para><literal>chroot-scripts</literal> (after the package installation, before the first boot)</para>
       </listitem>
       <listitem>
-         <para>
-            <literal>post-scripts</literal> (during the first boot of the installed system, no services running)</para>
+         <para><literal>post-scripts</literal> (during the first boot of the installed system, no services running)</para>
       </listitem>
    </itemizedlist>
-   <para>
-      <literal>Init scripts</literal> (when the installed system is first booted, when all services are running) are not executed by YaST and therefore have a special Status. See <xref linkend="init-scripts"/> for further information.</para>
+   <para><literal>Init scripts</literal> (when the installed system is first booted, when all services are running) are not executed by YaST and therefore have a special Status. See <xref linkend="init-scripts"/> for further information.</para>
    <sect2 xml:id="pre-install-scripts">
       <title>Pre-scripts</title>
       <para>Executed before YaST does any real change to the system (before partitioning and package installation but after the hardware detection).</para>
@@ -128,8 +123,7 @@
                <literal>filename</literal>
             </term>
             <listitem>
-               <para>The file name of the script. It will be stored in a temporary directory under <filename>/tmp</filename>
-               </para>
+               <para>The file name of the script. It will be stored in a temporary directory under <filename>/tmp</filename></para>
                <screen>&lt;filename&gt;mynitScript5.sh&lt;/filename&gt;</screen>
                <para>Optional in case you only have a single init script. The default name (<filename>init-scripts</filename>) is used in this case. If having specified more than one init script, you must set a unique name for each script.</para>
             </listitem>
@@ -152,8 +146,7 @@
       <para>Most of the XML elements described below can be used for all the script types described above, except for <emphasis>init scripts</emphasis>, whose definitions can contain only a subset of these elements. See <xref linkend="init-scripts"/> for further information about them.</para>
       <important>
          <title>Deprecated elements</title>
-         <para>
-            <literal>debug</literal> is a deprecated element and can be removed in future releases. To adapt, use an interpreter-specific debugging parameter in <literal>interpreter</literal>. For example, instead of &lt;interpreter&gt;shell&lt;/interpreter&gt; use &lt;interpreter&gt;/bin/sh -x&lt;/interpreter&gt; for the same result as having enabled the <literal>debug</literal> flag.</para>
+         <para><literal>debug</literal> is a deprecated element and can be removed in future releases. To adapt, use an interpreter-specific debugging parameter in <literal>interpreter</literal>. For example, instead of &lt;interpreter&gt;shell&lt;/interpreter&gt; use &lt;interpreter&gt;/bin/sh -x&lt;/interpreter&gt; for the same result as having enabled the <literal>debug</literal> flag.</para>
       </important>
       <variablelist>
          <title>Script XML representation</title>

@@ -9,8 +9,7 @@
    <title>Customizing installation images with mksusecd</title>
    <info>
       <abstract>
-         <para>
-            <command>mksusecd</command> is a useful tool for creating a customized installation image. Use it to modify the regular SUSE Linux Enterprise installation images, add or remove files, create a minimal network installation image, customize boot options or software repositories, and create a minimal boot image as an alternative to booting a system from a PXE server.</para>
+         <para><command>mksusecd</command> is a useful tool for creating a customized installation image. Use it to modify the regular SUSE Linux Enterprise installation images, add or remove files, create a minimal network installation image, customize boot options or software repositories, and create a minimal boot image as an alternative to booting a system from a PXE server.</para>
       </abstract>
    </info>
    <sect1 xml:id="sec-deployment-install-mksusecd">

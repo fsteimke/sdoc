@@ -7,14 +7,12 @@
          xml:id="cha-tuning-systemd-coredump">
    <title>Using <systemitem class="daemon">systemd-coredump</systemitem> to debug application crashes</title>
    <info/>
-   <para>
-      <systemitem class="daemon">systemd-coredump</systemitem> collects and displays core dumps, for analyzing application crashes. The core dump contains an image of the process's memory at the time of termination. By default, when a process crashes (or all processes belonging to an application), it stores the core dump in the <filename>/var/lib/systemd/coredump</filename> file and logs the core dump to the <systemitem class="daemon">systemd</systemitem> journal, including a backtrace if possible. You also have the option to examine the dump file with other tools such as <command>gdb</command> or <command>crash</command> (see <xref linkend="cha-tuning-kdump-analyze"/>).</para>
+   <para><systemitem class="daemon">systemd-coredump</systemitem> collects and displays core dumps, for analyzing application crashes. The core dump contains an image of the process's memory at the time of termination. By default, when a process crashes (or all processes belonging to an application), it stores the core dump in the <filename>/var/lib/systemd/coredump</filename> file and logs the core dump to the <systemitem class="daemon">systemd</systemitem> journal, including a backtrace if possible. You also have the option to examine the dump file with other tools such as <command>gdb</command> or <command>crash</command> (see <xref linkend="cha-tuning-kdump-analyze"/>).</para>
    <para>Core dumps stored in <filename>/var/lib/systemd/coredump</filename> are deleted after three days (see the <literal>d /var/lib/systemd/coredump</literal> line in <filename>/usr/lib/tmpfiles.d/systemd.conf</filename>).</para>
    <para>There is an option to not store core dumps, but to log only to the journal, which may be useful to minimize the collection and storage of sensitive information.</para>
    <sect1 xml:id="sect-sys-coredump-default">
       <title>Use and configuration</title>
-      <para>
-         <systemitem class="daemon">systemd-coredump</systemitem> is enabled and ready to run by default. The default configuration is in <filename>/etc/systemd/coredump.conf</filename>:</para>
+      <para><systemitem class="daemon">systemd-coredump</systemitem> is enabled and ready to run by default. The default configuration is in <filename>/etc/systemd/coredump.conf</filename>:</para>
       <screen>[Coredump]
 #Storage=external
 #Compress=yes
@@ -33,8 +31,7 @@
             <para>Enable the <systemitem>debuginfo-pool</systemitem> and <systemitem>debuginfo-update</systemitem> repositories</para>
          </step>
          <step>
-            <para>Install <package>vim-debuginfo</package>
-            </para>
+            <para>Install <package>vim-debuginfo</package></para>
          </step>
          <step>
             <para>Launch <command>vim testfile</command> and type a few characters</para>
@@ -95,17 +92,13 @@ Control Group: /user.slice/user-1000.slice/session-1.scope
       <para>The asterisk in the <literal>PRESENT</literal> column indicates that a stored core dump is present. If the field is empty there is no stored core dump, and <command>coredumpctl</command> retrieves crash information from the journal. You can control this behavior in <filename>/etc/systemd/coredump.conf</filename> with the <literal>Storage</literal> option:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <literal>Storage=none</literal>—core dumps are logged in the journal, but not stored. This is useful to minimize collecting and storing sensitive information, for example for General Data Protection Regulation (GDPR) compliance.</para>
+            <para><literal>Storage=none</literal>—core dumps are logged in the journal, but not stored. This is useful to minimize collecting and storing sensitive information, for example for General Data Protection Regulation (GDPR) compliance.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>Storage=external</literal>—cores are stored in <filename>/var/lib/systemd/coredump</filename>
-            </para>
+            <para><literal>Storage=external</literal>—cores are stored in <filename>/var/lib/systemd/coredump</filename></para>
          </listitem>
          <listitem>
-            <para>
-               <literal>Storage=journal</literal>—cores are stored in the <systemitem class="daemon">systemd</systemitem> journal</para>
+            <para><literal>Storage=journal</literal>—cores are stored in the <systemitem class="daemon">systemd</systemitem> journal</para>
          </listitem>
       </itemizedlist>
       <para>A new instance of <systemitem class="daemon">systemd-coredump</systemitem> is invoked for every core dump, so configuration changes are applied with the next core dump, and there is no need to restart any services.</para>

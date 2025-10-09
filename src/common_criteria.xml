@@ -54,8 +54,7 @@
        limitations of cryptography are briefly outlined.
        </para>-->
                <para>Be aware that cryptography is certainly useful, but only for the specific purposes that it is good for. Using cryptography is not a generic recipe for better security in a system; its use may even impose additional risk on the system. Make informed decisions about the use of cryptography, and feel obliged to have a reason for your decisions. A false sense of security can be more harmful than the weakness itself.</para>
-               <para>
-                  <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports encryption for:</para>
+               <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports encryption for:</para>
                <itemizedlist>
                   <listitem>
                      <para>Network connections (the <command>openssl</command> command, <command>stunnel</command>), for remote login (<command>openssh</command>, <command>man ssh(1)</command>)</para>
@@ -91,20 +90,15 @@
             <term>System fingerprinting and backups</term>
             <listitem>
                <para>Doing regular backups and having a fingerprint of your system is vital, especially in the case of a successful attack against your system. Make it an integral part of your security routine to verify that your backups work.</para>
-               <para>A fast and directly accessible backup adds confidence about the integrity of your system. However, it is important that the backup mechanism/solution has adequate versioning support so that you can trace changes in the system. As an example: The installation times of packages (<command>rpm</command>
-                  <option>-q</option>
-                  <option>--queryformat='%{INSTALLTIME} %{NAME}\n'</option>
-                  <replaceable>PACKAGE NAME</replaceable>) must correspond to the changed files in the backup log files.</para>
-               <para>Several tools exist on <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase> that can be used for the detection of unknown, yet successful attacks. It does not take much effort to configure them.</para>
+               <para>A fast and directly accessible backup adds confidence about the integrity of your system. However, it is important that the backup mechanism/solution has adequate versioning support so that you can trace changes in the system. As an example: The installation times of packages (<command>rpm</command><option>-q</option><option>--queryformat='%{INSTALLTIME} %{NAME}\n'</option><replaceable>PACKAGE NAME</replaceable>) must correspond to the changed files in the backup log files.</para>
+               <para>Several tools exist on <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> that can be used for the detection of unknown, yet successful attacks. It does not take much effort to configure them.</para>
                <para>In particular, we recommend using the file and directory integrity checker <systemitem class="resource">AIDE</systemitem> (Advanced Intrusion Detection Environment). When run for initialization, it creates a hash database of all files in the system, which are listed in its configuration file. This allows verifying the integrity of all cataloged files at a later time.</para>
                <warning>
                   <title>Backdoors</title>
                   <para>If you use AIDE, copy the hash database to a place that is inaccessible for potential attackers. Otherwise, the attacker may modify the integrity database after planting a backdoor, thereby defeating the purpose of the integrity measurement.</para>
                   <para>An attacker may also have planted a backdoor in the kernel. Apart from being hard to detect, the kernel-based backdoor can effectively remove all traces of the system compromise, so system alterations become almost invisible. Consequently, an integrity check needs to be done from a rescue system (or any other independent system with the target system's file systems mounted manually).</para>
                </warning>
-               <para>Be aware that the application of security updates invalidates the integrity database. <command>rpm</command>
-                  <option>-qlv packagename</option> lists the files that are contained in a package. The RPM subsystem is powerful with the data it maintains. It is accessible with the <option>--queryformat</option> command-line option. A differential update of the integrity database with the changed files becomes more manageable with fine-grained usage of RPM.</para>
+               <para>Be aware that the application of security updates invalidates the integrity database. <command>rpm</command><option>-qlv packagename</option> lists the files that are contained in a package. The RPM subsystem is powerful with the data it maintains. It is accessible with the <option>--queryformat</option> command-line option. A differential update of the integrity database with the changed files becomes more manageable with fine-grained usage of RPM.</para>
             </listitem>
          </varlistentry>
       </variablelist>

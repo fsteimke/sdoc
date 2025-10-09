@@ -27,10 +27,10 @@
          <title>RMT pattern</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/rmt_installation.png" width="70%"/>
+               <imagedata fileref="media/rmt_installation.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/rmt_installation.png" width="70%"/>
+               <imagedata fileref="media/rmt_installation.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -76,8 +76,7 @@
                <para>Running Kubernetes cluster</para>
             </listitem>
             <listitem>
-               <para>
-                  <command>helm</command> command configured to interact with the cluster</para>
+               <para><command>helm</command> command configured to interact with the cluster</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -154,130 +153,90 @@ EOF
                   <term>
                      <emphasis role="strong">Key</emphasis>: app.scc.password</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>nil</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: <link xlink:href="https://scc.suse.com/">SUSE Customer Center</link> proxy password. The password string needs to be put inside quotes. If the quote character <literal>"</literal> is part of the string, it has to be escaped with <literal>\</literal>.</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>nil</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: <link xlink:href="https://scc.suse.com/">SUSE Customer Center</link> proxy password. The password string needs to be put inside quotes. If the quote character <literal>"</literal> is part of the string, it has to be escaped with <literal>\</literal>.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: app.scc.username</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>nil</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: <link xlink:href="https://scc.suse.com/">SUSE Customer Center</link> proxy user name. The user name string needs to be put inside quotes. If the quote character <literal>"</literal> is part of the string, it has to be escaped with <literal>\</literal>.</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>nil</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: <link xlink:href="https://scc.suse.com/">SUSE Customer Center</link> proxy user name. The user name string needs to be put inside quotes. If the quote character <literal>"</literal> is part of the string, it has to be escaped with <literal>\</literal>.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: app.scc.products_enable</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: list</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>[]</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: list of products to enable for mirroring</para>
+                     <para><emphasis role="strong">Type</emphasis>: list</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>[]</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: list of products to enable for mirroring</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: app.scc.products_disable</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: list</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>[]</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: list of products to disable for mirroring</para>
+                     <para><emphasis role="strong">Type</emphasis>: list</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>[]</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: list of products to disable for mirroring</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: app.storage.class</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>""</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: Kubernetes <literal>storageclass</literal>.</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>""</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: Kubernetes <literal>storageclass</literal>.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: db.storage.class</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>""</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: Kubernetes <literal>storageclass</literal>.</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>""</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: Kubernetes <literal>storageclass</literal>.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: ingress.enabled</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: bool</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>false</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: Ingress Enabled</para>
+                     <para><emphasis role="strong">Type</emphasis>: bool</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>false</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: Ingress Enabled</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: ingress.hosts[0]</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: object</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>{"host":"chart-example.local","paths":[{"path":"/","pathType":"Prefix"}]}</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: DNS name at which the RMT service will be accessible from clients</para>
+                     <para><emphasis role="strong">Type</emphasis>: object</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>{"host":"chart-example.local","paths":[{"path":"/","pathType":"Prefix"}]}</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: DNS name at which the RMT service will be accessible from clients</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: ingress.tls[0].hosts[0]</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>"chart-example.local"</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: DNS name at which the RMT service will be accessible from clients</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>"chart-example.local"</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: DNS name at which the RMT service will be accessible from clients</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
                   <term>
                      <emphasis role="strong">Key</emphasis>: ingress.tls[0].secretName</term>
                   <listitem>
-                     <para>
-                        <emphasis role="strong">Type</emphasis>: string</para>
-                     <para>
-                        <emphasis role="strong">Default</emphasis>: <literal>"rmt-cert"</literal>
-                     </para>
-                     <para>
-                        <emphasis role="strong">Description</emphasis>: TLS Ingress Certificate</para>
+                     <para><emphasis role="strong">Type</emphasis>: string</para>
+                     <para><emphasis role="strong">Default</emphasis>: <literal>"rmt-cert"</literal></para>
+                     <para><emphasis role="strong">Description</emphasis>: TLS Ingress Certificate</para>
                   </listitem>
                </varlistentry>
             </variablelist>
@@ -291,10 +250,7 @@ EOF
          <step>
             <para>Start YaST with the <literal>rmt</literal> module.</para>
             <screen><prompt>&gt;</prompt><command>sudo</command><command>yast2 rmt</command></screen>
-            <para>Alternatively, start YaST and select <menuchoice>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>RMT Configuration</guimenu>
-               </menuchoice>.</para>
+            <para>Alternatively, start YaST and select <menuchoice><guimenu>Network Services</guimenu><guimenu>RMT Configuration</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Enter your organization credentials. To retrieve your credentials, refer to <xref linkend="sec-rmt-mirroring-credentials"/>.</para>
@@ -310,17 +266,12 @@ EOF
                <title>Certificate locations for RMT</title>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <filename>/etc/rmt/ssl/rmt-ca.crt</filename>
-                     </para>
+                     <para><filename>/etc/rmt/ssl/rmt-ca.crt</filename></para>
                      <para>This is the CA certificate bundle that <command>yast2 rmt</command> uses to certify the RMT server certificate. <command>yast2 rmt</command> only creates this file if it does not already exist.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <filename>/etc/rmt/ssl/rmt-server.crt</filename> and <filename>/etc/rmt/ssl/rmt-server.key</filename>
-                     </para>
-                     <para>
-                        <command>yast2 rmt</command> only generates a new server certificate and private key if one does not already exist. To regenerate this certificate, refer to <xref linkend="cha-manage-certificates-https"/>.</para>
+                     <para><filename>/etc/rmt/ssl/rmt-server.crt</filename> and <filename>/etc/rmt/ssl/rmt-server.key</filename></para>
+                     <para><command>yast2 rmt</command> only generates a new server certificate and private key if one does not already exist. To regenerate this certificate, refer to <xref linkend="cha-manage-certificates-https"/>.</para>
                   </listitem>
                </itemizedlist>
             </tip>
@@ -332,10 +283,10 @@ EOF
                </title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/rmt_firewalld.png" width="60%"/>
+                     <imagedata fileref="media/rmt_firewalld.png" width="55%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/rmt_firewalld.png" width="65%"/>
+                     <imagedata fileref="media/rmt_firewalld.png" width="59%"/>
                   </imageobject>
                </mediaobject>
             </figure>

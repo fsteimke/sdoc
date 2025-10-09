@@ -226,7 +226,11 @@
     </xsl:attribute>
   </xsl:template>
   
-  <!-- Set mark at start and end of para elements which apply to particular architecture === -->
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Set mark at start and end of para elements which apply to particular architecture</xd:p>
+    </xd:desc>
+  </xd:doc>
   <xsl:template match="para[@arch]" as="element(para)">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
@@ -238,6 +242,22 @@
         <xsl:text>◀</xsl:text>
       </phrase>
     </xsl:copy>
+  </xsl:template>
+  
+  <xd:doc>
+    <xd:desc>
+      <xd:p>See <xd:a href="https://github.com/docbook/xslTNG/issues/648">xslTNG Stylesheets Issue
+          648</xd:a></xd:p>
+    </xd:desc>
+  </xd:doc>
+  <xsl:template match="imagedata/@width[ends-with(., '%')]" as="attribute(width)">
+   <xsl:try>
+     <xsl:variable name="m" as="xs:nonNegativeInteger" select="replace(.,'(\d+)%', '$1') => xs:nonNegativeInteger()"/>
+     <xsl:attribute name="width" select="floor($m * 0.92) || '%'"/>
+     <xsl:catch>
+       <xsl:sequence select="."/>
+     </xsl:catch>
+   </xsl:try>
   </xsl:template>
   
 

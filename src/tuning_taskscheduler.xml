@@ -20,8 +20,7 @@
       </sect2>
       <sect2 xml:id="sec-tuning-taskscheduler-intro-timeslice">
          <title>Timeslice</title>
-         <para>The time period for which a process runs before it is <emphasis>preempted</emphasis> is defined in advance. It is called a <emphasis>timeslice</emphasis> of a process and represents the amount of processor time that is provided to each process. By assigning timeslices, the scheduler makes global decisions for the running system, and prevents individual processes from taking control of the processor resources. <remark>sknorr, 2014-08-22: "dominate over" sounds weird, not sure if just "dominate" would be better, though.</remark>
-         </para>
+         <para>The time period for which a process runs before it is <emphasis>preempted</emphasis> is defined in advance. It is called a <emphasis>timeslice</emphasis> of a process and represents the amount of processor time that is provided to each process. By assigning timeslices, the scheduler makes global decisions for the running system, and prevents individual processes from taking control of the processor resources. <remark>sknorr, 2014-08-22: "dominate over" sounds weird, not sure if just "dominate" would be better, though.</remark></para>
       </sect2>
       <sect2 xml:id="sec-tuning-taskscheduler-intro-priority">
          <title>Process priority</title>
@@ -42,24 +41,20 @@
          <varlistentry>
             <term>processor-bound</term>
             <listitem>
-               <para>
-                  <emphasis>Processor-bound</emphasis> tasks use their time to execute a code, and run until they are preempted by the scheduler. They do not block processes waiting for I/O requests, and, therefore, can be run less frequently but for longer time intervals.</para>
+               <para><emphasis>Processor-bound</emphasis> tasks use their time to execute a code, and run until they are preempted by the scheduler. They do not block processes waiting for I/O requests, and, therefore, can be run less frequently but for longer time intervals.</para>
             </listitem>
          </varlistentry>
       </variablelist>
       <para>Another approach is to divide processes by type into <emphasis>interactive</emphasis>, <emphasis>batch</emphasis>, and <emphasis>real-time</emphasis> processes.</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <emphasis>Interactive</emphasis> processes spend a lot of time waiting for I/O requests, such as keyboard or mouse operations. The scheduler must wake up such processes quickly on user request, or the user finds the environment unresponsive. The typical delay is approximately 100 ms. Office applications, text editors or image manipulation programs represent typical interactive processes.</para>
+            <para><emphasis>Interactive</emphasis> processes spend a lot of time waiting for I/O requests, such as keyboard or mouse operations. The scheduler must wake up such processes quickly on user request, or the user finds the environment unresponsive. The typical delay is approximately 100 ms. Office applications, text editors or image manipulation programs represent typical interactive processes.</para>
          </listitem>
          <listitem>
-            <para>
-               <emphasis>Batch</emphasis> processes often run in the background and do not need to be responsive. They receive lower priority from the scheduler. Multimedia converters, database search engines, or log files analyzers are typical examples of batch processes.</para>
+            <para><emphasis>Batch</emphasis> processes often run in the background and do not need to be responsive. They receive lower priority from the scheduler. Multimedia converters, database search engines, or log files analyzers are typical examples of batch processes.</para>
          </listitem>
          <listitem>
-            <para>
-               <emphasis>Real-time</emphasis> processes must never be blocked by low-priority processes, and the scheduler guarantees a short response time to them. Applications for editing multimedia content are a good example here.</para>
+            <para><emphasis>Real-time</emphasis> processes must never be blocked by low-priority processes, and the scheduler guarantees a short response time to them. Applications for editing multimedia content are a good example here.</para>
          </listitem>
       </itemizedlist>
    </sect1>
@@ -381,34 +376,22 @@ kernel.sched_wakeup_granularity_ns = 10000000</screen>
             <para>This happens because six scheduler parameters have been moved from <filename>/proc/sys/kernel/sched_*</filename> to <filename>/sys/kernel/debug/sched/*</filename>. The affected scheduler parameters are as follows:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <systemitem>sched_latency_ns</systemitem>
-                  </para>
+                  <para><systemitem>sched_latency_ns</systemitem></para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem>sched_migration_cost_ns</systemitem>
-                  </para>
+                  <para><systemitem>sched_migration_cost_ns</systemitem></para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem>sched_min_granularity_ns</systemitem>
-                  </para>
+                  <para><systemitem>sched_min_granularity_ns</systemitem></para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem>sched_nr_migrate</systemitem>
-                  </para>
+                  <para><systemitem>sched_nr_migrate</systemitem></para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem>sched_tunable_scaling</systemitem>
-                  </para>
+                  <para><systemitem>sched_tunable_scaling</systemitem></para>
                </listitem>
                <listitem>
-                  <para>
-                     <systemitem>sched_wakeup_granularity_n</systemitem>
-                  </para>
+                  <para><systemitem>sched_wakeup_granularity_n</systemitem></para>
                </listitem>
             </itemizedlist>
             <para>For temporary convenience, the <systemitem>sysctl</systemitem> for these scheduler parameters still exists in <phrase role="productname">SUSE Linux Enterprise Server</phrase>. However, due to planned changes in the CPU scheduler implementation, there is no guarantee that either the <systemitem>sysctl</systemitem> or the <systemitem>debugfs</systemitem> options will exist in a future release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>.</para>

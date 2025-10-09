@@ -8,8 +8,7 @@
    <title>NFS client and server</title>
    <info/>
    <para>Configuring a system as an NFS client or an NFS server can be done using the configuration system. The following examples show how both NFS client and server can be configured.</para>
-   <para>From <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-      <phrase role="productnumber">15 SP7</phrase> on, the structure of NFS client configuration has changed. Some global configuration options were introduced: <literal>enable_nfs4</literal> to switch NFS4 support on/off and <literal>idmapd_domain</literal> to define domain name for rpc.idmapd (this only makes sense when NFS4 is enabled). Attention: the old structure is not compatible with the new one, and the control files with an NFS section created on older releases will not work with newer products.</para>
+   <para>From <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> on, the structure of NFS client configuration has changed. Some global configuration options were introduced: <literal>enable_nfs4</literal> to switch NFS4 support on/off and <literal>idmapd_domain</literal> to define domain name for rpc.idmapd (this only makes sense when NFS4 is enabled). Attention: the old structure is not compatible with the new one, and the control files with an NFS section created on older releases will not work with newer products.</para>
    <para>For more information on how to install <phrase role="productname">SUSE Linux Enterprise Server</phrase> onto NFS shares, refer to <xref linkend="ay-partition-nfs"/>.</para>
    <example>
       <title>Network configuration: NFS client</title>

@@ -29,22 +29,14 @@
             <screen><prompt>&gt;</prompt><command>sudo</command> zypper in yast2-instserver</screen>
          </step>
          <step>
-            <para>Start <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Miscellaneous</guimenu>
-                  <guimenu>Installation Server</guimenu>
-               </menuchoice>.</para>
+            <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Miscellaneous</guimenu><guimenu>Installation Server</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select the repository type (HTTP, FTP, or NFS). The selected service is started automatically every time the system starts. If a service of the selected type is already running on your system and you want to configure it manually for the server, deactivate the automatic configuration of the server service with <guimenu>Do Not Configure Any Network Services</guimenu>. In both cases, define the directory in which the installation data should be made available on the server.</para>
          </step>
          <step>
             <para>Configure the required repository type. This step relates to the automatic configuration of server services. It is skipped when automatic configuration is deactivated.</para>
-            <para><!--adjust to standard network example--> Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable>
-               </literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable>
-               </literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable>
-               </literal>. Details of NFS and exports can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-               <xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para><!--adjust to standard network example--> Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable></literal>. Details of NFS and exports can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
             <tip>
                <title>Firewall settings</title>
                <para>Make sure that the firewall settings of your server system allow traffic on ports for HTTP, NFS, and FTP. If they currently do not, enable <guimenu>Open Port in Firewall</guimenu> or check <guimenu>Firewall Details</guimenu> first.</para>
@@ -109,19 +101,13 @@
             <para>Log in as <systemitem class="username">root</systemitem>.</para>
          </step>
          <step>
-            <para>Start <menuchoice>
-                  <guimenu>YaST</guimenu>
-                  <guimenu>Network Services</guimenu>
-                  <guimenu>NFS Server</guimenu>
-               </menuchoice>.</para>
+            <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>Network Services</guimenu><guimenu>NFS Server</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Select <guimenu>Start</guimenu> and <guimenu>Open Port in Firewall</guimenu> and click <guimenu>Next</guimenu>.</para>
          </step>
          <step>
-            <para>Select <guimenu>Add Directory</guimenu> and browse for the directory containing the installation sources, in this case, <filename>
-                  <replaceable>PRODUCTVERSION</replaceable>
-               </filename>.</para>
+            <para>Select <guimenu>Add Directory</guimenu> and browse for the directory containing the installation sources, in this case, <filename><replaceable>PRODUCTVERSION</replaceable></filename>.</para>
          </step>
          <step>
             <para>Select <guimenu>Add Host</guimenu> and enter the host names of the machines to which to export the installation data. Instead of specifying host names here, you could also use wild cards, ranges of network addresses, or the domain name of your network. Enter the appropriate export options or leave the default, which works fine in most setups. For more information about the syntax used in exporting NFS shares, read the <systemitem>exports</systemitem> man page.</para>
@@ -138,8 +124,7 @@
          <step>
             <para>Open the file <filename>/etc/exports</filename> and enter the following line:</para>
             <screen>/<replaceable>PRODUCTVERSION</replaceable> *(ro,root_squash,sync)</screen>
-            <para>This exports the directory <filename>/<replaceable>PRODUCTVERSION</replaceable>
-               </filename> to any host that is part of this network or to any host that can connect to this server. To limit the access to this server, use netmasks or domain names instead of the general wild card <literal>*</literal>. Refer to the <systemitem>export</systemitem> man page for details. Save and exit this configuration file.</para>
+            <para>This exports the directory <filename>/<replaceable>PRODUCTVERSION</replaceable></filename> to any host that is part of this network or to any host that can connect to this server. To limit the access to this server, use netmasks or domain names instead of the general wild card <literal>*</literal>. Refer to the <systemitem>export</systemitem> man page for details. Save and exit this configuration file.</para>
          </step>
          <step>
             <para>To add the NFS service to the list of servers started during system boot, execute the following commands:</para>
@@ -165,9 +150,7 @@ description=NFS Repository</screen>
             <para>Start the OpenSLP daemon with <command>systemctl start slpd</command>.</para>
          </step>
       </procedure>
-      <para>For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-slp" xrefstyle="%label &#34;%c&#34;"/>. For more information about NFS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-         <xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-slp" xrefstyle="%label &#34;%c&#34;"/>. For more information about NFS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-deployment-instserver-ftp">
       <title>Setting up an FTP repository manually</title>
@@ -219,8 +202,7 @@ description=FTP Repository</screen>
       </procedure>
       <tip>
          <title>Configuring an FTP server with YaST</title>
-         <para>If you prefer to use YaST rather than manually configuring the FTP installation server, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>If you prefer to use YaST rather than manually configuring the FTP installation server, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/>.</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-deployment-instserver-http">
@@ -234,8 +216,7 @@ description=FTP Repository</screen>
             <para>Configure the HTTP server to distribute the contents of your installation directory:</para>
             <substeps performance="required">
                <step>
-                  <para>Install the Web server Apache as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                     <xref linkend="sec-apache2-quickstart-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Install the Web server Apache as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-apache2-quickstart-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </step>
                <step>
                   <para>Enter the root directory of the HTTP server (<filename>/srv/www/htdocs</filename>) and create the subdirectory that will hold the installation sources:</para>
@@ -289,13 +270,10 @@ description=HTTP Repository</screen>
             <para>Export this share according to the procedure outlined in your Windows documentation.</para>
          </step>
          <step>
-            <para>Enter this share and create a subdirectory, called <filename>
-                  <replaceable>PRODUCT</replaceable>
-               </filename>. Replace <replaceable>PRODUCT</replaceable> with the actual product name.</para>
+            <para>Enter this share and create a subdirectory, called <filename><replaceable>PRODUCT</replaceable></filename>. Replace <replaceable>PRODUCT</replaceable> with the actual product name.</para>
          </step>
          <step>
-            <para>Enter the <filename>INSTALL/<replaceable>PRODUCT</replaceable>
-               </filename> directory and copy each medium to a separate directory, such as <literal>DVD1</literal> and <literal>DVD2</literal>.</para>
+            <para>Enter the <filename>INSTALL/<replaceable>PRODUCT</replaceable></filename> directory and copy each medium to a separate directory, such as <literal>DVD1</literal> and <literal>DVD2</literal>.</para>
          </step>
       </procedure>
       <para>To use an SMB mounted share as a repository, proceed as follows:</para>

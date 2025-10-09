@@ -98,8 +98,7 @@
 └────┘       └────┘
 </screen>
          </example>
-         <para>
-            <xref linkend="ex-ldap-replication-four-replicas"/> has four supplier replicas, which all synchronize to each other. These could be in four datacenters, or two servers per datacenter. In the case of one node per data center, each node should be able to support 100% of client load. When there are two per datacenter, each one only needs to scale to 50% of the client load.</para>
+         <para><xref linkend="ex-ldap-replication-four-replicas"/> has four supplier replicas, which all synchronize to each other. These could be in four datacenters, or two servers per datacenter. In the case of one node per data center, each node should be able to support 100% of client load. When there are two per datacenter, each one only needs to scale to 50% of the client load.</para>
       </sect3>
       <sect3 xml:id="sec-security-ldap-replication-six-replicas">
          <title>Six replicas</title>

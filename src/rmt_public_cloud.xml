@@ -13,7 +13,7 @@
       <title>An example of cloud architecture for RMT deployment</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/rmt-architecture-example.png" width="70%"/>
+            <imagedata fileref="media/rmt-architecture-example.png" width="64%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -28,7 +28,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/gcp-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="70%"/>
+                             width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -37,7 +37,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/aws-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="70%"/>
+                             width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -46,7 +46,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/azure-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="70%"/>
+                             width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -105,12 +105,10 @@
       <title>More information</title>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://documentation.suse.com/sles/15-SP6/html/SLES-all/cha-rmt-mirroring.html#sec-rmt-mirroring-credentials"/> Organization credentials to create a local mirror of the SUSE Linux Enterprise repositories.</para>
+            <para><link xlink:href="https://documentation.suse.com/sles/15-SP6/html/SLES-all/cha-rmt-mirroring.html#sec-rmt-mirroring-credentials"/> Organization credentials to create a local mirror of the SUSE Linux Enterprise repositories.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://documentation.suse.com/sles/15-SP6/html/SLES-all/cha-register-sle.html#sec-register-sle-installation"/> Register and activate SUSE Linux Enterprise Server with the SUSE Customer Center.</para>
+            <para><link xlink:href="https://documentation.suse.com/sles/15-SP6/html/SLES-all/cha-register-sle.html#sec-register-sle-installation"/> Register and activate SUSE Linux Enterprise Server with the SUSE Customer Center.</para>
          </listitem>
       </itemizedlist>
    </sect1>

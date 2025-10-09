@@ -17,8 +17,7 @@
       <para>The PAM concept consists of:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <emphasis>PAM modules</emphasis>, which are a set of shared libraries for a specific authentication mechanism.</para>
+            <para><emphasis>PAM modules</emphasis>, which are a set of shared libraries for a specific authentication mechanism.</para>
          </listitem>
          <listitem>
             <para>A <emphasis>module stack</emphasis> with of one or more PAM modules.</para>
@@ -27,8 +26,7 @@
             <para>A PAM-aware <emphasis>service</emphasis> which needs authentication by using a module stack or PAM modules. Usually a service is a familiar name of the corresponding application, like <command>login</command> or <command>su</command>. The service name <literal>other</literal> is a reserved word for default rules.</para>
          </listitem>
          <listitem>
-            <para>
-               <emphasis>Module arguments</emphasis>, with which the execution of a single PAM module can be influenced.</para>
+            <para><emphasis>Module arguments</emphasis>, with which the execution of a single PAM module can be influenced.</para>
          </listitem>
          <listitem>
             <para>A mechanism evaluating each <emphasis>result</emphasis> of a single PAM module execution. A positive value executes the next PAM module. The way a negative value is dealt with depends on the configuration: <quote>no influence, proceed</quote> up to <quote>terminate immediately</quote> and anything in between are valid options.</para>
@@ -215,16 +213,13 @@ auth  required  pam_unix.so  try_first_pass <co xml:id="co-security-pam-sshd-pam
       </example>
       <calloutlist>
          <callout arearefs="co-security-pam-sshd-pam-env">
-            <para>
-               <systemitem class="library">pam_env.so</systemitem> loads <filename>/etc/security/pam_env.conf</filename> to set the environment variables as specified in this file. It can be used to set the <envar>DISPLAY</envar> variable to the correct value, because the <systemitem class="library">pam_env</systemitem> module knows about the location from which the login is taking place.</para>
+            <para><systemitem class="library">pam_env.so</systemitem> loads <filename>/etc/security/pam_env.conf</filename> to set the environment variables as specified in this file. It can be used to set the <envar>DISPLAY</envar> variable to the correct value, because the <systemitem class="library">pam_env</systemitem> module knows about the location from which the login is taking place.</para>
          </callout>
          <callout arearefs="co-security-pam-sshd-gnome">
-            <para>
-               <systemitem class="library">pam_gnome_keyring.so</systemitem> checks the user's login and password against the GNOME key ring</para>
+            <para><systemitem class="library">pam_gnome_keyring.so</systemitem> checks the user's login and password against the GNOME key ring</para>
          </callout>
          <callout arearefs="co-security-pam-sshd-pam-unix">
-            <para>
-               <systemitem class="library">pam_unix</systemitem> checks the user's login and password against <filename>/etc/passwd</filename> and <filename>/etc/shadow</filename>.</para>
+            <para><systemitem class="library">pam_unix</systemitem> checks the user's login and password against <filename>/etc/passwd</filename> and <filename>/etc/shadow</filename>.</para>
          </callout>
       </calloutlist>
       <para>The whole stack of <literal>auth</literal> modules is processed before <systemitem class="daemon">sshd</systemitem> gets any feedback about whether the login has succeeded. All modules of the stack having the <literal>required</literal> control flag must be processed successfully before <systemitem class="daemon">sshd</systemitem> receives a message about the positive result. If one of the modules is not successful, the entire module stack is still processed and only then is <systemitem class="daemon">sshd</systemitem> notified about the negative result.</para>
@@ -257,8 +252,7 @@ session  optional  pam_env.so</screen>
       <para>Some PAM modules are configurable. The configuration files are located in <filename>/etc/security</filename>. This section briefly describes the configuration files relevant to the sshd example—<filename>pam_env.conf</filename> and <filename>limits.conf</filename>.</para>
       <sect2 xml:id="sec-pam-struc-conf-pamenv">
          <title>pam_env.conf</title>
-         <para>
-            <filename>pam_env.conf</filename> can be used to define a standardized environment for users that is set whenever the <systemitem>pam_env</systemitem> module is called. With it, preset environment variables using the following syntax:</para>
+         <para><filename>pam_env.conf</filename> can be used to define a standardized environment for users that is set whenever the <systemitem>pam_env</systemitem> module is called. With it, preset environment variables using the following syntax:</para>
          <screen><replaceable>VARIABLE</replaceable>  [DEFAULT=<replaceable>VALUE</replaceable>]  [OVERRIDE=<replaceable>VALUE</replaceable>]</screen>
          <variablelist>
             <varlistentry>
@@ -301,12 +295,7 @@ DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}
          <title>pam_mount.conf.xml</title>
          <para>The purpose of <systemitem>pam_mount</systemitem> is to mount user home directories during the login process, and to unmount them during logout in an environment where a central file server keeps all the home directories of users. With this method, it is not necessary to mount a complete <filename>/home</filename> directory where all the user home directories would be accessible. Instead, only the home directory of the user who is about to log in, is mounted.</para>
          <para>After installing <systemitem>pam_mount</systemitem>, a template for <filename>pam_mount.conf.xml</filename> is available in <filename>/etc/security</filename>. The description of the elements can be found in the manual page <command>man 5 pam_mount.conf</command>.</para>
-         <para>A basic configuration of this feature can be done with YaST. Select <menuchoice>
-               <guimenu>Network Settings</guimenu>
-               <guimenu>Windows Domain Membership</guimenu>
-               <guimenu>Expert Settings</guimenu>
-            </menuchoice> to add the file server. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-            <xref linkend="sec-samba-client-inst" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>A basic configuration of this feature can be done with YaST. Select <menuchoice><guimenu>Network Settings</guimenu><guimenu>Windows Domain Membership</guimenu><guimenu>Expert Settings</guimenu></menuchoice> to add the file server. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-samba-client-inst" xrefstyle="%label &#34;%c&#34;"/>.</para>
          <note>
             <title>LUKS2 support</title>
             <para>LUKS2 support was added to <command>cryptsetup</command> 2.0, and <phrase role="productname">SUSE Linux Enterprise Server</phrase> has included support for LUKS2 in <systemitem>pam_mount</systemitem> since <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 SP3.</para>
@@ -337,15 +326,13 @@ DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}
          <step>
             <formalpara>
                <title>Add debugging for test purposes.</title>
-               <para>To make sure the new authentication procedure works as planned, turn on debugging for all PAM-related operations. The <command>pam-config --add --sss-debug</command> command turns on debugging for SSSD-related PAM operations. Find the debugging output in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-                  <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). To configure SSSD, refer to <xref linkend="sec-security-ldap-server-sssd"/>.</para>
+               <para>To make sure the new authentication procedure works as planned, turn on debugging for all PAM-related operations. The <command>pam-config --add --sss-debug</command> command turns on debugging for SSSD-related PAM operations. Find the debugging output in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). To configure SSSD, refer to <xref linkend="sec-security-ldap-server-sssd"/>.</para>
             </formalpara>
          </step>
          <step>
             <formalpara>
                <title>Query your setup.</title>
-               <para>Before you finally apply your new PAM setup, check if it contains all the options you wanted to add. The <command>pam-config --query --</command>
-                  <replaceable>MODULE</replaceable> command lists both the type and the options for the queried PAM module.</para>
+               <para>Before you finally apply your new PAM setup, check if it contains all the options you wanted to add. The <command>pam-config --query --</command><replaceable>MODULE</replaceable> command lists both the type and the options for the queried PAM module.</para>
             </formalpara>
          </step>
          <step>
@@ -360,8 +347,7 @@ DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}
    <sect1 xml:id="sec-pam-manual-config">
       <title>Manually configuring PAM</title>
       <para>If you prefer to manually create or maintain your PAM configuration files, make sure to disable <command>pam-config</command> for these files.</para>
-      <para>When you create your PAM configuration files from scratch using the <command>pam-config --create</command> command, it creates symbolic links from the <filename>common-<replaceable>*</replaceable>
-         </filename> to the <filename>common-<replaceable>*</replaceable>-pc</filename> files. <command>pam-config</command> only modifies the <filename>common-<replaceable>*</replaceable>-pc</filename> configuration files. Removing these symbolic links effectively disables pam-config, because pam-config only operates on the <filename>common-<replaceable>*</replaceable>-pc</filename> files and these files are not put into effect without the symbolic links.</para>
+      <para>When you create your PAM configuration files from scratch using the <command>pam-config --create</command> command, it creates symbolic links from the <filename>common-<replaceable>*</replaceable></filename> to the <filename>common-<replaceable>*</replaceable>-pc</filename> files. <command>pam-config</command> only modifies the <filename>common-<replaceable>*</replaceable>-pc</filename> configuration files. Removing these symbolic links effectively disables pam-config, because pam-config only operates on the <filename>common-<replaceable>*</replaceable>-pc</filename> files and these files are not put into effect without the symbolic links.</para>
       <warning>
          <title>Include <filename>pam_systemd.so</filename> in configuration</title>
          <para>If you are creating your own PAM configuration, make sure to include <literal>pam_systemd.so</literal> configured as <literal>session optional</literal>. Not including the <literal>pam_systemd.so</literal> can cause problems with <systemitem class="daemon">systemd</systemitem> task limits. For details, refer to the man page of <literal>pam_systemd.so</literal>.</para>

@@ -7,8 +7,7 @@
          xml:id="cha-print">
    <title>Printer operation</title>
    <info/>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> supports printing with many types of printers, including remote network printers. Printers can be configured manually or with YaST. For configuration instructions, refer to <xref linkend="sec-yast-hw-print"/>. Both graphical and command line utilities are available for starting and managing print jobs. If your printer does not work as expected, refer to <xref linkend="sec-print-prob"/>.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> supports printing with many types of printers, including remote network printers. Printers can be configured manually or with YaST. For configuration instructions, refer to <xref linkend="sec-yast-hw-print"/>. Both graphical and command line utilities are available for starting and managing print jobs. If your printer does not work as expected, refer to <xref linkend="sec-print-prob"/>.</para>
    <para>CUPS (Common Unix Printing System) is the standard print system in <phrase role="productname">SUSE Linux Enterprise Server</phrase>.</para>
    <para>Printers can be distinguished by interface, such as USB or network, and printer language. When buying a printer, make sure that the printer has an interface that is supported (USB, Ethernet or Wi-Fi) and a suitable printer language. Printers can be categorized on the basis of the following three classes of printer languages:</para>
    <variablelist>
@@ -69,7 +68,7 @@
    <sect1 xml:id="sec-print-method">
       <title>Methods and protocols for connecting printers</title>
       <para>There are multiple possibilities for connecting a printer to the system. The configuration of CUPS does not distinguish between a local printer and a printer connected to the system over the network. For more information about the printer connection, read the article <emphasis>CUPS in a Nutshell</emphasis> at <link xlink:href="https://en.opensuse.org/SDB:CUPS_in_a_Nutshell"/>.</para>
-      <para>Printers and similar devices provided by the z/VM that connect locally with the IBM Z mainframes are not supported by CUPS. On these platforms, printing is only possible over the network. The cabling for network printers must be installed according to the instructions of the printer manufacturer.</para>
+      <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>Printers and similar devices provided by the z/VM that connect locally with the IBM Z mainframes are not supported by CUPS. On these platforms, printing is only possible over the network. The cabling for network printers must be installed according to the instructions of the printer manufacturer.<phrase role="arch-end">◀</phrase></para>
       <warning>
          <title>Changing cable connections in a running system</title>
          <para>When connecting the printer to the machine, do not forget that only USB devices can be plugged in or unplugged during operation. To avoid damaging your system or printer, shut down the system before changing any connections that are not USB.</para>
@@ -102,8 +101,7 @@
          <varlistentry>
             <term>socket</term>
             <listitem>
-               <para>
-                  <emphasis>Socket</emphasis> refers to a connection in which the plain print data is sent directly to a TCP socket. Socket port numbers that are commonly used are <option>9100</option> or <option>35</option>. The device URI (uniform resource identifier) syntax is: socket://<replaceable>IP.OF.THE.PRINTER</replaceable>:<replaceable>PORT</replaceable>, for example: <systemitem>socket://192.168.2.202:9100/</systemitem>.</para>
+               <para><emphasis>Socket</emphasis> refers to a connection in which the plain print data is sent directly to a TCP socket. Socket port numbers that are commonly used are <option>9100</option> or <option>35</option>. The device URI (uniform resource identifier) syntax is: socket://<replaceable>IP.OF.THE.PRINTER</replaceable>:<replaceable>PORT</replaceable>, for example: <systemitem>socket://192.168.2.202:9100/</systemitem>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -168,11 +166,8 @@ Resolution/Output Resolution: 150dpi 300dpi *600dpi</screen>
    </sect1>
    <sect1 xml:id="sec-print-appl-commandline">
       <title>Printing from the command line</title>
-      <para>To print from the command line, enter <command>lp -d</command>
-         <replaceable>QUEUENAME</replaceable>
-         <replaceable>FILENAME</replaceable>, substituting the corresponding names for <replaceable>QUEUENAME</replaceable> and <replaceable>FILENAME</replaceable>.</para>
-      <para>Several applications rely on the <command>lp</command> command for printing. In this case, enter the correct command in the application's print dialog, normally without specifying <replaceable>FILENAME</replaceable>, for example, <command>lp -d</command>
-         <replaceable>QUEUENAME</replaceable>.</para>
+      <para>To print from the command line, enter <command>lp -d</command><replaceable>QUEUENAME</replaceable><replaceable>FILENAME</replaceable>, substituting the corresponding names for <replaceable>QUEUENAME</replaceable> and <replaceable>FILENAME</replaceable>.</para>
+      <para>Several applications rely on the <command>lp</command> command for printing. In this case, enter the correct command in the application's print dialog, normally without specifying <replaceable>FILENAME</replaceable>, for example, <command>lp -d</command><replaceable>QUEUENAME</replaceable>.</para>
    </sect1>
    <sect1 xml:id="sec-print-special">
       <title>Special features in <phrase role="productname">SUSE Linux Enterprise Server</phrase>
@@ -182,8 +177,7 @@ Resolution/Output Resolution: 150dpi 300dpi *600dpi</screen>
          <title>CUPS and firewall</title>
          <para>After completing a default installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <systemitem class="daemon">firewalld</systemitem> is active and the network interfaces are configured to be in the <literal>public</literal> zone, which blocks incoming traffic.</para>
          <para>When <systemitem class="daemon">firewalld</systemitem> is active, you may need to configure it to allow clients to browse network printers by allowing <literal>mdns</literal> and <literal>ipp</literal> through the internal network zone. The public zone should never expose printer queues.</para>
-         <para>(More information about the <systemitem class="daemon">firewalld</systemitem> configuration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-            <xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/> and at <link xlink:href="https://en.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings"/>.)</para>
+         <para>(More information about the <systemitem class="daemon">firewalld</systemitem> configuration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/> and at <link xlink:href="https://en.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings"/>.)</para>
          <sect3 xml:id="sec-print-special-cupsfire-client">
             <title>CUPS client</title>
             <para>Normally, a CUPS client runs on a regular workstation located in a trusted network environment behind a firewall. In this case, it is recommended to configure the network interface to be in the <literal>Internal Zone</literal>, so the workstation is reachable from within the network.</para>
@@ -207,20 +201,16 @@ Resolution/Output Resolution: 150dpi 300dpi *600dpi</screen>
          <para>Additional PPD files are provided by the following packages:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <systemitem>gutenprint</systemitem>: the Gutenprint driver and its matching PPDs</para>
+               <para><systemitem>gutenprint</systemitem>: the Gutenprint driver and its matching PPDs</para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>splix</systemitem>: the SpliX driver and its matching PPDs</para>
+               <para><systemitem>splix</systemitem>: the SpliX driver and its matching PPDs</para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>OpenPrintingPPDs-ghostscript</systemitem>: PPDs for Ghostscript built-in drivers</para>
+               <para><systemitem>OpenPrintingPPDs-ghostscript</systemitem>: PPDs for Ghostscript built-in drivers</para>
             </listitem>
             <listitem>
-               <para>
-                  <systemitem>OpenPrintingPPDs-hpijs</systemitem>: PPDs for the HPIJS driver for non-HP printers</para>
+               <para><systemitem>OpenPrintingPPDs-hpijs</systemitem>: PPDs for the HPIJS driver for non-HP printers</para>
             </listitem>
          </itemizedlist>
       </sect2>
@@ -287,11 +277,10 @@ printer: printing disabled</screen>
                      <title>Broadcast from the CUPS network server</title>
                      <screen>ipp://192.168.2.202:631/printers/queue</screen>
                   </example>
-                  <para>Take into account that IBM Z Ethernet devices do not receive broadcasts by default.</para>
+                  <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>Take into account that IBM Z Ethernet devices do not receive broadcasts by default.<phrase role="arch-end">◀</phrase></para>
                   <para>The following command can be used to test if a TCP connection can be established to <command>cupsd</command> (port <literal>631</literal>) on <replaceable>HOST</replaceable>:</para>
                   <screen><prompt>&gt;</prompt>netcat -z <replaceable>HOST</replaceable> 631 &amp;&amp; echo ok || echo failed</screen>
-                  <para>If the connection to <command>cupsd</command> cannot be established, <command>cupsd</command> may not be active or there may be basic network problems. <command>lpstat -h</command>
-                     <replaceable>HOST</replaceable> -l -t returns a status report for all queues on <replaceable>HOST</replaceable>, provided the respective <command>cupsd</command> is active and the host accepts queries.</para>
+                  <para>If the connection to <command>cupsd</command> cannot be established, <command>cupsd</command> may not be active or there may be basic network problems. <command>lpstat -h</command><replaceable>HOST</replaceable> -l -t returns a status report for all queues on <replaceable>HOST</replaceable>, provided the respective <command>cupsd</command> is active and the host accepts queries.</para>
                   <para>The next command can be used to test if the <replaceable>QUEUE</replaceable> on <replaceable>HOST</replaceable> accepts a print job consisting of a single carriage-return character. Nothing should be printed. A blank page may be ejected.</para>
                   <screen><prompt>&gt;</prompt>echo -en "\r" \
 | lp -d queue -h <replaceable>HOST</replaceable></screen>
@@ -301,16 +290,14 @@ printer: printing disabled</screen>
                <term>Troubleshooting a Network Printer or Print Server Machine</term>
                <listitem>
                   <para>Spoolers running in a print server machine sometimes cause problems when they need to deal with multiple print jobs. Since this is caused by the spooler in the print server machine, there no way to resolve this issue. As a work-around, circumvent the spooler in the print server machine by addressing the printer connected to the print server machine directly with the TCP socket. See <xref linkend="sec-print-net"/>.</para>
-                  <para>In this way, the print server machine is reduced to a converter between the multiple forms of data transfer (TCP/IP network and local printer connection). To use this method, you need to know the TCP port on the print server machine. If the printer is connected to the print server machine and turned on, this TCP port can normally be determined with the <command>nmap</command> utility from the <systemitem>nmap</systemitem> package certain time after the print server machine is powered up. For example, <command>nmap </command>
-                     <replaceable>IP-address</replaceable> may deliver the following output for a print server machine:</para>
+                  <para>In this way, the print server machine is reduced to a converter between the multiple forms of data transfer (TCP/IP network and local printer connection). To use this method, you need to know the TCP port on the print server machine. If the printer is connected to the print server machine and turned on, this TCP port can normally be determined with the <command>nmap</command> utility from the <systemitem>nmap</systemitem> package certain time after the print server machine is powered up. For example, <command>nmap </command><replaceable>IP-address</replaceable> may deliver the following output for a print server machine:</para>
                   <screen>Port       State       Service
 23/tcp     open        telnet
 80/tcp     open        http
 515/tcp    open        printer
 631/tcp    open        cups
 9100/tcp   open        jetdirect</screen>
-                  <para>This output indicates that the printer connected to the print server machine can be addressed via TCP socket on port <literal>9100</literal>. By default, <command>nmap</command> only checks several commonly known ports listed in <filename>/usr/share/nmap/nmap-services</filename>. To check all possible ports, use the command <command>nmap -p </command>
-                     <replaceable>FROM_PORT</replaceable>-<replaceable>TO_PORT</replaceable> <replaceable>IP_ADDRESS</replaceable>. For further information, refer to the man page of <command>nmap</command>.</para>
+                  <para>This output indicates that the printer connected to the print server machine can be addressed via TCP socket on port <literal>9100</literal>. By default, <command>nmap</command> only checks several commonly known ports listed in <filename>/usr/share/nmap/nmap-services</filename>. To check all possible ports, use the command <command>nmap -p </command><replaceable>FROM_PORT</replaceable>-<replaceable>TO_PORT</replaceable> <replaceable>IP_ADDRESS</replaceable>. For further information, refer to the man page of <command>nmap</command>.</para>
                   <para>Enter a command like</para>
                   <screen><prompt>&gt;</prompt>echo -en "\rHello\r\f" | netcat -w 1 IP-address port
 cat file | netcat -w 1 IP-address port</screen>
@@ -342,9 +329,7 @@ cat file | netcat -w 1 IP-address port</screen>
                <para>To stop printing, remove all paper from ink jet printers or open the paper trays of laser printers. High-quality printers have a button for canceling the current printout.</para>
             </step>
             <step>
-               <para>The print job may still be in the queue, because jobs are only removed after they are sent to the printer. Use <command>lpstat -o</command> or <command>lpstat -h cups.example.com -o</command> to check which queue is currently printing. Delete the print job with <command>cancel</command>
-                  <replaceable>QUEUE</replaceable>-<replaceable>JOBNUMBER</replaceable> or <command>cancel -h cups.example.com</command>
-                  <replaceable>QUEUE</replaceable>-<replaceable>JOBNUMBER</replaceable>.</para>
+               <para>The print job may still be in the queue, because jobs are only removed after they are sent to the printer. Use <command>lpstat -o</command> or <command>lpstat -h cups.example.com -o</command> to check which queue is currently printing. Delete the print job with <command>cancel</command><replaceable>QUEUE</replaceable>-<replaceable>JOBNUMBER</replaceable> or <command>cancel -h cups.example.com</command><replaceable>QUEUE</replaceable>-<replaceable>JOBNUMBER</replaceable>.</para>
             </step>
             <step>
                <para>Certain data may still be transferred to the printer even though the print job has been deleted from the queue. Check if a CUPS back-end process is still running for the respective queue and stop it.</para>

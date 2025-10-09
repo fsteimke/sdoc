@@ -29,8 +29,7 @@
       <para>Because <command>md</command>/<command>mdadm</command> cannot reliably determine what caused the disk failure, it assumes a serious disk error and treats any failed device as faulty until it is explicitly told that the device is reliable.</para>
       <para>Under some circumstances—such as storage devices with an internal RAID array—connection problems are very often the cause of the device failure. In such case, you can tell <command>mdadm</command> that it is safe to automatically <option>--re-add</option> the device after it appears. You can do this by adding the following line to <filename>/etc/mdadm.conf</filename>:</para>
       <screen>POLICY action=re-add</screen>
-      <para>Note that the device will be automatically re-added after re-appearing only if the <systemitem>udev</systemitem> rules cause <command>mdadm -I <replaceable>DISK_DEVICE_NAME</replaceable>
-         </command> to be run on any device that spontaneously appears (default behavior), and if write-intent bitmaps are configured (they are by default).</para>
+      <para>Note that the device will be automatically re-added after re-appearing only if the <systemitem>udev</systemitem> rules cause <command>mdadm -I <replaceable>DISK_DEVICE_NAME</replaceable></command> to be run on any device that spontaneously appears (default behavior), and if write-intent bitmaps are configured (they are by default).</para>
       <para>If you want this policy to only apply to some devices and not to the others, then the <literal>path=</literal> option can be added to the <literal>POLICY</literal> line in <filename>/etc/mdadm.conf</filename> to restrict the non-default action to only selected devices. Wild cards can be used to identify groups of devices. See <command>man 5 mdadm.conf</command> for more information.</para>
    </sect1>
 </chapter>

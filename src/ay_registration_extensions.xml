@@ -97,9 +97,7 @@
       <varlistentry>
          <term>reg_server_cert_fingerprint_type</term>
          <listitem>
-            <para>
-               <literal>SHA1</literal> or <literal>SHA256</literal>
-            </para>
+            <para><literal>SHA1</literal> or <literal>SHA256</literal></para>
             <screen>&lt;reg_server_cert_fingerprint_type&gt;SHA1&lt;/reg_server_cert_fingerprint_type&gt;</screen>
             <para>Optional. Requires a checksum value provided with <literal>reg_server_cert_fingerprint</literal>. Using the fingerprint is recommended, since it ensures the SSL certificate is verified. The matching certificate will be automatically imported when the SSL communication fails because of a verification error.</para>
          </listitem>
@@ -136,8 +134,7 @@
       <screen>curl --insecure -v https://scc.suse.com/smt.crt 2&gt; /dev/null | openssl \
       x509 -noout -fingerprint -sha256</screen>
       <para>Replace <literal>scc.suse.com</literal> with your server.</para>
-      <para>
-         <emphasis>Note:</emphasis> This can be used in a trusted network only! In a non-trusted network, for example the Internet, you should get the fingerprint directly from the server by other means. Fingerprints can be fetched via SSH, a saved server configuration and other sources. Alternatively, you can verify that the downloaded certificate is identical on the server.</para>
+      <para><emphasis>Note:</emphasis> This can be used in a trusted network only! In a non-trusted network, for example the Internet, you should get the fingerprint directly from the server by other means. Fingerprints can be fetched via SSH, a saved server configuration and other sources. Alternatively, you can verify that the downloaded certificate is identical on the server.</para>
    </tip>
    <sect2 xml:id="CreateProfile-Register-Extension">
       <title>Extensions</title>

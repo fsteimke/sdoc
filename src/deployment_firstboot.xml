@@ -92,8 +92,7 @@
                <para>Provide translations for such a customized installation workflow, as described in <xref linkend="sec-fb-provide-trans"/>.</para>
                <tip>
                   <title>Alternative location of the control file</title>
-                  <para>
-                     <filename>/etc/YaST2/firstboot.xml</filename> is the default path for the control file, installed by the <systemitem>yast2-firstboot</systemitem> package. If you need to define a different location for the control file, edit <filename>/etc/sysconfig/firstboot</filename>, and change the <literal>FIRSTBOOT_CONTROL_FILE</literal> variable to your preferred location.</para>
+                  <para><filename>/etc/YaST2/firstboot.xml</filename> is the default path for the control file, installed by the <systemitem>yast2-firstboot</systemitem> package. If you need to define a different location for the control file, edit <filename>/etc/sysconfig/firstboot</filename>, and change the <literal>FIRSTBOOT_CONTROL_FILE</literal> variable to your preferred location.</para>
                </tip>
             </listitem>
          </varlistentry>
@@ -367,8 +366,7 @@
          <para>To add a custom made module to the workflow, proceed as follows:</para>
          <procedure>
             <step>
-               <para>Create your own YaST module and store the module file <filename>
-                     <replaceable>module_name</replaceable>.rb</filename> in <filename>/usr/share/YaST2/clients</filename>.</para>
+               <para>Create your own YaST module and store the module file <filename><replaceable>module_name</replaceable>.rb</filename> in <filename>/usr/share/YaST2/clients</filename>.</para>
             </step>
             <step>
                <para>Open the <filename>/etc/YaST2/firstboot.xml</filename> configuration file.</para>

@@ -9,8 +9,7 @@
    <info>
       <abstract>
          <para>You can enhance the security of your virtual machines with AMD Secure Encrypted Virtualization-Secure Nested Paging (SEV-SNP). The AMD SEV-SNP feature isolates virtual machines from the host system and other VMs, protecting the data and code. This feature encrypts data and ensures that all changes with the code and data in the VM are detected or tracked. Since this isolates VMs, the other VMs or the host machine are not affected with threats.</para>
-         <para>This section explains the steps to enable and use AMD SEV-SNP on your AMD EPYC server with <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase>.</para>
+         <para>This section explains the steps to enable and use AMD SEV-SNP on your AMD EPYC server with <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
       </abstract>
       <abstract>
          <note>
@@ -50,8 +49,7 @@ Successfully registered system</screen>
    </sect1>
    <sect1 xml:id="vm-security-verify-setup">
       <title>Installing packages and setting up the base system</title>
-      <para>The confidential compute module provides replacement packages supporting AMD SEV-SNP. To ensure a maximum of compatibility, these packages are based on the code streams from <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase>.</para>
+      <para>The confidential compute module provides replacement packages supporting AMD SEV-SNP. To ensure a maximum of compatibility, these packages are based on the code streams from <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
       <para>The three components that need to be replaced are:</para>
       <itemizedlist>
          <listitem>
@@ -61,20 +59,17 @@ Successfully registered system</screen>
             <para>QEMU Virtual Machine Monitor</para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="library">libvirt</systemitem> framework</para>
+            <para><systemitem class="library">libvirt</systemitem> framework</para>
          </listitem>
       </itemizedlist>
       <procedure>
          <step>
             <para>To install the replacement packages, run the command:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper install --from SLE-Module-Confidential-Computing-15-SP6-Pool --from SLE-Module-Confidential-Computing-15-SP6-Updates qemu-ovmf-x86_64 libvirt kernel-coco</command></screen>
-            <para>After replacing the packages, you must set up the system with a configuration change to make the AMD SEV-SNP feature ready to use. The IOMMU on the host side must be configured in non-passthrough mode. This is required to prevent peripheral devices from writing to memory that belongs to an encrypted guest and destroying its data integrity. The default IOMMU configuration in <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-               <phrase role="productnumber">15 SP7</phrase> is <literal>passthrough</literal> mode.</para>
+            <para>After replacing the packages, you must set up the system with a configuration change to make the AMD SEV-SNP feature ready to use. The IOMMU on the host side must be configured in non-passthrough mode. This is required to prevent peripheral devices from writing to memory that belongs to an encrypted guest and destroying its data integrity. The default IOMMU configuration in <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> is <literal>passthrough</literal> mode.</para>
          </step>
          <step>
-            <para>To disable the IOMMU configuration in <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-               <phrase role="productnumber">15 SP7</phrase>, open the <filename>/etc/default/grub</filename> file and add <literal>iommu=nopt</literal> to the <varname>GRUB_CMDLINE_LINUX_DEFAULT</varname> variable.</para>
+            <para>To disable the IOMMU configuration in <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>, open the <filename>/etc/default/grub</filename> file and add <literal>iommu=nopt</literal> to the <varname>GRUB_CMDLINE_LINUX_DEFAULT</varname> variable.</para>
          </step>
          <step>
             <para>To update the bootloader configuration, run the command:</para>
@@ -111,8 +106,7 @@ Successfully registered system</screen>
    <sect1 xml:id="vm-launch-amd-sv-snp-vm">
       <title>Launching an AMD SEV-SNP virtual machine</title>
       <para>You can run AMD SEV-SNP protected virtual machines using the <systemitem class="library">libvirt</systemitem> framework once the confidential computing kernel is booted and the AMD Secure Processor is initialized.</para>
-      <para>
-         <systemitem class="library">libvirt</systemitem> has several ways of setting up new virtual machines. This document uses a prepared disk image and the virt-manager graphical user interface.</para>
+      <para><systemitem class="library">libvirt</systemitem> has several ways of setting up new virtual machines. This document uses a prepared disk image and the virt-manager graphical user interface.</para>
       <procedure>
          <step>
             <para>Connect virt-manager to the AMD EPYC host and create a new virtual machine.</para>
@@ -140,10 +134,10 @@ Successfully registered system</screen>
                <title>Create Virtual Machine</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -159,10 +153,10 @@ Successfully registered system</screen>
                   <guimenu>XML</guimenu> view of virtual machine configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -173,10 +167,10 @@ Successfully registered system</screen>
                <title>Set firmware</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_xml_os.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_xml_os.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_xml_os.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_xml_os.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -188,10 +182,10 @@ Successfully registered system</screen>
                <title>launchSecurity</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -205,10 +199,10 @@ Successfully registered system</screen>
                <title>The <guimenu>Details</guimenu> view of virtual machine configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm_details.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_details.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm_details.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_details.png" width="69%"/>
                   </imageobject>
                </mediaobject>
             </figure>

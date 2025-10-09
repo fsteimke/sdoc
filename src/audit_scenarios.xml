@@ -254,8 +254,7 @@ w /etc/pam.d/
          <title>Auditing system calls</title>
          <para>Auditing system calls results in high logging activity, which in turn puts a heavy load on the kernel. With a kernel less responsive than usual, the system's backlog and rate limits might well be exceeded. Carefully evaluate which system calls to include in your audit rule set and adjust the log settings accordingly. See <xref linkend="sec-audit-auditd"/> for details on how to tweak the relevant settings.</para>
       </important>
-      <para>The access system call checks whether a process would be allowed to read, write or test for the existence of a file or file system object. Using the <option>-F</option> filter flag, build rules matching specific access calls in the format<option>-F a1=<replaceable>ACCESS_MODE</replaceable>
-         </option>. Check <filename>/usr/include/fcntl.h</filename> for a list of possible arguments to the access system call.</para>
+      <para>The access system call checks whether a process would be allowed to read, write or test for the existence of a file or file system object. Using the <option>-F</option> filter flag, build rules matching specific access calls in the format<option>-F a1=<replaceable>ACCESS_MODE</replaceable></option>. Check <filename>/usr/include/fcntl.h</filename> for a list of possible arguments to the access system call.</para>
       <screen>-a entry,always -S access -F a1=4<co xml:id="co-audit-accessr"/>
 -a entry,always -S access -F a1=6<co xml:id="co-audit-accessrw"/>
 -a entry,always -S access -F a1=7<co xml:id="co-audit-accessrwx"/></screen>
@@ -270,8 +269,7 @@ w /etc/pam.d/
             <para>Audit the access system call, but only if the second argument of the system call (<literal>mode</literal>) is <literal>7</literal>, meaning <literal>4 OR 2 OR 1</literal>, which translates to <literal>R_OK OR W_OK OR X_OK</literal>. This rule filters for access calls testing for sufficient read, write, and execute permissions.</para>
          </callout>
       </calloutlist>
-      <para>The socketcall system call is a multiplexed system call. Multiplexed means that there is only one system call for all possible calls and that libc passes the actual system call to use as the first argument (<literal>a0</literal>). Check the manual page of socketcall for possible system calls and refer to <filename>/usr/src/linux/include/linux/net.h</filename> for a list of possible argument values and system call names. Audit supports filtering for specific system calls using a <option>-F a0=<replaceable>SYSCALL_NUMBER</replaceable>
-         </option>.</para>
+      <para>The socketcall system call is a multiplexed system call. Multiplexed means that there is only one system call for all possible calls and that libc passes the actual system call to use as the first argument (<literal>a0</literal>). Check the manual page of socketcall for possible system calls and refer to <filename>/usr/src/linux/include/linux/net.h</filename> for a list of possible argument values and system call names. Audit supports filtering for specific system calls using a <option>-F a0=<replaceable>SYSCALL_NUMBER</replaceable></option>.</para>
       <screen><?dbfo keep-together="always"?>-a entry,always -S socketcall -F a0=1 -F a1=10<co xml:id="co-audit-socket1"/>
 ## Use this line on x86_64, ia64 instead
 #-a entry,always -S socket -F a0=10
@@ -334,11 +332,7 @@ w /etc/pam.d/
    </sect1>
    <sect1 xml:id="sec-audit-scenkeys">
       <title>Managing audit event records using keys</title>
-      <para>After configuring a few rules generating events and populating the logs, you need to find a way to tell one event from the other. Using the <command>ausearch</command> command, you can filter the logs for various criteria. Using <command>ausearch</command>
-         <option>-m <replaceable>MESSAGE_TYPE</replaceable>
-         </option>, you can at least filter for events of a certain type. To be able to filter for events related to a particular rule, you need to add a key to this rule in the <filename>/etc/audit/audit.rules</filename> file. This key is then added to the event record every time the rule logs an event. To retrieve these log entries, simply run <command>ausearch</command>
-         <option>-k <replaceable>YOUR_KEY</replaceable>
-         </option> to get a list of records related to the rule carrying this particular key.</para>
+      <para>After configuring a few rules generating events and populating the logs, you need to find a way to tell one event from the other. Using the <command>ausearch</command> command, you can filter the logs for various criteria. Using <command>ausearch</command><option>-m <replaceable>MESSAGE_TYPE</replaceable></option>, you can at least filter for events of a certain type. To be able to filter for events related to a particular rule, you need to add a key to this rule in the <filename>/etc/audit/audit.rules</filename> file. This key is then added to the event record every time the rule logs an event. To retrieve these log entries, simply run <command>ausearch</command><option>-k <replaceable>YOUR_KEY</replaceable></option> to get a list of records related to the rule carrying this particular key.</para>
       <para>As an example, assume you have added the following rule to your rule file:</para>
       <screen>-w /etc/audit/audit.rules -p wa</screen>
       <para>Without a key assigned to it, you would need to filter for <literal>SYSCALL</literal> or <literal>PATH</literal> events then use grep or similar tools to isolate any events related to the above rule. Now, add a key to the above rule, using the <option>-k</option> option:</para>

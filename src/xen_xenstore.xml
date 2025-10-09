@@ -15,20 +15,16 @@
    </sect1>
    <sect1 xml:id="sec-xenstore-fsi">
       <title>File system interface</title>
-      <para>XenStore database content is represented by a virtual file system similar to <filename>/proc</filename> (for more information on <filename>/proc</filename>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-         <xref linkend="sec-util-proc" xrefstyle="%label &#34;%c&#34;"/>). The tree has three main paths: <filename>/vm</filename>, <filename>/local/domain</filename>, and <filename>/tool</filename>.</para>
+      <para>XenStore database content is represented by a virtual file system similar to <filename>/proc</filename> (for more information on <filename>/proc</filename>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-util-proc" xrefstyle="%label &#34;%c&#34;"/>). The tree has three main paths: <filename>/vm</filename>, <filename>/local/domain</filename>, and <filename>/tool</filename>.</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <filename>/vm</filename> - stores information about the VM Guest configuration.</para>
+            <para><filename>/vm</filename> - stores information about the VM Guest configuration.</para>
          </listitem>
          <listitem>
-            <para>
-               <filename>/local/domain</filename> - stores information about VM Guest on the local node.</para>
+            <para><filename>/local/domain</filename> - stores information about VM Guest on the local node.</para>
          </listitem>
          <listitem>
-            <para>
-               <filename>/tool</filename> - stores general information about multiple tools.</para>
+            <para><filename>/tool</filename> - stores general information about multiple tools.</para>
          </listitem>
       </itemizedlist>
       <tip>
@@ -270,8 +266,7 @@ display</screen>
                   <literal>on_reboot, on_poweroff, on_crash, name</literal>
                </term>
                <listitem>
-                  <para>See identical options in <xref linkend="xenstore-vm"/>
-                  </para>
+                  <para>See identical options in <xref linkend="xenstore-vm"/></para>
                </listitem>
             </varlistentry>
             <varlistentry>

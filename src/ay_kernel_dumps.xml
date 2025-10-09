@@ -63,12 +63,10 @@
    <sect2 xml:id="CreateProfile-kdump-reservation">
       <title>Memory reservation</title>
       <para>The first step is to reserve memory for Kdump at boot-up. Because the memory must be reserved very early during the boot process, the configuration is done via a kernel command line parameter called <literal>crashkernel</literal>. The reserved memory will be used to load a second kernel which will be executed without rebooting if the first kernel crashes. This second kernel has a special initrd, which contains all programs necessary to save the dump over the network or to disk, send a notification e-mail, and finally reboot.</para>
-      <para>To reserve memory for Kdump, specify the <literal>amount</literal> (such as <literal>64M</literal> to reserve 64 MB of memory from the RAM) and the <literal>offset</literal>. The syntax is <literal>crashkernel=AMOUNT@OFFSET</literal>. The kernel can auto-detect the right offset (except for the Xen hypervisor, where you need to specify <literal>16M</literal> as offset). The amount of memory that needs to be reserved depends on architecture and main memory. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-         <xref linkend="cha-tuning-kdump-basic-manual" xrefstyle="%label &#34;%c&#34;"/> for recommendations on the amount of memory to reserve for Kdump.</para>
+      <para>To reserve memory for Kdump, specify the <literal>amount</literal> (such as <literal>64M</literal> to reserve 64 MB of memory from the RAM) and the <literal>offset</literal>. The syntax is <literal>crashkernel=AMOUNT@OFFSET</literal>. The kernel can auto-detect the right offset (except for the Xen hypervisor, where you need to specify <literal>16M</literal> as offset). The amount of memory that needs to be reserved depends on architecture and main memory. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic-manual" xrefstyle="%label &#34;%c&#34;"/> for recommendations on the amount of memory to reserve for Kdump.</para>
       <para>You can also use the extended command line syntax to specify the amount of reserved memory depending on the System RAM. That is useful if you share one AutoYaST control file for multiple installations or if you often remove or install memory on one machine. The syntax is:</para>
       <screen>BEGIN_RANGE_1-END_RANGE_1:AMOUNT_1,BEGIN_RANGE_2-END_RANGE_2:AMOUNT_2@OFFSET</screen>
-      <para>
-         <literal>BEGIN_RANGE_1</literal> is the start of the first memory range (for example: <literal>0M</literal>) and <literal>END_RANGE_1</literal> is the end of the first memory range (can be empty in case <literal>infinity</literal> should be assumed) and so on. For example, <literal>256M-2G:64M,2G-:128M</literal> reserves 64 MB of crashkernel memory if the system has between 256 MB and 2 GB RAM, and reserves 128 MB of crashkernel memory if the system has more than 2 GB RAM.</para>
+      <para><literal>BEGIN_RANGE_1</literal> is the start of the first memory range (for example: <literal>0M</literal>) and <literal>END_RANGE_1</literal> is the end of the first memory range (can be empty in case <literal>infinity</literal> should be assumed) and so on. For example, <literal>256M-2G:64M,2G-:128M</literal> reserves 64 MB of crashkernel memory if the system has between 256 MB and 2 GB RAM, and reserves 128 MB of crashkernel memory if the system has more than 2 GB RAM.</para>
       <para>On the other hand, it is possible to specify multiple values for the <literal>crashkernel</literal> parameter. For example, when you need to reserve different segments of low and high memory, use values like <literal>72M,low</literal> and <literal>256M,high</literal>:</para>
       <example>
          <title>Kdump memory reservation with multiple values</title>
@@ -120,24 +118,19 @@
          <para>The element <literal>KDUMP_SAVEDIR</literal> specifies the URL to where the dump is saved. The following methods are possible:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <literal>file</literal> to save to the local disk,</para>
+               <para><literal>file</literal> to save to the local disk,</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>ftp</literal> to save to an FTP server (without encryption),</para>
+               <para><literal>ftp</literal> to save to an FTP server (without encryption),</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>sftp</literal> to save to an SSH2 SFTP server,</para>
+               <para><literal>sftp</literal> to save to an SSH2 SFTP server,</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>nfs</literal> to save to an NFS location and</para>
+               <para><literal>nfs</literal> to save to an NFS location and</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>cifs</literal> to save the dump to a CIFS/SMP export from Samba or Microsoft Windows.</para>
+               <para><literal>cifs</literal> to save the dump to a CIFS/SMP export from Samba or Microsoft Windows.</para>
             </listitem>
          </itemizedlist>
          <para>For details see the kdump(5) manual page. Two examples are: <literal>file:///var/crash</literal> (which is the default location according to FHS) and <literal>ftp://user:password@host:port/incoming/dumps</literal>. A subdirectory, with the time stamp contained in the name, will be created and the dumps saved there.</para>
@@ -295,8 +288,7 @@
                <literal>KDUMP_IMMEDIATE_REBOOT</literal>
             </term>
             <listitem>
-               <para>
-                  <literal>true</literal> if the system should be rebooted automatically after the dump has been saved, <literal>false</literal> otherwise. The default is to reboot the system automatically.</para>
+               <para><literal>true</literal> if the system should be rebooted automatically after the dump has been saved, <literal>false</literal> otherwise. The default is to reboot the system automatically.</para>
                <screen>&lt;KDUMP_IMMEDIATE_REBOOT&gt;true&lt;/KDUMP_IMMEDIATE_REBOOT&gt;</screen>
                <para>optional</para>
             </listitem>

@@ -23,88 +23,55 @@
             <para>The <package>nginx</package> default <filename>index.html</filename> page may not be available</para>
          </listitem>
          <listitem>
-            <para>
-               <package>tomcat-webapps</package> and <package>tomcat-admin-webapps</package>
-            </para>
+            <para><package>tomcat-webapps</package> and <package>tomcat-admin-webapps</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>phpMyAdmin</package>
-            </para>
+            <para><package>phpMyAdmin</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>sca-appliance-*</package>
-            </para>
+            <para><package>sca-appliance-*</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>mpi-selector</package>
-            </para>
+            <para><package>mpi-selector</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>emacs</package> works except for Emacs games</para>
+            <para><package>emacs</package> works except for Emacs games</para>
          </listitem>
          <listitem>
-            <para>
-               <package>bind</package> and <package>bind-chrootenv</package>
-            </para>
+            <para><package>bind</package> and <package>bind-chrootenv</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>docbook*</package>
-            </para>
+            <para><package>docbook*</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>sblim-sfcb*</package>
-            </para>
+            <para><package>sblim-sfcb*</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>texlive*</package>
-            </para>
+            <para><package>texlive*</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>iso_ent</package>
-            </para>
+            <para><package>iso_ent</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>openjade</package>
-            </para>
+            <para><package>openjade</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>opensp</package>
-            </para>
+            <para><package>opensp</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>pcp</package>
-            </para>
+            <para><package>pcp</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>plymouth</package>
-            </para>
+            <para><package>plymouth</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>postgresql-server-10</package>
-            </para>
+            <para><package>postgresql-server-10</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>pulseaudio-gdm-hooks</package>
-            </para>
+            <para><package>pulseaudio-gdm-hooks</package></para>
          </listitem>
          <listitem>
-            <para>
-               <package>smartmontools</package>
-            </para>
+            <para><package>smartmontools</package></para>
          </listitem>
       </itemizedlist>
       <para>The updater component of the system installer does not work with a read-only file system as it has no support for transactional updates.</para>
@@ -117,8 +84,7 @@
             <para>Only one update can be applied at a time. Be sure to reboot after an update, and before the next update is applied.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>update-alternatives</command> should not be run after a transactional update until the machine has been rebooted.</para>
+            <para><command>update-alternatives</command> should not be run after a transactional update until the machine has been rebooted.</para>
          </listitem>
          <listitem>
             <para>Do not create new system users or system groups after a transactional update until after reboot. It is acceptable to create normal users and groups (UID &gt; 1000, GID &gt; 1000).</para>
@@ -130,16 +96,13 @@
             <para>For <package>php7-fastcgi</package>, you must manually create a symbolic link, <filename>/srv/www/cgi-bin/php</filename>, that points to <filename>/usr/bin/php-cgi</filename>.</para>
          </listitem>
          <listitem>
-            <para>
-               <package>ntp</package>is part of the Legacy Module for migration from older SLES versions. It is not supported on a new <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation, and has been replaced by <package>chrony</package>. If you continue to use <package>ntp</package>, a fresh installation is required to work correctly with transactional updates.</para>
+            <para><package>ntp</package>is part of the Legacy Module for migration from older SLES versions. It is not supported on a new <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation, and has been replaced by <package>chrony</package>. If you continue to use <package>ntp</package>, a fresh installation is required to work correctly with transactional updates.</para>
          </listitem>
          <listitem>
-            <para>
-               <package>sblim-sfcb</package>: the whole sblim ecosystem is incompatible with transactional update.</para>
+            <para><package>sblim-sfcb</package>: the whole sblim ecosystem is incompatible with transactional update.</para>
          </listitem>
          <listitem>
-            <para>
-               <command>btrfs-defrag</command> from the <package>btrfsmaintenance</package> package does not work with a read-only root file system.</para>
+            <para><command>btrfs-defrag</command> from the <package>btrfsmaintenance</package> package does not work with a read-only root file system.</para>
          </listitem>
          <listitem>
             <para>For <command>btrfs-balance</command>, the variable <literal>BTRFS_BALANCE_MOUNTPOINTS</literal> in <filename>/etc/sysconfig/btrfsmaintenance</filename> must be changed from <literal>/</literal> to <literal>/.snapshots</literal>.</para>

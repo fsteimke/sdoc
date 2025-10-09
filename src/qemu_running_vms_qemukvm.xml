@@ -14,12 +14,10 @@
       <screen>qemu-system-ARCH <replaceable>OPTIONS</replaceable><co xml:id="co-qemu-running-basic-opts"/> -drive file=<replaceable>DISK_IMAGE</replaceable><co xml:id="co-qemu-running-basic-img"/></screen>
       <calloutlist>
          <callout arearefs="co-qemu-running-basic-opts">
-            <para>
-               <command>qemu-system-ARCH</command> understands many options. Most of them define parameters of the emulated hardware, while others affect more general emulator behavior. If you do not supply any options, default values are used, and you need to supply the path to a disk image to be run.</para>
+            <para><command>qemu-system-ARCH</command> understands many options. Most of them define parameters of the emulated hardware, while others affect more general emulator behavior. If you do not supply any options, default values are used, and you need to supply the path to a disk image to be run.</para>
          </callout>
          <callout arearefs="co-qemu-running-basic-img">
-            <para>Path to the disk image holding the guest system you want to virtualize. <command>qemu-system-ARCH</command> supports many image formats. Use <command>qemu-img</command>
-               <option>--help</option> to list them.</para>
+            <para>Path to the disk image holding the guest system you want to virtualize. <command>qemu-system-ARCH</command> supports many image formats. Use <command>qemu-img</command><option>--help</option> to list them.</para>
          </callout>
       </calloutlist>
       <important>
@@ -27,8 +25,7 @@
          <para>KVM support is available only for 64-bit Arm® architecture (AArch64). Running QEMU on the AArch64 architecture requires you to specify:</para>
          <itemizedlist>
             <listitem>
-               <para>A machine type designed for QEMU Arm® virtual machines using the <option>-machine virt-<replaceable>VERSION_NUMBER</replaceable>
-                  </option> option.</para>
+               <para>A machine type designed for QEMU Arm® virtual machines using the <option>-machine virt-<replaceable>VERSION_NUMBER</replaceable></option> option.</para>
             </listitem>
             <listitem>
                <para>A firmware image file using the <option>-bios</option> option.</para>
@@ -102,8 +99,7 @@
                <literal>-daemonize</literal>
             </term>
             <listitem>
-               <para>
-                  <quote>Daemonizes</quote> the QEMU process after it is started. QEMU detaches from the standard input and standard output after it is ready to receive connections on any of its devices.</para>
+               <para><quote>Daemonizes</quote> the QEMU process after it is started. QEMU detaches from the standard input and standard output after it is ready to receive connections on any of its devices.</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -123,8 +119,7 @@
          </sect3>
          <sect3 xml:id="cha-qemu-running-gen-opts-basic-cpu">
             <title>CPU model</title>
-            <para>To specify the type of the processor (CPU) model, run <command>qemu-system-ARCH -cpu</command>
-               <replaceable>MODEL</replaceable>. Use <command>qemu-system-ARCH -cpu help</command> to view a list of supported CPU models.</para>
+            <para>To specify the type of the processor (CPU) model, run <command>qemu-system-ARCH -cpu</command><replaceable>MODEL</replaceable>. Use <command>qemu-system-ARCH -cpu help</command> to view a list of supported CPU models.</para>
          </sect3>
          <sect3 xml:id="cha-qemu-running-gen-opts-basic-others">
             <title>Other basic options</title>
@@ -168,10 +163,10 @@
                <title>QEMU window with SLES as VM Guest</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
+                     <imagedata fileref="media/qemu_win_sles.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
+                     <imagedata fileref="media/qemu_win_sles.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -262,8 +257,7 @@
       <sect2 xml:id="cha-qemu-running-devices-block">
          <title>Block devices</title>
          <para>Block devices are vital for virtual machines. These are fixed or removable storage media called <emphasis>drives</emphasis>. One of the connected hard disks typically holds the guest operating system to be virtualized.</para>
-         <para>
-            <xref linkend="gloss-vt-vm"/> drives are defined with <literal>-drive</literal>. This option has many sub-options, so me of which are described in this section. For the complete list, see the man page (<command>man 1 qemu</command>).</para>
+         <para><xref linkend="gloss-vt-vm"/> drives are defined with <literal>-drive</literal>. This option has many sub-options, so me of which are described in this section. For the complete list, see the man page (<command>man 1 qemu</command>).</para>
          <variablelist>
             <title>Sub-options for the <literal>-drive</literal> option</title>
             <varlistentry>
@@ -346,8 +340,7 @@
             <screen><prompt>&gt;</prompt><command>sudo</command> qemu-system-x86_64 [...] -drive format=<replaceable>img_format</replaceable>,file=<replaceable>/path/to/file.img</replaceable>,if=scsi,discard=on</screen>
             <important>
                <title>Support status</title>
-               <para>
-                  <option>if=scsi</option> is not supported. This interface does not map to <emphasis>virtio-scsi</emphasis>, but rather to the <emphasis>lsi SCSI adapter</emphasis>.</para>
+               <para><option>if=scsi</option> is not supported. This interface does not map to <emphasis>virtio-scsi</emphasis>, but rather to the <emphasis>lsi SCSI adapter</emphasis>.</para>
             </important>
          </sect3>
          <sect3 xml:id="kvm-iothreads">
@@ -374,11 +367,7 @@ format=raw,file=filename -device virtio-blk-pci,drive=drive1,scsi=off,\
             <para>The driver is disabled by default. To use it, do the following:</para>
             <procedure>
                <step>
-                  <para>Append <option>virtio_blk.use_bio=1</option> to the kernel command line on the guest. You can do so via <menuchoice>
-                        <guimenu>YaST</guimenu>
-                        <guimenu>System</guimenu>
-                        <guimenu>Boot Loader</guimenu>
-                     </menuchoice>.</para>
+                  <para>Append <option>virtio_blk.use_bio=1</option> to the kernel command line on the guest. You can do so via <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice>.</para>
                   <para>You can do it also by editing <filename>/etc/default/grub</filename>, searching for the line that contains <option>GRUB_CMDLINE_LINUX_DEFAULT=</option>, and adding the kernel parameter at the end. Then run <command>grub2-mkconfig &gt;/boot/grub2/grub.cfg</command> to update the grub2 boot menu.</para>
                </step>
                <step>
@@ -446,8 +435,7 @@ format=raw,file=filename -device virtio-blk-pci,drive=drive1,scsi=off,\
          <sect3 xml:id="qemu-devices-block-rbd">
             <title>Using RADOS block devices with QEMU</title>
             <para>RADOS Block Devices (RBD) store data in a Ceph cluster. They allow snapshotting, replication and data consistency. You can use an RBD from your KVM-managed VM Guests similarly to how you use other block devices.</para>
-            <para>For more details, refer to the <link xlink:href="https://documentation.suse.com/ses/html/ses-all/cha-ceph-kvm.html">SUSE Enterprise Storage <citetitle>Administration Guide</citetitle>, chapter <citetitle>Ceph as a Back-end for QEMU KVM Instance</citetitle>
-               </link>.</para>
+            <para>For more details, refer to the <link xlink:href="https://documentation.suse.com/ses/html/ses-all/cha-ceph-kvm.html">SUSE Enterprise Storage <citetitle>Administration Guide</citetitle>, chapter <citetitle>Ceph as a Back-end for QEMU KVM Instance</citetitle></link>.</para>
          </sect3>
       </sect2>
       <sect2 xml:id="cha-qemu-running-devices-graphic">
@@ -529,11 +517,7 @@ format=raw,file=filename -device virtio-blk-pci,drive=drive1,scsi=off,\
                   </term>
                   <listitem>
                      <para>Disables QEMU's graphical output. The emulated serial port is redirected to the console.</para>
-                     <para>After starting the virtual machine with <literal>-nographic</literal>, press <keycombo>
-                           <keycap function="control"/>
-                           <keycap>A</keycap>
-                        </keycombo>
-                        <keycap>H</keycap> in the virtual console to view the list of other useful shortcuts, for example, to toggle between the console and the QEMU monitor.</para>
+                     <para>After starting the virtual machine with <literal>-nographic</literal>, press <keycombo><keycap function="control"/><keycap>A</keycap></keycombo><keycap>H</keycap> in the virtual console to view the list of other useful shortcuts, for example, to toggle between the console and the QEMU monitor.</para>
                      <screen><prompt>&gt;</prompt><command>sudo</command> qemu-system-x86_64 -hda /images/sles_base.raw -nographic
 
 C-a h    print this help
@@ -578,14 +562,7 @@ QEMU 2.3.1 monitor - type 'help' for more information
                      <literal>-alt-grab</literal>, <literal>-ctrl-grab</literal>
                   </term>
                   <listitem>
-                     <para>By default, the QEMU window releases the <quote>captured</quote> mouse after pressing <keycombo>
-                           <keycap function="control"/>
-                           <keycap function="alt"/>
-                        </keycombo>. You can change the key combination to either <keycombo>
-                           <keycap function="control"/>
-                           <keycap function="alt"/>
-                           <keycap function="shift"/>
-                        </keycombo> (<literal>-alt-grab</literal>), or the right <keycap function="control"/> key (<literal>-ctrl-grab</literal>).</para>
+                     <para>By default, the QEMU window releases the <quote>captured</quote> mouse after pressing <keycombo><keycap function="control"/><keycap function="alt"/></keycombo>. You can change the key combination to either <keycombo><keycap function="control"/><keycap function="alt"/><keycap function="shift"/></keycombo> (<literal>-alt-grab</literal>), or the right <keycap function="control"/> key (<literal>-ctrl-grab</literal>).</para>
                   </listitem>
                </varlistentry>
             </variablelist>
@@ -930,10 +907,7 @@ bootfile=/images/boot/pxelinux.0<co xml:id="co-usermode-bootfile"/></screen>
          <para>First, create a network bridge and add a VM Host Server physical network interface to it, such as <literal>eth0</literal>:</para>
          <procedure>
             <step>
-               <para>Start <guimenu>YaST Control Center</guimenu> and select <menuchoice>
-                     <guimenu>System</guimenu>
-                     <guimenu>Network Settings</guimenu>
-                  </menuchoice>.</para>
+               <para>Start <guimenu>YaST Control Center</guimenu> and select <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Click <guimenu>Add</guimenu> and select <guimenu>Bridge</guimenu> from the <guimenu>Device Type</guimenu> drop-down box in the <guimenu>Hardware Dialog</guimenu> window. Click <guimenu>Next</guimenu>.</para>
@@ -1164,10 +1138,10 @@ sudo tunctl -d $tap<co xml:id="co-qemu-net-bridge-deltap"/></screen>
          <title>QEMU VNC session</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
+               <imagedata fileref="media/qemu_sles_vnc.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
+               <imagedata fileref="media/qemu_sles_vnc.png" width="64%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1192,10 +1166,10 @@ Password: ****
             <title>Authentication dialog in Remmina</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/qemu_vnc_pwd.png" width="70%"/>
+                  <imagedata fileref="media/qemu_vnc_pwd.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/qemu_vnc_pwd.png" width="70%"/>
+                  <imagedata fileref="media/qemu_vnc_pwd.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>

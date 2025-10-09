@@ -18,11 +18,8 @@
    </itemizedlist>
    <note>
       <title>Use <literal>autoyast</literal> boot option only</title>
-      <para>Rules and classes are only supported by the boot parameter <literal>autoyast=<replaceable>URL</replaceable>
-         </literal>.</para>
-      <para>
-         <literal>autoyast2=<replaceable>URL</replaceable>
-         </literal> is not supported, because this option downloads a single AutoYaST control file only.</para>
+      <para>Rules and classes are only supported by the boot parameter <literal>autoyast=<replaceable>URL</replaceable></literal>.</para>
+      <para><literal>autoyast2=<replaceable>URL</replaceable></literal> is not supported, because this option downloads a single AutoYaST control file only.</para>
    </note>
    <sect1 xml:id="rules">
       <title>Rule-based automatic installation</title>
@@ -42,7 +39,7 @@ autoyast=http://10.10.0.1/profile/rules/rules.xml</screen>
                <imagedata fileref="media/autoyast_rules.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/autoyast_rules.png" width="75%"/>
+               <imagedata fileref="media/autoyast_rules.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -153,27 +150,19 @@ fi;
          <para>You can use five different match_types:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <literal>exact</literal> (default)</para>
+               <para><literal>exact</literal> (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>greater</literal>
-               </para>
+               <para><literal>greater</literal></para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>lower</literal>
-               </para>
+               <para><literal>lower</literal></para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>range</literal>
-               </para>
+               <para><literal>range</literal></para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>regex</literal> (a simple <literal>=~</literal> operator like in Bash)</para>
+               <para><literal>regex</literal> (a simple <literal>=~</literal> operator like in Bash)</para>
             </listitem>
          </itemizedlist>
          <para>If using <literal>exact</literal>, the string must match exactly as specified. <literal>regex</literal> can be used to match substrings like <literal>ntel</literal> will match Intel, intel and intelligent. <literal>greater</literal> and <literal>lower</literal> can be used for <literal>memsize</literal> or <literal>totaldisk</literal> for example. They can match only with rules that return an integer value. A range is only possible for integer values too and has the form of <literal>value1-value2</literal>, for example <literal>512-1024</literal>.</para>
@@ -225,291 +214,116 @@ fi;
             <tgroup cols="3">
                <thead>
                   <row>
-                     <entry>
-                        <para>Attribute</para>
-                     </entry>
-                     <entry>
-                        <para>Values</para>
-                     </entry>
-                     <entry>
-                        <para>Description</para>
-                     </entry>
+                     <entry><para>Attribute</para></entry>
+                     <entry><para>Values</para></entry>
+                     <entry><para>Description</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>hostaddress</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>IP address of the host</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>hostaddress</literal></para></entry>
+                     <entry><para>IP address of the host</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>hostname</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The name of the host</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>hostname</literal></para></entry>
+                     <entry><para>The name of the host</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>domain</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Domain name of host</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>domain</literal></para></entry>
+                     <entry><para>Domain name of host</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>installed_product</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The name of the product to be installed.</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>installed_product</literal></para></entry>
+                     <entry><para>The name of the product to be installed.</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>installed_product_version</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The version of the product to be installed.</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>installed_product_version</literal></para></entry>
+                     <entry><para>The version of the product to be installed.</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>network</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>network address of host</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>network</literal></para></entry>
+                     <entry><para>network address of host</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>mac</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>MAC address of host</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly (the MAC addresses should have the form <literal>0080c8f6484c</literal>).</para>
-                     </entry>
+                     <entry><para><literal>mac</literal></para></entry>
+                     <entry><para>MAC address of host</para></entry>
+                     <entry><para>This attribute must always match exactly (the MAC addresses should have the form <literal>0080c8f6484c</literal>).</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>linux</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Number of installed Linux partitions on the system</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute can be 0 or more.</para>
-                     </entry>
+                     <entry><para><literal>linux</literal></para></entry>
+                     <entry><para>Number of installed Linux partitions on the system</para></entry>
+                     <entry><para>This attribute can be 0 or more.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>others</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Number of installed non-Linux partitions on the system</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute can be 0 or more.</para>
-                     </entry>
+                     <entry><para><literal>others</literal></para></entry>
+                     <entry><para>Number of installed non-Linux partitions on the system</para></entry>
+                     <entry><para>This attribute can be 0 or more.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>xserver</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>X Server needed for graphic adapter</para>
-                     </entry>
-                     <entry>
-                        <para>This attribute must always match exactly.</para>
-                     </entry>
+                     <entry><para><literal>xserver</literal></para></entry>
+                     <entry><para>X Server needed for graphic adapter</para></entry>
+                     <entry><para>This attribute must always match exactly.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>memsize</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Memory available on host in megabytes</para>
-                     </entry>
-                     <entry>
-                        <para>All match types are available.</para>
-                     </entry>
+                     <entry><para><literal>memsize</literal></para></entry>
+                     <entry><para>Memory available on host in megabytes</para></entry>
+                     <entry><para>All match types are available.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>totaldisk</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Total disk space available on host in megabytes</para>
-                     </entry>
-                     <entry>
-                        <para>All match types are available.</para>
-                     </entry>
+                     <entry><para><literal>totaldisk</literal></para></entry>
+                     <entry><para>Total disk space available on host in megabytes</para></entry>
+                     <entry><para>All match types are available.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>hostid</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Hex representation of the IP address</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>hostid</literal></para></entry>
+                     <entry><para>Hex representation of the IP address</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>arch</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Architecture of host</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>arch</literal></para></entry>
+                     <entry><para>Architecture of host</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>karch</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Kernel Architecture of host (for example SMP kernel, Xen kernel)</para>
-                        <remark>Do we actually still have a Xen-specific kernel? - sknorr, 2017-05-08</remark>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>karch</literal></para></entry>
+                     <entry><para>Kernel Architecture of host (for example SMP kernel, Xen kernel)</para><remark>Do we actually still have a Xen-specific kernel? - sknorr, 2017-05-08</remark></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>disksize</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Drive device and size in megabytes</para>
-                     </entry>
-                     <entry>
-                        <para>All match types are available.</para>
-                     </entry>
+                     <entry><para><literal>disksize</literal></para></entry>
+                     <entry><para>Drive device and size in megabytes</para></entry>
+                     <entry><para>All match types are available.</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>product</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The hardware product name as specified in SMBIOS</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>product</literal></para></entry>
+                     <entry><para>The hardware product name as specified in SMBIOS</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>product_vendor</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The hardware vendor as specified in SMBIOS</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>product_vendor</literal></para></entry>
+                     <entry><para>The hardware vendor as specified in SMBIOS</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>board</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The system board name as specified in SMBIOS</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>board</literal></para></entry>
+                     <entry><para>The system board name as specified in SMBIOS</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>board_vendor</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>The system board vendor as specified in SMBIOS</para>
-                     </entry>
-                     <entry>
-                        <para>Exact match required</para>
-                     </entry>
+                     <entry><para><literal>board_vendor</literal></para></entry>
+                     <entry><para>The system board vendor as specified in SMBIOS</para></entry>
+                     <entry><para>Exact match required</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>
-                           <literal>custom1-5</literal>
-                        </para>
-                     </entry>
-                     <entry>
-                        <para>Custom rules using shell scripts</para>
-                     </entry>
-                     <entry>
-                        <para>All match types are available.</para>
-                     </entry>
+                     <entry><para><literal>custom1-5</literal></para></entry>
+                     <entry><para>Custom rules using shell scripts</para></entry>
+                     <entry><para>All match types are available.</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -675,8 +489,7 @@ echo -n 100
             <para>Description:</para>
          </listitem>
          <listitem>
-            <para>Order: order (or priority) of the class in the stack of migration <remark>emap 2011-11-07: What migration?</remark>
-            </para>
+            <para>Order: order (or priority) of the class in the stack of migration <remark>emap 2011-11-07: What migration?</remark></para>
          </listitem>
       </itemizedlist>
       <figure>
@@ -686,7 +499,7 @@ echo -n 100
                <imagedata fileref="media/cms-class-definitions.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/cms-class-definitions.png" width="75%"/>
+               <imagedata fileref="media/cms-class-definitions.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -705,8 +518,7 @@ echo -n 100
             <para>group: classes describing a department or a group within a site or a location.</para>
          </listitem>
       </itemizedlist>
-      <para>A file saved in a class directory can have the same syntax and format as a regular control file but represents a subset of the configuration. For example, to create a new control file for a computer with a specific network interface, you only need the control file resource that controls the configuration of the network. Having multiple network types, you can merge the one needed for a special type of hardware with other class files and create a new control file which suits the system being installed. <remark>emap 2011-11-07: Not very clear.</remark>
-      </para>
+      <para>A file saved in a class directory can have the same syntax and format as a regular control file but represents a subset of the configuration. For example, to create a new control file for a computer with a specific network interface, you only need the control file resource that controls the configuration of the network. Having multiple network types, you can merge the one needed for a special type of hardware with other class files and create a new control file which suits the system being installed. <remark>emap 2011-11-07: Not very clear.</remark></para>
    </sect1>
    <sect1 xml:id="mixinfrulesclasses">
       <title>Mixing rules and classes</title>
@@ -752,8 +564,7 @@ echo -n 100
     &lt;use&gt;all&lt;/use&gt;
   &lt;/drive&gt;
 &lt;/partitioning&gt;</screen>
-      <para>You might expect the control file to contain three partitions. This is not the case. You will end up with two partitions and the first partition is a mix up of the swap and the root partition. Settings configured in both partitions, like <literal>mount</literal> or <literal>size</literal>, will be used from the second file. Settings that only exist in the first or second partition, will be copied to the merged partition too. <remark>emap 2011-11-07: A little confusing, why not put the merged file here.</remark>
-      </para>
+      <para>You might expect the control file to contain three partitions. This is not the case. You will end up with two partitions and the first partition is a mix up of the swap and the root partition. Settings configured in both partitions, like <literal>mount</literal> or <literal>size</literal>, will be used from the second file. Settings that only exist in the first or second partition, will be copied to the merged partition too. <remark>emap 2011-11-07: A little confusing, why not put the merged file here.</remark></para>
       <para>In this example, you do not want a second <literal>drive</literal>. The two drives should be merged into one. With regard to partitions, three separate ones should be defined. Using the <literal>dont_merge</literal> method solves the merging problem:</para>
       <screen>&lt;classes config:type="list"&gt;
   &lt;class&gt;

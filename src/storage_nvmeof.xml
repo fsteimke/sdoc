@@ -14,16 +14,8 @@
    </info>
    <sect1 xml:id="sec-nvmeof-overview">
       <title>Overview</title>
-      <para>
-         <emphasis>
-            <trademark class="registered">NVM Express</trademark>
-         </emphasis> (<emphasis>
-            <trademark class="registered">NVMe</trademark>
-         </emphasis>) is an interface standard for accessing non-volatile storage, commonly SSD disks. NVMe supports much higher speeds and has a lower latency than SATA.</para>
-      <para>
-         <emphasis>
-            <trademark class="trade">NVMe-oF</trademark>
-         </emphasis> is an architecture to access NVMe storage over different networking fabrics—for example, <emphasis>RDMA</emphasis>, <emphasis>TCP</emphasis>, or <emphasis>NVMe over Fibre Channel</emphasis> (<emphasis>FC-NVMe</emphasis>). The role of NVMe-oF is similar to iSCSI. To increase the fault-tolerance, NVMe-oF has a built-in support for multipathing. The NVMe-oF multipathing is not based on the traditional DM-Multipathing.</para>
+      <para><emphasis><trademark class="registered">NVM Express</trademark></emphasis> (<emphasis><trademark class="registered">NVMe</trademark></emphasis>) is an interface standard for accessing non-volatile storage, commonly SSD disks. NVMe supports much higher speeds and has a lower latency than SATA.</para>
+      <para><emphasis><trademark class="trade">NVMe-oF</trademark></emphasis> is an architecture to access NVMe storage over different networking fabrics—for example, <emphasis>RDMA</emphasis>, <emphasis>TCP</emphasis>, or <emphasis>NVMe over Fibre Channel</emphasis> (<emphasis>FC-NVMe</emphasis>). The role of NVMe-oF is similar to iSCSI. To increase the fault-tolerance, NVMe-oF has a built-in support for multipathing. The NVMe-oF multipathing is not based on the traditional DM-Multipathing.</para>
       <para>The <emphasis>NVMe host</emphasis> is the machine that connects to an NVMe target. The <emphasis>NVMe target</emphasis> is the machine that shares its NVMe block devices.</para>
       <para>NVMe is supported on SUSE Linux Enterprise Server <phrase role="productnumber">15 SP7</phrase>. There are Kernel modules available for the NVMe block storage and NVMe-oF target and host.</para>
       <para>To see if your hardware requires any special consideration, refer to <xref linkend="sec-nvmeof-hardware"/>.</para>
@@ -35,8 +27,7 @@
          <title>Installing command line client</title>
          <para>To use NVMe-oF, you need the <command>nvme</command> command line tool. Install it with <command>zypper</command>:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>zypper in nvme-cli</command></screen>
-         <para>Use <command>nvme --help</command> to list all available subcommands. Man pages are available for <command>nvme</command> subcommands. Consult them by executing <command>man nvme-<replaceable>SUBCOMMAND</replaceable>
-            </command>. For example, to view the man page for the <option>discover</option> subcommand, execute <command>man nvme-discover</command>.</para>
+         <para>Use <command>nvme --help</command> to list all available subcommands. Man pages are available for <command>nvme</command> subcommands. Consult them by executing <command>man nvme-<replaceable>SUBCOMMAND</replaceable></command>. For example, to view the man page for the <option>discover</option> subcommand, execute <command>man nvme-discover</command>.</para>
       </sect2>
       <sect2 xml:id="sec-nvmeof-host-configuration-target-discovery">
          <title>Discovering NVMe-oF targets</title>
@@ -220,8 +211,7 @@ Parameter traddr is now '10.0.0.3'.</screen>
          <para>If you are using the <emphasis>Broadcom Emulex LightPulse Fibre Channel SCSI</emphasis> driver, add a Kernel configuration parameter on the target and host for the <literal>lpfc</literal> module:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>echo "options lpfc lpfc_enable_fc4_type=3" &gt; /etc/modprobe.d/lpfc.conf</command></screen>
          <para>Make sure that the Broadcom adapter firmware has at least version 11.4.204.33. Also make sure that you have the current versions of <package>nvme-cli</package>, <package>nvmetcli</package> and the Kernel installed.</para>
-         <para>To enable a Fibre Channel port as an NVMe target, an additional module parameter needs to be configured: <option>lpfc_enable_nvmet=<replaceable>COMMA_SEPARATED_WWPNS</replaceable>
-            </option>. Enter the WWPN with a leading <literal>0x</literal>, for example <option>lpfc_enable_nvmet=0x2000000055001122,0x2000000055003344</option>. Only listed WWPNs will be configured for target mode. A Fibre Channel port can either be configured as target <emphasis>or</emphasis> as initiator.</para>
+         <para>To enable a Fibre Channel port as an NVMe target, an additional module parameter needs to be configured: <option>lpfc_enable_nvmet=<replaceable>COMMA_SEPARATED_WWPNS</replaceable></option>. Enter the WWPN with a leading <literal>0x</literal>, for example <option>lpfc_enable_nvmet=0x2000000055001122,0x2000000055003344</option>. Only listed WWPNs will be configured for target mode. A Fibre Channel port can either be configured as target <emphasis>or</emphasis> as initiator.</para>
       </sect2>
       <sect2 xml:id="sec-nvmeof-hardware-marvell">
          <title>Marvell</title>
@@ -237,31 +227,24 @@ Parameter traddr is now '10.0.0.3'.</screen>
          <para>For more details on installation, please refer to the FC-NVMe sections in the following Marvell user guides:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <link xlink:href="https://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/ShowEula.aspx?resourceid=32769&amp;docid=96728&amp;ProductCategory=39&amp;Product=1259&amp;Os=126"/>
-               </para>
+               <para><link xlink:href="https://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/ShowEula.aspx?resourceid=32769&amp;docid=96728&amp;ProductCategory=39&amp;Product=1259&amp;Os=126"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/ShowEula.aspx?resourceid=32761&amp;docid=96726&amp;ProductCategory=39&amp;Product=1261&amp;Os=126"/>
-               </para>
+               <para><link xlink:href="https://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/ShowEula.aspx?resourceid=32761&amp;docid=96726&amp;ProductCategory=39&amp;Product=1261&amp;Os=126"/></para>
             </listitem>
          </itemizedlist>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-nvmeof-boot">
       <title>Booting from NVMe-oF over TCP</title>
-      <para>
-         <phrase role="productname">SLES</phrase> supports booting from NVMe-oF over TCP according to the <link xlink:href="https://nvmexpress.org/wp-content/uploads/NVM-Express-Boot-Specification-2022.11.15-Ratified.pdf">NVM Express® Boot Specification 1.0</link>.</para>
+      <para><phrase role="productname">SLES</phrase> supports booting from NVMe-oF over TCP according to the <link xlink:href="https://nvmexpress.org/wp-content/uploads/NVM-Express-Boot-Specification-2022.11.15-Ratified.pdf">NVM Express® Boot Specification 1.0</link>.</para>
       <para>The UEFI pre-boot environment can be configured to attempt NVMe-oF over TCP connections to remote storage servers and use these for booting. The pre-boot environment creates an ACPI table—NVMe Boot Firmware Table (NBFT) to store information about the NVMe-oF configuration used for booting. The operating system uses this table at a later boot stage to set up networking and NVMe-oF connections to access the root file system.</para>
       <sect2 xml:id="sec-nvmeof-tcp-requirements">
          <title>System requirements</title>
          <para>To boot the system from NVMe-oF over TCP, the following requirements must be met:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <phrase role="productname">SLES</phrase>
-                  <phrase role="productnumber">15 SP7</phrase> or later.</para>
+               <para><phrase role="productname">SLES</phrase><phrase role="productnumber">15 SP7</phrase> or later.</para>
             </listitem>
             <listitem>
                <para>A SAN storage array supporting NVMe-oF over TCP</para>
@@ -302,19 +285,13 @@ Parameter traddr is now '10.0.0.3'.</screen>
       <para>The following links provide a basic introduction to NVMe and NVMe-oF:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <link xlink:href="https://nvmexpress.org/"/>
-            </para>
+            <para><link xlink:href="https://nvmexpress.org/"/></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.nvmexpress.org/wp-content/uploads/NVMe_Over_Fabrics.pdf"/>
-            </para>
+            <para><link xlink:href="https://www.nvmexpress.org/wp-content/uploads/NVMe_Over_Fabrics.pdf"/></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://storpool.com/blog/demystifying-what-is-nvmeof"/>
-            </para>
+            <para><link xlink:href="https://storpool.com/blog/demystifying-what-is-nvmeof"/></para>
          </listitem>
       </itemizedlist>
    </sect1>

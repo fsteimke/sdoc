@@ -19,8 +19,7 @@
     + A "subcommand" is an executable that users can put into a special path and
       can be run via Zypper.
     - sknorr, 2016-04-21 -->
-      <para>The components enclosed in brackets are not required. See <command>zypper help</command> for a list of general options and all commands. To get help for a specific command, type <command>zypper help</command>
-         <replaceable>COMMAND</replaceable>.</para>
+      <para>The components enclosed in brackets are not required. See <command>zypper help</command> for a list of general options and all commands. To get help for a specific command, type <command>zypper help</command><replaceable>COMMAND</replaceable>.</para>
       <variablelist>
          <varlistentry>
             <term>Zypper commands</term>
@@ -60,8 +59,7 @@
       <para>The <option>--from</option> option keeps all repositories enabled (for solving any dependencies) while requesting the package from the specified repository. <option>--repo</option> is an alias for <option>--from</option>, and you may use either one.</para>
       <para>Most Zypper commands have a <literal>dry-run</literal> option that does a simulation of the given command. It can be used for test purposes.</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> zypper remove --dry-run MozillaFirefox</screen>
-      <para>Zypper supports the global <option>--userdata <replaceable>STRING</replaceable>
-         </option> option. You can specify a string with this option, which gets written to Zypper's log files and plug-ins (such as the Btrfs plug-in). It can be used to mark and identify transactions in log files.</para>
+      <para>Zypper supports the global <option>--userdata <replaceable>STRING</replaceable></option> option. You can specify a string with this option, which gets written to Zypper's log files and plug-ins (such as the Btrfs plug-in). It can be used to mark and identify transactions in log files.</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> zypper --userdata <replaceable>STRING</replaceable> patch</screen>
    </sect2>
    <sect2 xml:id="sec-zypper-subcommands">
@@ -209,8 +207,7 @@ Zypper subcommands available from elsewhere on your $PATH
       </sect3>
       <sect3 xml:id="sec-zypper-softman-pluscontent">
          <title>Installing packages from disabled repositories</title>
-         <para>Normally you can only install or refresh packages from enabled repositories. The <option>--plus-content <replaceable>TAG</replaceable>
-            </option> option helps you specify repositories to be refreshed, temporarily enabled during the current Zypper session, and disabled after it completes.</para>
+         <para>Normally you can only install or refresh packages from enabled repositories. The <option>--plus-content <replaceable>TAG</replaceable></option> option helps you specify repositories to be refreshed, temporarily enabled during the current Zypper session, and disabled after it completes.</para>
          <para>For example, to enable repositories that may provide additional <filename>-debuginfo</filename> or <filename>-debugsource</filename> packages, use <option>--plus-content debug</option>. You can specify this option multiple times.</para>
          <para>To temporarily enable such 'debug' repositories to install a specific <filename>-debuginfo</filename> package, use the option as follows:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper --plus-content debug \
@@ -218,8 +215,7 @@ Zypper subcommands available from elsewhere on your $PATH
          <para>The <literal>build-id</literal> string is reported by <command>gdb</command> for missing debuginfo packages.</para>
          <note>
             <title>Disabled installation media</title>
-            <para>
-               <remark>cwickert 2019-04-18: JSC#SLE-3191</remark> Repositories from the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation media are still configured but disabled after successful installation. You can use the <option>--plus-content</option> option to install packages from the installation media instead of the online repositories. Before calling <command>zypper</command>, ensure the media is available, for example by inserting the DVD into the computer's drive.</para>
+            <para><remark>cwickert 2019-04-18: JSC#SLE-3191</remark> Repositories from the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation media are still configured but disabled after successful installation. You can use the <option>--plus-content</option> option to install packages from the installation media instead of the online repositories. Before calling <command>zypper</command>, ensure the media is available, for example by inserting the DVD into the computer's drive.</para>
          </note>
       </sect3>
       <sect3 xml:id="sec-zypper-softman-util">
@@ -236,13 +232,10 @@ Zypper subcommands available from elsewhere on your $PATH
       <para>There are three different ways to update software using Zypper: by installing patches, by installing a new version of a package or by updating the entire distribution. The latter is achieved with <command>zypper dist-upgrade</command>. Upgrading <phrase role="productname">SUSE Linux Enterprise Server</phrase> is discussed in <!-- cwickert 2018-11-19: No whitespace and no line break with indention
     between the phrases, otherwise there will be a trailing whitespace in the
     resulting media at the end of the sentence just before the dot.
-   --><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase>
-         <xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   --><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
       <sect3 xml:id="sec-zypper-softup-patch">
          <title>Installing all needed patches</title>
-         <para>
-            <emphasis>Patching</emphasis>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> is the most reliable way to install new versions of installed packages. It guarantees that all required packages with correct versions are installed and ensures that package versions considered as <emphasis>conflicting</emphasis> are omitted.</para>
+         <para><emphasis>Patching</emphasis><phrase role="productname">SUSE Linux Enterprise Server</phrase> is the most reliable way to install new versions of installed packages. It guarantees that all required packages with correct versions are installed and ensures that package versions considered as <emphasis>conflicting</emphasis> are omitted.</para>
          <para>To install all officially released patches that apply to your system, run:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper patch</screen>
          <para>All patches available from repositories configured on your computer are checked for their relevance to your installation. If they are relevant (and not classified as <literal>optional</literal> or <literal>feature</literal>), they are installed immediately. If <command>zypper patch</command> succeeds, it is guaranteed that no vulnerable version package is installed unless you confirm the exception. Note that the official update repository is only available after registering your <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation.</para>
@@ -296,8 +289,7 @@ Reading installed packages...
                <term>By Bugzilla issues</term>
                <listitem>
                   <para>To list all needed patches that relate to Bugzilla issues, use the option <option>--bugzilla</option>.</para>
-                  <para>To list patches for a specific bug, you can also specify a bug number: <option>--bugzilla=<replaceable>NUMBER</replaceable>
-                     </option>. To search for patches relating to multiple Bugzilla issues, add commas between the bug numbers, for example:</para>
+                  <para>To list patches for a specific bug, you can also specify a bug number: <option>--bugzilla=<replaceable>NUMBER</replaceable></option>. To search for patches relating to multiple Bugzilla issues, add commas between the bug numbers, for example:</para>
                   <screen><prompt>&gt;</prompt>zypper list-patches --bugzilla=972197,956917</screen>
                </listitem>
             </varlistentry>
@@ -305,8 +297,7 @@ Reading installed packages...
                <term>By CVE number</term>
                <listitem>
                   <para>To list all needed patches that relate to an entry in the CVE database (Common Vulnerabilities and Exposures), use the option <option>--cve</option>.</para>
-                  <para>To list patches for a specific CVE database entry, you can also specify a CVE number: <option>--cve=<replaceable>NUMBER</replaceable>
-                     </option>. To search for patches relating to multiple CVE database entries, add commas between the CVE numbers, for example:</para>
+                  <para>To list patches for a specific CVE database entry, you can also specify a CVE number: <option>--cve=<replaceable>NUMBER</replaceable></option>. To search for patches relating to multiple CVE database entries, add commas between the CVE numbers, for example:</para>
                   <screen><prompt>&gt;</prompt>zypper list-patches --cve=CVE-2016-2315,CVE-2016-2324</screen>
                </listitem>
             </varlistentry>
@@ -400,8 +391,7 @@ cve   | CVE-2019-3566 | SUSE-SLE-SERVER.. | recommended | moderate  | not needed
          <para>If a repository contains only new packages, but does not provide patches, <command>zypper patch</command> does not show any effect. To update all installed packages with newer available versions, use the following command:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper update</screen>
          <important>
-            <para>
-               <command>zypper update</command> ignores problematic packages. For example, if a package is locked, <command>zypper update</command> omits the package, even if a higher version of it is available. Conversely, <command>zypper patch</command> reports a conflict if the package is considered vulnerable.</para>
+            <para><command>zypper update</command> ignores problematic packages. For example, if a package is locked, <command>zypper update</command> omits the package, even if a higher version of it is available. Conversely, <command>zypper patch</command> reports a conflict if the package is considered vulnerable.</para>
          </important>
          <para>To update individual packages, specify the package with either the update or install command:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper update <replaceable>PACKAGE_NAME</replaceable><prompt>&gt;</prompt><command>sudo</command> zypper install <replaceable>PACKAGE_NAME</replaceable></screen>
@@ -596,13 +586,11 @@ systemctl status sshd</screen>
          <title>Adding repositories</title>
          <para>To add a repository, run</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper addrepo <replaceable>URI</replaceable><replaceable>ALIAS</replaceable></screen>
-         <para>
-            <replaceable>URI</replaceable> can either be an Internet repository, a network resource, a directory or a CD or DVD (see <link xlink:href="https://en.opensuse.org/openSUSE:Libzypp_URIs"/> for details). The <replaceable>ALIAS</replaceable> is a shorthand and unique identifier of the repository. You can freely choose it, with the only exception that it needs to be unique. Zypper will issue a warning if you specify an alias that is already in use.</para>
+         <para><replaceable>URI</replaceable> can either be an Internet repository, a network resource, a directory or a CD or DVD (see <link xlink:href="https://en.opensuse.org/openSUSE:Libzypp_URIs"/> for details). The <replaceable>ALIAS</replaceable> is a shorthand and unique identifier of the repository. You can freely choose it, with the only exception that it needs to be unique. Zypper will issue a warning if you specify an alias that is already in use.</para>
       </sect3>
       <sect3 xml:id="sec-zypper-instrepo-refresh">
          <title>Refreshing repositories</title>
-         <para>
-            <command>zypper</command> enables you to fetch changes in packages from configured repositories. To fetch the changes, run:</para>
+         <para><command>zypper</command> enables you to fetch changes in packages from configured repositories. To fetch the changes, run:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> zypper refresh</screen>
          <note>
             <title>Default behavior of <command>zypper</command>
@@ -690,25 +678,19 @@ systemctl status sshd</screen>
          <title>Searching for packages across all SLE modules</title>
          <para>To search for packages both within and outside of currently enabled SLE modules, use the <command>search-packages</command> subcommand. This command contacts the SUSE Customer Center and searches all modules for matching packages, for example:</para>
          <screen><prompt>&gt;</prompt>zypper search-packages <replaceable>package1</replaceable><replaceable>package2</replaceable></screen>
-         <para>
-            <command>zypper search-packages</command> provides the following options:</para>
+         <para><command>zypper search-packages</command> provides the following options:</para>
          <itemizedlist>
             <listitem>
-               <para>Search for an exact match of your search string: <option>-x</option>, <option>--match-exact</option>
-               </para>
+               <para>Search for an exact match of your search string: <option>-x</option>, <option>--match-exact</option></para>
             </listitem>
             <listitem>
-               <para>Group the results by module (default: group by package): <option>-g,</option>
-                  <option>--group-by-module</option>
-               </para>
+               <para>Group the results by module (default: group by package): <option>-g,</option><option>--group-by-module</option></para>
             </listitem>
             <listitem>
-               <para>Display more detailed information about packages: <option>-d</option>, <option>--details</option>
-               </para>
+               <para>Display more detailed information about packages: <option>-d</option>, <option>--details</option></para>
             </listitem>
             <listitem>
-               <para>Output search results in XML: <option>--xmlout</option>
-               </para>
+               <para>Output search results in XML: <option>--xmlout</option></para>
             </listitem>
          </itemizedlist>
       </sect3>
@@ -716,9 +698,7 @@ systemctl status sshd</screen>
          <title>Searching for specific capability</title>
          <para>To search for packages which provide a special capability, use the command <literal>what-provides</literal>. For example, if you want to know which package provides the Perl module <literal>SVN::Core</literal>, use the following command:</para>
          <screen><prompt>&gt;</prompt>zypper what-provides 'perl(SVN::Core)'</screen>
-         <para>The <literal>what-provides <replaceable>PACKAGE_NAME</replaceable>
-            </literal> is similar to <command>rpm -q --whatprovides</command>
-            <replaceable>PACKAGE_NAME</replaceable>, but RPM is only able to query the RPM database (that is the database of all installed packages). Zypper, on the other hand, will tell you about providers of the capability from any repository, not only those that are installed.</para>
+         <para>The <literal>what-provides <replaceable>PACKAGE_NAME</replaceable></literal> is similar to <command>rpm -q --whatprovides</command><replaceable>PACKAGE_NAME</replaceable>, but RPM is only able to query the RPM database (that is the database of all installed packages). Zypper, on the other hand, will tell you about providers of the capability from any repository, not only those that are installed.</para>
       </sect3>
       <sect3 xml:id="sec-zypper-query-info">
          <title>Showing package information</title>
@@ -764,7 +744,6 @@ autofs                                   Now, installed 5.1.3-7.3.1, update avai
    </sect2>
    <sect2 xml:id="sec-zypper-more">
       <title>More information</title>
-      <para>For more information on managing software from the command line, enter <command>zypper help</command>, <command>zypper help </command>
-         <replaceable>COMMAND</replaceable> or refer to the <command>zypper(8)</command> man page. For a complete and detailed command reference, <literal>cheat sheets</literal> with the most important commands, and information on how to use Zypper in scripts and applications, refer to <link xlink:href="https://en.opensuse.org/SDB:Zypper_usage"/>. A list of software changes for the latest <phrase role="productname">SUSE Linux Enterprise Server</phrase> version can be found at <link xlink:href="https://en.opensuse.org/openSUSE:Zypper_versions"/>.</para>
+      <para>For more information on managing software from the command line, enter <command>zypper help</command>, <command>zypper help </command><replaceable>COMMAND</replaceable> or refer to the <command>zypper(8)</command> man page. For a complete and detailed command reference, <literal>cheat sheets</literal> with the most important commands, and information on how to use Zypper in scripts and applications, refer to <link xlink:href="https://en.opensuse.org/SDB:Zypper_usage"/>. A list of software changes for the latest <phrase role="productname">SUSE Linux Enterprise Server</phrase> version can be found at <link xlink:href="https://en.opensuse.org/openSUSE:Zypper_versions"/>.</para>
    </sect2>
 </sect1>

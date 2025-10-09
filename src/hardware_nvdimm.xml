@@ -72,8 +72,7 @@
                   <varlistentry>
                      <term>devdax</term>
                      <listitem>
-                        <para>Device-DAX mode. Creates a single-character device file (<filename>/dev/dax<replaceable>X</replaceable>.<replaceable>Y</replaceable>
-                           </filename>). Does <emphasis>not</emphasis> require file system creation.</para>
+                        <para>Device-DAX mode. Creates a single-character device file (<filename>/dev/dax<replaceable>X</replaceable>.<replaceable>Y</replaceable></filename>). Does <emphasis>not</emphasis> require file system creation.</para>
                      </listitem>
                   </varlistentry>
                   <varlistentry>
@@ -93,8 +92,7 @@
                      <listitem>
                         <para>A memory disk without a label or metadata. Does not support DAX. Compatible with other operating systems.</para>
                         <note>
-                           <para>
-                              <literal>raw</literal> mode is not supported by SUSE. It is not possible to mount file systems on <literal>raw</literal> namespaces.</para>
+                           <para><literal>raw</literal> mode is not supported by SUSE. It is not possible to mount file systems on <literal>raw</literal> namespaces.</para>
                         </note>
                      </listitem>
                   </varlistentry>
@@ -280,8 +278,7 @@
       <title>Setting up persistent memory</title>
       <sect2 xml:id="sec-nvdimm-setup-view">
          <title>Viewing available NVDIMM storage</title>
-         <para>The <command>ndctl</command>
-            <literal>list</literal> command can be used to list all available NVDIMMs in a system.</para>
+         <para>The <command>ndctl</command><literal>list</literal> command can be used to list all available NVDIMMs in a system.</para>
          <para>In the following example, the system has three NVDIMMs, which are in a single, triple-channel interleaved set.</para>
          <screen><prompt role="root">#</prompt><command>ndctl list --dimms</command>
 
@@ -299,8 +296,7 @@
   "id":"8089-00-0000-10325476"
  }
 ]</screen>
-         <para>With a different parameter, <command>ndctl</command>
-            <literal>list</literal> will also list the available regions.</para>
+         <para>With a different parameter, <command>ndctl</command><literal>list</literal> will also list the available regions.</para>
          <note>
             <para>Regions may not appear in numerical order.</para>
          </note>
@@ -409,8 +405,7 @@ Sector size (logical/physical): 4096 bytes / 4096 bytes
 I/O size (minimum/optimal): 4096 bytes / 4096 bytes</screen>
          <para>Like the DAX-capable PMEM namespace we previously configured, this BTT-capable PMEM namespace consumes all the available storage on the NVDIMMs.</para>
          <note>
-            <para>The trailing <literal>s</literal> in the device name (<filename>/dev/<replaceable>pmem3s</replaceable>
-               </filename>) stands for <literal>sector</literal> and can be used to easily distinguish namespaces that are configured to use the BTT.</para>
+            <para>The trailing <literal>s</literal> in the device name (<filename>/dev/<replaceable>pmem3s</replaceable></filename>) stands for <literal>sector</literal> and can be used to easily distinguish namespaces that are configured to use the BTT.</para>
          </note>
          <para>The volume can be formatted and mounted as in the previous example.</para>
          <para>The PMEM namespace shown here cannot use DAX. Instead it uses the BTT to provide <emphasis>sector write atomicity</emphasis>. On each sector write through the PMEM block driver, the BTT will allocate a new sector to receive the new data. The BTT atomically updates its internal mapping structures after the new data is fully written so the newly written data will be available to applications. If the power fails at any point during this process, the write will be lost and the application will have access to its old data, still intact. This prevents the condition known as <quote>torn sectors</quote>.</para>
@@ -432,27 +427,19 @@ I/O size (minimum/optimal): 4096 bytes / 4096 bytes</screen>
       <para>More about this topic can be found in the following list:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://nvdimm.wiki.kernel.org/">Persistent Memory Wiki</link>
-            </para>
+            <para><link xlink:href="https://nvdimm.wiki.kernel.org/">Persistent Memory Wiki</link></para>
             <para>Contains instructions for configuring NVDIMM systems, information about testing, and links to specifications related to NVDIMM enabling. This site is developing as NVDIMM support in Linux is developing.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://pmem.io/">Persistent Memory Programming</link>
-            </para>
+            <para><link xlink:href="https://pmem.io/">Persistent Memory Programming</link></para>
             <para>Information about configuring, using and programming systems with non-volatile memory under Linux and other operating systems. Covers the NVM Library (NVML), which aims to provide useful APIs for programming with persistent memory in user space.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kernel.org/doc/Documentation/nvdimm/nvdimm.txt">LIBNVDIMM: Non-Volatile Devices</link>
-            </para>
+            <para><link xlink:href="https://www.kernel.org/doc/Documentation/nvdimm/nvdimm.txt">LIBNVDIMM: Non-Volatile Devices</link></para>
             <para>Aimed at kernel developers, this is part of the Documentation directory in the current Linux kernel tree. It talks about the different kernel modules involved in NVDIMM enablement, lays out technical details of the kernel implementation, and talks about the <filename>sysfs</filename>interface to the kernel that is used by the <command>ndctl</command> tool.</para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://github.com/pmem/ndctl">GitHub: pmem/ndctl</link>
-            </para>
+            <para><link xlink:href="https://github.com/pmem/ndctl">GitHub: pmem/ndctl</link></para>
             <para>Utility library for managing the <command>libnvdimm</command> subsystem in the Linux kernel. Also contains user space libraries, as well as unit tests and documentation.</para>
          </listitem>
       </itemizedlist>

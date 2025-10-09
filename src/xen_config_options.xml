@@ -84,8 +84,7 @@
                <para>Enter <command>xl block-list alice</command> on the host view of the guest block devices.</para>
             </step>
             <step>
-               <para>Enter <command>xl block-detach alice</command>
-                  <replaceable>BLOCK_DEV_ID</replaceable> to remove the virtual device from the guest. If that fails, try to add <option>-f</option> to force the removal.</para>
+               <para>Enter <command>xl block-detach alice</command><replaceable>BLOCK_DEV_ID</replaceable> to remove the virtual device from the guest. If that fails, try to add <option>-f</option> to force the removal.</para>
             </step>
             <step>
                <para>Press the hardware eject button to eject the CD.</para>
@@ -121,18 +120,13 @@
       <para>To access the virtual machine from the local console running a VNC viewer client, enter one of the following commands:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>vncviewer ::590#</command>
-            </para>
+            <para><command>vncviewer ::590#</command></para>
          </listitem>
          <listitem>
-            <para>
-               <command>vncviewer :#</command>
-            </para>
+            <para><command>vncviewer :#</command></para>
          </listitem>
       </itemizedlist>
-      <para>
-         <replaceable>#</replaceable> is the VNC viewer port number assigned to the virtual machine.</para>
+      <para><replaceable>#</replaceable> is the VNC viewer port number assigned to the virtual machine.</para>
       <para>When accessing the VM Guest from a machine other than Dom0, use the following syntax:</para>
       <screen><prompt>&gt;</prompt>vncviewer 192.168.1.20::590#
 </screen>
@@ -473,8 +467,7 @@
                <para>First you need to append the <literal>dom0_max_vcpus=X</literal> to the Xen boot line. Do so by adding the following line to <filename>/etc/default/grub</filename>:</para>
                <screen>GRUB_CMDLINE_XEN="dom0_max_vcpus=X"</screen>
                <para>If <filename>/etc/default/grub</filename> already contains a line setting <envar>GRUB_CMDLINE_XEN</envar>, rather append <literal>dom0_max_vcpus=X</literal> to this line.</para>
-               <para>
-                  <literal>X</literal> needs to be replaced by the number of VCPUs dedicated to Dom0.</para>
+               <para><literal>X</literal> needs to be replaced by the number of VCPUs dedicated to Dom0.</para>
             </step>
             <step>
                <para>Update the GRUB 2 configuration file by running the following command:</para>
@@ -596,8 +589,7 @@ alice                             4     1     3   -b-       2.8 2-3</screen>
          <title>Specify boot device on boot</title>
          <para>Just as with physical hardware, it is sometimes desirable to boot a VM Guest from a different device than its own boot device. For fully virtual machines, it is possible to select a boot device with the <literal>boot</literal> parameter in a domain xl configuration file:</para>
          <screen>boot = <replaceable>BOOT_DEVICE</replaceable></screen>
-         <para>
-            <replaceable>BOOT_DEVICE</replaceable> can be one of <literal>c</literal> for hard disk, <literal>d</literal> for CD-ROM, or <literal>n</literal> for Network/PXE. You can specify multiple options, and they will be attempted in the given order. For example,</para>
+         <para><replaceable>BOOT_DEVICE</replaceable> can be one of <literal>c</literal> for hard disk, <literal>d</literal> for CD-ROM, or <literal>n</literal> for Network/PXE. You can specify multiple options, and they will be attempted in the given order. For example,</para>
          <screen>boot = dc</screen>
          <para>boots from CD-ROM, and falls back to the hard disk if CD-ROM is not bootable.</para>
       </sect2>
@@ -617,9 +609,7 @@ alice                             4     1     3   -b-       2.8 2-3</screen>
             <varlistentry>
                <term>Intel</term>
                <listitem>
-                  <para>
-                     <link xlink:href="https://www.intel.com/Assets/PDF/appnote/241618.pdf"/>
-                  </para>
+                  <para><link xlink:href="https://www.intel.com/Assets/PDF/appnote/241618.pdf"/></para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -629,15 +619,13 @@ alice                             4     1     3   -b-       2.8 2-3</screen>
             <varlistentry>
                <term>1</term>
                <listitem>
-                  <para>Force the corresponding bit to <literal>1</literal>
-                  </para>
+                  <para>Force the corresponding bit to <literal>1</literal></para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>0</term>
                <listitem>
-                  <para>Force the corresponding bit to <literal>0</literal>
-                  </para>
+                  <para>Force the corresponding bit to <literal>0</literal></para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -665,16 +653,14 @@ alice                             4     1     3   -b-       2.8 2-3</screen>
       </sect2>
       <sect2 xml:id="sec-xen-config-pirqs">
          <title>Increasing the number of PCI-IRQs</title>
-         <para>In case you need to increase the default number of PCI-IRQs available to Dom0 and/or VM Guest, you can do so by modifying the Xen kernel command line. Use the command <command>extra_guest_irqs=</command>
-            <replaceable>DOMU_IRGS,DOM0_IRGS</replaceable>. The optional first number <replaceable>DOMU_IRGS</replaceable> is common for all VM Guests, while the optional second number <replaceable>DOM0_IRGS</replaceable> (preceded by a comma) is for Dom0. Changing the setting for VM Guest has no impact on Dom0 and vice versa. For example to change Dom0 without changing VM Guest, use</para>
+         <para>In case you need to increase the default number of PCI-IRQs available to Dom0 and/or VM Guest, you can do so by modifying the Xen kernel command line. Use the command <command>extra_guest_irqs=</command><replaceable>DOMU_IRGS,DOM0_IRGS</replaceable>. The optional first number <replaceable>DOMU_IRGS</replaceable> is common for all VM Guests, while the optional second number <replaceable>DOM0_IRGS</replaceable> (preceded by a comma) is for Dom0. Changing the setting for VM Guest has no impact on Dom0 and vice versa. For example to change Dom0 without changing VM Guest, use</para>
          <screen>extra_guest_irqs=,512</screen>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-xen-config-scheduling">
       <title>Virtual CPU scheduling</title>
       <para>The Xen hypervisor schedules virtual CPUs individually across physical CPUs. With modern CPUs supporting multiple threads on each core, virtual CPUs can run on the same core in different threads and thus influence each other. The performance of a virtual CPU running in one thread can be noticeably affected by what other virtual CPUs in other threads are doing. When these virtual CPUs belong to different guest systems, these guests can influence each other. The effect can vary, from variations in the guest CPU time accounting to worse scenarios such as <emphasis>side channel attack</emphasis>.</para>
-      <para>
-         <emphasis>Scheduling granularity</emphasis> addresses this problem. You can specify it at boot time by using a Xen boot parameter:</para>
+      <para><emphasis>Scheduling granularity</emphasis> addresses this problem. You can specify it at boot time by using a Xen boot parameter:</para>
       <screen>sched-gran=<replaceable>GRANULARITY</replaceable></screen>
       <para>Replace <replaceable>GRANULARITY</replaceable> with one of:</para>
       <variablelist>

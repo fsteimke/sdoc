@@ -15,10 +15,7 @@
    <para>To configure the FTP server using YaST, follow these steps:</para>
    <procedure>
       <step>
-         <para>Open the YaST control center and choose <menuchoice>
-               <guimenu>Network Services</guimenu>
-               <guimenu>FTP Server</guimenu>
-            </menuchoice> or run the <command>yast2 ftp-server</command> command as <systemitem class="username">root</systemitem>.</para>
+         <para>Open the YaST control center and choose <menuchoice><guimenu>Network Services</guimenu><guimenu>FTP Server</guimenu></menuchoice> or run the <command>yast2 ftp-server</command> command as <systemitem class="username">root</systemitem>.</para>
       </step>
       <step>
          <para>If there is not any FTP server installed in your system, you are asked which server to install when the YaST FTP Server module starts. Choose the vsftpd server and confirm the dialog.</para>
@@ -42,10 +39,10 @@
          <title>FTP server configuration — start-up</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_ftp-start-up.png" width="75%"/>
+               <imagedata fileref="media/yast2_ftp-start-up.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_ftp-start-up.png" width="75%"/>
+               <imagedata fileref="media/yast2_ftp-start-up.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>

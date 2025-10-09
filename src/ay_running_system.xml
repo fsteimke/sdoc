@@ -57,6 +57,5 @@
 &lt;/profile&gt;</screen>
    <para>Store this file as <filename>/tmp/install_foo.xml</filename> and start the AutoYaST installation process by calling:</para>
    <screen><prompt>&gt;</prompt><command>sudo</command> yast2 ayast_setup setup filename=/tmp/install_foo.xml dopackages="yes"</screen>
-   <para>For more information, run <command>yast2 ayast_setup longhelp</command>
-   </para>
+   <para>For more information, run <command>yast2 ayast_setup longhelp</command></para>
 </chapter>

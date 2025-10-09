@@ -35,9 +35,7 @@
    <sect1 xml:id="sec-rmt-client-parameters">
       <title>Configuring clients with boot parameters</title>
       <para>Any client can be configured to use RMT by providing the <option>regurl</option> parameter during machine boot.</para>
-      <para>The parameter needs to be entered as <option>regurl=<replaceable>RMT_SERVER_URL</replaceable>
-         </option>. The URL needs to be in the following format: <literal>https://<replaceable>FQDN</replaceable>
-         </literal>, with <replaceable>FQDN</replaceable> being the fully qualified host name of the RMT server. It must be identical to the FQDN of the server certificate used on the RMT server. Example:</para>
+      <para>The parameter needs to be entered as <option>regurl=<replaceable>RMT_SERVER_URL</replaceable></option>. The URL needs to be in the following format: <literal>https://<replaceable>FQDN</replaceable></literal>, with <replaceable>FQDN</replaceable> being the fully qualified host name of the RMT server. It must be identical to the FQDN of the server certificate used on the RMT server. Example:</para>
       <screen>regurl=https://rmt.example.com</screen>
       <warning>
          <title>Beware of typing errors</title>
@@ -54,26 +52,14 @@
       <para>To configure RMT specific data using AutoYaST, follow the steps for the relevant version of the RMT client.</para>
       <procedure>
          <step>
-            <para>As <systemitem class="username">root</systemitem>, start YaST and select <menuchoice>
-                  <guimenu>Miscellaneous</guimenu>
-                  <guimenu>Autoinstallation</guimenu>
-               </menuchoice> to start the graphical AutoYaST front-end.</para>
+            <para>As <systemitem class="username">root</systemitem>, start YaST and select <menuchoice><guimenu>Miscellaneous</guimenu><guimenu>Autoinstallation</guimenu></menuchoice> to start the graphical AutoYaST front-end.</para>
             <para>From a command line, you can start the graphical AutoYaST front-end with the <command>yast2 autoyast</command> command.</para>
          </step>
          <step>
-            <para>Open an existing profile using <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Open</guimenu>
-               </menuchoice>. Create a profile based on the current system's configuration using <menuchoice>
-                  <guimenu>Tools</guimenu>
-                  <guimenu>Create Reference Profile</guimenu>
-               </menuchoice>, or work with an empty profile.</para>
+            <para>Open an existing profile using <menuchoice><guimenu>File</guimenu><guimenu>Open</guimenu></menuchoice>. Create a profile based on the current system's configuration using <menuchoice><guimenu>Tools</guimenu><guimenu>Create Reference Profile</guimenu></menuchoice>, or work with an empty profile.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>Software</guimenu>
-                  <guimenu>Product Registration</guimenu>
-               </menuchoice>. An overview of the current configuration is shown.</para>
+            <para>Select <menuchoice><guimenu>Software</guimenu><guimenu>Product Registration</guimenu></menuchoice>. An overview of the current configuration is shown.</para>
          </step>
          <step>
             <para>Click <guimenu>Edit</guimenu>.</para>
@@ -85,10 +71,7 @@
             <para>Perform all other configurations needed for the systems to be deployed, then click <guimenu>Finish</guimenu> to return to the main screen.</para>
          </step>
          <step>
-            <para>Select <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>Save As</guimenu>
-               </menuchoice> and enter a file name for the profile, such as <filename>autoinst.xml</filename>.</para>
+            <para>Select <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice> and enter a file name for the profile, such as <filename>autoinst.xml</filename>.</para>
          </step>
       </procedure>
    </sect1>
@@ -148,7 +131,6 @@
    <sect1 xml:id="sec-rmt-client-online-migration">
       <title>Online migration of SUSE Linux Enterprise clients</title>
       <para>SUSE Linux Enterprise clients registered to RMT can be migrated online to the latest service pack of the same major release the same way as clients registered to SUSE Customer Center. Before starting the migration, make sure that RMT has the required products available and mirrored.</para>
-      <para>For detailed information on the online migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase>
-         <xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For detailed information on the online migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
 </chapter>

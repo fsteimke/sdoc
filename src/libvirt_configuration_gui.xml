@@ -8,10 +8,7 @@
    <title>Configuring virtual machines with Virtual Machine Manager</title>
    <info>
       <abstract>
-         <para>Virtual Machine Manager's <guimenu>Details</guimenu> view offers in-depth information about the VM Guest's complete configuration and hardware equipment. Using this view, you can also change the guest configuration or add and modify virtual hardware. To access this view, open the guest's console in Virtual Machine Manager and either choose <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Details</guimenu>
-            </menuchoice> from the menu, or click <guimenu>Show virtual hardware details</guimenu> in the toolbar.</para>
+         <para>Virtual Machine Manager's <guimenu>Details</guimenu> view offers in-depth information about the VM Guest's complete configuration and hardware equipment. Using this view, you can also change the guest configuration or add and modify virtual hardware. To access this view, open the guest's console in Virtual Machine Manager and either choose <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice> from the menu, or click <guimenu>Show virtual hardware details</guimenu> in the toolbar.</para>
       </abstract>
    </info>
    <figure>
@@ -19,10 +16,10 @@
          <guimenu>Details</guimenu> view of a VM Guest</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="69%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -35,86 +32,74 @@
       <para>This section describes the setup of the virtualized processor and memory hardware. These components are vital to a VM Guest, therefore you cannot remove them. It also shows how to view the overview and performance information, and how to change boot parameters.</para>
       <sect2>
          <title>Overview</title>
-         <para>
-            <guimenu>Overview</guimenu> shows basic details about VM Guest and the hypervisor.</para>
+         <para><guimenu>Overview</guimenu> shows basic details about VM Guest and the hypervisor.</para>
          <figure>
             <title>Overview details</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
-         <para>
-            <guimenu>Name</guimenu>, <guimenu>Title</guimenu>, and <guimenu>Description</guimenu> are editable and help you identify VM Guest in the <guimenu>Virtual Machine Manager</guimenu> list of machines.</para>
+         <para><guimenu>Name</guimenu>, <guimenu>Title</guimenu>, and <guimenu>Description</guimenu> are editable and help you identify VM Guest in the <guimenu>Virtual Machine Manager</guimenu> list of machines.</para>
          <figure>
             <title>VM Guest title and description</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_desc.png" width="40%"/>
+                  <imagedata fileref="media/libvirt_vmm_desc.png" width="36%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_desc.png" width="40%"/>
+                  <imagedata fileref="media/libvirt_vmm_desc.png" width="36%"/>
                </imageobject>
             </mediaobject>
          </figure>
-         <para>
-            <guimenu>UUID</guimenu> shows the universally unique identifier of the virtual machine, while <guimenu>Status</guimenu> shows its current status—<guimenu>Running</guimenu>, <guimenu>Paused</guimenu>, or <guimenu>Shutoff</guimenu>.</para>
+         <para><guimenu>UUID</guimenu> shows the universally unique identifier of the virtual machine, while <guimenu>Status</guimenu> shows its current status—<guimenu>Running</guimenu>, <guimenu>Paused</guimenu>, or <guimenu>Shutoff</guimenu>.</para>
          <para>The <guimenu>Hypervisor Details</guimenu> section shows the hypervisor type, CPU architecture, used emulator, and chipset type. None of the hypervisor parameters can be changed.</para>
       </sect2>
       <sect2>
          <title>Performance</title>
-         <para>
-            <guimenu>Performance</guimenu> shows regularly updated charts of CPU and memory usage, and disk and network I/O.</para>
+         <para><guimenu>Performance</guimenu> shows regularly updated charts of CPU and memory usage, and disk and network I/O.</para>
          <figure>
             <title>Performance</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
          <tip>
             <title>Enabling disabled charts</title>
-            <para>Not all the charts in the <guimenu>Graph</guimenu> view are enabled by default. To enable these charts, go to <menuchoice>
-                  <guimenu>File</guimenu>
-                  <guimenu>View Manager</guimenu>
-               </menuchoice>, then select <menuchoice>
-                  <guimenu>Edit</guimenu>
-                  <guimenu>Preferences</guimenu>
-                  <guimenu>Polling</guimenu>
-               </menuchoice>, and check the charts that you want to see regularly updated.</para>
+            <para>Not all the charts in the <guimenu>Graph</guimenu> view are enabled by default. To enable these charts, go to <menuchoice><guimenu>File</guimenu><guimenu>View Manager</guimenu></menuchoice>, then select <menuchoice><guimenu>Edit</guimenu><guimenu>Preferences</guimenu><guimenu>Polling</guimenu></menuchoice>, and check the charts that you want to see regularly updated.</para>
          </tip>
          <figure>
             <title>Statistics charts</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="40%"/>
+                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="36%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="40%"/>
+                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="36%"/>
                </imageobject>
             </mediaobject>
          </figure>
       </sect2>
       <sect2>
          <title>Processor</title>
-         <para>
-            <guimenu>CPU</guimenu> includes detailed information about VM Guest processor configuration.</para>
+         <para><guimenu>CPU</guimenu> includes detailed information about VM Guest processor configuration.</para>
          <figure>
             <title>Processor view</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_processor.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_processor.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_processor.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_processor.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -128,16 +113,15 @@
       </sect2>
       <sect2>
          <title>Memory</title>
-         <para>
-            <guimenu>Memory</guimenu> contains information about the memory that is available to VM Guest.</para>
+         <para><guimenu>Memory</guimenu> contains information about the memory that is available to VM Guest.</para>
          <figure>
             <title>Memory view</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_memory.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_memory.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_memory.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_memory.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -177,8 +161,7 @@
             <varlistentry>
                <term>Enable launch security</term>
                <listitem>
-                  <para>If the VM Host Server supports AMD-SEV technology, activating this option enables a secured guest with encrypted memory. This option requires a virtual machine with chipset type Q35. For more details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase>
-                     <xref linkend="article-amd-sev" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If the VM Host Server supports AMD-SEV technology, activating this option enables a secured guest with encrypted memory. This option requires a virtual machine with chipset type Q35. For more details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-amd-sev" xrefstyle="%label &#34;%c&#34;"/>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -189,16 +172,15 @@
       </sect2>
       <sect2>
          <title>Boot options</title>
-         <para>
-            <guimenu>Boot Options</guimenu> introduces options affecting the VM Guest boot process.</para>
+         <para><guimenu>Boot Options</guimenu> introduces options affecting the VM Guest boot process.</para>
          <figure>
             <title>Boot options</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_boot.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_boot.png" width="64%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_boot.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_boot.png" width="64%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -218,10 +200,10 @@
                <title>Add a new storage</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -238,21 +220,16 @@
             <para>After you create and specify the disk image file, specify the <guimenu>Device type</guimenu>. It can be one of the following options:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <guimenu>Disk device</guimenu>
-                  </para>
+                  <para><guimenu>Disk device</guimenu></para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>CDROM device</guimenu>: does not allow using <guimenu>Create a disk image for the virtual machine</guimenu>.</para>
+                  <para><guimenu>CDROM device</guimenu>: does not allow using <guimenu>Create a disk image for the virtual machine</guimenu>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>Floppy device</guimenu>: does not allow using <guimenu>Create a disk image for the virtual machine</guimenu>.</para>
+                  <para><guimenu>Floppy device</guimenu>: does not allow using <guimenu>Create a disk image for the virtual machine</guimenu>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <guimenu>LUN Passthrough</guimenu>: required to use an existing SCSI storage directly without adding it into a storage pool.</para>
+                  <para><guimenu>LUN Passthrough</guimenu>: required to use an existing SCSI storage directly without adding it into a storage pool.</para>
                </listitem>
             </itemizedlist>
          </step>
@@ -278,10 +255,10 @@
                <title>Add a new controller</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_controller.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_controller.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_controller.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_controller.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -308,10 +285,10 @@
                <title>Add a new network interface</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_network.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_network.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_network.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_network.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -341,10 +318,10 @@
                <title>Add a new input device</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_input.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_input.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_input.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_input.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -358,10 +335,7 @@
       </procedure>
       <tip xml:id="tip-libvirt-config-tablet">
          <title>Enabling seamless and synchronized mouse pointer movement</title>
-         <para>When you click within a VM Guest's console with the mouse, the pointer is captured by the console window and cannot be used outside the console unless it is explicitly released (by pressing <keycombo>
-               <keycap function="alt"/>
-               <keycap function="control"/>
-            </keycombo>). To prevent the console from grabbing the key and to enable seamless pointer movement between host and guest instead, follow the instructions in <xref linkend="proc-libvirt-config-input"/> to add an <guimenu>EvTouch USB Graphics Tablet</guimenu> to the VM Guest.</para>
+         <para>When you click within a VM Guest's console with the mouse, the pointer is captured by the console window and cannot be used outside the console unless it is explicitly released (by pressing <keycombo><keycap function="alt"/><keycap function="control"/></keycombo>). To prevent the console from grabbing the key and to enable seamless pointer movement between host and guest instead, follow the instructions in <xref linkend="proc-libvirt-config-input"/> to add an <guimenu>EvTouch USB Graphics Tablet</guimenu> to the VM Guest.</para>
          <para>Adding a tablet has the additional advantage of synchronizing the mouse pointer movement between VM Host Server and VM Guest when using a graphical environment on the guest. With no tablet configured on the guest, you may often see two pointers with one dragging behind the other.</para>
       </tip>
    </sect1>
@@ -378,10 +352,10 @@
                <title>Add a new video device</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_video.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_video.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_video.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_video.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -409,10 +383,10 @@
                <title>Add a new USB redirector</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="70%"/>
+                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -463,10 +437,7 @@
       <para>To add a CD/DVD-ROM device to your VM Guest, proceed as follows:</para>
       <procedure>
          <step>
-            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Details</guimenu>
-               </menuchoice>.</para>
+            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Click <guimenu>Add Hardware</guimenu> and choose <guimenu>Storage</guimenu> in the pop-up window.</para>
@@ -515,10 +486,7 @@
       <para>To add a floppy device to your VM Guest, proceed as follows:</para>
       <procedure>
          <step>
-            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Details</guimenu>
-               </menuchoice>.</para>
+            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Click <guimenu>Add Hardware</guimenu> and choose <guimenu>Storage</guimenu> in the pop-up window.</para>
@@ -542,10 +510,7 @@
       <para>Whether you are using the VM Host Server's physical CD/DVD-ROM device or an ISO/floppy image: before you can change the media or image of an existing device in the VM Guest, you first need to <literal>disconnect</literal> the media from the guest.</para>
       <procedure>
          <step>
-            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice>
-                  <guimenu>View</guimenu>
-                  <guimenu>Details</guimenu>
-               </menuchoice>.</para>
+            <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice>.</para>
          </step>
          <step>
             <para>Choose the Floppy or CD/DVD-ROM device and <quote>eject</quote> the medium by clicking <guimenu>Disconnect</guimenu>.</para>
@@ -574,10 +539,7 @@
          <para>The following procedure describes how to assign a PCI device from the host machine to a VM Guest using Virtual Machine Manager:</para>
          <procedure>
             <step>
-               <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice>
-                     <guimenu>View</guimenu>
-                     <guimenu>Details</guimenu>
-                  </menuchoice>.</para>
+               <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Click <guimenu>Add Hardware</guimenu> and choose the <guimenu>PCI Host Device</guimenu> category in the left panel. A list of available PCI devices appears in the right part of the window.</para>
@@ -585,10 +547,10 @@
                   <title>Adding a PCI device</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_add_pcidevice.png" width="75%"/>
+                        <imagedata fileref="media/virt_add_pcidevice.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_add_pcidevice.png" width="75%"/>
+                        <imagedata fileref="media/virt_add_pcidevice.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -615,10 +577,7 @@
          <para>To assign a host USB device to VM Guest using Virtual Machine Manager, follow these steps:</para>
          <procedure>
             <step>
-               <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice>
-                     <guimenu>View</guimenu>
-                     <guimenu>Details</guimenu>
-                  </menuchoice>.</para>
+               <para>Double-click a VM Guest entry in the Virtual Machine Manager to open its console and switch to the <guimenu>Details</guimenu> view with <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Click <guimenu>Add Hardware</guimenu> and choose the <guimenu>USB Host Device</guimenu> category in the left panel. A list of available USB devices appears in the right part of the window.</para>
@@ -626,10 +585,10 @@
                   <title>Adding a USB device</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_add_usbdevice.png" width="75%"/>
+                        <imagedata fileref="media/virt_add_usbdevice.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_add_usbdevice.png" width="75%"/>
+                        <imagedata fileref="media/virt_add_usbdevice.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>

@@ -82,8 +82,7 @@
       <para>A performance problem often is caused by network or hardware problems, bugs or configuration issues. Make sure to rule out problems such as the ones listed below before attempting to tune your system:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>Check the output of the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>) for unusual entries.</para>
+            <para>Check the output of the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>) for unusual entries.</para>
          </listitem>
          <listitem>
             <para>Check (using <command>top</command> or <command>ps</command>) whether a certain process misbehaves by eating up unusual amounts of CPU time or memory.</para>

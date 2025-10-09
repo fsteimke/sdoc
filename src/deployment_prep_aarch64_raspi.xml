@@ -7,8 +7,7 @@
        xml:id="sec-aarch64-deprpi">
    <title>Raspberry Pi</title>
    <info/>
-   <para>SUSE® Linux Enterprise Server is the first enterprise Linux distribution to support the inexpensive Raspberry Pi* single-board computer. <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-      <phrase role="productnumber">15 SP7</phrase> supports the following models:</para>
+   <para>SUSE® Linux Enterprise Server is the first enterprise Linux distribution to support the inexpensive Raspberry Pi* single-board computer. <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> supports the following models:</para>
    <itemizedlist>
       <listitem>
          <para>Raspberry Pi 3 Model A+</para>
@@ -44,12 +43,10 @@
       <note>
          <title>EL3 security considerations</title>
          <para>Code loaded for EL3 (often called BL31) will reside in memory, and Linux may attempt hypercalls into EL3 throughout its runtime.</para>
-         <para>Verify that your boot media have no <literal>armstub8.bin</literal> file unintentionally present. <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-            <phrase role="productnumber">15 SP7</phrase> does not include it.</para>
+         <para>Verify that your boot media have no <literal>armstub8.bin</literal> file unintentionally present. <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> does not include it.</para>
          <para>Beware that the Raspberry Pi's SoC does not provide TrustZone secure memory. Both the OS on the CPU and any software on the GPU may access its RAM. It is therefore unsuited for cryptographic EL0-s applications. <phrase role="productname">SUSE Linux Enterprise Server</phrase> does not provide an EL1-s Trusted Execution Environment (TEE) for that reason.</para>
       </note>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> for the Raspberry Pi is configured to load a fifth-stage boot loader called <literal>Das U-Boot</literal>.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> for the Raspberry Pi is configured to load a fifth-stage boot loader called <literal>Das U-Boot</literal>.</para>
       <sect3 xml:id="sec-aarch64-deprpi-configtxt">
          <title>Config.txt</title>
          <para>There is no non-volatile memory to hold configuration information. This means there are no conventional settings to adjust for boot device order, time and date, and so on.</para>
@@ -58,8 +55,7 @@
       <sect3 xml:id="sec-aarch64-deprpi-otp">
          <title>OTP memory</title>
          <para>The SoC also has a very small amount of One-Time Programmable Memory (OTP memory). This can be used to configure some settings, such as whether the Boot ROM should attempt to boot from USB devices or over Ethernet.</para>
-         <para>This OTP memory is described on the Raspberry Pi Foundation Web site: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/otpbits.md"/>
-         </para>
+         <para>This OTP memory is described on the Raspberry Pi Foundation Web site: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/otpbits.md"/></para>
          <warning>
             <title>One-time programmable only</title>
             <para>Configuration settings written into OTP memory cannot be reversed.</para>
@@ -72,8 +68,7 @@
          <screen>program_usb_boot_mode=1</screen>
          <para>Then continue to boot from the modified microSD card as usual. Once you see output from the U-Boot or GRUB boot loaders or the Linux kernel, you can remove power and then the microSD card. Your device should now be able to boot from USB (<xref linkend="sec-aarch64-deprpi-usb"/>).</para>
          <para>Note that once USB boot mode has been enabled for Raspberry Pi 3 Model B, USB boot mode cannot be disabled again (<xref linkend="sec-aarch64-deprpi-otp"/>).</para>
-         <para>For more details, refer to the Raspberry Pi Foundation Web site: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md"/>
-         </para>
+         <para>For more details, refer to the Raspberry Pi Foundation Web site: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md"/></para>
          <para>For the Raspberry Pi Compute Module 3, the setting required is the same, but the deployment of the modified image is a little more complicated.</para>
       </sect3>
    </sect2>
@@ -128,11 +123,8 @@ dtoverlay=i2c-rtc,ds1307</screen>
    <sect2 xml:id="sec-aarch64-deprpi-net">
       <title>Installation from network</title>
       <para>Because of the hardware's lack of on-board firmware (<xref linkend="sec-aarch64-deprpi-boot"/>), network-booting the Raspberry Pi using PXE is more complex than with more conventional computers.</para>
-      <para>The process of setting up a PXE boot server for x86 and Arm is described in the SUSE Best Practices document <link xlink:href="https://documentation.suse.com/sbp/all/html/SBP-Multi-PXE-Install/index.html">
-            <citetitle>How to Set Up a Multi-PXE Installation Server</citetitle>
-         </link>.</para>
-      <para>The Raspberry Pi Foundation publishes information on how to boot using PXE one Raspberry Pi from another Raspberry Pi: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/net_tutorial.md"/>
-      </para>
+      <para>The process of setting up a PXE boot server for x86 and Arm is described in the SUSE Best Practices document <link xlink:href="https://documentation.suse.com/sbp/all/html/SBP-Multi-PXE-Install/index.html"><citetitle>How to Set Up a Multi-PXE Installation Server</citetitle></link>.</para>
+      <para>The Raspberry Pi Foundation publishes information on how to boot using PXE one Raspberry Pi from another Raspberry Pi: <link xlink:href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/net_tutorial.md"/></para>
    </sect2>
    <sect2>
       <title>More information</title>
@@ -142,17 +134,13 @@ dtoverlay=i2c-rtc,ds1307</screen>
             <term>SUSE Linux Enterprise Server <phrase role="productnumber">15 SP7</phrase> Release Notes</term>
             <listitem>
                <para>For more information about hardware compatibility, supported options and functionality when running on Raspberry Pi hardware, consult the <citetitle>Boot and Driver Enablement for Raspberry Pi</citetitle> section of the SUSE Linux Enterprise Server Release Notes:</para>
-               <para>
-                  <link xlink:href="https://www.suse.com/releasenotes/aarch64/SUSE-SLES/15-SP7/#aarch64-rpi"/>
-               </para>
+               <para><link xlink:href="https://www.suse.com/releasenotes/aarch64/SUSE-SLES/15-SP7/#aarch64-rpi"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Raspberry Pi Quick Start</term>
             <listitem>
-               <para>
-                  <link xlink:href="https://documentation.suse.com/sles/15-SP7/html/SLES-raspberry-pi/article-raspberry-pi.html"/>
-               </para>
+               <para><link xlink:href="https://documentation.suse.com/sles/15-SP7/html/SLES-raspberry-pi/article-raspberry-pi.html"/></para>
             </listitem>
          </varlistentry>
          <varlistentry>

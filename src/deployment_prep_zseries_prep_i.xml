@@ -28,8 +28,7 @@
             <screen>/media/dvd  *(ro)</screen>
             <para>After changing this file, restart the NFS server with the command <command>sudo systemctl restart nfsserver</command>.</para>
          </important>
-         <para>Setting up an FTP server on a Linux system involves the installation and configuration of server software like <package>vsftpd</package>. If you are using <phrase role="productname">SUSE Linux Enterprise Server</phrase>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-            <xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/> for installation instructions. Downloading the installation data via anonymous login is not supported, therefore you need to configure the FTP server to support user authentication.</para>
+         <para>Setting up an FTP server on a Linux system involves the installation and configuration of server software like <package>vsftpd</package>. If you are using <phrase role="productname">SUSE Linux Enterprise Server</phrase>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/> for installation instructions. Downloading the installation data via anonymous login is not supported, therefore you need to configure the FTP server to support user authentication.</para>
          <sect4 xml:id="sec-prep-makeavail-linuxws-oncd">
             <title>
                <phrase role="productname">SUSE Linux Enterprise Server</phrase> on DVD</title>
@@ -118,24 +117,16 @@ EndSection</screen>
          <para>IPLing from the network requires a Cobbler server to provide the kernel, initrd, and the installation data. Preparing the Cobbler server requires the following steps:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-import"/>
-               </para>
+               <para><xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-import"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-add-distro"/>
-               </para>
+               <para><xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-add-distro"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-profile"/>
-               </para>
+               <para><xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-profile"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-system"/>
-               </para>
+               <para><xref xrefstyle="%label" linkend="sec-prep-makeavail-zpxe-cobbler-system"/></para>
             </listitem>
          </itemizedlist>
          <sect4 xml:id="sec-prep-makeavail-zpxe-cobbler-import">
@@ -147,8 +138,7 @@ EndSection</screen>
                   <para>Mount point of the installation data.</para>
                </callout>
                <callout arearefs="co-cobbler-import-dirname">
-                  <para>A string identifying the imported product, for example <quote>sles15_s390x</quote>. This string is used as the name for the subdirectory where the installation data is copied to. On a Cobbler server running on SUSE Linux Enterprise this is <filename>/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable>
-                     </filename>. This path may be different if Cobbler runs on another operating system.</para>
+                  <para>A string identifying the imported product, for example <quote>sles15_s390x</quote>. This string is used as the name for the subdirectory where the installation data is copied to. On a Cobbler server running on SUSE Linux Enterprise this is <filename>/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable></filename>. This path may be different if Cobbler runs on another operating system.</para>
                </callout>
             </calloutlist>
          </sect4>
@@ -189,8 +179,7 @@ EndSection</screen>
                   <para>Identifier for the profile. Use the string specified when added the distribution.</para>
                </callout>
                <callout arearefs="co-cobbler-profile-os">
-                  <para>Operating system version. Distribution to which the profile should apply. Use the string specified with <option>--name=<replaceable>IDENTIFIER</replaceable>
-                     </option> in the importing step.</para>
+                  <para>Operating system version. Distribution to which the profile should apply. Use the string specified with <option>--name=<replaceable>IDENTIFIER</replaceable></option> in the importing step.</para>
                </callout>
                <callout arearefs="co-cobbler-profile-meta">
                   <para>Option required for templating Kickstart files. Since it is not used for SUSE, leave it empty.</para>
@@ -304,8 +293,7 @@ DASD=600"</screen>
             <para>Prepare the installation target and IPL the VM Guest. See <xref linkend="sec-prep-ipling-kvm"/>.</para>
          </step>
          <step>
-            <para>
-               <xref linkend="sec-prep-netcfg-data"/>.</para>
+            <para><xref linkend="sec-prep-netcfg-data"/>.</para>
          </step>
          <step>
             <para>Connect to the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation system. See <xref linkend="sec-prep-connect"/>.</para>
@@ -381,8 +369,7 @@ DIRM USER WITHPASS</screen>
             <title>Create a virtual disk image</title>
             <para>By default, libvirt searches for disk images in <filename>/var/lib/libvirt/images/</filename> on the VM Host Server. Although images can also be stored anywhere on the file system, it is recommended to store all images in a single location for easier maintainability. To create an image, log in to the KVM host server and run the following command:</para>
             <screen>qemu-img create -f qcow2 /var/lib/libvirt/images/s12lin_qcow2.img 10G</screen>
-            <para>This creates a qcow2 image with a size of 10 GB in <filename>/var/lib/libvirt/images/</filename>. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="cha-qemu-guest-inst-qemu-img" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>This creates a qcow2 image with a size of 10 GB in <filename>/var/lib/libvirt/images/</filename>. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-img" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </sect4>
          <sect4 xml:id="sec-prep-prep-ipl-kvm-domain">
             <title>Write a domain XML file</title>
@@ -532,8 +519,7 @@ SAY 'LOADING SLES FILES INTO READER...'
             <title>IPL from a Cobbler server with zPXE</title>
             <para>To IPL from a Cobbler server with zPXE, you need to transfer the <filename>zpxe.rexx</filename> script via FTP from the Cobbler server to your z/VM guest. To do this, the z/VM guest needs a working TCP/IP connection and an FTP client program.</para>
             <para>Log in as the z/VM Linux guest to IPL and transfer the script with a fixed size of 80 characters in ASCII mode (see <xref linkend="ex-prep-ipling-vm-reader-ftp-ftptrans"/> for an example). The <filename>zpxe.rexx</filename> script is available on the Unified Installer DVD at <filename>/boot/s390x/zpxe.rexx</filename> or on a SLE Cobbler server at <filename>/usr/share/doc/packages/s390-tools/zpxe.rexx</filename>.</para>
-            <para>
-               <filename>zpxe.rexx</filename> is supposed to replace the <filename>PROFILE EXEC</filename> of your guest. Make a backup copy of the existing <filename>PROFILE EXEC</filename> and rename <filename>ZPXE REXX</filename> to <filename>PROFILE EXEC</filename>. Alternatively, call <filename>ZPXE REXX</filename> from the existing <filename>PROFILE EXEC</filename> by adding the <literal>'ZPXE REXX'</literal> line to it.</para>
+            <para><filename>zpxe.rexx</filename> is supposed to replace the <filename>PROFILE EXEC</filename> of your guest. Make a backup copy of the existing <filename>PROFILE EXEC</filename> and rename <filename>ZPXE REXX</filename> to <filename>PROFILE EXEC</filename>. Alternatively, call <filename>ZPXE REXX</filename> from the existing <filename>PROFILE EXEC</filename> by adding the <literal>'ZPXE REXX'</literal> line to it.</para>
             <para>The last step is to create a configuration file <filename>ZPXE CONF</filename> that instructs <filename>ZPXE REXX</filename> which Cobbler server to contact and which disk to IPL. Run <command>xedit zpxe conf a</command> and create <filename>ZPXE CONF</filename> with the following content (replace the example data accordingly):</para>
             <screen>HOST cobbler.example.com
 IPL 600</screen>
@@ -751,8 +737,7 @@ ter '+++' to abort).
       <title>Connecting to the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation system</title>
       <para>After loading the installation system, linuxrc prompts you to choose what type of display to use to control the installation procedure. The available options include <literal>Remote X11</literal> (X Window System), <literal>VNC</literal> (Virtual Network Computing protocol), <literal>SSH</literal> (text mode or X11 installation via Secure Shell), <literal>Text-based UI</literal> and <literal>Graphical UI</literal>. The latter starts YaST in graphical mode on a local graphics display if it exists. On the s390x architecture, a local graphics display can be implemented using QEMU and the <systemitem>virtio-gpu</systemitem> driver.</para>
       <para>The recommended options are <literal>VNC</literal> or <literal>SSH</literal>.</para>
-      <para>If the <literal>Text-based UI</literal> option is selected, YaST starts in text mode, and you can perform the installation directly within your terminal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-yast-text" xrefstyle="%label &#34;%c&#34;"/> for instructions on how to use YaST in the text mode. The <literal>Text-based UI</literal> option is only useful when installing into LPAR.</para>
+      <para>If the <literal>Text-based UI</literal> option is selected, YaST starts in text mode, and you can perform the installation directly within your terminal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-text" xrefstyle="%label &#34;%c&#34;"/> for instructions on how to use YaST in the text mode. The <literal>Text-based UI</literal> option is only useful when installing into LPAR.</para>
       <note>
          <title>Terminal emulation for Text-based UI</title>
          <para>To be able to work with YaST in the text mode, it needs to run in a terminal with VT220/Linux emulation (also called <literal>Text-based UI</literal>).</para>
@@ -785,8 +770,7 @@ ter '+++' to abort).
          <para>To remotely control an installation via X forwarding, follow these steps:</para>
          <procedure>
             <step>
-               <para>Make sure that the X server allows the client (the system that is installed) to connect. Set the variable <command>DISPLAYMANAGER_XSERVER_TCP_PORT_6000_OPEN="yes"</command> in the file <filename>/etc/sysconfig/displaymanager</filename>. Restart the X server and allow client binding to the server using <command>xhost <replaceable>CLIENT_IP_ADDRESS</replaceable>
-                  </command>.</para>
+               <para>Make sure that the X server allows the client (the system that is installed) to connect. Set the variable <command>DISPLAYMANAGER_XSERVER_TCP_PORT_6000_OPEN="yes"</command> in the file <filename>/etc/sysconfig/displaymanager</filename>. Restart the X server and allow client binding to the server using <command>xhost <replaceable>CLIENT_IP_ADDRESS</replaceable></command>.</para>
             </step>
             <step>
                <para>When prompted at the installation system, enter the IP address of the machine running the X server.</para>
@@ -798,11 +782,7 @@ ter '+++' to abort).
       </sect3>
       <sect3 xml:id="sec-inst-connect-ssh">
          <title>Initiating the installation for SSH</title>
-         <para>To connect to an installation system with the name <literal>earth</literal> via SSH, use the <command>ssh -X earth</command> command. If your workstation runs on Microsoft Windows, use the Putty tool available from <link xlink:href="https://www.chiark.greenend.org.uk/~sgtatham/putty/"/>. Set <guimenu>Enable X11 forwarding</guimenu> in Putty under <menuchoice>
-               <guimenu>Connection</guimenu>
-               <guimenu>SSH</guimenu>
-               <guimenu>X11</guimenu>
-            </menuchoice>.</para>
+         <para>To connect to an installation system with the name <literal>earth</literal> via SSH, use the <command>ssh -X earth</command> command. If your workstation runs on Microsoft Windows, use the Putty tool available from <link xlink:href="https://www.chiark.greenend.org.uk/~sgtatham/putty/"/>. Set <guimenu>Enable X11 forwarding</guimenu> in Putty under <menuchoice><guimenu>Connection</guimenu><guimenu>SSH</guimenu><guimenu>X11</guimenu></menuchoice>.</para>
          <para>If you use another operating system, execute <command>ssh -X earth</command> to connect to an installation system with the name <systemitem>earth</systemitem>. X-Forwarding over SSH is supported if you have a local X server available. Otherwise, YaST provides a text interface over ncurses.</para>
          <para>When prompted, enter the <literal>root</literal> user name and log in with your password. Enter <command>yast.ssh</command> to start YaST. YaST then guides you through the installation.</para>
          <important>
@@ -843,7 +823,6 @@ QT_XCB_GL_INTEGRATION=none yast2 disk</screen>
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>For more details on the boot process, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-boot" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more details on the boot process, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-boot" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect2>
 </sect1>

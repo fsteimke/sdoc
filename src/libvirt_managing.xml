@@ -24,8 +24,7 @@
       <sect2 xml:id="sec-libvirt-managing-list-virsh">
          <title>Listing VM Guests with <command>virsh</command>
          </title>
-         <para>Use the command <command>virsh</command>
-            <option>list</option> to get a list of VM Guests:</para>
+         <para>Use the command <command>virsh</command><option>list</option> to get a list of VM Guests:</para>
          <variablelist>
             <varlistentry>
                <term>List all running guests</term>
@@ -49,23 +48,15 @@
       <sect2 xml:id="sec-libvirt-managing-console-vnc">
          <title>Opening a graphical console</title>
          <para>Opening a graphical console to a VM Guest lets you interact with the machine like a physical host via a VNC connection. If accessing the VNC server requires authentication, you are prompted to enter a user name (if applicable) and a password.</para>
-         <para>When you click into the VNC console, the cursor is <quote>grabbed</quote> and cannot be used outside the console anymore. To release it, press <keycombo>
-               <keycap function="alt"/>
-               <keycap function="control"/>
-            </keycombo>.</para>
+         <para>When you click into the VNC console, the cursor is <quote>grabbed</quote> and cannot be used outside the console anymore. To release it, press <keycombo><keycap function="alt"/><keycap function="control"/></keycombo>.</para>
          <tip>
             <title>Seamless (absolute) cursor movement</title>
             <para>To prevent the console from grabbing the cursor and to enable seamless cursor movement, add a tablet input device to the VM Guest. See <xref linkend="sec-libvirt-config-input"/> for more information.</para>
          </tip>
-         <para>Certain key combinations such as <keycombo>
-               <keycap function="control"/>
-               <keycap function="alt"/>
-               <keycap function="delete"/>
-            </keycombo> are interpreted by the host system and are not passed to the VM Guest. To pass such key combinations to a VM Guest, open the <guimenu>Send Key</guimenu> menu from the VNC window and choose the desired key combination entry. The <guimenu>Send Key</guimenu> menu is only available when using Virtual Machine Manager and <command>virt-viewer</command>. With Virtual Machine Manager, you can alternatively use the <quote>sticky key</quote> feature as explained in <xref linkend="tip-libvirt-inst-vmm-sticky"/>.</para>
+         <para>Certain key combinations such as <keycombo><keycap function="control"/><keycap function="alt"/><keycap function="delete"/></keycombo> are interpreted by the host system and are not passed to the VM Guest. To pass such key combinations to a VM Guest, open the <guimenu>Send Key</guimenu> menu from the VNC window and choose the desired key combination entry. The <guimenu>Send Key</guimenu> menu is only available when using Virtual Machine Manager and <command>virt-viewer</command>. With Virtual Machine Manager, you can alternatively use the <quote>sticky key</quote> feature as explained in <xref linkend="tip-libvirt-inst-vmm-sticky"/>.</para>
          <note>
             <title>Supported VNC viewers</title>
-            <para>Principally all VNC viewers can connect to the console of a VM Guest. However, if you are using SASL authentication and/or TLS/SSL connection to access the guest, the options are limited. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> support neither SASL authentication nor TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-               <xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>Principally all VNC viewers can connect to the console of a VM Guest. However, if you are using SASL authentication and/or TLS/SSL connection to access the guest, the options are limited. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> support neither SASL authentication nor TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
          </note>
          <sect3 xml:id="sec-libvirt-managing-console-vnc-vmm">
             <title>Opening a graphical console with Virtual Machine Manager</title>
@@ -81,11 +72,8 @@
          <sect3 xml:id="sec-libvirt-managing-vnc-viewer">
             <title>Opening a graphical console with <command>virt-viewer</command>
             </title>
-            <para>
-               <command>virt-viewer</command> is a simple VNC viewer with added functionality for displaying VM Guest consoles. For example, it can be started in <quote>wait</quote> mode, where it waits for a VM Guest to start before it connects. It also supports automatically reconnecting to a VM Guest that is rebooted.</para>
-            <para>
-               <command>virt-viewer</command> addresses VM Guests by name, by ID or by UUID. Use <command>virsh</command>
-               <option>list --all</option> to get this data.</para>
+            <para><command>virt-viewer</command> is a simple VNC viewer with added functionality for displaying VM Guest consoles. For example, it can be started in <quote>wait</quote> mode, where it waits for a VM Guest to start before it connects. It also supports automatically reconnecting to a VM Guest that is rebooted.</para>
+            <para><command>virt-viewer</command> addresses VM Guests by name, by ID or by UUID. Use <command>virsh</command><option>list --all</option> to get this data.</para>
             <para>To connect to a guest that is running or paused, use either the ID, UUID or name. VM Guests that are shut off do not have an ID—you can only connect to them by UUID or name.</para>
             <variablelist>
                <varlistentry>
@@ -103,8 +91,7 @@
                   </listitem>
                </varlistentry>
             </variablelist>
-            <para>For more information, see <command>virt-viewer</command>
-               <option>--help</option> or <command>man 1 virt-viewer</command>.</para>
+            <para>For more information, see <command>virt-viewer</command><option>--help</option> or <command>man 1 virt-viewer</command>.</para>
             <note>
                <title>Password input on remote connections with SSH</title>
                <para>When using <command>virt-viewer</command> to open a connection to a remote host via SSH, the SSH password needs to be entered twice. The first time for authenticating with <systemitem class="library">libvirt</systemitem>, the second time for authenticating with the VNC server. The second password needs to be provided on the command line where virt-viewer was started.</para>
@@ -115,8 +102,7 @@
          <title>Opening a serial console</title>
          <para>Accessing the graphical console of a virtual machine requires a graphical environment on the client accessing the VM Guest. As an alternative, virtual machines managed with libvirt can also be accessed from the shell via the serial console and <command>virsh</command>. To open a serial console to a VM Guest named <quote>sles12</quote>, run the following command:</para>
          <screen><prompt>&gt;</prompt>virsh console sles12</screen>
-         <para>
-            <command>virsh console</command> takes two optional flags: <option>--safe</option> ensures exclusive access to the console, <option>--force</option> disconnects any existing sessions before connecting. Both features need to be supported by the guest operating system.</para>
+         <para><command>virsh console</command> takes two optional flags: <option>--safe</option> ensures exclusive access to the console, <option>--force</option> disconnects any existing sessions before connecting. Both features need to be supported by the guest operating system.</para>
          <para>Being able to connect to a VM Guest via serial console requires that the guest operating system supports serial console access and is properly supported. Refer to the guest operating system manual for more information.</para>
          <tip>
             <title>Enabling serial console access for SUSE Linux Enterprise and openSUSE guests</title>
@@ -150,14 +136,10 @@
          <para>If ACPI was enabled during a Windows XP/Windows Server 2003 guest installation, turning it on in the VM Guest configuration only is not sufficient. For more information, see:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <link xlink:href="https://support.microsoft.com/en-us/kb/314088"/>
-               </para>
+               <para><link xlink:href="https://support.microsoft.com/en-us/kb/314088"/></para>
             </listitem>
             <listitem>
-               <para>
-                  <link xlink:href="https://support.microsoft.com/en-us/kb/309283"/>
-               </para>
+               <para><link xlink:href="https://support.microsoft.com/en-us/kb/309283"/></para>
             </listitem>
          </itemizedlist>
          <para>Regardless of the VM Guest's configuration, a graceful shutdown is always possible from within the guest operating system.</para>
@@ -191,10 +173,7 @@
                   <para>Double-click the VM Guest entry in Virtual Machine Manager to open its console.</para>
                </step>
                <step>
-                  <para>Choose <menuchoice>
-                        <guimenu>View</guimenu>
-                        <guimenu>Details</guimenu>
-                     </menuchoice> to open the VM Guest configuration window.</para>
+                  <para>Choose <menuchoice><guimenu>View</guimenu><guimenu>Details</guimenu></menuchoice> to open the VM Guest configuration window.</para>
                </step>
                <step>
                   <para>Choose <guimenu>Boot Options</guimenu> and check <guimenu>Start virtual machine on host boot up</guimenu>.</para>
@@ -290,11 +269,7 @@
                <para>Open a VNC connection window to a VM Guest. Make sure the guest is running.</para>
             </step>
             <step>
-               <para>Choose <menuchoice>
-                     <guimenu>Virtual Machine</guimenu>
-                     <guimenu>Shutdown</guimenu>
-                     <guimenu>Save</guimenu>
-                  </menuchoice>.</para>
+               <para>Choose <menuchoice><guimenu>Virtual Machine</guimenu><guimenu>Shutdown</guimenu><guimenu>Save</guimenu></menuchoice>.</para>
             </step>
          </procedure>
          <procedure>
@@ -303,10 +278,7 @@
                <para>Open a VNC connection window to a VM Guest. Make sure the guest is not running.</para>
             </step>
             <step>
-               <para>Choose <menuchoice>
-                     <guimenu>Virtual Machine</guimenu>
-                     <guimenu>Restore</guimenu>
-                  </menuchoice>.</para>
+               <para>Choose <menuchoice><guimenu>Virtual Machine</guimenu><guimenu>Restore</guimenu></menuchoice>.</para>
                <para>If the VM Guest was previously saved using Virtual Machine Manager, you are not offered an option to <guimenu>Run</guimenu> the guest. However, note the caveats on machines saved with <command>virsh</command> outlined in <xref linkend="adm-vm-restore"/>.</para>
             </step>
          </procedure>
@@ -314,8 +286,7 @@
       <sect2 xml:id="sec-libvirt-manage-save-virsh">
          <title>Saving and restoring with <command>virsh</command>
          </title>
-         <para>Save a running VM Guest with the command <command>virsh</command>
-            <option>save</option> and specify the file which it is saved to.</para>
+         <para>Save a running VM Guest with the command <command>virsh</command><option>save</option> and specify the file which it is saved to.</para>
          <variablelist>
             <varlistentry>
                <term>Save the guest named <literal>opensuse13</literal>
@@ -332,8 +303,7 @@
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>To restore a VM Guest, use <command>virsh</command>
-            <option>restore</option>:</para>
+         <para>To restore a VM Guest, use <command>virsh</command><option>restore</option>:</para>
          <screen><prompt>&gt;</prompt>virsh restore /virtual/saves/opensuse13.vmsave</screen>
       </sect2>
    </sect1>
@@ -380,17 +350,14 @@
             <title>Internal snapshots only</title>
             <para>Virtual Machine Manager supports only internal snapshots, either live or offline.</para>
          </important>
-         <para>To open the snapshot management view in Virtual Machine Manager, open the VNC window as described in <xref linkend="sec-libvirt-managing-console-vnc-vmm"/>. Now either choose <menuchoice>
-               <guimenu>View</guimenu>
-               <guimenu>Snapshots</guimenu>
-            </menuchoice> or click <guimenu>Manage VM Snapshots</guimenu> in the toolbar.</para>
+         <para>To open the snapshot management view in Virtual Machine Manager, open the VNC window as described in <xref linkend="sec-libvirt-managing-console-vnc-vmm"/>. Now either choose <menuchoice><guimenu>View</guimenu><guimenu>Snapshots</guimenu></menuchoice> or click <guimenu>Manage VM Snapshots</guimenu> in the toolbar.</para>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="75%"/>
+                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="75%"/>
+                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -456,8 +423,7 @@
  sleha_12_sp3_rc2_two_node_cluster 2017-06-30 11:51:24 +0200 shutoff
  sleha_15_b6_two_node_cluster 2018-02-07 15:08:09 +0100 shutoff
  sleha_15_rc1_one-node 2018-03-09 16:32:38 +0100 shutoff</screen>
-         <para>The snapshot that was last started is shown with the <literal>snapshot-current command:</literal>
-         </para>
+         <para>The snapshot that was last started is shown with the <literal>snapshot-current command:</literal></para>
          <screen><prompt>&gt;</prompt>virsh snapshot-current --domain admin_server
 Basic installation incl. SMT for CLOUD4
 </screen>
@@ -548,9 +514,7 @@ Metadata:       yes
          <title>Deleting a VM Guest with <command>virsh</command>
          </title>
          <para>To delete a VM Guest, it needs to be shut down first. It is not possible to delete a running guest. For information on shutting down, see <xref linkend="sec-libvirt-managing-status"/>.</para>
-         <para>To delete a VM Guest with <command>virsh</command>, run <command>virsh</command>
-            <option>undefine</option>
-            <replaceable>VM_NAME</replaceable>.</para>
+         <para>To delete a VM Guest with <command>virsh</command>, run <command>virsh</command><option>undefine</option><replaceable>VM_NAME</replaceable>.</para>
          <screen><prompt>&gt;</prompt>virsh undefine sles12</screen>
          <para>There is no option to automatically delete the attached storage files. If they are managed by libvirt, delete them as described in <xref linkend="sec-libvirt-storage-virsh-del-volumes"/>.</para>
       </sect2>
@@ -566,10 +530,7 @@ Metadata:       yes
                <para>Run <command>virt-manager</command>.</para>
             </step>
             <step>
-               <para>Select <menuchoice>
-                     <guimenu>Edit</guimenu>
-                     <guimenu>Preferences</guimenu>
-                  </menuchoice>.</para>
+               <para>Select <menuchoice><guimenu>Edit</guimenu><guimenu>Preferences</guimenu></menuchoice>.</para>
             </step>
             <step>
                <para>Change the tab from <guimenu>General</guimenu> to <guimenu>Polling</guimenu>.</para>
@@ -584,10 +545,7 @@ Metadata:       yes
                <para>Close the <guimenu>Preferences</guimenu> dialog.</para>
             </step>
             <step>
-               <para>Activate the graphs that should be displayed under <menuchoice>
-                     <guimenu>View</guimenu>
-                     <guimenu>Graph</guimenu>
-                  </menuchoice>.</para>
+               <para>Activate the graphs that should be displayed under <menuchoice><guimenu>View</guimenu><guimenu>Graph</guimenu></menuchoice>.</para>
             </step>
          </procedure>
          <para>Afterward, the disk and network statistics are also displayed in the main window of the Virtual Machine Manager.</para>
@@ -596,8 +554,7 @@ Metadata:       yes
       <sect2 xml:id="cha-libvirt-admin-monitor-virt-top">
          <title>Monitoring with <command>virt-top</command>
          </title>
-         <para>
-            <command>virt-top</command> is a command-line tool similar to the well-known process monitoring tool <command>top</command>. <command>virt-top</command> uses libvirt and therefore is capable of showing statistics for VM Guests running on different hypervisors. It is recommended to use <command>virt-top</command> instead of hypervisor-specific tools like <command>xentop</command>.</para>
+         <para><command>virt-top</command> is a command-line tool similar to the well-known process monitoring tool <command>top</command>. <command>virt-top</command> uses libvirt and therefore is capable of showing statistics for VM Guests running on different hypervisors. It is recommended to use <command>virt-top</command> instead of hypervisor-specific tools like <command>xentop</command>.</para>
          <para>By default <command>virt-top</command> shows statistics for all running VM Guests. Among the data that is displayed is the percentage of memory used (<literal>%MEM</literal>) and CPU (<literal>%CPU</literal>) and the uptime of the guest (<literal>TIME</literal>). The data is updated regularly (every three seconds by default). The following shows the output on a VM Host Server with seven VM Guests, four of them inactive:</para>
          <screen>virt-top 13:40:19 - x86_64 8/8CPU 1283MHz 16067MB 7.6% 0.5%
 7 domains, 3 active, 3 running, 0 sleeping, 0 paused, 4 inactive D:0 O:0 X:0
@@ -634,15 +591,8 @@ CPU: 6.1%  Mem: 3072 MB (3072 MB by guests)
                   <keycap>I</keycap>
                </keycombo>: ID</member>
          </simplelist>
-         <para>To use any other field for sorting, press <keycombo>
-               <keycap function="shift"/>
-               <keycap>F</keycap>
-            </keycombo> and select a field from the list. To toggle the sort order, use <keycombo>
-               <keycap function="shift"/>
-               <keycap>R</keycap>
-            </keycombo>.</para>
-         <para>
-            <command>virt-top</command> also supports different views on the VM Guests data, which can be changed on-the-fly by pressing the following keys:</para>
+         <para>To use any other field for sorting, press <keycombo><keycap function="shift"/><keycap>F</keycap></keycombo> and select a field from the list. To toggle the sort order, use <keycombo><keycap function="shift"/><keycap>R</keycap></keycombo>.</para>
+         <para><command>virt-top</command> also supports different views on the VM Guests data, which can be changed on-the-fly by pressing the following keys:</para>
          <simplelist>
             <member>
                <keycap>0</keycap>: default view</member>
@@ -653,17 +603,14 @@ CPU: 6.1%  Mem: 3072 MB (3072 MB by guests)
             <member>
                <keycap>3</keycap>: show virtual disks</member>
          </simplelist>
-         <para>
-            <command>virt-top</command> supports more hot keys to change the view of the data and many command line switches that affect the behavior of the program. For more information, see <command>man 1 virt-top</command>.</para>
+         <para><command>virt-top</command> supports more hot keys to change the view of the data and many command line switches that affect the behavior of the program. For more information, see <command>man 1 virt-top</command>.</para>
       </sect2>
       <sect2 xml:id="cha-libvirt-admin-monitor-kvm-stat">
          <title>Monitoring with <command>kvm_stat</command>
          </title>
-         <para>
-            <command>kvm_stat</command> can be used to trace KVM performance events. It monitors <filename>/sys/kernel/debug/kvm</filename>, so it needs the debugfs to be mounted. On <phrase role="productname">SUSE Linux Enterprise Server</phrase> it should be mounted by default. In case it is not mounted, use the following command:</para>
+         <para><command>kvm_stat</command> can be used to trace KVM performance events. It monitors <filename>/sys/kernel/debug/kvm</filename>, so it needs the debugfs to be mounted. On <phrase role="productname">SUSE Linux Enterprise Server</phrase> it should be mounted by default. In case it is not mounted, use the following command:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> mount -t debugfs none /sys/kernel/debug</screen>
-         <para>
-            <command>kvm_stat</command> can be used in three different modes:</para>
+         <para><command>kvm_stat</command> can be used in three different modes:</para>
          <screen>kvm_stat                    # update in 1 second intervals
 kvm_stat -1                 # 1 second snapshot
 kvm_stat -l &gt; kvmstats.log  # update in 1 second intervals in log format

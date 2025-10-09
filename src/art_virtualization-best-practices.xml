@@ -24,8 +24,7 @@
          <revision>
             <date>2025-06-17</date>
             <revdescription>
-               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-                  <phrase role="productnumber">15 SP7</phrase>.</para>
+               <para>Updated for the initial release of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase>.</para>
             </revdescription>
          </revision>
       </revhistory>
@@ -44,18 +43,10 @@
       <para>Virtualization offers a lot of capabilities for your environment. It can be used in multiple scenarios. To get more details about it, refer to the <xref linkend="book-virtualization"/>, and in particular to the following sections:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="sec-virtualization-scenarios-capabilities"
-                     xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-virtualization-scenarios-capabilities" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
          <listitem>
-            <para>
-               <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="sec-virtualization-introduction-benefits"
-                     xrefstyle="%label &#34;%c&#34;"/>
-            </para>
+            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-virtualization-introduction-benefits" xrefstyle="%label &#34;%c&#34;"/></para>
          </listitem>
       </itemizedlist>
       <para>This best practice guide provides advice for making the right choice in your environment. It recommends or discourages the use of options depending on your workload. Fixing configuration issues and performing tuning tasks increases the performance of VM Guests near to bare metal.</para>
@@ -146,8 +137,7 @@
          <title>Prefer the <systemitem class="library">libvirt</systemitem> framework</title>
          <remark>add some explanation about how to enable/disable kvm with qemu-system-arch</remark>
          <para>SUSE strongly recommends using the <systemitem class="library">libvirt</systemitem> framework to configure, manage and operate VM Host Servers and VM Guest. It offers a single interface (GUI and shell) for all supported virtualization technologies and therefore is easier to use than the hypervisor-specific tools.</para>
-         <para>We do not recommend using libvirt and hypervisor-specific tools at the same time, because changes done with the hypervisor-specific tools may not be recognized by the libvirt tool set. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-            <xref linkend="cha-libvirt-overview" xrefstyle="%label &#34;%c&#34;"/> for more information on libvirt.</para>
+         <para>We do not recommend using libvirt and hypervisor-specific tools at the same time, because changes done with the hypervisor-specific tools may not be recognized by the libvirt tool set. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-libvirt-overview" xrefstyle="%label &#34;%c&#34;"/> for more information on libvirt.</para>
       </sect2>
       <sect2 xml:id="sec-vt-best-intro-qemu">
          <title>qemu-system-i386 compared to qemu-system-x86_64</title>
@@ -172,38 +162,22 @@
                   <colspec colnum="2" colname="2" colwidth="70*"/>
                   <thead>
                      <row>
-                        <entry>
-                           <para>CPU flag</para>
-                        </entry>
-                        <entry>
-                           <para>Huge pages size available</para>
-                        </entry>
+                        <entry><para>CPU flag</para></entry>
+                        <entry><para>Huge pages size available</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry>
-                           <para>Empty string</para>
-                        </entry>
-                        <entry>
-                           <para>No huge pages available</para>
-                        </entry>
+                        <entry><para>Empty string</para></entry>
+                        <entry><para>No huge pages available</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>pse</para>
-                        </entry>
-                        <entry>
-                           <para>2 MB</para>
-                        </entry>
+                        <entry><para>pse</para></entry>
+                        <entry><para>2 MB</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>pdpe1gb</para>
-                        </entry>
-                        <entry>
-                           <para>1 GB</para>
-                        </entry>
+                        <entry><para>pdpe1gb</para></entry>
+                        <entry><para>1 GB</para></entry>
                      </row>
                   </tbody>
                </tgroup>
@@ -231,8 +205,7 @@
                   <para>The value is written to <filename>/proc/sys/vm/nr_hugepages</filename> and represents the current number of <emphasis>persistent</emphasis> huge pages in the kernel's huge page pool. <emphasis>Persistent</emphasis> huge pages are returned to the huge page pool when freed by a task.</para>
                </step>
                <step>
-                  <para>Add the <literal>memoryBacking</literal> element in the VM Guest configuration file (by running <command>virsh edit <replaceable>CONFIGURATION</replaceable>
-                     </command>).</para>
+                  <para>Add the <literal>memoryBacking</literal> element in the VM Guest configuration file (by running <command>virsh edit <replaceable>CONFIGURATION</replaceable></command>).</para>
                   <screen>&lt;memoryBacking&gt;
   &lt;hugepages/&gt;
 &lt;/memoryBacking&gt;</screen>
@@ -255,8 +228,7 @@ HugePages_Surp:<co xml:id="co-hp-surp"/>        0</screen>
                         <para>Number of huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made</para>
                      </callout>
                      <callout arearefs="co-hp-surp">
-                        <para>Number of huge pages in the pool above the value in <filename>/proc/sys/vm/nr_hugepages</filename>. The maximum number of surplus huge pages is controlled by <filename>/proc/sys/vm/nr_overcommit_hugepages</filename>
-                        </para>
+                        <para>Number of huge pages in the pool above the value in <filename>/proc/sys/vm/nr_hugepages</filename>. The maximum number of surplus huge pages is controlled by <filename>/proc/sys/vm/nr_overcommit_hugepages</filename></para>
                      </callout>
                   </calloutlist>
                </step>
@@ -291,36 +263,28 @@ always madvise [never]</screen>
             <para>KSM is controlled by <systemitem>sysfs</systemitem>. You can check KSM's values in <filename>/sys/kernel/mm/ksm/</filename>:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <literal>pages_shared</literal>: the number of shared pages that are being used (read-only).</para>
+                  <para><literal>pages_shared</literal>: the number of shared pages that are being used (read-only).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>pages_sharing</literal>: the number of sites sharing the pages (read-only).</para>
+                  <para><literal>pages_sharing</literal>: the number of sites sharing the pages (read-only).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>pages_unshared</literal>: the number of pages that are unique and repeatedly checked for merging (read-only).</para>
+                  <para><literal>pages_unshared</literal>: the number of pages that are unique and repeatedly checked for merging (read-only).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>pages_volatile</literal>: the number of pages that are changing too fast to be considered for merging (read-only).</para>
+                  <para><literal>pages_volatile</literal>: the number of pages that are changing too fast to be considered for merging (read-only).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>full_scans</literal>: the number of times all mergeable areas have been scanned (read-only).</para>
+                  <para><literal>full_scans</literal>: the number of times all mergeable areas have been scanned (read-only).</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>sleep_millisecs</literal>: the number of milliseconds <systemitem class="daemon">ksmd</systemitem> should sleep before the next scan. A low value will overuse the CPU, consuming CPU time that could be used for other tasks. We recommend a value greater than <literal>1000</literal>.</para>
+                  <para><literal>sleep_millisecs</literal>: the number of milliseconds <systemitem class="daemon">ksmd</systemitem> should sleep before the next scan. A low value will overuse the CPU, consuming CPU time that could be used for other tasks. We recommend a value greater than <literal>1000</literal>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>pages_to_scan</literal>: the number of present pages to scan before ksmd goes to sleep. A high value will overuse the CPU. We recommend starting with a value of <literal>1000</literal> and then adjusting based on the KSM results observed while testing your deployment.</para>
+                  <para><literal>pages_to_scan</literal>: the number of present pages to scan before ksmd goes to sleep. A high value will overuse the CPU. We recommend starting with a value of <literal>1000</literal> and then adjusting based on the KSM results observed while testing your deployment.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>merge_across_nodes</literal>: by default, the system merges pages across NUMA nodes. Set this option to <literal>0</literal> to disable this behavior.</para>
+                  <para><literal>merge_across_nodes</literal>: by default, the system merges pages across NUMA nodes. Set this option to <literal>0</literal> to disable this behavior.</para>
                </listitem>
             </itemizedlist>
             <note>
@@ -365,36 +329,28 @@ always madvise [never]</screen>
                   <para>Valid units are:</para>
                   <itemizedlist>
                      <listitem>
-                        <para>
-                           <quote>KB</quote> for kilobytes (1,000 bytes)</para>
+                        <para><quote>KB</quote> for kilobytes (1,000 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>k</quote> or <quote>KiB</quote> for kibibytes (1,024 bytes)</para>
+                        <para><quote>k</quote> or <quote>KiB</quote> for kibibytes (1,024 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>MB</quote> for megabytes (1,000,000 bytes)</para>
+                        <para><quote>MB</quote> for megabytes (1,000,000 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>M</quote> or <quote>MiB</quote> for mebibytes (1,048,576 bytes)</para>
+                        <para><quote>M</quote> or <quote>MiB</quote> for mebibytes (1,048,576 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>GB</quote> for gigabytes (1,000,000,000 bytes)</para>
+                        <para><quote>GB</quote> for gigabytes (1,000,000,000 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>G</quote> or <quote>GiB</quote> for gibibytes (1,073,741,824 bytes)</para>
+                        <para><quote>G</quote> or <quote>GiB</quote> for gibibytes (1,073,741,824 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>TB</quote> for terabytes (1,000,000,000,000 bytes)</para>
+                        <para><quote>TB</quote> for terabytes (1,000,000,000,000 bytes)</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <quote>T</quote> or <quote>TiB</quote> for tebibytes (1,099,511,627,776 bytes)</para>
+                        <para><quote>T</quote> or <quote>TiB</quote> for tebibytes (1,099,511,627,776 bytes)</para>
                      </listitem>
                   </itemizedlist>
                </callout>
@@ -419,8 +375,7 @@ always madvise [never]</screen>
       </sect2>
       <sect2 xml:id="sec-vt-best-perf-swap">
          <title>Swap</title>
-         <para>
-            <emphasis>Swap</emphasis> is used by the system to store underused physical memory (low usage, or not accessed for a long time). To prevent the system from running out of memory, setting up a minimum swap is highly recommended.</para>
+         <para><emphasis>Swap</emphasis> is used by the system to store underused physical memory (low usage, or not accessed for a long time). To prevent the system from running out of memory, setting up a minimum swap is highly recommended.</para>
          <sect3 xml:id="sec-vt-best-perf-swap-swappiness">
             <title>
                <literal>swappiness</literal>
@@ -504,8 +459,7 @@ w /sys/block/sdb/queue/scheduler - - - - none
          </sect3>
          <sect3 xml:id="sec-vt-best-io-techniques">
             <title>I/O Virtualization</title>
-            <para>SUSE products support multiple I/O virtualization technologies. The following table lists advantages and disadvantages of each technology. For more information about I/O in virtualization refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="sec-vt-io" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>SUSE products support multiple I/O virtualization technologies. The following table lists advantages and disadvantages of each technology. For more information about I/O in virtualization refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-vt-io" xrefstyle="%label &#34;%c&#34;"/>.</para>
             <table>
                <title>I/O Virtualization solutions</title>
                <tgroup cols="3">
@@ -514,89 +468,49 @@ w /sys/block/sdb/queue/scheduler - - - - none
                   <colspec colnum="3" colname="3" colwidth="40*"/>
                   <thead>
                      <row>
-                        <entry>
-                           <para>Technology</para>
-                        </entry>
-                        <entry>
-                           <para>Advantage</para>
-                        </entry>
-                        <entry>
-                           <para>Disadvantage</para>
-                        </entry>
+                        <entry><para>Technology</para></entry>
+                        <entry><para>Advantage</para></entry>
+                        <entry><para>Disadvantage</para></entry>
                      </row>
                   </thead>
                   <tbody>
                      <row>
-                        <entry morerows="3">
-                           <para>Device Assignment (pass-through)</para>
-                        </entry>
-                        <entry>
-                           <para>Device accessed directly by the guest</para>
-                        </entry>
-                        <entry>
-                           <para>No sharing among multiple guests</para>
-                        </entry>
+                        <entry morerows="3"><para>Device Assignment (pass-through)</para></entry>
+                        <entry><para>Device accessed directly by the guest</para></entry>
+                        <entry><para>No sharing among multiple guests</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>High performance</para>
-                        </entry>
-                        <entry>
-                           <para>Live migration is complex</para>
-                        </entry>
+                        <entry><para>High performance</para></entry>
+                        <entry><para>Live migration is complex</para></entry>
                      </row>
                      <row>
                         <entry/>
-                        <entry>
-                           <para>PCI device limit is 8 per guest</para>
-                        </entry>
+                        <entry><para>PCI device limit is 8 per guest</para></entry>
                      </row>
                      <row>
                         <entry/>
-                        <entry>
-                           <para>Limited number of slots on a server</para>
-                        </entry>
+                        <entry><para>Limited number of slots on a server</para></entry>
                      </row>
                      <row>
-                        <entry morerows="1">
-                           <para>Full virtualization (IDE, SATA, SCSI, e1000)</para>
-                        </entry>
-                        <entry>
-                           <para>VM Guest compatibility</para>
-                        </entry>
-                        <entry>
-                           <para>Bad performance</para>
-                        </entry>
+                        <entry morerows="1"><para>Full virtualization (IDE, SATA, SCSI, e1000)</para></entry>
+                        <entry><para>VM Guest compatibility</para></entry>
+                        <entry><para>Bad performance</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>Easy for live migration</para>
-                        </entry>
-                        <entry>
-                           <para>Emulated operation</para>
-                        </entry>
+                        <entry><para>Easy for live migration</para></entry>
+                        <entry><para>Emulated operation</para></entry>
                      </row>
                      <row>
-                        <entry morerows="2">
-                           <para>Para-virtualization (virtio-blk, virtio-net, virtio-scsi)</para>
-                        </entry>
-                        <entry>
-                           <para>Good performance</para>
-                        </entry>
-                        <entry>
-                           <para>Modified guest (PV drivers)</para>
-                        </entry>
+                        <entry morerows="2"><para>Para-virtualization (virtio-blk, virtio-net, virtio-scsi)</para></entry>
+                        <entry><para>Good performance</para></entry>
+                        <entry><para>Modified guest (PV drivers)</para></entry>
                      </row>
                      <row>
-                        <entry>
-                           <para>Easy for live migration</para>
-                        </entry>
+                        <entry><para>Easy for live migration</para></entry>
                         <entry/>
                      </row>
                      <row>
-                        <entry>
-                           <para>Efficient host communication with VM Guest</para>
-                        </entry>
+                        <entry><para>Efficient host communication with VM Guest</para></entry>
                         <entry/>
                      </row>
                   </tbody>
@@ -615,73 +529,21 @@ w /sys/block/sdb/queue/scheduler - - - - none
                <colspec colnum="3" colname="3" colwidth="45*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Technology</para>
-                     </entry>
-                     <entry>
-                        <para>Advantages</para>
-                     </entry>
-                     <entry>
-                        <para>Disadvantages</para>
-                     </entry>
+                     <entry><para>Technology</para></entry>
+                     <entry><para>Advantages</para></entry>
+                     <entry><para>Disadvantages</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>Block devices</para>
-                     </entry>
-                     <entry>
-                        <itemizedlist>
-                           <listitem>
-                              <para>Better performance</para>
-                           </listitem>
-                           <listitem>
-                              <para>Use standard tools for administration/disk modification</para>
-                           </listitem>
-                           <listitem>
-                              <para>Accessible from host (pro and con)</para>
-                           </listitem>
-                        </itemizedlist>
-                     </entry>
-                     <entry>
-                        <itemizedlist>
-                           <listitem>
-                              <para>Device management</para>
-                           </listitem>
-                        </itemizedlist>
-                     </entry>
+                     <entry><para>Block devices</para></entry>
+                     <entry><itemizedlist><listitem><para>Better performance</para></listitem><listitem><para>Use standard tools for administration/disk modification</para></listitem><listitem><para>Accessible from host (pro and con)</para></listitem></itemizedlist></entry>
+                     <entry><itemizedlist><listitem><para>Device management</para></listitem></itemizedlist></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>Image files</para>
-                     </entry>
-                     <entry>
-                        <itemizedlist>
-                           <listitem>
-                              <para>Easier system management</para>
-                           </listitem>
-                           <listitem>
-                              <para>Easily move, clone, expand, back up domains</para>
-                           </listitem>
-                           <listitem>
-                              <para>Comprehensive toolkit (guestfs) for image manipulation</para>
-                           </listitem>
-                           <listitem>
-                              <para>Reduce overhead through sparse files</para>
-                           </listitem>
-                           <listitem>
-                              <para>Fully allocate for best performance</para>
-                           </listitem>
-                        </itemizedlist>
-                     </entry>
-                     <entry>
-                        <itemizedlist>
-                           <listitem>
-                              <para>Lower performance than block devices</para>
-                           </listitem>
-                        </itemizedlist>
-                     </entry>
+                     <entry><para>Image files</para></entry>
+                     <entry><itemizedlist><listitem><para>Easier system management</para></listitem><listitem><para>Easily move, clone, expand, back up domains</para></listitem><listitem><para>Comprehensive toolkit (guestfs) for image manipulation</para></listitem><listitem><para>Reduce overhead through sparse files</para></listitem><listitem><para>Fully allocate for best performance</para></listitem></itemizedlist></entry>
+                     <entry><itemizedlist><listitem><para>Lower performance than block devices</para></listitem></itemizedlist></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -751,16 +613,13 @@ calls      retrans    authrefrsh
          <para>Host CPU <quote>components</quote> will be <quote>translated</quote> to virtual CPUs in a VM Guest when being assigned. These components can either be:</para>
          <itemizedlist>
             <listitem>
-               <para>
-                  <emphasis>CPU processor</emphasis>: this describes the main CPU unit, which normally has multiple cores and may support Hyper-Threading.</para>
+               <para><emphasis>CPU processor</emphasis>: this describes the main CPU unit, which normally has multiple cores and may support Hyper-Threading.</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis>CPU core</emphasis>: a main CPU unit can provide more than one core, and the proximity of cores speeds up the computation process and reduces energy costs.</para>
+               <para><emphasis>CPU core</emphasis>: a main CPU unit can provide more than one core, and the proximity of cores speeds up the computation process and reduces energy costs.</para>
             </listitem>
             <listitem>
-               <para>
-                  <emphasis>CPU Hyper-Threading</emphasis>: this implementation is used to improve the parallelization of computations, but this is not as efficient as a dedicated core.</para>
+               <para><emphasis>CPU Hyper-Threading</emphasis>: this implementation is used to improve the parallelization of computations, but this is not as efficient as a dedicated core.</para>
             </listitem>
          </itemizedlist>
          <sect3 xml:id="sec-vt-best-perf-cpu-assign">
@@ -768,8 +627,7 @@ calls      retrans    authrefrsh
             <para>CPU overcommit occurs when the cumulative number of virtual CPUs of all VM Guests becomes higher than the number of host CPUs. Best performance is achieved when there is no overcommit and each virtual CPU matches one hardware processor or core on the VM Host Server. VM Guests running on an overcommitted host will experience increased latency and a negative effect on per-VM Guest throughput is often observed. Therefore, try to avoid overcommitting CPUs.</para>
             <para>Deciding whether to allow CPU overcommit or not requires good a priori knowledge of workload as a whole. For example, if you know that all the VM Guests' virtual CPUs will not be loaded over 50%, then you can assume that overcommitting the host by a factor of 2 (which means having 128 virtual CPUs in total, on a host with 64 CPUs) will work well. However, if you know that all the virtual CPUs of the VM Guests will try to run at 100% for most of the time, then even having one virtual CPU more than the host has CPUs is already a misconfiguration.</para>
             <para>Overcommitting to a point where the cumulative number of virtual CPUs is higher than 8 times the number of physical cores of the VM Host Server may lead to a malfunctioning and unstable system and should hence be avoided.</para>
-            <para>Unless you know exactly how many virtual CPUs are required for a VM Guest, start with one. Target a CPU workload of approximately 70% inside your VM (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-               <xref linkend="sec-util-processes" xrefstyle="%label &#34;%c&#34;"/> for information on monitoring tools). If you allocate more processors than needed in the VM Guest, this will negatively affect the performance of host and guest. Cycle efficiency will be degraded, as the unused vCPU will still cause timer interrupts. In case you primarily run single threaded applications on a VM Guest, a single virtual CPU is the best choice.</para>
+            <para>Unless you know exactly how many virtual CPUs are required for a VM Guest, start with one. Target a CPU workload of approximately 70% inside your VM (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-util-processes" xrefstyle="%label &#34;%c&#34;"/> for information on monitoring tools). If you allocate more processors than needed in the VM Guest, this will negatively affect the performance of host and guest. Cycle efficiency will be degraded, as the unused vCPU will still cause timer interrupts. In case you primarily run single threaded applications on a VM Guest, a single virtual CPU is the best choice.</para>
             <para>A single VM Guest with more virtual CPUs than the VM Host Server has CPUs is always a misconfiguration.</para>
          </sect3>
          <sect3 xml:id="sec-vt-best-perf-cpu-guests">
@@ -778,8 +636,7 @@ calls      retrans    authrefrsh
             <sect4 xml:id="sec-vt-best-perf-cpu-guests-model">
                <title>Virtual CPU models and features</title>
                <para>The CPU model and topology can be specified individually for each VM Guest. Configuration options range from selecting specific CPU models to excluding certain CPU features. Predefined CPU models are listed in files in the directory <filename>/usr/share/libvirt/cpu_map/</filename>. A CPU model and topology that is similar to the host generally provides the best performance. The host system CPU model and topology can be displayed by running <command>virsh capabilities</command>.</para>
-               <para>Changing the default virtual CPU configuration will require a VM Guest shutdown when migrating it to a host with different hardware. More information on VM Guest migration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-                  <xref linkend="sec-libvirt-admin-migrate" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Changing the default virtual CPU configuration will require a VM Guest shutdown when migrating it to a host with different hardware. More information on VM Guest migration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-libvirt-admin-migrate" xrefstyle="%label &#34;%c&#34;"/>.</para>
                <para>To specify a particular CPU model for a VM Guest, add a respective entry to the VM Guest configuration file. The following example configures a Broadwell CPU with the invariant TSC feature:</para>
                <screen>&lt;cpu mode='custom' match='exact'&gt;
   &lt;model&gt;Broadwell&lt;/model&gt;
@@ -828,19 +685,15 @@ VCPU: CPU Affinity
                <para>With the capabilities of each host collected in all-hosts-caps.xml, use <command>virsh cpu-baseline</command> to create a virtual CPU definition that will be compatible across all hosts.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command>  virsh cpu-baseline all-hosts-caps.xml</screen>
                <para>The resulting virtual CPU definition can be used as the <literal>cpu</literal> element in the VM Guest configuration file.</para>
-               <para>At a logical level, virtual CPU pinning is a form of hardware pass-through. CPU pinning couples physical resources to virtual resources, which can also be problematic for migration. For example, the migration will fail if the requested physical resources are not available on the destination host, or if the source and destination hosts have different NUMA topologies. For more recommendations about Live Migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-                  <xref linkend="libvirt-admin-live-migration-requirements"
-                        xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>At a logical level, virtual CPU pinning is a form of hardware pass-through. CPU pinning couples physical resources to virtual resources, which can also be problematic for migration. For example, the migration will fail if the requested physical resources are not available on the destination host, or if the source and destination hosts have different NUMA topologies. For more recommendations about Live Migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="libvirt-admin-live-migration-requirements" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </sect4>
          </sect3>
       </sect2>
       <sect2 xml:id="sec-vt-best-perf-numa">
          <title>NUMA tuning</title>
          <para>NUMA is an acronym for Non Uniform Memory Access. A NUMA system has multiple physical CPUs, each with local memory attached. Each CPU can also access other CPUs' memory, known as <quote>remote memory access</quote>, but it is much slower than accessing local memory. NUMA systems can negatively affect VM Guest performance if not tuned properly. Although ultimately tuning is workload dependent, this section describes controls that should be considered when deploying VM Guests on NUMA hosts. Always consider your host topology when configuring and deploying VMs.</para>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> contains a NUMA auto-balancer that strives to reduce remote memory access by placing memory on the same NUMA node as the CPU processing it. Standard tools such as <command>cgset</command> and virtualization tools such as libvirt provide mechanisms to constrain VM Guest resources to physical resources.</para>
-         <para>
-            <command>numactl</command> is used to check for host NUMA capabilities:</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> contains a NUMA auto-balancer that strives to reduce remote memory access by placing memory on the same NUMA node as the CPU processing it. Standard tools such as <command>cgset</command> and virtualization tools such as libvirt provide mechanisms to constrain VM Guest resources to physical resources.</para>
+         <para><command>numactl</command> is used to check for host NUMA capabilities:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command>  numactl --hardware
 available: 4 nodes (0-3)
 node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 72 73 74 75 76 77 78
@@ -893,8 +746,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
                   <para>Size in megabytes' worth of pages to be scanned for a given scan</para>
                </callout>
             </calloutlist>
-            <para>For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase>
-               <xref linkend="cha-tuning-numactl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-numactl" xrefstyle="%label &#34;%c&#34;"/>.</para>
             <para>The main goal of automatic NUMA balancing is either to reschedule tasks on the same node's memory (so the CPU follows the memory), or to copy the memory's pages to the same node (so the memory follows the CPU).</para>
             <warning>
                <title>Task placement</title>
@@ -906,16 +758,13 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
             <para>The cgroups cpuset controller can be used confine memory used by a process to a NUMA node. There are three cpuset memory policy modes available:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <literal>interleave</literal>: this is a memory placement policy which is also known as round-robin. This policy can provide substantial improvements for jobs that need to place thread local data on the corresponding node. When the interleave destination is not available, it will be moved to another node.</para>
+                  <para><literal>interleave</literal>: this is a memory placement policy which is also known as round-robin. This policy can provide substantial improvements for jobs that need to place thread local data on the corresponding node. When the interleave destination is not available, it will be moved to another node.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>bind</literal>: this will place memory only on one node, which means in case of insufficient memory, the allocation will fail.</para>
+                  <para><literal>bind</literal>: this will place memory only on one node, which means in case of insufficient memory, the allocation will fail.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <literal>preferred</literal>: this policy will apply a preference to allocate memory to a node. If there is not enough space for memory on this node, it will fall back to another node.</para>
+                  <para><literal>preferred</literal>: this policy will apply a preference to allocate memory to a node. If there is not enough space for memory on this node, it will fall back to another node.</para>
                </listitem>
             </itemizedlist>
             <para>You can change the memory policy mode with the <command>cgset</command> tool from the <package>libcgroup-tools</package> package:</para>
@@ -930,8 +779,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
          </sect3>
          <sect3 xml:id="sec-vt-best-perf-numa-vmguest">
             <title>VM Guest: NUMA related configuration</title>
-            <para>
-               <systemitem class="library">libvirt</systemitem> allows to set up virtual NUMA and memory access policies. Configuring these settings is not supported by <command>virt-install</command> or <command>virt-manager</command> and needs to be done manually by editing the VM Guest configuration file with <command>virsh edit</command>.</para>
+            <para><systemitem class="library">libvirt</systemitem> allows to set up virtual NUMA and memory access policies. Configuring these settings is not supported by <command>virt-install</command> or <command>virt-manager</command> and needs to be done manually by editing the VM Guest configuration file with <command>virsh edit</command>.</para>
             <sect4 xml:id="sec-vt-best-perf-numa-vmguest-topo">
                <title>VM Guest virtual NUMA topology</title>
                <para>Creating a VM Guest virtual NUMA (vNUMA) policy that resembles the host NUMA topology can often increase performance of traditional large, scale-up workloads. VM Guest vNUMA topology can be specified using the <literal>numa</literal> element in the XML configuration:</para>
@@ -1014,13 +862,11 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
    </sect1>
    <sect1 xml:id="sec-vt-best-img">
       <title>VM Guest images</title>
-      <para>Images are virtual disks used to store the operating system and data of VM Guests. They can be created, maintained and queried with the <command>qemu-img</command> command. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-         <xref linkend="cha-qemu-guest-inst-qemu-img-create" xrefstyle="%label &#34;%c&#34;"/> for more information on the <command>qemu-img</command> tool and examples.</para>
+      <para>Images are virtual disks used to store the operating system and data of VM Guests. They can be created, maintained and queried with the <command>qemu-img</command> command. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-img-create" xrefstyle="%label &#34;%c&#34;"/> for more information on the <command>qemu-img</command> tool and examples.</para>
       <sect2 xml:id="sec-vt-best-img-imageformat">
          <title>VM Guest image formats</title>
          <para>Certain storage formats which QEMU recognizes have their origins in other virtualization technologies. By recognizing these formats, QEMU can use either data stores or entire guests that were originally targeted to run under these other virtualization technologies. Certain formats are supported only in read-only mode. To use them in read/write mode, convert them to a fully supported QEMU storage format (using <command>qemu-img</command>). Otherwise they can only be used as read-only data store in a QEMU guest.</para>
-         <para>Use <command>qemu-img info <replaceable>VMGUEST.IMG</replaceable>
-            </command> to get information about an existing image, such as the format, the virtual size, the physical size and snapshots, if available.</para>
+         <para>Use <command>qemu-img info <replaceable>VMGUEST.IMG</replaceable></command> to get information about an existing image, such as the format, the virtual size, the physical size and snapshots, if available.</para>
          <note>
             <title>Performance</title>
             <para>It is recommended to convert the disk images to either raw or qcow2 to achieve good performance.</para>
@@ -1042,8 +888,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
                   <para>It occupies all allocated space on the file system.</para>
                </listitem>
                <listitem>
-                  <para>The raw format allows to copy a VM Guest image to a physical device (<command>dd if=<replaceable>VMGUEST.RAW</replaceable> of=<replaceable>/dev/sda</replaceable>
-                     </command>).</para>
+                  <para>The raw format allows to copy a VM Guest image to a physical device (<command>dd if=<replaceable>VMGUEST.RAW</replaceable> of=<replaceable>/dev/sda</replaceable></command>).</para>
                </listitem>
                <listitem>
                   <para>It is byte-for-byte the same as what the VM Guest sees, so this wastes a lot of space.</para>
@@ -1139,8 +984,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
          </calloutlist>
          <warning>
             <title>Backing image path</title>
-            <para>You should not change the path to the backing image, otherwise you will need to adjust it. The path is stored in the overlay image file. To update the path, make a symbolic link from the original path to the new path and then use the <command>qemu-img</command>
-               <option>rebase</option> option.</para>
+            <para>You should not change the path to the backing image, otherwise you will need to adjust it. The path is stored in the overlay image file. To update the path, make a symbolic link from the original path to the new path and then use the <command>qemu-img</command><option>rebase</option> option.</para>
             <screen><prompt role="root">#</prompt>ln -sf /var/lib/images/<replaceable>OLD_PATH</replaceable>/vmguest.raw  \
  /var/lib/images/<replaceable>NEW_PATH</replaceable>/vmguest.raw
 <prompt role="root">#</prompt>qemu-img rebase<co xml:id="co-2-rebase"/> -u<co xml:id="co-2-unsafe"/> -b<co xml:id="co-2-minorb"/> \
@@ -1154,12 +998,10 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
                   <para>The <option>-u</option> option activates the unsafe mode (see note below). There are two different modes in which <option>rebase</option> can operate:</para>
                   <itemizedlist>
                      <listitem>
-                        <para>
-                           <emphasis>Safe</emphasis>: this is the default mode and performs a real rebase operation. The safe mode is a time-consuming operation.</para>
+                        <para><emphasis>Safe</emphasis>: this is the default mode and performs a real rebase operation. The safe mode is a time-consuming operation.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <emphasis>Unsafe</emphasis>: the unsafe mode (<option>-u</option>) only changes the backing files name and the format of the file name, making no checks on the file's contents. Use this mode to rename or move a backing file.</para>
+                        <para><emphasis>Unsafe</emphasis>: the unsafe mode (<option>-u</option>) only changes the backing files name and the format of the file name, making no checks on the file's contents. Use this mode to rename or move a backing file.</para>
                      </listitem>
                   </itemizedlist>
                </callout>
@@ -1218,10 +1060,10 @@ lazy refcounts: true</screen>
             <title>Understanding image overlay</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="87%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="87%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -1331,8 +1173,7 @@ add map loop1p1 (254:1): 0 29358080 linear /dev/loop1 2048</screen>
                   <screen><prompt role="root">#</prompt>kpartx -d /dev/loop1</screen>
                </step>
                <step>
-                  <para>Detach the devices with <command>losetup</command>
-                  </para>
+                  <para>Detach the devices with <command>losetup</command></para>
                   <screen><prompt role="root">#</prompt>losetup -d /dev/loop1</screen>
                </step>
             </procedure>
@@ -1352,8 +1193,7 @@ add map loop1p1 (254:1): 0 29358080 linear /dev/loop1 2048</screen>
                   <screen><prompt role="root">#</prompt>qemu-nbd -c<co xml:id="co-qemunbd-minusc"/> /dev/nbd0<co xml:id="co-qemunbd-device"/> SLE15.qcow2<co xml:id="co-qemunbd-image"/></screen>
                   <calloutlist>
                      <callout arearefs="co-qemunbd-minusc">
-                        <para>Connect <filename>SLE15.qcow2</filename> to the local NBD device <filename>/dev/nbd0</filename>
-                        </para>
+                        <para>Connect <filename>SLE15.qcow2</filename> to the local NBD device <filename>/dev/nbd0</filename></para>
                      </callout>
                      <callout arearefs="co-qemunbd-device">
                         <para>NBD device to use</para>
@@ -1424,8 +1264,7 @@ Finding volume group "system"
 Found volume group "system" using metadata type lvm2</screen>
                </step>
                <step>
-                  <para>The <literal>system</literal> LVM volume group has been found on the system. You can get more information about this volume with <command>vgdisplay <replaceable>VOLUMEGROUPNAME</replaceable>
-                     </command> (in our case <replaceable>VOLUMEGROUPNAME</replaceable> is <literal>system</literal>). You should activate this volume group to expose LVM partitions as devices so the system can mount them. Use <command>vgchange</command>:</para>
+                  <para>The <literal>system</literal> LVM volume group has been found on the system. You can get more information about this volume with <command>vgdisplay <replaceable>VOLUMEGROUPNAME</replaceable></command> (in our case <replaceable>VOLUMEGROUPNAME</replaceable> is <literal>system</literal>). You should activate this volume group to expose LVM partitions as devices so the system can mount them. Use <command>vgchange</command>:</para>
                   <screen><prompt role="root">#</prompt>vgchange -ay -v
 Finding all volume groups
 Finding volume group "system"
@@ -1470,8 +1309,7 @@ boot  etc  lib   lost+found  opt  read-write  run   selinux  sys  usr</screen>
                   <screen><prompt role="root">#</prompt>umount /mnt/system-root</screen>
                </step>
                <step>
-                  <para>Deactivate the LVM volume group (with <command>vgchange -an <replaceable>VOLUMEGROUPNAME</replaceable>
-                     </command>)</para>
+                  <para>Deactivate the LVM volume group (with <command>vgchange -an <replaceable>VOLUMEGROUPNAME</replaceable></command>)</para>
                   <screen><prompt role="root">#</prompt>vgchange -an -v system
 Using volume group(s) on command line
 Finding volume group "system"
@@ -1526,8 +1364,7 @@ Deactivated 3 logical volumes in volume group system
          <para>To mount the <literal>shared</literal> directory on the VM Guest, use the following commands: under the VM Guest, now you need to mount the <literal>target dir='shared'</literal>:</para>
          <screen><prompt role="root">#</prompt>mkdir /opt/mnt_shared
 <prompt role="root">#</prompt>mount shared -t 9p /opt/mnt_shared -o trans=virtio</screen>
-         <para>See <link xlink:href="https://libvirt.org/formatdomain.html#elementsFilesystems">
-               <systemitem class="library">libvirt</systemitem> File System</link> and <link xlink:href="https://wiki.qemu.org/Documentation/9psetup">QEMU 9psetup</link> for more information.</para>
+         <para>See <link xlink:href="https://libvirt.org/formatdomain.html#elementsFilesystems"><systemitem class="library">libvirt</systemitem> File System</link> and <link xlink:href="https://wiki.qemu.org/Documentation/9psetup">QEMU 9psetup</link> for more information.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-vt-best-vmguests">
@@ -1539,28 +1376,24 @@ Deactivated 3 logical volumes in volume group system
             <title>
                <literal>virtio blk</literal>
             </title>
-            <para>
-               <literal>virtio_blk</literal> is the virtio block device for disk. To use the <literal>virtio blk</literal> driver for a block device, specify the <tag class="attribute">bus='virtio'</tag> attribute in the <tag class="element">disk</tag> definition:</para>
+            <para><literal>virtio_blk</literal> is the virtio block device for disk. To use the <literal>virtio blk</literal> driver for a block device, specify the <tag class="attribute">bus='virtio'</tag> attribute in the <tag class="element">disk</tag> definition:</para>
             <screen>&lt;disk type='....' device='disk'&gt;
     ....
     &lt;target dev='vda' bus='virtio'/&gt;
 &lt;/disk&gt;</screen>
             <important>
                <title>Disk device names</title>
-               <para>
-                  <literal>virtio</literal> disk devices are named <literal>/dev/vd[a-z][1-9]</literal>. If you migrate a Linux guest from a non-virtio disk, you need to adjust the <literal>root=</literal> parameter in the GRUB configuration, and regenerate the <filename>initrd</filename> file. Otherwise the system cannot boot. On VM Guests with other operating systems, the boot loader may need to be adjusted or reinstalled accordingly, too.</para>
+               <para><literal>virtio</literal> disk devices are named <literal>/dev/vd[a-z][1-9]</literal>. If you migrate a Linux guest from a non-virtio disk, you need to adjust the <literal>root=</literal> parameter in the GRUB configuration, and regenerate the <filename>initrd</filename> file. Otherwise the system cannot boot. On VM Guests with other operating systems, the boot loader may need to be adjusted or reinstalled accordingly, too.</para>
             </important>
             <important>
                <title>Using <literal>virtio</literal> disks with <command>qemu-system-ARCH</command>
                </title>
-               <para>When running <command>qemu-system-ARCH</command>, use the <option>-drive</option> option to add a disk to the VM Guest. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-                  <xref linkend="cha-qemu-guest-inst-qemu-kvm" xrefstyle="%label &#34;%c&#34;"/> for an example. The <option>-hd[abcd]</option> option will not work for virtio disks.</para>
+               <para>When running <command>qemu-system-ARCH</command>, use the <option>-drive</option> option to add a disk to the VM Guest. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-kvm" xrefstyle="%label &#34;%c&#34;"/> for an example. The <option>-hd[abcd]</option> option will not work for virtio disks.</para>
             </important>
          </sect3>
          <sect3 xml:id="sec-vt-best-vmguests-virtio-virtio-net">
             <title>virtio net</title>
-            <para>
-               <literal>virtio_net</literal> is the virtio network device. The kernel modules should be loaded automatically in the guest at boot time. You need to start the service to make the network available.</para>
+            <para><literal>virtio_net</literal> is the virtio network device. The kernel modules should be loaded automatically in the guest at boot time. You need to start the service to make the network available.</para>
             <screen>&lt;interface type='network'&gt;
     ...
     &lt;model type='virtio' /&gt;
@@ -1571,12 +1404,10 @@ Deactivated 3 logical volumes in volume group system
             <para>The virtio balloon is used for host memory over-commits for guests. For Linux guests, the balloon driver runs in the guest kernel, whereas for Windows guests, the balloon driver is in the VMDP package. <literal>virtio_balloon</literal> is a PV driver to give or take memory from a VM Guest.</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <emphasis>Inflate balloon</emphasis>: return memory from guest to host kernel (for KVM) or to hypervisor (for Xen)</para>
+                  <para><emphasis>Inflate balloon</emphasis>: return memory from guest to host kernel (for KVM) or to hypervisor (for Xen)</para>
                </listitem>
                <listitem>
-                  <para>
-                     <emphasis>Deflate balloon</emphasis>: Guest will have more available memory</para>
+                  <para><emphasis>Deflate balloon</emphasis>: Guest will have more available memory</para>
                </listitem>
             </itemizedlist>
             <para>It is controlled by the <literal>currentMemory</literal> and <literal>memory</literal> options.</para>
@@ -1642,8 +1473,7 @@ virtio-net-pci.any_layout=on/off
             <title>
                <systemitem class="library">libvirt</systemitem>
             </title>
-            <para>
-               <systemitem class="library">libvirt</systemitem> ignores the <literal>vram</literal> value because video size has been hardcoded in QEMU.</para>
+            <para><systemitem class="library">libvirt</systemitem> ignores the <literal>vram</literal> value because video size has been hardcoded in QEMU.</para>
          </note>
          <screen>&lt;video&gt;
    &lt;model type='cirrus' vram='9216' heads='1'/&gt;
@@ -1734,8 +1564,7 @@ virtio_rng.0</screen>
          <para>Changing the guest's machine type for a Linux guest is transparent. For Windows* guests, we recommend creating a snapshot or backup of the guest—in case Windows* has issues with the changes it detects, and subsequently the user reverts to the original machine type the guest was created with.</para>
          <note>
             <title>Changing the machine type</title>
-            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-               <xref linkend="sec-libvirt-config-machinetype-virsh" xrefstyle="%label &#34;%c&#34;"/> for documentation.</para>
+            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-libvirt-config-machinetype-virsh" xrefstyle="%label &#34;%c&#34;"/> for documentation.</para>
          </note>
       </sect2>
    </sect1>
@@ -1753,8 +1582,7 @@ virtio_rng.0</screen>
          <screen>&lt;features&gt;
    &lt;acpi/&gt;
 &lt;/features&gt;</screen>
-         <para>If ACPI was enabled during a Windows Server* guest installation, it is not sufficient to turn it on in the VM Guest configuration only. For more information, see <link xlink:href="https://support.microsoft.com/en-us/kb/309283"/>. <remark>FIXME: URL is for XP and Server 2003. Is there something newer? - sknorr, 2017-06-07</remark>
-         </para>
+         <para>If ACPI was enabled during a Windows Server* guest installation, it is not sufficient to turn it on in the VM Guest configuration only. For more information, see <link xlink:href="https://support.microsoft.com/en-us/kb/309283"/>. <remark>FIXME: URL is for XP and Server 2003. Is there something newer? - sknorr, 2017-06-07</remark></para>
          <!-- URL is currently(?) broken - sknorr, 2017-06-07-->
          <!-- <link xlink:href="https://support.microsoft.com/en-us/kb/314088"/> -->
          <para>Regardless of the VM Guest's configuration, a graceful shutdown is always possible from within the guest operating system.</para>
@@ -1846,26 +1674,20 @@ LC_ALL=C PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
       <sect2 xml:id="sec-vm-guest-scsi-pr">
          <title>SCSI persistent reservation on a multipathed device</title>
          <para>SCSI persistent reservations allow restriction of access to block devices in a shared storage setup. This avoids improper multiple parallel accesses to the same block device from software components on local or remote hosts, which could lead to device damage and data corruption.</para>
-         <para>Find more information on managing storage multipath I/O in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-            <xref linkend="cha-multipath" xrefstyle="%label &#34;%c&#34;"/>. Find more information about SCSI persistent reservations in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-            <xref linkend="sec-multipath-mpiotools-mpathpersist" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Find more information on managing storage multipath I/O in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-multipath" xrefstyle="%label &#34;%c&#34;"/>. Find more information about SCSI persistent reservations in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-mpiotools-mpathpersist" xrefstyle="%label &#34;%c&#34;"/>.</para>
          <para>For the virtualization scenario, QEMU's SCSI passthrough devices <literal>scsi-block</literal> and <literal>scsi-generic</literal> support passing guest persistent reservation requests to a privileged external helper program <literal>qemu-pr-helper</literal>. This needs to start before QEMU and creates a listener socket that accepts incoming connections for communication with QEMU.</para>
          <note>
             <title>Live migration scenario with multipathed devices</title>
             <para>We recommend using the multipath alias instead of <literal>wwid</literal>. It is useful in the VM Guest live migration scenario, because it makes sure that the storage paths are identical between the source and destination hosts.</para>
-            <para>Find more information about multipath in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-               <xref linkend="sec-multipath-alias" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Find more information about multipath in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-alias" xrefstyle="%label &#34;%c&#34;"/>.</para>
          </note>
          <procedure>
             <title>Adding a SCSI persistent reservation in a VM Guest against the related multipathed device in the VM Host Server:</title>
             <step>
-               <para>In the VM Host Server, create a multipath environment. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-multipath-config" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-                  <xref linkend="sec-multipath-conf-file" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>In the VM Host Server, create a multipath environment. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-config" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-conf-file" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </step>
             <step>
-               <para>In the VM Host Server, configure the <literal>&lt;reservations/&gt;</literal> sub-element of the <literal>&lt;source/&gt;</literal> element of the <literal>&lt;disk/&gt;</literal> element for the passed-through <literal>lun</literal> in your <systemitem class="library">libvirt</systemitem> domain configuration. Refer to <link xlink:href="https://libvirt.org/formatdomain.html">
-                     <systemitem class="library">libvirt</systemitem> Domain XML format</link>.</para>
+               <para>In the VM Host Server, configure the <literal>&lt;reservations/&gt;</literal> sub-element of the <literal>&lt;source/&gt;</literal> element of the <literal>&lt;disk/&gt;</literal> element for the passed-through <literal>lun</literal> in your <systemitem class="library">libvirt</systemitem> domain configuration. Refer to <link xlink:href="https://libvirt.org/formatdomain.html"><systemitem class="library">libvirt</systemitem> Domain XML format</link>.</para>
             </step>
             <step>
                <para>In the VM Guest, install the <package>sg3_utils</package> package and reserve the SCSI disks on demand by using the <command>sg_persist</command> command.</para>
@@ -2701,64 +2523,40 @@ PR out: command (Clear) successful</screen>
       <title>More information</title>
       <itemizedlist>
          <listitem>
-            <para>
-               <link xlink:href="https://kernel.org/doc/ols/2009/ols2009-pages-19-28.pdf">Increasing memory density using KSM</link>
-            </para>
+            <para><link xlink:href="https://kernel.org/doc/ols/2009/ols2009-pages-19-28.pdf">Increasing memory density using KSM</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.linux-kvm.org/page/KSM">linux-kvm.org KSM</link>
-            </para>
+            <para><link xlink:href="https://www.linux-kvm.org/page/KSM">linux-kvm.org KSM</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kernel.org/doc/Documentation/vm/ksm.txt">KSM's kernel documentation</link>
-            </para>
+            <para><link xlink:href="https://www.kernel.org/doc/Documentation/vm/ksm.txt">KSM's kernel documentation</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/329123/">ksm - dynamic page sharing driver for Linux v4</link>
-            </para>
+            <para><link xlink:href="https://lwn.net/Articles/329123/">ksm - dynamic page sharing driver for Linux v4</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.espenbraastad.no/post/memory-ballooning/">Memory Ballooning</link>
-            </para>
+            <para><link xlink:href="https://www.espenbraastad.no/post/memory-ballooning/">Memory Ballooning</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://wiki.libvirt.org/page/Virtio">libvirt virtio</link>
-            </para>
+            <para><link xlink:href="https://wiki.libvirt.org/page/Virtio">libvirt virtio</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kernel.org/doc/html/latest/block/bfq-iosched.html">BFQ (Budget Fair Queueing)</link>
-            </para>
+            <para><link xlink:href="https://www.kernel.org/doc/html/latest/block/bfq-iosched.html">BFQ (Budget Fair Queueing)</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kernel.org/doc/Documentation/sysctl/kernel.txt">Documentation for sysctl</link>
-            </para>
+            <para><link xlink:href="https://www.kernel.org/doc/Documentation/sysctl/kernel.txt">Documentation for sysctl</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/525459/">LWN Random Number</link>
-            </para>
+            <para><link xlink:href="https://lwn.net/Articles/525459/">LWN Random Number</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/kernel-parameters.txt">Kernel Parameters</link>
-            </para>
+            <para><link xlink:href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/kernel-parameters.txt">Kernel Parameters</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://lwn.net/Articles/374424/">Huge pages Administration (Mel Gorman)</link>
-            </para>
+            <para><link xlink:href="https://lwn.net/Articles/374424/">Huge pages Administration (Mel Gorman)</link></para>
          </listitem>
          <listitem>
-            <para>
-               <link xlink:href="https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt">kernel hugetlbpage</link>
-            </para>
+            <para><link xlink:href="https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt">kernel hugetlbpage</link></para>
          </listitem>
       </itemizedlist>
    </sect1>

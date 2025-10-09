@@ -14,8 +14,7 @@
    <remark>jufa 2021-02-09: suggestion to give this chapter a facelift: Chapter 3: Preparing the upgrade - Intro - Procedure w check system version, release notes, back-up, listing packages, create proposal</remark>
    <sect1 xml:id="sec-update-preparation-update">
       <title>Make sure the system is up-to-date</title>
-      <para>
-         <remark>jufa 2021-02-09: add what to do if the system is older? check what is meant with patch level. check if update path is supported, link to sec-upgrade-path-supported</remark> Upgrading the system is only supported from the most recent patch level. Make sure the latest system updates are installed by either running <command>zypper patch</command> or by starting the YaST module <guimenu>Online-Update</guimenu>.</para>
+      <para><remark>jufa 2021-02-09: add what to do if the system is older? check what is meant with patch level. check if update path is supported, link to sec-upgrade-path-supported</remark> Upgrading the system is only supported from the most recent patch level. Make sure the latest system updates are installed by either running <command>zypper patch</command> or by starting the YaST module <guimenu>Online-Update</guimenu>.</para>
       <note xml:id="new-4096-bit-rpm-key">
          <title>New 4096-bit signing key for SUSE Linux Enterprise 15</title>
          <para>Mid 2023, the SUSE Linux Enterprise 15 product family switched over from a RSA 2048-bit signing key to a new RSA 4096-bit key. This change covers RPM packages, package repositories and ISO signatures. Old repositories that are not updated anymore and RPMs released up to the switch-over date, will remain signed with the old 2048-bit key.</para>
@@ -56,8 +55,7 @@ uid           SUSE Package Signing Key (reserve key) &lt;build@suse.de&gt;</scre
       <title>Make a backup</title>
       <para>Before upgrading, back up your data by copying the existing configuration files to a separate medium (such as tape device, removable hard disk, etc.). This primarily applies to files stored in <filename>/etc</filename> and some directories and files in <filename>/var</filename> and <filename>/opt</filename>. You may also want to write the user data in <filename>/home</filename> (the <envar>HOME</envar> directories) to a backup medium.</para>
       <para>Back up all data as <systemitem class="username">root</systemitem>. Only <systemitem class="username">root</systemitem> has sufficient permissions for all local files.</para>
-      <para>
-         <remark>jufa 2021-02-09: check if backup function still exists and how it works. rework para accordingly: alternative for data back up</remark> If you have selected <guimenu>Update an Existing System</guimenu> as the installation mode in YaST, you can choose to do a (system) backup at a later point in time. You can choose to include all modified files and files from the <filename>/etc/sysconfig</filename> directory. However, this is not a complete backup, as all the other important directories mentioned above are missing. Find the backup in the <filename>/var/adm/backup</filename> directory.</para>
+      <para><remark>jufa 2021-02-09: check if backup function still exists and how it works. rework para accordingly: alternative for data back up</remark> If you have selected <guimenu>Update an Existing System</guimenu> as the installation mode in YaST, you can choose to do a (system) backup at a later point in time. You can choose to include all modified files and files from the <filename>/etc/sysconfig</filename> directory. However, this is not a complete backup, as all the other important directories mentioned above are missing. Find the backup in the <filename>/var/adm/backup</filename> directory.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-disk">
       <title>Check the available disk space</title>
@@ -89,9 +87,7 @@ uid           SUSE Package Signing Key (reserve key) &lt;build@suse.de&gt;</scre
     the Storage Guide only works for SLES, not for SLED
    -->
          <para>On a Btrfs file system, the output of <command>df</command> can be misleading, because in addition to the space the raw data allocates, a Btrfs file system also allocates and uses space for metadata.</para>
-         <para>Consequently a Btrfs file system may report being out of space even though it seems that plenty of space is still available. In that case, all space allocated for the metadata is used up. For details on how to check for used and available space on a Btrfs file system, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase>
-            <xref linkend="sec-filesystems-major-btrfs-suse-space"
-                  xrefstyle="%label &#34;%c&#34;"/>. For more information refer to <command>man 8 btrfs-filesystem</command> and <link xlink:href="https://btrfs.wiki.kernel.org/index.php/FAQ"/>.</para>
+         <para>Consequently a Btrfs file system may report being out of space even though it seems that plenty of space is still available. In that case, all space allocated for the metadata is used up. For details on how to check for used and available space on a Btrfs file system, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-suse-space" xrefstyle="%label &#34;%c&#34;"/>. For more information refer to <command>man 8 btrfs-filesystem</command> and <link xlink:href="https://btrfs.wiki.kernel.org/index.php/FAQ"/>.</para>
          <!-- lproven: It would be good to profile the next para for SLE Micro, as Btrfs is not
     optional there -->
          <para>When using Btrfs for root file systems on your machine, make sure there is enough free space. Check the available space on all mounted partitions. In the worst case, an upgrade needs as much disk space as the current root file system (without <filename>/.snapshot</filename>) for a new snapshot.</para>
@@ -112,11 +108,9 @@ uid           SUSE Package Signing Key (reserve key) &lt;build@suse.de&gt;</scre
    </sect1>
    <sect1 xml:id="sec-update-preparation-packagelist">
       <title>Listing installed packages and repositories</title>
-      <para>
-         <remark>jufa 2021-02-08: explain importance and purposeof this list. Clarify if requirement or suggestion? Used for reverting changes or to set-up new system?</remark> You can save a list of installed packages; for example, when doing a fresh install of a new major SLE release or reverting to the old version.</para>
+      <para><remark>jufa 2021-02-08: explain importance and purposeof this list. Clarify if requirement or suggestion? Used for reverting changes or to set-up new system?</remark> You can save a list of installed packages; for example, when doing a fresh install of a new major SLE release or reverting to the old version.</para>
       <note>
-         <para>
-            <remark>jufa: check if manual editing is still relevant 2021-02-09</remark> Be aware that not all installed packages or used repositories are available in newer releases of SUSE Linux Enterprise. Some may have been renamed and others replaced. It is also possible that some packages are still available for legacy purposes while another package is used by default. Therefore, some manual editing of the files might be necessary. This can be done with any text editor.</para>
+         <para><remark>jufa: check if manual editing is still relevant 2021-02-09</remark> Be aware that not all installed packages or used repositories are available in newer releases of SUSE Linux Enterprise. Some may have been renamed and others replaced. It is also possible that some packages are still available for legacy purposes while another package is used by default. Therefore, some manual editing of the files might be necessary. This can be done with any text editor.</para>
       </note>
       <procedure>
          <step>
@@ -177,9 +171,7 @@ To server: https://scc.suse.com/</screen>
    </sect1>
    <sect1 xml:id="sec-update-preparation-postgresql">
       <title>Migrate your PostgreSQL database</title>
-      <para><!-- jsc#PED-11635: PostgreSQL 17 is available in 15 SP7 and higher. -->
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase>
-         <phrase role="productnumber">15 SP7</phrase> ships with the PostgreSQL database versions 15, 16 and 17. <!-- FIXME cwickert 2022-05-05: v17 is default in SLE 15 SP7, make sure
+      <para><!-- jsc#PED-11635: PostgreSQL 17 is available in 15 SP7 and higher. --><phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> ships with the PostgreSQL database versions 15, 16 and 17. <!-- FIXME cwickert 2022-05-05: v17 is default in SLE 15 SP7, make sure
     this gets updated if we change the default in a later version or SP. --> While version 17 is the default, versions 15 and 16 are still provided through the <literal>Legacy</literal> module for upgrades from earlier versions of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. Additional versions are available through SUSE Package Hub.</para>
       <para>Because of the required migration work of the database, there is no automatic upgrade process. As such, the switch from one version to another needs to be performed manually.</para>
       <para>The migration process is conducted by the <command>pg_upgrade</command> command, which is an alternative method of the classic dump and reload. In comparison with the <quote>dump and reload</quote> method, <command>pg_upgrade</command> makes the migration less time-consuming.</para>
@@ -383,22 +375,18 @@ postgres &gt; <command>exit</command></screen>
    </sect1>
    <sect1 xml:id="sec-autoyast-profiles">
       <title>Changes in AutoYaST profiles from SLE 12 to 15</title>
-      <para>To learn how to migrate your AutoYaST profiles, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase>
-         <xref linkend="appendix-ay-12vs15" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To learn how to migrate your AutoYaST profiles, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="appendix-ay-12vs15" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-smt-to-rmt">
       <title>Upgrading a Subscription Management Tool (SMT) server</title>
-      <para>A server running SMT requires a special upgrade procedure. Please refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Repository Mirroring Tool Guide</quote>, </phrase>
-         <xref linkend="cha-rmt-migrate" xrefstyle="%label &#34;%c&#34;"/> in the Repository Mirroring Tool Guide.</para>
+      <para>A server running SMT requires a special upgrade procedure. Please refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Repository Mirroring Tool Guide</quote>, </phrase><xref linkend="cha-rmt-migrate" xrefstyle="%label &#34;%c&#34;"/> in the Repository Mirroring Tool Guide.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-multiversion">
       <title>Temporarily disabling kernel multiversion support</title>
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> allows installing multiple kernel versions by enabling the respective settings in <filename>/etc/zypp/zypp.conf</filename>. Support for this feature needs to be temporarily disabled to upgrade to a service pack. When the update has successfully finished, multiversion support can be re-enabled. To disable multiversion support, comment the respective lines in <filename>/etc/zypp/zypp.conf</filename>. The result should look similar to:</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> allows installing multiple kernel versions by enabling the respective settings in <filename>/etc/zypp/zypp.conf</filename>. Support for this feature needs to be temporarily disabled to upgrade to a service pack. When the update has successfully finished, multiversion support can be re-enabled. To disable multiversion support, comment the respective lines in <filename>/etc/zypp/zypp.conf</filename>. The result should look similar to:</para>
       <screen>#multiversion = provides:multiversion(kernel)
 #multiversion.kernels = latest,running</screen>
-      <para>To re-activate this feature after a successful update, remove the comment signs. For more information about multiversion support, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="sec-tuning-multikernel-enable" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To re-activate this feature after a successful update, remove the comment signs. For more information about multiversion support, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-tuning-multikernel-enable" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-zipl">
       <title>IBM Z: Adjust <command>zipl</command> for UEFI Secure Boot</title>
@@ -424,19 +412,13 @@ GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sda1 splash=silent quiet showopts"
             <para>The hibernation device is <filename>/dev/sda1</filename>. If the command returns nothing, hibernation is not configured.</para>
          </step>
          <step>
-            <para>Get the UUID for <filename>
-                  <replaceable>/dev/sda1</replaceable>
-               </filename>:</para>
+            <para>Get the UUID for <filename><replaceable>/dev/sda1</replaceable></filename>:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command><command>blkid /dev/vda1</command>
 /dev/vda1: UUID="a1d1f2e0-b0ee-4be2-83d5-78a98c585827" TYPE="swap" PARTUUID="000134b5-01"</screen>
             <para>The UUID for <filename>/dev/sda1</filename> is <literal>a1d1f2e0-b0ee-4be2-83d5-78a98c585827</literal>.</para>
          </step>
          <step>
-            <para>Edit <filename>/etc/default/grub</filename> and adjust the <parameter>resume</parameter> parameter. Replace <literal>
-                  <replaceable>/dev/sda1</replaceable>
-               </literal> with <literal>
-                  <replaceable>UUID=a1d1f2e0-b0ee-4be2-83d5-78a98c585827</replaceable>
-               </literal>. The result will look like this:</para>
+            <para>Edit <filename>/etc/default/grub</filename> and adjust the <parameter>resume</parameter> parameter. Replace <literal><replaceable>/dev/sda1</replaceable></literal> with <literal><replaceable>UUID=a1d1f2e0-b0ee-4be2-83d5-78a98c585827</replaceable></literal>. The result will look like this:</para>
             <screen>GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=a1d1f2e0-b0ee-4be2-83d5-78a98c585827 splash=silent quiet showopts"</screen>
          </step>
          <step>
@@ -448,10 +430,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sda1 splash=silent quiet showopts"
    </sect1>
    <sect1 xml:id="sec-update-preparation-zseries">
       <title>Upgrading on IBM Z</title>
-      <para>Upgrading a SUSE Linux Enterprise installation on IBM Z requires the <command>Upgrade=1</command> kernel parameter, for example via the parmfile. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase>
-         <xref linkend="sec-appdendix-parm" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Upgrading a SUSE Linux Enterprise installation on IBM Z requires the <command>Upgrade=1</command> kernel parameter, for example via the parmfile. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-appdendix-parm" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect1>
-   <sect1 xml:id="sec-update-preparation-ppc">
+   <sect1 xml:id="sec-update-preparation-ppc" arch="power">
       <title>IBM POWER: Starting an X server</title>
       <para>On SLES 12 for IBM POWER the display manager is configured not to start a local X server by default. This setting was reversed on SLES 12 SP1—the display manager now starts an X server.</para>
       <para>To avoid problems during upgrade, the <phrase role="productname">SUSE Linux Enterprise Server</phrase> setting is not changed automatically. If you want the display manager to start an X server after the upgrade, change the setting of <envar>DISPLAYMANAGER_STARTS_XSERVER</envar> in <filename>/etc/sysconfig/displaymanager</filename> as follows:</para>

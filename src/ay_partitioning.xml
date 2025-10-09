@@ -69,16 +69,13 @@
             <listitem>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <literal>none</literal> does not remove Windows partitions.</para>
+                     <para><literal>none</literal> does not remove Windows partitions.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>ondemand</literal> removes Windows partitions if needed.</para>
+                     <para><literal>ondemand</literal> removes Windows partitions if needed.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>all</literal> removes all Windows partitions.</para>
+                     <para><literal>all</literal> removes all Windows partitions.</para>
                   </listitem>
                </itemizedlist>
                <screen>&lt;windows_delete_mode config:type="symbol"&gt;ondemand&lt;/windows_delete_mode&gt;</screen>
@@ -89,16 +86,13 @@
             <listitem>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <literal>none</literal> does not remove Linux partitions.</para>
+                     <para><literal>none</literal> does not remove Linux partitions.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>ondemand</literal> removes Linux partitions if needed.</para>
+                     <para><literal>ondemand</literal> removes Linux partitions if needed.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>all</literal> removes all Linux partitions.</para>
+                     <para><literal>all</literal> removes all Linux partitions.</para>
                   </listitem>
                </itemizedlist>
                <screen>&lt;linux_delete_mode config:type="symbol"&gt;ondemand&lt;/linux_delete_mode&gt;</screen>
@@ -109,16 +103,13 @@
             <listitem>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <literal>none</literal> does not remove other partitions.</para>
+                     <para><literal>none</literal> does not remove other partitions.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>ondemand</literal> removes other partitions if needed.</para>
+                     <para><literal>ondemand</literal> removes other partitions if needed.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>all</literal> removes all other partitions.</para>
+                     <para><literal>all</literal> removes all other partitions.</para>
                   </listitem>
                </itemizedlist>
                <screen>&lt;other_delete_mode config:type="symbol"&gt;ondemand&lt;/other_delete_mode&gt;</screen>
@@ -137,8 +128,7 @@
       <title>Expert partitioning</title>
       <para>As an alternative to guided partitioning, AutoYaST allows to describe the partitioning layout through a <literal>partitioning</literal> section. However, AutoYaST does not need to know every single detail and can build a sensible layout from a rather incomplete specification.</para>
       <para>The <literal>partitioning</literal> section is a list of <literal>drive</literal> elements. Each of these sections describes an element of the partitioning layout like a disk, an LVM volume group, a RAID, a multi-device Btrfs file system, and so on.</para>
-      <para>
-         <xref linkend="example-partitioning"/>, asks AutoYaST to create a <literal>/</literal>, a <literal>/home</literal> and a <literal>swap</literal> partition using the whole disk. Note that some information is missing, like which file systems each partition should use. However, that is not a problem, and AutoYaST will propose sensible values for them.</para>
+      <para><xref linkend="example-partitioning"/>, asks AutoYaST to create a <literal>/</literal>, a <literal>/home</literal> and a <literal>swap</literal> partition using the whole disk. Note that some information is missing, like which file systems each partition should use. However, that is not a problem, and AutoYaST will propose sensible values for them.</para>
       <example xml:id="example-partitioning">
          <title>Creating <literal>/</literal>, <literal>/home</literal> and <literal>swap</literal> partitions</title>
          <screen>&lt;partitioning config:type="list"&gt;
@@ -182,9 +172,7 @@
                <listitem>
                   <para>Optional, the device you want to configure. If left out, AutoYaST tries to guess the device. See <xref linkend="ay-partitioning-skip-devices"/> on how to influence guessing.</para>
                   <para>If set to <literal>ask</literal>, AutoYaST will ask the user which device to use during installation.</para>
-                  <para>You can use persistent device names via ID, like <filename>/dev/disk/by-id/<replaceable>ata-WDC_WD3200AAKS-75L9</replaceable>
-                     </filename> or <emphasis>by-path</emphasis>, like <filename>/dev/disk/by-path/<replaceable>pci-0001:00:03.0-scsi-0:0:0:0</replaceable>
-                     </filename>.</para>
+                  <para>You can use persistent device names via ID, like <filename>/dev/disk/by-id/<replaceable>ata-WDC_WD3200AAKS-75L9</replaceable></filename> or <emphasis>by-path</emphasis>, like <filename>/dev/disk/by-path/<replaceable>pci-0001:00:03.0-scsi-0:0:0:0</replaceable></filename>.</para>
                   <screen>&lt;device&gt;/dev/sda&lt;/device&gt;</screen>
                   <para>In case of volume groups, software RAID or <systemitem class="resource">bcache</systemitem> devices, the name in the installed system may be different (to avoid clashes with existing devices).</para>
                   <para>See <xref linkend="ay-partition-multipath"/> for further information about dealing with multipath devices.</para>
@@ -219,36 +207,24 @@
                <term>use</term>
                <listitem>
                   <para>Recommended, specifies the strategy AutoYaST will use to partition the hard disk. Choose from:</para>
-                  <para>
-                     <literal>all</literal>, uses the whole device while calculating the new partitioning.</para>
-                  <para>
-                     <literal>linux</literal>, only existing Linux partitions are used.</para>
-                  <para>
-                     <literal>free</literal>, only unused space on the device is used, no existing partitions are touched.</para>
-                  <para>
-                     <replaceable>1,2,3</replaceable>, a list of comma-separated partition numbers to use.</para>
+                  <para><literal>all</literal>, uses the whole device while calculating the new partitioning.</para>
+                  <para><literal>linux</literal>, only existing Linux partitions are used.</para>
+                  <para><literal>free</literal>, only unused space on the device is used, no existing partitions are touched.</para>
+                  <para><replaceable>1,2,3</replaceable>, a list of comma-separated partition numbers to use.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>type</term>
                <listitem>
                   <para>Optional, specifies the type of the <literal>drive</literal>. The default is <literal>CT_DISK</literal> for a normal physical hard disk. The following is a list of all options:</para>
-                  <para>
-                     <literal>CT_DISK</literal> for physical hard disks (default).</para>
-                  <para>
-                     <literal>CT_LVM</literal> for LVM volume groups.</para>
-                  <para>
-                     <literal>CT_MD</literal> for software RAID devices.</para>
-                  <para>
-                     <literal>CT_DMMULTIPATH</literal> for Multipath devices (deprecated, implied with CT_DISK).</para>
-                  <para>
-                     <literal>CT_BCACHE</literal> for software <systemitem class="resource">bcache</systemitem> devices.</para>
-                  <para>
-                     <literal>CT_BTRFS</literal> for multi-device Btrfs file systems.</para>
-                  <para>
-                     <literal>CT_NFS</literal> for NFS.</para>
-                  <para>
-                     <literal>CT_TMPFS</literal> for <literal>tmpfs</literal> file systems.</para>
+                  <para><literal>CT_DISK</literal> for physical hard disks (default).</para>
+                  <para><literal>CT_LVM</literal> for LVM volume groups.</para>
+                  <para><literal>CT_MD</literal> for software RAID devices.</para>
+                  <para><literal>CT_DMMULTIPATH</literal> for Multipath devices (deprecated, implied with CT_DISK).</para>
+                  <para><literal>CT_BCACHE</literal> for software <systemitem class="resource">bcache</systemitem> devices.</para>
+                  <para><literal>CT_BTRFS</literal> for multi-device Btrfs file systems.</para>
+                  <para><literal>CT_NFS</literal> for NFS.</para>
+                  <para><literal>CT_TMPFS</literal> for <literal>tmpfs</literal> file systems.</para>
                   <screen>&lt;type config:type="symbol"&gt;CT_LVM&lt;/type&gt;</screen>
                </listitem>
             </varlistentry>
@@ -256,15 +232,9 @@
                <term>disklabel</term>
                <listitem>
                   <para>Optional. By default YaST decides what makes sense. If a partition table of a different type already exists, it will be re-created with the given type only if it does not include any partition that should be kept or reused. To use the disk without creating any partition, set this element to <literal>none</literal>. The following is a list of all options:</para>
-                  <para>
-                     <literal>msdos</literal>
-                  </para>
-                  <para>
-                     <literal>gpt</literal>
-                  </para>
-                  <para>
-                     <literal>none</literal>
-                  </para>
+                  <para><literal>msdos</literal></para>
+                  <para><literal>gpt</literal></para>
+                  <para><literal>none</literal></para>
                   <screen>&lt;disklabel&gt;gpt&lt;/disklabel&gt;</screen>
                </listitem>
             </varlistentry>
@@ -351,28 +321,22 @@
                   <para>Optional, the partition will be encrypted using one of these methods:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <literal>luks1</literal>: regular LUKS1 encryption.</para>
+                        <para><literal>luks1</literal>: regular LUKS1 encryption.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>luks2</literal>: regular LUKS2 encryption.</para>
+                        <para><literal>luks2</literal>: regular LUKS2 encryption.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>pervasive_luks2</literal>: pervasive volume encryption.</para>
+                        <para><literal>pervasive_luks2</literal>: pervasive volume encryption.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>protected_swap</literal>: encryption with volatile protected key.</para>
+                        <para><literal>protected_swap</literal>: encryption with volatile protected key.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>secure_swap</literal>: encryption with volatile secure key.</para>
+                        <para><literal>secure_swap</literal>: encryption with volatile secure key.</para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>random_swap</literal>: encryption with volatile random key.</para>
+                        <para><literal>random_swap</literal>: encryption with volatile random key.</para>
                      </listitem>
                   </itemizedlist>
                   <screen>&lt;crypt_method config:type="symbol"&gt;luks1&lt;/crypt_method&gt;</screen>
@@ -473,39 +437,25 @@
                   <para>Optional. The default is <literal>btrfs</literal> for the root partition (<filename>/</filename>) and <literal>xfs</literal> for data partitions. Specify the file system to use on this partition:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>
-                           <literal>btrfs</literal>
-                        </para>
+                        <para><literal>btrfs</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>ext2</literal>
-                        </para>
+                        <para><literal>ext2</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>ext3</literal>
-                        </para>
+                        <para><literal>ext3</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>ext4</literal>
-                        </para>
+                        <para><literal>ext4</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>fat</literal>
-                        </para>
+                        <para><literal>fat</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>xfs</literal>
-                        </para>
+                        <para><literal>xfs</literal></para>
                      </listitem>
                      <listitem>
-                        <para>
-                           <literal>swap</literal>
-                        </para>
+                        <para><literal>swap</literal></para>
                         <screen>&lt;filesystem config:type="symbol"&gt;ext3&lt;/filesystem&gt;</screen>
                      </listitem>
                   </itemizedlist>
@@ -640,8 +590,7 @@
             <varlistentry>
                <term>pool</term>
                <listitem>
-                  <para>
-                     <literal>pool</literal> must be set to <literal>true</literal> if the LVM logical volume should be an LVM thin pool.</para>
+                  <para><literal>pool</literal> must be set to <literal>true</literal> if the LVM logical volume should be an LVM thin pool.</para>
                   <screen>&lt;pool config:type="boolean"&gt;true&lt;/pool&gt;</screen>
                </listitem>
             </varlistentry>
@@ -668,16 +617,14 @@
             <varlistentry>
                <term>bcache_backing_for</term>
                <listitem>
-                  <para>If this device is used as a <emphasis>
-                        <systemitem class="resource">bcache</systemitem> backing device</emphasis>, specify the name of the <systemitem class="resource">bcache</systemitem> device. See <xref linkend="ay-partition-bcache"/> for further details.</para>
+                  <para>If this device is used as a <emphasis><systemitem class="resource">bcache</systemitem> backing device</emphasis>, specify the name of the <systemitem class="resource">bcache</systemitem> device. See <xref linkend="ay-partition-bcache"/> for further details.</para>
                   <screen>&lt;bcache_backing_for&gt;/dev/bcache0&lt;/bcache_backing_for&gt;</screen>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>bcache_caching_for</term>
                <listitem>
-                  <para>If this device is used as a <emphasis>
-                        <systemitem class="resource">bcache</systemitem> caching device</emphasis>, specify the names of the <systemitem class="resource">bcache</systemitem> devices. See <xref linkend="ay-partition-bcache"/> for further details.</para>
+                  <para>If this device is used as a <emphasis><systemitem class="resource">bcache</systemitem> caching device</emphasis>, specify the names of the <systemitem class="resource">bcache</systemitem> devices. See <xref linkend="ay-partition-bcache"/> for further details.</para>
                   <screen>&lt;bcache_caching_for config:type="list"&gt;&lt;listentry&gt;/dev/bcache0&lt;/listentry&gt;&lt;/bcache_caching_for&gt;</screen>
                </listitem>
             </varlistentry>
@@ -836,9 +783,7 @@
    </sect2>
    <sect2 xml:id="ay-partition-advanced">
       <title>Advanced partitioning features</title>
-      <para>
-         <remark role="fixme">Add a short description</remark>
-      </para>
+      <para><remark role="fixme">Add a short description</remark></para>
       <sect3 xml:id="ay-partition-advanced-wipe">
          <title>Wipe out partition table</title>
          <para>Usually this is not needed because AutoYaST can delete partitions one by one automatically. But you need the option to let AutoYaST clear the partition table instead of deleting partitions individually.</para>
@@ -851,18 +796,13 @@
          <para>By default a file system to be mounted is identified in <filename>/etc/fstab</filename> by the device name. This identification can be changed so the file system is found by searching for a UUID or a volume label. Note that not all file systems can be mounted by UUID or a volume label. To specify how a partition is to be mounted, use the <literal>mountby</literal> property which has the <literal>symbol</literal> type. Possible options are:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>
-                  <literal>device</literal> (default)</para>
+               <para><literal>device</literal> (default)</para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>label</literal>
-               </para>
+               <para><literal>label</literal></para>
             </listitem>
             <listitem>
-               <para>
-                  <literal>UUID</literal>
-               </para>
+               <para><literal>UUID</literal></para>
             </listitem>
          </itemizedlist>
          <para>If you choose to mount a new partition using a label, use the <literal>label</literal> property to specify its value.</para>
@@ -954,8 +894,7 @@
          <title>Keeping specific partitions</title>
          <para>In some cases you should leave partitions untouched and only format specific target partitions, rather than creating them from scratch. For example, if different Linux installations coexist, or you have another operating system installed, likely you do not want to wipe these out. You may also want to leave data partitions untouched.</para>
          <para>Such scenarios require specific knowledge about the target systems and hard disks. Depending on the scenario, you might need to know the exact partition table of the target hard disk with partition IDs, sizes and numbers. With this data, you can tell AutoYaST to keep certain partitions, format others and create new partitions if needed.</para>
-         <para>The following example will keep partitions 1, 2 and 5 and delete partition 6 to create two new partitions. All remaining partitions will only be formatted. <remark>emap 2011-11-05: Not the best example for the scenarios two paras up with coexisting operating systems or data partitions. Who'd want to format those?</remark>
-         </para>
+         <para>The following example will keep partitions 1, 2 and 5 and delete partition 6 to create two new partitions. All remaining partitions will only be formatted. <remark>emap 2011-11-05: Not the best example for the scenarios two paras up with coexisting operating systems or data partitions. Who'd want to format those?</remark></para>
          <example>
             <title>Keeping partitions</title>
             <screen>&lt;partitioning config:type="list"&gt;
@@ -1004,7 +943,7 @@
                   <imagedata fileref="media/partitioning-keep1.png"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/partitioning-keep1.png" width="75%"/>
+                  <imagedata fileref="media/partitioning-keep1.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -1303,11 +1242,9 @@
                <term>parity_algorithm</term>
                <listitem>
                   <para>Possible values are:</para>
-                  <para>
-                     <literal>left_asymmetric</literal>, <literal>left_symmetric</literal>, <literal>right_asymmetric</literal>, <literal>right_symmetric</literal>, <literal>first</literal>, <literal>last</literal>, <literal>first_6</literal>, <literal>left_asymmetric_6</literal>, <literal>left_symmetric_6</literal>, <literal>right_asymmetric_6</literal>, <literal>right_symmetric_6</literal>, <literal>near_2</literal>, <literal>offset_2</literal>, <literal>far_2</literal>, <literal>near_3</literal>, <literal>offset_3</literal> and <literal>far_3</literal>.</para>
+                  <para><literal>left_asymmetric</literal>, <literal>left_symmetric</literal>, <literal>right_asymmetric</literal>, <literal>right_symmetric</literal>, <literal>first</literal>, <literal>last</literal>, <literal>first_6</literal>, <literal>left_asymmetric_6</literal>, <literal>left_symmetric_6</literal>, <literal>right_asymmetric_6</literal>, <literal>right_symmetric_6</literal>, <literal>near_2</literal>, <literal>offset_2</literal>, <literal>far_2</literal>, <literal>near_3</literal>, <literal>offset_3</literal> and <literal>far_3</literal>.</para>
                   <para>For backwards compatibility with previous versions of AutoYaST, the following aliases are also recognized:</para>
-                  <para>
-                     <literal>parity_first</literal>, <literal>parity_last</literal>, <literal>parity_first_6</literal>, <literal>n2</literal>, <literal>o2</literal>, <literal>f2</literal>, <literal>n3</literal>, <literal>o3</literal> and <literal>f3</literal>.</para>
+                  <para><literal>parity_first</literal>, <literal>parity_last</literal>, <literal>parity_first_6</literal>, <literal>n2</literal>, <literal>o2</literal>, <literal>f2</literal>, <literal>n3</literal>, <literal>o3</literal> and <literal>f3</literal>.</para>
                   <para>The accepted values for each RAID depend on the RAID level (for example, <literal>raid5</literal>) and the number of devices in the RAID. Given that RAID0 or RAID1 do not provide any parity, do not specify this option for such devices.</para>
                   <screen>&lt;parity_algorithm&gt;left_asymmetric&lt;/parity_algorithm&gt;</screen>
                </listitem>
@@ -1392,8 +1329,7 @@ size=40G features='0' hwhandler='0' wp=rw
    <sect2 xml:id="ay-partition-bcache">
       <title>
          <systemitem class="resource">bcache</systemitem> configuration</title>
-      <para>
-         <systemitem class="resource">bcache</systemitem> is a caching system which allows the use of multiple fast drives to speed up the access to one or more slower drives. For example, you can improve the performance of a large (but slow) drive by using a fast one as a cache.</para>
+      <para><systemitem class="resource">bcache</systemitem> is a caching system which allows the use of multiple fast drives to speed up the access to one or more slower drives. For example, you can improve the performance of a large (but slow) drive by using a fast one as a cache.</para>
       <para>For more information about bcache on <phrase role="productname">SUSE Linux Enterprise Server</phrase>, also see the blog post at <link xlink:href="https://www.suse.com/c/combine-the-performance-of-solid-state-drive-with-the-capacity-of-a-hard-drive-with-bcache-and-yast/"/>.</para>
       <para>To set up a <systemitem class="resource">bcache</systemitem> device, AutoYaST needs a profile that specifies the following:</para>
       <itemizedlist>
@@ -1491,24 +1427,16 @@ size=40G features='0' hwhandler='0' wp=rw
                <para>Cache mode for <systemitem class="resource">bcache</systemitem>. Possible values are:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>writethrough</literal>
-                     </para>
+                     <para><literal>writethrough</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>writeback</literal>
-                     </para>
+                     <para><literal>writeback</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>writearound</literal>
-                     </para>
+                     <para><literal>writearound</literal></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>none</literal>
-                     </para>
+                     <para><literal>none</literal></para>
                   </listitem>
                </itemizedlist>
                <screen>&lt;cache_mode&gt;writethrough&lt;/cache_mode&gt;</screen>
@@ -1623,8 +1551,7 @@ size=40G features='0' hwhandler='0' wp=rw
       &lt;partitioning&gt;
      </screen>
       </example>
-      <para>
-         <literal>tmpfs</literal> devices are different from regular file systems like Ext4 or Btrfs. Therefore, the only relevant elements are <literal>mount</literal>, which is mandatory, and <literal>fstopt</literal>. The latter is used to set file system attributes like its size limit, mode, and so on. You can find additional information about the known options in the <literal>tmpfs</literal> man page.</para>
+      <para><literal>tmpfs</literal> devices are different from regular file systems like Ext4 or Btrfs. Therefore, the only relevant elements are <literal>mount</literal>, which is mandatory, and <literal>fstopt</literal>. The latter is used to set file system attributes like its size limit, mode, and so on. You can find additional information about the known options in the <literal>tmpfs</literal> man page.</para>
    </sect2>
    <sect2 xml:id="ay-partition-s390">
       <title>IBM Z specific configuration</title>
@@ -1644,16 +1571,14 @@ size=40G features='0' hwhandler='0' wp=rw
             <varlistentry>
                <term>device</term>
                <listitem>
-                  <para>
-                     <literal>DASD</literal> is the only value allowed.</para>
+                  <para><literal>DASD</literal> is the only value allowed.</para>
                   <screen>&lt;device&gt;DASD&lt;/dev_name&gt;</screen>
                </listitem>
             </varlistentry>
             <varlistentry>
                <term>dev_name</term>
                <listitem>
-                  <para>Specify the device (<literal>dasd<replaceable>N</replaceable>
-                     </literal>) you want to configure in this section.</para>
+                  <para>Specify the device (<literal>dasd<replaceable>N</replaceable></literal>) you want to configure in this section.</para>
                   <screen>&lt;dev_name&gt;/dev/dasda&lt;/dev_name&gt;</screen>
                   <para>Optional but recommended. If left out, AutoYaST tries to guess the device.</para>
                </listitem>

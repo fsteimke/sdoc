@@ -11,8 +11,7 @@
          <para>Learn how to set up printers and manage print jobs.</para>
       </abstract>
    </info>
-   <para>
-      <phrase role="productname">SUSE® Linux Enterprise Server</phrase> makes it easy to print your documents, whether your computer is connected directly to a printer or linked remotely on a network. This chapter describes how to set up printers in <phrase role="productname">SUSE Linux Enterprise Server</phrase> and manage print jobs.</para>
+   <para><phrase role="productname">SUSE® Linux Enterprise Server</phrase> makes it easy to print your documents, whether your computer is connected directly to a printer or linked remotely on a network. This chapter describes how to set up printers in <phrase role="productname">SUSE Linux Enterprise Server</phrase> and manage print jobs.</para>
    <sect1 xml:id="sec-gnome-print-inst">
       <title>Installing a printer</title>
       <para>Before you can install a printer, you need to know the <systemitem class="username">root</systemitem> password and have your printer information ready. Depending on how you connect the printer, you might also need the printer URI, TCP/IP address or host, and the driver for the printer. Common printer drivers ship with <phrase role="productname">SUSE Linux Enterprise Server</phrase>. If you cannot find a driver for the printer, check the printer manufacturer's Web site.</para>

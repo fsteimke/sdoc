@@ -9,16 +9,14 @@
    <title>Storage enclosure LED utilities for MD software RAIDs</title>
    <info>
       <abstract>
-         <para>
-            <remark>Fate #313626 Update Enclosure LED Utilities</remark> Storage enclosure LED Monitoring utility (<command>ledmon</command>) and LED Control (<command>ledctl</command>) utility are Linux user space applications that use a broad range of interfaces and protocols to control storage enclosure LEDs. The primary usage is to visualize the status of Linux MD software RAID devices created with the mdadm utility. The <systemitem class="daemon">ledmon</systemitem> daemon monitors the status of the drive array and updates the status of the drive LEDs. The <command>ledctl</command> utility allows you to set LED patterns for specified devices.</para>
+         <para><remark>Fate #313626 Update Enclosure LED Utilities</remark> Storage enclosure LED Monitoring utility (<command>ledmon</command>) and LED Control (<command>ledctl</command>) utility are Linux user space applications that use a broad range of interfaces and protocols to control storage enclosure LEDs. The primary usage is to visualize the status of Linux MD software RAID devices created with the mdadm utility. The <systemitem class="daemon">ledmon</systemitem> daemon monitors the status of the drive array and updates the status of the drive LEDs. The <command>ledctl</command> utility allows you to set LED patterns for specified devices.</para>
       </abstract>
    </info>
    <para>These LED utilities use the SGPIO (Serial General Purpose Input/Output) specification (Small Form Factor (SFF) 8485) and the SCSI Enclosure Services (SES) 2 protocol to control LEDs. They implement the International Blinking Pattern Interpretation (IBPI) patterns of the SFF-8489 specification for SGPIO. The IBPI defines how the SGPIO standards are interpreted as states for drives and slots on a backplane and how the backplane should visualize the states with LEDs.</para>
    <para>Some storage enclosures do not adhere strictly to the SFF-8489 specification. An enclosure processor might accept an IBPI pattern but not blink the LEDs according to the SFF-8489 specification, or the processor might support only a limited number of the IBPI patterns.</para>
    <para>LED management (AHCI) and SAF-TE protocols are not supported by the <command>ledmon</command> and <command>ledctl</command> utilities.</para>
    <para>The <systemitem class="daemon">ledmon</systemitem> and <command>ledctl</command> applications have been verified to work with Intel storage controllers such as the Intel AHCI controller and Intel SAS controller. They also support PCIe-SSD (solid-state drive) enclosure LEDs to control the storage enclosure status (OK, Fail, Rebuilding) LEDs of PCIe-SSD devices that are part of an MD software RAID volume. The applications might also work with the IBPI-compliant storage controllers of other vendors (especially SAS/SCSI controllers); however, other vendors’ controllers have not been tested.</para>
-   <para>
-      <systemitem class="daemon">ledmon</systemitem> and <command>ledctl</command> are part of the <systemitem class="resource">ledmon</systemitem> package, which is not installed by default. Run <command>sudo zypper in ledmon</command> to install it.</para>
+   <para><systemitem class="daemon">ledmon</systemitem> and <command>ledctl</command> are part of the <systemitem class="resource">ledmon</systemitem> package, which is not installed by default. Run <command>sudo zypper in ledmon</command> to install it.</para>
    <sect1 xml:id="sec-raid-leds-ledmon">
       <title>The storage enclosure LED monitor service</title>
       <para>The <systemitem class="daemon">ledmon</systemitem> application is a daemon process that constantly monitors the state of MD software RAID devices or the state of block devices in a storage enclosure or drive bay. Only a single instance of the daemon should be running at a time. The <systemitem class="daemon">ledmon</systemitem> daemon is part of Intel Enclosure LED Utilities.</para>
@@ -411,126 +409,66 @@
                <colspec colnum="2" colname="2" colwidth="5001*"/>
                <thead>
                   <row>
-                     <entry>
-                        <para>Non-SES-2 Pattern</para>
-                     </entry>
-                     <entry>
-                        <para>SES-2 Pattern</para>
-                     </entry>
+                     <entry><para>Non-SES-2 Pattern</para></entry>
+                     <entry><para>SES-2 Pattern</para></entry>
                   </row>
                </thead>
                <tbody>
                   <row>
-                     <entry>
-                        <para>locate</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ident</para>
-                     </entry>
+                     <entry><para>locate</para></entry>
+                     <entry><para>ses_ident</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>locate_off</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ident</para>
-                     </entry>
+                     <entry><para>locate_off</para></entry>
+                     <entry><para>ses_ident</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>normal</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ok</para>
-                     </entry>
+                     <entry><para>normal</para></entry>
+                     <entry><para>ses_ok</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>off</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ok</para>
-                     </entry>
+                     <entry><para>off</para></entry>
+                     <entry><para>ses_ok</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>ica</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ica</para>
-                     </entry>
+                     <entry><para>ica</para></entry>
+                     <entry><para>ses_ica</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>degraded</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ica</para>
-                     </entry>
+                     <entry><para>degraded</para></entry>
+                     <entry><para>ses_ica</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>rebuild</para>
-                     </entry>
-                     <entry>
-                        <para>ses_rebuild</para>
-                     </entry>
+                     <entry><para>rebuild</para></entry>
+                     <entry><para>ses_rebuild</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>rebuild_p</para>
-                     </entry>
-                     <entry>
-                        <para>ses_rebuild</para>
-                     </entry>
+                     <entry><para>rebuild_p</para></entry>
+                     <entry><para>ses_rebuild</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>ifa</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ifa</para>
-                     </entry>
+                     <entry><para>ifa</para></entry>
+                     <entry><para>ses_ifa</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>failed_array</para>
-                     </entry>
-                     <entry>
-                        <para>ses_ifa</para>
-                     </entry>
+                     <entry><para>failed_array</para></entry>
+                     <entry><para>ses_ifa</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>hotspare</para>
-                     </entry>
-                     <entry>
-                        <para>ses_hotspare</para>
-                     </entry>
+                     <entry><para>hotspare</para></entry>
+                     <entry><para>ses_hotspare</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>pfa</para>
-                     </entry>
-                     <entry>
-                        <para>ses_rsvd_dev</para>
-                     </entry>
+                     <entry><para>pfa</para></entry>
+                     <entry><para>ses_rsvd_dev</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>failure</para>
-                     </entry>
-                     <entry>
-                        <para>ses_fault</para>
-                     </entry>
+                     <entry><para>failure</para></entry>
+                     <entry><para>ses_fault</para></entry>
                   </row>
                   <row>
-                     <entry>
-                        <para>disk_failed</para>
-                     </entry>
-                     <entry>
-                        <para>ses_fault</para>
-                     </entry>
+                     <entry><para>disk_failed</para></entry>
+                     <entry><para>ses_fault</para></entry>
                   </row>
                </tbody>
             </tgroup>
@@ -571,9 +509,7 @@
       <para>See the following resources for details about the LED patterns and monitoring tools:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <link xlink:href="https://github.com/intel/ledmon.git">LEDMON open source project on GitHub.com</link>
-            </para>
+            <para><link xlink:href="https://github.com/intel/ledmon.git">LEDMON open source project on GitHub.com</link></para>
          </listitem>
       </itemizedlist>
    </sect1>

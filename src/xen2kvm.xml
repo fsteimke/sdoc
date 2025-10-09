@@ -24,8 +24,7 @@
       <sect2 xml:id="x2k-v2v-intro">
          <title>Introduction to <command>virt-v2v</command>
          </title>
-         <para>
-            <command>virt-v2v</command> is a command-line tool to convert VM Guests from a foreign hypervisor to run on KVM managed by <systemitem class="library">libvirt</systemitem>. It enables paravirtualized virtio drivers in the converted virtual machine if possible. A list of supported operating systems and hypervisors follows:</para>
+         <para><command>virt-v2v</command> is a command-line tool to convert VM Guests from a foreign hypervisor to run on KVM managed by <systemitem class="library">libvirt</systemitem>. It enables paravirtualized virtio drivers in the converted virtual machine if possible. A list of supported operating systems and hypervisors follows:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <title>Supported guest operating systems</title>
             <listitem>
@@ -67,25 +66,17 @@
       <sect2 xml:id="x2k-v2v-convert">
          <title>Converting virtual machines to run under KVM managed by <systemitem class="library">libvirt</systemitem>
          </title>
-         <para>
-            <command>virt-v2v</command> converts virtual machines from the Xen hypervisor to run under KVM managed by <systemitem class="library">libvirt</systemitem>. To learn more about <systemitem class="library">libvirt</systemitem> and <command>virsh</command>, see <xref linkend="part-virt-libvirt"/>. Additionally, all <command>virt-v2v</command> command line options are explained in the <command>virt-v2v</command> man page (<command>man 1 virt-v2v</command>).</para>
+         <para><command>virt-v2v</command> converts virtual machines from the Xen hypervisor to run under KVM managed by <systemitem class="library">libvirt</systemitem>. To learn more about <systemitem class="library">libvirt</systemitem> and <command>virsh</command>, see <xref linkend="part-virt-libvirt"/>. Additionally, all <command>virt-v2v</command> command line options are explained in the <command>virt-v2v</command> man page (<command>man 1 virt-v2v</command>).</para>
          <para>Before converting a virtual machine, make sure to complete the following steps:</para>
          <procedure>
             <title>Preparing the environment for the conversion</title>
             <step>
                <para>Create a new local storage pool.</para>
-               <para>
-                  <command>virt-v2v</command> copies the storage of the source virtual machine to a local storage pool managed by <systemitem class="library">libvirt</systemitem> (the original disk image remains unchanged). You can create the pool either with Virtual Machine Manager or <command>virsh</command>. For more information, see <xref linkend="sec-libvirt-storage-vmm"/> and <xref linkend="sec-libvirt-storage-virsh"/>.</para>
+               <para><command>virt-v2v</command> copies the storage of the source virtual machine to a local storage pool managed by <systemitem class="library">libvirt</systemitem> (the original disk image remains unchanged). You can create the pool either with Virtual Machine Manager or <command>virsh</command>. For more information, see <xref linkend="sec-libvirt-storage-vmm"/> and <xref linkend="sec-libvirt-storage-virsh"/>.</para>
             </step>
             <step>
                <para>Prepare the local network interface.</para>
-               <para>Check that the converted virtual machine can use a local network interface on the VM Host Server. It is normally a network bridge and if it is not yet defined, create it with <menuchoice>
-                     <guimenu>YaST</guimenu>
-                     <guimenu>System</guimenu>
-                     <guimenu>Network Settings</guimenu>
-                     <guimenu>Add</guimenu>
-                     <guimenu>Bridge</guimenu>
-                  </menuchoice>.</para>
+               <para>Check that the converted virtual machine can use a local network interface on the VM Host Server. It is normally a network bridge and if it is not yet defined, create it with <menuchoice><guimenu>YaST</guimenu><guimenu>System</guimenu><guimenu>Network Settings</guimenu><guimenu>Add</guimenu><guimenu>Bridge</guimenu></menuchoice>.</para>
                <note>
                   <title>Mappings of network devices</title>
                   <para>Network devices on the source Xen host can be mapped during the conversion process to corresponding network devices on the KVM target host. For example, the Xen bridge <literal>br0</literal> can be mapped to the default KVM network device. Sample mappings can be found in <filename>/etc/virt-v2v.conf</filename>. To enable these mappings, modify the XML rule and ensure the section is not commented out with <literal>&lt;!--</literal> and <literal>--&gt;</literal> markers. For example:</para>
@@ -101,8 +92,7 @@
                </tip>
             </step>
          </procedure>
-         <para>
-            <command>virt-v2v</command> has the following basic command syntax:</para>
+         <para><command>virt-v2v</command> has the following basic command syntax:</para>
          <screen>virt-v2v -i <replaceable>INPUT_METHOD</replaceable> -os <replaceable>STORAGE_POOL</replaceable><replaceable>SOURCE_VM</replaceable></screen>
          <variablelist>
             <varlistentry>
@@ -145,8 +135,7 @@
 [...]
   2     sles12_xen                     running
 [...]</screen>
-                  <para>
-                     <literal>sles12_xen</literal> is the source virtual machine to convert. Now export its XML and save it to <filename>sles12_xen.xml</filename>:</para>
+                  <para><literal>sles12_xen</literal> is the source virtual machine to convert. Now export its XML and save it to <filename>sles12_xen.xml</filename>:</para>
                   <screen><prompt role="root">#</prompt>virsh dumpxml sles12_xen &gt; sles12_xen.xml</screen>
                </step>
                <step>
@@ -169,8 +158,7 @@
                         <para>The XML description of the source Xen-based virtual machine.</para>
                      </callout>
                      <callout arearefs="v2v-method">
-                        <para>
-                           <command>virt-v2v</command> reads the information about the source virtual machine from a <systemitem class="library">libvirt</systemitem> XML file.</para>
+                        <para><command>virt-v2v</command> reads the information about the source virtual machine from a <systemitem class="library">libvirt</systemitem> XML file.</para>
                      </callout>
                      <callout arearefs="v2v-pool">
                         <para>Storage pool where the target virtual machine disk image is placed. In this example, the image is placed on an NFS share <filename>/exported_dir</filename> on the <literal>remote_host.example.com</literal> server.</para>
@@ -197,8 +185,7 @@
 [...]
   2     sles12_xen                     running
 [...]</screen>
-                  <para>
-                     <literal>sles12_xen</literal> is the source virtual machine to convert.</para>
+                  <para><literal>sles12_xen</literal> is the source virtual machine to convert.</para>
                </step>
                <step>
                   <para>Run <command>virt-v2v</command> to convert to KVM virtual machine:</para>
@@ -214,8 +201,7 @@
                         <para>The domain name of the Xen-based virtual machine.</para>
                      </callout>
                      <callout arearefs="v2v-method1">
-                        <para>
-                           <command>virt-v2v</command> reads the information about the source virtual machine directly from the active <systemitem class="library">libvirt</systemitem> connection.</para>
+                        <para><command>virt-v2v</command> reads the information about the source virtual machine directly from the active <systemitem class="library">libvirt</systemitem> connection.</para>
                      </callout>
                      <callout arearefs="v2v-pool1">
                         <para>The target disk image is placed in a local <systemitem class="library">libvirt</systemitem> storage pool.</para>
@@ -238,9 +224,7 @@
             <para>This method is useful if you need to convert a Xen virtual machine running on a remote host. As <command>virt-v2v</command> connects to the remote host via <command>ssh</command>, ensure the SSH service is running on the host.</para>
             <note>
                <title>Passwordless SSH access</title>
-               <para>
-                  <command>virt-v2v</command> requires a passwordless SSH connection to the remote host. This means a connection using an SSH key added to the ssh-agent. See <command>man ssh-keygen</command> and <command>man ssh-add</command> for more details on this. More information is also available at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                  <xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para><command>virt-v2v</command> requires a passwordless SSH connection to the remote host. This means a connection using an SSH key added to the ssh-agent. See <command>man ssh-keygen</command> and <command>man ssh-add</command> for more details on this. More information is also available at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
             </note>
             <para>To connect to a remote <systemitem class="library">libvirt</systemitem> connection, construct a valid connection URI relevant for your remote host. In the following example, the remote host name is <literal>remote_host.example.com</literal>, and the user name for the connection is <systemitem class="username">root</systemitem>. The connection URI then looks as follows:</para>
             <screen>xen+ssh://root@remote_host.example.com/</screen>
@@ -253,8 +237,7 @@
 ----------------------------------------------------
   1     sles12_xen                     running
 [...]</screen>
-                  <para>
-                     <literal>sles12_xen</literal> is the source virtual machine to convert.</para>
+                  <para><literal>sles12_xen</literal> is the source virtual machine to convert.</para>
                </step>
                <step>
                   <para>The <command>virt-v2v</command> command for the remote connection looks like this:</para>
@@ -350,8 +333,7 @@ Id Name                 State
                   <screen>INITRD_MODULES="xenblk xennet"</screen>
                   <para>with</para>
                   <screen>INITRD_MODULES="virtio_blk virtio_pci virtio_net virtio_balloon"</screen>
-                  <para>For SLES 12, 15 and openSUSE, search for <literal>xenblk xennet</literal> in <filename>/etc/dracut.conf.d/*.conf</filename> and replace them with <literal>virtio_blk virtio_pci virtio_net virtio_balloon</literal>
-                  </para>
+                  <para>For SLES 12, 15 and openSUSE, search for <literal>xenblk xennet</literal> in <filename>/etc/dracut.conf.d/*.conf</filename> and replace them with <literal>virtio_blk virtio_pci virtio_net virtio_balloon</literal></para>
                </listitem>
                <listitem>
                   <para>Paravirtualized Xen guests run a specific Xen kernel. To run the guest under KVM, you need to install the default kernel.</para>
@@ -374,10 +356,7 @@ Id Name                 State
                </listitem>
                <listitem>
                   <para>Update the boot loader configuration. Enter <command>rpm -q grub2</command> on the Xen guest to find out whether GRUB 2 is already installed. If not, install it with <command>zypper in grub2</command>.</para>
-                  <para>Now make the newly installed default kernel the default for booting the OS. Also remove/update the kernel command line options that may refer to Xen-specific devices. You can do it either with YaST (<menuchoice>
-                        <guimenu>System</guimenu>
-                        <guimenu>Boot Loader</guimenu>
-                     </menuchoice>), or manually:</para>
+                  <para>Now make the newly installed default kernel the default for booting the OS. Also remove/update the kernel command line options that may refer to Xen-specific devices. You can do it either with YaST (<menuchoice><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice>), or manually:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
                         <para>Find the preferred Linux boot menu entry by listing them all:</para>
@@ -496,8 +475,7 @@ getty@xvc1.service -&gt; /usr/lib/systemd/system/getty@xvc1.service
                   <para>Add <literal>&lt;boot dev="hd"/&gt;</literal> under the <literal>/domain/os</literal> element.</para>
                </listitem>
                <listitem>
-                  <para>Add the <literal>arch</literal> attribute to the <literal>/domain/os/type</literal> element. Acceptable values are <literal>arch=”x86_64”</literal> or <literal>arch=”i686”</literal>
-                  </para>
+                  <para>Add the <literal>arch</literal> attribute to the <literal>/domain/os/type</literal> element. Acceptable values are <literal>arch=”x86_64”</literal> or <literal>arch=”i686”</literal></para>
                </listitem>
                <listitem>
                   <para>Change the <literal>/domain/devices/emulator</literal> element from <literal>/usr/lib/xen/bin/qemu-dm'</literal> to <literal>/usr/bin/qemu-kvm</literal>.</para>
@@ -520,8 +498,7 @@ getty@xvc1.service -&gt; /usr/lib/systemd/system/getty@xvc1.service
                   <para>For each network interface card, make the following changes:</para>
                   <itemizedlist mark="bullet" spacing="normal">
                      <listitem>
-                        <para>If there is a <literal>model</literal> defined in <literal>/domain/devices/interface</literal>, change its <literal>type</literal> attribute value to <literal>virtio</literal>
-                        </para>
+                        <para>If there is a <literal>model</literal> defined in <literal>/domain/devices/interface</literal>, change its <literal>type</literal> attribute value to <literal>virtio</literal></para>
                         <screen>&lt;model type=”virtio”&gt;</screen>
                      </listitem>
                      <listitem>
@@ -548,8 +525,7 @@ getty@xvc1.service -&gt; /usr/lib/systemd/system/getty@xvc1.service
             </orderedlist>
             <tip>
                <title>Device name</title>
-               <para>
-                  <literal>&lt;target dev='hda' bus='ide'/&gt;</literal> controls the device under which the disk is exposed to the guest OS. The <literal>dev</literal> attribute indicates the <quote>logical</quote> device name. The actual device name specified is not guaranteed to map to the device name in the guest OS. Therefore you may need to change the disk mapping on the boot loader command line. For example, if the boot loader expects a root disk to be <literal>hda2</literal> but KVM still sees it as <literal>sda2</literal>, change the boot loader command line from</para>
+               <para><literal>&lt;target dev='hda' bus='ide'/&gt;</literal> controls the device under which the disk is exposed to the guest OS. The <literal>dev</literal> attribute indicates the <quote>logical</quote> device name. The actual device name specified is not guaranteed to map to the device name in the guest OS. Therefore you may need to change the disk mapping on the boot loader command line. For example, if the boot loader expects a root disk to be <literal>hda2</literal> but KVM still sees it as <literal>sda2</literal>, change the boot loader command line from</para>
                <screen>[...] root=/dev/hda2 resume=/dev/hda1 [...]</screen>
                <para>to</para>
                <screen>[...] root=/dev/sda2 resume=/dev/sda1 [...]</screen>

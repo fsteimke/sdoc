@@ -19,8 +19,7 @@
    <para>The network subsystem is complex and its tuning highly depends on the system use scenario and on external factors such as software clients or hardware components (switches, routers, or gateways) in your network. The Linux kernel aims more at reliability and low latency than low overhead and high throughput. Other settings can mean less security, but better performance.</para>
    <sect1 xml:id="sec-tuning-network-buffers">
       <title>Configurable kernel socket buffers</title>
-      <para>Most of modern networking is based on the TCP/IP protocol and a socket interface for communication; for more information about TCP/IP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase>
-         <xref linkend="cha-network" xrefstyle="%label &#34;%c&#34;"/>. The Linux kernel handles data it receives or sends via the socket interface in socket buffers. These kernel socket buffers are tunable.</para>
+      <para>Most of modern networking is based on the TCP/IP protocol and a socket interface for communication; for more information about TCP/IP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-network" xrefstyle="%label &#34;%c&#34;"/>. The Linux kernel handles data it receives or sends via the socket interface in socket buffers. These kernel socket buffers are tunable.</para>
       <important>
          <title>TCP autotuning</title>
          <para>Since kernel version 2.6.17 full autotuning with 4 MB maximum buffer size exists. This means that manual tuning does not improve networking performance considerably. It is often the best not to touch the following variables, or, at least, to check the outcome of tuning efforts carefully.</para>
@@ -140,8 +139,7 @@
       <para>RPS creates a unique hash for each data stream using IP addresses and port numbers. The use of this hash ensures that packets for the same data stream are sent to the same CPU, which helps to increase performance.</para>
       <para>RPS is configured per network device receive queue and interface. The configuration file names match the following scheme:</para>
       <screen>/sys/class/net/<replaceable>&lt;device&gt;</replaceable>/queues/<replaceable>&lt;rx-queue&gt;</replaceable>/rps_cpus</screen>
-      <para>
-         <replaceable>&lt;device&gt;</replaceable> stands for the network device, such as <literal>eth0</literal>, <literal>eth1</literal>. <replaceable>&lt;rx-queue&gt;</replaceable> stands for the receive queue, such as <literal>rx-0</literal>, <literal>rx-1</literal>.</para>
+      <para><replaceable>&lt;device&gt;</replaceable> stands for the network device, such as <literal>eth0</literal>, <literal>eth1</literal>. <replaceable>&lt;rx-queue&gt;</replaceable> stands for the receive queue, such as <literal>rx-0</literal>, <literal>rx-1</literal>.</para>
       <para>If the network interface hardware only supports a single receive queue, only <literal>rx-0</literal> exists. If it supports multiple receive queues, there is an rx-<replaceable>N</replaceable> directory for each receive queue.</para>
       <para>These configuration files contain a comma-delimited list of CPU bitmaps. By default, all bits are set to <literal>0</literal>. With this setting, RPS is disabled and therefore the CPU that handles the interrupt also processes the packet queue.</para>
       <para>To enable RPS and enable specific CPUs to process packets for the receive queue of the interface, set the value of their positions in the bitmap to <literal>1</literal>. For example, to enable CPUs 0-3 to process packets for the first receive queue for eth0, set the bit positions 0-3 to 1 in binary: <literal>00001111</literal>. This representation then needs to be converted to hex—which results in <literal>F</literal> in this case. Set this hex value with the following command:</para>

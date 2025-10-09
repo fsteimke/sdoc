@@ -10,51 +10,35 @@
    <para>The following notices and typographic conventions are used in this document:</para>
    <itemizedlist>
       <listitem>
-         <para>
-            <filename>/etc/passwd</filename>: Directory names and file names</para>
+         <para><filename>/etc/passwd</filename>: Directory names and file names</para>
       </listitem>
       <listitem>
-         <para>
-            <replaceable>PLACEHOLDER</replaceable>: Replace <replaceable>PLACEHOLDER</replaceable> with the actual value</para>
+         <para><replaceable>PLACEHOLDER</replaceable>: Replace <replaceable>PLACEHOLDER</replaceable> with the actual value</para>
       </listitem>
       <listitem>
-         <para>
-            <envar>PATH</envar>: An environment variable</para>
+         <para><envar>PATH</envar>: An environment variable</para>
       </listitem>
       <listitem>
-         <para>
-            <command>ls</command>, <option>--help</option>: Commands, options, and parameters</para>
+         <para><command>ls</command>, <option>--help</option>: Commands, options, and parameters</para>
       </listitem>
       <listitem>
-         <para>
-            <systemitem class="username">user</systemitem>: The name of a user or group</para>
+         <para><systemitem class="username">user</systemitem>: The name of a user or group</para>
       </listitem>
       <listitem>
-         <para>
-            <package>package_name</package>: The name of a software package</para>
+         <para><package>package_name</package>: The name of a software package</para>
       </listitem>
       <listitem>
-         <para>
-            <keycap function="alt"/>, <keycombo>
-               <keycap function="alt"/>
-               <keycap>F1</keycap>
-            </keycombo>: A key to press or a key combination. Keys are shown in uppercase as on a keyboard.</para>
+         <para><keycap function="alt"/>, <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo>: A key to press or a key combination. Keys are shown in uppercase as on a keyboard.</para>
       </listitem>
       <listitem>
-         <para>
-            <guimenu>File</guimenu>, <menuchoice>
-               <guimenu>File</guimenu>
-               <guimenu>Save As</guimenu>
-            </menuchoice>: menu items, buttons</para>
+         <para><guimenu>File</guimenu>, <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>: menu items, buttons</para>
       </listitem>
       <listitem>
-         <para>This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.</para>
-         <para>This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.</para>
+         <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase>This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
+         <para arch="zseries;power"><phrase role="arch-start">zseries;power ▶</phrase>This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
       </listitem>
       <listitem>
-         <para>
-            <citetitle>Chapter 1, <quote>Example chapter</quote>
-            </citetitle>: A cross-reference to another chapter in this guide.</para>
+         <para><citetitle>Chapter 1, <quote>Example chapter</quote></citetitle>: A cross-reference to another chapter in this guide.</para>
       </listitem>
       <listitem>
          <para>Commands that must be run with <systemitem class="username">root</systemitem> privileges. You can also prefix these commands with the <command>sudo</command> command to run them as a non-privileged user:</para>

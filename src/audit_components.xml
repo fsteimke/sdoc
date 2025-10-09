@@ -103,10 +103,10 @@
          <title>Introducing the components of Linux audit</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_components.png" width="75%"/>
+               <imagedata fileref="media/audit_components.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_components.png" width="75%"/>
+               <imagedata fileref="media/audit_components.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -254,46 +254,30 @@ end_of_event_timeout = 2</screen>
    <sect1 xml:id="sec-audit-auditctl">
       <title>Controlling the audit system using <command>auditctl</command>
       </title>
-      <para>
-         <command>auditctl</command> controls the status and basic system parameters of the audit daemon. It controls the amount of auditing performed on the system. Using audit rules, <command>auditctl</command> controls which components of your system are subjected to the audit and to what extent they are audited. Audit rules can be passed to the audit daemon on the <command>auditctl</command> command line or by composing a rule set and instructing the audit daemon to process this file. By default, the <systemitem class="daemon">auditd</systemitem> daemon is configured to check for audit rules under <filename>/etc/audit/audit.rules</filename>. For more details on audit rules, refer to <xref linkend="sec-audit-rules"/>.</para>
+      <para><command>auditctl</command> controls the status and basic system parameters of the audit daemon. It controls the amount of auditing performed on the system. Using audit rules, <command>auditctl</command> controls which components of your system are subjected to the audit and to what extent they are audited. Audit rules can be passed to the audit daemon on the <command>auditctl</command> command line or by composing a rule set and instructing the audit daemon to process this file. By default, the <systemitem class="daemon">auditd</systemitem> daemon is configured to check for audit rules under <filename>/etc/audit/audit.rules</filename>. For more details on audit rules, refer to <xref linkend="sec-audit-rules"/>.</para>
       <para>The main <command>auditctl</command> commands to control basic audit system parameters are:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-e</option> to enable or disable audit</para>
+            <para><command>auditctl</command><option>-e</option> to enable or disable audit</para>
          </listitem>
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-f</option> to control the failure flag</para>
+            <para><command>auditctl</command><option>-f</option> to control the failure flag</para>
          </listitem>
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-r</option> to control the rate limit for audit messages</para>
+            <para><command>auditctl</command><option>-r</option> to control the rate limit for audit messages</para>
          </listitem>
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-b</option> to control the backlog limit</para>
+            <para><command>auditctl</command><option>-b</option> to control the backlog limit</para>
          </listitem>
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-s</option> to query the current status of the audit daemon</para>
+            <para><command>auditctl</command><option>-s</option> to query the current status of the audit daemon</para>
          </listitem>
          <listitem>
-            <para>
-               <command>auditctl</command>
-               <option>-S</option> specifies which system call to audit. Before running <command>auditctl -S</command> on your system, add <option>-F arch=b64</option> to prevent the architecture mismatch warning.</para>
+            <para><command>auditctl</command><option>-S</option> specifies which system call to audit. Before running <command>auditctl -S</command> on your system, add <option>-F arch=b64</option> to prevent the architecture mismatch warning.</para>
          </listitem>
       </itemizedlist>
       <para>The <option>-e</option>, <option>-f</option>, <option>-r</option>, and <option>-b</option> options can also be specified in the <filename>audit.rules</filename> file to avoid having to enter them each time the audit daemon is started.</para>
-      <para>Any time you query the status of the audit daemon with <command>auditctl</command>
-         <option>-s</option> or change the status flag with <command>auditctl</command>
-         <option>-e<replaceable>FLAG</replaceable>
-         </option>, a status message (including information on each of the above-mentioned parameters) is printed. The following example highlights the typical audit status message.</para>
+      <para>Any time you query the status of the audit daemon with <command>auditctl</command><option>-s</option> or change the status flag with <command>auditctl</command><option>-e<replaceable>FLAG</replaceable></option>, a status message (including information on each of the above-mentioned parameters) is printed. The following example highlights the typical audit status message.</para>
       <example xml:id="ex-auditctl-status">
          <title>Example output of <command>auditctl</command>
             <option>-s</option>
@@ -315,122 +299,46 @@ loginuid_immutable 0 unlocked
          <tgroup cols="3">
             <thead>
                <row>
-                  <entry>
-                     <para>Flag</para>
-                  </entry>
-                  <entry>
-                     <para>Meaning [Possible Values]</para>
-                  </entry>
-                  <entry>
-                     <para>Command</para>
-                  </entry>
+                  <entry><para>Flag</para></entry>
+                  <entry><para>Meaning [Possible Values]</para></entry>
+                  <entry><para>Command</para></entry>
                </row>
             </thead>
             <tbody>
                <row>
-                  <entry>
-                     <para>
-                        <literal>enabled</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Set the enable flag. [0..2] 0=disable, 1=enable, 2=enable and lock down the configuration. Note that this disables logging syscalls, and other events may still be logged. (See <command>man 3 audit_set_enabled</command> in the <package>audit-devel</package>.)</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <command>auditctl</command>
-                        <option>-e [0|1|2]</option>
-                     </para>
-                  </entry>
+                  <entry><para><literal>enabled</literal></para></entry>
+                  <entry><para>Set the enable flag. [0..2] 0=disable, 1=enable, 2=enable and lock down the configuration. Note that this disables logging syscalls, and other events may still be logged. (See <command>man 3 audit_set_enabled</command> in the <package>audit-devel</package>.)</para></entry>
+                  <entry><para><command>auditctl</command><option>-e [0|1|2]</option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>flag</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Set the failure flag. [0..2] 0=silent, 1=printk, 2=panic (immediate halt without synchronizing pending data to disk)</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <command>auditctl</command>
-                        <option>-f [0|1|2]</option>
-                     </para>
-                  </entry>
+                  <entry><para><literal>flag</literal></para></entry>
+                  <entry><para>Set the failure flag. [0..2] 0=silent, 1=printk, 2=panic (immediate halt without synchronizing pending data to disk)</para></entry>
+                  <entry><para><command>auditctl</command><option>-f [0|1|2]</option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>pid</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Process ID under which <systemitem class="daemon">auditd</systemitem> is running.</para>
-                  </entry>
-                  <entry>
-                     <para>—</para>
-                  </entry>
+                  <entry><para><literal>pid</literal></para></entry>
+                  <entry><para>Process ID under which <systemitem class="daemon">auditd</systemitem> is running.</para></entry>
+                  <entry><para>—</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>rate_limit</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Set a limit in messages per second. If the rate is not zero and is exceeded, the action specified in the failure flag is triggered.</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <command>auditctl</command>
-                        <option>-r <replaceable>RATE</replaceable>
-                        </option>
-                     </para>
-                  </entry>
+                  <entry><para><literal>rate_limit</literal></para></entry>
+                  <entry><para>Set a limit in messages per second. If the rate is not zero and is exceeded, the action specified in the failure flag is triggered.</para></entry>
+                  <entry><para><command>auditctl</command><option>-r <replaceable>RATE</replaceable></option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>backlog_limit</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Specify the maximum number of outstanding audit buffers allowed. If all buffers are full, the action specified in the failure flag is triggered.</para>
-                  </entry>
-                  <entry>
-                     <para>
-                        <command>auditctl</command>
-                        <option>-b <replaceable>BACKLOG</replaceable>
-                        </option>
-                     </para>
-                  </entry>
+                  <entry><para><literal>backlog_limit</literal></para></entry>
+                  <entry><para>Specify the maximum number of outstanding audit buffers allowed. If all buffers are full, the action specified in the failure flag is triggered.</para></entry>
+                  <entry><para><command>auditctl</command><option>-b <replaceable>BACKLOG</replaceable></option></para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>lost</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Count the current number of lost audit messages.</para>
-                  </entry>
-                  <entry>
-                     <para>—</para>
-                  </entry>
+                  <entry><para><literal>lost</literal></para></entry>
+                  <entry><para>Count the current number of lost audit messages.</para></entry>
+                  <entry><para>—</para></entry>
                </row>
                <row>
-                  <entry>
-                     <para>
-                        <literal>backlog</literal>
-                     </para>
-                  </entry>
-                  <entry>
-                     <para>Count the current number of outstanding audit buffers.</para>
-                  </entry>
-                  <entry>
-                     <para>—</para>
-                  </entry>
+                  <entry><para><literal>backlog</literal></para></entry>
+                  <entry><para>Count the current number of outstanding audit buffers.</para></entry>
+                  <entry><para>—</para></entry>
                </row>
             </tbody>
          </tgroup>
@@ -438,8 +346,7 @@ loginuid_immutable 0 unlocked
    </sect1>
    <sect1 xml:id="sec-audit-rules">
       <title>Passing parameters to the audit system</title>
-      <para>Commands to control the audit system can be invoked individually from the shell using <command>auditctl</command> or batch read from a file using <command>auditctl -</command>
-         <option>R</option>. This latter method is used by the init scripts to load rules from the file <filename>/etc/audit/audit.rules</filename> after the audit daemon has been started. The rules are executed in order from top to bottom. Each of these rules would expand to a separate <command>auditctl</command> command. The syntax used in the rules file is the same as that used for the <command>auditctl</command> command.</para>
+      <para>Commands to control the audit system can be invoked individually from the shell using <command>auditctl</command> or batch read from a file using <command>auditctl -</command><option>R</option>. This latter method is used by the init scripts to load rules from the file <filename>/etc/audit/audit.rules</filename> after the audit daemon has been started. The rules are executed in order from top to bottom. Each of these rules would expand to a separate <command>auditctl</command> command. The syntax used in the rules file is the same as that used for the <command>auditctl</command> command.</para>
       <para>Changes made to the running audit system by executing <command>auditctl</command> on the command line are not persistent across system restarts. For changes to persist, add them to the <filename>/etc/audit/audit.rules</filename> file and, if they are not currently loaded into audit, restart the audit system to load the modified rule set by using the <command>systemctl restart auditd</command> command.</para>
       <example xml:id="ex-audit-rules-sysparam">
          <title>Example audit rules—audit system parameters</title>
@@ -498,8 +405,7 @@ loginuid_immutable 0 unlocked
             <para>This rule adds auditing to the access system call, but only if the second argument of the system call (<literal>mode</literal>) is <literal>4</literal> (<literal>R_OK</literal>). <literal>exit,always</literal> tells audit to add an audit context to this system call when entering it, and to write out a report when it gets audited.</para>
          </callout>
          <callout arearefs="co-aurules-scallipc">
-            <para>This rule adds an audit context to the IPC multiplexed system call. The specific <literal>ipc</literal> system call is passed as the first syscall argument and can be selected using <option>-F a0=<replaceable>IPC_CALL_NUMBER</replaceable>
-               </option>.</para>
+            <para>This rule adds an audit context to the IPC multiplexed system call. The specific <literal>ipc</literal> system call is passed as the first syscall argument and can be selected using <option>-F a0=<replaceable>IPC_CALL_NUMBER</replaceable></option>.</para>
          </callout>
          <callout arearefs="co-aurules-scalls">
             <para>This rule audits failed attempts to call open.</para>
@@ -524,8 +430,7 @@ loginuid_immutable 0 unlocked
       </example>
       <calloutlist>
          <callout arearefs="co-aurules-d">
-            <para>Clear the queue of audit rules and delete any preexisting rules. This rule is used as the first rule in <filename>/etc/audit/audit.rules</filename> files to make sure that the rules that are about to be added do not clash with any preexisting ones. The <command>auditctl</command>
-               <option>-D</option> command is also used before doing an <command>autrace</command> to avoid having the trace rules clash with any rules present in the <filename>audit.rules</filename> file.</para>
+            <para>Clear the queue of audit rules and delete any preexisting rules. This rule is used as the first rule in <filename>/etc/audit/audit.rules</filename> files to make sure that the rules that are about to be added do not clash with any preexisting ones. The <command>auditctl</command><option>-D</option> command is also used before doing an <command>autrace</command> to avoid having the trace rules clash with any rules present in the <filename>audit.rules</filename> file.</para>
          </callout>
          <callout arearefs="co-aurules-scalldel">
             <para>This rule deletes a system call rule. The <literal>-d</literal> option must precede any system call rule that needs to be deleted from the rule queue, and must match exactly.</para>
@@ -534,8 +439,7 @@ loginuid_immutable 0 unlocked
             <para>This rule tells audit to discard the rule with the directory watch on <filename>/etc</filename> from the rules queue. This rule deletes any rule containing a directory watch on <filename>/etc</filename>, regardless of any permission filtering or key options.</para>
          </callout>
       </calloutlist>
-      <para>To get an overview of which rules are currently in use in your audit setup, run <command>auditctl</command>
-         <option>-l</option>. This command displays all rules with one rule per line.</para>
+      <para>To get an overview of which rules are currently in use in your audit setup, run <command>auditctl</command><option>-l</option>. This command displays all rules with one rule per line.</para>
       <example>
          <title>Listing rules with <command>auditctl</command>
             <option>-l</option>
@@ -640,9 +544,7 @@ audit.log" inode=1219041 dev=08:06 mode=0100644 ouid=0 ogid=0 rdev=00:00
                <listitem>
                   <para>The first four arguments to the system call in numeric form. The values of these are system call dependent. In this example (an <command>open</command> system call), the following are used:</para>
                   <screen>a0=62fb60 a1=8000 a2=31 a3=0</screen>
-                  <para>
-                     <literal>a0</literal> is the start address of the passed path. <literal>a1</literal> is the flags. <literal>8000</literal> in hex notation translates to <literal>100000</literal> in octal notation, which in turn translates to <literal>O_LARGEFILE</literal>. <literal>a2</literal> is the mode, which, because <literal>O_CREAT</literal> was not specified, is unused. <remark>jsegitz 2014-07-22: a2 is 31, not unused</remark>
-                     <literal>a3</literal> is not passed by the <command>open</command> system call. Check the manual page of the relevant system call to find out which arguments are used with it.</para>
+                  <para><literal>a0</literal> is the start address of the passed path. <literal>a1</literal> is the flags. <literal>8000</literal> in hex notation translates to <literal>100000</literal> in octal notation, which in turn translates to <literal>O_LARGEFILE</literal>. <literal>a2</literal> is the mode, which, because <literal>O_CREAT</literal> was not specified, is unused. <remark>jsegitz 2014-07-22: a2 is 31, not unused</remark><literal>a3</literal> is not passed by the <command>open</command> system call. Check the manual page of the relevant system call to find out which arguments are used with it.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -746,8 +648,7 @@ audit.log" inode=1219041 dev=08:06 mode=0100644 ouid=0 ogid=0 rdev=00:00
                   <literal>subj</literal>
                </term>
                <listitem>
-                  <para>
-                     <systemitem class="daemon">auditd</systemitem> records whether the process is subject to any security context, such as AppArmor. <literal>unconstrained</literal>, as in this case, means that the process is not confined with AppArmor. If the process had been confined, the binary path plus the AppArmor profile mode would have been logged.</para>
+                  <para><systemitem class="daemon">auditd</systemitem> records whether the process is subject to any security context, such as AppArmor. <literal>unconstrained</literal>, as in this case, means that the process is not confined with AppArmor. If the process had been confined, the binary path plus the AppArmor profile mode would have been logged.</para>
                   <remark>jsegitz 2014-07-22: doesn't show in the example</remark>
                </listitem>
             </varlistentry>
@@ -792,8 +693,7 @@ audit.log" inode=1219041 dev=08:06 mode=0100644 ouid=0 ogid=0 rdev=00:00
                   <literal>dev</literal>
                </term>
                <listitem>
-                  <para>Specifies the device on which the file is stored. In this case, <literal>08:06</literal>, which stands for <literal>/dev/sda1</literal> or <quote>first partition on the first IDE device.</quote>
-                  </para>
+                  <para>Specifies the device on which the file is stored. In this case, <literal>08:06</literal>, which stands for <literal>/dev/sda1</literal> or <quote>first partition on the first IDE device.</quote></para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -821,8 +721,7 @@ audit.log" inode=1219041 dev=08:06 mode=0100644 ouid=0 ogid=0 rdev=00:00
                </listitem>
             </varlistentry>
          </variablelist>
-         <para>
-            <xref linkend="ex-audit-aureport-sshd"/> highlights the audit events triggered by an incoming SSH connection. Most of the messages are related to the PAM stack and reflect the different stages of the SSH PAM process. Several of the audit messages carry nested PAM messages in them that signify that a particular stage of the PAM process has been reached. Although the PAM messages are logged by audit, audit assigns its own message type to each event:</para>
+         <para><xref linkend="ex-audit-aureport-sshd"/> highlights the audit events triggered by an incoming SSH connection. Most of the messages are related to the PAM stack and reflect the different stages of the SSH PAM process. Several of the audit messages carry nested PAM messages in them that signify that a particular stage of the PAM process has been reached. Although the PAM messages are logged by audit, audit assigns its own message type to each event:</para>
          <example xml:id="ex-audit-aureport-sshd">
             <title>An advanced audit event—login via SSH</title>
             <screen>type=USER_AUTH msg=audit(1234877011.791:7731): user pid=26127 uid=0 <co xml:id="co-audit-sshd-auth"/>
@@ -860,8 +759,7 @@ auid=0 ses=1172 msg='op=PAM:setcred acct="root" exe="/usr/sbin/sshd"
                <para>PAM reports that it has successfully opened a session for <systemitem class="username">root</systemitem>.</para>
             </callout>
             <callout arearefs="co-audit-sshd-login">
-               <para>The user has successfully logged in. This event is the one used by <command>aureport</command>
-                  <option>-l</option> to report about user logins.</para>
+               <para>The user has successfully logged in. This event is the one used by <command>aureport</command><option>-l</option> to report about user logins.</para>
             </callout>
             <callout arearefs="co-audit-sshd-refr">
                <para>PAM reports that the credentials have been successfully reacquired.</para>
@@ -929,8 +827,7 @@ Login Report
             <varlistentry>
                <term>Create a summary report of failed events</term>
                <listitem>
-                  <para>To break down the overall statistics of plain <command>aureport</command> to the statistics of failed events, use <command>aureport</command>
-                     <option>--failed</option>:</para>
+                  <para>To break down the overall statistics of plain <command>aureport</command> to the statistics of failed events, use <command>aureport</command><option>--failed</option>:</para>
                   <screen><?dbfo keep-together="always"?><prompt>&gt;</prompt><command>sudo</command><command>aureport --failed</command>
 
 Failed Summary Report
@@ -962,8 +859,7 @@ Number of events: 1583</screen>
             <varlistentry>
                <term>Create a summary report of successful events</term>
                <listitem>
-                  <para>If you want to break down the overall statistics of a plain <command>aureport</command> to the statistics of successful events, use <command>aureport</command>
-                     <option>--success</option>:</para>
+                  <para>If you want to break down the overall statistics of a plain <command>aureport</command> to the statistics of successful events, use <command>aureport</command><option>--success</option>:</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command><command>aureport --success</command>
 
 Success Summary Report
@@ -1010,8 +906,7 @@ total  auid
             <varlistentry>
                <term>Create a report of events</term>
                <listitem>
-                  <para>To get an overview of the events logged by audit, use the <command>aureport</command>
-                     <option>-e</option> command. This command generates a numbered list of all events including date, time, event number, event type, and audit ID.</para>
+                  <para>To get an overview of the events logged by audit, use the <command>aureport</command><option>-e</option> command. This command generates a numbered list of all events including date, time, event number, event type, and audit ID.</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command> aureport -e -ts 14:00 -te 14:21
 
 Event Report
@@ -1035,8 +930,7 @@ Event Report
             <varlistentry>
                <term>Create a report from all process events</term>
                <listitem>
-                  <para>To analyze the log from a process's point of view, use the <command>aureport</command>
-                     <option>-p</option> command. This command generates a numbered list of all process events including date, time, process ID, name of the executable, system call, audit ID, and event number.</para>
+                  <para>To analyze the log from a process's point of view, use the <command>aureport</command><option>-p</option> command. This command generates a numbered list of all process events including date, time, process ID, name of the executable, system call, audit ID, and event number.</para>
                   <screen><?dbfo keep-together="always"?><command>aureport -p</command>
 
 Process ID Report
@@ -1051,8 +945,7 @@ Process ID Report
             <varlistentry>
                <term>Create a report from all system call events</term>
                <listitem>
-                  <para>To analyze the audit log from a system call's point of view, use the <command>aureport</command>
-                     <option>-s</option> command. This command generates a numbered list of all system call events including date, time, number of the system call, process ID, name of the command that used this call, audit ID, and event number.</para>
+                  <para>To analyze the audit log from a system call's point of view, use the <command>aureport</command><option>-s</option> command. This command generates a numbered list of all system call events including date, time, number of the system call, process ID, name of the command that used this call, audit ID, and event number.</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command><command>aureport -s</command>
 
 Syscall Report
@@ -1067,8 +960,7 @@ Syscall Report
             <varlistentry>
                <term>Create a report from all executable events</term>
                <listitem>
-                  <para>To analyze the audit log from an executable's point of view, use the <command>aureport</command>
-                     <option>-x</option> command. This command generates a numbered list of all executable events including date, time, name of the executable, the terminal it is run in, the host executing it, the audit ID, and event number.</para>
+                  <para>To analyze the audit log from an executable's point of view, use the <command>aureport</command><option>-x</option> command. This command generates a numbered list of all executable events including date, time, name of the executable, the terminal it is run in, the host executing it, the audit ID, and event number.</para>
                   <screen><command>aureport -x</command>
 
 Executable Report
@@ -1083,8 +975,7 @@ Executable Report
             <varlistentry>
                <term>Create a report about files</term>
                <listitem>
-                  <para>To generate a report from the audit log that focuses on file access, use the <command>aureport</command>
-                     <option>-f</option> command. This command generates a numbered list of all file-related events including date, time, name of the accessed file, number of the system call accessing it, success or failure of the command, the executable accessing the file, audit ID, and event number.</para>
+                  <para>To generate a report from the audit log that focuses on file access, use the <command>aureport</command><option>-f</option> command. This command generates a numbered list of all file-related events including date, time, name of the accessed file, number of the system call accessing it, success or failure of the command, the executable accessing the file, audit ID, and event number.</para>
                   <screen><?dbfo keep-together="always"?><prompt>&gt;</prompt><command>sudo</command><command>aureport -f</command>
 
 File Report
@@ -1099,8 +990,7 @@ File Report
             <varlistentry>
                <term>Create a report about users</term>
                <listitem>
-                  <para>To generate a report from the audit log that illustrates which users are running what executables on your system, use the <command>aureport</command>
-                     <option>-u</option> command. This command generates a numbered list of all user-related events including date, time, audit ID, terminal used, host, name of the executable, and an event ID.</para>
+                  <para>To generate a report from the audit log that illustrates which users are running what executables on your system, use the <command>aureport</command><option>-u</option> command. This command generates a numbered list of all user-related events including date, time, audit ID, terminal used, host, name of the executable, and an event ID.</para>
                   <screen><command>aureport -u</command>
 
 User ID Report
@@ -1115,8 +1005,7 @@ User ID Report
             <varlistentry>
                <term>Create a report about logins</term>
                <listitem>
-                  <para>To create a report that focuses on login attempts to your machine, run the <command>aureport</command>
-                     <option>-l</option> command. This command generates a numbered list of all login-related events including date, time, audit ID, host and terminal used, name of the executable, success or failure of the attempt, and an event ID.</para>
+                  <para>To create a report that focuses on login attempts to your machine, run the <command>aureport</command><option>-l</option> command. This command generates a numbered list of all login-related events including date, time, audit ID, host and terminal used, name of the executable, success or failure of the attempt, and an event ID.</para>
                   <screen><prompt>&gt;</prompt><command>sudo</command><command>aureport -l -i</command>
 
 Login Report
@@ -1131,8 +1020,7 @@ Login Report
             <varlistentry>
                <term>Limit a report to a certain time frame</term>
                <listitem>
-                  <para>To analyze the logs for a particular time frame, such as the working hours of Feb 16, 2009, first find out whether this data is contained in the current <filename>audit.log</filename> or whether the logs have been rotated in by running <command>aureport</command>
-                     <option>-t</option>:</para>
+                  <para>To analyze the logs for a particular time frame, such as the working hours of Feb 16, 2009, first find out whether this data is contained in the current <filename>audit.log</filename> or whether the logs have been rotated in by running <command>aureport</command><option>-t</option>:</para>
                   <screen><?dbfo keep-together="always"?><command>aureport -t</command>
 
 Log Time Range Report
@@ -1171,8 +1059,7 @@ Login Report
       <title>Querying the audit daemon logs with <command>ausearch</command>
       </title>
       <para>The <command>aureport</command> tool helps you to create overall summaries of what is happening on the system, but if you are interested in the details of a particular event, <command>ausearch</command> is the tool to use.</para>
-      <para>
-         <command>ausearch</command> allows you to search the audit logs using special keys and search phrases that relate to most of the flags that appear in event messages in <filename>/var/log/audit/audit.log</filename>. Not all record types contain the same search phrases. There are no <literal>hostname</literal> or <literal>uid</literal> entries in a <literal>PATH</literal> record, for example.</para>
+      <para><command>ausearch</command> allows you to search the audit logs using special keys and search phrases that relate to most of the flags that appear in event messages in <filename>/var/log/audit/audit.log</filename>. Not all record types contain the same search phrases. There are no <literal>hostname</literal> or <literal>uid</literal> entries in a <literal>PATH</literal> record, for example.</para>
       <para>When searching, make sure that you choose appropriate search criteria to catch all records you need. Otherwise, you could be searching for a specific type of record and still get various other related records along with it. This is caused by different parts of the kernel contributing additional records for events that are related to the one to find. For example, you would always get a <literal>PATH</literal> record along with the <literal>SYSCALL</literal> record for an <command>open</command> system call.</para>
       <tip>
          <title>Using multiple search options</title>
@@ -1203,135 +1090,91 @@ time-&gt;Tue Feb 17 13:43:58 2009
 type=PATH msg=audit(1234874638.599:5207): item=0 name="/var/log/audit/audit.log" inode=1219041 dev=08:06 mode=0100644 ouid=0 ogid=0 rdev=00:00
 type=CWD msg=audit(1234874638.599:5207):  cwd="/root"
 type=SYSCALL msg=audit(1234874638.599:5207): arch=c000003e syscall=2 success=yes exit=4 a0=62fb60 a1=0 a2=31 a3=0 items=1 ppid=25400 pid=25616 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=1164 comm="less" exe="/usr/bin/less" key="doc_log"</screen>
-               <para>The <command>ausearch</command>
-                  <option>-a</option> command grabs all records in the logs that are related to the audit event ID provided and displays them. This option can be combined with any other option.</para>
+               <para>The <command>ausearch</command><option>-a</option> command grabs all records in the logs that are related to the audit event ID provided and displays them. This option can be combined with any other option.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by message type</term>
             <listitem>
-               <para>To search for audit records of a particular message type, use the <command>ausearch</command>
-                  <option>-m <replaceable>MESSAGE_TYPE</replaceable>
-                  </option> command. Examples of valid message types include <literal>PATH</literal>, <literal>SYSCALL</literal>, and <literal>USER_LOGIN</literal>. Running <command>ausearch</command>
-                  <option>-m</option> without a message type displays a list of all message types.</para>
+               <para>To search for audit records of a particular message type, use the <command>ausearch</command><option>-m <replaceable>MESSAGE_TYPE</replaceable></option> command. Examples of valid message types include <literal>PATH</literal>, <literal>SYSCALL</literal>, and <literal>USER_LOGIN</literal>. Running <command>ausearch</command><option>-m</option> without a message type displays a list of all message types.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by login ID</term>
             <listitem>
-               <para>To view records associated with a particular login user ID, use the <command>ausearch</command>
-                  <option>-ul</option> command. It displays any records related to the user login ID specified provided that user had been able to log in successfully.</para>
+               <para>To view records associated with a particular login user ID, use the <command>ausearch</command><option>-ul</option> command. It displays any records related to the user login ID specified provided that user had been able to log in successfully.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by user ID</term>
             <listitem>
-               <para>View records related to any of the user IDs (both user ID and effective user ID) with <command>ausearch</command>
-                  <option>-ua</option>. View reports related to a particular user ID with <command>ausearch</command>
-                  <option>-ui <replaceable>UID</replaceable>
-                  </option>. Search for records related to a particular effective user ID, use the <command>ausearch</command>
-                  <option>-ue <replaceable>EUID</replaceable>
-                  </option>. Searching for a user ID means the user ID of the user creating a process. Searching for an effective user ID means the user ID and privileges that are required to run this process.</para>
+               <para>View records related to any of the user IDs (both user ID and effective user ID) with <command>ausearch</command><option>-ua</option>. View reports related to a particular user ID with <command>ausearch</command><option>-ui <replaceable>UID</replaceable></option>. Search for records related to a particular effective user ID, use the <command>ausearch</command><option>-ue <replaceable>EUID</replaceable></option>. Searching for a user ID means the user ID of the user creating a process. Searching for an effective user ID means the user ID and privileges that are required to run this process.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by group ID</term>
             <listitem>
-               <para>View records related to any of the group IDs (both group ID and effective group ID) with the <command>ausearch</command>
-                  <option>-ga</option> command. View reports related to a particular user ID with <command>ausearch</command>
-                  <option>-gi <replaceable>GID</replaceable>
-                  </option>. Search for records related to a particular effective group ID, use <command>ausearch</command>
-                  <option>-ge <replaceable>EGID</replaceable>
-                  </option>.</para>
+               <para>View records related to any of the group IDs (both group ID and effective group ID) with the <command>ausearch</command><option>-ga</option> command. View reports related to a particular user ID with <command>ausearch</command><option>-gi <replaceable>GID</replaceable></option>. Search for records related to a particular effective group ID, use <command>ausearch</command><option>-ge <replaceable>EGID</replaceable></option>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by command line name</term>
             <listitem>
-               <para>View records related to a certain command, using the <command>ausearch</command>
-                  <option>-c <replaceable>COMM_NAME</replaceable>
-                  </option> command, for example, <command>ausearch</command>
-                  <option>-c less</option> for all records related to the <command>less</command> command.</para>
+               <para>View records related to a certain command, using the <command>ausearch</command><option>-c <replaceable>COMM_NAME</replaceable></option> command, for example, <command>ausearch</command><option>-c less</option> for all records related to the <command>less</command> command.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by executable name</term>
             <listitem>
-               <para>View records related to a certain executable with the <command>ausearch</command>
-                  <option>-x <replaceable>EXE</replaceable>
-                  </option> command, for example <command>ausearch</command>
-                  <option>-x /usr/bin/less</option> for all records related to the <command>/usr/bin/less</command> executable.</para>
+               <para>View records related to a certain executable with the <command>ausearch</command><option>-x <replaceable>EXE</replaceable></option> command, for example <command>ausearch</command><option>-x /usr/bin/less</option> for all records related to the <command>/usr/bin/less</command> executable.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by system call name</term>
             <listitem>
-               <para>View records related to a certain system call with the <command>ausearch</command>
-                  <option>-sc <replaceable>SYSCALL</replaceable>
-                  </option> command, for example, <command>ausearch -sc open</command> for all records related to the <command>open</command> system call.</para>
+               <para>View records related to a certain system call with the <command>ausearch</command><option>-sc <replaceable>SYSCALL</replaceable></option> command, for example, <command>ausearch -sc open</command> for all records related to the <command>open</command> system call.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by process ID</term>
             <listitem>
-               <para>View records related to a certain process ID with the <command>ausearch</command>
-                  <option>-p <replaceable>PID</replaceable>
-                  </option> command, for example <command>ausearch</command>
-                  <option>-p 13368</option> for all records related to this process ID.</para>
+               <para>View records related to a certain process ID with the <command>ausearch</command><option>-p <replaceable>PID</replaceable></option> command, for example <command>ausearch</command><option>-p 13368</option> for all records related to this process ID.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by event or system call success value</term>
             <listitem>
-               <para>View records containing a certain system call success value with <command>ausearch</command>
-                  <option>-sv <replaceable>SUCCESS_VALUE</replaceable>
-                  </option>, for example, <command>ausearch</command>
-                  <option>-sv yes</option> for all successful system calls.</para>
+               <para>View records containing a certain system call success value with <command>ausearch</command><option>-sv <replaceable>SUCCESS_VALUE</replaceable></option>, for example, <command>ausearch</command><option>-sv yes</option> for all successful system calls.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by file name</term>
             <listitem>
-               <para>View records containing a certain file name with <command>ausearch</command>
-                  <option>-f <replaceable>FILE_NAME</replaceable>
-                  </option>, for example, <command>ausearch</command>
-                  <option>-f /foo/bar</option> for all records related to the <filename>/foo/bar</filename> file. Using the file name alone would work as well, but using relative paths does not work.</para>
+               <para>View records containing a certain file name with <command>ausearch</command><option>-f <replaceable>FILE_NAME</replaceable></option>, for example, <command>ausearch</command><option>-f /foo/bar</option> for all records related to the <filename>/foo/bar</filename> file. Using the file name alone would work as well, but using relative paths does not work.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by terminal</term>
             <listitem>
-               <para>View records of events related to a certain terminal with <command>ausearch</command>
-                  <option>-tm <replaceable>TERM</replaceable>
-                  </option>, for example, <command>ausearch</command>
-                  <option>-tm ssh</option> to view all records related to events on the SSH terminal and <command>ausearch</command>
-                  <option>-tm tty</option> to view all events related to the console.</para>
+               <para>View records of events related to a certain terminal with <command>ausearch</command><option>-tm <replaceable>TERM</replaceable></option>, for example, <command>ausearch</command><option>-tm ssh</option> to view all records related to events on the SSH terminal and <command>ausearch</command><option>-tm tty</option> to view all events related to the console.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by host name</term>
             <listitem>
-               <para>View records related to a certain remote host name with <command>ausearch</command>
-                  <option>-hn <replaceable>HOSTNAME</replaceable>
-                  </option>, for example, <command>ausearch</command>
-                  <option>-hn jupiter.example.com</option>. You can use a host name, fully qualified domain name, or numeric network address.</para>
+               <para>View records related to a certain remote host name with <command>ausearch</command><option>-hn <replaceable>HOSTNAME</replaceable></option>, for example, <command>ausearch</command><option>-hn jupiter.example.com</option>. You can use a host name, fully qualified domain name, or numeric network address.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by key field</term>
             <listitem>
-               <para>View records that contain a certain key assigned in the audit rule set to identify events of a particular type. Use the <command>ausearch</command>
-                  <option>-k <replaceable>KEY_FIELD</replaceable>
-                  </option>, for example, <command>ausearch</command>
-                  <option>-k CFG_etc</option> to display any records containing the <literal>CFG_etc</literal> key.</para>
+               <para>View records that contain a certain key assigned in the audit rule set to identify events of a particular type. Use the <command>ausearch</command><option>-k <replaceable>KEY_FIELD</replaceable></option>, for example, <command>ausearch</command><option>-k CFG_etc</option> to display any records containing the <literal>CFG_etc</literal> key.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Search by word</term>
             <listitem>
-               <para>View records that contain a certain string assigned in the audit rule set to identify events of a particular type. The whole string is matched on file name, host name, and terminal. Use the <command>ausearch</command>
-                  <option>-w <replaceable>WORD</replaceable>
-                  </option>.</para>
+               <para>View records that contain a certain string assigned in the audit rule set to identify events of a particular type. The whole string is matched on file name, host name, and terminal. Use the <command>ausearch</command><option>-w <replaceable>WORD</replaceable></option>.</para>
                <remark>jsegitz 2014-07-23: also matches SELinux context</remark>
             </listitem>
          </varlistentry>
@@ -1347,8 +1190,7 @@ type=SYSCALL msg=audit(1234874638.599:5207): arch=c000003e syscall=2 success=yes
       <title>Analyzing processes with <command>autrace</command>
       </title>
       <para>Other than monitoring your system using the rules you set up, you can also perform dedicated audits of individual processes using the <command>autrace</command> command. <command>autrace</command> works similarly to the <command>strace</command> command, but gathers slightly different information. The output of <command>autrace</command> is written to <filename>/var/log/audit/audit.log</filename> and does not look any different from the standard audit log entries.</para>
-      <para>When performing an <command>autrace</command> on a process, make sure that any audit rules are purged from the queue to avoid these rules clashing with the ones <command>autrace</command> adds itself. Delete the audit rules with the <command>auditctl</command>
-         <option>-D</option> command. This stops all normal auditing.</para>
+      <para>When performing an <command>autrace</command> on a process, make sure that any audit rules are purged from the queue to avoid these rules clashing with the ones <command>autrace</command> adds itself. Delete the audit rules with the <command>auditctl</command><option>-D</option> command. This stops all normal auditing.</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>auditctl -D</command>
 
 No rules
@@ -1397,10 +1239,10 @@ Syscall Report
          <title>Flow graph—program versus system call relationship</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_mkgraph.png" width="75%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_mkgraph.png" width="100%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1426,10 +1268,10 @@ total  type
          <title>Bar chart—common event types</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_mkbar.png" width="75%"/>
+               <imagedata fileref="media/audit_mkbar.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_mkbar.png" width="100%"/>
+               <imagedata fileref="media/audit_mkbar.png" width="92%"/>
             </imageobject>
          </mediaobject>
       </figure>

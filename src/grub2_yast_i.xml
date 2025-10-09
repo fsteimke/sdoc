@@ -7,10 +7,7 @@
        xml:id="sec-grub2-yast2-config">
    <title>Configuring the boot loader with YaST</title>
    <info/>
-   <para>The easiest way to configure general options of the boot loader in your <phrase role="productname">SUSE Linux Enterprise Server</phrase> system is to use the YaST module. In the <guimenu>YaST Control Center</guimenu>, select <menuchoice>
-         <guimenu>System</guimenu>
-         <guimenu>Boot Loader</guimenu>
-      </menuchoice>. The module shows the current boot loader configuration of your system and allows you to make changes.</para>
+   <para>The easiest way to configure general options of the boot loader in your <phrase role="productname">SUSE Linux Enterprise Server</phrase> system is to use the YaST module. In the <guimenu>YaST Control Center</guimenu>, select <menuchoice><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice>. The module shows the current boot loader configuration of your system and allows you to make changes.</para>
    <para>Use the <guimenu>Boot Code Options</guimenu> tab to view and change settings related to type, location and advanced loader settings. You can choose whether to use GRUB 2 in standard or EFI mode.</para>
    <important>
       <title>EFI systems require GRUB2-EFI</title>
@@ -67,10 +64,10 @@
          <title>Boot code options</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="75%"/>
+               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="75%"/>
+               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="69%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -163,10 +160,10 @@
             <title>Boot loader options</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_bootloader_options.png" width="75%"/>
+                  <imagedata fileref="media/yast2_bootloader_options.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_bootloader_options.png" width="75%"/>
+                  <imagedata fileref="media/yast2_bootloader_options.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -221,10 +218,10 @@
             <title>Kernel parameters</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="75%"/>
+                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="69%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="75%"/>
+                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="69%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -285,8 +282,7 @@
                   <guimenu>Use Serial Console</guimenu>
                </term>
                <listitem>
-                  <para>If your machine is controlled via a serial console, activate this option and specify which COM port to use at which speed. See <command>info grub</command> or <link xlink:href="https://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"/>
-                  </para>
+                  <para>If your machine is controlled via a serial console, activate this option and specify which COM port to use at which speed. See <command>info grub</command> or <link xlink:href="https://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"/></para>
                </listitem>
             </varlistentry>
          </variablelist>

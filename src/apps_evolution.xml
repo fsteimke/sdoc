@@ -12,10 +12,8 @@
          <para>Learn how to manage e-mails, contact information, and calendars with <productname>Evolution</productname>.</para>
       </abstract>
    </info>
-   <para>
-      <productname>Evolution</productname> makes storing, organizing, and retrieving your personal information easy, so you can work and communicate with others more effectively. It is a professional groupware program and an important part of the Internet-connected desktop.</para>
-   <para>
-      <productname>Evolution</productname> helps you work in a group by handling e-mail, contact information, and one or more calendars. It can do that on one or several computers, connected directly or over a network, for one person or for large groups.</para>
+   <para><productname>Evolution</productname> makes storing, organizing, and retrieving your personal information easy, so you can work and communicate with others more effectively. It is a professional groupware program and an important part of the Internet-connected desktop.</para>
+   <para><productname>Evolution</productname> helps you work in a group by handling e-mail, contact information, and one or more calendars. It can do that on one or several computers, connected directly or over a network, for one person or for large groups.</para>
    <para>It also helps you accomplish common daily tasks quickly. For example, you can easily reuse appointment or contact information sent to you by e-mail, or send e-mails to a contact or appointment. If you receive lots of e-mails, you can use advanced features like search folders, which let you save searches as though they were ordinary e-mail folders.</para>
    <para>This chapter introduces you to <productname>Evolution</productname> and helps you get started. For more information, refer to the application help.</para>
    <sect1 xml:id="sec-gnome-evolution-first-start">
@@ -508,10 +506,10 @@
             <productname>Evolution</productname> window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evolution.png" width="100%"/>
+               <imagedata fileref="media/evolution.png" width="92%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evolution.png" width="86%"/>
+               <imagedata fileref="media/evolution.png" width="79%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -608,11 +606,7 @@
             <para>To create a new folder:</para>
             <procedure>
                <step>
-                  <para>Click <menuchoice>
-                        <guimenu>File</guimenu>
-                        <guimenu>New</guimenu>
-                        <guimenu>Mail Folder</guimenu>
-                     </menuchoice>.</para>
+                  <para>Click <menuchoice><guimenu>File</guimenu><guimenu>New</guimenu><guimenu>Mail Folder</guimenu></menuchoice>.</para>
                </step>
                <step>
                   <para>Type in the <guimenu>Folder name</guimenu>.</para>
@@ -705,8 +699,7 @@
             <varlistentry>
                <term>Templates</term>
                <listitem>
-                  <para>
-                     <productname>Evolution</productname> allows you to create and edit message templates that you can use at any time to send mail with the same pattern.</para>
+                  <para><productname>Evolution</productname> allows you to create and edit message templates that you can use at any time to send mail with the same pattern.</para>
                </listitem>
             </varlistentry>
          </variablelist>

@@ -23,22 +23,20 @@
          <para>Update firmware for hardware devices using <emphasis>Linux Vendor Firmware Service</emphasis> (LVFS, <link xlink:href="https://fwupd.org"/>)</para>
       </listitem>
    </itemizedlist>
-   <para>
-      <guimenu>GNOME Software</guimenu> also provides screenshots, ratings, and reviews for software.</para>
+   <para><guimenu>GNOME Software</guimenu> also provides screenshots, ratings, and reviews for software.</para>
    <figure>
       <title>
          <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+            <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+            <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
          </imageobject>
       </mediaobject>
    </figure>
-   <para>
-      <guimenu>GNOME Software</guimenu> has the following differences to other tools provided on <phrase role="productname">SUSE Linux Enterprise Server</phrase>:</para>
+   <para><guimenu>GNOME Software</guimenu> has the following differences to other tools provided on <phrase role="productname">SUSE Linux Enterprise Server</phrase>:</para>
    <itemizedlist>
       <listitem>
          <para>Unlike YaST or Zypper, for installing software packaged as an RPM, <guimenu>GNOME Software</guimenu> is restricted to software that provides AppStream metadata. This includes most desktop applications.</para>

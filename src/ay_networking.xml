@@ -9,8 +9,7 @@
    <info/>
    <sect2 xml:id="CreateProfile-Network-Workflow">
       <title>Configuration Workflow</title>
-      <para>Network configuration is mainly used to connect a single workstation to an Ethernet-based LAN. It is commonly configured before AutoYaST starts, to fetch the profile from a network location. This network configuration is usually done through <command>linuxrc</command>
-      </para>
+      <para>Network configuration is mainly used to connect a single workstation to an Ethernet-based LAN. It is commonly configured before AutoYaST starts, to fetch the profile from a network location. This network configuration is usually done through <command>linuxrc</command></para>
       <note>
          <title>The <command>linuxrc</command> program</title>
          <para>For a detailed description of how <command>linuxrc</command> works and its keywords, see <xref linkend="appendix-linuxrc"/>.</para>
@@ -24,8 +23,7 @@
          <screen>&lt;setup_before_proposal config:type="boolean"&gt;true&lt;/setup_before_proposal&gt;</screen>
          <para>If the configuration is written at the end of installation, it will not be applied until the system is rebooted.</para>
       </note>
-      <para>Network settings and service activation are defined under the <literal>profile</literal>
-         <literal>networking</literal> global resource.</para>
+      <para>Network settings and service activation are defined under the <literal>profile</literal><literal>networking</literal> global resource.</para>
    </sect2>
    <sect2 xml:id="CreateProfile-Network-Resource">
       <title>The Network Resource</title>
@@ -96,24 +94,19 @@
       <para>As shown in the example above, the <literal>&lt;networking&gt;</literal> section can be composed of a few subsections:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <literal>interfaces</literal> describes the configuration of the network interfaces, including their IP addresses, how they are started, etc.</para>
+            <para><literal>interfaces</literal> describes the configuration of the network interfaces, including their IP addresses, how they are started, etc.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>dns</literal> specifies DNS related settings, such as the host name, the list of name servers, etc.</para>
+            <para><literal>dns</literal> specifies DNS related settings, such as the host name, the list of name servers, etc.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>routing</literal> defines the routing rules.</para>
+            <para><literal>routing</literal> defines the routing rules.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>s390-devices</literal> covers z Systems-specific device settings.</para>
+            <para><literal>s390-devices</literal> covers z Systems-specific device settings.</para>
          </listitem>
          <listitem>
-            <para>
-               <literal>net-udev</literal> enumerates the udev rules used to set persistent names.</para>
+            <para><literal>net-udev</literal> enumerates the udev rules used to set persistent names.</para>
          </listitem>
       </itemizedlist>
       <para>Additionally, there are a few elements that allow modification of how the network configuration is applied:</para>
@@ -186,28 +179,22 @@
                <para>Boot protocol used by the interface. Possible values:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>static</literal> for statically assigned addresses. It is required to specify the IP using the <literal>ipaddr</literal> element.</para>
+                     <para><literal>static</literal> for statically assigned addresses. It is required to specify the IP using the <literal>ipaddr</literal> element.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>dhcp4</literal>, <literal>dhcp6</literal> or <literal>dhcp</literal> for setting the IP address with DHCP (IPv4, IPv6 or any).</para>
+                     <para><literal>dhcp4</literal>, <literal>dhcp6</literal> or <literal>dhcp</literal> for setting the IP address with DHCP (IPv4, IPv6 or any).</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>dhcp+autoip</literal> to get the IPv4 configuration from <emphasis>Zeroconf</emphasis> and get IPv6 from DHCP.</para>
+                     <para><literal>dhcp+autoip</literal> to get the IPv4 configuration from <emphasis>Zeroconf</emphasis> and get IPv6 from DHCP.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>autoip</literal> to get the IPv4 configuration from <emphasis>Zeroconf</emphasis>.</para>
+                     <para><literal>autoip</literal> to get the IPv4 configuration from <emphasis>Zeroconf</emphasis>.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>ibft</literal> to get the IP address using the iBFT protocol.</para>
+                     <para><literal>ibft</literal> to get the IP address using the iBFT protocol.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>none</literal> to skip setting an address. This value is used for bridges and bonding ports.</para>
+                     <para><literal>none</literal> to skip setting an address. This value is used for bridges and bonding ports.</para>
                   </listitem>
                </itemizedlist>
                <para>Required.</para>
@@ -302,28 +289,22 @@
                <para>When to bring up an interface. Possible values are:</para>
                <itemizedlist>
                   <listitem>
-                     <para>
-                        <literal>hotplug</literal> when the device is plugged in. Useful for USB network cards, for example.</para>
+                     <para><literal>hotplug</literal> when the device is plugged in. Useful for USB network cards, for example.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>auto</literal> when the system boots. <literal>onboot</literal> is a deprecated alias.</para>
+                     <para><literal>auto</literal> when the system boots. <literal>onboot</literal> is a deprecated alias.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>ifplugd</literal> when the device is managed by the <literal>ifplugd</literal> daemon.</para>
+                     <para><literal>ifplugd</literal> when the device is managed by the <literal>ifplugd</literal> daemon.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>manual</literal> when the device is supposed to be started manually.</para>
+                     <para><literal>manual</literal> when the device is supposed to be started manually.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>nfsroot</literal> when the device is needed to mount the root file system, for example, when <literal>/</literal> is on an NFS volume.</para>
+                     <para><literal>nfsroot</literal> when the device is needed to mount the root file system, for example, when <literal>/</literal> is on an NFS volume.</para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <literal>off</literal> to never start the device.</para>
+                     <para><literal>off</literal> to never start the device.</para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -414,8 +395,7 @@
                <literal>bridge</literal>
             </term>
             <listitem>
-               <para>
-                  <literal>yes</literal> if interface is a bridge.</para>
+               <para><literal>yes</literal> if interface is a bridge.</para>
                <para>Deprecated. It is inferred from other attributes.</para>
             </listitem>
          </varlistentry>
@@ -604,8 +584,7 @@
          <varlistentry>
             <term>rule</term>
             <listitem>
-               <para>
-                  <literal>ATTR{address}</literal> for a MAC-based rule, <literal>KERNELS</literal> for a bus-ID-based rule. (Required.)</para>
+               <para><literal>ATTR{address}</literal> for a MAC-based rule, <literal>KERNELS</literal> for a bus-ID-based rule. (Required.)</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -760,8 +739,7 @@
          <varlistentry>
             <term>type</term>
             <listitem>
-               <para>
-                  <literal>qeth</literal>, <literal>ctc</literal> or <literal>iucv</literal>.</para>
+               <para><literal>qeth</literal>, <literal>ctc</literal> or <literal>iucv</literal>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -775,8 +753,7 @@
             <term>layer2</term>
             <listitem>
                <screen>&lt;layer2 config:type="boolean"&gt;true&lt;/layer2&gt;</screen>
-               <para>boolean; default: <literal>false</literal>
-               </para>
+               <para>boolean; default: <literal>false</literal></para>
             </listitem>
          </varlistentry>
          <varlistentry>

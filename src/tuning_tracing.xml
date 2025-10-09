@@ -7,8 +7,7 @@
          xml:id="cha-tuning-tracing">
    <title>Tracing tools</title>
    <info/>
-   <para>
-      <phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with several tools that help you obtain useful information about your system. You can use the information for different purposes. For example, to debug and find problems in your program, to discover places causing performance drops, or to trace a running process to find out what system resources it uses. Most of the tools are part of the installation media. In certain cases, they need to be installed from the SUSE Software Development Kit, which is a separate download.</para>
+   <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> comes with several tools that help you obtain useful information about your system. You can use the information for different purposes. For example, to debug and find problems in your program, to discover places causing performance drops, or to trace a running process to find out what system resources it uses. Most of the tools are part of the installation media. In certain cases, they need to be installed from the SUSE Software Development Kit, which is a separate download.</para>
    <note>
       <title>Tracing and impact on performance</title>
       <para>While a running process is being monitored for system or library calls, the performance of the process is heavily reduced. You are advised to use tracing tools only for the time you need to collect the data.</para>
@@ -156,9 +155,7 @@ exit_group(3)                           = ?
    </sect1>
    <sect1 xml:id="sec-tuning-tracing-ltrace">
       <title>Tracing library calls with ltrace</title>
-      <para>
-         <command>ltrace</command> traces dynamic library calls of a process. It is used in a similar way to <command>strace</command>, and most of their parameters have a similar or identical meaning. By default, <command>ltrace</command> uses <filename>/etc/ltrace.conf</filename> or <filename>~/.ltrace.conf</filename> configuration files. You can, however, specify an alternative one with the <option>-F <replaceable>CONFIG_FILE</replaceable>
-         </option> option.</para>
+      <para><command>ltrace</command> traces dynamic library calls of a process. It is used in a similar way to <command>strace</command>, and most of their parameters have a similar or identical meaning. By default, <command>ltrace</command> uses <filename>/etc/ltrace.conf</filename> or <filename>~/.ltrace.conf</filename> configuration files. You can, however, specify an alternative one with the <option>-F <replaceable>CONFIG_FILE</replaceable></option> option.</para>
       <para>In addition to library calls, <command>ltrace</command> with the <option>-S</option> option can trace system calls as well:</para>
       <screen><prompt>&gt;</prompt>ltrace -S -o ltrace_find.txt find /etc -name \
 xorg.conf; more ltrace_find.txt
@@ -188,14 +185,12 @@ strlen("Xresources")                             = 10
 fnmatch("xorg.conf", "Xresources", 0)            = 1
 strlen("xorg.conf.install")                      = 17
 [...]</screen>
-      <para>To display only the symbols included in a specific library, use <option>-l <replaceable>/path/to/library</replaceable>
-         </option>:</para>
+      <para>To display only the symbols included in a specific library, use <option>-l <replaceable>/path/to/library</replaceable></option>:</para>
       <screen><prompt>&gt;</prompt>ltrace -l /lib64/librt.so.1 sleep 1
 clock_gettime(1, 0x7fff4b5c34d0, 0, 0, 0)                  = 0
 clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
 +++ exited (status 0) +++</screen>
-      <para>You can make the output more readable by indenting each nested call by the specified number of space with the <option>-n <replaceable>NUM_OF_SPACES</replaceable>
-         </option>.</para>
+      <para>You can make the output more readable by indenting each nested call by the specified number of space with the <option>-n <replaceable>NUM_OF_SPACES</replaceable></option>.</para>
    </sect1>
    <sect1 xml:id="sec-tuning-tracing-valgrind">
       <title>Debugging and profiling with Valgrind</title>
@@ -203,22 +198,14 @@ clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
       <sect2 xml:id="sec-tuning-tracing-valgrind-install">
          <title>Installation</title>
          <para>Valgrind is not shipped with standard <phrase role="productname">SUSE Linux Enterprise Server</phrase> distribution. To install it on your system, you need to obtain SUSE Software Development Kit, and either install it and run</para>
-         <para>
-            <command>zypper</command>
-            <option>install <replaceable>VALGRIND</replaceable>
-            </option>
-         </para>
+         <para><command>zypper</command><option>install <replaceable>VALGRIND</replaceable></option></para>
          <para>or browse through the SUSE Software Development Kit directory tree, locate the Valgrind package and install it with</para>
-         <para>
-            <command>rpm</command>
-            <option>-i</option> valgrind-<replaceable>VERSION_ARCHITECTURE</replaceable>.rpm</para>
-         <para>The SDK is a module for SUSE Linux Enterprise and is available via an online channel from the SUSE Customer Center. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase>
-            <xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+         <para><command>rpm</command><option>-i</option> valgrind-<replaceable>VERSION_ARCHITECTURE</replaceable>.rpm</para>
+         <para>The SDK is a module for SUSE Linux Enterprise and is available via an online channel from the SUSE Customer Center. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
       </sect2>
       <sect2 xml:id="sec-tuning-tracing-valgrind-supparch">
          <title>Supported architectures</title>
-         <para>
-            <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports Valgrind on the following architectures:</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> supports Valgrind on the following architectures:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
                <para>AMD64/Intel 64</para>
@@ -234,15 +221,9 @@ clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
       <sect2 xml:id="sec-tuning-tracing-valgrind-core">
          <title>General information</title>
          <para>The main advantage of Valgrind is that it works with existing compiled executables. You do not need to recompile or modify your programs to use it. Run Valgrind like this:</para>
-         <para>
-            <command>valgrind</command>
-            <replaceable>VALGRIND_OPTIONS</replaceable> your-prog <replaceable>YOUR-PROGRAM-OPTIONS</replaceable>
-         </para>
-         <para>Valgrind consists of several tools, and each provides specific functionality. Information in this section is general and valid regardless of the used tool. The most important configuration option is <option>--tool</option>. This option tells Valgrind which tool to run. If you omit this option, <systemitem>memcheck</systemitem> is selected by default. For example, to run <command>find ~</command>
-            <option>-name</option> .bashrc with Valgrind's <systemitem>memcheck</systemitem> tools, enter the following in the command line:</para>
-         <para>
-            <command>valgrind</command>
-            <option>--tool</option>=memcheck find ~ -name .bashrc</para>
+         <para><command>valgrind</command><replaceable>VALGRIND_OPTIONS</replaceable> your-prog <replaceable>YOUR-PROGRAM-OPTIONS</replaceable></para>
+         <para>Valgrind consists of several tools, and each provides specific functionality. Information in this section is general and valid regardless of the used tool. The most important configuration option is <option>--tool</option>. This option tells Valgrind which tool to run. If you omit this option, <systemitem>memcheck</systemitem> is selected by default. For example, to run <command>find ~</command><option>-name</option> .bashrc with Valgrind's <systemitem>memcheck</systemitem> tools, enter the following in the command line:</para>
+         <para><command>valgrind</command><option>--tool</option>=memcheck find ~ -name .bashrc</para>
          <para>A list of standard Valgrind tools with a brief description follows:</para>
          <variablelist>
             <varlistentry>
@@ -311,17 +292,14 @@ clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
                <para>The file <filename>.valgrindrc</filename> in the home directory of the user who runs Valgrind.</para>
             </listitem>
             <listitem>
-               <para>The environment variable <literal>$VALGRIND_OPTS</literal>
-               </para>
+               <para>The environment variable <literal>$VALGRIND_OPTS</literal></para>
             </listitem>
             <listitem>
                <para>The file <filename>.valgrindrc</filename> in the current directory where Valgrind is run from.</para>
             </listitem>
          </orderedlist>
          <para>These resources are parsed exactly in this order, while later given options take precedence over earlier processed options. Options specific to a particular Valgrind tool must be prefixed with the tool name and a colon. For example, if you want <systemitem>cachegrind</systemitem> to always write profile data to the <filename>/tmp/cachegrind_<replaceable>PID</replaceable>.log</filename>, add the following line to the <filename>.valgrindrc</filename> file in your home directory:</para>
-         <para>
-            <literal>--cachegrind:cachegrind-out-file=/tmp/cachegrind_%p.log</literal>
-         </para>
+         <para><literal>--cachegrind:cachegrind-out-file=/tmp/cachegrind_%p.log</literal></para>
       </sect2>
       <sect2 xml:id="sec-tuning-tracing-valgrind-howorks">
          <title>How Valgrind works</title>
@@ -361,12 +339,10 @@ clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
          <para>You can make Valgrind send its messages to three different places:</para>
          <orderedlist spacing="normal">
             <listitem>
-               <para>By default, Valgrind sends its messages to the file descriptor 2, which is the standard error output. You can tell Valgrind to send its messages to any other file descriptor with the <option>--log-fd=<replaceable>FILE_DESCRIPTOR_NUMBER</replaceable>
-                  </option> option.</para>
+               <para>By default, Valgrind sends its messages to the file descriptor 2, which is the standard error output. You can tell Valgrind to send its messages to any other file descriptor with the <option>--log-fd=<replaceable>FILE_DESCRIPTOR_NUMBER</replaceable></option> option.</para>
             </listitem>
             <listitem>
-               <para>The second, and a more useful way, is to send Valgrind's messages to a file with <option>--log-file=<replaceable>FILENAME</replaceable>
-                  </option>. This option accepts several variables, for example, <literal>%p</literal> gets replaced with the PID of the currently profiled process. This way you can send messages to different files based on their PID. <literal>%q{env_var}</literal> is replaced with the value of the related <literal>env_var</literal> environment variable.</para>
+               <para>The second, and a more useful way, is to send Valgrind's messages to a file with <option>--log-file=<replaceable>FILENAME</replaceable></option>. This option accepts several variables, for example, <literal>%p</literal> gets replaced with the PID of the currently profiled process. This way you can send messages to different files based on their PID. <literal>%q{env_var}</literal> is replaced with the value of the related <literal>env_var</literal> environment variable.</para>
                <para>The following example checks for possible memory errors during the Apache Web server restart, while following children processes and writing detailed Valgrind's messages to separate files distinguished by the current process PID:</para>
                <screen><prompt>&gt;</prompt>valgrind -v --tool=memcheck --trace-children=yes \
 --log-file=valgrind_pid_%p.log systemctl restart apache2.service</screen>
@@ -381,8 +357,7 @@ valgrind_pid_11862.log
 valgrind_pid_11863.log</screen>
             </listitem>
             <listitem>
-               <para>You may also prefer to send the Valgrind's messages over the network. You need to specify the <literal>aa.bb.cc.dd</literal> IP address and <literal>port_num</literal> port number of the network socket with the <option>--log-socket=<replaceable>AA.BB.CC.DD:PORT_NUM</replaceable>
-                  </option> option. If you omit the port number, 1500 is used.</para>
+               <para>You may also prefer to send the Valgrind's messages over the network. You need to specify the <literal>aa.bb.cc.dd</literal> IP address and <literal>port_num</literal> port number of the network socket with the <option>--log-socket=<replaceable>AA.BB.CC.DD:PORT_NUM</replaceable></option> option. If you omit the port number, 1500 is used.</para>
                <para>It is useless to send Valgrind's messages to a network socket if no application is capable of receiving them on the remote machine. That is why <command>valgrind-listener</command>, a simple listener, is shipped together with Valgrind. It accepts connections on the specified port and copies everything it receives to the standard output.</para>
             </listitem>
          </orderedlist>

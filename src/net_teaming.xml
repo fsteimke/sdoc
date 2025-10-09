@@ -106,8 +106,7 @@
                <entry>yes</entry>
             </row>
             <row>
-               <entry namest="c1" nameend="c3">Source: <link xlink:href="https://libteam.org/files/teamdev.pp.pdf"/>
-               </entry>
+               <entry namest="c1" nameend="c3">Source: <link xlink:href="https://libteam.org/files/teamdev.pp.pdf"/></entry>
             </row>
          </tbody>
       </tgroup>
@@ -122,8 +121,7 @@
          <para>Failover from one network device to another in case one of the devices should fail.</para>
       </listitem>
    </itemizedlist>
-   <para>
-      <remark>toms 2016-06-21: FATE#320947 for Teaming in/with YaST</remark> Currently, there is no YaST module to support creating a teaming device. You need to configure Network Teaming manually. The general procedure is shown below which can be applied for all your Network Teaming configurations:</para>
+   <para><remark>toms 2016-06-21: FATE#320947 for Teaming in/with YaST</remark> Currently, there is no YaST module to support creating a teaming device. You need to configure Network Teaming manually. The general procedure is shown below which can be applied for all your Network Teaming configurations:</para>
    <procedure xml:id="pro-team-general">
       <title>General procedure</title>
       <step>
@@ -285,14 +283,10 @@ TEAM_LW_ETHTOOL_DELAY_DOWN="10" <coref linkend="co-team-failover-ethtool-delay"/
       <para>The following use case creates two static VLANs on top of a team device:</para>
       <itemizedlist>
          <listitem>
-            <para>
-               <systemitem class="other" otherclass="device">vlan0</systemitem>, bound to the IP address <systemitem class="ipaddress">192.168.10.1</systemitem>
-            </para>
+            <para><systemitem class="other" otherclass="device">vlan0</systemitem>, bound to the IP address <systemitem class="ipaddress">192.168.10.1</systemitem></para>
          </listitem>
          <listitem>
-            <para>
-               <systemitem class="other" otherclass="device">vlan1</systemitem>, bound to the IP address <systemitem class="ipaddress">192.168.20.1</systemitem>
-            </para>
+            <para><systemitem class="other" otherclass="device">vlan1</systemitem>, bound to the IP address <systemitem class="ipaddress">192.168.20.1</systemitem></para>
          </listitem>
       </itemizedlist>
       <para>Proceed as follows:</para>
@@ -329,8 +323,7 @@ VLAN='yes'</screen>
                   <para>Contains the real interface to use for the VLAN interface, here our team device (<systemitem>team0</systemitem>).</para>
                </callout>
                <callout arearefs="co-team-vlan-vlan-id">
-                  <para>Specifies a unique ID for the VLAN. Preferably, the file name and the <varname>VLAN_ID</varname> corresponds to the name <filename>ifcfg-vlan<replaceable>VLAN_ID</replaceable>
-                     </filename>. In our case <varname>VLAN_ID</varname> is <literal>0</literal> which leads to the file name <filename>ifcfg-vlan0</filename>.</para>
+                  <para>Specifies a unique ID for the VLAN. Preferably, the file name and the <varname>VLAN_ID</varname> corresponds to the name <filename>ifcfg-vlan<replaceable>VLAN_ID</replaceable></filename>. In our case <varname>VLAN_ID</varname> is <literal>0</literal> which leads to the file name <filename>ifcfg-vlan0</filename>.</para>
                </callout>
                <!--<callout arearefs="co-team-vlan">
       <para>
@@ -343,12 +336,10 @@ VLAN='yes'</screen>
             <para>Copy the file <filename>/etc/sysconfig/network/ifcfg-vlan0</filename> to <filename>/etc/sysconfig/network/ifcfg-vlan1</filename> and change the following values:</para>
             <itemizedlist>
                <listitem>
-                  <para>
-                     <varname>IPADDR</varname> from <systemitem class="ipaddress">192.168.10.1/24</systemitem> to <systemitem class="ipaddress">192.168.20.1/24</systemitem>.</para>
+                  <para><varname>IPADDR</varname> from <systemitem class="ipaddress">192.168.10.1/24</systemitem> to <systemitem class="ipaddress">192.168.20.1/24</systemitem>.</para>
                </listitem>
                <listitem>
-                  <para>
-                     <varname>VLAN_ID</varname> from <literal>0</literal> to <literal>1</literal>.</para>
+                  <para><varname>VLAN_ID</varname> from <literal>0</literal> to <literal>1</literal>.</para>
                </listitem>
             </itemizedlist>
          </step>

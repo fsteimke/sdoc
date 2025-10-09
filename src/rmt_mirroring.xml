@@ -13,13 +13,10 @@
    <note>
       <title>Change the default location of the mirrored repositories</title>
       <para>To change the default location of the mirrored repositories, point the <filename>/usr/share/rmt/public/repo</filename> symbolic link to the desired directory. This can be done using the command:</para>
-      <para>
-         <command>ln -sfn <replaceable>TARGET</replaceable> /usr/share/rmt/public/repo</command>
-      </para>
+      <para><command>ln -sfn <replaceable>TARGET</replaceable> /usr/share/rmt/public/repo</command></para>
       <para>(Replace <literal>TARGET</literal> with the desired destination). Make sure that the target has read and write permissions for the <literal>rmt</literal> user and <literal>nginx</literal> group.</para>
    </note>
-   <para>When enabled repositories are fully mirrored, you can register your client systems against RMT by running <command>SUSEConnect --url https://<replaceable>RMT_HOSTNAME</replaceable>
-      </command> on the client machine. After successful registration, the repositories from the RMT server are used by Zypper on the client machine.</para>
+   <para>When enabled repositories are fully mirrored, you can register your client systems against RMT by running <command>SUSEConnect --url https://<replaceable>RMT_HOSTNAME</replaceable></command> on the client machine. After successful registration, the repositories from the RMT server are used by Zypper on the client machine.</para>
    <important>
       <title>SUSE Linux Enterprise Server 11 clients</title>
       <para>RMT does not support clients with SUSE Linux Enterprise Server versions 11 and older.</para>
@@ -42,14 +39,7 @@
             <para>The credentials are displayed in the top right corner.</para>
          </step>
          <step>
-            <para>To see the password, click the <inlinemediaobject>
-                  <imageobject outputformat="print">
-                     <imagedata fileref="media/scc_eye_icon.png" width="3mm"/>
-                  </imageobject>
-                  <imageobject outputformat="screen">
-                     <imagedata fileref="media/scc_eye_icon.png" width="4mm"/>
-                  </imageobject>
-               </inlinemediaobject> icon.</para>
+            <para>To see the password, click the <inlinemediaobject><imageobject outputformat="print"><imagedata fileref="media/scc_eye_icon.png" width="3mm"/></imageobject><imageobject outputformat="screen"><imagedata fileref="media/scc_eye_icon.png" width="4mm"/></imageobject></inlinemediaobject> icon.</para>
          </step>
       </procedure>
       <para>The obtained credentials should be set with the YaST RMT Server Configuration module or added directly to the <filename>/etc/rmt.conf</filename> file. For more information about the <filename>/etc/rmt.conf</filename> file, see <xref linkend="sec-rmt-config-rmtconf"/>.</para>
@@ -89,9 +79,7 @@ Jun 22 04:22:34 d31 systemd[1]: Started RMT Mirror timer.</screen>
       <para>You can enable or disable the mirroring of repositories individually or by product. You can specify one or more repositories or products at once. When repositories are enabled, their packages are downloaded and updated during the mirroring process. To enable or disable mirroring of repositories, you either need the product string or ID, or the repository name or ID. Enabling or disabling a product is desired, because this automatically enables or disables all repositories associated with the product.</para>
       <sect2 xml:id="sec-rmt-mirroring-enable-disable-product">
          <title>Using products</title>
-         <para>To enable or disable all repositories of a product, use the <command>rmt-cli products enable <replaceable>ID</replaceable>
-            </command> and <command>rmt-cli products disable <replaceable>ID</replaceable>
-            </command> commands. To retrieve an ID for an enabled product, use the <command>rmt-cli products list</command> command. To get the ID of a disabled product that is still available, run the <command>rmt-cli products list --all</command> command.</para>
+         <para>To enable or disable all repositories of a product, use the <command>rmt-cli products enable <replaceable>ID</replaceable></command> and <command>rmt-cli products disable <replaceable>ID</replaceable></command> commands. To retrieve an ID for an enabled product, use the <command>rmt-cli products list</command> command. To get the ID of a disabled product that is still available, run the <command>rmt-cli products list --all</command> command.</para>
          <para>Example:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>rmt-cli products list --all</command>
 +------+----------------------+---------+--------+--------------+---------------
@@ -153,9 +141,7 @@ Enabling SUSE Linux Enterprise Server 12 x86_64:
       </sect2>
       <sect2 xml:id="sec-rmt-mirroring-enable-disable-repository">
          <title>Using repositories</title>
-         <para>To enable or disable mirroring of specific repositories, use the <command>rmt-cli repos enable <replaceable>ID</replaceable>
-            </command> and <command>rmt-cli repos disable <replaceable>ID</replaceable>
-            </command> commands. To retrieve an ID for an enabled repository, use the <command>rmt-cli repos list</command>command. If you need to get the ID of a disabled but accessible repository, execute the command <command>rmt-cli repos list --all</command>.</para>
+         <para>To enable or disable mirroring of specific repositories, use the <command>rmt-cli repos enable <replaceable>ID</replaceable></command> and <command>rmt-cli repos disable <replaceable>ID</replaceable></command> commands. To retrieve an ID for an enabled repository, use the <command>rmt-cli repos list</command>command. If you need to get the ID of a disabled but accessible repository, execute the command <command>rmt-cli repos list --all</command>.</para>
          <para>Example:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>rmt-cli repos list --all</command>
 +--------+-------------------------+-------------------------------------------+

@@ -14,9 +14,7 @@
    taroth 2019-07-31: CAVE - same section content is used in
    deployment_prep_x86_choose.xml
    -->
-      <para>
-         <phrase role="productname">SUSE Linux Enterprise Server</phrase> is normally installed as an independent operating system. With virtualization it is also possible to run multiple instances of SUSE Linux Enterprise Server on the same hardware. The installation of the VM Host Server is performed like a typical installation with some additional packages. The installation of virtual guests is described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase>
-         <xref linkend="cha-kvm-inst" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> is normally installed as an independent operating system. With virtualization it is also possible to run multiple instances of SUSE Linux Enterprise Server on the same hardware. The installation of the VM Host Server is performed like a typical installation with some additional packages. The installation of virtual guests is described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-kvm-inst" xrefstyle="%label &#34;%c&#34;"/>.</para>
    </sect2>
    <sect2 xml:id="sec-aarch64-prep-considerations-target">
       <title>Installation target</title>

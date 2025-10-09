@@ -77,13 +77,7 @@
    <!-- ================================================================== -->
    <sect1 xml:id="sec-dns-install">
       <title>Installation</title>
-      <para>To install a DNS server, start YaST and select <menuchoice>
-            <guimenu>Software</guimenu>
-            <guimenu>Software Management</guimenu>
-         </menuchoice>. Choose <menuchoice>
-            <guimenu>View</guimenu>
-            <guimenu>Patterns</guimenu>
-         </menuchoice> and select <guimenu>DHCP and DNS Server</guimenu>. Confirm the installation of the dependent packages to finish the installation process.</para>
+      <para>To install a DNS server, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice>. Choose <menuchoice><guimenu>View</guimenu><guimenu>Patterns</guimenu></menuchoice> and select <guimenu>DHCP and DNS Server</guimenu>. Confirm the installation of the dependent packages to finish the installation process.</para>
       <para>Alternatively use the following command on the command line:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command> zypper in -t pattern dhcp_dns_server</screen>
    </sect1>
@@ -101,32 +95,22 @@
                <para><!-- 2014-04-24, ke: bnc#875014: asking for clarification --><!-- ATM, it is rather generic --><!-- 2014-05-13, ke: Thus far (beta6), it is still somehow open... --> When starting the module for the first time, the <guimenu>Forwarder Settings</guimenu> dialog, shown in <xref linkend="fig-yast2-dnsinst-forwarders"/>, opens. The <guimenu>Local DNS Resolution Policy</guimenu> allows to set the following options:</para>
                <itemizedlist mark="bullet" spacing="normal">
                   <listitem>
-                     <para>
-                        <guimenu>Merging forwarders is disabled</guimenu>
-                        <!-- (= disable DNS configuration updates via netconfig by setting
-             NETCONFIG_DNS_POLICY='') -->
-                     </para>
+                     <para><guimenu>Merging forwarders is disabled</guimenu><!-- (= disable DNS configuration updates via netconfig by setting
+             NETCONFIG_DNS_POLICY='') --></para>
                   </listitem>
                   <listitem>
-                     <para>
-                        <guimenu>Automatic merging</guimenu>
-                        <!-- (= enable automatic DNS configuration updates via netconfig
+                     <para><guimenu>Automatic merging</guimenu><!-- (= enable automatic DNS configuration updates via netconfig
              by setting NETCONFIG_DNS_POLICY='auto'; behavior depends on
              nw in use or not;
              netconfig will update resolv.conf with info (forwarder
              list) provided by dhcp/ppp)
-        -->
-                     </para>
+        --></para>
                   </listitem>
                   <listitem><!-- FIXME --><!-- bnc#875014: 'static' is invalid -->
-                     <para>
-                        <guimenu>Merging forwarders is enabled</guimenu>
-                        <!-- (NETCONFIG_DNS_POLICY='static') -->
-                     </para>
+                     <para><guimenu>Merging forwarders is enabled</guimenu><!-- (NETCONFIG_DNS_POLICY='static') --></para>
                   </listitem>
                   <listitem>
-                     <para><!-- (NETCONFIG_DNS_POLICY='STATIC').-->
-                        <guimenu>Custom configuration</guimenu>—If <guimenu>Custom configuration</guimenu> is selected, <guimenu>Custom policy</guimenu> can be specified; by default (with <guimenu>Automatic merging</guimenu> selected), <guimenu>Custom policy</guimenu> is set to <literal>auto</literal>, but here you can either set interface names or select from the two special policy names <literal>STATIC</literal> and <literal>STATIC_FALLBACK</literal>.</para>
+                     <para><!-- (NETCONFIG_DNS_POLICY='STATIC').--><guimenu>Custom configuration</guimenu>—If <guimenu>Custom configuration</guimenu> is selected, <guimenu>Custom policy</guimenu> can be specified; by default (with <guimenu>Automatic merging</guimenu> selected), <guimenu>Custom policy</guimenu> is set to <literal>auto</literal>, but here you can either set interface names or select from the two special policy names <literal>STATIC</literal> and <literal>STATIC_FALLBACK</literal>.</para>
                   </listitem>
                </itemizedlist>
                <!--
@@ -141,10 +125,10 @@
                   <title>DNS server installation: forwarder settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="75%" fileref="media/yast2_dns_wiz_forw.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dns_wiz_forw.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dns_wiz_forw.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dns_wiz_forw.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -156,10 +140,10 @@
                   <title>DNS server installation: DNS zones</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="72%" fileref="media/yast2_dns_wiz_zone.png"/>
+                        <imagedata width="66%" fileref="media/yast2_dns_wiz_zone.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dns_wiz_zone.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dns_wiz_zone.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -170,10 +154,10 @@
                   <title>DNS server installation: finish wizard</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="72%" fileref="media/yast2_dns_wiz_finish.png"/>
+                        <imagedata width="66%" fileref="media/yast2_dns_wiz_finish.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="75%" fileref="media/yast2_dns_wiz_finish.png"/>
+                        <imagedata width="69%" fileref="media/yast2_dns_wiz_finish.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -233,10 +217,10 @@
                <title>DNS server: logging</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="75%" fileref="media/yast2_dns_def_logging.png"/>
+                     <imagedata width="69%" fileref="media/yast2_dns_def_logging.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="75%" fileref="media/yast2_dns_def_logging.png"/>
+                     <imagedata width="69%" fileref="media/yast2_dns_def_logging.png"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -313,10 +297,10 @@
                <title>DNS server: Zone Editor (Basics)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="65%" fileref="media/yast2_dns_def_ddns.png"/>
+                     <imagedata width="59%" fileref="media/yast2_dns_def_ddns.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="65%" fileref="media/yast2_dns_def_ddns.png"/>
+                     <imagedata width="59%" fileref="media/yast2_dns_def_ddns.png"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -329,10 +313,10 @@
                         <title>DNS server: Zone Editor (NS Records)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="65%" fileref="media/yast2_dns_def_nsrec.png"/>
+                              <imagedata width="59%" fileref="media/yast2_dns_def_nsrec.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="65%" fileref="media/yast2_dns_def_nsrec.png"/>
+                              <imagedata width="59%" fileref="media/yast2_dns_def_nsrec.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -346,10 +330,10 @@
                         <title>DNS server: Zone Editor (MX Records)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="72%" fileref="media/yast2_dns_def_mxrec.png"/>
+                              <imagedata width="66%" fileref="media/yast2_dns_def_mxrec.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="75%" fileref="media/yast2_dns_def_mxrec.png"/>
+                              <imagedata width="69%" fileref="media/yast2_dns_def_mxrec.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -363,10 +347,10 @@
                         <title>DNS server: Zone Editor (SOA)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="75%" fileref="media/yast2_dns_def_soa.png"/>
+                              <imagedata width="69%" fileref="media/yast2_dns_def_soa.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="75%" fileref="media/yast2_dns_def_soa.png"/>
+                              <imagedata width="69%" fileref="media/yast2_dns_def_soa.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -386,11 +370,7 @@
                <para>To add a reverse zone, follow this procedure:</para>
                <procedure>
                   <step>
-                     <para>Start <menuchoice>
-                           <guimenu>YaST</guimenu>
-                           <guimenu>DNS Server</guimenu>
-                           <guimenu>DNS Zones</guimenu>
-                        </menuchoice>.</para>
+                     <para>Start <menuchoice><guimenu>YaST</guimenu><guimenu>DNS Server</guimenu><guimenu>DNS Zones</guimenu></menuchoice>.</para>
                   </step>
                   <step>
                      <para>If you have not added a primary forward zone, add it and <guimenu>Edit</guimenu> it.</para>
@@ -401,10 +381,10 @@
                         <title>Adding a record for a primary zone</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone1.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone1.png" width="64%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone1.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone1.png" width="64%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -415,25 +395,24 @@
                         <title>Adding a reverse zone</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone2.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone2.png" width="64%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone2.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone2.png" width="64%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
                   </step>
                   <step>
-                     <para>
-                        <guimenu>Edit</guimenu> the reverse zone, and in the <guimenu>Records</guimenu> tab, you can see the <guimenu>PTR: Reverse translation</guimenu> record type. Add the corresponding <guimenu>Record Key</guimenu> and <guimenu>Value</guimenu>, then click <guimenu>Add</guimenu> and confirm with <guimenu>OK</guimenu>.</para>
+                     <para><guimenu>Edit</guimenu> the reverse zone, and in the <guimenu>Records</guimenu> tab, you can see the <guimenu>PTR: Reverse translation</guimenu> record type. Add the corresponding <guimenu>Record Key</guimenu> and <guimenu>Value</guimenu>, then click <guimenu>Add</guimenu> and confirm with <guimenu>OK</guimenu>.</para>
                      <figure>
                         <title>Adding a reverse record</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone3.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone3.png" width="64%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone3.png" width="70%"/>
+                              <imagedata fileref="media/yast2_dns_revzone3.png" width="64%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -476,8 +455,7 @@ too easy to do. -->
    <sect1 xml:id="sec-dns-named">
       <title>The /etc/named.conf configuration file</title>
       <para>All the settings for the BIND name server itself are stored in the <filename>/etc/named.conf</filename> file. However, the zone data for the domains to handle (consisting of the host names, IP addresses, and so on) are stored in separate files in the <filename>/var/lib/named</filename> directory. The details of this are described later.</para>
-      <para>
-         <filename>/etc/named.conf</filename> is roughly divided into two areas. One is the <systemitem>options</systemitem> section for general settings and the other consists of <systemitem>zone</systemitem> entries for the individual domains. A <systemitem>logging</systemitem> section and <systemitem>acl</systemitem> (access control list) entries are optional. Comment lines begin with a <literal>#</literal> sign or <literal>//</literal>. A minimal <filename>/etc/named.conf</filename> is shown in <xref linkend="ex-named-mini"/>.</para>
+      <para><filename>/etc/named.conf</filename> is roughly divided into two areas. One is the <systemitem>options</systemitem> section for general settings and the other consists of <systemitem>zone</systemitem> entries for the individual domains. A <systemitem>logging</systemitem> section and <systemitem>acl</systemitem> (access control list) entries are optional. Comment lines begin with a <literal>#</literal> sign or <literal>//</literal>. A minimal <filename>/etc/named.conf</filename> is shown in <xref linkend="ex-named-mini"/>.</para>
       <example xml:id="ex-named-mini">
          <title>A basic /etc/named.conf</title>
          <screen>options {
@@ -579,8 +557,7 @@ zone "." in {
             <varlistentry>
                <term>notify no;</term>
                <listitem>
-                  <para>
-                     <option>no</option> prevents other name servers from being informed when changes are made to the zone data or when the name server is restarted.</para>
+                  <para><option>no</option> prevents other name servers from being informed when changes are made to the zone data or when the name server is restarted.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -731,8 +708,7 @@ dns6         IN A6  0    2002:c0a8:174::</screen>
       </example>
       <calloutlist>
          <callout arearefs="welt-zone-ttl">
-            <para>
-               <systemitem>$TTL</systemitem> defines the default time to live that should apply to all the entries in this file. In this example, entries are valid for a period of two days (<literal>2 D</literal>).</para>
+            <para><systemitem>$TTL</systemitem> defines the default time to live that should apply to all the entries in this file. In this example, entries are valid for a period of two days (<literal>2 D</literal>).</para>
          </callout>
          <callout arearefs="welt-zone-soa-start">
             <para>This is where the SOA (start of authority) control record begins:</para>

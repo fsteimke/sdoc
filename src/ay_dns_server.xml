@@ -9,7 +9,7 @@
    <info/>
    <para>The Bind DNS server can be configured by adding a <literal>dns-server</literal> resource. The three more straightforward properties of that resource can have a value of 1 to enable them or 0 to disable.</para>
    <!-- Dropped properties: allowed_interfaces -->
-   <informaltable>
+   <informaltable colsep="1" rowsep="1" frame="all">
       <tgroup cols="3">
          <thead>
             <row>
@@ -47,7 +47,7 @@
 &lt;/dns-server&gt; </screen>
    </example>
    <para>In addition to those basic settings, there are three properties of type list that can be used to fine-tune the service configuration.</para>
-   <informaltable>
+   <informaltable colsep="1" rowsep="1" frame="all">
       <tgroup cols="2">
          <thead>
             <row>

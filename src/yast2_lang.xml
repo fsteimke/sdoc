@@ -64,10 +64,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_language.png" width="69%"/>
+                  <imagedata fileref="media/yast2_language.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_language.png" width="69%"/>
+                  <imagedata fileref="media/yast2_language.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -147,10 +147,10 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_timezone.png" width="69%"/>
+               <imagedata fileref="media/yast2_timezone.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_timezone.png" width="69%"/>
+               <imagedata fileref="media/yast2_timezone.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -195,10 +195,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
+                     <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
                   </imageobject>
                   <imageobject role="pdf">
-                     <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
+                     <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

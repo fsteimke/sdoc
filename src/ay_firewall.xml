@@ -7,7 +7,7 @@
        xml:id="CreateProfile-firewall">
    <title>Firewall configuration</title>
    <info/>
-   <para>SuSEfirewall2 has been replaced by <systemitem class="daemon">firewalld</systemitem> starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA. Profiles using SuSEfirewall2 properties will be translated to <systemitem class="daemon">firewalld</systemitem> profiles. However, not all profile properties can be converted. For details about <systemitem class="daemon">firewalld</systemitem>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>SuSEfirewall2 has been replaced by <systemitem class="daemon">firewalld</systemitem> starting with <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15 GA. Profiles using SuSEfirewall2 properties will be translated to <systemitem class="daemon">firewalld</systemitem> profiles. However, not all profile properties can be converted. For details about <systemitem class="daemon">firewalld</systemitem>, refer to <xref linkend="sec-security-firewall-firewalld"/>.</para>
    <important>
       <title>Limited backward compatibility with SuSEFirewall2 based profiles</title>
       <para>The use of SuSEfirewall2-based profiles will be only partially supported as many options are not valid in <systemitem class="daemon">firewalld</systemitem>, and some missing configuration could affect your network security.</para>
@@ -15,7 +15,7 @@
    <sect2 xml:id="CreateProfile-firewall-general">
       <title>General firewall configuration</title>
       <para>In <systemitem class="daemon">firewalld</systemitem>, the general configuration only exposes a few properties, and most of the configuration is done by zones.</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="3">
             <thead>
                <row>
@@ -72,7 +72,7 @@
    <sect2 xml:id="CreateProfile-firewall-zones">
       <title>Firewall zones configuration</title>
       <para>The configuration of <systemitem class="daemon">firewalld</systemitem> is based on the existence of several zones, which define the trust level for a connection, interface, or source address. The behavior of each zone can be tweaked in several ways although not all the properties are exposed yet.</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="3">
             <thead>
                <row>

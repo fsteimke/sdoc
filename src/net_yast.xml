@@ -24,10 +24,10 @@
          <title>Configuring network settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_net_icard.png" width="69%"/>
+               <imagedata fileref="media/yast2_net_icard.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_net_icard.png" width="69%"/>
+               <imagedata fileref="media/yast2_net_icard.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -207,7 +207,7 @@
          <sect4 xml:id="sec-network-yast-change-pciemulti"><!-- fate#316090: -->
             <title>PCIe multifunction devices</title>
             <para>Multifunction devices that support LAN, iSCSI, and FCoE are supported. The YaST FCoE client (<command>yast2 fcoe-client</command>) shows the private flags in additional columns to allow the user to select the device meant for FCoE. The YaST network module (<command>yast2 lan</command>) excludes <quote>storage only devices</quote> for network configuration.</para>
-            <para>For more information about FCoE, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-fcoe-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more information about FCoE, see <xref linkend="sec-fcoe-yast"/>.</para>
          </sect4>
          <sect4 xml:id="sec-network-yast-change-infiniband"><!-- fate#315501 -->
             <title>Infiniband configuration for IP-over-InfiniBand (IPoIB)</title>
@@ -226,7 +226,7 @@
          </sect4>
          <sect4 xml:id="sec-network-yast-change-fire">
             <title>Configuring the firewall</title>
-            <para>Without having to perform the detailed firewall setup as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/>, you can determine the basic firewall configuration for your device as part of the device setup. Proceed as follows:</para>
+            <para>Without having to perform the detailed firewall setup as described in <xref linkend="sec-security-firewall-firewalld"/>, you can determine the basic firewall configuration for your device as part of the device setup. Proceed as follows:</para>
             <procedure>
                <step>
                   <para>Open the YaST <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice> module. In the <guimenu>Overview</guimenu> tab, select a card from the list of detected cards and click <guimenu>Edit</guimenu>.</para>

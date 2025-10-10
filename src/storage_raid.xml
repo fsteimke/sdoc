@@ -42,7 +42,7 @@
          <para>RAID 6 is an extension of RAID 5 that allows for additional fault tolerance by using a second independent distributed parity scheme (dual parity). Even if two of the hard disks fail during the data recovery process, the system continues to be operational, with no data loss.</para>
          <para>RAID 6 provides for extremely high data fault tolerance by sustaining multiple simultaneous drive failures. It handles the loss of any two devices without data loss. Accordingly, it requires N+2 drives to store N drives worth of data. It requires a minimum of four devices.</para>
          <para>The performance for RAID 6 is slightly lower but comparable to RAID 5 in normal mode and single disk failure mode. It is very slow in dual disk failure mode. A RAID 6 configuration needs a considerable amount of CPU time and memory for write operations.</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Comparison of RAID 5 and RAID 6</title>
             <tgroup cols="3">
                <colspec colnum="1" colname="1" colwidth="3334*"/>
@@ -93,7 +93,7 @@
             <para>Launch YaST and open the <guimenu>Partitioner</guimenu>.</para>
          </step>
          <step>
-            <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+            <para>If necessary, create partitions that should be used with your RAID configuration. Do not format them and set the partition type to <guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not necessary to change their partition type—YaST will automatically do so. Refer to <xref linkend="sec-expert-partitioner"/> for details.</para>
             <para>It is strongly recommended to use partitions stored on different hard disks to decrease the risk of losing data if one is defective (RAID 1 and 5) and to optimize the performance of RAID 0.</para>
             <para>For RAID 0 at least two partitions are needed. RAID 1 requires exactly two partitions, while at least three partitions are required for RAID 5. A RAID 6 setup requires at least four partitions. It is recommended to use only partitions of the same size because each segment can contribute only the same amount of space as the smallest sized partition.</para>
          </step>
@@ -111,10 +111,10 @@
                <title>Example RAID 5 configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_raid3_a.png" width="73%"/>
+                     <imagedata fileref="media/yast2_raid3_a.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_raid3_a.png" width="92%"/>
+                     <imagedata fileref="media/yast2_raid3_a.png" width="100%"/>
                   </imageobject>
                </mediaobject>
             </figure>

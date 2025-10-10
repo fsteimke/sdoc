@@ -69,7 +69,7 @@
             <para>For Intel CPUs, the kernel parameter <literal>intel_iommu=on</literal> needs to be provided on the kernel command line. For more information, see <link xlink:href="https://github.com/torvalds/linux/blob/master/Documentation/admin-guide/kernel-parameters.txt#L1951"/>.</para>
          </listitem>
          <listitem>
-            <para>The VFIO infrastructure needs to be available. This can be achieved by loading the kernel module <systemitem class="resource">vfio_pci</systemitem>. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-advanced-kernel-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The VFIO infrastructure needs to be available. This can be achieved by loading the kernel module <systemitem class="resource">vfio_pci</systemitem>. For more information, see <xref linkend="sec-boot-systemd-advanced-kernel-modules"/>.</para>
          </listitem>
       </itemizedlist>
    </important>

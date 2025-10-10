@@ -371,7 +371,7 @@ apparmor="DENIED" operation="file_mmap" parent=2692 \
 profile="/usr/sbin/httpd2-prefork//HANDLING_UNTRUSTED_INPUT" \
 name="/var/log/apache2/access_log-20140116" pid=28730 comm="httpd2-prefork" \
 requested_mask="::r" denied_mask="::r" fsuid=30 ouid=0</screen>
-                        <para>If you are not running the audit daemon, the AppArmor events are logged directly to <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>):</para>
+                        <para>If you are not running the audit daemon, the AppArmor events are logged directly to <systemitem class="daemon">systemd</systemitem> journal (see <xref linkend="cha-journalctl"/>):</para>
                         <screen>Sep 13 13:20:30 K23 kernel: audit(1189682430.672:20810): \
 apparmor="DENIED" operation="file_mmap" parent=2692 \
 profile="/usr/sbin/httpd2-prefork//HANDLING_UNTRUSTED_INPUT" \
@@ -630,7 +630,7 @@ Adding #include &lt;abstractions/apache2-common&gt; to profile.
          </sect3>
          <sect3 xml:id="sec-apparmor-commandline-profiling-summary-logprof">
             <title>aa-logprof—scanning the system log</title>
-            <para><command>aa-logprof</command> is an interactive tool used to review the complain and enforce mode events found in the log entries in <filename>/var/log/audit/audit.log</filename>, or directly in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>), and generate new entries in AppArmor security profiles.</para>
+            <para><command>aa-logprof</command> is an interactive tool used to review the complain and enforce mode events found in the log entries in <filename>/var/log/audit/audit.log</filename>, or directly in the <systemitem class="daemon">systemd</systemitem> journal (see <xref linkend="cha-journalctl"/>), and generate new entries in AppArmor security profiles.</para>
             <para>When you run <command>aa-logprof</command>, it begins to scan the log files produced in complain and enforce mode and, if there are new security events that are not covered by the existing profile set, it gives suggestions for modifying the profile. <command>aa-logprof</command> uses this information to observe program behavior.</para>
             <para>If a confined program forks and executes another program, <command>aa-logprof</command> sees this and asks the user which execution mode should be used when launching the child process. The execution modes <emphasis>ix</emphasis>, <emphasis>px</emphasis>, <emphasis>Px</emphasis>, <emphasis>ux</emphasis>, <emphasis>Ux</emphasis>, <emphasis>cx</emphasis>, <emphasis>Cx</emphasis>, and named profiles, are options for starting the child process. If a separate profile exists for the child process, the default selection is <emphasis>Px</emphasis>. If one does not exist, the profile defaults to <emphasis>ix</emphasis>. Child processes with separate profiles have <command>aa-autodep</command> run on them and are loaded into AppArmor, if it is running.</para>
             <para>When <command>aa-logprof</command> exits, profiles are updated with the changes. If AppArmor is active, the updated profiles are reloaded and, if any processes that generated security events are still running in the null-XXXX profiles (unique profiles temporarily created in complain mode), those processes are set to run under their proper profiles.</para>
@@ -827,10 +827,10 @@ New Mode: r
                </title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/aa-notify.png" width="69%"/>
+                     <imagedata fileref="media/aa-notify.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/aa-notify.png" width="36%"/>
+                     <imagedata fileref="media/aa-notify.png" width="40%"/>
                   </imageobject>
                </mediaobject>
             </figure>

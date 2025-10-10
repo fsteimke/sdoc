@@ -24,10 +24,10 @@
          <title>Create a new XCA database</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/sec-xca-2.png" width="73%"/>
+               <imagedata fileref="media/sec-xca-2.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/sec-xca-2.png" width="73%"/>
+               <imagedata fileref="media/sec-xca-2.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>

@@ -215,10 +215,10 @@ enabled</screen>
          <title>YaST systemd journal</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_journal.png" width="73%"/>
+               <imagedata fileref="media/yast2_journal.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_journal.png" width="78%"/>
+               <imagedata fileref="media/yast2_journal.png" width="85%"/>
             </imageobject>
          </mediaobject>
       </figure>

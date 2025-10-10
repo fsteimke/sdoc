@@ -46,7 +46,10 @@
          <tip>
             <para>Bash looks for its configuration files in a specific order depending on the type of shell where it is run. Find more details on the Bash man page (<command>man 1 bash</command>). Search for the headline <literal>INVOCATION</literal>.</para>
          </tip>
-         <table xml:id="tab-adm-shell-config-loginshells">
+         <table xml:id="tab-adm-shell-config-loginshells"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Bash configuration files for login shells</title>
             <tgroup cols="2">
                <thead>
@@ -76,7 +79,10 @@
             </tgroup>
          </table>
          <para>The login shell also sources the configuration files listed under <xref linkend="tab-adm-shell-configs-nonloginshells"/>.</para>
-         <table xml:id="tab-adm-shell-configs-nonloginshells">
+         <table xml:id="tab-adm-shell-configs-nonloginshells"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Bash configuration files for non-login shells</title>
             <tgroup cols="2">
                <tbody>
@@ -96,7 +102,7 @@
             </tgroup>
          </table>
          <para>Additionally, Bash uses multiple files:</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Special files for Bash</title>
             <tgroup cols="2">
                <thead>
@@ -302,7 +308,7 @@ echo "Hello World" <co xml:id="co-adm-shell-echo"/></screen>
       <para>To remove a variable, use <command>unset</command>:</para>
       <screen><prompt>&gt;</prompt>unset NAME</screen>
       <para>The following table contains common environment variables that you can use in you shell scripts:</para>
-      <table xml:id="tab-adm-envars">
+      <table xml:id="tab-adm-envars" colsep="1" rowsep="1" frame="all">
          <title>Useful environment variables</title>
          <tgroup cols="2">
             <tbody>

@@ -9,7 +9,7 @@
    <info/>
    <para>The <literal>dhcp-server</literal> resource makes it possible to configure all the settings of a DHCP server by means of the six following properties.</para>
    <!-- Dropped properties: allowed_interfaces -->
-   <informaltable>
+   <informaltable colsep="1" rowsep="1" frame="all">
       <tgroup cols="3">
          <thead>
             <row>

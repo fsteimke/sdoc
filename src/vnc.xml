@@ -63,10 +63,10 @@
             <title>Remmina's main window</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina.png" width="46%"/>
+                  <imagedata fileref="media/remmina.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina.png" width="46%"/>
+                  <imagedata fileref="media/remmina.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -79,10 +79,10 @@
             <title>Remote desktop preference</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina_session_details.png" width="73%"/>
+                  <imagedata fileref="media/remmina_session_details.png" width="80%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina_session_details.png" width="73%"/>
+                  <imagedata fileref="media/remmina_session_details.png" width="80%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -137,10 +137,10 @@
                <title>Quick-starting</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
+                     <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
+                     <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -157,10 +157,10 @@
                <title>Remmina viewing remote session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -182,10 +182,10 @@
             <title>Reading path to the profile file</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/remmina_status.png" width="46%"/>
+                  <imagedata fileref="media/remmina_status.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/remmina_status.png" width="46%"/>
+                  <imagedata fileref="media/remmina_status.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -224,10 +224,10 @@
          <title>Remote administration</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/vnc_nosession.png" width="64%"/>
+               <imagedata fileref="media/vnc_nosession.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/vnc_nosession.png" width="64%"/>
+               <imagedata fileref="media/vnc_nosession.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -259,7 +259,7 @@
          <screen><prompt>&gt;</prompt><command>sudo</command> systemctl reload xvnc.socket</screen>
          <important>
             <title>Firewall and VNC ports</title>
-            <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+            <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <xref linkend="cha-security-firewall"/> for instructions.</para>
          </important>
       </sect2>
    </sect1>
@@ -305,10 +305,10 @@
                <title>VNC session settings</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_session.png" width="78%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_session.png" width="78%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -380,10 +380,10 @@
                <title>Joining a persistent VNC session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>

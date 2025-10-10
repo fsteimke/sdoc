@@ -7,7 +7,7 @@
        xml:id="sec-yast-software-instsource">
    <title>Managing software repositories and services</title>
    <info/>
-   <para>To install third-party software, add software repositories to your system. By default, product repositories such as <phrase role="productname">SUSE Linux Enterprise Server</phrase>-DVD <phrase role="productnumber">15 SP7</phrase> and a matching update repository are automatically configured when you register your system. For more information about registration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-scc-registration" xrefstyle="%label &#34;%c&#34;"/> or <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="sec-update-registersystem" xrefstyle="%label &#34;%c&#34;"/>. Depending on the initially selected product, an additional repository containing translations, dictionaries, etc. might also be configured.</para>
+   <para>To install third-party software, add software repositories to your system. By default, product repositories such as <phrase role="productname">SUSE Linux Enterprise Server</phrase>-DVD <phrase role="productnumber">15 SP7</phrase> and a matching update repository are automatically configured when you register your system. For more information about registration, see <xref linkend="sec-yast-install-scc-registration"/> or <xref linkend="sec-update-registersystem"/>. Depending on the initially selected product, an additional repository containing translations, dictionaries, etc. might also be configured.</para>
    <para>To manage repositories, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Repositories</guimenu></menuchoice>. The <guimenu>Configured Software Repositories</guimenu> dialog opens. Here, you can also manage subscriptions to <guimenu>Services</guimenu> by changing the <guimenu>View</guimenu> at the right corner of the dialog to <guimenu>All Services</guimenu>. A Service in this context is a <guimenu>Repository Index Service</guimenu> (RIS) that can offer one or more software repositories. Such a Service can be changed dynamically by its administrator or vendor.</para>
    <para>Each repository provides files describing repository content (package names, versions, etc.). YaST downloads these repository description files to a local cache. To ensure their integrity, software repositories can be signed with the GPG Key of the repository maintainer. Whenever you add a new repository, YaST offers the ability to import its key.</para>
    <warning>
@@ -28,10 +28,10 @@
                <title>Adding a software repository</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_addon_new.png" width="64%"/>
+                     <imagedata fileref="media/yast2_addon_new.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_addon_new.png" width="59%"/>
+                     <imagedata fileref="media/yast2_addon_new.png" width="65%"/>
                   </imageobject>
                </mediaobject>
             </figure>

@@ -310,7 +310,7 @@ You should now review your instance configuration and data:
       </itemizedlist>
       <para>Plan what your 389 Directory Server deployment will look like in the end. This includes the same list, except replace overlays with plug-ins. Once you have assessed your current environment and planned what your 389 Directory Server environment will look like, you can then form a migration plan. We recommended building the 389 Directory Server environment in parallel to your OpenLDAP environment to allow switching between them.</para>
       <para>Migrating from OpenLDAP to 389 Directory Server is a one-way migration. There are enough differences between the two that they cannot interoperate, and there is not a migration path from 389 Directory Server to OpenLDAP. The following table highlights the major similarities and differences.</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="4">
             <thead>
                <row>

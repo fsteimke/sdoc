@@ -238,10 +238,10 @@
          <para>Any Kerberos environment must meet the following requirements to be fully functional:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para>Provide a DNS server for name resolution across your network, so clients and servers can locate each other. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-dns" xrefstyle="%label &#34;%c&#34;"/> for information on DNS setup.</para>
+               <para>Provide a DNS server for name resolution across your network, so clients and servers can locate each other. Refer to <xref linkend="cha-dns"/> for information on DNS setup.</para>
             </listitem>
             <listitem>
-               <para>Provide a time server in your network. Using exact time stamps is crucial to a Kerberos setup, because valid Kerberos tickets must contain correct time stamps. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/> for information on NTP setup.</para>
+               <para>Provide a time server in your network. Using exact time stamps is crucial to a Kerberos setup, because valid Kerberos tickets must contain correct time stamps. Refer to <xref linkend="cha-ntp"/> for information on NTP setup.</para>
             </listitem>
             <listitem>
                <para>Provide a key distribution center (KDC) as the center piece of the Kerberos architecture. It holds the Kerberos database. Use the tightest possible security policy on this machine to prevent any attacks on this machine compromising your entire infrastructure.</para>
@@ -255,16 +255,16 @@
             <title>Kerberos network topology</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/network_kerb.png" width="67%"/>
+                  <imagedata fileref="media/network_kerb.png" width="73%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/network_kerb.svg" width="67%"/>
+                  <imagedata fileref="media/network_kerb.svg" width="73%"/>
                </imageobject>
             </mediaobject>
          </figure>
          <tip>
             <title>Configuring subnet routing</title>
-            <para>For a setup similar to the one in <xref linkend="fig-netw-kerb"/>, configure routing between the two subnets (192.168.1.0/24 and 192.168.2.0/24). Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast-change-route" xrefstyle="%label &#34;%c&#34;"/> for more information on configuring routing with YaST.</para>
+            <para>For a setup similar to the one in <xref linkend="fig-netw-kerb"/>, configure routing between the two subnets (192.168.1.0/24 and 192.168.2.0/24). Refer to <xref linkend="sec-network-yast-change-route"/> for more information on configuring routing with YaST.</para>
          </tip>
       </sect2>
       <sect2 xml:id="sec-security-kerberos-admin-realm">
@@ -306,7 +306,7 @@ group:          files</screen>
          <title>Configuring time synchronization</title>
          <para>To use Kerberos successfully, make sure that all system clocks within your organization are synchronized within a certain range. This is important because Kerberos protects against replayed credentials. An attacker might be able to observe Kerberos credentials on the network and reuse them to attack the server. Kerberos employs several defenses to prevent this. One of them is that it puts time stamps into its tickets. A server receiving a ticket with a time stamp that differs from the current time rejects the ticket.</para>
          <para>Kerberos allows a certain leeway when comparing time stamps. However, computer clocks can be inaccurate in keeping time—it is not unheard of for PC clocks to lose or gain half an hour during a week. For this reason, configure all hosts on the network to synchronize their clocks with a central time source.</para>
-         <para>A simple way to do so is by installing an NTP time server on one machine and having all clients synchronize their clocks with this server. Do this by running an NTP daemon <systemitem class="daemon">chronyd</systemitem> as a client on all these machines. The KDC itself needs to be synchronized to the common time source as well. Because running an NTP daemon on this machine would be a security risk, it is a good idea to do this by running <command>chronyd -q</command> via a cron job. To configure your machine as an NTP client, proceed as outlined in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-ntp-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>A simple way to do so is by installing an NTP time server on one machine and having all clients synchronize their clocks with this server. Do this by running an NTP daemon <systemitem class="daemon">chronyd</systemitem> as a client on all these machines. The KDC itself needs to be synchronized to the common time source as well. Because running an NTP daemon on this machine would be a security risk, it is a good idea to do this by running <command>chronyd -q</command> via a cron job. To configure your machine as an NTP client, proceed as outlined in <xref linkend="sec-ntp-yast"/>.</para>
          <para>A different way to secure the time service and still use the NTP daemon is to attach a hardware reference clock to a dedicated NTP server and an additional hardware reference clock to the KDC.</para>
          <para>It is also possible to adjust the maximum deviation Kerberos allows when checking time stamps. This value (called <emphasis>clock skew</emphasis>) can be set in the <filename>krb5.conf</filename> file as described in <xref linkend="sec-security-kerberos-admin-client-clockskew"/>.</para>
       </sect2>
@@ -574,7 +574,7 @@ kadmin:</screen>
          <para>So far, only user credentials have been discussed. However, Kerberos-compatible services need to authenticate themselves to the client user, too. Therefore, special service principals must be in the Kerberos database for each service offered in the realm. For example, if ldap.example.com offers an LDAP service, you need a service principal, <literal>ldap/ldap.example.com@EXAMPLE.COM</literal>, to authenticate this service to all clients.</para>
          <para>The naming convention for service principals is <literal><replaceable>SERVICE</replaceable>/<replaceable>HOSTNAME</replaceable>@<replaceable>REALM</replaceable></literal>, where <replaceable>HOSTNAME</replaceable> is the host's fully qualified host name.</para>
          <para>Valid service descriptors are:</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="2">
                <thead>
                   <row>

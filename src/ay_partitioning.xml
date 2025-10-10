@@ -943,7 +943,7 @@
                   <imagedata fileref="media/partitioning-keep1.png"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/partitioning-keep1.png" width="69%"/>
+                  <imagedata fileref="media/partitioning-keep1.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>

@@ -23,7 +23,10 @@
          <para>When a processor is in the <literal>C0</literal> state, it is executing instructions. A processor running in any other C-state is idle. The higher the C number, the deeper the CPU sleep mode: more components are shut down to save power. Deeper sleep states can save large amounts of energy. Their downside is that they introduce latency. This means, it takes more time for the CPU to go back to <literal>C0</literal>. Depending on workload (threads waking up, triggering CPU usage and then going back to sleep again for a short period of time) and hardware (for example, interrupt activity of a network device), disabling the deepest sleep states can increase overall performance. For details on how to do so, refer to <xref linkend="sec-tuning-power-tools-cpupower-idle-info"/>.</para>
          <para>Some states also have submodes with different power saving latency levels. Which C-states and submodes are supported depends on the respective processor. However, <literal>C1</literal> is always available.</para>
          <para><xref linkend="tab-tuning-power-cstates"/> gives an overview of the most common C-states.</para>
-         <table xml:id="tab-tuning-power-cstates">
+         <table xml:id="tab-tuning-power-cstates"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>C-states</title>
             <tgroup cols="2">
                <thead>
@@ -419,7 +422,7 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
          <varlistentry>
             <term>Log file information?</term>
             <listitem>
-               <para>Check the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>) for any output regarding the CPUfreq subsystem. Only severe errors are reported there.</para>
+               <para>Check the <systemitem class="daemon">systemd</systemitem> journal (see <xref linkend="cha-journalctl"/>) for any output regarding the CPUfreq subsystem. Only severe errors are reported there.</para>
                <para>If you suspect problems with the CPUfreq subsystem on your machine, you can also enable additional debug output. To do so, either use <command>cpufreq.debug=7</command> as boot parameter or execute the following command as <systemitem class="username">root</systemitem>:</para>
                <screen><prompt role="root">#</prompt>echo 7 &gt; /sys/module/cpufreq/parameters/debug</screen>
                <para>This will cause CPUfreq to log more information to <command>dmesg</command> on state transitions, which is useful for diagnosis. But as this additional output of kernel messages can be rather comprehensive, use it only if you are sure that a problem exists.</para>
@@ -445,10 +448,10 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
          <title>powerTOP in interactive mode</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_ncurses.png" width="69%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_ncurses.png" width="69%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -466,10 +469,10 @@ powerreport-20200108-104431.html
          <title>HTML powerTOP report</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_html.png" width="69%"/>
+               <imagedata fileref="media/powertop_html.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_html.png" width="69%"/>
+               <imagedata fileref="media/powertop_html.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -492,10 +495,10 @@ powerreport-20200108-104431.html
             <para><xref linkend="sec-util-proc-procinfo-sysctl"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-systemd" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-systemd"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-udev" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-udev"/></para>
          </listitem>
       </itemizedlist>
    </sect1>

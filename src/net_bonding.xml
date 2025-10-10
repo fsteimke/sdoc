@@ -79,10 +79,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/bond_configuration.png" width="64%"/>
+                  <imagedata fileref="media/bond_configuration.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/bond_configuration.png" width="59%"/>
+                  <imagedata fileref="media/bond_configuration.png" width="65%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

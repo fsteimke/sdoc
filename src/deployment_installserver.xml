@@ -36,7 +36,7 @@
          </step>
          <step>
             <para>Configure the required repository type. This step relates to the automatic configuration of server services. It is skipped when automatic configuration is deactivated.</para>
-            <para><!--adjust to standard network example--> Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable></literal>. Details of NFS and exports can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para><!--adjust to standard network example--> Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable></literal>. Details of NFS and exports can be found in <xref linkend="cha-nfs"/>.</para>
             <tip>
                <title>Firewall settings</title>
                <para>Make sure that the firewall settings of your server system allow traffic on ports for HTTP, NFS, and FTP. If they currently do not, enable <guimenu>Open Port in Firewall</guimenu> or check <guimenu>Firewall Details</guimenu> first.</para>
@@ -150,7 +150,7 @@ description=NFS Repository</screen>
             <para>Start the OpenSLP daemon with <command>systemctl start slpd</command>.</para>
          </step>
       </procedure>
-      <para>For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-slp" xrefstyle="%label &#34;%c&#34;"/>. For more information about NFS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <xref linkend="cha-slp"/>. For more information about NFS, refer to <xref linkend="cha-nfs"/>.</para>
    </sect1>
    <sect1 xml:id="sec-deployment-instserver-ftp">
       <title>Setting up an FTP repository manually</title>
@@ -202,7 +202,7 @@ description=FTP Repository</screen>
       </procedure>
       <tip>
          <title>Configuring an FTP server with YaST</title>
-         <para>If you prefer to use YaST rather than manually configuring the FTP installation server, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>If you prefer to use YaST rather than manually configuring the FTP installation server, refer to <xref linkend="cha-ftp"/>.</para>
       </tip>
    </sect1>
    <sect1 xml:id="sec-deployment-instserver-http">
@@ -216,7 +216,7 @@ description=FTP Repository</screen>
             <para>Configure the HTTP server to distribute the contents of your installation directory:</para>
             <substeps performance="required">
                <step>
-                  <para>Install the Web server Apache as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-apache2-quickstart-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Install the Web server Apache as described in <xref linkend="sec-apache2-quickstart-installation"/>.</para>
                </step>
                <step>
                   <para>Enter the root directory of the HTTP server (<filename>/srv/www/htdocs</filename>) and create the subdirectory that will hold the installation sources:</para>

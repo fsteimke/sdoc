@@ -256,8 +256,8 @@
                   <para><guimenu>File</guimenu>, <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>: menu items, buttons</para>
                </listitem>
                <listitem>
-                  <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase>This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
-                  <para arch="zseries;power"><phrase role="arch-start">zseries;power ▶</phrase>This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
+                  <para arch="x86_64">This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.</para>
+                  <para arch="zseries;power">This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.</para>
                </listitem>
                <listitem>
                   <para><citetitle>Chapter 1, <quote>Example chapter</quote></citetitle>: A cross-reference to another chapter in this guide.</para>
@@ -434,7 +434,10 @@ output</screen>
                   <tip>
                      <para>Bash looks for its configuration files in a specific order depending on the type of shell where it is run. Find more details on the Bash man page (<command>man 1 bash</command>). Search for the headline <literal>INVOCATION</literal>.</para>
                   </tip>
-                  <table xml:id="tab-adm-shell-config-loginshells">
+                  <table xml:id="tab-adm-shell-config-loginshells"
+                         colsep="1"
+                         rowsep="1"
+                         frame="all">
                      <title>Bash configuration files for login shells</title>
                      <tgroup cols="2">
                         <thead>
@@ -464,7 +467,10 @@ output</screen>
                      </tgroup>
                   </table>
                   <para>The login shell also sources the configuration files listed under <xref linkend="tab-adm-shell-configs-nonloginshells"/>.</para>
-                  <table xml:id="tab-adm-shell-configs-nonloginshells">
+                  <table xml:id="tab-adm-shell-configs-nonloginshells"
+                         colsep="1"
+                         rowsep="1"
+                         frame="all">
                      <title>Bash configuration files for non-login shells</title>
                      <tgroup cols="2">
                         <tbody>
@@ -484,7 +490,7 @@ output</screen>
                      </tgroup>
                   </table>
                   <para>Additionally, Bash uses multiple files:</para>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Special files for Bash</title>
                      <tgroup cols="2">
                         <thead>
@@ -556,7 +562,7 @@ scard             /usr/sbin/nologin</screen>
                   <title>The directory structure</title>
                   <info/>
                   <para>The following table provides a short overview of the most important higher-level directories that you find on a Linux system. Find more detailed information about the directories and important subdirectories in the following list.</para>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Overview of a standard directory tree</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="25*"/>
@@ -951,7 +957,7 @@ echo "Hello World" <co xml:id="co-adm-shell-echo"/></screen>
                <para>To remove a variable, use <command>unset</command>:</para>
                <screen><prompt>&gt;</prompt>unset NAME</screen>
                <para>The following table contains common environment variables that you can use in you shell scripts:</para>
-               <table xml:id="tab-adm-envars">
+               <table xml:id="tab-adm-envars" colsep="1" rowsep="1" frame="all">
                   <title>Useful environment variables</title>
                   <tgroup cols="2">
                      <tbody>
@@ -1893,10 +1899,10 @@ xterm: DISPLAY is not set
                <title>Main window of YaST in text mode</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="64%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1950,10 +1956,10 @@ xterm: DISPLAY is not set
                   <title>The software installation module</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="64%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -2153,7 +2159,7 @@ xterm: DISPLAY is not set
                   </sect3>
                   <sect3>
                      <title>yast audit-laf</title>
-                     <para>Displays and configures the Linux Audit Framework. Refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
+                     <para>Displays and configures the Linux Audit Framework. Refer to the <xref linkend="part-audit"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
                      <variablelist>
                         <varlistentry>
                            <term>set</term>
@@ -2597,7 +2603,7 @@ Enabled php5
                   </sect3>
                   <sect3>
                      <title>yast kdump</title>
-                     <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/>. <command>yast kdump</command> accepts the following commands:</para>
+                     <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <xref linkend="cha-tuning-kdump-basic"/>. <command>yast kdump</command> accepts the following commands:</para>
                      <variablelist>
                         <varlistentry>
                            <term>copykernel</term>
@@ -3578,10 +3584,10 @@ UID: 456
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/yast2_language.png" width="69%"/>
+                           <imagedata fileref="media/yast2_language.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/yast2_language.png" width="69%"/>
+                           <imagedata fileref="media/yast2_language.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -3661,10 +3667,10 @@ UID: 456
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_timezone.png" width="69%"/>
+                        <imagedata fileref="media/yast2_timezone.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_timezone.png" width="69%"/>
+                        <imagedata fileref="media/yast2_timezone.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -3709,10 +3715,10 @@ UID: 456
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
+                              <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
                            </imageobject>
                            <imageobject role="pdf">
-                              <imagedata fileref="media/yast2_timezone_ntp.png" width="69%"/>
+                              <imagedata fileref="media/yast2_timezone_ntp.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -3737,10 +3743,10 @@ UID: 456
                   <title>YaST user and group administration</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="82%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="64%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -3833,7 +3839,7 @@ UID: 456
                   <title>Do not rename the <systemitem class="username">root</systemitem> account</title>
                   <para>While it is technically possible to rename the <systemitem class="username">root</systemitem> account, certain applications, scripts or third-party products may rely on the existence of a user called <systemitem class="username">root</systemitem>. While such a configuration always targets individual environments, necessary adjustments could be overwritten by vendor updates, so this becomes an ongoing task rather than a one-time setting. This is especially true in complex setups involving third-party applications, where it needs to be verified with every vendor involved whether a rename of the <systemitem class="username">root</systemitem> account is supported.</para>
                   <para>As the implications for renaming the <systemitem class="username">root</systemitem> account cannot be foreseen, SUSE does not support renaming the <systemitem class="username">root</systemitem> account.</para>
-                  <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <xref linkend="sec-sec-prot-restrict-root"/> and <xref linkend="sec-sec-prot-restrict-root-ssh"/>.</para>
                </warning>
                <tip>
                   <title>Matching user IDs</title>
@@ -3937,7 +3943,7 @@ UID: 456
        2014-07-17 - fs: According to aschnell, Btrfs quotas are kaputt; this
        will eventually be fixed, so check for each SP if the following
        statement is still true
-      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-quota" xrefstyle="%label &#34;%c&#34;"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
+      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <xref linkend="sec-filesystems-major-btrfs-quota"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
       enabled in the &yast; Expert Partitioner.--><remark>taroth 2014-06-04: todo - after btrfs quotas have been covered in the manuals (Storage Guide?), add link - taroth 2014-12-29: done</remark></para>
                      </note>
                      <step>
@@ -3978,10 +3984,10 @@ UID: 456
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_users_quota_qt.png" width="73%"/>
+                                 <imagedata fileref="media/yast2_users_quota_qt.png" width="80%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_users_quota_qt.png" width="64%"/>
+                                 <imagedata fileref="media/yast2_users_quota_qt.png" width="70%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -4020,7 +4026,7 @@ UID: 456
                      <para>If you do not want to use <filename>/home/<replaceable>USERNAME</replaceable></filename> as the default path for new users' home directories, modify the <guimenu>Path Prefix for Home Directory</guimenu>.</para>
                   </step>
                   <step>
-                     <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-acls" xrefstyle="%label &#34;%c&#34;"/> and to the <command>umask</command> man page.</para>
+                     <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <xref linkend="cha-security-acls"/> and to the <command>umask</command> man page.</para>
                   </step>
                   <step>
                      <para>For information about the individual options, click <guimenu>Help</guimenu>.</para>
@@ -4078,10 +4084,10 @@ UID: 456
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_groups_edit_qt.png" width="73%"/>
+                              <imagedata fileref="media/yast2_groups_edit_qt.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_groups_edit_qt.png" width="69%"/>
+                              <imagedata fileref="media/yast2_groups_edit_qt.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -4106,19 +4112,19 @@ UID: 456
                   <varlistentry>
                      <term>NIS</term>
                      <listitem>
-                        <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                        <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <xref linkend="cha-nis"/>.</para>
                      </listitem>
                   </varlistentry>
                   <varlistentry>
                      <term>SSSD</term>
                      <listitem>
-                        <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                        <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <xref linkend="sec-security-auth-sssd"/>.</para>
                      </listitem>
                   </varlistentry>
                   <varlistentry>
                      <term>Samba</term>
                      <listitem>
-                        <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-samba" xrefstyle="%label &#34;%c&#34;"/> .</para>
+                        <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <xref linkend="cha-samba"/> .</para>
                      </listitem>
                   </varlistentry>
                </variablelist>
@@ -4134,19 +4140,19 @@ UID: 456
                      <para>To change the authentication method, click <guimenu>Configure</guimenu> and select the authentication method you want to modify. This takes you directly to the client configuration modules in YaST. For information about the configuration of the appropriate client, refer to the following sections:</para>
                      <formalpara>
                         <title>NIS:</title>
-                        <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-nis-client" xrefstyle="%label &#34;%c&#34;"/></para>
+                        <para><xref linkend="sec-nis-client"/></para>
                      </formalpara>
                      <formalpara>
                         <title>LDAP:</title>
-                        <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-yast-client" xrefstyle="%label &#34;%c&#34;"/></para>
+                        <para><xref linkend="sec-security-auth-yast-client"/></para>
                      </formalpara>
                      <formalpara>
                         <title>Samba:</title>
-                        <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-samba-client-inst-yast" xrefstyle="%label &#34;%c&#34;"/></para>
+                        <para><xref linkend="sec-samba-client-inst-yast"/></para>
                      </formalpara>
                      <formalpara>
                         <title>SSSD:</title>
-                        <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/></para>
+                        <para><xref linkend="sec-security-auth-sssd"/></para>
                      </formalpara>
                   </step>
                   <step>
@@ -4482,10 +4488,10 @@ UID: 456
                   <title>YaST online update</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_you.png" width="69%"/>
+                        <imagedata fileref="media/yast2_you.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_you.png" width="69%"/>
+                        <imagedata fileref="media/yast2_you.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -4564,10 +4570,10 @@ UID: 456
                   <title>Viewing retracted patches and history</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
+                        <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
+                        <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -4586,10 +4592,10 @@ UID: 456
                         <title>YaST online update configuration</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
+                              <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
+                              <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -4744,10 +4750,10 @@ UID: 456
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_sw_manager.png" width="64%"/>
+                        <imagedata fileref="media/yast2_sw_manager.png" width="70%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_sw_manager.png" width="59%"/>
+                        <imagedata fileref="media/yast2_sw_manager.png" width="65%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -4958,10 +4964,10 @@ UID: 456
                      <title>Conflict management of the software manager</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/yast2_package_conflict.png" width="64%"/>
+                           <imagedata fileref="media/yast2_package_conflict.png" width="70%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/yast2_package_conflict.png" width="59%"/>
+                           <imagedata fileref="media/yast2_package_conflict.png" width="65%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -4976,7 +4982,7 @@ UID: 456
             <sect1 version="5.2" xml:id="sec-yast-software-instsource"><?file yast2_sw_repo.xml?>
                <title>Managing software repositories and services</title>
                <info/>
-               <para>To install third-party software, add software repositories to your system. By default, product repositories such as <phrase role="productname">SUSE Linux Enterprise Server</phrase>-DVD <phrase role="productnumber">15 SP7</phrase> and a matching update repository are automatically configured when you register your system. For more information about registration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-scc-registration" xrefstyle="%label &#34;%c&#34;"/> or <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="sec-update-registersystem" xrefstyle="%label &#34;%c&#34;"/>. Depending on the initially selected product, an additional repository containing translations, dictionaries, etc. might also be configured.</para>
+               <para>To install third-party software, add software repositories to your system. By default, product repositories such as <phrase role="productname">SUSE Linux Enterprise Server</phrase>-DVD <phrase role="productnumber">15 SP7</phrase> and a matching update repository are automatically configured when you register your system. For more information about registration, see <xref linkend="sec-yast-install-scc-registration"/> or <xref linkend="sec-update-registersystem"/>. Depending on the initially selected product, an additional repository containing translations, dictionaries, etc. might also be configured.</para>
                <para>To manage repositories, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Software Repositories</guimenu></menuchoice>. The <guimenu>Configured Software Repositories</guimenu> dialog opens. Here, you can also manage subscriptions to <guimenu>Services</guimenu> by changing the <guimenu>View</guimenu> at the right corner of the dialog to <guimenu>All Services</guimenu>. A Service in this context is a <guimenu>Repository Index Service</guimenu> (RIS) that can offer one or more software repositories. Such a Service can be changed dynamically by its administrator or vendor.</para>
                <para>Each repository provides files describing repository content (package names, versions, etc.). YaST downloads these repository description files to a local cache. To ensure their integrity, software repositories can be signed with the GPG Key of the repository maintainer. Whenever you add a new repository, YaST offers the ability to import its key.</para>
                <warning>
@@ -4997,10 +5003,10 @@ UID: 456
                            <title>Adding a software repository</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="64%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="70%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="59%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="65%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -5092,10 +5098,10 @@ UID: 456
                   <title>Update notification on GNOME desktop</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5107,10 +5113,10 @@ UID: 456
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/gupdater_updates.png" width="69%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/gupdater_updates.png" width="69%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -5179,10 +5185,10 @@ UID: 456
                      <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5432,7 +5438,7 @@ Zypper subcommands available from elsewhere on your $PATH
                   <para>There are three different ways to update software using Zypper: by installing patches, by installing a new version of a package or by updating the entire distribution. The latter is achieved with <command>zypper dist-upgrade</command>. Upgrading <phrase role="productname">SUSE Linux Enterprise Server</phrase> is discussed in <!-- cwickert 2018-11-19: No whitespace and no line break with indention
     between the phrases, otherwise there will be a trailing whitespace in the
     resulting media at the end of the sentence just before the dot.
-   --><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   --><xref linkend="cha-upgrade-paths"/>.</para>
                   <sect3 xml:id="sec-zypper-softup-patch">
                      <title>Installing all needed patches</title>
                      <para><emphasis>Patching</emphasis><phrase role="productname">SUSE Linux Enterprise Server</phrase> is the most reliable way to install new versions of installed packages. It guarantees that all required packages with correct versions are installed and ensures that package versions considered as <emphasis>conflicting</emphasis> are omitted.</para>
@@ -6000,7 +6006,7 @@ autofs                                   Now, installed 5.1.3-7.3.1, update avai
                <sect2 xml:id="sec-rpm-query">
                   <title>RPM queries</title>
                   <para>With the <option>-q</option> option <command>rpm</command> initiates queries, making it possible to inspect an RPM archive (by adding the option <option>-p</option>) and to query the RPM database of installed packages. Several switches are available to specify the type of information required. See <xref linkend="tab-rpm-query"/>.</para>
-                  <table xml:id="tab-rpm-query">
+                  <table xml:id="tab-rpm-query" colsep="1" rowsep="1" frame="all">
                      <title>Essential RPM query options</title>
                      <tgroup cols="2">
                         <tbody>
@@ -6093,7 +6099,7 @@ done</screen>
                   </example>
                   <para>The command <command>rpm -q --changelog</command><replaceable>PACKAGE</replaceable> displays a detailed list of change information about a specific package, sorted by date.</para>
                   <para>With the installed RPM database, verification checks can be made. Initiate these with <option>-V</option>, or <option>--verify</option>. With this option, <command>rpm</command> shows all files in a package that have been changed since installation. <command>rpm</command> uses eight character symbols to give some hints about the following changes:</para>
-                  <table xml:id="tab-rpm-verify">
+                  <table xml:id="tab-rpm-verify" colsep="1" rowsep="1" frame="all">
                      <title>RPM verify options</title>
                      <tgroup cols="2">
                         <tbody>
@@ -6557,7 +6563,7 @@ S.5....T c /etc/wgetrc</screen>
                   </sect3>
                   <sect3 xml:id="sec-snapper-lvm">
                      <title>Using Snapper on thinly provisioned LVM volumes</title>
-                     <para>Apart from snapshots on <literal>Btrfs</literal> file systems, Snapper also supports taking snapshots on thinly provisioned LVM volumes (snapshots on regular LVM volumes are <emphasis>not</emphasis> supported) formatted with XFS, Ext4 or Ext3. For more information and setup instructions on LVM volumes, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-system-lvm" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                     <para>Apart from snapshots on <literal>Btrfs</literal> file systems, Snapper also supports taking snapshots on thinly provisioned LVM volumes (snapshots on regular LVM volumes are <emphasis>not</emphasis> supported) formatted with XFS, Ext4 or Ext3. For more information and setup instructions on LVM volumes, refer to <xref linkend="sec-yast-system-lvm"/>.</para>
                      <para>To use Snapper on a thinly provisioned LVM volume, you need to create a Snapper configuration for it. On LVM it is required to specify the file system with <option>--fstype=lvm(<replaceable>FILESYSTEM</replaceable>)</option>. <literal>ext3</literal>, <literal>etx4</literal> or <literal>xfs</literal> are valid values for <replaceable>FILESYSTEM</replaceable>. Example:</para>
                      <screen><prompt>&gt;</prompt><command>sudo</command> snapper -c lvm create-config --fstype="lvm(xfs)" /thin_lvm</screen>
                      <para>You can adjust this configuration according to your needs as described in <xref linkend="sec-snapper-config-modify"/>.</para>
@@ -6608,10 +6614,10 @@ S.5....T c /etc/wgetrc</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/snapper_yast2_list.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_list.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/snapper_yast2_list.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_list.png" width="75%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -6621,10 +6627,10 @@ S.5....T c /etc/wgetrc</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/snapper_yast2_changes.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_changes.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/snapper_yast2_changes.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_changes.png" width="75%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -6634,10 +6640,10 @@ S.5....T c /etc/wgetrc</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/snapper_yast2_diff.png" width="59%"/>
+                                 <imagedata fileref="media/snapper_yast2_diff.png" width="65%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/snapper_yast2_diff.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_diff.png" width="75%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -6647,10 +6653,10 @@ S.5....T c /etc/wgetrc</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/snapper_yast2_restore.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_restore.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/snapper_yast2_restore.png" width="69%"/>
+                                 <imagedata fileref="media/snapper_yast2_restore.png" width="75%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -6902,10 +6908,10 @@ single | 4 |     |         |                       |
                      <title>Boot loader: snapshots</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/boot_snapshots.png" width="69%"/>
+                           <imagedata fileref="media/boot_snapshots.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/boot_snapshots.png" width="69%"/>
+                           <imagedata fileref="media/boot_snapshots.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -7847,10 +7853,10 @@ ID	gen	top level	path
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/klp.png" width="73%"/>
+                        <imagedata fileref="media/klp.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/klp.png" width="92%"/>
+                        <imagedata fileref="media/klp.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -8394,10 +8400,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                      <title>Remmina's main window</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/remmina.png" width="46%"/>
+                           <imagedata fileref="media/remmina.png" width="50%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/remmina.png" width="46%"/>
+                           <imagedata fileref="media/remmina.png" width="50%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -8410,10 +8416,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                      <title>Remote desktop preference</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/remmina_session_details.png" width="73%"/>
+                           <imagedata fileref="media/remmina_session_details.png" width="80%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/remmina_session_details.png" width="73%"/>
+                           <imagedata fileref="media/remmina_session_details.png" width="80%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -8468,10 +8474,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Quick-starting</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
+                              <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/remmina_quickstart.png" width="36%"/>
+                              <imagedata fileref="media/remmina_quickstart.png" width="40%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8488,10 +8494,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Remmina viewing remote session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="73%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8513,10 +8519,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                      <title>Reading path to the profile file</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/remmina_status.png" width="46%"/>
+                           <imagedata fileref="media/remmina_status.png" width="50%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/remmina_status.png" width="46%"/>
+                           <imagedata fileref="media/remmina_status.png" width="50%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -8555,10 +8561,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                   <title>Remote administration</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/vnc_nosession.png" width="64%"/>
+                        <imagedata fileref="media/vnc_nosession.png" width="70%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/vnc_nosession.png" width="64%"/>
+                        <imagedata fileref="media/vnc_nosession.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -8590,7 +8596,7 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                   <screen><prompt>&gt;</prompt><command>sudo</command> systemctl reload xvnc.socket</screen>
                   <important>
                      <title>Firewall and VNC ports</title>
-                     <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+                     <para>When activating Remote Administration as described in <xref linkend="pro-vnc-one-time-activate"/>, the ports <systemitem class="resource">5801</systemitem> and <systemitem class="resource">5901</systemitem> are opened in the firewall. If the network interface serving the VNC sessions is protected by a firewall, you need to manually open the respective ports when activating additional ports for VNC sessions. See <xref linkend="cha-security-firewall"/> for instructions.</para>
                   </important>
                </sect2>
             </sect1>
@@ -8636,10 +8642,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>VNC session settings</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_session.png" width="78%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_session.png" width="78%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8711,10 +8717,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Joining a persistent VNC session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_whether.png" width="73%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -9014,10 +9020,10 @@ tux:<replaceable>PASSPHRASE</replaceable></screen>
          <info>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/network_schema.png" width="92%"/>
+                  <imagedata fileref="media/network_schema.png" width="100%"/>
                </imageobject>
                <imageobject role="pdf">
-                  <imagedata fileref="media/network_schema.svg" width="92%"/>
+                  <imagedata fileref="media/network_schema.svg" width="100%"/>
                </imageobject>
             </mediaobject>
          </info>
@@ -9025,10 +9031,10 @@ tux:<replaceable>PASSPHRASE</replaceable></screen>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/network_schema.png" width="92%"/>
+                  <imagedata fileref="media/network_schema.png" width="100%"/>
                </imageobject>
                <imageobject role="pdf">
-                  <imagedata fileref="media/network_schema.svg" width="92%"/>
+                  <imagedata fileref="media/network_schema.svg" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -9346,8 +9352,8 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</screen>
                   <para><guimenu>File</guimenu>, <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>: menu items, buttons</para>
                </listitem>
                <listitem>
-                  <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase>This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
-                  <para arch="zseries;power"><phrase role="arch-start">zseries;power ▶</phrase>This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
+                  <para arch="x86_64">This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.</para>
+                  <para arch="zseries;power">This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.</para>
                </listitem>
                <listitem>
                   <para><citetitle>Chapter 1, <quote>Example chapter</quote></citetitle>: A cross-reference to another chapter in this guide.</para>
@@ -9597,7 +9603,7 @@ output</screen>
                         <para>For Intel CPUs, the kernel parameter <literal>intel_iommu=on</literal> needs to be provided on the kernel command line. For more information, see <link xlink:href="https://github.com/torvalds/linux/blob/master/Documentation/admin-guide/kernel-parameters.txt#L1951"/>.</para>
                      </listitem>
                      <listitem>
-                        <para>The VFIO infrastructure needs to be available. This can be achieved by loading the kernel module <systemitem class="resource">vfio_pci</systemitem>. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-advanced-kernel-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                        <para>The VFIO infrastructure needs to be available. This can be achieved by loading the kernel module <systemitem class="resource">vfio_pci</systemitem>. For more information, see <xref linkend="sec-boot-systemd-advanced-kernel-modules"/>.</para>
                      </listitem>
                   </itemizedlist>
                </important>
@@ -9832,10 +9838,10 @@ output</screen>
                   <title>Xen virtualization architecture</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/xen_master_fong_a.png" width="92%"/>
+                        <imagedata fileref="media/xen_master_fong_a.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/xen_master_fong_a.png" width="92%"/>
+                        <imagedata fileref="media/xen_master_fong_a.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -9895,10 +9901,10 @@ output</screen>
                   <title>KVM virtualization architecture</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/kvm_qemu.png" width="92%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/kvm_qemu.png" width="92%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -9989,10 +9995,10 @@ mercury.example.com</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
+                                 <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
+                                 <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -10021,10 +10027,10 @@ mercury.example.com</screen>
                         <informalfigure pgwide="0">
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_vm.png" width="51%"/>
+                                 <imagedata fileref="media/yast2_vm.png" width="56%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_vm.png" width="51%"/>
+                                 <imagedata fileref="media/yast2_vm.png" width="56%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -10061,10 +10067,10 @@ mercury.example.com</screen>
                      <title>System Role screen</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/virt-system-roles.png" width="69%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/virt-system-roles.png" width="69%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -10111,7 +10117,7 @@ mercury.example.com</screen>
                         <para>After the setup has been finished, you need to reboot the machine with the <emphasis>Xen kernel</emphasis>.</para>
                         <tip>
                            <title>Default boot kernel</title>
-                           <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-yast2-config" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                           <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <xref linkend="sec-grub2-yast2-config"/>.</para>
                         </tip>
                      </step>
                   </procedure>
@@ -10280,7 +10286,7 @@ mercury.example.com</screen>
                      <title>KVM kernel modules not loading</title>
                      <para>The KVM kernel modules only load if the CPU hardware virtualization features are available.</para>
                   </note>
-                  <para>The general minimum hardware requirements for the VM Host Server are the same as outlined in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-x86-requirements" xrefstyle="%label &#34;%c&#34;"/>. However, additional RAM for each virtualized guest is needed. It should at least be the same amount that is needed for a physical installation. It is also strongly recommended to have at least one processor core or hyper-thread for each running guest.</para>
+                  <para>The general minimum hardware requirements for the VM Host Server are the same as outlined in <xref linkend="sec-x86-requirements"/>. However, additional RAM for each virtualized guest is needed. It should at least be the same amount that is needed for a physical installation. It is also strongly recommended to have at least one processor core or hyper-thread for each running guest.</para>
                   <note>
                      <title>AArch64</title>
                      <para>AArch64 is a continuously evolving platform. It does not have a traditional standards and compliance certification program to enable interoperability with operating systems and hypervisors. Ask your vendor for the support statement on SUSE Linux Enterprise Server.</para>
@@ -10299,7 +10305,7 @@ mercury.example.com</screen>
                <title>Hypervisor limits</title>
                <para>New features and virtualization limits for Xen and KVM are outlined in the <link xlink:href="https://www.suse.com/releasenotes/">Release Notes</link> for each Service Pack (SP).</para>
                <para>Only packages that are part of the official repositories for SUSE Linux Enterprise Server are supported. Conversely, all optional subpackages and plug-ins (for QEMU, <systemitem class="library">libvirt</systemitem>) provided at <link xlink:href="https://packagehub.suse.com/">packagehub</link> are not supported.</para>
-               <para>For the maximum total virtual CPUs per host, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="sec-vt-best-perf-cpu-assign" xrefstyle="%label &#34;%c&#34;"/>. The total number of virtual CPUs should be proportional to the number of available physical CPUs.</para>
+               <para>For the maximum total virtual CPUs per host, see <xref linkend="sec-vt-best-perf-cpu-assign"/>. The total number of virtual CPUs should be proportional to the number of available physical CPUs.</para>
                <note>
                   <title>32-bit hypervisor</title>
                   <para>With <phrase role="productname">SUSE Linux Enterprise Server</phrase> 11 SP2, we removed virtualization host facilities from 32-bit editions. 32-bit guests are not affected and are fully supported using the provided 64-bit hypervisor.</para>
@@ -10307,7 +10313,7 @@ mercury.example.com</screen>
                <sect2 xml:id="virt-kvm-limits">
                   <title>KVM limits</title>
                   <para>Supported (and tested) virtualization limits of a <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> host running Linux guests on AMD64/Intel 64. For other operating systems, refer to the specific vendor.</para>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>KVM VM limits</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1"/>
@@ -10328,14 +10334,14 @@ mercury.example.com</screen>
                      <para>KVM host limits are identical to SUSE Linux Enterprise Server (see the corresponding section of release notes), except for:</para>
                      <itemizedlist>
                         <listitem>
-                           <para><emphasis>Maximum virtual CPUs per VM</emphasis>: see recommendations in the <citetitle>Virtualization Best Practices Guide</citetitle> regarding over-commitment of physical CPUs at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="sec-vt-best-perf-cpu-assign" xrefstyle="%label &#34;%c&#34;"/>. The total virtual CPUs should be proportional to the available physical CPUs.</para>
+                           <para><emphasis>Maximum virtual CPUs per VM</emphasis>: see recommendations in the <citetitle>Virtualization Best Practices Guide</citetitle> regarding over-commitment of physical CPUs at <xref linkend="sec-vt-best-perf-cpu-assign"/>. The total virtual CPUs should be proportional to the available physical CPUs.</para>
                         </listitem>
                      </itemizedlist>
                   </note>
                </sect2>
                <sect2 xml:id="virt-xen-limits">
                   <title>Xen limits</title>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Xen VM limits</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1"/>
@@ -10352,7 +10358,7 @@ mercury.example.com</screen>
                         </tbody>
                      </tgroup>
                   </table>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Xen host limits</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1"/>
@@ -10382,7 +10388,7 @@ mercury.example.com</screen>
             <sect1 xml:id="virt-support-hosts">
                <title>Supported host environments (hypervisors)</title>
                <para>This section describes the support status of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> running as a guest operating system on top of different virtualization hosts (hypervisors).</para>
-               <table>
+               <table colsep="1" rowsep="1" frame="all">
                   <title>The following SUSE host environments are supported</title>
                   <tgroup cols="2">
                      <colspec colnum="1" colname="1"/>
@@ -10568,7 +10574,7 @@ mercury.example.com</screen>
                <sect2 xml:id="virt-migration-offline">
                   <title>Offline migration scenarios</title>
                   <para>SUSE supports offline migration, powering off a guest VM, then moving it to a host running a different SLE product, from SLE 12 to SLE 15 SP<replaceable>X</replaceable>. The following host operating system combinations are fully supported (L3) for migrating guests from one host to another:</para>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Supported offline migration guests</title>
                      <tgroup cols="11">
                         <colspec colname="c1" align="center" colwidth="3*"/>
@@ -10777,7 +10783,7 @@ mercury.example.com</screen>
                      <title>Confidential Computing</title>
                      <para>SLES 15 SP6 and newer include kernel patches and tooling to enable AMD and Intel Confidential Computing technology in the product. As this technology is not yet fully ready for a production environment, it is provided as a technology preview.</para>
                   </important>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Supported live migration guests</title>
                      <tgroup cols="11">
                         <colspec colname="c1" align="center" colwidth="3*"/>
@@ -10981,7 +10987,7 @@ mercury.example.com</screen>
                </important>
                <sect2 xml:id="virt-support-feature-support-host">
                   <title>Xen host (Dom0)</title>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Feature support—host (<literal>Dom0</literal>)</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="c1" colwidth="7*"/>
@@ -11050,7 +11056,7 @@ mercury.example.com</screen>
                   <tip>
                      <para>For KVM, a detailed description of supported limits, features, recommended settings and scenarios, and other useful information is maintained in <filename>kvm-supported.txt</filename>. This file is part of the KVM package and can be found in <filename>/usr/share/doc/packages/qemu-kvm</filename>.</para>
                   </tip>
-                  <table>
+                  <table colsep="1" rowsep="1" frame="all">
                      <title>Guest feature support for Xen and KVM</title>
                      <tgroup cols="4">
                         <colspec colnum="1" colname="c1" colwidth="2*"/>
@@ -11949,7 +11955,7 @@ kvm_intel
                         <para>Because the installer needs to compile the NVIDIA driver modules, install the <package>gcc-c++</package> and <package>kernel-devel</package> packages.</para>
                      </step>
                      <step>
-                        <para>Disable Secure Boot on the guest, because NVIDIA's driver modules are unsigned. On SUSE distributions, you can use the YaST GRUB 2 module to disable Secure Boot. Find more information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-uefi-secboot-sle" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                        <para>Disable Secure Boot on the guest, because NVIDIA's driver modules are unsigned. On SUSE distributions, you can use the YaST GRUB 2 module to disable Secure Boot. Find more information in <xref linkend="sec-uefi-secboot-sle"/>.</para>
                      </step>
                      <step>
                         <para>Download the driver installation script from <link xlink:href="https://www.nvidia.com/Download/index.aspx?lang=en-us"/>, make it executable and run it to complete the driver installation:</para>
@@ -12194,7 +12200,7 @@ Compare OK
             <sect2 xml:id="sec-xmvsxl-conventions">
                <title>Notation conventions</title>
                <para>To easily understand the difference between <command>xl</command> and <command>xm</command> commands, the following notation is used in this section:</para>
-               <table>
+               <table colsep="1" rowsep="1" frame="all">
                   <title>Notation conventions</title>
                   <tgroup cols="2">
                      <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12220,7 +12226,7 @@ Compare OK
             </sect2>
             <sect2 xml:id="sec-xmvsxl-global">
                <title>New global options</title>
-               <table>
+               <table colsep="1" rowsep="1" frame="all">
                   <title>New global options</title>
                   <tgroup cols="2">
                      <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12251,7 +12257,7 @@ Compare OK
             <sect2 xml:id="sec-xmvsxl-common">
                <title>Unchanged options</title>
                <para>List of common options of <command>xl</command> and <command>xm</command>, and their <systemitem class="library">libvirt</systemitem> equivalents.</para>
-               <table rowsep="1">
+               <table rowsep="1" colsep="1" frame="all">
                   <title>Common options</title>
                   <tgroup cols="3">
                      <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12396,7 +12402,7 @@ Compare OK
                <sect3 xml:id="sec-xmvsxl-removed-domain">
                   <title>Domain management</title>
                   <para>The list of Domain management removed command and their replacement.</para>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>Domain management removed options</title>
                      <tgroup cols="3">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12470,7 +12476,7 @@ Compare OK
                <sect3 xml:id="sec-xmvsxl-removed-devices">
                   <title>USB devices</title>
                   <para>USB <option>options</option> are not available with xl/libxl tool stack. <command>virsh</command> has the <option>attach-device</option> and <option>detach-device</option> options but it does not work yet with <option>USB</option>.</para>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>USB devices management removed options</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12524,7 +12530,7 @@ Compare OK
                <sect3 xml:id="sec-xmvsxl-removed-cpu">
                   <title>CPU management</title>
                   <para>CPU management options has changed. New options are available, see: <xref linkend="sec-xmvsxl-changed-cpu"/></para>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>CPU management removed options</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12557,7 +12563,7 @@ Compare OK
                </sect3>
                <sect3 xml:id="sec-xmvsxl-removed-others">
                   <title>Other options</title>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>Other options</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -12605,7 +12611,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent:</title>
                      <para><command>virsh</command><option>create</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>create</option> Changed options</title>
@@ -12629,7 +12635,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>create</option> Removed options</title>
@@ -12685,7 +12691,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>create</option> Added options</title>
@@ -12724,7 +12730,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>console</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>console</option> Added options</title>
@@ -12752,7 +12758,7 @@ Compare OK
                <sect3 xml:id="sec-xmvsxl-changed-info">
                   <title>info</title>
                   <para><command>xl</command><option>info</option></para>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>info</option> Removed options</title>
@@ -12791,7 +12797,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>dump</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>dump-core</option> Removed options</title>
@@ -12834,7 +12840,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>list --all</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>list</option> Removed options</title>
@@ -12862,7 +12868,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>list</option> Added options</title>
@@ -12901,7 +12907,7 @@ Compare OK
                      <para><command>virsh</command><option>setmem</option></para>
                      <para><command>virsh</command><option>setmaxmem</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>mem-*</option> Changed options</title>
@@ -12940,7 +12946,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh migrate --live hvm-sles11-qcow2 xen+</command><replaceable>CONNECTOR</replaceable>://<replaceable>USER</replaceable>@<replaceable>IP_ADDRESS</replaceable>/</para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>migrate</option> Removed options</title>
@@ -12996,7 +13002,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>migrate</option> Added options</title>
@@ -13037,7 +13043,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>reboot</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>reboot</option> Removed options</title>
@@ -13065,7 +13071,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>reboot</option> Added options</title>
@@ -13095,7 +13101,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>save</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>save</option> Added options</title>
@@ -13125,7 +13131,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>restore</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>restore</option> Added options</title>
@@ -13171,7 +13177,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>shutdown</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>shutdown</option> Removed options</title>
@@ -13207,7 +13213,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>shutdown</option> Added options</title>
@@ -13231,7 +13237,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>trigger</option> Changed options</title>
@@ -13267,7 +13273,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>schedinfo</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>sched-credit</option> Removed options</title>
@@ -13299,7 +13305,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>sched-credit</option> Added options</title>
@@ -13341,7 +13347,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> status</title>
                      <para><command>virsh</command> only supports credit scheduler, not credit2 scheduler</para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>sched-credit2</option> Removed options</title>
@@ -13369,7 +13375,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>sched-credit2</option> Added options</title>
@@ -13394,7 +13400,7 @@ Compare OK
                      </tgroup>
                   </table>
                   <para><command>xl</command><option>sched-sedf</option><replaceable>OPTIONS</replaceable></para>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>sched-sedf</option> removed options</title>
@@ -13434,7 +13440,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>sched-sedf</option> added options</title>
@@ -13470,7 +13476,7 @@ Compare OK
                   </title>
                   <para><command>xl</command><option>cpupool-cpu-remove</option><replaceable>CPU_POOL</replaceable> &lt;CPU nr&gt;|node:&lt;node nr&gt;</para>
                   <para><command>xl</command><option>cpupool-list</option> [-c|--cpus] <replaceable>CPU_POOL</replaceable></para>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>cpupool-list</option> removed options</title>
@@ -13496,7 +13502,7 @@ Compare OK
                   </table>
                   <para><command>xl</command><option>cpupool-cpu-add</option><replaceable>CPU_POOL</replaceable> cpu-nr|node:node-nr</para>
                   <para><command>xl</command><option>cpupool-create</option><replaceable>OPTIONS</replaceable><replaceable>CONFIG_FILE</replaceable> [Variable=Value ...]</para>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>cpupool-create</option> removed options</title>
@@ -13545,7 +13551,7 @@ Compare OK
                         <systemitem class="library">libvirt</systemitem> equivalent</title>
                      <para><command>virsh</command><option>detach-device</option></para>
                   </note>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>pci-detach</option> added options</title>
@@ -13569,7 +13575,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xm</command>
                         <option>block-list</option> removed options</title>
@@ -13593,7 +13599,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>Other options</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -13619,7 +13625,7 @@ Compare OK
                </sect3>
                <sect3 xml:id="sec-xmvsxl-changed-net">
                   <title>Network</title>
-                  <table rowsep="1">
+                  <table rowsep="1" colsep="1" frame="all">
                      <title>Network options</title>
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -13646,7 +13652,7 @@ Compare OK
                         </tbody>
                      </tgroup>
                   </table>
-                  <table rowsep="0">
+                  <table rowsep="0" colsep="1" frame="all">
                      <title>
                         <command>xl</command>
                         <option>network-attach</option> removed options</title>
@@ -13674,7 +13680,10 @@ Compare OK
             </sect2>
             <sect2 xml:id="sec-xmvsxl-new">
                <title>New options</title>
-               <table rowsep="1" xml:id="table-xmtoxl-new-options">
+               <table rowsep="1"
+                      xml:id="table-xmtoxl-new-options"
+                      colsep="1"
+                      frame="all">
                   <title>New options</title>
                   <tgroup cols="2">
                      <colspec colnum="1" colname="1" colwidth="1*"/>

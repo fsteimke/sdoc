@@ -43,7 +43,7 @@
                   <guimenu>Upgrade</guimenu>
                </term>
                <listitem>
-                  <para>Perform a system upgrade. For more information refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Perform a system upgrade. For more information refer to <xref linkend="cha-upgrade-paths"/>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -95,7 +95,7 @@
             <title>The boot screen on machines with a traditional BIOS</title>
             <mediaobject>
                <imageobject>
-                  <imagedata fileref="media/install_boot.png" width="69%"/>
+                  <imagedata fileref="media/install_boot.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -164,7 +164,7 @@
       </sect2>
       <sect2 xml:id="sec-boot-parameters-uefi">
          <title>The boot screen on machines equipped with UEFI</title>
-         <para>UEFI (Unified Extensible Firmware Interface) is a new industry standard which replaces and extends the traditional BIOS. The latest UEFI implementations contain the <quote>Secure Boot</quote> extension, which prevents booting malicious code by only allowing signed boot loaders to be executed. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-uefi" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+         <para>UEFI (Unified Extensible Firmware Interface) is a new industry standard which replaces and extends the traditional BIOS. The latest UEFI implementations contain the <quote>Secure Boot</quote> extension, which prevents booting malicious code by only allowing signed boot loaders to be executed. See <xref linkend="cha-uefi"/> for more information.</para>
          <para>The boot manager GRUB 2, used to boot machines with a traditional BIOS, does not support UEFI, therefore GRUB 2 is replaced with GRUB 2 for EFI. If Secure Boot is enabled, YaST will automatically select GRUB 2 for EFI for installation. From an administrative and user perspective, both boot manager implementations behave the same and are called <literal>GRUB 2</literal> in the following.</para>
          <tip>
             <title>Using additional drivers with Secure Boot</title>
@@ -178,7 +178,7 @@
                   <para>Use a bootable ISO that will enroll the needed keys in the MOK list on the first boot.</para>
                </listitem>
             </itemizedlist>
-            <para>For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-uefi-secboot" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more information, see <xref linkend="sec-uefi-secboot"/>.</para>
          </tip>
          <para>The boot screen displays several options for the installation procedure. Change the selected option with the arrow keys and press <keycap function="enter"/> to boot it. The relevant options are:</para>
          <variablelist>
@@ -195,7 +195,7 @@
                   <guimenu>Upgrade</guimenu>
                </term>
                <listitem>
-                  <para>Perform a system upgrade. For more information refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Perform a system upgrade. For more information refer to <xref linkend="cha-upgrade-paths"/>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -236,7 +236,7 @@
             <title>The boot screen on machines with UEFI</title>
             <mediaobject>
                <imageobject>
-                  <imagedata fileref="media/install_boot_uefi.png" width="69%"/>
+                  <imagedata fileref="media/install_boot_uefi.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -281,7 +281,7 @@
                </term>
                <listitem>
                   <para>Specifies a location for a file from which to read additional options.</para>
-                  <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. More documentation on the Info file can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="invoking-autoinst-linuxrc" xrefstyle="%label &#34;%c&#34;"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify options required to set up the network (these options are described in <xref linkend="sec-boot-parameters-list-network"/>). Also other linuxrc specific options such as for debugging need to be specified in the parmfile to be effective.<phrase role="arch-end">◀</phrase></para>
+                  <para arch="zseries">This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. More documentation on the Info file can be found in <xref linkend="invoking-autoinst-linuxrc"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify options required to set up the network (these options are described in <xref linkend="sec-boot-parameters-list-network"/>). Also other linuxrc specific options such as for debugging need to be specified in the parmfile to be effective.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -290,7 +290,7 @@
                </term>
                <listitem>
                   <para>To upgrade <phrase role="productname">SUSE Linux Enterprise Server</phrase>, specify <option>Upgrade=1</option>.</para>
-                  <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>A custom parmfile is required for upgrading an existing installation of SUSE Linux Enterprise. Without this parameter, the installation provides no upgrade option.<phrase role="arch-end">◀</phrase></para>
+                  <para arch="zseries">A custom parmfile is required for upgrading an existing installation of SUSE Linux Enterprise. Without this parameter, the installation provides no upgrade option.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -358,7 +358,7 @@
          <title>Configuring the network interface</title>
          <important>
             <title>Configuring the network interface</title>
-            <para>The settings discussed in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-manconf" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The settings discussed in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <xref linkend="sec-network-manconf"/>.</para>
          </important>
          <para>The network will only be configured if it is required during the installation. To force the network to be configured, use the <literal>netsetup</literal> or <literal>ifcfg</literal> parameters.</para>
          <variablelist>
@@ -583,7 +583,7 @@ install=slp:/</screen>
       <sect2 xml:id="sec-boot-parameters-advanced-supportconfigurl">
          <title>Configuring an alternative data server for <command>supportconfig</command>
          </title>
-         <para>The data that supportconfig (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for more information) gathers is sent to the SUSE Customer Center by default. It is also possible to set up a local server to collect this data. If such a server is available on your network, you need to set the server's URL on the client. This information needs to be entered at the boot prompt.</para>
+         <para>The data that supportconfig (see <xref linkend="cha-adm-support"/> for more information) gathers is sent to the SUSE Customer Center by default. It is also possible to set up a local server to collect this data. If such a server is available on your network, you need to set the server's URL on the client. This information needs to be entered at the boot prompt.</para>
          <formalpara>
             <title>
                <literal>supporturl</literal>
@@ -630,7 +630,7 @@ install=slp:/</screen>
                   <title>GRUB options editor</title>
                   <mediaobject>
                      <imageobject>
-                        <imagedata fileref="media/grub_cmdline_proxy.png" width="36%"/>
+                        <imagedata fileref="media/grub_cmdline_proxy.png" width="40%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -758,7 +758,7 @@ WriteChannel=0.0.0601</screen>
             <para>For the <literal>ctc</literal> interface (no longer supported), specify the protocol that should be used for this interface:</para>
             <screen>CTCProtocol=&lt;0/1/2&gt;</screen>
             <para>Valid entries would be:</para>
-            <informaltable>
+            <informaltable colsep="1" rowsep="1" frame="all">
                <tgroup cols="2">
                   <tbody>
                      <row>

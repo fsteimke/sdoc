@@ -402,7 +402,7 @@
             </varlistentry>
          </variablelist>
          <para>When a non-SES-2 pattern is sent to a device in an enclosure, the pattern is automatically translated to the SCSI Enclosure Services (SES) 2 pattern as shown above.</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Translation between non-SES-2 patterns and SES-2 patterns</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="5001*"/>

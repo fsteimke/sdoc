@@ -63,10 +63,10 @@
          <title>Overview of supported upgrade paths</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/upgrade-paths_sles.svg" width="92%"/>
+               <imagedata fileref="media/upgrade-paths_sles.svg" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/upgrade-paths_sles.png" width="73%"/>
+               <imagedata fileref="media/upgrade-paths_sles.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>

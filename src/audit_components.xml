@@ -103,10 +103,10 @@
          <title>Introducing the components of Linux audit</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_components.png" width="69%"/>
+               <imagedata fileref="media/audit_components.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_components.png" width="69%"/>
+               <imagedata fileref="media/audit_components.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -294,7 +294,7 @@ backlog_wait_time 15000
 loginuid_immutable 0 unlocked
 </screen>
       </example>
-      <table xml:id="tab-audit-auditctl">
+      <table xml:id="tab-audit-auditctl" colsep="1" rowsep="1" frame="all">
          <title>Audit status flags</title>
          <tgroup cols="3">
             <thead>
@@ -1239,10 +1239,10 @@ Syscall Report
          <title>Flow graph—program versus system call relationship</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_mkgraph.png" width="69%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_mkgraph.png" width="92%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1268,10 +1268,10 @@ total  type
          <title>Bar chart—common event types</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_mkbar.png" width="69%"/>
+               <imagedata fileref="media/audit_mkbar.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_mkbar.png" width="92%"/>
+               <imagedata fileref="media/audit_mkbar.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>

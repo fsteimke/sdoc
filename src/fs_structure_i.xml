@@ -8,7 +8,7 @@
    <title>The directory structure</title>
    <info/>
    <para>The following table provides a short overview of the most important higher-level directories that you find on a Linux system. Find more detailed information about the directories and important subdirectories in the following list.</para>
-   <table>
+   <table colsep="1" rowsep="1" frame="all">
       <title>Overview of a standard directory tree</title>
       <tgroup cols="2">
          <colspec colnum="1" colname="1" colwidth="25*"/>

@@ -24,7 +24,7 @@
       <title>Password strength</title>
       <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> can leverage the <systemitem class="library">pam_cracklib</systemitem> library to test for weak passwords—and to suggest using a stronger one if it determines obvious weakness. The following parameters represent an example that could be part of a corporate password policy or something required because of audit constraints.</para>
       <para>The PAM libraries follow a defined flow. The best way to design the perfect stack usually is to consider all of the requirements and policies and draw out a flow chart.</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>Sample rules/constraints for password enforcement</title>
          <tgroup cols="3">
             <tbody>

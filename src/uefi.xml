@@ -57,10 +57,10 @@ have a connection to the private portion of the Platform key.--></para>
                <title>Secure boot support</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="64%"/>
+                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="64%"/>
+                     <imagedata fileref="media/yast2_bootloader_boot_code_efi.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -75,10 +75,10 @@ even pursue both in parallel. -->
             <title>UEFI: secure boot process</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="46%"/>
+                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="73%"/>
+                  <imagedata fileref="media/uefi-secure-boot-mok2.png" width="80%"/>
                </imageobject>
             </mediaobject>
          </figure>

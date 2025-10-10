@@ -7,7 +7,7 @@
          xml:id="cha-tuning-syslog">
    <title>System log files</title>
    <info/>
-   <para>System log file analysis is one of the most important tasks when analyzing the system. In fact, looking at the system log files should be the first thing to do when maintaining or troubleshooting a system. <phrase role="productname">SUSE Linux Enterprise Server</phrase> automatically logs almost everything that happens on the system in detail. Since the move to <systemitem class="daemon">systemd</systemitem>, kernel messages and messages of system services registered with <systemitem class="daemon">systemd</systemitem> are logged in <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). Other log files (mainly those of system applications) are written in plain text and can be easily read using an editor or pager. It is also possible to parse them using scripts. This allows you to filter their content.</para>
+   <para>System log file analysis is one of the most important tasks when analyzing the system. In fact, looking at the system log files should be the first thing to do when maintaining or troubleshooting a system. <phrase role="productname">SUSE Linux Enterprise Server</phrase> automatically logs almost everything that happens on the system in detail. Since the move to <systemitem class="daemon">systemd</systemitem>, kernel messages and messages of system services registered with <systemitem class="daemon">systemd</systemitem> are logged in <systemitem class="daemon">systemd</systemitem> journal (see <xref linkend="cha-journalctl"/>). Other log files (mainly those of system applications) are written in plain text and can be easily read using an editor or pager. It is also possible to parse them using scripts. This allows you to filter their content.</para>
    <sect1 xml:id="sec-tuning-syslog-logs">
       <title>System log files in <filename>/var/log/</filename>
       </title>
@@ -36,7 +36,7 @@
                <filename>apparmor/</filename>
             </term>
             <listitem>
-               <para>AppArmor log files. For more information about AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>AppArmor log files. For more information about AppArmor, see <xref linkend="part-apparmor"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -44,7 +44,7 @@
                <filename>audit/</filename>
             </term>
             <listitem>
-               <para>Logs from the audit framework. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+               <para>Logs from the audit framework. See <xref linkend="part-audit"/> for details.</para>
             </listitem>
          </varlistentry>
          <!-- 2014-06-04 tbazant: now part of journald

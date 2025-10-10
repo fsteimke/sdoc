@@ -20,13 +20,13 @@
       <title>Setting up an AIDE database</title>
       <important>
          <title>Initialize AIDE database after installation</title>
-         <para>Before you install your system, verify the checksum of your medium (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-installation-troubleshooting-checking-media" xrefstyle="%label &#34;%c&#34;"/>) to make sure you do not use a compromised source. After you have installed the system, initialize the AIDE database. To make sure that all went well during and after the installation, do an installation directly on the console, without any network attached to the computer. Do not leave the computer unattended or connected to any network before AIDE creates its database.</para>
+         <para>Before you install your system, verify the checksum of your medium (see <xref linkend="sec-installation-troubleshooting-checking-media"/>) to make sure you do not use a compromised source. After you have installed the system, initialize the AIDE database. To make sure that all went well during and after the installation, do an installation directly on the console, without any network attached to the computer. Do not leave the computer unattended or connected to any network before AIDE creates its database.</para>
       </important>
       <para>AIDE is not installed by default on <phrase role="productname">SUSE Linux Enterprise Server</phrase>. To install it, either use <menuchoice><guimenu>Computer</guimenu><guimenu>Install Software</guimenu></menuchoice>, or enter <literal>zypper install aide</literal> on the command line as <systemitem class="username">root</systemitem>.</para>
       <para>To tell AIDE which attributes of which files should be checked, use the <filename>/etc/aide.conf</filename> configuration file. It must be modified to become the actual configuration. The first section handles general parameters like the location of the AIDE database file. More relevant for local configurations are the <systemitem>Custom Rules</systemitem> and the <systemitem>Directories and Files</systemitem> sections. A typical rule looks like the following:</para>
       <screen>Binlib     = p+i+n+u+g+s+b+m+c+md5+sha1</screen>
       <para>After defining the variable <literal>Binlib</literal>, the respective check boxes are used in the files section. Important options include the following:</para>
-      <table xml:id="tab-aide-options">
+      <table xml:id="tab-aide-options" colsep="1" rowsep="1" frame="all">
          <title>Important AIDE check boxes</title>
          <tgroup cols="2">
             <thead>

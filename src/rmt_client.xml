@@ -131,6 +131,6 @@
    <sect1 xml:id="sec-rmt-client-online-migration">
       <title>Online migration of SUSE Linux Enterprise clients</title>
       <para>SUSE Linux Enterprise clients registered to RMT can be migrated online to the latest service pack of the same major release the same way as clients registered to SUSE Customer Center. Before starting the migration, make sure that RMT has the required products available and mirrored.</para>
-      <para>For detailed information on the online migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For detailed information on the online migration, see <xref linkend="cha-upgrade-paths"/>.</para>
    </sect1>
 </chapter>

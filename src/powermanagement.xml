@@ -7,7 +7,7 @@
          xml:id="cha-power-mgmt">
    <title>Power management</title>
    <info/>
-   <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>The features and hardware described in this chapter do not exist on IBM Z, making this chapter irrelevant for these platforms.<phrase role="arch-end">◀</phrase></para>
+   <para arch="zseries">The features and hardware described in this chapter do not exist on IBM Z, making this chapter irrelevant for these platforms.</para>
    <para>Power management is especially important on laptop computers, but is also useful on other systems. ACPI (Advanced Configuration and Power Interface) is available on all modern computers (laptops, desktops and servers). Power management technologies require suitable hardware and BIOS routines. Most laptops and many modern desktops and servers meet these requirements. It is also possible to control CPU frequency scaling to save power or decrease noise.</para>
    <sect1 xml:id="sec-power-mgmt-save">
       <title>Power saving functions</title>
@@ -79,7 +79,7 @@
          <para>Depending on the operating mode of the computer, these methods can be combined. Saving energy also means that the system heats up less and the fans are activated less frequently.</para>
          <para>Frequency scaling and throttling are only relevant if the processor is busy, because the most economic C-state is applied anyway when the processor is idle. If the CPU is busy, frequency scaling is the recommended power saving method. Often the processor only works with a partial load. In this case, it can be run with a lower frequency. Dynamic frequency scaling controlled by the kernel on-demand governor is the best approach.</para>
          <para>Throttling should be used as the last resort, for example, to extend the battery operation time despite a high system load. However, certain systems do not run smoothly when they are throttled too much. Moreover, CPU throttling does not make sense if the CPU has little to do.</para>
-         <para>For in-depth information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-power" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For in-depth information, refer to <xref linkend="cha-tuning-power"/>.</para>
       </sect2>
       <sect2 xml:id="sec-power-mgmt-acpi-trouble">
          <title>Troubleshooting</title>

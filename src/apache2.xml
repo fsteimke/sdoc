@@ -28,7 +28,7 @@
                <para>The latest security updates are installed. If in doubt, run a YaST Online Update.</para>
             </listitem>
             <listitem>
-               <para>The default Web server port (<literal>80</literal>) is opened in the firewall. For this, configure <systemitem class="daemon">firewalld</systemitem> to allow the service <literal>http</literal> in the public zone. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+               <para>The default Web server port (<literal>80</literal>) is opened in the firewall. For this, configure <systemitem class="daemon">firewalld</systemitem> to allow the service <literal>http</literal> in the public zone. See <xref linkend="sec-security-firewall-firewalld-cmd"/> for details.</para>
             </listitem>
          </orderedlist>
       </sect2>
@@ -857,8 +857,7 @@ sknorr, 2017-06-07 -->
                   <simplelist>
                      <member>Package Name: <systemitem>apache2-mod_apparmor</systemitem>
                      </member>
-                     <member>More Information: <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase>
-                        <xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/>
+                     <member>More Information: <xref linkend="part-apparmor"/>
                      </member>
                   </simplelist>
                </listitem>
@@ -1149,7 +1148,7 @@ An optional company name []:<co xml:id="co-ssl-self-optional"/></screen>
          <para>The default port for TLS/SSL requests on the Web server side is 443. There is no conflict between a <quote>regular</quote> Apache listening on port 80 and an TLS/SSL-enabled Apache listening on port 443. In fact, HTTP and HTTPS can be run with the same Apache instance. Usually separate virtual hosts are used to dispatch requests to port 80 and port 443 to separate virtual servers.</para>
          <important>
             <title>Firewall configuration</title>
-            <para>Do not forget to open the firewall for SSL-enabled Apache on port 443. This can be done with <systemitem class="daemon">firewalld</systemitem> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld-cmd" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Do not forget to open the firewall for SSL-enabled Apache on port 443. This can be done with <systemitem class="daemon">firewalld</systemitem> as described in <xref linkend="sec-security-firewall-firewalld-cmd"/>.</para>
          </important>
          <para>The SSL module is enabled by default in the global server configuration. In case it has been disabled on your host, activate it with the following command: <command>a2enmod ssl</command>. To finally enable SSL, the server needs to be started with the flag <quote>SSL</quote>. To do so, call <command>a2enflag SSL</command> (case-sensitive!). If you have chosen to encrypt your server certificate with a password, you should also increase the value for <systemitem>APACHE_TIMEOUT</systemitem> in <filename>/etc/sysconfig/apache2</filename>, so you have enough time to enter the passphrase when Apache starts. Restart the server to make these changes active. A reload is not sufficient.</para>
          <para>The virtual host configuration directory contains a template <filename>/etc/apache2/vhosts.d/vhost-ssl.template</filename> with SSL-specific directives that are extensively documented. Refer to <xref linkend="sec-apache2-configuration-manually-vhost"/> for the general virtual host configuration.</para>

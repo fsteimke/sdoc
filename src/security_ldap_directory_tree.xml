@@ -20,10 +20,10 @@
       <title>Structure of an LDAP directory</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/ldap_tree.svg" width="78%"/>
+            <imagedata fileref="media/ldap_tree.svg" width="85%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/ldap_tree.png" width="78%"/>
+            <imagedata fileref="media/ldap_tree.png" width="85%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -31,7 +31,7 @@
    <!-- ke: yes, these things are called "Schema" -->
    <para>The types of objects that can be stored in the DIT are globally determined following a <emphasis>Schema</emphasis>. The type of an object is determined by the <emphasis>object class</emphasis>. The object class determines what attributes the relevant object must or may be assigned. The Schema contains all object classes and attributes which can be used by the LDAP server. Attributes are a structured data type. Their syntax, ordering and other behavior is defined by the Schema. LDAP servers supply a core set of Schemas which can work in a broad variety of environments. If a custom Schema is required, you can upload it to an LDAP server.</para>
    <para><xref linkend="tab-ldap-schema"/> offers a small overview of the object classes from <filename>00core.ldif</filename> and <filename>06inetorgperson.ldif</filename> used in the example, including required attributes (Req. Attr.) and valid attribute values. After installing 389 Directory Server, these can be found in <filename>/usr/share/dirsrv/schema</filename>. <!-- intro abbrev "Req. Attr." too shorten the table header --></para>
-   <table xml:id="tab-ldap-schema">
+   <table xml:id="tab-ldap-schema" colsep="1" rowsep="1" frame="all">
       <title>Commonly used object classes and attributes</title>
       <tgroup cols="4">
          <colspec colname="c1" colwidth="30*"/>

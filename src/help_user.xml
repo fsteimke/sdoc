@@ -33,13 +33,13 @@
          <term>Documentation in <filename>/usr/share/doc</filename>
          </term>
          <listitem>
-            <para>This traditional help directory holds various documentation files and the release notes for your system. Find more detailed information in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-docdir" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>This traditional help directory holds various documentation files and the release notes for your system. Find more detailed information in <xref linkend="sec-help-onboard-docdir"/>.</para>
          </listitem>
       </varlistentry>
       <varlistentry>
          <term>Man pages and info pages for shell commands</term>
          <listitem>
-            <para>When working with the shell, you do not need to know the options of the commands by heart. Traditionally, the shell provides integrated help by means of man pages and info pages. Read more in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-manpages" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-help-onboard-infopages" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>When working with the shell, you do not need to know the options of the commands by heart. Traditionally, the shell provides integrated help by means of man pages and info pages. Read more in <xref linkend="sec-help-onboard-manpages"/> and <xref linkend="sec-help-onboard-infopages"/>.</para>
          </listitem>
       </varlistentry>
    </variablelist>
@@ -50,10 +50,10 @@
          <title>Main window of Help</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/gnome_yelp_main.png" width="64%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/gnome_yelp_main.png" width="64%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>

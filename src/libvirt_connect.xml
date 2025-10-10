@@ -330,7 +330,7 @@ vnc_password = "<replaceable>PASSWORD</replaceable>"</screen>
             </procedure>
             <warning>
                <title>Security of the VNC protocol</title>
-               <para>The VNC protocol is not considered to be safe. Although the password is sent encrypted, it may be vulnerable when an attacker can sniff both the encrypted password and the encryption key. Therefore, it is recommended to use VNC with TLS/SSL or tunneled over SSH. <command>virt-viewer</command>, Virtual Machine Manager and Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) support both methods.</para>
+               <para>The VNC protocol is not considered to be safe. Although the password is sent encrypted, it may be vulnerable when an attacker can sniff both the encrypted password and the encryption key. Therefore, it is recommended to use VNC with TLS/SSL or tunneled over SSH. <command>virt-viewer</command>, Virtual Machine Manager and Remmina (refer to <xref linkend="vnc-remmina"/>) support both methods.</para>
             </warning>
          </sect3>
       </sect2>
@@ -471,7 +471,7 @@ dynamic_ownership = 1</screen>
          <title>Remote tunnel over SSH (<literal>qemu+ssh</literal> or <literal>xen+ssh</literal>)</title>
          <para>Enabling a remote connection that is tunneled over SSH on the VM Host Server only requires the ability to accept SSH connections. Make sure the SSH daemon is started (<command>systemctl status sshd</command>) and that the ports for service <systemitem class="service">SSH</systemitem> are opened in the firewall.</para>
          <para>User authentication for SSH connections can be done using traditional file user/group ownership and permissions as described in <xref linkend="sec-libvirt-connect-auth-libvirt-traditional"/>. Connecting as user tux (<literal>qemu+ssh://tuxsIVname;/system</literal> or <literal>xen+ssh://tuxsIVname;/system</literal>) works out of the box and does not require additional configuration on the <systemitem class="library">libvirt</systemitem> side.</para>
-         <para>When connecting via SSH <literal>qemu+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> or <literal>xen+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> you need to provide the password for <replaceable>USER</replaceable>. This can be avoided by copying your public key to <filename>~<replaceable>USER</replaceable>/.ssh/authorized_keys</filename> on the VM Host Server as explained in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-ssh-public-key-auth" xrefstyle="%label &#34;%c&#34;"/>. Using <command>gnome-keyring</command> on the machine from which you are connecting adds even more convenience. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-ssh-gnome-keyring" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>When connecting via SSH <literal>qemu+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> or <literal>xen+ssh://<replaceable>USER</replaceable>@<replaceable>SYSTEM</replaceable></literal> you need to provide the password for <replaceable>USER</replaceable>. This can be avoided by copying your public key to <filename>~<replaceable>USER</replaceable>/.ssh/authorized_keys</filename> on the VM Host Server as explained in <xref linkend="sec-ssh-public-key-auth"/>. Using <command>gnome-keyring</command> on the machine from which you are connecting adds even more convenience. For more information, see <xref linkend="sec-ssh-gnome-keyring"/>.</para>
       </sect2>
       <sect2 xml:id="sec-libvirt-connect-remote-tls">
          <title>Remote TLS/SSL connection with x509 certificate (<literal>qemu+tls</literal> or <literal>xen+tls</literal>)</title>
@@ -554,7 +554,7 @@ virsh -c xen+tls://<replaceable>mercury.example.com</replaceable>/system list --
          </sect3>
          <sect3 xml:id="sec-libvirt-connect-remote-tls-vnc">
             <title>Enabling VNC for TLS/SSL connections</title>
-            <para>Currently, VNC communication over TLS is only supported by a few tools. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> do not support TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is <command>remmina</command> (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>Currently, VNC communication over TLS is only supported by a few tools. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> do not support TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is <command>remmina</command> (refer to <xref linkend="vnc-remmina"/>).</para>
             <sect4 xml:id="sec-libvirt-connect-remote-tls-vnc-server">
                <title>VNC over TLS/SSL: VM Host Server configuration</title>
                <para>To access the graphical console via VNC over TLS/SSL, you need to configure the VM Host Server as follows:</para>
@@ -587,7 +587,7 @@ virsh -c xen+tls://<replaceable>mercury.example.com</replaceable>/system list --
             </sect4>
             <sect4 xml:id="sec-libvirt-connect-remote-tls-vnc-client">
                <title>VNC over TLS/SSL: client configuration</title>
-               <para>The only action needed on the client side is to place the x509 client certificates in a location recognized by the client of choice. However, Virtual Machine Manager and <command>virt-viewer</command> expect the certificates in a different location. Virtual Machine Manager can either read from a system-wide location applying to all users, or from a per-user location. Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>) asks for the location of certificates when initializing the connection to the remote VNC session.</para>
+               <para>The only action needed on the client side is to place the x509 client certificates in a location recognized by the client of choice. However, Virtual Machine Manager and <command>virt-viewer</command> expect the certificates in a different location. Virtual Machine Manager can either read from a system-wide location applying to all users, or from a per-user location. Remmina (refer to <xref linkend="vnc-remmina"/>) asks for the location of certificates when initializing the connection to the remote VNC session.</para>
                <variablelist>
                   <varlistentry>
                      <term>

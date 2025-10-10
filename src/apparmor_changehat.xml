@@ -102,10 +102,10 @@
                   <title>Adminer login page</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/aa_changehat_adminer.png" width="69%"/>
+                        <imagedata fileref="media/aa_changehat_adminer.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/aa_changehat_adminer.png" width="36%"/>
+                        <imagedata fileref="media/aa_changehat_adminer.png" width="40%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -271,10 +271,10 @@ apparmor module is loaded.
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/hats_in_profiles.png" width="69%"/>
+                  <imagedata fileref="media/hats_in_profiles.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/hats_in_profiles.png" width="69%"/>
+                  <imagedata fileref="media/hats_in_profiles.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -284,10 +284,10 @@ apparmor module is loaded.
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/hat_createhat.png" width="46%"/>
+                        <imagedata fileref="media/hat_createhat.png" width="50%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/hat_createhat.png" width="32%"/>
+                        <imagedata fileref="media/hat_createhat.png" width="35%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

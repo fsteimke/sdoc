@@ -28,7 +28,7 @@ lrwxrwxrwx 1 10 Dec  5 07:48 e014e482-1c2d-4d09-84ec-61b3aefde77a -&gt; ../../sd
          <title>UUID generators</title>
          <para>Other programs besides <command>udev</command>, such as LVM or <command>md</command>, might also generate UUIDs, but they are not listed in <filename>/dev/disk</filename>.</para>
       </note>
-      <para>For more information about using <systemitem>udev</systemitem> for managing devices, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-udev" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information about using <systemitem>udev</systemitem> for managing devices, see <xref linkend="cha-udev"/>.</para>
       <para>For more information about <systemitem>udev</systemitem> commands, see <command>man 7 udev</command>.</para>
    </sect1>
    <sect1 xml:id="sec-netdev-option">

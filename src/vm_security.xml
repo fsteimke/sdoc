@@ -134,10 +134,10 @@ Successfully registered system</screen>
                <title>Create Virtual Machine</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -153,10 +153,10 @@ Successfully registered system</screen>
                   <guimenu>XML</guimenu> view of virtual machine configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -167,10 +167,10 @@ Successfully registered system</screen>
                <title>Set firmware</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_xml_os.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_xml_os.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_xml_os.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_xml_os.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -182,10 +182,10 @@ Successfully registered system</screen>
                <title>launchSecurity</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_xml_launchsecurity.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -199,10 +199,10 @@ Successfully registered system</screen>
                <title>The <guimenu>Details</guimenu> view of virtual machine configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm_details.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm_details.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm_details.png" width="69%"/>
+                     <imagedata fileref="media/vm_security_create_vm_details.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>

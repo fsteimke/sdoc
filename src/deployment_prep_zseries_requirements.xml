@@ -75,7 +75,7 @@
       <sect3 xml:id="sec-zseries-requirements-hw-diskspace">
          <title>Disk space requirements</title>
          <para>The disk requirements depend largely on the installation. To have a properly functioning system, you normally need more space than required by the installation software. Minimal requirements for the available installation types are as follows:</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="2">
                <colspec colnum="1" colname="col1"/>
                <colspec colnum="2" colname="col2"/>

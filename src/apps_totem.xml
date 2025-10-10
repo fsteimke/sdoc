@@ -56,10 +56,10 @@
             <guimenu>GNOME Videos</guimenu> start-up window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/totem_a.png" width="69%"/>
+               <imagedata fileref="media/totem_a.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/totem_a.png" width="69%"/>
+               <imagedata fileref="media/totem_a.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -236,10 +236,10 @@
                <guimenu>GNOME Videos</guimenu> general preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_general.png" width="50%"/>
+                  <imagedata fileref="media/totem_general.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_general.png" width="50%"/>
+                  <imagedata fileref="media/totem_general.png" width="55%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -270,10 +270,10 @@
                <guimenu>GNOME Videos</guimenu> display preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_display.png" width="50%"/>
+                  <imagedata fileref="media/totem_display.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_display.png" width="50%"/>
+                  <imagedata fileref="media/totem_display.png" width="55%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -306,10 +306,10 @@
                <guimenu>GNOME Videos</guimenu> audio preferences</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/totem_audio.png" width="50%"/>
+                  <imagedata fileref="media/totem_audio.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/totem_audio.png" width="50%"/>
+                  <imagedata fileref="media/totem_audio.png" width="55%"/>
                </imageobject>
             </mediaobject>
          </figure>

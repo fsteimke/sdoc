@@ -664,11 +664,11 @@
       <para>Modules and extensions can be installed when initially setting up the system and on an existing <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation.</para>
       <sect2 xml:id="sec-modules-install-deployment">
          <title>Installing modules and extensions during system installation</title>
-         <para>Modules and extensions can easily be installed when setting up the system. The respective steps are part of the installation routine. Following the default installation path, this requires network access to contact the SUSE Customer Center or a local registration server (<link xlink:href="https://www.suse.com/products/multi-linux-manager/">SUSE Multi-Linux Manager</link> or Repository Mirroring Tool), which provide the respective repositories. Offline installation is supported, too. In that case, an additional installation media is required. For detailed information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Modules and extensions can easily be installed when setting up the system. The respective steps are part of the installation routine. Following the default installation path, this requires network access to contact the SUSE Customer Center or a local registration server (<link xlink:href="https://www.suse.com/products/multi-linux-manager/">SUSE Multi-Linux Manager</link> or Repository Mirroring Tool), which provide the respective repositories. Offline installation is supported, too. In that case, an additional installation media is required. For detailed information, refer to <xref linkend="sec-yast-install-modules"/>.</para>
       </sect2>
       <sect2 xml:id="sec-modules-install-yast">
          <title>Installing modules and extensions with YaST</title>
-         <para>To install modules &amp; extensions from the running system, you need to make sure your system is registered with the SUSE Customer Center or a local registration server. If you have not done so during the installation, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-register-sle-system" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>To install modules &amp; extensions from the running system, you need to make sure your system is registered with the SUSE Customer Center or a local registration server. If you have not done so during the installation, refer to <xref linkend="sec-register-sle-system"/> for instructions.</para>
          <note>
             <title>Viewing already installed add-ons</title>
             <para>To view already installed add-ons, start YaST and select <menuchoice><guimenu>Software</guimenu><guimenu>Add-Ons</guimenu></menuchoice>.</para>
@@ -680,10 +680,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="82%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -709,7 +709,7 @@
                <para>Choose <guimenu>Accept</guimenu> and <guimenu>Finish</guimenu> to conclude the process.</para>
             </step>
             <step>
-               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <xref linkend="sec-yast-software-instsource-manage"/>.</para>
             </step>
          </procedure>
          <tip>
@@ -727,10 +727,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="82%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -743,10 +743,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_new.png" width="82%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_new.png" width="73%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -768,13 +768,13 @@
                <para>After confirming these messages, YaST will download and parse the metadata. It will add the repository to the list of <guimenu>Configured Repositories</guimenu>.</para>
             </step>
             <step>
-               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-software-instsource-manage" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>If needed, adjust the repository <guimenu>Properties</guimenu> as described in <xref linkend="sec-yast-software-instsource-manage"/>.</para>
             </step>
             <step>
                <para>Confirm your changes with <guimenu>OK</guimenu> to close the configuration dialog.</para>
             </step>
             <step>
-               <para>After having successfully added the repository for the add-on media, the software manager starts, and you can install packages. For details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>After having successfully added the repository for the add-on media, the software manager starts, and you can install packages. For details, refer to <xref linkend="cha-yast-software"/>.</para>
             </step>
          </procedure>
       </sect2>
@@ -786,10 +786,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="82%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

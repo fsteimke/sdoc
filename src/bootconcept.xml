@@ -189,7 +189,7 @@
                <term>Managing the network configuration</term>
                <listitem>
                   <para>If you configured your system to use a network-mounted root file system (mounted via NFS), <systemitem>init</systemitem> must make sure that the proper network drivers are loaded and that they are set up to allow access to the root file system.</para>
-                  <para>If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports booting from a secondary iSCSI target if the primary target is not available. For more details regarding configuration of the booting iSCSI target refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-iscsi-initiator-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. <phrase role="productname">SUSE Linux Enterprise Server</phrase> supports booting from a secondary iSCSI target if the primary target is not available. For more details regarding configuration of the booting iSCSI target refer to <xref linkend="sec-iscsi-initiator-yast"/>.</para>
                </listitem>
             </varlistentry>
          </variablelist>

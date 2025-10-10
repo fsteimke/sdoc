@@ -125,10 +125,10 @@
                   <title>DNS server installation: forwarder settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dns_wiz_forw.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dns_wiz_forw.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dns_wiz_forw.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dns_wiz_forw.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -140,10 +140,10 @@
                   <title>DNS server installation: DNS zones</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="66%" fileref="media/yast2_dns_wiz_zone.png"/>
+                        <imagedata width="72%" fileref="media/yast2_dns_wiz_zone.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dns_wiz_zone.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dns_wiz_zone.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -154,10 +154,10 @@
                   <title>DNS server installation: finish wizard</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="66%" fileref="media/yast2_dns_wiz_finish.png"/>
+                        <imagedata width="72%" fileref="media/yast2_dns_wiz_finish.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dns_wiz_finish.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dns_wiz_finish.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -217,10 +217,10 @@
                <title>DNS server: logging</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="69%" fileref="media/yast2_dns_def_logging.png"/>
+                     <imagedata width="75%" fileref="media/yast2_dns_def_logging.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="69%" fileref="media/yast2_dns_def_logging.png"/>
+                     <imagedata width="75%" fileref="media/yast2_dns_def_logging.png"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -297,10 +297,10 @@
                <title>DNS server: Zone Editor (Basics)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="59%" fileref="media/yast2_dns_def_ddns.png"/>
+                     <imagedata width="65%" fileref="media/yast2_dns_def_ddns.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="59%" fileref="media/yast2_dns_def_ddns.png"/>
+                     <imagedata width="65%" fileref="media/yast2_dns_def_ddns.png"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -313,10 +313,10 @@
                         <title>DNS server: Zone Editor (NS Records)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="59%" fileref="media/yast2_dns_def_nsrec.png"/>
+                              <imagedata width="65%" fileref="media/yast2_dns_def_nsrec.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="59%" fileref="media/yast2_dns_def_nsrec.png"/>
+                              <imagedata width="65%" fileref="media/yast2_dns_def_nsrec.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -330,10 +330,10 @@
                         <title>DNS server: Zone Editor (MX Records)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="66%" fileref="media/yast2_dns_def_mxrec.png"/>
+                              <imagedata width="72%" fileref="media/yast2_dns_def_mxrec.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="69%" fileref="media/yast2_dns_def_mxrec.png"/>
+                              <imagedata width="75%" fileref="media/yast2_dns_def_mxrec.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -347,10 +347,10 @@
                         <title>DNS server: Zone Editor (SOA)</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata width="69%" fileref="media/yast2_dns_def_soa.png"/>
+                              <imagedata width="75%" fileref="media/yast2_dns_def_soa.png"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata width="69%" fileref="media/yast2_dns_def_soa.png"/>
+                              <imagedata width="75%" fileref="media/yast2_dns_def_soa.png"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -381,10 +381,10 @@
                         <title>Adding a record for a primary zone</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone1.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone1.png" width="70%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone1.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone1.png" width="70%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -395,10 +395,10 @@
                         <title>Adding a reverse zone</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone2.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone2.png" width="70%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone2.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone2.png" width="70%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -409,10 +409,10 @@
                         <title>Adding a reverse record</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_dns_revzone3.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone3.png" width="70%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_dns_revzone3.png" width="64%"/>
+                              <imagedata fileref="media/yast2_dns_revzone3.png" width="70%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>

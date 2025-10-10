@@ -214,7 +214,10 @@ timeout  50</screen>
             </term>
             <listitem>
                <para>Adds a specific option to the kernel command line depending on the <replaceable>FLAG</replaceable> value. The <option>IFAPPEND</option> option is available only on PXELINUX. <replaceable>FLAG</replaceable> expects a value, described in <xref linkend="tab-deployment-boot-pxeopts-ifappend"/>:</para>
-               <table xml:id="tab-deployment-boot-pxeopts-ifappend">
+               <table xml:id="tab-deployment-boot-pxeopts-ifappend"
+                      colsep="1"
+                      rowsep="1"
+                      frame="all">
                   <title>Generated and added kernel command line options from <option>IFAPPEND</option>
                   </title>
                   <tgroup cols="2">
@@ -275,7 +278,7 @@ timeout  50</screen>
             </term>
             <listitem>
                <para>On PXELINUX, specifying <option>LOCALBOOT 0</option> instead of a <option>KERNEL</option> option means invoking this particular label and causes a local disk boot instead of a kernel boot.</para>
-               <informaltable frame="topbot" rowsep="0">
+               <informaltable frame="topbot" rowsep="0" colsep="1">
                   <tgroup cols="2"><!--<colspec colnum="1" colname="1" colwidth="20"/>
         <colspec colnum="2" colname="2" colwidth="60"/>-->
                      <thead>

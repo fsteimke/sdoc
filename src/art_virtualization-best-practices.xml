@@ -43,10 +43,10 @@
       <para>Virtualization offers a lot of capabilities for your environment. It can be used in multiple scenarios. To get more details about it, refer to the <xref linkend="book-virtualization"/>, and in particular to the following sections:</para>
       <itemizedlist>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-virtualization-scenarios-capabilities" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="sec-virtualization-scenarios-capabilities"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-virtualization-introduction-benefits" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="sec-virtualization-introduction-benefits"/></para>
          </listitem>
       </itemizedlist>
       <para>This best practice guide provides advice for making the right choice in your environment. It recommends or discourages the use of options depending on your workload. Fixing configuration issues and performing tuning tasks increases the performance of VM Guests near to bare metal.</para>
@@ -137,7 +137,7 @@
          <title>Prefer the <systemitem class="library">libvirt</systemitem> framework</title>
          <remark>add some explanation about how to enable/disable kvm with qemu-system-arch</remark>
          <para>SUSE strongly recommends using the <systemitem class="library">libvirt</systemitem> framework to configure, manage and operate VM Host Servers and VM Guest. It offers a single interface (GUI and shell) for all supported virtualization technologies and therefore is easier to use than the hypervisor-specific tools.</para>
-         <para>We do not recommend using libvirt and hypervisor-specific tools at the same time, because changes done with the hypervisor-specific tools may not be recognized by the libvirt tool set. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-libvirt-overview" xrefstyle="%label &#34;%c&#34;"/> for more information on libvirt.</para>
+         <para>We do not recommend using libvirt and hypervisor-specific tools at the same time, because changes done with the hypervisor-specific tools may not be recognized by the libvirt tool set. See <xref linkend="cha-libvirt-overview"/> for more information on libvirt.</para>
       </sect2>
       <sect2 xml:id="sec-vt-best-intro-qemu">
          <title>qemu-system-i386 compared to qemu-system-x86_64</title>
@@ -155,7 +155,7 @@
          <sect3 xml:id="sec-vt-best-mem-huge-pages">
             <title>Configuring the VM Host Server and the VM Guest to use huge pages</title>
             <para>The AMD64/Intel 64 CPU architecture supports larger pages than 4 KB: huge pages. To determine the size of huge pages available on your system (could be 2 MB or 1 GB), check the <literal>flags</literal> line in the output of <filename>/proc/cpuinfo</filename> for occurrences of <literal>pse</literal> and/or <literal>pdpe1gb</literal>.</para>
-            <table>
+            <table colsep="1" rowsep="1" frame="all">
                <title>Determine the available huge pages size</title>
                <tgroup cols="2">
                   <colspec colnum="1" colname="1" colwidth="30*"/>
@@ -459,8 +459,8 @@ w /sys/block/sdb/queue/scheduler - - - - none
          </sect3>
          <sect3 xml:id="sec-vt-best-io-techniques">
             <title>I/O Virtualization</title>
-            <para>SUSE products support multiple I/O virtualization technologies. The following table lists advantages and disadvantages of each technology. For more information about I/O in virtualization refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-vt-io" xrefstyle="%label &#34;%c&#34;"/>.</para>
-            <table>
+            <para>SUSE products support multiple I/O virtualization technologies. The following table lists advantages and disadvantages of each technology. For more information about I/O in virtualization refer to the <xref linkend="sec-vt-io"/>.</para>
+            <table colsep="1" rowsep="1" frame="all">
                <title>I/O Virtualization solutions</title>
                <tgroup cols="3">
                   <colspec colnum="1" colname="1" colwidth="20*"/>
@@ -521,7 +521,7 @@ w /sys/block/sdb/queue/scheduler - - - - none
       <sect2 xml:id="sec-vt-best-fs">
          <title>Storage and file system</title>
          <para>Storage space for VM Guests can either be a block device, for example, a partition on a physical disk, or an image file on the file system:</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Block devices compared to disk images</title>
             <tgroup cols="3">
                <colspec colnum="1" colname="1" colwidth="10*"/>
@@ -627,7 +627,7 @@ calls      retrans    authrefrsh
             <para>CPU overcommit occurs when the cumulative number of virtual CPUs of all VM Guests becomes higher than the number of host CPUs. Best performance is achieved when there is no overcommit and each virtual CPU matches one hardware processor or core on the VM Host Server. VM Guests running on an overcommitted host will experience increased latency and a negative effect on per-VM Guest throughput is often observed. Therefore, try to avoid overcommitting CPUs.</para>
             <para>Deciding whether to allow CPU overcommit or not requires good a priori knowledge of workload as a whole. For example, if you know that all the VM Guests' virtual CPUs will not be loaded over 50%, then you can assume that overcommitting the host by a factor of 2 (which means having 128 virtual CPUs in total, on a host with 64 CPUs) will work well. However, if you know that all the virtual CPUs of the VM Guests will try to run at 100% for most of the time, then even having one virtual CPU more than the host has CPUs is already a misconfiguration.</para>
             <para>Overcommitting to a point where the cumulative number of virtual CPUs is higher than 8 times the number of physical cores of the VM Host Server may lead to a malfunctioning and unstable system and should hence be avoided.</para>
-            <para>Unless you know exactly how many virtual CPUs are required for a VM Guest, start with one. Target a CPU workload of approximately 70% inside your VM (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-util-processes" xrefstyle="%label &#34;%c&#34;"/> for information on monitoring tools). If you allocate more processors than needed in the VM Guest, this will negatively affect the performance of host and guest. Cycle efficiency will be degraded, as the unused vCPU will still cause timer interrupts. In case you primarily run single threaded applications on a VM Guest, a single virtual CPU is the best choice.</para>
+            <para>Unless you know exactly how many virtual CPUs are required for a VM Guest, start with one. Target a CPU workload of approximately 70% inside your VM (see <xref linkend="sec-util-processes"/> for information on monitoring tools). If you allocate more processors than needed in the VM Guest, this will negatively affect the performance of host and guest. Cycle efficiency will be degraded, as the unused vCPU will still cause timer interrupts. In case you primarily run single threaded applications on a VM Guest, a single virtual CPU is the best choice.</para>
             <para>A single VM Guest with more virtual CPUs than the VM Host Server has CPUs is always a misconfiguration.</para>
          </sect3>
          <sect3 xml:id="sec-vt-best-perf-cpu-guests">
@@ -636,7 +636,7 @@ calls      retrans    authrefrsh
             <sect4 xml:id="sec-vt-best-perf-cpu-guests-model">
                <title>Virtual CPU models and features</title>
                <para>The CPU model and topology can be specified individually for each VM Guest. Configuration options range from selecting specific CPU models to excluding certain CPU features. Predefined CPU models are listed in files in the directory <filename>/usr/share/libvirt/cpu_map/</filename>. A CPU model and topology that is similar to the host generally provides the best performance. The host system CPU model and topology can be displayed by running <command>virsh capabilities</command>.</para>
-               <para>Changing the default virtual CPU configuration will require a VM Guest shutdown when migrating it to a host with different hardware. More information on VM Guest migration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-libvirt-admin-migrate" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Changing the default virtual CPU configuration will require a VM Guest shutdown when migrating it to a host with different hardware. More information on VM Guest migration is available in <xref linkend="sec-libvirt-admin-migrate"/>.</para>
                <para>To specify a particular CPU model for a VM Guest, add a respective entry to the VM Guest configuration file. The following example configures a Broadwell CPU with the invariant TSC feature:</para>
                <screen>&lt;cpu mode='custom' match='exact'&gt;
   &lt;model&gt;Broadwell&lt;/model&gt;
@@ -685,7 +685,7 @@ VCPU: CPU Affinity
                <para>With the capabilities of each host collected in all-hosts-caps.xml, use <command>virsh cpu-baseline</command> to create a virtual CPU definition that will be compatible across all hosts.</para>
                <screen><prompt>&gt;</prompt><command>sudo</command>  virsh cpu-baseline all-hosts-caps.xml</screen>
                <para>The resulting virtual CPU definition can be used as the <literal>cpu</literal> element in the VM Guest configuration file.</para>
-               <para>At a logical level, virtual CPU pinning is a form of hardware pass-through. CPU pinning couples physical resources to virtual resources, which can also be problematic for migration. For example, the migration will fail if the requested physical resources are not available on the destination host, or if the source and destination hosts have different NUMA topologies. For more recommendations about Live Migration, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="libvirt-admin-live-migration-requirements" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>At a logical level, virtual CPU pinning is a form of hardware pass-through. CPU pinning couples physical resources to virtual resources, which can also be problematic for migration. For example, the migration will fail if the requested physical resources are not available on the destination host, or if the source and destination hosts have different NUMA topologies. For more recommendations about Live Migration, see <xref linkend="libvirt-admin-live-migration-requirements"/>.</para>
             </sect4>
          </sect3>
       </sect2>
@@ -746,7 +746,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
                   <para>Size in megabytes' worth of pages to be scanned for a given scan</para>
                </callout>
             </calloutlist>
-            <para>For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-numactl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more information, see <xref linkend="cha-tuning-numactl"/>.</para>
             <para>The main goal of automatic NUMA balancing is either to reschedule tasks on the same node's memory (so the CPU follows the memory), or to copy the memory's pages to the same node (so the memory follows the CPU).</para>
             <warning>
                <title>Task placement</title>
@@ -862,7 +862,7 @@ kernel.numa_balancing_scan_size_mb = 256<co xml:id="co-numa-size"/></screen>
    </sect1>
    <sect1 xml:id="sec-vt-best-img">
       <title>VM Guest images</title>
-      <para>Images are virtual disks used to store the operating system and data of VM Guests. They can be created, maintained and queried with the <command>qemu-img</command> command. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-img-create" xrefstyle="%label &#34;%c&#34;"/> for more information on the <command>qemu-img</command> tool and examples.</para>
+      <para>Images are virtual disks used to store the operating system and data of VM Guests. They can be created, maintained and queried with the <command>qemu-img</command> command. Refer to <xref linkend="cha-qemu-guest-inst-qemu-img-create"/> for more information on the <command>qemu-img</command> tool and examples.</para>
       <sect2 xml:id="sec-vt-best-img-imageformat">
          <title>VM Guest image formats</title>
          <para>Certain storage formats which QEMU recognizes have their origins in other virtualization technologies. By recognizing these formats, QEMU can use either data stores or entire guests that were originally targeted to run under these other virtualization technologies. Certain formats are supported only in read-only mode. To use them in read/write mode, convert them to a fully supported QEMU storage format (using <command>qemu-img</command>). Otherwise they can only be used as read-only data store in a QEMU guest.</para>
@@ -1060,10 +1060,10 @@ lazy refcounts: true</screen>
             <title>Understanding image overlay</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="87%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="87%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -1388,7 +1388,7 @@ Deactivated 3 logical volumes in volume group system
             <important>
                <title>Using <literal>virtio</literal> disks with <command>qemu-system-ARCH</command>
                </title>
-               <para>When running <command>qemu-system-ARCH</command>, use the <option>-drive</option> option to add a disk to the VM Guest. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-kvm" xrefstyle="%label &#34;%c&#34;"/> for an example. The <option>-hd[abcd]</option> option will not work for virtio disks.</para>
+               <para>When running <command>qemu-system-ARCH</command>, use the <option>-drive</option> option to add a disk to the VM Guest. See <xref linkend="cha-qemu-guest-inst-qemu-kvm"/> for an example. The <option>-hd[abcd]</option> option will not work for virtio disks.</para>
             </important>
          </sect3>
          <sect3 xml:id="sec-vt-best-vmguests-virtio-virtio-net">
@@ -1564,7 +1564,7 @@ virtio_rng.0</screen>
          <para>Changing the guest's machine type for a Linux guest is transparent. For Windows* guests, we recommend creating a snapshot or backup of the guest—in case Windows* has issues with the changes it detects, and subsequently the user reverts to the original machine type the guest was created with.</para>
          <note>
             <title>Changing the machine type</title>
-            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="sec-libvirt-config-machinetype-virsh" xrefstyle="%label &#34;%c&#34;"/> for documentation.</para>
+            <para>Refer to <xref linkend="sec-libvirt-config-machinetype-virsh"/> for documentation.</para>
          </note>
       </sect2>
    </sect1>
@@ -1674,17 +1674,17 @@ LC_ALL=C PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
       <sect2 xml:id="sec-vm-guest-scsi-pr">
          <title>SCSI persistent reservation on a multipathed device</title>
          <para>SCSI persistent reservations allow restriction of access to block devices in a shared storage setup. This avoids improper multiple parallel accesses to the same block device from software components on local or remote hosts, which could lead to device damage and data corruption.</para>
-         <para>Find more information on managing storage multipath I/O in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-multipath" xrefstyle="%label &#34;%c&#34;"/>. Find more information about SCSI persistent reservations in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-mpiotools-mpathpersist" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Find more information on managing storage multipath I/O in <xref linkend="cha-multipath"/>. Find more information about SCSI persistent reservations in <xref linkend="sec-multipath-mpiotools-mpathpersist"/>.</para>
          <para>For the virtualization scenario, QEMU's SCSI passthrough devices <literal>scsi-block</literal> and <literal>scsi-generic</literal> support passing guest persistent reservation requests to a privileged external helper program <literal>qemu-pr-helper</literal>. This needs to start before QEMU and creates a listener socket that accepts incoming connections for communication with QEMU.</para>
          <note>
             <title>Live migration scenario with multipathed devices</title>
             <para>We recommend using the multipath alias instead of <literal>wwid</literal>. It is useful in the VM Guest live migration scenario, because it makes sure that the storage paths are identical between the source and destination hosts.</para>
-            <para>Find more information about multipath in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-alias" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Find more information about multipath in <xref linkend="sec-multipath-alias"/>.</para>
          </note>
          <procedure>
             <title>Adding a SCSI persistent reservation in a VM Guest against the related multipathed device in the VM Host Server:</title>
             <step>
-               <para>In the VM Host Server, create a multipath environment. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-config" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-multipath-conf-file" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>In the VM Host Server, create a multipath environment. For more information, refer to <xref linkend="sec-multipath-config"/> and <xref linkend="sec-multipath-conf-file"/>.</para>
             </step>
             <step>
                <para>In the VM Host Server, configure the <literal>&lt;reservations/&gt;</literal> sub-element of the <literal>&lt;source/&gt;</literal> element of the <literal>&lt;disk/&gt;</literal> element for the passed-through <literal>lun</literal> in your <systemitem class="library">libvirt</systemitem> domain configuration. Refer to <link xlink:href="https://libvirt.org/formatdomain.html"><systemitem class="library">libvirt</systemitem> Domain XML format</link>.</para>

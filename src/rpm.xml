@@ -57,7 +57,7 @@
    <sect2 xml:id="sec-rpm-query">
       <title>RPM queries</title>
       <para>With the <option>-q</option> option <command>rpm</command> initiates queries, making it possible to inspect an RPM archive (by adding the option <option>-p</option>) and to query the RPM database of installed packages. Several switches are available to specify the type of information required. See <xref linkend="tab-rpm-query"/>.</para>
-      <table xml:id="tab-rpm-query">
+      <table xml:id="tab-rpm-query" colsep="1" rowsep="1" frame="all">
          <title>Essential RPM query options</title>
          <tgroup cols="2">
             <tbody>
@@ -150,7 +150,7 @@ done</screen>
       </example>
       <para>The command <command>rpm -q --changelog</command><replaceable>PACKAGE</replaceable> displays a detailed list of change information about a specific package, sorted by date.</para>
       <para>With the installed RPM database, verification checks can be made. Initiate these with <option>-V</option>, or <option>--verify</option>. With this option, <command>rpm</command> shows all files in a package that have been changed since installation. <command>rpm</command> uses eight character symbols to give some hints about the following changes:</para>
-      <table xml:id="tab-rpm-verify">
+      <table xml:id="tab-rpm-verify" colsep="1" rowsep="1" frame="all">
          <title>RPM verify options</title>
          <tgroup cols="2">
             <tbody>

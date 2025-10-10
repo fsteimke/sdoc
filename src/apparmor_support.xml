@@ -15,7 +15,7 @@
    <sect1 xml:id="sec-apparmor-support-man">
       <title>Using the man pages</title>
       <para>There are man pages available for your use. In a terminal, enter <command>man apparmor</command> to open the AppArmor man page. Man pages are distributed in sections numbered 1 through 8. Each section is specific to a category of documentation:</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>Man pages: sections and categories</title>
          <tgroup cols="2">
             <thead>
@@ -263,10 +263,10 @@ Profile /etc/apparmor.d/usr.sbin.squid failed to load
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/aa_syncheck.png" width="55%"/>
+                  <imagedata fileref="media/aa_syncheck.png" width="60%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/aa_syncheck.png" width="55%"/>
+                  <imagedata fileref="media/aa_syncheck.png" width="60%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

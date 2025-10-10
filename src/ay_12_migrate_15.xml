@@ -90,7 +90,7 @@
       <sect2 xml:id="sec-ay-12vs15-software-patterns">
          <title>Renamed software patterns</title>
          <para>Software patterns have also changed since <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15. Some patterns have been renamed; a short summary is provided in the following table.</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="2">
                <colspec colname="col_1" colwidth="50*"/>
                <colspec colname="col_2" colwidth="50*"/>
@@ -218,7 +218,7 @@
       <title>Firewall configuration</title>
       <para>In <phrase role="productname">SUSE Linux Enterprise Server</phrase> 15, SuSEfirewall2 has been replaced by <systemitem class="daemon">firewalld</systemitem> as the default firewall. The configuration of these two firewalls differs significantly, and therefore the respective AutoYaST profile syntax has changed.</para>
       <para>Old profiles will continue working, but the supported configuration will be very limited. It is recommended to update profiles for SLE 15 as outlined below. If keeping SLE12 profiles, we recommend to check the final configuration to avoid unexpected behavior or network security threats.</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>AutoYaST firewall configuration in SLE 15: backward compatibility</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="50*"/>
@@ -287,7 +287,7 @@
       <sect2 xml:id="sec-ay-12vs15-firewall-zones">
          <title>Assigning interfaces to zones</title>
          <para>Both SuSEfirewall2 and <systemitem class="daemon">firewalld</systemitem> are zone-based, but have a different set of predefined rules and a different level of trust for network connections.</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Mapping of SuSEfirewall2 and <systemitem class="daemon">firewalld</systemitem> zones</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="50*"/>

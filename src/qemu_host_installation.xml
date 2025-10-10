@@ -30,10 +30,10 @@
                <title>Installing the KVM hypervisor and tools</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_hypervisors.png" width="69%"/>
+                     <imagedata fileref="media/yast2_hypervisors.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_hypervisors.png" width="69%"/>
+                     <imagedata fileref="media/yast2_hypervisors.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -47,10 +47,10 @@
                <title>Network bridge</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_netbridge.png" width="69%"/>
+                     <imagedata fileref="media/yast2_netbridge.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_netbridge.png" width="69%"/>
+                     <imagedata fileref="media/yast2_netbridge.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>

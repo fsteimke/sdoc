@@ -13,7 +13,7 @@
    </info>
    <tip>
       <title>Timekeeping on the VM Host Server</title>
-      <para>It is strongly recommended to ensure the VM Host Server keeps the correct time as well, for example, by using NTP (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/> for more information).</para>
+      <para>It is strongly recommended to ensure the VM Host Server keeps the correct time as well, for example, by using NTP (see <xref linkend="cha-ntp"/> for more information).</para>
    </tip>
    <sect1 xml:id="sec-kvm-managing-clock-kvm">
       <title>KVM: using <systemitem>kvm_clock</systemitem>

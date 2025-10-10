@@ -15,7 +15,7 @@
    </sect1>
    <sect1 xml:id="sec-xenstore-fsi">
       <title>File system interface</title>
-      <para>XenStore database content is represented by a virtual file system similar to <filename>/proc</filename> (for more information on <filename>/proc</filename>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-util-proc" xrefstyle="%label &#34;%c&#34;"/>). The tree has three main paths: <filename>/vm</filename>, <filename>/local/domain</filename>, and <filename>/tool</filename>.</para>
+      <para>XenStore database content is represented by a virtual file system similar to <filename>/proc</filename> (for more information on <filename>/proc</filename>, see <xref linkend="sec-util-proc"/>). The tree has three main paths: <filename>/vm</filename>, <filename>/local/domain</filename>, and <filename>/tool</filename>.</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
             <para><filename>/vm</filename> - stores information about the VM Guest configuration.</para>

@@ -87,7 +87,7 @@ uid           SUSE Package Signing Key (reserve key) &lt;build@suse.de&gt;</scre
     the Storage Guide only works for SLES, not for SLED
    -->
          <para>On a Btrfs file system, the output of <command>df</command> can be misleading, because in addition to the space the raw data allocates, a Btrfs file system also allocates and uses space for metadata.</para>
-         <para>Consequently a Btrfs file system may report being out of space even though it seems that plenty of space is still available. In that case, all space allocated for the metadata is used up. For details on how to check for used and available space on a Btrfs file system, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-suse-space" xrefstyle="%label &#34;%c&#34;"/>. For more information refer to <command>man 8 btrfs-filesystem</command> and <link xlink:href="https://btrfs.wiki.kernel.org/index.php/FAQ"/>.</para>
+         <para>Consequently a Btrfs file system may report being out of space even though it seems that plenty of space is still available. In that case, all space allocated for the metadata is used up. For details on how to check for used and available space on a Btrfs file system, see <xref linkend="sec-filesystems-major-btrfs-suse-space"/>. For more information refer to <command>man 8 btrfs-filesystem</command> and <link xlink:href="https://btrfs.wiki.kernel.org/index.php/FAQ"/>.</para>
          <!-- lproven: It would be good to profile the next para for SLE Micro, as Btrfs is not
     optional there -->
          <para>When using Btrfs for root file systems on your machine, make sure there is enough free space. Check the available space on all mounted partitions. In the worst case, an upgrade needs as much disk space as the current root file system (without <filename>/.snapshot</filename>) for a new snapshot.</para>
@@ -375,18 +375,18 @@ postgres &gt; <command>exit</command></screen>
    </sect1>
    <sect1 xml:id="sec-autoyast-profiles">
       <title>Changes in AutoYaST profiles from SLE 12 to 15</title>
-      <para>To learn how to migrate your AutoYaST profiles, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="appendix-ay-12vs15" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To learn how to migrate your AutoYaST profiles, see <xref linkend="appendix-ay-12vs15"/>.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-smt-to-rmt">
       <title>Upgrading a Subscription Management Tool (SMT) server</title>
-      <para>A server running SMT requires a special upgrade procedure. Please refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Repository Mirroring Tool Guide</quote>, </phrase><xref linkend="cha-rmt-migrate" xrefstyle="%label &#34;%c&#34;"/> in the Repository Mirroring Tool Guide.</para>
+      <para>A server running SMT requires a special upgrade procedure. Please refer to <xref linkend="cha-rmt-migrate"/> in the Repository Mirroring Tool Guide.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-multiversion">
       <title>Temporarily disabling kernel multiversion support</title>
       <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> allows installing multiple kernel versions by enabling the respective settings in <filename>/etc/zypp/zypp.conf</filename>. Support for this feature needs to be temporarily disabled to upgrade to a service pack. When the update has successfully finished, multiversion support can be re-enabled. To disable multiversion support, comment the respective lines in <filename>/etc/zypp/zypp.conf</filename>. The result should look similar to:</para>
       <screen>#multiversion = provides:multiversion(kernel)
 #multiversion.kernels = latest,running</screen>
-      <para>To re-activate this feature after a successful update, remove the comment signs. For more information about multiversion support, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-tuning-multikernel-enable" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To re-activate this feature after a successful update, remove the comment signs. For more information about multiversion support, refer to <xref linkend="sec-tuning-multikernel-enable"/>.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-zipl">
       <title>IBM Z: Adjust <command>zipl</command> for UEFI Secure Boot</title>
@@ -430,7 +430,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sda1 splash=silent quiet showopts"
    </sect1>
    <sect1 xml:id="sec-update-preparation-zseries">
       <title>Upgrading on IBM Z</title>
-      <para>Upgrading a SUSE Linux Enterprise installation on IBM Z requires the <command>Upgrade=1</command> kernel parameter, for example via the parmfile. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-appdendix-parm" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Upgrading a SUSE Linux Enterprise installation on IBM Z requires the <command>Upgrade=1</command> kernel parameter, for example via the parmfile. See <xref linkend="sec-appdendix-parm"/>.</para>
    </sect1>
    <sect1 xml:id="sec-update-preparation-ppc" arch="power">
       <title>IBM POWER: Starting an X server</title>

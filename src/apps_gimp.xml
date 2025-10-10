@@ -71,10 +71,10 @@
             <title>The <productname>GIMP</productname> Toolbox in GNOME</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/gimp-toolbox.png" width="32%"/>
+                  <imagedata fileref="media/gimp-toolbox.png" width="35%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/gimp-toolbox.png" width="27%"/>
+                  <imagedata fileref="media/gimp-toolbox.png" width="30%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -346,10 +346,10 @@
                      <title>The basic color selector dialog</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/gimp-color.png" width="64%"/>
+                           <imagedata fileref="media/gimp-color.png" width="70%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/gimp-color.png" width="73%"/>
+                           <imagedata fileref="media/gimp-color.png" width="80%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -439,10 +439,10 @@
          <title>The print dialog</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/gimp-print.png" width="69%"/>
+               <imagedata fileref="media/gimp-print.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/gimp-print.png" width="64%"/>
+               <imagedata fileref="media/gimp-print.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>

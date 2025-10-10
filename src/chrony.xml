@@ -22,10 +22,10 @@
          <title>NTP configuration window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/ntp_client.png" width="64%"/>
+               <imagedata fileref="media/ntp_client.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/ntp_client.png" width="64%"/>
+               <imagedata fileref="media/ntp_client.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -71,10 +71,10 @@
             <title>Adding a time server</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/ntp_client_serveradd.png" width="64%"/>
+                  <imagedata fileref="media/ntp_client_serveradd.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/ntp_client_serveradd.png" width="64%"/>
+                  <imagedata fileref="media/ntp_client_serveradd.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>

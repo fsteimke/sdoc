@@ -106,10 +106,10 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_sw_manager.png" width="64%"/>
+               <imagedata fileref="media/yast2_sw_manager.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_sw_manager.png" width="59%"/>
+               <imagedata fileref="media/yast2_sw_manager.png" width="65%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -320,10 +320,10 @@
             <title>Conflict management of the software manager</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_package_conflict.png" width="64%"/>
+                  <imagedata fileref="media/yast2_package_conflict.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_package_conflict.png" width="59%"/>
+                  <imagedata fileref="media/yast2_package_conflict.png" width="65%"/>
                </imageobject>
             </mediaobject>
          </figure>

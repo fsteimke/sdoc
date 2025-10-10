@@ -33,7 +33,7 @@
             <title>KVM kernel modules not loading</title>
             <para>The KVM kernel modules only load if the CPU hardware virtualization features are available.</para>
          </note>
-         <para>The general minimum hardware requirements for the VM Host Server are the same as outlined in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-x86-requirements" xrefstyle="%label &#34;%c&#34;"/>. However, additional RAM for each virtualized guest is needed. It should at least be the same amount that is needed for a physical installation. It is also strongly recommended to have at least one processor core or hyper-thread for each running guest.</para>
+         <para>The general minimum hardware requirements for the VM Host Server are the same as outlined in <xref linkend="sec-x86-requirements"/>. However, additional RAM for each virtualized guest is needed. It should at least be the same amount that is needed for a physical installation. It is also strongly recommended to have at least one processor core or hyper-thread for each running guest.</para>
          <note>
             <title>AArch64</title>
             <para>AArch64 is a continuously evolving platform. It does not have a traditional standards and compliance certification program to enable interoperability with operating systems and hypervisors. Ask your vendor for the support statement on SUSE Linux Enterprise Server.</para>
@@ -52,7 +52,7 @@
       <title>Hypervisor limits</title>
       <para>New features and virtualization limits for Xen and KVM are outlined in the <link xlink:href="https://www.suse.com/releasenotes/">Release Notes</link> for each Service Pack (SP).</para>
       <para>Only packages that are part of the official repositories for SUSE Linux Enterprise Server are supported. Conversely, all optional subpackages and plug-ins (for QEMU, <systemitem class="library">libvirt</systemitem>) provided at <link xlink:href="https://packagehub.suse.com/">packagehub</link> are not supported.</para>
-      <para>For the maximum total virtual CPUs per host, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="sec-vt-best-perf-cpu-assign" xrefstyle="%label &#34;%c&#34;"/>. The total number of virtual CPUs should be proportional to the number of available physical CPUs.</para>
+      <para>For the maximum total virtual CPUs per host, see <xref linkend="sec-vt-best-perf-cpu-assign"/>. The total number of virtual CPUs should be proportional to the number of available physical CPUs.</para>
       <note>
          <title>32-bit hypervisor</title>
          <para>With <phrase role="productname">SUSE Linux Enterprise Server</phrase> 11 SP2, we removed virtualization host facilities from 32-bit editions. 32-bit guests are not affected and are fully supported using the provided 64-bit hypervisor.</para>
@@ -60,7 +60,7 @@
       <sect2 xml:id="virt-kvm-limits">
          <title>KVM limits</title>
          <para>Supported (and tested) virtualization limits of a <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> host running Linux guests on AMD64/Intel 64. For other operating systems, refer to the specific vendor.</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>KVM VM limits</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1"/>
@@ -81,14 +81,14 @@
             <para>KVM host limits are identical to SUSE Linux Enterprise Server (see the corresponding section of release notes), except for:</para>
             <itemizedlist>
                <listitem>
-                  <para><emphasis>Maximum virtual CPUs per VM</emphasis>: see recommendations in the <citetitle>Virtualization Best Practices Guide</citetitle> regarding over-commitment of physical CPUs at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="sec-vt-best-perf-cpu-assign" xrefstyle="%label &#34;%c&#34;"/>. The total virtual CPUs should be proportional to the available physical CPUs.</para>
+                  <para><emphasis>Maximum virtual CPUs per VM</emphasis>: see recommendations in the <citetitle>Virtualization Best Practices Guide</citetitle> regarding over-commitment of physical CPUs at <xref linkend="sec-vt-best-perf-cpu-assign"/>. The total virtual CPUs should be proportional to the available physical CPUs.</para>
                </listitem>
             </itemizedlist>
          </note>
       </sect2>
       <sect2 xml:id="virt-xen-limits">
          <title>Xen limits</title>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Xen VM limits</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1"/>
@@ -105,7 +105,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Xen host limits</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1"/>
@@ -135,7 +135,7 @@
    <sect1 xml:id="virt-support-hosts">
       <title>Supported host environments (hypervisors)</title>
       <para>This section describes the support status of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> running as a guest operating system on top of different virtualization hosts (hypervisors).</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>The following SUSE host environments are supported</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1"/>
@@ -321,7 +321,7 @@
       <sect2 xml:id="virt-migration-offline">
          <title>Offline migration scenarios</title>
          <para>SUSE supports offline migration, powering off a guest VM, then moving it to a host running a different SLE product, from SLE 12 to SLE 15 SP<replaceable>X</replaceable>. The following host operating system combinations are fully supported (L3) for migrating guests from one host to another:</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Supported offline migration guests</title>
             <tgroup cols="11">
                <colspec colname="c1" align="center" colwidth="3*"/>
@@ -530,7 +530,7 @@
             <title>Confidential Computing</title>
             <para>SLES 15 SP6 and newer include kernel patches and tooling to enable AMD and Intel Confidential Computing technology in the product. As this technology is not yet fully ready for a production environment, it is provided as a technology preview.</para>
          </important>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Supported live migration guests</title>
             <tgroup cols="11">
                <colspec colname="c1" align="center" colwidth="3*"/>
@@ -734,7 +734,7 @@
       </important>
       <sect2 xml:id="virt-support-feature-support-host">
          <title>Xen host (Dom0)</title>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Feature support—host (<literal>Dom0</literal>)</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="c1" colwidth="7*"/>
@@ -803,7 +803,7 @@
          <tip>
             <para>For KVM, a detailed description of supported limits, features, recommended settings and scenarios, and other useful information is maintained in <filename>kvm-supported.txt</filename>. This file is part of the KVM package and can be found in <filename>/usr/share/doc/packages/qemu-kvm</filename>.</para>
          </tip>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>Guest feature support for Xen and KVM</title>
             <tgroup cols="4">
                <colspec colnum="1" colname="c1" colwidth="2*"/>

@@ -13,7 +13,7 @@
       <title>An example of cloud architecture for RMT deployment</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/rmt-architecture-example.png" width="64%"/>
+            <imagedata fileref="media/rmt-architecture-example.png" width="70%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -28,7 +28,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/gcp-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="64%"/>
+                             width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -37,7 +37,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/aws-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="64%"/>
+                             width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -46,7 +46,7 @@
             <mediaobject>
                <imageobject outputformat="print">
                   <imagedata fileref="media/azure-launch-sles-instance-cloud-rmt-marketplace.png"
-                             width="64%"/>
+                             width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>

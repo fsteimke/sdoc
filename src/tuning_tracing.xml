@@ -201,7 +201,7 @@ clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0
          <para><command>zypper</command><option>install <replaceable>VALGRIND</replaceable></option></para>
          <para>or browse through the SUSE Software Development Kit directory tree, locate the Valgrind package and install it with</para>
          <para><command>rpm</command><option>-i</option> valgrind-<replaceable>VERSION_ARCHITECTURE</replaceable>.rpm</para>
-         <para>The SDK is a module for SUSE Linux Enterprise and is available via an online channel from the SUSE Customer Center. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-modules" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+         <para>The SDK is a module for SUSE Linux Enterprise and is available via an online channel from the SUSE Customer Center. Refer to <xref linkend="article-modules"/> for details.</para>
       </sect2>
       <sect2 xml:id="sec-tuning-tracing-valgrind-supparch">
          <title>Supported architectures</title>

@@ -78,7 +78,7 @@
             <para>Until the package upgrade starts, there are only minimal changes on the system, such as changes to services and repositories. Restore <filename>/etc/zypp/repos.d/*</filename> to revert to the previous state.</para>
          </listitem>
          <listitem>
-            <para>After the package upgrade starts, you can revert to the previous state by using a Snapper snapshot (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>After the package upgrade starts, you can revert to the previous state by using a Snapper snapshot (see <xref linkend="cha-snapper"/>).</para>
          </listitem>
          <listitem>
             <para>After the migration target was selected, SUSE Customer Center changes the repository data. To revert this state manually, use <command>SUSEConnect</command><option>--rollback</option>.</para>
@@ -272,7 +272,7 @@ Continue? [y/n/? shows all options] (y):</screen>
    </sect1>
    <sect1 xml:id="sec-upgrade-online-rollback">
       <title>Rolling back a service pack</title>
-      <para>If a service pack does not work for you, SUSE Linux Enterprise supports reverting the system to the state before the service pack migration was started. Prerequisite is a Btrfs root partition with snapshots enabled (this has been the default since SLES 12). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>If a service pack does not work for you, SUSE Linux Enterprise supports reverting the system to the state before the service pack migration was started. Prerequisite is a Btrfs root partition with snapshots enabled (this has been the default since SLES 12). See <xref linkend="cha-snapper"/> for details.</para>
       <procedure xml:id="pro-upgrade-online-rollback">
          <step>
             <para>Get a list of all Snapper snapshots:</para>

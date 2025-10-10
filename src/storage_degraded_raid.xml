@@ -12,7 +12,7 @@
          <para>A degraded array is one in which some devices are missing. Degraded arrays are supported only for RAID 1, RAID 4, RAID 5, and RAID 6. These RAID types are designed to withstand some missing devices as part of their fault-tolerance features. Typically, degraded arrays occur when a device fails. It is possible to create a degraded array on purpose.</para>
       </abstract>
    </info>
-   <informaltable>
+   <informaltable colsep="1" rowsep="1" frame="all">
       <tgroup cols="2">
          <colspec colnum="1" colname="1" colwidth="30*"/>
          <colspec colnum="2" colname="2" colwidth="70*"/>

@@ -782,7 +782,7 @@ cd path                            Change remote directory to 'path'
                <term>Setting a umask</term>
                <listitem>
                   <para>A umask works as a filter against the permissions of the original file on the local host. It can only withdraw permissions:</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="3">
                         <colspec colnum="1" colname="1" colwidth="33*"/>
                         <colspec colnum="2" colname="2" colwidth="33*"/>
@@ -946,7 +946,7 @@ cd path                            Change remote directory to 'path'
                      <emphasis>jail.local</emphasis>file settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/fail2ban.png"/>
+                        <imagedata width="75%" fileref="media/fail2ban.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
                         <imagedata fileref="media/fail2ban.png"/>

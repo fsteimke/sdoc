@@ -25,7 +25,7 @@
       <important>
          <title>LDAP support</title>
          <para>The YaST DHCP module can be set up to store the server configuration locally (on the host that runs the DHCP server) or to have its configuration data managed by an LDAP server. To use LDAP, set up your LDAP environment before configuring the DHCP server.</para>
-         <para>For more information about LDAP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-ldap" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information about LDAP, see <xref linkend="cha-security-ldap"/>.</para>
       </important>
       <para>The YaST DHCP module (<systemitem>yast2-dhcp-server</systemitem>) allows you to set up your own DHCP server for the local network. The module can run in wizard mode or expert configuration mode.</para>
       <sect2 xml:id="sec-dhcp-yast-init">
@@ -57,10 +57,10 @@
                   <title>DHCP server: card selection</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz1.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz1.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz1.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz1.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -71,10 +71,10 @@
                   <title>DHCP server: global settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz2.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz2.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz2.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz2.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -85,10 +85,10 @@
                   <title>DHCP server: dynamic DHCP</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz3.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz3.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_wiz3.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_wiz3.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -102,10 +102,10 @@
                   <title>DHCP server: start-up</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_start.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_start.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_start.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_start.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -116,10 +116,10 @@
                   <title>DHCP server: host management</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_statdhcp.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_statdhcp.png"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata width="69%" fileref="media/yast2_dhcp_statdhcp.png"/>
+                        <imagedata width="75%" fileref="media/yast2_dhcp_statdhcp.png"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -138,10 +138,10 @@
                      <title>DHCP server: chroot jail and declarations</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_chroot.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_chroot.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_chroot.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_chroot.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -155,10 +155,10 @@
                      <title>DHCP server: selecting a declaration type</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_newdec.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_newdec.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_newdec.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_newdec.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -172,10 +172,10 @@
                      <title>DHCP server: configuring subnets</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_sub.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_sub.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_sub.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_sub.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -189,10 +189,10 @@
                      <title>DHCP server: TSIG configuration</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_tsig.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_tsig.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_tsig.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_tsig.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -206,10 +206,10 @@
                      <title>DHCP server: interface configuration for dynamic DNS</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_dyndns.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_dyndns.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_dyndns.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_dyndns.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -243,10 +243,10 @@
                      <title>DHCP server: network interface and firewall</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_fire.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_fire.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="69%" fileref="media/yast2_dhcp_fire.png"/>
+                           <imagedata width="75%" fileref="media/yast2_dhcp_fire.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>

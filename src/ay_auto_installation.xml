@@ -56,7 +56,7 @@
       </sect2>
       <sect2 xml:id="bootmedium-pxe">
          <title>Booting via PXE over the network</title>
-         <para>Booting via PXE requires a DHCP and a TFTP server in your network. The computer will then boot without a physical medium. For instructions on setting up the required infrastructure, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-remote-installation" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Booting via PXE requires a DHCP and a TFTP server in your network. The computer will then boot without a physical medium. For instructions on setting up the required infrastructure, see <xref linkend="cha-remote-installation"/>.</para>
          <para>If you install via PXE, the installation will run in an endless loop. This happens because after the first reboot, the machine performs the PXE boot again and restarts the installation instead of booting from the hard disk for the second stage of the installation.</para>
          <para>There are several ways to solve this problem. You can use an HTTP server to provide the AutoYaST control file. Alternatively, instead of a static control file, run a CGI script on the Web server that provides the control file and changes the TFTP server configuration for your target host. This way, the next PXE boot of the machine will be from the hard disk by default.</para>
          <para>Another way is to use AutoYaST to upload a new PXE boot configuration for the target host via the control file:</para>

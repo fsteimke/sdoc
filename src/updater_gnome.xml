@@ -14,10 +14,10 @@
       <title>Update notification on GNOME desktop</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
+            <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/gnome_update_notification_desktop.png" width="69%"/>
+            <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -29,10 +29,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/gupdater_updates.png" width="69%"/>
+                  <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/gupdater_updates.png" width="69%"/>
+                  <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

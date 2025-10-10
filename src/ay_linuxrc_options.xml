@@ -33,7 +33,7 @@
       <para>Note that <literal>value</literal> extends to the end of the line and therefore may contain spaces. The matching of <literal>key</literal> is on a case-insensitive basis.</para>
       <para>You can use the same key-value pairs on the kernel command line using the syntax <literal>key=value</literal>. Lines that do not have the form described above will be ignored.</para>
       <para>The table below lists important keys and example values. For a complete list of <command>linuxrc</command> parameters, refer to <link xlink:href="https://en.opensuse.org/SDB:Linuxrc"/>.</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>Advanced <command>linuxrc</command> keywords</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="30*"/>

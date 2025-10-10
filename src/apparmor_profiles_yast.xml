@@ -48,7 +48,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/edit_1.png" width="69%"/>
+                     <imagedata fileref="media/edit_1.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/edit_1.png"/>
@@ -64,7 +64,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/edit_2.png" width="69%"/>
+                     <imagedata fileref="media/edit_2.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/edit_2.png"/>
@@ -99,10 +99,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/add_2_addentry_file.png" width="55%"/>
+                           <imagedata fileref="media/add_2_addentry_file.png" width="60%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/add_2_addentry_file.png" width="32%"/>
+                           <imagedata fileref="media/add_2_addentry_file.png" width="35%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -116,10 +116,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/add_2_addentry_file.png" width="55%"/>
+                           <imagedata fileref="media/add_2_addentry_file.png" width="60%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/add_2_addentry_file.png" width="32%"/>
+                           <imagedata fileref="media/add_2_addentry_file.png" width="35%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -132,10 +132,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/add_2_addentry_network.png" width="46%"/>
+                           <imagedata fileref="media/add_2_addentry_network.png" width="50%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/add_2_addentry_network.png" width="32%"/>
+                           <imagedata fileref="media/add_2_addentry_network.png" width="35%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -148,7 +148,7 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/add_2_addentry_capability.png" width="69%"/>
+                           <imagedata fileref="media/add_2_addentry_capability.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
                            <imagedata fileref="media/add_2_addentry_capability.png"/>
@@ -170,10 +170,10 @@
                   <informalfigure>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/add_2_addentry_hat.png" width="46%"/>
+                           <imagedata fileref="media/add_2_addentry_hat.png" width="50%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/add_2_addentry_hat.png" width="55%"/>
+                           <imagedata fileref="media/add_2_addentry_hat.png" width="60%"/>
                         </imageobject>
                      </mediaobject>
                   </informalfigure>
@@ -216,7 +216,7 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/sd_controlpanel_1.png" width="69%"/>
+               <imagedata fileref="media/sd_controlpanel_1.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata fileref="media/sd_controlpanel_1.png"/>

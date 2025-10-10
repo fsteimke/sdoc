@@ -7,7 +7,7 @@
          xml:id="cha-tuning-ptp">
    <title>Precision Time Protocol</title>
    <info/>
-   <para>For network environments, it is vital to keep the computer and other devices' clocks synchronized and accurate. There are several solutions to achieve synchronicity and accuracy, for example, the widely used Network Time Protocol (NTP) described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>For network environments, it is vital to keep the computer and other devices' clocks synchronized and accurate. There are several solutions to achieve synchronicity and accuracy, for example, the widely used Network Time Protocol (NTP) described in <xref linkend="cha-ntp"/>.</para>
    <para>The Precision Time Protocol (PTP) is a protocol capable of sub-microsecond accuracy, which is better than what NTP achieves. PTP support is divided between the kernel and user space. The kernel in <phrase role="productname">SUSE Linux Enterprise Server</phrase> includes support for PTP clocks, which are provided by network drivers.</para>
    <sect1 xml:id="tuning-ptp-intro">
       <title>Introduction to PTP</title>

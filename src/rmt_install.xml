@@ -27,10 +27,10 @@
          <title>RMT pattern</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/rmt_installation.png" width="64%"/>
+               <imagedata fileref="media/rmt_installation.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/rmt_installation.png" width="64%"/>
+               <imagedata fileref="media/rmt_installation.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -283,10 +283,10 @@ EOF
                </title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/rmt_firewalld.png" width="55%"/>
+                     <imagedata fileref="media/rmt_firewalld.png" width="60%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/rmt_firewalld.png" width="59%"/>
+                     <imagedata fileref="media/rmt_firewalld.png" width="65%"/>
                   </imageobject>
                </mediaobject>
             </figure>

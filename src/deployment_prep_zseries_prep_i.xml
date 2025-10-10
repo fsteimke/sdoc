@@ -28,7 +28,7 @@
             <screen>/media/dvd  *(ro)</screen>
             <para>After changing this file, restart the NFS server with the command <command>sudo systemctl restart nfsserver</command>.</para>
          </important>
-         <para>Setting up an FTP server on a Linux system involves the installation and configuration of server software like <package>vsftpd</package>. If you are using <phrase role="productname">SUSE Linux Enterprise Server</phrase>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ftp" xrefstyle="%label &#34;%c&#34;"/> for installation instructions. Downloading the installation data via anonymous login is not supported, therefore you need to configure the FTP server to support user authentication.</para>
+         <para>Setting up an FTP server on a Linux system involves the installation and configuration of server software like <package>vsftpd</package>. If you are using <phrase role="productname">SUSE Linux Enterprise Server</phrase>, refer to <xref linkend="cha-ftp"/> for installation instructions. Downloading the installation data via anonymous login is not supported, therefore you need to configure the FTP server to support user authentication.</para>
          <sect4 xml:id="sec-prep-makeavail-linuxws-oncd">
             <title>
                <phrase role="productname">SUSE Linux Enterprise Server</phrase> on DVD</title>
@@ -369,7 +369,7 @@ DIRM USER WITHPASS</screen>
             <title>Create a virtual disk image</title>
             <para>By default, libvirt searches for disk images in <filename>/var/lib/libvirt/images/</filename> on the VM Host Server. Although images can also be stored anywhere on the file system, it is recommended to store all images in a single location for easier maintainability. To create an image, log in to the KVM host server and run the following command:</para>
             <screen>qemu-img create -f qcow2 /var/lib/libvirt/images/s12lin_qcow2.img 10G</screen>
-            <para>This creates a qcow2 image with a size of 10 GB in <filename>/var/lib/libvirt/images/</filename>. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="cha-qemu-guest-inst-qemu-img" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>This creates a qcow2 image with a size of 10 GB in <filename>/var/lib/libvirt/images/</filename>. For more information, refer to <xref linkend="cha-qemu-guest-inst-qemu-img"/>.</para>
          </sect4>
          <sect4 xml:id="sec-prep-prep-ipl-kvm-domain">
             <title>Write a domain XML file</title>
@@ -737,7 +737,7 @@ ter '+++' to abort).
       <title>Connecting to the <phrase role="productname">SUSE Linux Enterprise Server</phrase> installation system</title>
       <para>After loading the installation system, linuxrc prompts you to choose what type of display to use to control the installation procedure. The available options include <literal>Remote X11</literal> (X Window System), <literal>VNC</literal> (Virtual Network Computing protocol), <literal>SSH</literal> (text mode or X11 installation via Secure Shell), <literal>Text-based UI</literal> and <literal>Graphical UI</literal>. The latter starts YaST in graphical mode on a local graphics display if it exists. On the s390x architecture, a local graphics display can be implemented using QEMU and the <systemitem>virtio-gpu</systemitem> driver.</para>
       <para>The recommended options are <literal>VNC</literal> or <literal>SSH</literal>.</para>
-      <para>If the <literal>Text-based UI</literal> option is selected, YaST starts in text mode, and you can perform the installation directly within your terminal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-text" xrefstyle="%label &#34;%c&#34;"/> for instructions on how to use YaST in the text mode. The <literal>Text-based UI</literal> option is only useful when installing into LPAR.</para>
+      <para>If the <literal>Text-based UI</literal> option is selected, YaST starts in text mode, and you can perform the installation directly within your terminal. See <xref linkend="cha-yast-text"/> for instructions on how to use YaST in the text mode. The <literal>Text-based UI</literal> option is only useful when installing into LPAR.</para>
       <note>
          <title>Terminal emulation for Text-based UI</title>
          <para>To be able to work with YaST in the text mode, it needs to run in a terminal with VT220/Linux emulation (also called <literal>Text-based UI</literal>).</para>
@@ -823,6 +823,6 @@ QT_XCB_GL_INTEGRATION=none yast2 disk</screen>
             </listitem>
          </varlistentry>
       </variablelist>
-      <para>For more details on the boot process, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-boot" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more details on the boot process, refer to <xref linkend="cha-boot"/>.</para>
    </sect2>
 </sect1>

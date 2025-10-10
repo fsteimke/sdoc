@@ -7,7 +7,7 @@
          xml:id="cha-virt-logs">
    <title>Gathering system information and logs</title>
    <info/>
-   <para>When a virtualization host encounters a problem, it is often necessary to collect a detailed system report, which can be done with the help of the <command>supportconfig</command> tool. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for more information about <command>supportconfig</command>.</para>
+   <para>When a virtualization host encounters a problem, it is often necessary to collect a detailed system report, which can be done with the help of the <command>supportconfig</command> tool. See <xref linkend="cha-adm-support"/> for more information about <command>supportconfig</command>.</para>
    <para>In certain cases, the information gathered by <command>supportconfig</command> is insufficient, and logs generated from a custom logging or debugging configuration may be required to determine the cause of a problem.</para>
    <sect1 xml:id="sec-logs-libvirt">
       <title>

@@ -13,7 +13,7 @@
       <para>Linux reports things in a detailed way. There are several places to look when you encounter problems with your system. Most of them are standard to Linux systems, and several are relevant to <phrase role="productname">SUSE Linux Enterprise Server</phrase> systems. Most log files can be viewed with YaST (<menuchoice><guimenu>Miscellaneous</guimenu><guimenu>Start-Up Log</guimenu></menuchoice>).</para>
       <para>YaST offers the possibility to collect all system information needed by the support team. Use <menuchoice><!-- TODO check this vvvvvv --><guimenu>Other</guimenu><guimenu>Support</guimenu></menuchoice> and select the problem category. When all information is gathered, attach it to your support request.</para>
       <para>A list of the most frequently checked log files follows with the description of their typical purpose. Paths containing <filename>~</filename> refer to the current user's home directory.</para>
-      <table xml:id="tab-trouble-info">
+      <table xml:id="tab-trouble-info" colsep="1" rowsep="1" frame="all">
          <title>Log files</title>
          <tgroup cols="2">
             <thead>
@@ -29,11 +29,11 @@
                </row>
                <row>
                   <entry><para><filename>/var/log/apparmor/</filename></para></entry>
-                  <entry><para>Log files from AppArmor, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-apparmor" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para></entry>
+                  <entry><para>Log files from AppArmor, see <xref linkend="part-apparmor"/> for detailed information.</para></entry>
                </row>
                <row>
                   <entry><para><filename>/var/log/audit/audit.log</filename></para></entry>
-                  <entry><para>Log file from Audit to track any access to files, directories, or resources of your system, and trace system calls. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para></entry>
+                  <entry><para>Log file from Audit to track any access to files, directories, or resources of your system, and trace system calls. See <xref linkend="part-audit"/> for detailed information.</para></entry>
                </row>
                <row>
                   <entry><para><filename>/var/log/mail.*</filename></para></entry>
@@ -71,7 +71,7 @@
          </tgroup>
       </table>
       <para>Apart from log files, your machine also supplies you with information about the running system. See <xref linkend="tab-trouble-system" xrefstyle="%label %c"/></para>
-      <table xml:id="tab-trouble-system">
+      <table xml:id="tab-trouble-system" colsep="1" rowsep="1" frame="all">
          <title>System information with the <filename>/proc</filename> file system</title>
          <tgroup cols="2">
             <thead>
@@ -125,7 +125,7 @@
          </tgroup>
       </table>
       <para>Apart from the <filename>/proc</filename> file system, the Linux kernel exports information with the <literal>sysfs</literal> module, an in-memory file system. This module represents kernel objects, their attributes and relationships. For more information about <literal>sysfs</literal>, see the context of udev in <xref linkend="cha-udev"/>. <xref linkend="tab-trouble-sysfs" xrefstyle="%label"/> contains an overview of the most common directories under <filename>/sys</filename>.</para>
-      <table xml:id="tab-trouble-sysfs">
+      <table xml:id="tab-trouble-sysfs" colsep="1" rowsep="1" frame="all">
          <title>System information with the <filename>/sys</filename> file system</title>
          <tgroup cols="2">
             <thead>
@@ -154,7 +154,7 @@
             </tbody>
          </tgroup>
       </table>
-      <para>Linux comes with several tools for system analysis and monitoring. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-util" xrefstyle="%label &#34;%c&#34;"/> for a selection of the most important ones used in system diagnostics.</para>
+      <para>Linux comes with several tools for system analysis and monitoring. See <xref linkend="cha-util"/> for a selection of the most important ones used in system diagnostics.</para>
       <para>Each of the following scenarios begins with a header describing the problem followed by a paragraph or two offering suggested solutions, available references for more detailed solutions, and cross-references to other scenarios that are related.</para>
    </sect1>
    <sect1 xml:id="sec-trouble-boot">
@@ -234,7 +234,7 @@
                <para>If the system is configured to use Kerberos, the system's local time may have drifted past the accepted variance with the Kerberos server time (this is typically 300 seconds). If NTP (network time protocol) is not working properly or local NTP servers are not working, Kerberos authentication ceases to function because it depends on common clock synchronization across the network.</para>
             </listitem>
             <listitem>
-               <para>The system's authentication configuration is misconfigured. Check the PAM configuration files involved for any typographical errors or misordering of directives. For additional background information about PAM and the syntax of the configuration files involved, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-pam" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>The system's authentication configuration is misconfigured. Check the PAM configuration files involved for any typographical errors or misordering of directives. For additional background information about PAM and the syntax of the configuration files involved, refer to <xref linkend="cha-pam"/>.</para>
             </listitem>
             <listitem>
                <para>The home partition is encrypted. Find more information about this topic in <xref linkend="sec-trouble-login-encrypted"/>.</para>

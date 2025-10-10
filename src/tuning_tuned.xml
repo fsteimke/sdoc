@@ -648,7 +648,7 @@ cpufreq_conservative=+r,down_threshold=20,up_threshold=80,sampling_rate=20000 <c
                         </itemizedlist>
                      </callout>
                   </calloutlist>
-                  <para>For more information on kernel modules, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-mod" xrefstyle="%label &#34;%c&#34;"/>. Additionally, you can check the parameters of the installed modules on your system by looking at <filename>/sys/module/<replaceable>MODULE_NAME</replaceable>/parameters/</filename>.</para>
+                  <para>For more information on kernel modules, refer to <xref linkend="cha-mod"/>. Additionally, you can check the parameters of the installed modules on your system by looking at <filename>/sys/module/<replaceable>MODULE_NAME</replaceable>/parameters/</filename>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>

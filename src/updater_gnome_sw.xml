@@ -29,10 +29,10 @@
          <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
+            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/gnome-software-updates.png" width="69%"/>
+            <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
          </imageobject>
       </mediaobject>
    </figure>

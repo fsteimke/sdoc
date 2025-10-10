@@ -19,7 +19,7 @@
       <para>Resizing any partition or file system involves some risks that can potentially result in losing data. To avoid data loss, ensure that you back up your data before you begin any resizing task.</para>
    </warning>
    <para>Resizing the RAID involves the following tasks. The order in which these tasks are performed depends on whether you are increasing or decreasing its size.</para>
-   <table>
+   <table colsep="1" rowsep="1" frame="all">
       <title>Tasks involved in resizing a RAID</title>
       <tgroup cols="4">
          <colspec colnum="1" colname="1" colwidth="2500*"/>
@@ -57,7 +57,7 @@
       </tgroup>
    </table>
    <para>The procedures in the following sections use the device names shown in the following table. Ensure that you modify the names to use the names of your own devices.</para>
-   <table>
+   <table colsep="1" rowsep="1" frame="all">
       <title>Scenario for increasing the size of component partitions</title>
       <tgroup cols="2">
          <colspec colnum="1" colname="1" colwidth="5001*"/>

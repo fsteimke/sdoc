@@ -45,10 +45,10 @@
       <title>Simplified layer model for TCP/IP</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata width="92%" fileref="media/net_basic_osi.svg"/>
+            <imagedata width="100%" fileref="media/net_basic_osi.svg"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata width="69%" fileref="media/net_basic_osi.png"/>
+            <imagedata width="75%" fileref="media/net_basic_osi.png"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -59,10 +59,10 @@
       <title>TCP/IP Ethernet packet</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata width="73%" fileref="media/net_basic_tcppacket.svg"/>
+            <imagedata width="80%" fileref="media/net_basic_tcppacket.svg"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata width="69%" fileref="media/net_basic_tcppacket.png"/>
+            <imagedata width="75%" fileref="media/net_basic_tcppacket.png"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -124,7 +124,10 @@ In the decimal system:           213.      95.      15.       0</screen>
             </varlistentry>
          </variablelist>
          <para>Because IP addresses must be unique all over the world, you cannot select random addresses. There are three address domains to use to set up a private IP-based network. These cannot get any connection from the rest of the Internet, because they cannot be transmitted over the Internet. These address domains are specified in RFC 1597 and listed in <xref linkend="tab-net-basic-privat-net"/>.</para>
-         <table xml:id="tab-net-basic-privat-net">
+         <table xml:id="tab-net-basic-privat-net"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Private IP address domains</title>
             <tgroup cols="2">
                <thead>

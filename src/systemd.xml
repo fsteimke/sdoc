@@ -149,7 +149,7 @@ systemd=true</screen>
          <para>To list all services available on the system:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> systemctl list-unit-files --type=service</screen>
          <para>The following table lists the most important service management commands for <systemitem class="daemon">systemd</systemitem> and System V init:</para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>Service management commands</title>
             <tgroup cols="3">
                <colspec colnum="1" colname="1" colwidth="50*"/>
@@ -222,7 +222,7 @@ systemd=true</screen>
                <title>Service start</title>
                <para>When enabling a service on the command line, it is not started automatically. It is scheduled to be started with the next system start-up or runlevel/target change. To immediately start a service after having enabled it, explicitly run <command>systemctl start <replaceable>MY_SERVICE</replaceable></command> or <command>rc <replaceable>MY_SERVICE</replaceable> start</command>.</para>
             </important>
-            <table rowsep="1">
+            <table rowsep="1" colsep="1" frame="all">
                <title>Commands for enabling and disabling services</title>
                <tgroup cols="3">
                   <colspec colnum="1" colname="1" colwidth="32*"/>
@@ -350,7 +350,7 @@ systemd=true</screen>
          </variablelist>
          <para>To remain compatible with the System V init runlevel system, <systemitem class="daemon">systemd</systemitem> provides special targets named <literal>runlevel<replaceable>X</replaceable>.target</literal> mapping the corresponding runlevels numbered <replaceable>X</replaceable>.</para>
          <para>To inspect the current target, use the command: <command>systemctl get-default</command></para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>System V runlevels and <systemitem class="daemon">systemd</systemitem> target units</title>
             <tgroup cols="3">
                <colspec colnum="1" colname="1" colwidth="20*"/>
@@ -411,7 +411,7 @@ systemd=true</screen>
          <sect3 xml:id="sec-boot-systemd-targets-commands">
             <title>Commands to change targets</title>
             <para>Use the following commands to operate with target units:</para>
-            <informaltable rowsep="1">
+            <informaltable rowsep="1" colsep="1" frame="all">
                <tgroup cols="3">
                   <colspec colnum="1" colname="1" colwidth="20*"/>
                   <colspec colnum="2" colname="2" colwidth="50*"/>
@@ -540,10 +540,10 @@ Startup finished in 2666ms (kernel) + 21961ms (userspace) = 24628ms</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/systemd_startup.svg" width="69%"/>
+                              <imagedata fileref="media/systemd_startup.svg" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/systemd_startup.png" width="69%"/>
+                              <imagedata fileref="media/systemd_startup.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -603,10 +603,10 @@ WantedBy=multi-user.target<co xml:id="co-service-wrapper-target"/></screen>
          <title>Services Manager</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_runlevel.png" width="69%"/>
+               <imagedata fileref="media/yast2_runlevel.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_runlevel.png" width="69%"/>
+               <imagedata fileref="media/yast2_runlevel.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -953,7 +953,7 @@ WantedBy=multi-user.target
 
 [...]</screen>
          </example>
-         <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-cgroups" xrefstyle="%label &#34;%c&#34;"/> for more information about cgroups.</para>
+         <para>See <xref linkend="cha-tuning-cgroups"/> for more information about cgroups.</para>
       </sect2>
       <sect2 xml:id="sec-boot-systemd-advanced-kill">
          <title>Terminating services (sending signals)</title>

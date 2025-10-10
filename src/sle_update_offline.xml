@@ -42,7 +42,7 @@
             <phrase role="productnumber">15 SP7</phrase>
          </title>
          <step>
-            <para>Select and prepare a boot medium, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="part-prep" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Select and prepare a boot medium, see <xref linkend="part-prep"/>.</para>
          </step>
          <step>
             <para>Insert the Unified Installer DVD for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> and boot your machine. A <guimenu>Welcome</guimenu> screen is displayed, followed by the boot screen.</para>
@@ -66,7 +66,7 @@
          <varlistentry>
             <term>Network installation source</term>
             <listitem>
-               <para>A network installation source is set up according to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-deployment-instserver" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>A network installation source is set up according to <xref linkend="cha-deployment-instserver"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -89,7 +89,7 @@
          <varlistentry>
             <term>Boot medium</term>
             <listitem>
-               <para>A bootable SUSE Linux Enterprise DVD, ISO image or functioning PXE setup. For details about booting via PXE, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-deployment-prep-boot-pxeprep" xrefstyle="%label &#34;%c&#34;"/>. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-remote-installation" xrefstyle="%label &#34;%c&#34;"/> for in-depth information on starting the upgrade from a remote server.</para>
+               <para>A bootable SUSE Linux Enterprise DVD, ISO image or functioning PXE setup. For details about booting via PXE, see <xref linkend="sec-deployment-prep-boot-pxeprep"/>. Refer to <xref linkend="cha-remote-installation"/> for in-depth information on starting the upgrade from a remote server.</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -105,7 +105,7 @@
                <para>Insert the Unified Installer DVD for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> and boot your machine. A <guimenu>Welcome</guimenu> screen is displayed, followed by the boot screen.</para>
             </step>
             <step>
-               <para>Select the type of network installation source you want to use (FTP, HTTP, NFS, SMB, or SLP). Usually you get this choice by pressing <keycap>F4</keycap>, but in case your machine is equipped with UEFI instead of a traditional BIOS, you may need to manually adjust boot parameters. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-boot-parameters" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-install" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Select the type of network installation source you want to use (FTP, HTTP, NFS, SMB, or SLP). Usually you get this choice by pressing <keycap>F4</keycap>, but in case your machine is equipped with UEFI instead of a traditional BIOS, you may need to manually adjust boot parameters. For details, see <xref linkend="cha-boot-parameters"/> and <xref linkend="cha-install"/>.</para>
             </step>
             <step>
                <para>Proceed with the upgrade process as described in <xref linkend="sec-upgrade-offline-yast"/>.</para>
@@ -117,16 +117,16 @@
          <para>To perform an upgrade from a network installation source using PXE boot, proceed as follows:</para>
          <procedure xml:id="pro-update-sle-manual-network-pxe-boot">
             <step>
-               <para>Adjust the setup of your DHCP server to provide the address information needed for booting via PXE. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="pro-deployment-dhcp-server" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Adjust the setup of your DHCP server to provide the address information needed for booting via PXE. For details, see <xref linkend="pro-deployment-dhcp-server"/>.</para>
             </step>
             <step>
-               <para>Set up a TFTP server to hold the boot image needed for booting via PXE. Use the Installer DVD for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> for this or follow the instructions in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-deployment-tftp-server" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Set up a TFTP server to hold the boot image needed for booting via PXE. Use the Installer DVD for <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> for this or follow the instructions in <xref linkend="sec-deployment-tftp-server"/>.</para>
             </step>
             <step>
                <para>Prepare PXE Boot and Wake-on-LAN on the target machine.</para>
             </step>
             <step>
-               <para>Initiate the boot of the target system and use VNC to remotely connect to the installation routine running on this machine. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-remote-installation-monitor-vnc" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Initiate the boot of the target system and use VNC to remotely connect to the installation routine running on this machine. For more information, see <xref linkend="sec-remote-installation-monitor-vnc"/>.</para>
             </step>
             <step>
                <para>Proceed with the upgrade process as described in <xref linkend="sec-upgrade-offline-yast"/>.</para>
@@ -207,7 +207,7 @@
    </sect1>
    <sect1 xml:id="sec-upgrade-offline-automated">
       <title>Upgrading with AutoYaST</title>
-      <para>The upgrade process can be executed automatically. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="CreateProfile-upgrade" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>The upgrade process can be executed automatically. For details, see <xref linkend="CreateProfile-upgrade"/>.</para>
    </sect1>
    <sect1 xml:id="sec-upgrade-offline-manager">
       <title>Upgrading with SUSE Multi-Linux Manager</title>
@@ -255,7 +255,7 @@
          </step>
          <step xml:id="st-y2-register-final">
             <para>To start the registration, proceed with <guimenu>Next</guimenu>.</para>
-            <para>After successful registration, YaST lists extensions, add-ons, and modules that are available for your system. To select and install them, proceed with <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-register-sle-add-modules" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>After successful registration, YaST lists extensions, add-ons, and modules that are available for your system. To select and install them, proceed with <xref linkend="sec-register-sle-add-modules"/>.</para>
          </step>
       </procedure>
    </sect1>

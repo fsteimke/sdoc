@@ -335,10 +335,10 @@ cio_ignore=all,!da5d,!f500-f502</screen>
             <title>YaST Kdump module: start-up page</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_kdump_startup.png" width="55%"/>
+                  <imagedata fileref="media/yast2_kdump_startup.png" width="60%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_kdump_startup.png" width="64%"/>
+                  <imagedata fileref="media/yast2_kdump_startup.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>

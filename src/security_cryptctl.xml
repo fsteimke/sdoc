@@ -42,7 +42,7 @@
             <imagedata fileref="media/cryptctl-keyretrieval.png"/>
          </imageobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/cryptctl-keyretrieval.svg" width="64%"/>
+            <imagedata fileref="media/cryptctl-keyretrieval.svg" width="70%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -352,7 +352,7 @@ Used By      When                 UUID  Max.Users  Num.Users  Mount Point
             </substeps>
          </step>
       </procedure>
-      <table xml:id="tab-parameters">
+      <table xml:id="tab-parameters" colsep="1" rowsep="1" frame="all">
          <title>List of all parameters to define the resource group with the cryptctl crm script.</title>
          <tgroup cols="4">
             <colspec colname="name"/>

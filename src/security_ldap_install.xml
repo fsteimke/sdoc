@@ -190,7 +190,7 @@ Instance "localhost" is running</screen>
 </screen>
       <para>Start, stop and restart your LDAP server:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl start <replaceable>dirsrv@LDAP1.service</replaceable></command><prompt>&gt;</prompt><command>sudo</command><command>systemctl stop <replaceable>dirsrv@LDAP1.service</replaceable></command><prompt>&gt;</prompt><command>sudo</command><command>systemctl restart <replaceable>dirsrv@LDAP1.service</replaceable></command></screen>
-      <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-systemd" xrefstyle="%label &#34;%c&#34;"/> for more information on using <command>systemctl</command>.</para>
+      <para>See <xref linkend="cha-systemd"/> for more information on using <command>systemctl</command>.</para>
       <para>The <command>dsctl</command> command also starts and stops your server:</para>
       <screen><prompt>&gt;</prompt><command>sudo</command><command>dsctl <replaceable>LDAP1</replaceable> status</command><prompt>&gt;</prompt><command>sudo</command><command>dsctl <replaceable>LDAP1</replaceable> stop</command><prompt>&gt;</prompt><command>sudo</command><command>dsctl <replaceable>LDAP1</replaceable> restart</command><prompt>&gt;</prompt><command>sudo</command><command>dsctl <replaceable>LDAP1</replaceable> start</command></screen>
    </sect2>

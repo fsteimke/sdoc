@@ -8,7 +8,7 @@
    <title>Using NIS</title>
    <info>
       <abstract>
-         <para>When multiple Unix systems in a network access common resources, it becomes imperative that all user and group identities are the same for all machines in that network. The network should be transparent to users: their environments should not vary, regardless of which machine they are using. This can be done by NIS and NFS services. NFS distributes file systems over a network and is discussed in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>When multiple Unix systems in a network access common resources, it becomes imperative that all user and group identities are the same for all machines in that network. The network should be transparent to users: their environments should not vary, regardless of which machine they are using. This can be done by NIS and NFS services. NFS distributes file systems over a network and is discussed in <xref linkend="cha-nfs"/>.</para>
          <para>NIS (Network Information Service) can be described as a database-like service that provides access to the contents of <filename>/etc/passwd</filename>, <filename>/etc/shadow</filename>, and <filename>/etc/group</filename> across networks. NIS can also be used for other purposes (making the contents of files like <filename>/etc/hosts</filename> or <filename>/etc/services</filename> available, for example), but this is beyond the scope of this introduction. People often refer to NIS as <emphasis>YP</emphasis>, because it works like the network's <quote>yellow pages.</quote></para>
       </abstract>
    </info>
@@ -40,10 +40,10 @@
                   <title>NIS server setup</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis1_no_nis_installed.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -70,10 +70,10 @@
                         <title>Master server setup</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_nis_master.png" width="69%"/>
+                              <imagedata fileref="media/yast2_nis_master.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_nis_master.png" width="69%"/>
+                              <imagedata fileref="media/yast2_nis_master.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -85,10 +85,10 @@
                         <title>Changing the directory and synchronizing files for a NIS server</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="69%"/>
+                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="69%"/>
+                              <imagedata fileref="media/yast2_inst_nisserver2.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -107,10 +107,10 @@
                   <title>NIS server maps setup</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis_maps.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis_maps.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis_maps.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis_maps.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -124,10 +124,10 @@
                   <title>Setting request permissions for a NIS server</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_nis_hosts.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis_hosts.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_nis_hosts.png" width="69%"/>
+                        <imagedata fileref="media/yast2_nis_hosts.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -193,15 +193,15 @@
             <para>Activate the <guimenu>Use NIS</guimenu> button.</para>
          </step>
          <step>
-            <para>Enter the NIS domain. This is a domain name given by your administrator or a static external IP address received by DHCP. For information about DHCP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-dhcp" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Enter the NIS domain. This is a domain name given by your administrator or a static external IP address received by DHCP. For information about DHCP, see <xref linkend="cha-dhcp"/>.</para>
             <figure xml:id="fig-inst-nisclient">
                <title>Setting domain and address of a NIS server</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_inst_nisclient.png" width="69%"/>
+                     <imagedata fileref="media/yast2_inst_nisclient.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_inst_nisclient.png" width="69%"/>
+                     <imagedata fileref="media/yast2_inst_nisclient.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>

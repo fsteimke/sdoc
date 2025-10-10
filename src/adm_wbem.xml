@@ -81,7 +81,10 @@
       <sect2 xml:id="sec-wbem-setting-daemon">
          <title>Starting, stopping and checking status for SFCB</title>
          <para>CIM server sfcbd daemon is installed together with Web-Based Enterprise Management software and is started by default at system start-up. The following table explains how to start, stop and check status for sfcbd.</para>
-         <table xml:id="tab-wbem-setting-daemon-1" frame="topbot" rowsep="0">
+         <table xml:id="tab-wbem-setting-daemon-1"
+                frame="topbot"
+                rowsep="0"
+                colsep="1">
             <title>Commands for managing sfcbd</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1"/>
@@ -344,7 +347,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>Specifies whether SFCB should accept HTTP client connections. Default is <literal>false</literal> .</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>enableHttp:</literal><replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -399,7 +402,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>Specifies if SFCB will accept HTTPS client connections. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>enableHttps: option</literal></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -433,7 +436,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>Specifies if SFCB will provide the <emphasis>interop</emphasis> namespace for indication support. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>enableInterOp:</literal> <replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -467,7 +470,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>Switches basic authentication on or off based on the client user identifier before it accepts the request. Default value is <literal>true</literal> which means that basic client authentication is performed.</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>doBasicAuth:</literal> <replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -501,7 +504,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>This option switches the use of HTTP/HTTPS <quote>chunking</quote> on or off. If switched on, the server will return large volumes of response data to the client in smaller <quote>chunks</quote>, rather than buffer the data and send it back all in one chunk. Default is <literal>true</literal> .</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>useChunking:</literal> <replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -570,7 +573,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>If the provider registration file does not specify any other group, and the option is set to <literal>true</literal>, all providers in the same shared library are executed in the same process.</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>providerAutoGroup:</literal> <replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>
@@ -618,7 +621,7 @@ WARNING: client.pem SSL Certificate trust store already exists.
             <para>Specifies the way SFCB handles client certificate based authentication. If set to <literal>ignore</literal>, it will not request a certificate from the client. If set to <literal>accept</literal> it will request a certificate from the client but will not fail if the client does not present one. If set to <literal>require</literal>, it will refuse the client connection if the client does not present a certificate. Default value is <literal>ignore</literal>.</para>
             <bridgehead>Syntax</bridgehead>
             <para><literal>sslClientCertificate:</literal> <replaceable>OPTION</replaceable></para>
-            <informaltable frame="topbot" rowsep="1">
+            <informaltable frame="topbot" rowsep="1" colsep="1">
                <tgroup cols="2">
                   <thead>
                      <row>

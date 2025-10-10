@@ -11,7 +11,7 @@
    <para>The term <quote>link aggregation</quote> is the general term which describes combining (or aggregating) a network connection to provide a logical layer. Sometimes you find the terms <quote>channel teaming</quote>, <quote>Ethernet bonding</quote>, <quote>port trunking</quote>, etc. which are synonyms and refer to the same concept.</para>
    <para>This concept is widely known as <quote>bonding</quote> and was originally integrated into the Linux kernel (see <xref linkend="sec-network-iface-bonding"/> for the original implementation). The term <emphasis>Network Teaming</emphasis> is used to refer to the new implementation of this concept.</para>
    <para>The main difference between bonding and Network Teaming is that teaming supplies a set of small kernel modules responsible for providing an interface for teamd instances. Everything else is handled in user space. This is different from the original bonding implementation which contains all of its functionality exclusively in the kernel. For a comparison refer to <xref linkend="tab-team-comparison"/>.</para>
-   <table xml:id="tab-team-comparison">
+   <table xml:id="tab-team-comparison" colsep="1" rowsep="1" frame="all">
       <title>Feature comparison between bonding and team</title>
       <tgroup cols="3">
          <colspec colname="c1"/>

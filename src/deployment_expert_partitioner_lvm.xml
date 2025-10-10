@@ -7,7 +7,7 @@
        xml:id="sec-yast-system-lvm">
    <title>LVM configuration</title>
    <info/>
-   <para>This section explains specific steps to take when configuring LVM. If you need information about the Logical Volume Manager in general, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-lvm-explained" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>This section explains specific steps to take when configuring LVM. If you need information about the Logical Volume Manager in general, refer to the <xref linkend="sec-lvm-explained"/>.</para>
    <warning>
       <title>Back up your data</title>
       <para>Using LVM is sometimes associated with increased risk such as data loss. Risks also include application crashes, power failures, and faulty commands. Save your data before implementing LVM or reconfiguring volumes. Never work without a backup.</para>
@@ -55,10 +55,10 @@
          <title>Creating a volume group</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_add_vg.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_add_vg.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -71,10 +71,10 @@
          <title>Logical volume management</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_volume_management.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_volume_management.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

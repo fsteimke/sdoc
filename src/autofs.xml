@@ -55,7 +55,7 @@
                <para>In case you need to split the master map into several files, uncomment the line, and put the mappings (suffixed with <literal>.autofs</literal>) in the <filename>/etc/auto.master.d/</filename> directory.</para>
             </callout>
             <callout arearefs="co-autofs-plus">
-               <para><literal>+auto.master</literal> ensures that those using NIS (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-nis-server" xrefstyle="%label &#34;%c&#34;"/> for more information on NIS) will still find their master map.</para>
+               <para><literal>+auto.master</literal> ensures that those using NIS (see <xref linkend="sec-nis-server"/> for more information on NIS) will still find their master map.</para>
             </callout>
          </calloutlist>
          <para>Entries in <filename>auto.master</filename> have three fields with the following syntax:</para>

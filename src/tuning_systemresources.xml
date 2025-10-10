@@ -57,7 +57,7 @@ Large page support
    </info>
    <sect1 xml:id="cha-tuning-resources-installation">
       <title>Planning the installation</title>
-      <para>A carefully planned installation ensures that the system is set up exactly as you need it for the given purpose. It also saves considerable time when fine tuning the system. All changes suggested in this section can be made in the <guimenu>Installation Settings</guimenu> step during the installation. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-proposal" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>A carefully planned installation ensures that the system is set up exactly as you need it for the given purpose. It also saves considerable time when fine tuning the system. All changes suggested in this section can be made in the <guimenu>Installation Settings</guimenu> step during the installation. See <xref linkend="sec-yast-install-proposal"/> for details.</para>
       <sect2 xml:id="cha-tuning-resources-installation-partitioning">
          <title>Partitioning</title>
          <para>Depending on the server's range of applications and the hardware layout, the partitioning scheme can influence the machine's performance (although to a lesser extent only). It is beyond the scope of this manual to suggest different partitioning schemes for particular workloads. However, the following rules positively affect performance. They do not apply when using an external storage system.</para>
@@ -141,7 +141,7 @@ Large page support
                <guimenu>auditd</guimenu>
             </term>
             <listitem>
-               <para>A daemon for the Audit system (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for details). Disable this if you do not use Audit.</para>
+               <para>A daemon for the Audit system (see <xref linkend="part-audit"/> for details). Disable this if you do not use Audit.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
@@ -199,7 +199,7 @@ Large page support
       <para>Hard disks are the slowest components in a computer system and therefore often the cause for a bottleneck. Using the file system that best suits your workload helps to improve performance. Using special mount options or prioritizing a process's I/O priority are further means to speed up the system.</para>
       <sect2 xml:id="cha-tuning-resources-disk-filesystems">
          <title>File systems</title>
-         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> ships with several file systems, including Btrfs, Ext4, Ext3, Ext2, and XFS. Each file system has its own advantages and disadvantages. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-filesystems" xrefstyle="%label &#34;%c&#34;"/> for detailed information.</para>
+         <para><phrase role="productname">SUSE Linux Enterprise Server</phrase> ships with several file systems, including Btrfs, Ext4, Ext3, Ext2, and XFS. Each file system has its own advantages and disadvantages. Refer to <xref linkend="cha-filesystems"/> for detailed information.</para>
          <sect3 xml:id="cha-tuning-resources-disk-filesystems-nfs">
             <title>NFS</title>
             <para>NFS (Version 3) tuning is covered in detail in the NFS Howto at <link xlink:href="https://nfs.sourceforge.net/nfs-howto/"/>. When mounting NFS shares, start with the experiment of increasing the size of the read-write blocks to <literal>32768</literal>, by using the mount options <option>wsize</option> and <option>rsize</option>.</para>

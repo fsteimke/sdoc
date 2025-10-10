@@ -13,7 +13,7 @@
    <sect2 xml:id="sec-xmvsxl-conventions">
       <title>Notation conventions</title>
       <para>To easily understand the difference between <command>xl</command> and <command>xm</command> commands, the following notation is used in this section:</para>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>Notation conventions</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -39,7 +39,7 @@
    </sect2>
    <sect2 xml:id="sec-xmvsxl-global">
       <title>New global options</title>
-      <table>
+      <table colsep="1" rowsep="1" frame="all">
          <title>New global options</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -70,7 +70,7 @@
    <sect2 xml:id="sec-xmvsxl-common">
       <title>Unchanged options</title>
       <para>List of common options of <command>xl</command> and <command>xm</command>, and their <systemitem class="library">libvirt</systemitem> equivalents.</para>
-      <table rowsep="1">
+      <table rowsep="1" colsep="1" frame="all">
          <title>Common options</title>
          <tgroup cols="3">
             <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -215,7 +215,7 @@
       <sect3 xml:id="sec-xmvsxl-removed-domain">
          <title>Domain management</title>
          <para>The list of Domain management removed command and their replacement.</para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>Domain management removed options</title>
             <tgroup cols="3">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -289,7 +289,7 @@
       <sect3 xml:id="sec-xmvsxl-removed-devices">
          <title>USB devices</title>
          <para>USB <option>options</option> are not available with xl/libxl tool stack. <command>virsh</command> has the <option>attach-device</option> and <option>detach-device</option> options but it does not work yet with <option>USB</option>.</para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>USB devices management removed options</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -343,7 +343,7 @@
       <sect3 xml:id="sec-xmvsxl-removed-cpu">
          <title>CPU management</title>
          <para>CPU management options has changed. New options are available, see: <xref linkend="sec-xmvsxl-changed-cpu"/></para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>CPU management removed options</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -376,7 +376,7 @@
       </sect3>
       <sect3 xml:id="sec-xmvsxl-removed-others">
          <title>Other options</title>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>Other options</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -424,7 +424,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent:</title>
             <para><command>virsh</command><option>create</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>create</option> Changed options</title>
@@ -448,7 +448,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>create</option> Removed options</title>
@@ -504,7 +504,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>create</option> Added options</title>
@@ -543,7 +543,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>console</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>console</option> Added options</title>
@@ -571,7 +571,7 @@
       <sect3 xml:id="sec-xmvsxl-changed-info">
          <title>info</title>
          <para><command>xl</command><option>info</option></para>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>info</option> Removed options</title>
@@ -610,7 +610,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>dump</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>dump-core</option> Removed options</title>
@@ -653,7 +653,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>list --all</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>list</option> Removed options</title>
@@ -681,7 +681,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>list</option> Added options</title>
@@ -720,7 +720,7 @@
             <para><command>virsh</command><option>setmem</option></para>
             <para><command>virsh</command><option>setmaxmem</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>mem-*</option> Changed options</title>
@@ -759,7 +759,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh migrate --live hvm-sles11-qcow2 xen+</command><replaceable>CONNECTOR</replaceable>://<replaceable>USER</replaceable>@<replaceable>IP_ADDRESS</replaceable>/</para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>migrate</option> Removed options</title>
@@ -815,7 +815,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>migrate</option> Added options</title>
@@ -856,7 +856,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>reboot</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>reboot</option> Removed options</title>
@@ -884,7 +884,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>reboot</option> Added options</title>
@@ -914,7 +914,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>save</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>save</option> Added options</title>
@@ -944,7 +944,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>restore</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>restore</option> Added options</title>
@@ -990,7 +990,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>shutdown</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>shutdown</option> Removed options</title>
@@ -1026,7 +1026,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>shutdown</option> Added options</title>
@@ -1050,7 +1050,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>trigger</option> Changed options</title>
@@ -1086,7 +1086,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>schedinfo</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>sched-credit</option> Removed options</title>
@@ -1118,7 +1118,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>sched-credit</option> Added options</title>
@@ -1160,7 +1160,7 @@
                <systemitem class="library">libvirt</systemitem> status</title>
             <para><command>virsh</command> only supports credit scheduler, not credit2 scheduler</para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>sched-credit2</option> Removed options</title>
@@ -1188,7 +1188,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>sched-credit2</option> Added options</title>
@@ -1213,7 +1213,7 @@
             </tgroup>
          </table>
          <para><command>xl</command><option>sched-sedf</option><replaceable>OPTIONS</replaceable></para>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>sched-sedf</option> removed options</title>
@@ -1253,7 +1253,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>sched-sedf</option> added options</title>
@@ -1289,7 +1289,7 @@
          </title>
          <para><command>xl</command><option>cpupool-cpu-remove</option><replaceable>CPU_POOL</replaceable> &lt;CPU nr&gt;|node:&lt;node nr&gt;</para>
          <para><command>xl</command><option>cpupool-list</option> [-c|--cpus] <replaceable>CPU_POOL</replaceable></para>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>cpupool-list</option> removed options</title>
@@ -1315,7 +1315,7 @@
          </table>
          <para><command>xl</command><option>cpupool-cpu-add</option><replaceable>CPU_POOL</replaceable> cpu-nr|node:node-nr</para>
          <para><command>xl</command><option>cpupool-create</option><replaceable>OPTIONS</replaceable><replaceable>CONFIG_FILE</replaceable> [Variable=Value ...]</para>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>cpupool-create</option> removed options</title>
@@ -1364,7 +1364,7 @@
                <systemitem class="library">libvirt</systemitem> equivalent</title>
             <para><command>virsh</command><option>detach-device</option></para>
          </note>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>pci-detach</option> added options</title>
@@ -1388,7 +1388,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xm</command>
                <option>block-list</option> removed options</title>
@@ -1412,7 +1412,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>Other options</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -1438,7 +1438,7 @@
       </sect3>
       <sect3 xml:id="sec-xmvsxl-changed-net">
          <title>Network</title>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>Network options</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="1*"/>
@@ -1465,7 +1465,7 @@
                </tbody>
             </tgroup>
          </table>
-         <table rowsep="0">
+         <table rowsep="0" colsep="1" frame="all">
             <title>
                <command>xl</command>
                <option>network-attach</option> removed options</title>
@@ -1493,7 +1493,10 @@
    </sect2>
    <sect2 xml:id="sec-xmvsxl-new">
       <title>New options</title>
-      <table rowsep="1" xml:id="table-xmtoxl-new-options">
+      <table rowsep="1"
+             xml:id="table-xmtoxl-new-options"
+             colsep="1"
+             frame="all">
          <title>New options</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="1*"/>

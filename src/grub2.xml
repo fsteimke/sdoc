@@ -340,10 +340,10 @@
                   <title>GRUB 2 boot editor</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/grub2_edit_config.png" width="69%"/>
+                        <imagedata fileref="media/grub2_edit_config.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/grub2_edit_config.png" width="69%"/>
+                        <imagedata fileref="media/grub2_edit_config.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -364,7 +364,7 @@
          <para>Changes made this way only apply to the current boot process and are not saved permanently.</para>
          <important>
             <title>Keyboard layout during the boot procedure</title>
-            <para>The US keyboard layout is the only one available when booting. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="fig-trouble-install-keyboard-us" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The US keyboard layout is the only one available when booting. See <xref linkend="fig-trouble-install-keyboard-us"/>.</para>
          </important>
          <note arch="x86_64">
             <title>Boot loader on the installation media</title>
@@ -502,7 +502,7 @@ menuentry 'Maintenance mode' --users maintainer {
       </sect2>
       <sect2 xml:id="sec-grub2-zseries-keys">
          <title>Key combinations</title>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="3">
                <tbody>
                   <row>

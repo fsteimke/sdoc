@@ -19,10 +19,10 @@
          <guimenu>Passwords and Keys</guimenu> main window</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/seahorse_main.png" width="64%"/>
+            <imagedata fileref="media/seahorse_main.png" width="70%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/seahorse_main.png" width="64%"/>
+            <imagedata fileref="media/seahorse_main.png" width="70%"/>
          </imageobject>
       </mediaobject>
    </figure>

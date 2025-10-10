@@ -76,7 +76,7 @@
       <para><xref linkend="tab-entrytype"/> summarizes the six possible types of ACL entries, each defining permissions for a user or a group of users. The <emphasis>owner</emphasis> entry defines the permissions of the user owning the file or directory. The <emphasis>owning group</emphasis> entry defines the permissions of the file's owning group. The superuser can change the owner or owning group with <command>chown</command> or <command>chgrp</command>, in which case the owner and owning group entries refer to the new owner and owning group. Each <emphasis>named user</emphasis> entry defines the permissions of the user specified in the entry's qualifier field. Each <emphasis>named group</emphasis> entry defines the permissions of the group specified in the entry's qualifier field. Only the named user and named group entries have a qualifier field that is not empty. The <emphasis>other</emphasis> entry defines the permissions of all other users.</para>
       <para>The <emphasis>mask</emphasis> entry further limits the permissions granted by named user, named group, and owning group entries by defining which of the permissions in those entries are effective and which are masked. If permissions exist in one of the mentioned entries and in the mask, they are effective. Permissions contained only in the mask or only in the actual entry are not effective—meaning the permissions are not granted. All permissions defined in the owner and owning group entries are always effective. The example in <xref linkend="tab-mask"/> demonstrates this mechanism.</para>
       <para>There are two basic classes of ACLs: A <emphasis>minimum</emphasis> ACL contains only the entries for the types owner, owning group, and other, which correspond to the conventional permission bits for files and directories. An <emphasis>extended</emphasis> ACL goes beyond this. It must contain a mask entry and may contain several entries of the named user and named group types.</para>
-      <table xml:id="tab-entrytype">
+      <table xml:id="tab-entrytype" colsep="1" rowsep="1" frame="all">
          <title>ACL entry types</title>
          <tgroup cols="2">
             <thead>
@@ -113,7 +113,7 @@
             </tbody>
          </tgroup>
       </table>
-      <table xml:id="tab-mask">
+      <table xml:id="tab-mask" colsep="1" rowsep="1" frame="all">
          <title>Masking access permissions</title>
          <tgroup cols="3">
             <thead>
@@ -149,10 +149,10 @@
             <title>Minimum ACL: ACL entries compared to permission bits</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/acls_map_mini.png" width="69%"/>
+                  <imagedata fileref="media/acls_map_mini.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/acls_map_mini.png" width="69%"/>
+                  <imagedata fileref="media/acls_map_mini.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -161,10 +161,10 @@
             <title>Extended ACL: ACL entries compared to permission bits</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/acls_map_ext.png" width="69%"/>
+                  <imagedata fileref="media/acls_map_ext.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/acls_map_ext.png" width="69%"/>
+                  <imagedata fileref="media/acls_map_ext.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>

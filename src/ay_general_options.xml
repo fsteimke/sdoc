@@ -265,7 +265,7 @@
                <tag class="element">self_update_url</tag>
             </term>
             <listitem>
-               <para>Location of the update repository to use during the YaST self-update. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-self-update-custom" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Location of the update repository to use during the YaST self-update. For more information, refer to <xref linkend="sec-yast-install-self-update-custom"/>.</para>
                <important>
                   <title>Installer self-update repository only</title>
                   <para>The <option>self_update_url</option> parameter expects only the installer self-update repository URL. Do not supply any other repository URL—for example the URL of the software update repository.</para>

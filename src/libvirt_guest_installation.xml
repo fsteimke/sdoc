@@ -19,10 +19,10 @@
             <title>Specifying default options for new VMs</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/default-vm-options.png" width="46%"/>
+                  <imagedata fileref="media/default-vm-options.png" width="50%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/default-vm-options.png" width="46%"/>
+                  <imagedata fileref="media/default-vm-options.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -112,7 +112,7 @@
       </tip>
       <sect2 xml:id="tip-libvirt-inst-vmm-pxe">
          <title>Configuring the virtual machine for PXE boot</title>
-         <para>PXE boot enables your virtual machine to boot from the installation media via the network, instead of from a physical medium or an installation disk image. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-deployment-prep-pxe" xrefstyle="%label &#34;%c&#34;"/> for more details about setting up a PXE boot environment.</para>
+         <para>PXE boot enables your virtual machine to boot from the installation media via the network, instead of from a physical medium or an installation disk image. Refer to <xref linkend="cha-deployment-prep-pxe"/> for more details about setting up a PXE boot environment.</para>
          <para>To let your VM boot from a PXE server, follow these steps:</para>
          <procedure>
             <step>
@@ -216,8 +216,8 @@
          <varlistentry>
             <term>Passing kernel and initrd files</term>
             <listitem>
-               <para>It is possible to directly specify the Kernel and Initrd of the installer, for example, from a network source. To set up a network source, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-deployment-instserver-http" xrefstyle="%label &#34;%c&#34;"/>.</para>
-               <para>To pass additional boot parameters, use the <option>--extra-args</option> option. This can be used to specify a network configuration. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-boot-parameters" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>It is possible to directly specify the Kernel and Initrd of the installer, for example, from a network source. To set up a network source, see <xref linkend="sec-deployment-instserver-http"/>.</para>
+               <para>To pass additional boot parameters, use the <option>--extra-args</option> option. This can be used to specify a network configuration. For details, see <xref linkend="cha-boot-parameters"/>.</para>
                <example>
                   <title>Loading kernel and initrd from HTTP server</title>
                   <screen><prompt role="root">#</prompt><command>virt-install</command> --location "http://example.tld/REPOSITORY/DVD1/" \

@@ -40,16 +40,16 @@
       <para>Use the following procedures to install the product on all supported hardware platforms. They assume you have successfully booted/IPLed into the installation system. For more detailed installation instructions and deployment strategies, refer to <xref linkend="book-deployment"/>. For platform-specific preparations required to boot or IPL into the installation system, refer to the following parts of the aforementioned guide:</para>
       <itemizedlist>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-x86" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-x86"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-aarch64" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-aarch64"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-power" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-power"/></para>
          </listitem>
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-zseries" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="cha-zseries"/></para>
          </listitem>
       </itemizedlist>
       <sect2 xml:id="sec-sle-installquick-unified-installer">
@@ -59,7 +59,7 @@
       <sect2 xml:id="sec-sle-installquick-install-offline">
          <title>Installing offline or without registration</title>
          <para>The default installation medium SLE-15-SP7-Online-<replaceable>ARCH</replaceable>-GM-media1.iso is optimized for size and does not contain any modules and extensions. Therefore, the installation requires network access to register your product and retrieve repository data for the modules and extensions.</para>
-         <para>For installation without registering the system, use the <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image from <link xlink:href="https://www.suse.com/download/sles/"/> and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-scc-registration-none" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>For installation without registering the system, use the <filename>SLE-15-SP7-Full-<replaceable>ARCH</replaceable>-GM-media1.iso</filename> image from <link xlink:href="https://www.suse.com/download/sles/"/> and refer to <xref linkend="sec-yast-install-scc-registration-none"/> for instructions.</para>
          <!-- cwickert 2020-03-11: Old content from the 'offline' section -->
          <!--
    <para>
@@ -167,10 +167,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_product.png" width="92%"/>
+                  <imagedata fileref="media/install_product.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_product.png" width="92%"/>
+                  <imagedata fileref="media/install_product.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -203,10 +203,10 @@ disk:
          <informalfigure><!-- FIXME cwickert 2025-01-31: Update screenshot for SLE 15 SP7 GA -->
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_license_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_license_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_license_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_license_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -217,15 +217,15 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_network.png" width="92%"/>
+                  <imagedata fileref="media/install_network.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_network.png" width="92%"/>
+                  <imagedata fileref="media/install_network.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
          <para>A system analysis is performed, where the installer probes for storage devices and tries to find other installed systems. If the network was automatically configured via DHCP during the start of the installation, you will be taken to the registration step.</para>
-         <para>If the network is not yet configured, the <guimenu>Network Settings</guimenu> dialog opens. Choose a network interface from the list and configure it with <guimenu>Edit</guimenu>. Alternatively, <guimenu>Add</guimenu> an interface manually. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-network" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/> for more information. If you prefer to do an installation without network access, skip this step without making any changes and proceed with <guimenu>Next</guimenu>.</para>
+         <para>If the network is not yet configured, the <guimenu>Network Settings</guimenu> dialog opens. Choose a network interface from the list and configure it with <guimenu>Edit</guimenu>. Alternatively, <guimenu>Add</guimenu> an interface manually. See <xref linkend="sec-yast-install-network"/> and <xref linkend="sec-network-yast"/> for more information. If you prefer to do an installation without network access, skip this step without making any changes and proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
       <sect2 arch="zseries" xml:id="sec-sle-installquick-install-hdd">
          <title>IBM Z: disk activation</title>
@@ -234,24 +234,24 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
+                  <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
+                  <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
-         <para>Configure the attached hard disks. Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for the installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. Proceed with <guimenu>Next</guimenu> to set up the selected disk type. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-s390-part" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Configure the attached hard disks. Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for the installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. Proceed with <guimenu>Next</guimenu> to set up the selected disk type. For more information, refer to <xref linkend="sec-yast-install-s390-part"/>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-register">
          <title>Registration</title>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -303,10 +303,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -464,10 +464,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_addon.png" width="92%"/>
+                  <imagedata fileref="media/install_addon.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_addon.png" width="92%"/>
+                  <imagedata fileref="media/install_addon.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -484,10 +484,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -502,10 +502,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -525,7 +525,7 @@ disk:
                   <guimenu>Expert partitioner</guimenu>
                </term>
                <listitem>
-                  <para>Opens the <guimenu>Expert Partitioner</guimenu> described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-expert-partitioner" xrefstyle="%label &#34;%c&#34;"/>. This gives you full control over the partitioning setup and lets you create a custom setup. This option is intended for experts.</para>
+                  <para>Opens the <guimenu>Expert Partitioner</guimenu> described in <xref linkend="sec-expert-partitioner"/>. This gives you full control over the partitioning setup and lets you create a custom setup. This option is intended for experts.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -560,24 +560,24 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_timezone.png" width="92%"/>
+                  <imagedata fileref="media/install_timezone.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_timezone.png" width="92%"/>
+                  <imagedata fileref="media/install_timezone.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
-         <para>Select the clock and time zone to use in your system. To manually adjust the time or to configure an NTP server for time synchronization, choose <guimenu>Other Settings</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-date-time" xrefstyle="%label &#34;%c&#34;"/> for detailed information. Proceed with <guimenu>Next</guimenu>.</para>
+         <para>Select the clock and time zone to use in your system. To manually adjust the time or to configure an NTP server for time synchronization, choose <guimenu>Other Settings</guimenu>. See <xref linkend="sec-yast-install-date-time"/> for detailed information. Proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-user">
          <title>Local user</title>
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_user.png" width="92%"/>
+                  <imagedata fileref="media/install_user.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_user.png" width="92%"/>
+                  <imagedata fileref="media/install_user.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -594,10 +594,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_root.png" width="92%"/>
+                  <imagedata fileref="media/install_root.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_root.png" width="92%"/>
+                  <imagedata fileref="media/install_root.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -607,7 +607,7 @@ disk:
             <title>Passwords and keyboard layout</title>
             <para>It is recommended to only use US ASCII characters. In case of a system error or when you need to start your system in rescue mode, the keyboard may not be localized.</para>
          </tip>
-         <para>If you want to access the system remotely via SSH using a public key, import a key from a removable media or an existing partition. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-user-root" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+         <para>If you want to access the system remotely via SSH using a public key, import a key from a removable media or an existing partition. See <xref linkend="sec-yast-install-user-root"/> for more information.</para>
          <para>Proceed with <guimenu>Next</guimenu>.</para>
       </sect2>
       <sect2 xml:id="sec-sle-installquick-install-inst-settings">
@@ -615,10 +615,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_summary_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_summary_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -640,7 +640,7 @@ disk:
                </term>
                <listitem>
                   <para>The scope of the installation is defined by the modules and extensions you have chosen for this installation. However, depending on your selection, not all packages available in a module are selected for installation.</para>
-                  <para>Clicking <guimenu>Software</guimenu> opens the <guimenu>Software Selection and System Tasks</guimenu> screen, where you can change the software selection by selecting or deselecting patterns. Each pattern contains several software packages needed for specific functions (for example, <guimenu>KVM Host Server</guimenu>). For a more detailed selection based on software packages to install, select <guimenu>Details</guimenu> to switch to the YaST <guimenu>Software Manager</guimenu>. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>Clicking <guimenu>Software</guimenu> opens the <guimenu>Software Selection and System Tasks</guimenu> screen, where you can change the software selection by selecting or deselecting patterns. Each pattern contains several software packages needed for specific functions (for example, <guimenu>KVM Host Server</guimenu>). For a more detailed selection based on software packages to install, select <guimenu>Details</guimenu> to switch to the YaST <guimenu>Software Manager</guimenu>. See <xref linkend="cha-yast-software"/> for more information.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -648,7 +648,7 @@ disk:
                   <guimenu>Booting</guimenu>
                </term>
                <listitem>
-                  <para>This section shows the boot loader configuration. Changing the defaults is only recommended if really needed. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+                  <para>This section shows the boot loader configuration. Changing the defaults is only recommended if really needed. Refer to <xref linkend="cha-grub2"/> for details.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -656,13 +656,13 @@ disk:
                   <guimenu>Security</guimenu>
                </term>
                <listitem>
-                  <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command-line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vle-grub2-yast2-cpu-mitigations" xrefstyle="%label &#34;%c&#34;"/>.</para>
-                  <para>By default, the <guimenu>Firewall</guimenu> is enabled on all configured network interfaces. To completely disable <systemitem class="daemon">firewalld</systemitem>, click <guimenu>disable</guimenu> (not recommended). Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for configuration details.</para>
+                  <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command-line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <xref linkend="vle-grub2-yast2-cpu-mitigations"/>.</para>
+                  <para>By default, the <guimenu>Firewall</guimenu> is enabled on all configured network interfaces. To completely disable <systemitem class="daemon">firewalld</systemitem>, click <guimenu>disable</guimenu> (not recommended). Refer to <xref linkend="cha-security-firewall"/> for configuration details.</para>
                   <note>
                      <title>Firewall settings for receiving updates</title>
                      <para>If your system is behind a firewall that blocks outgoing traffic, make sure to allow connections to <uri>https://scc.suse.com/</uri> and <uri>https://updates.suse.com</uri> on ports 80 and 443 in order to receive updates. For more information, such as IP addresses and proxy server configuration, refer to <link xlink:href="https://www.suse.com/support/kb/doc/?id=000021034"/>.</para>
                   </note>
-                  <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <xref linkend="cha-ssh"/> for more information.</para>
                   <para>The default <guimenu>Major Linux Security Module</guimenu> is <guimenu>AppAmpor</guimenu>. To disable it, select <guimenu>None</guimenu> as module in the <guimenu>Security</guimenu> settings.</para>
                </listitem>
             </varlistentry>
@@ -675,7 +675,7 @@ disk:
                </term>
                <listitem>
                   <para>Click to <guimenu>enable</guimenu> the <literal>Defense Information Systems Agency STIG</literal> security policy. If any installation settings are incompatible with the policy, you will be prompted to modify them accordingly. Some settings can be adjusted automatically, others require user input.</para>
-                  <para>Enabling a security profile enables a full SCAP remediation on first boot. You can also perform a <guimenu>scan only</guimenu> or <guimenu>do nothing</guimenu> and manually remediate the system later with OpenSCAP. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-proposal-security-profile" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Enabling a security profile enables a full SCAP remediation on first boot. You can also perform a <guimenu>scan only</guimenu> or <guimenu>do nothing</guimenu> and manually remediate the system later with OpenSCAP. For more information, refer to <xref linkend="sec-yast-install-proposal-security-profile"/>.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -683,7 +683,7 @@ disk:
                   <guimenu>Network configuration</guimenu>
                </term>
                <listitem>
-                  <para>Displays the current network configuration. By default, <command>wicked</command> is used for server installations and NetworkManager for desktop workloads. Click <guimenu>Network Configuration</guimenu> to change the settings. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Displays the current network configuration. By default, <command>wicked</command> is used for server installations and NetworkManager for desktop workloads. Click <guimenu>Network Configuration</guimenu> to change the settings. For details, see <xref linkend="sec-network-yast"/>.</para>
                   <important>
                      <title>Support for NetworkManager</title>
                      <para>SUSE only supports NetworkManager for desktop workloads with SLED or the Workstation extension. All server certifications are done with <command>wicked</command> as the network configuration tool, and using NetworkManager may invalidate them. NetworkManager is not supported by SUSE for server workloads.</para>
@@ -695,7 +695,7 @@ disk:
                   <guimenu>Kdump</guimenu>
                </term>
                <listitem>
-                  <para>Kdump saves the memory image (<quote>core dump</quote>) to the file system in case the kernel crashes. This enables you to find the cause of the crash by debugging the dump file. Kdump is preconfigured and enabled by default. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>Kdump saves the memory image (<quote>core dump</quote>) to the file system in case the kernel crashes. This enables you to find the cause of the crash by debugging the dump file. Kdump is preconfigured and enabled by default. See <xref linkend="cha-tuning-kdump-basic"/> for more information.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -711,7 +711,7 @@ disk:
                   <guimenu>System</guimenu>
                </term>
                <listitem>
-                  <para>View detailed hardware information by clicking <guimenu>System</guimenu>. In the resulting screen you can also change <guimenu>Kernel Settings</guimenu>—see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-install-proposal-system" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+                  <para>View detailed hardware information by clicking <guimenu>System</guimenu>. In the resulting screen you can also change <guimenu>Kernel Settings</guimenu>—see <xref linkend="sec-yast-install-proposal-system"/> for more information.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -721,10 +721,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_confirm_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_confirm_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>
@@ -735,10 +735,10 @@ disk:
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_perform_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_perform_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_perform_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_perform_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

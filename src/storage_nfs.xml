@@ -17,7 +17,7 @@
       <para>The <emphasis>Network File System</emphasis> (NFS) is a standardized, well-proven and widely supported network protocol that allows sharing files between separate hosts.</para>
       <para>The <emphasis>Network Information Service</emphasis> (NIS) can be used to have centralized user management in the network. Combining NFS and NIS allows using file and directory permissions for access control in the network. NFS with NIS makes a network transparent to the user.</para>
       <para>In the default configuration, NFS completely trusts the network and thus any machine that is connected to a trusted network. Any user with administrator privileges on any computer with physical access to any network the NFS server trusts can access any files that the server makes available.</para>
-      <para>Often, this level of security is perfectly satisfactory, such as when the network that is trusted is truly private, often localized to a single cabinet or machine room, and no unauthorized access is possible. In other cases, the need to trust a whole subnet as a unit is restrictive, and there is a need for more fine-grained trust. To meet the need in these cases, NFS supports various security levels using the <emphasis>Kerberos</emphasis> infrastructure. Kerberos requires NFSv4, which is used by default. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Often, this level of security is perfectly satisfactory, such as when the network that is trusted is truly private, often localized to a single cabinet or machine room, and no unauthorized access is possible. In other cases, the need to trust a whole subnet as a unit is restrictive, and there is a need for more fine-grained trust. To meet the need in these cases, NFS supports various security levels using the <emphasis>Kerberos</emphasis> infrastructure. Kerberos requires NFSv4, which is used by default. For details, see <xref linkend="cha-security-kerberos"/>.</para>
       <para>The following are terms used in the YaST module.</para>
       <variablelist>
          <varlistentry>
@@ -87,10 +87,10 @@
                   <title>NFS server configuration tool</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="69%"/>
+                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="69%"/>
+                        <imagedata fileref="media/yast2_inst_nfsserver1.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -239,7 +239,7 @@ Nobody-Group = nobody</screen>
          <para>To use Kerberos authentication for NFS, Generic Security Services (GSS) must be enabled. Select <guimenu>Enable GSS Security</guimenu> in the initial YaST NFS Server dialog. You must have a working Kerberos server to use this feature. YaST does not set up the server but only uses the provided functionality. To use Kerberos authentication in addition to the YaST configuration, complete at least the following steps before running the NFS configuration:</para>
          <procedure>
             <step>
-               <para>Make sure that both the server and the client are in the same Kerberos domain. They must access the same KDC (Key Distribution Center) server and share their <filename>krb5.keytab</filename> file (the default location on any machine is <filename>/etc/krb5.keytab</filename>). For more information about Kerberos, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-kerberos" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Make sure that both the server and the client are in the same Kerberos domain. They must access the same KDC (Key Distribution Center) server and share their <filename>krb5.keytab</filename> file (the default location on any machine is <filename>/etc/krb5.keytab</filename>). For more information about Kerberos, see <xref linkend="cha-security-kerberos"/>.</para>
             </step>
             <step>
                <para>Start the gssd service on the client with <command>systemctl start rpc-gssd.service</command>.</para>
@@ -287,7 +287,7 @@ Nobody-Group = nobody</screen>
          <tip>
             <title>NFS as a root file system</title>
             <para>On (diskless) systems where the root partition is mounted via network as an NFS share, you need to be careful when configuring the network device with which the NFS share is accessible.</para>
-            <para>When shutting down or rebooting the system, the default processing order is to turn off network connections then unmount the root partition. With NFS root, this order causes problems as the root partition cannot be cleanly unmounted as the network connection to the NFS share is already deactivated. To prevent the system from deactivating the relevant network device, open the network device configuration tab as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast-change-start" xrefstyle="%label &#34;%c&#34;"/> and choose <guimenu>On NFSroot</guimenu> in the <guimenu>Device Activation</guimenu> pane.</para>
+            <para>When shutting down or rebooting the system, the default processing order is to turn off network connections then unmount the root partition. With NFS root, this order causes problems as the root partition cannot be cleanly unmounted as the network connection to the NFS share is already deactivated. To prevent the system from deactivating the relevant network device, open the network device configuration tab as described in <xref linkend="sec-network-yast-change-start"/> and choose <guimenu>On NFSroot</guimenu> in the <guimenu>Device Activation</guimenu> pane.</para>
          </tip>
          <!--
         <figure id="fig-yast2-nfs-client">
@@ -423,7 +423,7 @@ firewall-cmd --reload</screen>
                </term>
                <listitem>
                   <para>On <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <systemitem class="daemon">portmapper</systemitem> is already configured to run on a static port.</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="70*"/>
                         <colspec colnum="2" colname="2" colwidth="30*"/>
@@ -454,7 +454,7 @@ firewall-cmd --reload</screen>
                </term>
                <listitem>
                   <para>On <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <systemitem class="daemon">nfsd</systemitem> is already configured to run on a static port.</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="50*"/>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
@@ -485,7 +485,7 @@ firewall-cmd --reload</screen>
                </term>
                <listitem>
                   <para>On <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <systemitem class="daemon">mountd</systemitem> is already configured to run on a static port.</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="50*"/>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
@@ -528,7 +528,7 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
                         <screen><prompt>&gt;</prompt><command>sudo</command> systemctl restart nfs-server</screen>
                      </step>
                   </procedure>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="50*"/>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
@@ -570,7 +570,7 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
                         <screen><prompt>&gt;</prompt><command>sudo</command> systemctl restart nfs-server</screen>
                      </step>
                   </procedure>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <colspec colnum="1" colname="1" colwidth="50*"/>
                         <colspec colnum="2" colname="2" colwidth="50*"/>
@@ -633,16 +633,16 @@ LOCKD_UDPPORT=<replaceable>NNNN</replaceable></screen>
       <para>In addition to the man pages of <command>exports</command>, <command>nfs</command>, and <command>mount</command>, information about configuring an NFS server and client is available in <filename>/usr/share/doc/packages/nfsidmap/README</filename>. For further documentation online, refer to the following Web sites:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para>For general information about network security, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For general information about network security, refer to <xref linkend="cha-security-firewall"/>.</para>
          </listitem>
          <listitem>
             <para>Refer to <xref linkend="sec-autofs-nfs"/> if you need to automatically mount NFS exports.</para>
          </listitem>
          <listitem>
-            <para>For more details about configuring NFS by using AutoYaST, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="ay-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For more details about configuring NFS by using AutoYaST, refer to <xref linkend="ay-nfs"/>.</para>
          </listitem>
          <listitem>
-            <para>For instructions about securing NFS exports with Kerberos, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-kerberos-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For instructions about securing NFS exports with Kerberos, refer to <xref linkend="sec-security-kerberos-nfs"/>.</para>
          </listitem>
          <listitem>
             <para>Find the detailed technical documentation online at <link xlink:href="https://nfs.sourceforge.net/">SourceForge</link>.</para>

@@ -58,7 +58,7 @@ MACVLAN_DEVICE='eth0'
 #MACVLAN_MODE='vepa'
 #LLADDR=02:03:04:05:06:aa</screen>
       <para>For <filename>ifcfg.template</filename>, see <xref linkend="sec-network-manconf-files-config-etc"/>.</para>
-      <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>IBM Z does not support USB. The names of the interface files and network aliases contain IBM Z-specific elements like <literal>qeth</literal>.<phrase role="arch-end">◀</phrase></para>
+      <para arch="zseries">IBM Z does not support USB. The names of the interface files and network aliases contain IBM Z-specific elements like <literal>qeth</literal>.</para>
    </sect3>
    <sect3 xml:id="sec-network-manconf-files-config-etc">
       <title>
@@ -265,7 +265,10 @@ localnet     192.168.0.0</screen>
          <filename>/etc/host.conf</filename>
       </title>
       <para>Name resolution—the translation of host and network names via the <emphasis>resolver</emphasis> library—is controlled by this file. This file is only used for programs linked to libc4 or libc5. For current glibc programs, refer to the settings in <filename>/etc/nsswitch.conf</filename>. Each parameter must always be entered on a separate line. Comments are preceded by a <literal>#</literal> sign. <xref linkend="tab-net-param-hostconf"/> shows the parameters available. A sample <filename>/etc/host.conf</filename> is shown in <xref linkend="dat-net-etc-hostconf"/>.</para>
-      <table xml:id="tab-net-param-hostconf">
+      <table xml:id="tab-net-param-hostconf"
+             colsep="1"
+             rowsep="1"
+             frame="all">
          <title>Parameters for /etc/host.conf</title>
          <tgroup cols="2" align="left">
             <tbody>
@@ -341,7 +344,7 @@ shadow:     compat
 </screen>
       </example>
       <para>The <quote>databases</quote> available over NSS are listed in <xref linkend="tab-net-nnswitch-db"/>. The configuration options for NSS databases are listed in <xref linkend="tab-net-nnswitch-conf"/>.</para>
-      <table xml:id="tab-net-nnswitch-db">
+      <table xml:id="tab-net-nnswitch-db" colsep="1" rowsep="1" frame="all">
          <title>Databases available via /etc/nsswitch.conf</title>
          <tgroup cols="2" align="left">
             <tbody>
@@ -404,7 +407,10 @@ shadow:     compat
             </tbody>
          </tgroup>
       </table>
-      <table xml:id="tab-net-nnswitch-conf">
+      <table xml:id="tab-net-nnswitch-conf"
+             colsep="1"
+             rowsep="1"
+             frame="all">
          <title>Configuration options for NSS <quote>databases</quote>
          </title>
          <tgroup cols="2" align="left">
@@ -419,7 +425,7 @@ shadow:     compat
                </row>
                <row>
                   <entry><para><option>nis</option>, <option>nisplus</option></para></entry>
-                  <entry><para>NIS, see also <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/></para></entry>
+                  <entry><para>NIS, see also <xref linkend="cha-nis"/></para></entry>
                </row>
                <row>
                   <entry><para><option>dns</option></para></entry>

@@ -232,7 +232,7 @@ Zypper subcommands available from elsewhere on your $PATH
       <para>There are three different ways to update software using Zypper: by installing patches, by installing a new version of a package or by updating the entire distribution. The latter is achieved with <command>zypper dist-upgrade</command>. Upgrading <phrase role="productname">SUSE Linux Enterprise Server</phrase> is discussed in <!-- cwickert 2018-11-19: No whitespace and no line break with indention
     between the phrases, otherwise there will be a trailing whitespace in the
     resulting media at the end of the sentence just before the dot.
-   --><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Upgrade Guide</quote>, </phrase><xref linkend="cha-upgrade-paths" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   --><xref linkend="cha-upgrade-paths"/>.</para>
       <sect3 xml:id="sec-zypper-softup-patch">
          <title>Installing all needed patches</title>
          <para><emphasis>Patching</emphasis><phrase role="productname">SUSE Linux Enterprise Server</phrase> is the most reliable way to install new versions of installed packages. It guarantees that all required packages with correct versions are installed and ensures that package versions considered as <emphasis>conflicting</emphasis> are omitted.</para>

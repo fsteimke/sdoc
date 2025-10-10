@@ -42,7 +42,7 @@
    </sect2>
    <sect2 xml:id="sec-network-nm-polkit">
       <title>Controlling and locking down NetworkManager features</title>
-      <para>On centrally administered machines, certain NetworkManager features can be controlled or disabled with Polkit, for example if a user is allowed to modify administrator defined connections or if a user is allowed to define their own network configurations. To view or change the respective NetworkManager policies, start the graphical <guimenu>Authorizations</guimenu> tool for Polkit. In the tree on the left side, find them below the <guimenu>network-manager-settings</guimenu> entry. For an introduction to Polkit and details on how to use it, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-polkit" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>On centrally administered machines, certain NetworkManager features can be controlled or disabled with Polkit, for example if a user is allowed to modify administrator defined connections or if a user is allowed to define their own network configurations. To view or change the respective NetworkManager policies, start the graphical <guimenu>Authorizations</guimenu> tool for Polkit. In the tree on the left side, find them below the <guimenu>network-manager-settings</guimenu> entry. For an introduction to Polkit and details on how to use it, refer to <xref linkend="cha-security-polkit"/>.</para>
       <!-- fs 2013-10-25: Needs to be checked against new Policy-Kit version
 
   <para>

@@ -68,7 +68,10 @@
       <title>The <command>ulimit</command> command</title>
       <para>With the <command>ulimit</command> (<emphasis>user limits</emphasis>) command, it is possible to set limits for the use of system resources and to have these displayed. <command>ulimit</command> is especially useful for limiting available memory for applications. With this, an application can be prevented from co-opting too much of the system resources and slowing or even hanging up the operating system.</para>
       <para><command>ulimit</command> can be used with various options. To limit memory usage, use the options listed in <xref linkend="tab-suse-packages-ulimit"/>.</para>
-      <table xml:id="tab-suse-packages-ulimit">
+      <table xml:id="tab-suse-packages-ulimit"
+             colsep="1"
+             rowsep="1"
+             frame="all">
          <title>
             <command>ulimit</command>: Setting resources for the user</title>
          <!-- Taken literally from the bash manpage. -ke- -->

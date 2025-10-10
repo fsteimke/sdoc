@@ -282,7 +282,7 @@ BOOTPROTO='none'</screen>
                   <para>Use the tap device (<literal>tap0</literal>) created before.</para>
                </callout>
             </calloutlist>
-            <para>For further information on the usage of KVM/QEMU, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="part-virt-qemu" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>For further information on the usage of KVM/QEMU, see <xref linkend="part-virt-qemu"/>.</para>
          </step>
       </procedure>
    </sect2>
@@ -313,7 +313,7 @@ BOOTPROTO='none'</screen>
             <para>You can now start or restart the virtual machine as usual.</para>
          </step>
       </procedure>
-      <para>For further information on the usage of <systemitem class="library">libvirt</systemitem>, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Virtualization Guide</quote>, </phrase><xref linkend="part-virt-libvirt" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For further information on the usage of <systemitem class="library">libvirt</systemitem>, see <xref linkend="part-virt-libvirt"/>.</para>
    </sect2>
    <sect2 xml:id="sec-network-openvswitch-more">
       <title>More information</title>

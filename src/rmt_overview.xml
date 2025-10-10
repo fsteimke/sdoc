@@ -28,10 +28,10 @@
       <title>RMT</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/rmt_schema.png" width="64%"/>
+            <imagedata fileref="media/rmt_schema.png" width="70%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/rmt_schema.png" width="64%"/>
+            <imagedata fileref="media/rmt_schema.png" width="70%"/>
          </imageobject>
       </mediaobject>
    </figure>

@@ -68,7 +68,7 @@
    <sect1 xml:id="sec-print-method">
       <title>Methods and protocols for connecting printers</title>
       <para>There are multiple possibilities for connecting a printer to the system. The configuration of CUPS does not distinguish between a local printer and a printer connected to the system over the network. For more information about the printer connection, read the article <emphasis>CUPS in a Nutshell</emphasis> at <link xlink:href="https://en.opensuse.org/SDB:CUPS_in_a_Nutshell"/>.</para>
-      <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>Printers and similar devices provided by the z/VM that connect locally with the IBM Z mainframes are not supported by CUPS. On these platforms, printing is only possible over the network. The cabling for network printers must be installed according to the instructions of the printer manufacturer.<phrase role="arch-end">◀</phrase></para>
+      <para arch="zseries">Printers and similar devices provided by the z/VM that connect locally with the IBM Z mainframes are not supported by CUPS. On these platforms, printing is only possible over the network. The cabling for network printers must be installed according to the instructions of the printer manufacturer.</para>
       <warning>
          <title>Changing cable connections in a running system</title>
          <para>When connecting the printer to the machine, do not forget that only USB devices can be plugged in or unplugged during operation. To avoid damaging your system or printer, shut down the system before changing any connections that are not USB.</para>
@@ -177,7 +177,7 @@ Resolution/Output Resolution: 150dpi 300dpi *600dpi</screen>
          <title>CUPS and firewall</title>
          <para>After completing a default installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>, <systemitem class="daemon">firewalld</systemitem> is active and the network interfaces are configured to be in the <literal>public</literal> zone, which blocks incoming traffic.</para>
          <para>When <systemitem class="daemon">firewalld</systemitem> is active, you may need to configure it to allow clients to browse network printers by allowing <literal>mdns</literal> and <literal>ipp</literal> through the internal network zone. The public zone should never expose printer queues.</para>
-         <para>(More information about the <systemitem class="daemon">firewalld</systemitem> configuration is available in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-firewall-firewalld" xrefstyle="%label &#34;%c&#34;"/> and at <link xlink:href="https://en.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings"/>.)</para>
+         <para>(More information about the <systemitem class="daemon">firewalld</systemitem> configuration is available in <xref linkend="sec-security-firewall-firewalld"/> and at <link xlink:href="https://en.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings"/>.)</para>
          <sect3 xml:id="sec-print-special-cupsfire-client">
             <title>CUPS client</title>
             <para>Normally, a CUPS client runs on a regular workstation located in a trusted network environment behind a firewall. In this case, it is recommended to configure the network interface to be in the <literal>Internal Zone</literal>, so the workstation is reachable from within the network.</para>
@@ -277,7 +277,7 @@ printer: printing disabled</screen>
                      <title>Broadcast from the CUPS network server</title>
                      <screen>ipp://192.168.2.202:631/printers/queue</screen>
                   </example>
-                  <para arch="zseries"><phrase role="arch-start">zseries ▶</phrase>Take into account that IBM Z Ethernet devices do not receive broadcasts by default.<phrase role="arch-end">◀</phrase></para>
+                  <para arch="zseries">Take into account that IBM Z Ethernet devices do not receive broadcasts by default.</para>
                   <para>The following command can be used to test if a TCP connection can be established to <command>cupsd</command> (port <literal>631</literal>) on <replaceable>HOST</replaceable>:</para>
                   <screen><prompt>&gt;</prompt>netcat -z <replaceable>HOST</replaceable> 631 &amp;&amp; echo ok || echo failed</screen>
                   <para>If the connection to <command>cupsd</command> cannot be established, <command>cupsd</command> may not be active or there may be basic network problems. <command>lpstat -h</command><replaceable>HOST</replaceable> -l -t returns a status report for all queues on <replaceable>HOST</replaceable>, provided the respective <command>cupsd</command> is active and the host accepts queries.</para>

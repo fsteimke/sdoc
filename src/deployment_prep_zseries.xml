@@ -90,7 +90,7 @@ packagenames etc.)in all zSeries documents, because they are trademarks:
                   <replaceable>&lt;URL&gt;</replaceable>
                </term>
                <listitem>
-                  <para>Specifies a location for a file with additional options. This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. Further documentation on the Info file can be found in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="invoking-autoinst-linuxrc" xrefstyle="%label &#34;%c&#34;"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify the options required to set up the network (that is, the options described in <xref linkend="sec-appdendix-parm-net"/>). Other linuxrc-specific options, such as those related to debugging, must be specified in the parmfile itself.</para>
+                  <para>Specifies a location for a file with additional options. This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. Further documentation on the Info file can be found in <xref linkend="invoking-autoinst-linuxrc"/>. Since the Info file can typically only be accessed through the network on IBM Z, you cannot use it to specify the options required to set up the network (that is, the options described in <xref linkend="sec-appdendix-parm-net"/>). Other linuxrc-specific options, such as those related to debugging, must be specified in the parmfile itself.</para>
                </listitem>
             </varlistentry>
             <varlistentry>
@@ -107,7 +107,7 @@ packagenames etc.)in all zSeries documents, because they are trademarks:
          <title>Configuring the network interface</title>
          <important>
             <title>Configuring the network interface</title>
-            <para>The settings described in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-manconf" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>The settings described in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions in <xref linkend="sec-network-manconf"/>.</para>
          </important>
          <variablelist>
             <varlistentry>
@@ -205,7 +205,7 @@ WriteChannel=0.0.0601</screen>
                <para>For the <literal>ctc</literal> interface (no longer supported), specify the protocol that should be used for this interface:</para>
                <screen>CTCProtocol=&lt;0/1/2&gt;</screen>
                <para>Valid entries would be:</para>
-               <informaltable>
+               <informaltable colsep="1" rowsep="1" frame="all">
                   <tgroup cols="2">
                      <tbody>
                         <row>

@@ -41,10 +41,10 @@
          <title>A LibreOffice wizard</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo-wizard.png" width="92%"/>
+               <imagedata fileref="media/oo-wizard.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo-wizard.png" width="78%"/>
+               <imagedata fileref="media/oo-wizard.png" width="85%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -73,7 +73,7 @@
          <para>If you had used a character style from the beginning, however, you would only need to change the style from bold to italics once. All text formatted with a style changes its appearance as the style is changed.</para>
       </example>
       <para>LibreOffice can use styles for applying consistent formatting to various elements in a document. The following styles are available in Writer:</para>
-      <table xml:id="tab-lo-writer-styles">
+      <table xml:id="tab-lo-writer-styles" colsep="1" rowsep="1" frame="all">
          <title>Types of styles</title>
          <tgroup cols="2">
             <colspec colnum="1" colname="1" colwidth="28*"/>
@@ -119,10 +119,10 @@
             <title>LibreOffice Styles panel</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/oo-stylist.png" width="36%"/>
+                  <imagedata fileref="media/oo-stylist.png" width="40%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/oo-stylist.png" width="46%"/>
+                  <imagedata fileref="media/oo-stylist.png" width="50%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -221,7 +221,7 @@
                </step>
                <step>
                   <para>Specify the following parameters in the tab <guimenu>Organizer</guimenu>:</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <tbody>
                            <row>
@@ -277,7 +277,7 @@
                </step>
                <step>
                   <para>Enter the following parameters in the tab <guimenu>Organizer</guimenu>:</para>
-                  <informaltable>
+                  <informaltable colsep="1" rowsep="1" frame="all">
                      <tgroup cols="2">
                         <tbody>
                            <row>
@@ -353,10 +353,10 @@
             </title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/oo_navigator.png" width="50%"/>
+                  <imagedata fileref="media/oo_navigator.png" width="55%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/oo_navigator.png" width="41%"/>
+                  <imagedata fileref="media/oo_navigator.png" width="45%"/>
                </imageobject>
             </mediaobject>
          </figure>

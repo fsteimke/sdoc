@@ -47,7 +47,10 @@
             </listitem>
          </varlistentry>
       </variablelist>
-      <table xml:id="sec-rmt-migrate-notes-features">
+      <table xml:id="sec-rmt-migrate-notes-features"
+             colsep="1"
+             rowsep="1"
+             frame="all">
          <title>Feature comparison</title>
          <tgroup cols="3">
             <colspec colnum="1" colname="1" colwidth="40*"/>

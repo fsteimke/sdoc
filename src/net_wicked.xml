@@ -57,7 +57,7 @@
                   <imagedata fileref="media/wicked_scheme.png"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/wicked_scheme.png" width="73%"/>
+                  <imagedata fileref="media/wicked_scheme.png" width="80%"/>
                </imageobject>
             </mediaobject>
          </figure>

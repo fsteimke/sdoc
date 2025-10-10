@@ -70,7 +70,7 @@
             <literal>disks</literal>
          </title>
          <para>The <literal>disks</literal> helper returns a list of the detected disks. Each element of the list contains some basic information like the device name or the size.</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="3">
                <thead>
                   <row>
@@ -132,7 +132,7 @@
             <literal>network_cards</literal>
          </title>
          <para>The <literal>network_cards</literal> helper returns a list of network cards, including their names, status information (for example, if they are connected or not).</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="3">
                <thead>
                   <row>
@@ -191,7 +191,7 @@
             <literal>os_release</literal>
          </title>
          <para>The <literal>os_release</literal> helper returns the operating system information, which is included in the <filename>/etc/os-release</filename> file.</para>
-         <informaltable>
+         <informaltable colsep="1" rowsep="1" frame="all">
             <tgroup cols="3">
                <thead>
                   <row>

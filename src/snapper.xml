@@ -235,7 +235,7 @@
          </sect3>
          <sect3 xml:id="sec-snapper-lvm">
             <title>Using Snapper on thinly provisioned LVM volumes</title>
-            <para>Apart from snapshots on <literal>Btrfs</literal> file systems, Snapper also supports taking snapshots on thinly provisioned LVM volumes (snapshots on regular LVM volumes are <emphasis>not</emphasis> supported) formatted with XFS, Ext4 or Ext3. For more information and setup instructions on LVM volumes, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-yast-system-lvm" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Apart from snapshots on <literal>Btrfs</literal> file systems, Snapper also supports taking snapshots on thinly provisioned LVM volumes (snapshots on regular LVM volumes are <emphasis>not</emphasis> supported) formatted with XFS, Ext4 or Ext3. For more information and setup instructions on LVM volumes, refer to <xref linkend="sec-yast-system-lvm"/>.</para>
             <para>To use Snapper on a thinly provisioned LVM volume, you need to create a Snapper configuration for it. On LVM it is required to specify the file system with <option>--fstype=lvm(<replaceable>FILESYSTEM</replaceable>)</option>. <literal>ext3</literal>, <literal>etx4</literal> or <literal>xfs</literal> are valid values for <replaceable>FILESYSTEM</replaceable>. Example:</para>
             <screen><prompt>&gt;</prompt><command>sudo</command> snapper -c lvm create-config --fstype="lvm(xfs)" /thin_lvm</screen>
             <para>You can adjust this configuration according to your needs as described in <xref linkend="sec-snapper-config-modify"/>.</para>
@@ -286,10 +286,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/snapper_yast2_list.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_list.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/snapper_yast2_list.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_list.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -299,10 +299,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/snapper_yast2_changes.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_changes.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/snapper_yast2_changes.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_changes.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -312,10 +312,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/snapper_yast2_diff.png" width="59%"/>
+                        <imagedata fileref="media/snapper_yast2_diff.png" width="65%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/snapper_yast2_diff.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_diff.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -325,10 +325,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/snapper_yast2_restore.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_restore.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/snapper_yast2_restore.png" width="69%"/>
+                        <imagedata fileref="media/snapper_yast2_restore.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -580,10 +580,10 @@ single | 4 |     |         |                       |
             <title>Boot loader: snapshots</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/boot_snapshots.png" width="69%"/>
+                  <imagedata fileref="media/boot_snapshots.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/boot_snapshots.png" width="69%"/>
+                  <imagedata fileref="media/boot_snapshots.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>

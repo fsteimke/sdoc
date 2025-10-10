@@ -24,10 +24,10 @@
          <title>Output from spectre-meltdown-checker</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/spectre-meltdown.png" width="73%"/>
+               <imagedata fileref="media/spectre-meltdown.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/spectre-meltdown.png" width="92%"/>
+               <imagedata fileref="media/spectre-meltdown.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>

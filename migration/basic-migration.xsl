@@ -33,6 +33,7 @@
 
   <xsl:strip-space elements="*"/>
 
+  <xsl:param name="cals-automatic-separators" as="xs:string" select="'yes'"/>
   <xsl:param name="docbook-version">5.2</xsl:param>
 
   <xsl:key name="k_id" match="*" use="@xml:id"/>
@@ -146,57 +147,14 @@
     <coref linkend="{f:xref-target(.)/@xml:id}"/>
   </xsl:template>
   
-  <!-- Hack to manage cross reference from one book to a different book ======================= -->
-  <xsl:template match="book//xref" as="item()+" xmlns:l="http://docbook.org/ns/docbook/l10n">
-    <xsl:variable name="lang" as="xs:string" select="((ancestor::*/@xml:lang)[last()], 'en')[1]"/>
-    <xsl:variable name="local-href" select="'https://xsltng.docbook.org/locale/' || $lang || '.xml'"/>
-    <xsl:variable name="locale" select="
-      if (doc-available($local-href)) then
-      doc($local-href)
-      else
-      ()"/>
-    <xsl:variable name="my-document" as="element()" select="(ancestor::book | ancestor::article)[1]"/>
-    <xsl:variable name="idref" as="xs:string" select="
-      if (@xlink:href) then
-      substring-after(@xlink:href, '#')
-      else
-      @linkend"/>
-    <xsl:variable name="target" as="element()?" select="root()//*[@xml:id eq $idref]"/>
-    <xsl:variable name="target-document" as="element(book)?" select="$target/ancestor::*[local-name() eq local-name($my-document)]"/>
-    <xsl:if test="not($locale)">
-      <xsl:message select="'Warning: no locale found for ' || $local-href"/>
-    </xsl:if>
-    <xsl:choose>
-      <xsl:when test="exists($target-document) and not($target-document is $my-document)">
-        <!-- cross reference to a different book or article -->
-        <xsl:variable name="title" as="xs:string"
-          select="normalize-space($target-document/info/title)"/>
-        <xsl:variable name="token" as="element()?"
-          select="($locale//l:token[@key eq local-name($target-document)])[1]"/>
-        <phrase role='document-xref'>
-          <xsl:if test="$token">
-            <xsl:value-of select="$token || ' '"/>
-          </xsl:if>
-          <quote>
-            <xsl:sequence select="$title"/>
-          </quote>
-          <xsl:text>, </xsl:text>
-        </phrase>
-        <xsl:copy>
-          <xsl:copy-of select="@xlink:href | @linkend"/>
-          <xsl:attribute name="xrefstyle">%label &quot;%c&quot;</xsl:attribute>
-        </xsl:copy>
-      </xsl:when>
-      <xsl:otherwise>
-        <!-- regular cross reference -->
-        <xsl:copy>
-          <xsl:apply-templates select="@*, node()"/>
-        </xsl:copy>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  
-  <!-- Modifikation xref/@xrefstyle =========================================================== -->
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Modify xref/xrefstyle from <xd:a href="https://sagehill.net/docbookxsl/CustomXrefs.html"
+          >XSLT 1 Stylesheets format</xd:a> to <xd:a
+          href="https://xsltng.docbook.org/guide/2.6.1/ch-using#customize-individual-cross-references"
+          >xslTNG format</xd:a>. </xd:p>
+    </xd:desc>
+  </xd:doc>
   <xsl:template match="@xrefstyle" as="attribute(xrefstyle)?">
     <xsl:variable name="style" as="xs:string" select="normalize-space()"/>
     <xsl:attribute name="xrefstyle">
@@ -228,37 +186,26 @@
   
   <xd:doc>
     <xd:desc>
-      <xd:p>Set mark at start and end of para elements which apply to particular architecture</xd:p>
+      <xd:p>If <xd:ref name="cals-automatic-separators" type="parameter"/> says so, set CALS Table
+        attributes unless they are already defined</xd:p>
     </xd:desc>
   </xd:doc>
-  <xsl:template match="para[@arch]" as="element(para)">
-    <xsl:copy>
+  <xsl:template match="table[tgroup] | informaltable[tgroup]" as="element()">
+    <xsl:variable name="separators" as="xs:boolean"
+      select="normalize-space(lower-case($cals-automatic-separators)) = ('yes', 'true', '1')"/>
+    <xsl:copy copy-namespaces="no">
       <xsl:apply-templates select="@*"/>
-      <phrase role="arch-start">
-        <xsl:value-of select="@arch || '&#x202f;▶'"/>
-      </phrase>
+      <xsl:if test="not(@colsep) and $separators">
+        <xsl:attribute name="colsep" select="'1'"/>
+      </xsl:if>
+      <xsl:if test="not(@rowsep) and $separators">
+        <xsl:attribute name="rowsep" select="'1'"/>
+      </xsl:if>
+      <xsl:if test="not(@frame) and $separators">
+        <xsl:attribute name="frame" select="'all'"/>
+      </xsl:if>
       <xsl:apply-templates select="node()"/>
-      <phrase role="arch-end">
-        <xsl:text>◀</xsl:text>
-      </phrase>
     </xsl:copy>
   </xsl:template>
-  
-  <xd:doc>
-    <xd:desc>
-      <xd:p>See <xd:a href="https://github.com/docbook/xslTNG/issues/648">xslTNG Stylesheets Issue
-          648</xd:a></xd:p>
-    </xd:desc>
-  </xd:doc>
-  <xsl:template match="imagedata/@width[ends-with(., '%')]" as="attribute(width)">
-   <xsl:try>
-     <xsl:variable name="m" as="xs:nonNegativeInteger" select="replace(.,'(\d+)%', '$1') => xs:nonNegativeInteger()"/>
-     <xsl:attribute name="width" select="floor($m * 0.92) || '%'"/>
-     <xsl:catch>
-       <xsl:sequence select="."/>
-     </xsl:catch>
-   </xsl:try>
-  </xsl:template>
-  
 
 </xsl:stylesheet>

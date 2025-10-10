@@ -25,10 +25,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/firefox_main.png" width="92%"/>
+               <imagedata fileref="media/firefox_main.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/firefox_main.png" width="92%"/>
+               <imagedata fileref="media/firefox_main.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -141,10 +141,10 @@
                <title>Firefox—manage search engines</title>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/firefox_manage_searchengines.png" width="64%"/>
+                     <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/firefox_manage_searchengines.png" width="64%"/>
+                     <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -194,10 +194,10 @@
             <title>The <productname>Firefox</productname> bookmark library</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_library.png" width="78%"/>
+                  <imagedata fileref="media/firefox_library.png" width="85%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_library.png" width="78%"/>
+                  <imagedata fileref="media/firefox_library.png" width="85%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -319,10 +319,10 @@
                <productname>Firefox</productname> Page Info—Permissions tab</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_page_info_permissions.png" width="82%"/>
+                  <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_page_info_permissions.png" width="82%"/>
+                  <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -376,10 +376,10 @@
             <title>Firefox preferences in General settings</title>
             <mediaobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/firefox_preferences.png" width="82%"/>
+                  <imagedata fileref="media/firefox_preferences.png" width="90%"/>
                </imageobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/firefox_preferences.png" width="92%"/>
+                  <imagedata fileref="media/firefox_preferences.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -411,10 +411,10 @@
                <title>Installing <productname>Firefox</productname> extensions</title>
                <mediaobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/firefox_addon_manager.png" width="73%"/>
+                     <imagedata fileref="media/firefox_addon_manager.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/firefox_addon_manager.png" width="92%"/>
+                     <imagedata fileref="media/firefox_addon_manager.png" width="100%"/>
                   </imageobject>
                </mediaobject>
             </figure>

@@ -56,7 +56,7 @@
          <para>Certain key combinations such as <keycombo><keycap function="control"/><keycap function="alt"/><keycap function="delete"/></keycombo> are interpreted by the host system and are not passed to the VM Guest. To pass such key combinations to a VM Guest, open the <guimenu>Send Key</guimenu> menu from the VNC window and choose the desired key combination entry. The <guimenu>Send Key</guimenu> menu is only available when using Virtual Machine Manager and <command>virt-viewer</command>. With Virtual Machine Manager, you can alternatively use the <quote>sticky key</quote> feature as explained in <xref linkend="tip-libvirt-inst-vmm-sticky"/>.</para>
          <note>
             <title>Supported VNC viewers</title>
-            <para>Principally all VNC viewers can connect to the console of a VM Guest. However, if you are using SASL authentication and/or TLS/SSL connection to access the guest, the options are limited. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> support neither SASL authentication nor TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is Remmina (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vnc-remmina" xrefstyle="%label &#34;%c&#34;"/>).</para>
+            <para>Principally all VNC viewers can connect to the console of a VM Guest. However, if you are using SASL authentication and/or TLS/SSL connection to access the guest, the options are limited. Common VNC viewers such as <command>tightvnc</command> or <command>tigervnc</command> support neither SASL authentication nor TLS/SSL. The only supported alternative to Virtual Machine Manager and <command>virt-viewer</command> is Remmina (refer to <xref linkend="vnc-remmina"/>).</para>
          </note>
          <sect3 xml:id="sec-libvirt-managing-console-vnc-vmm">
             <title>Opening a graphical console with Virtual Machine Manager</title>
@@ -354,10 +354,10 @@
          <informalfigure>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="69%"/>
+                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="69%"/>
+                  <imagedata fileref="media/virt_vmm_snapshots_list.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </informalfigure>

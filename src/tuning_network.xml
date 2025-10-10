@@ -19,7 +19,7 @@
    <para>The network subsystem is complex and its tuning highly depends on the system use scenario and on external factors such as software clients or hardware components (switches, routers, or gateways) in your network. The Linux kernel aims more at reliability and low latency than low overhead and high throughput. Other settings can mean less security, but better performance.</para>
    <sect1 xml:id="sec-tuning-network-buffers">
       <title>Configurable kernel socket buffers</title>
-      <para>Most of modern networking is based on the TCP/IP protocol and a socket interface for communication; for more information about TCP/IP, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-network" xrefstyle="%label &#34;%c&#34;"/>. The Linux kernel handles data it receives or sends via the socket interface in socket buffers. These kernel socket buffers are tunable.</para>
+      <para>Most of modern networking is based on the TCP/IP protocol and a socket interface for communication; for more information about TCP/IP, see <xref linkend="cha-network"/>. The Linux kernel handles data it receives or sends via the socket interface in socket buffers. These kernel socket buffers are tunable.</para>
       <important>
          <title>TCP autotuning</title>
          <para>Since kernel version 2.6.17 full autotuning with 4 MB maximum buffer size exists. This means that manual tuning does not improve networking performance considerably. It is often the best not to touch the following variables, or, at least, to check the outcome of tuning efforts carefully.</para>

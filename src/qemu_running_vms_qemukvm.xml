@@ -163,10 +163,10 @@
                <title>QEMU window with SLES as VM Guest</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/qemu_win_sles.png" width="64%"/>
+                     <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/qemu_win_sles.png" width="64%"/>
+                     <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1138,10 +1138,10 @@ sudo tunctl -d $tap<co xml:id="co-qemu-net-bridge-deltap"/></screen>
          <title>QEMU VNC session</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/qemu_sles_vnc.png" width="64%"/>
+               <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/qemu_sles_vnc.png" width="64%"/>
+               <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1166,10 +1166,10 @@ Password: ****
             <title>Authentication dialog in Remmina</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/qemu_vnc_pwd.png" width="64%"/>
+                  <imagedata fileref="media/qemu_vnc_pwd.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/qemu_vnc_pwd.png" width="64%"/>
+                  <imagedata fileref="media/qemu_vnc_pwd.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>

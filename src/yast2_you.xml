@@ -47,10 +47,10 @@
          <title>YaST online update</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_you.png" width="69%"/>
+               <imagedata fileref="media/yast2_you.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_you.png" width="69%"/>
+               <imagedata fileref="media/yast2_you.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -129,10 +129,10 @@
          <title>Viewing retracted patches and history</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
+               <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_retracted_patches.png" width="69%"/>
+               <imagedata fileref="media/yast2_retracted_patches.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -151,10 +151,10 @@
                <title>YaST online update configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
+                     <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_autoupdate.png" width="69%"/>
+                     <imagedata fileref="media/yast2_autoupdate.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>

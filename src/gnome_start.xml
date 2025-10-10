@@ -18,16 +18,16 @@
    </note>
    <sect1 xml:id="sec-gnome-login">
       <title>Logging in</title>
-      <para>All users must authenticate—unless <guimenu>Auto Login</guimenu> is enabled for a specific user. In this case, a particular user is logged in automatically when the system starts. This can save time, especially if a computer is used by a single person. It may impact account security. Auto Login can be enabled or disabled during installation or at any time using the YaST User and Group Management module. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-userman" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>All users must authenticate—unless <guimenu>Auto Login</guimenu> is enabled for a specific user. In this case, a particular user is logged in automatically when the system starts. This can save time, especially if a computer is used by a single person. It may impact account security. Auto Login can be enabled or disabled during installation or at any time using the YaST User and Group Management module. For more information, refer to <xref linkend="cha-yast-userman"/>.</para>
       <para>If your computer is running in a network environment and you are not the only person using the machine, you are usually prompted to enter your user name and password when you start the system.</para>
       <figure>
          <title>Default GNOME login screen</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/login_sled.png" width="82%"/>
+               <imagedata fileref="media/login_sled.png" width="90%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/login_sled.png" width="69%"/>
+               <imagedata fileref="media/login_sled.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -54,10 +54,10 @@
                   <title>Default GNOME login screen—session type</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/login_sessiontype_sle.png" width="82%"/>
+                        <imagedata fileref="media/login_sessiontype_sle.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/login_sessiontype_sle.png" width="69%"/>
+                        <imagedata fileref="media/login_sessiontype_sle.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -139,10 +139,10 @@
          <title>GNOME desktop with activities overview</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/desktop_sled_menu.png" width="87%"/>
+               <imagedata fileref="media/desktop_sled_menu.png" width="95%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/desktop_sled_menu.png" width="82%"/>
+               <imagedata fileref="media/desktop_sled_menu.png" width="90%"/>
             </imageobject>
          </mediaobject>
       </figure>

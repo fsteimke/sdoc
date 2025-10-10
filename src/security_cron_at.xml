@@ -15,7 +15,7 @@
    </info>
    <sect1>
       <title>Restricting the <systemitem class="daemon">cron</systemitem> daemon</title>
-      <para>The <systemitem class="daemon">cron</systemitem> system is used to automatically run commands in the background at predefined times. For more information about <systemitem class="daemon">cron</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-suse-packages-cron" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>The <systemitem class="daemon">cron</systemitem> system is used to automatically run commands in the background at predefined times. For more information about <systemitem class="daemon">cron</systemitem>, refer to the <xref linkend="sec-suse-packages-cron"/>.</para>
       <para>The <filename>cron.allow</filename> file specifies a list of users that are allowed to execute jobs via <systemitem class="daemon">cron</systemitem>. The file does not exist by default, so all users can create <systemitem class="daemon">cron</systemitem> jobs—except for those listed in <filename>cron.deny</filename>.</para>
       <procedure>
          <para>To prevent users except for <systemitem class="username">root</systemitem> from creating <systemitem class="daemon">cron</systemitem> jobs, perform the following steps.</para>
@@ -44,7 +44,7 @@ See crontab(1) for more information</screen>
       <note>
          <title>Switching to <systemitem class="daemon">systemd</systemitem> timer units</title>
          <para>You should also consider switching to <systemitem class="daemon">systemd</systemitem> timer units, as they allow for more powerful and reliable task execution. By default, users cannot use them to run code when they are not logged in. This limits the way users can interact with the system while not being connected to it.</para>
-         <para>For more information about <systemitem class="daemon">systemd</systemitem> timer units, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-timer-units" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information about <systemitem class="daemon">systemd</systemitem> timer units, refer to <xref linkend="sec-boot-systemd-timer-units"/>.</para>
       </note>
    </sect1>
    <sect1>

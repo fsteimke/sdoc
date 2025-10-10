@@ -46,7 +46,7 @@
          <title>YaST security center and hardening: security overview</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata width="69%" fileref="media/yast2_security_overview.png"/>
+               <imagedata width="75%" fileref="media/yast2_security_overview.png"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata fileref="media/yast2_security_overview.png"/>

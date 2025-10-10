@@ -113,16 +113,16 @@
             <productname>Ekiga</productname> user interface</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/ekiga_main.png" width="41%"/>
+               <imagedata fileref="media/ekiga_main.png" width="45%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/ekiga_main.png" width="50%"/>
+               <imagedata fileref="media/ekiga_main.png" width="55%"/>
             </imageobject>
          </mediaobject>
       </figure>
       <para>By default, <productname>Ekiga</productname> opens in the <guimenu>Contacts</guimenu> mode. This view shows you a local address book which lets you quickly open connections to often used numbers.</para>
       <para>Many of the functions of <productname>Ekiga</productname> are available with key combinations. <xref linkend="tab-ekiga-shortcut"/> summarizes the most important ones.</para>
-      <table xml:id="tab-ekiga-shortcut">
+      <table xml:id="tab-ekiga-shortcut" colsep="1" rowsep="1" frame="all">
          <title>Key combinations for <productname>Ekiga</productname>
          </title>
          <tgroup cols="2">

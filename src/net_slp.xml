@@ -118,7 +118,7 @@ description=SANE scanner daemon</screen>
       </variablelist>
       <sect2 xml:id="sec-slp-sl-reg-install">
          <title>Setting up an SLP installation server</title>
-         <para>Announcing the installation data via SLP within your network makes the network installation much easier, since the installation data such as IP address of the server or the path to the installation media are automatically required via SLP query. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="cha-deployment-instserver" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+         <para>Announcing the installation data via SLP within your network makes the network installation much easier, since the installation data such as IP address of the server or the path to the installation media are automatically required via SLP query. Refer to <xref linkend="cha-deployment-instserver"/> for instructions.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-slp-info">

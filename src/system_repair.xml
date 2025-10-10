@@ -54,7 +54,7 @@
          <para>Enter the configuration of your PXE boot setup and add the lines <literal>install=<replaceable>PROTOCOL</replaceable>://<replaceable>INSTSOURCE</replaceable></literal> and <literal>rescue=1</literal>. If you need to start the repair system, use <literal>repair=1</literal> instead. As with a normal installation, <replaceable>PROTOCOL</replaceable> stands for any of the supported network protocols (NFS, HTTP, FTP, etc.) and <replaceable>INSTSOURCE</replaceable> for the path to your network installation source.</para>
       </step>
       <step>
-         <para>Boot the system using <quote>Wake on LAN</quote>, as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Deployment Guide</quote>, </phrase><xref linkend="sec-deployment-prep-boot-wol" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Boot the system using <quote>Wake on LAN</quote>, as described in <xref linkend="sec-deployment-prep-boot-wol"/>.</para>
       </step>
       <step>
          <para>Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A password is not required.</para>
@@ -124,7 +124,7 @@
          <step>
             <tip>
                <title>Import LVM volume groups</title>
-               <para>If you are using an LVM setup (refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="part-lvm" xrefstyle="%label &#34;%c&#34;"/> for more general details), import all existing volume groups to be able to find and mount the device(s):</para>
+               <para>If you are using an LVM setup (refer to <xref linkend="part-lvm"/> for more general details), import all existing volume groups to be able to find and mount the device(s):</para>
                <screen><systemitem class="username">root</systemitem>vgimport -a</screen>
             </tip>
             <para>Run <command>lsblk</command> to check which node corresponds to the root partition. It is <filename>/dev/sda2</filename> in our example:</para>

@@ -323,7 +323,10 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             </varlistentry>
          </variablelist>
          <para>Putting this together, when snippets occur in the order <xref linkend="vle-x11-fontsys-example-alias-default"/> - <xref linkend="vle-x11-fontsys-example-alias-prefer"/> - <xref linkend="vle-x11-fontsys-example-alias-accept"/> and the user requests <quote>Alegreya SC</quote>, then the PFL is created as depicted in <xref linkend="tab-x11-fontsys-example-alias"/>.</para>
-         <table xml:id="tab-x11-fontsys-example-alias">
+         <table xml:id="tab-x11-fontsys-example-alias"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Generating PFL from fontconfig rules</title>
             <tgroup cols="2">
                <colspec colwidth="1*"/>
@@ -356,7 +359,10 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
          </table>
          <para>In Fontconfig's metrics, the family name has the highest priority over other patterns, like style, size, etc. Fontconfig checks which family is currently installed on the system. If <quote>Alegreya SC</quote> is installed, then Fontconfig returns it. If not, it asks for <quote>Droid Serif</quote>, etc.</para>
          <para>Be careful. When the order of Fontconfig snippets is changed, Fontconfig can return different results, as depicted in <xref linkend="tab-x11-fontsys-example-alias2"/>.</para>
-         <table xml:id="tab-x11-fontsys-example-alias2">
+         <table xml:id="tab-x11-fontsys-example-alias2"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Results from generating PFL from fontconfig rules with changed order</title>
             <tgroup cols="3">
                <thead>
@@ -466,7 +472,10 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
             </variablelist>
          </example>
          <para>The expanded configuration from <xref linkend="ex-x11-fontsys-fontconfig-aliases3"/> would lead to the following PFL evolution:</para>
-         <table xml:id="tab-x11-fontsys-example-alias3">
+         <table xml:id="tab-x11-fontsys-example-alias3"
+                colsep="1"
+                rowsep="1"
+                frame="all">
             <title>Results from generating PFL from fontconfig rules</title>
             <tgroup cols="2">
                <colspec colwidth="1*"/>

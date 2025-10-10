@@ -41,6 +41,6 @@
     &lt;append&gt;rd.zdev=no-auto&lt;/append&gt;
   &lt;/global&gt;
 &lt;/bootloader&gt;</screen>
-   <para>For more context on the AutoYaST boot loader options, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="CreateProfile-Bootloader" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>For more context on the AutoYaST boot loader options, see <xref linkend="CreateProfile-Bootloader"/>.</para>
    <para>During installation, the status of the auto-configuration setting is displayed in the <guimenu>Device Settings</guimenu> section of the <guimenu>Installation Settings</guimenu> screen.</para>
 </sect2>

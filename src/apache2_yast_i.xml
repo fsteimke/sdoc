@@ -29,7 +29,7 @@
             <title>HTTP server wizard: default host</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="69%" fileref="media/yast2_apache_wizard3.png"/>
+                  <imagedata width="75%" fileref="media/yast2_apache_wizard3.png"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/yast2_apache_wizard3.png"/>
@@ -117,7 +117,7 @@
             <title>HTTP server wizard: summary</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="69%" fileref="media/yast2_apache_wizard5.png"/>
+                  <imagedata width="75%" fileref="media/yast2_apache_wizard5.png"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/yast2_apache_wizard5.png"/>
@@ -137,7 +137,7 @@
             <title>HTTP server configuration: listen ports and addresses</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="69%" fileref="media/yast2_apache_config_listen.png"/>
+                  <imagedata width="75%" fileref="media/yast2_apache_config_listen.png"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/yast2_apache_config_listen.png"/>
@@ -152,7 +152,7 @@
             <title>HTTP server configuration: server modules</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="69%" fileref="media/yast2_apache_config_modules.png"/>
+                  <imagedata width="75%" fileref="media/yast2_apache_config_modules.png"/>
                </imageobject>
                <imageobject outputformat="screen">
                   <imagedata fileref="media/yast2_apache_config_modules.png"/>

@@ -10,7 +10,7 @@
    <para>Linux Unified Key Setup (LUKS) is the standard for Linux disk encryption. It provides a standardized on-disk format and enables users to transport or migrate data seamlessly.</para>
    <para>LUKS is used to encrypt block devices. The contents of the encrypted device are arbitrary, and therefore any file system can be encrypted, including swap partitions. All necessary setup information, like encryption keys and parameters, such as cipher type and key size, is stored in the partition header.</para>
    <para>Encryption is done with a multi-layer approach. First, the block device is encrypted using a master key. Then, this master key is encrypted with each active user key. User keys are derived from passphrases, FIDO2 security keys, TPMs or smart cards. This multi-layer approach allows users to change their passphrase without re-encrypting the whole block device.</para>
-   <para>For more information about LUKS, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>For more information about LUKS, refer to <xref linkend="cha-configure-cryptctl"/>.</para>
    <sect2 xml:id="deployment-encryption-methods">
       <title>Encryption methods</title>
       <para>To encrypt a device, follow the instructions in <xref linkend="sec-expert-partitioner-options"/>.</para>
@@ -125,6 +125,6 @@
       encrypt the root file system.
     </para>
     -->
-      <para>For more information on configuring device encryption with LUKS, use the <literal>Help</literal> button in the installer and refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-configure-cryptctl" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information on configuring device encryption with LUKS, use the <literal>Help</literal> button in the installer and refer to <xref linkend="cha-configure-cryptctl"/>.</para>
    </sect2>
 </sect1>

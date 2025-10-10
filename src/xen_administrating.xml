@@ -15,10 +15,10 @@
          <title>Boot loader settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/xen_bootloader.png" width="73%"/>
+               <imagedata fileref="media/xen_bootloader.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/xen_bootloader.png" width="73%"/>
+               <imagedata fileref="media/xen_bootloader.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -119,7 +119,7 @@ cpuid = [
             </step>
          </procedure>
          <tip>
-            <para><systemitem class="library">libvirt</systemitem> also supports calculating a baseline CPU for migration. For more details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-virtualization-best-practices" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para><systemitem class="library">libvirt</systemitem> also supports calculating a baseline CPU for migration. For more details, refer to <xref linkend="article-virtualization-best-practices"/>.</para>
          </tip>
          <sect3 xml:id="sec-xen-manage-migrate-cpu-info">
             <title>More information</title>
@@ -132,10 +132,10 @@ cpuid = [
          <para>The block devices needed by the VM Guest system must be available on all involved VM Host Server systems. This is done by implementing a specific kind of shared storage that serves as a container for the root file system of the migrated VM Guest system. Common possibilities include:</para>
          <itemizedlist mark="bullet" spacing="normal">
             <listitem>
-               <para><literal>iSCSI</literal> can be set up to give access to the same block devices from different systems at the same time. For more information about iSCSI, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-iscsi" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para><literal>iSCSI</literal> can be set up to give access to the same block devices from different systems at the same time. For more information about iSCSI, see <xref linkend="cha-iscsi"/>.</para>
             </listitem>
             <listitem>
-               <para><literal>NFS</literal> is a widely used root file system that can easily be accessed from different locations. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-nfs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para><literal>NFS</literal> is a widely used root file system that can easily be accessed from different locations. For more information, see <xref linkend="cha-nfs"/>.</para>
             </listitem>
             <listitem>
                <para><literal>DRBD</literal> can be used if only two VM Host Server systems are involved. This adds certain extra data security, because the used data is mirrored over the network. For more information, see the <citetitle>SUSE Linux Enterprise High Availability <phrase role="productnumber">15 SP7</phrase></citetitle> documentation at <link xlink:href="https://documentation.suse.com/sle-ha-15/"/>.</para>
@@ -197,7 +197,7 @@ cpuid = [
       </sect2>
       <sect2 xml:id="sec-xen-monitor-tools">
          <title>Additional tools</title>
-         <para>There are many system tools that also help monitoring or debugging a running SUSE Linux Enterprise system. Many of these are covered in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-util" xrefstyle="%label &#34;%c&#34;"/>. Especially useful for monitoring a virtualization environment are the following tools:</para>
+         <para>There are many system tools that also help monitoring or debugging a running SUSE Linux Enterprise system. Many of these are covered in <xref linkend="cha-util"/>. Especially useful for monitoring a virtualization environment are the following tools:</para>
          <variablelist>
             <varlistentry>
                <term>ip</term>

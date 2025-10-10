@@ -35,7 +35,7 @@
                <imagedata fileref="media/autoyast2-maindialog.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/autoyast2-maindialog.png" width="69%"/>
+               <imagedata fileref="media/autoyast2-maindialog.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

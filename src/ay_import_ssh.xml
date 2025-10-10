@@ -16,7 +16,7 @@
   &lt;device&gt;/dev/sda2&lt;/device&gt;
 &lt;/ssh_import&gt;</screen>
    </example>
-   <informaltable>
+   <informaltable colsep="1" rowsep="1" frame="all">
       <tgroup cols="3">
          <thead>
             <row>

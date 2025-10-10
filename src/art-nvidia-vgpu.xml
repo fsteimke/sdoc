@@ -933,10 +933,10 @@ c 25
                      <title>Time-sliced architecture (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="69%"/>
+                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="69%"/>
+                           <imagedata fileref="media/nvidia-vgpu-time-sliced.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -950,10 +950,10 @@ c 25
                      <title>MIG-backed architecture (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="69%"/>
+                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="69%"/>
+                           <imagedata fileref="media/nvidia-vgpu-mig-backed.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -964,7 +964,7 @@ c 25
       <sect2 xml:id="configure-nvidia-vgpu-vgpu-types">
          <title>vGPU types</title>
          <para>Each physical GPU can support several different types of vGPUs. vGPU types have a fixed amount of framebuffer, the number of supported display heads, and maximum resolutions. NVIDIA has four types of vGPUs: A, B, C and Q-series. SUSE currently supports Q and C-series.</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>vGPU types</title>
             <tgroup cols="2" align="left">
                <colspec colname="c1" colwidth="20*"/>
@@ -1005,10 +1005,10 @@ c 25
                <title>Example time-sliced vGPU configurations on NVIDIA Tesla M60 (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="69%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="69%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1020,10 +1020,10 @@ c 25
                <title>Example MIG-backed vGPU configurations on NVIDIA A100 PCIe 40 GB (source: <link xlink:href="https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html"/>)</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="69%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="69%"/>
+                     <imagedata fileref="media/nvidia-vgpus-supported2.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>

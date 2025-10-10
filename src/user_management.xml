@@ -32,7 +32,7 @@
       <para>Password expiration is a general best practice, but might need to be excluded for certain system and shared accounts (for example, Oracle). Expiring passwords on those accounts could lead to system outages if the application account expires.</para>
       <para>Typically a corporate policy should be developed that dictates rules/procedures regarding password changes for system and shared accounts. However, normal user account passwords should expire automatically. The following example shows how password expiration can be set up for individual user accounts.</para>
       <para>The following files and parameters in the table can be used when a new account is created with the <command>useradd</command> command. Settings such as these are stored for each user account in the <filename>/etc/shadow</filename> file. If using the YaST tool (<guimenu>User and Group Management</guimenu>) to add users, the settings are available on a per-user basis. Here are the various settings, some of which can also be system-wide (for example, modification of <filename>/etc/login.defs</filename> and <filename>/etc/default/useradd</filename>):</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="3">
             <tbody>
                <row>
@@ -162,7 +162,7 @@ tty1</screen>
    <sect1 xml:id="sec-sec-prot-restrict-sudo">
       <title>Restricting <command>sudo</command> users</title>
       <para>The <command>sudo</command> command allows users to execute commands in the context of another user, typically the <systemitem class="username">root</systemitem> user. The <command>sudo</command> configuration consists of a rule-set that defines the mappings between commands to execute and their allowed source and target users and groups. The configuration is stored in the file <filename>/etc/sudoers</filename>. <!-- cha-adm-sudo is part of the admin guide,
-     which is not available for openSUSE dos --> For more information about <command>sudo</command>, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-sudo" xrefstyle="%label &#34;%c&#34;"/>.</para>
+     which is not available for openSUSE dos --> For more information about <command>sudo</command>, refer to <xref linkend="cha-adm-sudo"/>.</para>
       <para>By default, <command>sudo</command> asks for the <systemitem class="username">root</systemitem> password on SUSE systems. Unlike <command>su</command> however, <command>sudo</command> remembers the password and allows further commands to be executed as <systemitem class="username">root</systemitem> without asking for the password again for five minutes. Therefore, <command>sudo</command> should be enabled for selected administrator users only.</para>
       <procedure>
          <title>Restricting <command>sudo</command> for normal users</title>
@@ -396,6 +396,6 @@ fi</screen>
          </title>
          <para>Converts raw data from /var/run/utmp or <filename>/var/log/wtmp</filename> into ASCII-parseable format.</para>
       </formalpara>
-      <para>Also check the <filename>/var/log/messages</filename> file, or the output of <command>journalctl</command> if no logging facility is running. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the <systemitem class="daemon">systemd</systemitem> journal.</para>
+      <para>Also check the <filename>/var/log/messages</filename> file, or the output of <command>journalctl</command> if no logging facility is running. See <xref linkend="cha-journalctl"/> for more information on the <systemitem class="daemon">systemd</systemitem> journal.</para>
    </sect1>
 </chapter>

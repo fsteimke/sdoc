@@ -40,10 +40,10 @@
                <para>You can use a USB flash drive if the machine lacks a DVD drive and a network connection. For details, see:</para>
                <itemizedlist>
                   <listitem>
-                     <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase><xref linkend="sec-x86-media"/><phrase role="arch-end">◀</phrase></para>
+                     <para arch="x86_64"><xref linkend="sec-x86-media"/></para>
                   </listitem>
                   <listitem>
-                     <para arch="aarch64"><phrase role="arch-start">aarch64 ▶</phrase><xref linkend="sec-aarch64-media"/><phrase role="arch-end">◀</phrase></para>
+                     <para arch="aarch64"><xref linkend="sec-aarch64-media"/></para>
                   </listitem>
                </itemizedlist>
             </listitem>
@@ -98,10 +98,10 @@
          <title>US keyboard layout</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/keyboard_us.svg" width="69%"/>
+               <imagedata fileref="media/keyboard_us.svg" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/keyboard_us.svg" width="69%"/>
+               <imagedata fileref="media/keyboard_us.svg" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -297,6 +297,6 @@
    </sect1>
    <sect1 xml:id="sec-installation-troubleshooting-log">
       <title>Log files</title>
-      <para>For more information about log files created during installation, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-admsupport-install" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For more information about log files created during installation, see <xref linkend="sec-admsupport-install"/>.</para>
    </sect1>
 </chapter>

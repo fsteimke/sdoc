@@ -17,10 +17,10 @@
       <title>YaST service manager</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/yast2_servicemanager.png" width="92%"/>
+            <imagedata fileref="media/yast2_servicemanager.png" width="100%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/yast2_servicemanager.png" width="92%"/>
+            <imagedata fileref="media/yast2_servicemanager.png" width="100%"/>
          </imageobject>
       </mediaobject>
    </figure>

@@ -33,7 +33,7 @@
             <title>Deprecation notice</title>
             <para>cgroup v1 has been deprecated, and might be removed in a future release.</para>
          </note>
-         <para>To enable the hybrid control group hierarchy, append <option>systemd.unified_cgroup_hierarchy=0</option> as a kernel command-line parameter to the GRUB 2 boot loader. For more details about configuring GRUB 2, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-grub2" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>To enable the hybrid control group hierarchy, append <option>systemd.unified_cgroup_hierarchy=0</option> as a kernel command-line parameter to the GRUB 2 boot loader. For more details about configuring GRUB 2, refer to <xref linkend="cha-grub2"/>.</para>
       </sect2>
    </sect1>
    <sect1 xml:id="sec-tuning-cgroups-accounting">
@@ -126,7 +126,7 @@ TasksMax=16284
 </screen>
          <note>
             <title>Numeric prefixes reference</title>
-            <para>See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-boot-systemd-custom-drop-in" xrefstyle="%label &#34;%c&#34;"/> to learn what numeric prefixes are expected for drop-in files.</para>
+            <para>See <xref linkend="sec-boot-systemd-custom-drop-in"/> to learn what numeric prefixes are expected for drop-in files.</para>
          </note>
          <para>Then reload systemd to load the new value, and verify the change:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command><command>systemctl daemon-reload</command><prompt>&gt;</prompt><command>systemctl show --property TasksMax user-1000.slice</command>

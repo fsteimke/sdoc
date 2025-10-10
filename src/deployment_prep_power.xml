@@ -32,7 +32,7 @@
             <term>Hard disk requirements</term>
             <listitem>
                <para>The disk requirements depend on the type of installation selected and the usage scenario. Normally, a properly working system requires more space than the installation itself. The minimum requirements are as follows.</para>
-               <informaltable>
+               <informaltable colsep="1" rowsep="1" frame="all">
                   <tgroup cols="2">
                      <colspec colnum="1" colname="col1"/>
                      <colspec colnum="2" colname="col2"/>
@@ -71,7 +71,7 @@
                      </tbody>
                   </tgroup>
                </informaltable>
-               <para>If the root partition is smaller than 10 GB, the installer does not offer a partitioning proposal. In this case, you need to create partitions manually. To avoid this, we recommend to have 10 GB reserved for the root partition. Increase the minimum size to 16 GB if you plan to enable Btrfs snapshots on the root volume (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>).</para>
+               <para>If the root partition is smaller than 10 GB, the installer does not offer a partitioning proposal. In this case, you need to create partitions manually. To avoid this, we recommend to have 10 GB reserved for the root partition. Increase the minimum size to 16 GB if you plan to enable Btrfs snapshots on the root volume (see <xref linkend="cha-snapper"/>).</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -99,7 +99,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_power_sms_menu.png"/>
+                     <imagedata width="80%" fileref="media/install_power_sms_menu.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -109,7 +109,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_power_remote_ipl.png"/>
+                     <imagedata width="80%" fileref="media/install_power_remote_ipl.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -131,7 +131,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_power_network_params.png"/>
+                     <imagedata width="80%" fileref="media/install_power_network_params.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -169,7 +169,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_power_grub.png"/>
+                     <imagedata width="80%" fileref="media/install_power_grub.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -189,7 +189,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_reg.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_reg.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -199,7 +199,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_ext.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_ext.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -209,7 +209,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_addon.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_addon.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -219,7 +219,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_part.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_part.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -229,7 +229,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_sysrole.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_sysrole.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -242,7 +242,7 @@
             <informalfigure>
                <mediaobject>
                   <imageobject>
-                     <imagedata width="73%" fileref="media/install_sle_power_ssh.png"/>
+                     <imagedata width="80%" fileref="media/install_sle_power_ssh.png"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

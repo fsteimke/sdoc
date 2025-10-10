@@ -16,7 +16,7 @@
       <title>LibreOffice modules</title>
       <para>LibreOffice consists of several application modules (subprograms) which are designed to integrate with each other. While this chapter contains information that applies to all LibreOffice modules, the following chapters and sections contain information on individual modules. Find a short description and where each module is described in <xref linkend="tab-lo-oview-module"/>.</para>
       <para>A full description of each module is available in the application help, described in <xref linkend="sec-lo-oview-help"/>.</para>
-      <table xml:id="tab-lo-oview-module">
+      <table xml:id="tab-lo-oview-module" colsep="1" rowsep="1" frame="all">
          <title>The LibreOffice application modules</title>
          <tgroup cols="3">
             <colspec colnum="1" colname="module" colwidth="20*"/>
@@ -242,7 +242,7 @@
    </sect1>
    <sect1 xml:id="sec-lo-oview-passwd">
       <title>Saving files with a password</title>
-      <para>You can save files, no matter in which LibreOffice format, with a password. Unlike older versions of LibreOffice, the encryption applied to the document with recent versions of LibreOffice is very strong. However, this encryption does not protect file names and file sizes of encrypted files. If that is important to you, see the alternate encryption methods described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-cryptofs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>You can save files, no matter in which LibreOffice format, with a password. Unlike older versions of LibreOffice, the encryption applied to the document with recent versions of LibreOffice is very strong. However, this encryption does not protect file names and file sizes of encrypted files. If that is important to you, see the alternate encryption methods described in <xref linkend="cha-security-cryptofs"/>.</para>
       <procedure xml:id="pro-lo-encrypt">
          <step>
             <para>To save a file with a password, select <menuchoice><guimenu>File</guimenu><guimenu>Save</guimenu></menuchoice> or <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>.</para>
@@ -276,10 +276,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_customize_main.png" width="73%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_customize_main.png" width="73%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -395,16 +395,19 @@
          <title>The Options window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_options.png" width="87%"/>
+               <imagedata fileref="media/oo_options.png" width="95%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_options.png" width="78%"/>
+               <imagedata fileref="media/oo_options.png" width="85%"/>
             </imageobject>
          </mediaobject>
       </figure>
       <para>The settings categories that appear depend on the module you are working in. For example, if you are in Writer, the LibreOffice Writer category appears in the list, but the LibreOffice Calc category does not. The LibreOffice Base category appears in both Calc and Writer. The Module column in the table shows where each setting category is available.</para>
       <para>The following table lists the settings categories, along with a brief description of each category:</para>
-      <table xml:id="tab-ooo-globalcategory">
+      <table xml:id="tab-ooo-globalcategory"
+             colsep="1"
+             rowsep="1"
+             frame="all">
          <title>Global setting categories</title>
          <tgroup cols="3">
             <colspec colnum="1" colname="1" colwidth="25*"/>

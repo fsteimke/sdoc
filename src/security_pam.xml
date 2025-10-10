@@ -295,7 +295,7 @@ DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}
          <title>pam_mount.conf.xml</title>
          <para>The purpose of <systemitem>pam_mount</systemitem> is to mount user home directories during the login process, and to unmount them during logout in an environment where a central file server keeps all the home directories of users. With this method, it is not necessary to mount a complete <filename>/home</filename> directory where all the user home directories would be accessible. Instead, only the home directory of the user who is about to log in, is mounted.</para>
          <para>After installing <systemitem>pam_mount</systemitem>, a template for <filename>pam_mount.conf.xml</filename> is available in <filename>/etc/security</filename>. The description of the elements can be found in the manual page <command>man 5 pam_mount.conf</command>.</para>
-         <para>A basic configuration of this feature can be done with YaST. Select <menuchoice><guimenu>Network Settings</guimenu><guimenu>Windows Domain Membership</guimenu><guimenu>Expert Settings</guimenu></menuchoice> to add the file server. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-samba-client-inst" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>A basic configuration of this feature can be done with YaST. Select <menuchoice><guimenu>Network Settings</guimenu><guimenu>Windows Domain Membership</guimenu><guimenu>Expert Settings</guimenu></menuchoice> to add the file server. See <xref linkend="sec-samba-client-inst"/>.</para>
          <note>
             <title>LUKS2 support</title>
             <para>LUKS2 support was added to <command>cryptsetup</command> 2.0, and <phrase role="productname">SUSE Linux Enterprise Server</phrase> has included support for LUKS2 in <systemitem>pam_mount</systemitem> since <phrase role="productname">SUSE Linux Enterprise Server</phrase> 12 SP3.</para>
@@ -326,7 +326,7 @@ DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}
          <step>
             <formalpara>
                <title>Add debugging for test purposes.</title>
-               <para>To make sure the new authentication procedure works as planned, turn on debugging for all PAM-related operations. The <command>pam-config --add --sss-debug</command> command turns on debugging for SSSD-related PAM operations. Find the debugging output in the <systemitem class="daemon">systemd</systemitem> journal (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/>). To configure SSSD, refer to <xref linkend="sec-security-ldap-server-sssd"/>.</para>
+               <para>To make sure the new authentication procedure works as planned, turn on debugging for all PAM-related operations. The <command>pam-config --add --sss-debug</command> command turns on debugging for SSSD-related PAM operations. Find the debugging output in the <systemitem class="daemon">systemd</systemitem> journal (see <xref linkend="cha-journalctl"/>). To configure SSSD, refer to <xref linkend="sec-security-ldap-server-sssd"/>.</para>
             </formalpara>
          </step>
          <step>

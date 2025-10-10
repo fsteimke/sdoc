@@ -14,7 +14,7 @@
    <note>
       <title>Gathering and Analyzing System Information with <command>supportconfig</command>
       </title>
-      <para>Apart from the utilities presented in the following, <phrase role="productname">SUSE Linux Enterprise Server</phrase> also contains <command>supportconfig</command>, a tool to create reports about the system such as: current kernel version, hardware, installed packages, partition setup and much more. These reports are used to provide the SUSE support with needed information in case a support ticket is created. However, they can also be analyzed for known issues to help resolve problems faster. For this purpose, <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides both an appliance and a command line tool for Supportconfig Analysis (SCA). See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-adm-support" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+      <para>Apart from the utilities presented in the following, <phrase role="productname">SUSE Linux Enterprise Server</phrase> also contains <command>supportconfig</command>, a tool to create reports about the system such as: current kernel version, hardware, installed packages, partition setup and much more. These reports are used to provide the SUSE support with needed information in case a support ticket is created. However, they can also be analyzed for known issues to help resolve problems faster. For this purpose, <phrase role="productname">SUSE Linux Enterprise Server</phrase> provides both an appliance and a command line tool for Supportconfig Analysis (SCA). See <xref linkend="cha-adm-support"/> for details.</para>
    </note>
    <para>For each of the described commands, examples of the relevant outputs are presented. In the examples, the first line is the command itself (after the <systemitem class="username">tux</systemitem> &gt; or root #). Omissions are indicated with square brackets (<literal>[...]</literal>) and long lines are wrapped where necessary. Line breaks for long lines are indicated by a backslash (<literal>\</literal>).</para>
    <screen><prompt>&gt;</prompt>command -x -y
@@ -467,7 +467,7 @@ Average:     1000       387   43,19    3,65    0,00   46,84     -  firefox</scre
          <title>Kernel ring buffer: <command>dmesg</command>
          </title>
          <para>The Linux kernel keeps certain messages in a ring buffer. To view these messages, enter the command <command>dmesg -T</command>.</para>
-         <para>Older events are logged in the <systemitem class="daemon">systemd</systemitem> journal. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-journalctl" xrefstyle="%label &#34;%c&#34;"/> for more information on the journal.</para>
+         <para>Older events are logged in the <systemitem class="daemon">systemd</systemitem> journal. See <xref linkend="cha-journalctl"/> for more information on the journal.</para>
       </sect2>
       <sect2 xml:id="sec-util-system-lsof">
          <title>List of open files: <command>lsof</command>
@@ -1330,7 +1330,7 @@ Settings for eth0:
 [...]
  Link detected: yes</screen>
          <para>The following table shows <command>ethtool</command> options that you can use to query the device for specific information:</para>
-         <table>
+         <table colsep="1" rowsep="1" frame="all">
             <title>List of query options of <command>ethtool</command>
             </title>
             <tgroup cols="2">
@@ -2133,10 +2133,10 @@ LINE2:free_memory#FF0000 \
                <title>Example graph created with RRDtool</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="69%" fileref="media/rrdtool_graph1.png"/>
+                     <imagedata width="75%" fileref="media/rrdtool_graph1.png"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata width="50%" fileref="media/rrdtool_graph1.png"/>
+                     <imagedata width="55%" fileref="media/rrdtool_graph1.png"/>
                   </imageobject>
                </mediaobject>
             </figure>

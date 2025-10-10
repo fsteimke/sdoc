@@ -207,15 +207,15 @@
          <title>Language, keyboard and product selection</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_product.png" width="92%"/>
+               <imagedata fileref="media/install_product.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_product.png" width="92%"/>
+               <imagedata fileref="media/install_product.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
       <para>The <guimenu>Language</guimenu> and <guimenu>Keyboard Layout</guimenu> settings are initialized with the language you chose on the boot screen. If you did not change the default, it will be English (US). Change the settings here, if necessary.</para>
-      <para>Changing the language automatically selects a corresponding keyboard layout. You can override this proposal by selecting a different keyboard layout from the drop-down box. Use the <guimenu>Keyboard Test</guimenu> text box to test the layout. The selected language also determines a time zone for the system clock. This setting can be modified later as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-lang" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>Changing the language automatically selects a corresponding keyboard layout. You can override this proposal by selecting a different keyboard layout from the drop-down box. Use the <guimenu>Keyboard Test</guimenu> text box to test the layout. The selected language also determines a time zone for the system clock. This setting can be modified later as described in <xref linkend="cha-yast-lang"/>.</para>
       <para>With the Unified Installer, you can install all SUSE Linux Enterprise base products:</para>
       <itemizedlist>
          <listitem>
@@ -245,10 +245,10 @@
          <title>License agreement</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_license_sles.png" width="92%"/>
+               <imagedata fileref="media/install_license_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_license_sles.png" width="92%"/>
+               <imagedata fileref="media/install_license_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -261,15 +261,15 @@
          <title>Disk activation</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
+               <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_zseries_disk_activation.png" width="92%"/>
+               <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
-      <para>Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. For instructions on how to configure iSCSI disks, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-iscsi-initiator" xrefstyle="%label &#34;%c&#34;"/>.</para>
-      <para>You can also change the <guimenu>Network Configuration</guimenu> in this screen by launching the <guimenu>Network Settings</guimenu> dialog. Choose a network interface from the list and click <guimenu>Edit</guimenu> to change its settings. Use the tabs to configure DNS and routing. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/> for more details.</para>
+      <para>Select DASD, Fibre Channel Attached SCSI Disks (zFCP), or iSCSI for installation of <phrase role="productname">SUSE Linux Enterprise Server</phrase>. The DASD and zFCP configuration buttons are only available if the corresponding devices are attached. For instructions on how to configure iSCSI disks, refer to <xref linkend="sec-iscsi-initiator"/>.</para>
+      <para>You can also change the <guimenu>Network Configuration</guimenu> in this screen by launching the <guimenu>Network Settings</guimenu> dialog. Choose a network interface from the list and click <guimenu>Edit</guimenu> to change its settings. Use the tabs to configure DNS and routing. See <xref linkend="sec-network-yast"/> for more details.</para>
       <sect2 xml:id="sec-yast-install-s390-part-dasd">
          <title>Configuring DASD disks</title>
          <para>Skip this step if you are not installing on IBM Z hardware.</para>
@@ -277,10 +277,10 @@
             <title>DASD disk management</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="92%" fileref="media/install_zseries_dasd.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata width="92%" fileref="media/install_zseries_dasd.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -294,10 +294,10 @@
             <title>Configured zFCP Devices</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="92%" fileref="media/install_zseries_zfcp.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata width="92%" fileref="media/install_zseries_zfcp.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -313,14 +313,14 @@
          <title>Network settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_network.png" width="92%"/>
+               <imagedata fileref="media/install_network.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_network.png" width="92%"/>
+               <imagedata fileref="media/install_network.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
-      <para>Choose a network interface from the list and click <guimenu>Edit</guimenu> to change its settings. Use the tabs to configure DNS and routing. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/> for more details. <phrase arch="zseries">On IBM Z this dialog does not start automatically. It can be started in the <guimenu>Disk Activation</guimenu> step.</phrase></para>
+      <para>Choose a network interface from the list and click <guimenu>Edit</guimenu> to change its settings. Use the tabs to configure DNS and routing. See <xref linkend="sec-network-yast"/> for more details. <phrase arch="zseries">On IBM Z this dialog does not start automatically. It can be started in the <guimenu>Disk Activation</guimenu> step.</phrase></para>
       <para>In case DHCP was successfully configured during installation setup, you can also access this dialog by clicking <guimenu>Network Configuration</guimenu> at the <guimenu>SUSE Customer Center Registration</guimenu> and the <guimenu>Installation Settings</guimenu> step. It lets you change the automatically provided settings.</para>
       <note>
          <title>Network configuration with boot parameters</title>
@@ -350,7 +350,7 @@
       <title>Registration</title>
       <para>To get technical support and product updates, you need to register and activate <phrase role="productname">SUSE Linux Enterprise Server</phrase> with the SUSE Customer Center or a local registration server. Registering your product at this stage also grants you immediate access to the update repository. This enables you to install the system with the latest updates and patches available.</para>
       <para>When registering, repositories and dependencies for modules and extensions are loaded from the registration server.</para>
-      <para>From this dialog, you can switch to the YaST <guimenu>Network Settings</guimenu> module by clicking <guimenu>Network Configuration</guimenu>. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>From this dialog, you can switch to the YaST <guimenu>Network Settings</guimenu> module by clicking <guimenu>Network Configuration</guimenu>. For details, see <xref linkend="sec-network-yast"/>.</para>
       <para>If you are offline or want to skip registration, activate <guimenu>Skip Registration</guimenu>. See <xref linkend="sec-yast-install-scc-registration-none"/> for instructions.</para>
       <sect2 xml:id="sec-yast-install-scc-registration-manually">
          <title>Manual registration</title>
@@ -362,10 +362,10 @@
             <title>SUSE Customer Center registration</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_registration_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -424,7 +424,7 @@ sle-live-patching 8c541494</screen>
   &lt;/suse_register&gt;
 &lt;/profile&gt;</screen>
          </example>
-         <para>Note that <literal>SLES</literal> and <literal>SLED</literal> are not extensions, but listing them as add-ons allows for combining several base product registration codes in a single file. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>AutoYaST Guide</quote>, </phrase><xref linkend="CreateProfile-Register-Extension" xrefstyle="%label &#34;%c&#34;"/> for details.</para>
+         <para>Note that <literal>SLES</literal> and <literal>SLED</literal> are not extensions, but listing them as add-ons allows for combining several base product registration codes in a single file. See <xref linkend="CreateProfile-Register-Extension"/> for details.</para>
          <note>
             <title>Limitations</title>
             <para>Currently flash disks are only scanned during installation or upgrade, but not when registering a running system.</para>
@@ -487,10 +487,10 @@ sle-live-patching 8c541494</screen>
          <title>Extension and module selection</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
+               <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_extensions_sles.png" width="92%"/>
+               <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -647,14 +647,14 @@ sle-live-patching 8c541494</screen>
          <title>Add-on product</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_addon.png" width="92%"/>
+               <imagedata fileref="media/install_addon.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_addon.png" width="92%"/>
+               <imagedata fileref="media/install_addon.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
-      <para>From this dialog, you can switch to the YaST <guimenu>Network Settings</guimenu> module by clicking <guimenu>Network Configuration</guimenu>. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>From this dialog, you can switch to the YaST <guimenu>Network Settings</guimenu> module by clicking <guimenu>Network Configuration</guimenu>. For details, see <xref linkend="sec-network-yast"/>.</para>
       <tip>
          <title>Adding drivers during the installation</title>
          <para>You can also add driver update repositories via the <guimenu>Add On Product</guimenu> dialog. Driver updates for SUSE Linux Enterprise are provided at <link xlink:href="https://drivers.suse.com/"/>. These drivers have been created via the SUSE SolidDriver Program.</para>
@@ -669,10 +669,10 @@ sle-live-patching 8c541494</screen>
          <title>System role</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
+               <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_system_role_sles.png" width="92%"/>
+               <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -752,7 +752,7 @@ sle-live-patching 8c541494</screen>
                   <para>If the disk is smaller than 16 GB, all Snapper features and automatic snapshots are disabled to prevent the system partition <filename>/</filename> from running out of space.</para>
                   <para>Being able to create system snapshots that enable rollbacks requires important system directories to be mounted on a single partition, for example <filename>/usr</filename> and <filename>/var</filename>. Only directories that are excluded from snapshots may reside on separate partitions, for example <filename>/usr/local</filename>, <filename>/var/log</filename>, and <filename>/tmp</filename>.</para>
                   <para>If snapshots are enabled, the installer will automatically create <literal>single</literal> snapshots during and immediately after the installation.</para>
-                  <para>For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>For details, see <xref linkend="cha-snapper"/>.</para>
                   <important>
                      <title>Btrfs snapshots and root partition size</title>
                      <para>Snapshots may take considerable storage space. Generally, the older a snapshot is or the larger the changeset it covers, the more storage space the snapshot takes. And the more snapshots you keep, the more disk space you need.</para>
@@ -834,10 +834,10 @@ sle-live-patching 8c541494</screen>
             <title>Suggested partitioning</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_partitioner.png" width="92%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -902,10 +902,10 @@ sle-live-patching 8c541494</screen>
          <title>Clock and time zone</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_timezone.png" width="92%"/>
+               <imagedata fileref="media/install_timezone.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_timezone.png" width="92%"/>
+               <imagedata fileref="media/install_timezone.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -916,8 +916,8 @@ sle-live-patching 8c541494</screen>
          <para>The switch from standard time to daylight saving time (and vice versa) can only be performed automatically when the hardware clock (CMOS clock) is set to UTC. This also applies if you use automatic time synchronization with NTP, because automatic synchronization will only be performed if the time difference between the hardware and system clock is less than 15 minutes.</para>
          <para>Since a wrong system time can cause serious problems (missed backups, dropped mail messages, mount failures on remote file systems, etc.), it is strongly recommended to <emphasis>always</emphasis> set the hardware clock to UTC.</para>
       </important>
-      <para arch="power;x86_64"><phrase role="arch-start">power;x86_64 ▶</phrase>If a network is already configured, you can configure time synchronization with an NTP server. Click <guimenu>Other Settings</guimenu> to either alter the NTP settings or to <guimenu>Manually</guimenu> set the time. See <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-ntp" xrefstyle="%label &#34;%c&#34;"/> for more information on configuring the NTP service. When finished, click <guimenu>Accept</guimenu> to continue the installation.<phrase role="arch-end">◀</phrase></para>
-      <para arch="power;x86_64"><phrase role="arch-start">power;x86_64 ▶</phrase>If running without NTP configured, consider setting <literal>SYSTOHC=no</literal> (<literal>sysconfig</literal> variable) to avoid saving unsynchronized time into the hardware clock.<phrase role="arch-end">◀</phrase></para>
+      <para arch="power;x86_64">If a network is already configured, you can configure time synchronization with an NTP server. Click <guimenu>Other Settings</guimenu> to either alter the NTP settings or to <guimenu>Manually</guimenu> set the time. See <xref linkend="cha-ntp"/> for more information on configuring the NTP service. When finished, click <guimenu>Accept</guimenu> to continue the installation.</para>
+      <para arch="power;x86_64">If running without NTP configured, consider setting <literal>SYSTOHC=no</literal> (<literal>sysconfig</literal> variable) to avoid saving unsynchronized time into the hardware clock.</para>
       <note arch="zseries">
          <title>Time cannot be changed on IBM Z</title>
          <para>Since the operating system is not allowed to change time and date directly, the <guimenu>Other Settings</guimenu> option is not available on IBM Z.</para>
@@ -930,10 +930,10 @@ sle-live-patching 8c541494</screen>
          <title>Create new user</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_user.png" width="92%"/>
+               <imagedata fileref="media/install_user.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_user.png" width="92%"/>
+               <imagedata fileref="media/install_user.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -944,7 +944,7 @@ sle-live-patching 8c541494</screen>
          <para>Remember both your user name and the password because they are needed each time you log in to the system.</para>
       </important>
       <para>If you install <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a machine with one or more existing Linux installations, YaST allows you to import user data such as user names and passwords. Select <guimenu>Import User Data from a Previous Installation</guimenu> and then <guimenu>Choose Users</guimenu> for import.</para>
-      <para>If you do not want to configure any local users (for example when setting up a client on a network with centralized user authentication), skip this step by choosing <guimenu>Next</guimenu> and confirming the warning. Network user authentication can be configured at any time later in the installed system; refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-userman" xrefstyle="%label &#34;%c&#34;"/> for instructions.</para>
+      <para>If you do not want to configure any local users (for example when setting up a client on a network with centralized user authentication), skip this step by choosing <guimenu>Next</guimenu> and confirming the warning. Network user authentication can be configured at any time later in the installed system; refer to <xref linkend="cha-yast-userman"/> for instructions.</para>
       <para>Two additional options are available:</para>
       <variablelist>
          <varlistentry>
@@ -979,10 +979,10 @@ sle-live-patching 8c541494</screen>
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_root.png" width="92%"/>
+               <imagedata fileref="media/install_root.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_root.png" width="92%"/>
+               <imagedata fileref="media/install_root.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1017,7 +1017,7 @@ sle-live-patching 8c541494</screen>
                <listitem>
                   <para>YaST will always name the system administrator <systemitem class="username">root</systemitem>. While it is technically possible to rename the <systemitem class="username">root</systemitem> account, certain applications, scripts or third-party products may rely on the existence of a user called <systemitem class="username">root</systemitem>. While such a configuration always targets individual environments, necessary adjustments could be overwritten by vendor updates, so this becomes an ongoing task rather than a one-time setting. This is especially true in very complex setups involving third-party applications, where it needs to be verified with every vendor involved whether a rename of the <systemitem class="username">root</systemitem> account is supported.</para>
                   <para>As the implications for renaming the <systemitem class="username">root</systemitem> account cannot be foreseen, SUSE does not support renaming the <systemitem class="username">root</systemitem> account.</para>
-                  <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <xref linkend="sec-sec-prot-restrict-root"/> and <xref linkend="sec-sec-prot-restrict-root-ssh"/>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -1068,10 +1068,10 @@ sle-live-patching 8c541494</screen>
          <title>Installation settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_summary_sles.png" width="92%"/>
+               <imagedata fileref="media/install_summary_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_summary_sles.png" width="92%"/>
+               <imagedata fileref="media/install_summary_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1087,14 +1087,14 @@ sle-live-patching 8c541494</screen>
             <title>Software selection and system tasks</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_software_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_software_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_software_sles.png" width="92%"/>
+                  <imagedata fileref="media/install_software_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
-         <para>You can also install additional software packages or remove software packages from your system at any later time with the YaST Software Manager. For more information, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-yast-software" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>You can also install additional software packages or remove software packages from your system at any later time with the YaST Software Manager. For more information, refer to <xref linkend="cha-yast-software"/>.</para>
          <para>If you choose to install GNOME, <phrase role="productname">SUSE Linux Enterprise Server</phrase> is installed with the X.org display server. As an alternative to GNOME, the lightweight window manager IceWM can be installed. Select <guimenu>Details</guimenu> from the <guimenu>Software Selection and System Tasks</guimenu> screen and search for <literal>icewm</literal>.</para>
          <tip arch="zseries">
             <title>IBM Z: Hardware cryptography support</title>
@@ -1109,27 +1109,27 @@ sle-live-patching 8c541494</screen>
          <title>
             <guimenu>Booting</guimenu>
          </title>
-         <para>The installer proposes a boot configuration for your system. Other operating systems found on your computer, such as Microsoft Windows or other Linux installations, will automatically be detected and added to the boot loader. However, <phrase role="productname">SUSE Linux Enterprise Server</phrase> will be booted by default. Normally, you can leave these settings unchanged. If you need a custom setup, modify the proposal according to your needs. For information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-yast2-config" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>The installer proposes a boot configuration for your system. Other operating systems found on your computer, such as Microsoft Windows or other Linux installations, will automatically be detected and added to the boot loader. However, <phrase role="productname">SUSE Linux Enterprise Server</phrase> will be booted by default. Normally, you can leave these settings unchanged. If you need a custom setup, modify the proposal according to your needs. For information, see <xref linkend="sec-grub2-yast2-config"/>.</para>
          <important>
             <title>Software RAID 1</title>
-            <para>Booting a configuration where <filename>/boot</filename> resides on a software RAID 1 device is supported, but it requires to install the boot loader into the MBR (<menuchoice><guimenu>Boot Loader Location</guimenu><guimenu>Boot from Master Boot Record</guimenu></menuchoice>). Having <filename>/boot</filename> on software RAID devices with a level other than RAID 1 is not supported. Also see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-raidroot" xrefstyle="%label &#34;%c&#34;"/>.</para>
+            <para>Booting a configuration where <filename>/boot</filename> resides on a software RAID 1 device is supported, but it requires to install the boot loader into the MBR (<menuchoice><guimenu>Boot Loader Location</guimenu><guimenu>Boot from Master Boot Record</guimenu></menuchoice>). Having <filename>/boot</filename> on software RAID devices with a level other than RAID 1 is not supported. Also see <xref linkend="cha-raidroot"/>.</para>
          </important>
       </sect2>
       <sect2 xml:id="sec-yast-install-proposal-security">
          <title>
             <guimenu>Security</guimenu>
          </title>
-         <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="vle-grub2-yast2-cpu-mitigations" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>The <guimenu>CPU Mitigations</guimenu> refer to kernel boot command line parameters for software mitigations that have been deployed to prevent CPU side-channel attacks. Click the selected entry to choose a different option. For details, see <xref linkend="vle-grub2-yast2-cpu-mitigations"/>.</para>
          <para>By default, the <guimenu>Firewall</guimenu> is enabled on all configured network interfaces. To completely disable <systemitem class="daemon">firewalld</systemitem>, click <guimenu>disable</guimenu> (not recommended).</para>
          <note>
             <title>Firewall settings</title>
-            <para>When the firewall is activated, all interfaces are assigned to the <literal>public</literal> zone, where all ports are closed by default, ensuring maximum security. The only port you can open during the installation is port 22 (SSH), to allow remote access. Other services requiring network access (such as FTP, Samba, Web server, etc.) will only work after having adjusted the firewall settings. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-firewall" xrefstyle="%label &#34;%c&#34;"/> for configuration details.</para>
+            <para>When the firewall is activated, all interfaces are assigned to the <literal>public</literal> zone, where all ports are closed by default, ensuring maximum security. The only port you can open during the installation is port 22 (SSH), to allow remote access. Other services requiring network access (such as FTP, Samba, Web server, etc.) will only work after having adjusted the firewall settings. Refer to <xref linkend="cha-security-firewall"/> for configuration details.</para>
          </note>
          <note>
             <title>Firewall settings for receiving updates</title>
             <para>If your system is behind a firewall that blocks outgoing traffic, make sure to allow connections to <uri>https://scc.suse.com/</uri> and <uri>https://updates.suse.com</uri> on ports 80 and 443 in order to receive updates. For more information, such as IP addresses and proxy server configuration, refer to <link xlink:href="https://www.suse.com/support/kb/doc/?id=000021034"/>.</para>
          </note>
-         <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-ssh" xrefstyle="%label &#34;%c&#34;"/> for more information.</para>
+         <para>The <guimenu>SSH service</guimenu> is enabled by default, but its port (22) is closed in the firewall. Click <guimenu>open</guimenu> to open the port or <guimenu>disable</guimenu> to disable the service. Note that if SSH is disabled, remote logins will not be possible. Refer to <xref linkend="cha-ssh"/> for more information.</para>
          <tip>
             <title>Existing SSH host keys</title>
             <para>If you install <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a machine with existing Linux installations, the installation routine imports an SSH host key. It chooses the host key with the most recent access time by default. See also <xref linkend="sec-yast-install-proposal-sshimport"/>.</para>
@@ -1161,7 +1161,7 @@ sle-live-patching 8c541494</screen>
             <guimenu>Network configuration</guimenu>
          </title>
          <para>This category displays the current network settings, as automatically configured after booting into the installation (see <xref linkend="sec-yast-install-network" xrefstyle="%label"/>) or as manually configured during the installation process. By default, <command>wicked</command> is used for server installations and NetworkManager for desktop workloads.</para>
-         <para>If you want to check or adjust the network settings, click <guimenu>Network Configuration</guimenu>. This takes you to the YaST <guimenu>Network Settings</guimenu> module. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>If you want to check or adjust the network settings, click <guimenu>Network Configuration</guimenu>. This takes you to the YaST <guimenu>Network Settings</guimenu> module. For details, see <xref linkend="sec-network-yast"/>.</para>
          <important>
             <title>Support for NetworkManager</title>
             <para>SUSE only supports NetworkManager for desktop workloads with SLED or the Workstation extension. All server certifications are done with <command>wicked</command> as the network configuration tool, and using NetworkManager may invalidate them. NetworkManager is not supported by SUSE for server workloads.</para>
@@ -1171,7 +1171,7 @@ sle-live-patching 8c541494</screen>
          <title>
             <guimenu>Kdump</guimenu>
          </title>
-         <para>Using Kdump, you can save a dump of the kernel (in case of a crash) to analyze what went wrong. Use this dialog to enable and configure Kdump. Find detailed information at <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kexec" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Using Kdump, you can save a dump of the kernel (in case of a crash) to analyze what went wrong. Use this dialog to enable and configure Kdump. Find detailed information at <xref linkend="cha-tuning-kexec"/>.</para>
       </sect2>
       <sect2 xml:id="sec-yast-install-proposal-blacklist" arch="zseries">
          <title>
@@ -1233,7 +1233,7 @@ sle-live-patching 8c541494</screen>
                   <guimenu>Kernel settings</guimenu>
                </term>
                <listitem>
-                  <para>Change the <guimenu>Global I/O Scheduler</guimenu> here. If <guimenu>Not Configured</guimenu> is chosen, the default setting for the respective architecture will be used. This setting can also be changed at any time later from the installed system. Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-io" xrefstyle="%label &#34;%c&#34;"/> for details on I/O tuning.</para>
+                  <para>Change the <guimenu>Global I/O Scheduler</guimenu> here. If <guimenu>Not Configured</guimenu> is chosen, the default setting for the respective architecture will be used. This setting can also be changed at any time later from the installed system. Refer to <xref linkend="cha-tuning-io"/> for details on I/O tuning.</para>
                   <para>Also activate the <guimenu>Enable SysRq Keys</guimenu> here. These keys will let you issue basic commands (such as rebooting the system or writing kernel dumps) in case the system crashes. Enabling these keys is recommended when doing kernel development. Refer to <link xlink:href="https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html"/> for details.</para>
                </listitem>
             </varlistentry>

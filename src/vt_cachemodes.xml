@@ -21,7 +21,7 @@
                <imagedata fileref="media/virt-disk-cache.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/virt-disk-cache.png" width="78%"/>
+               <imagedata fileref="media/virt-disk-cache.png" width="85%"/>
             </imageobject>
          </mediaobject>
       </figure>

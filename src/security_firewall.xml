@@ -72,17 +72,17 @@
          <title>iptables: a packet's possible paths</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata width="69%" fileref="media/fire_tables.svg"/>
+               <imagedata width="75%" fileref="media/fire_tables.svg"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata width="92%" fileref="media/fire_tables.png"/>
+               <imagedata width="100%" fileref="media/fire_tables.png"/>
             </imageobject>
          </mediaobject>
       </figure>
    </sect1>
    <sect1 xml:id="sec-security-firewall-masq">
       <title>Masquerading basics</title>
-      <para>Masquerading is the Linux-specific form of NAT (network address translation) and can be used to connect a small LAN with the Internet. LAN hosts use IP addresses from the private range (see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-addresses-route" xrefstyle="%label &#34;%c&#34;"/>) and on the Internet official IP addresses are used. To be able to connect to the Internet, a LAN host's private address is translated to an official one. This is done on the router, which acts as the gateway between the LAN and the Internet. The underlying principle is a simple one: The router has more than one network interface, typically a network card and a separate interface connecting with the Internet. While the latter links the router with the outside world, one or several others link it with the LAN hosts. With these hosts in the local network connected to the network card (such as <literal>eth0</literal>) of the router, they can send any packets not destined for the local network to their default gateway or router.</para>
+      <para>Masquerading is the Linux-specific form of NAT (network address translation) and can be used to connect a small LAN with the Internet. LAN hosts use IP addresses from the private range (see <xref linkend="sec-network-addresses-route"/>) and on the Internet official IP addresses are used. To be able to connect to the Internet, a LAN host's private address is translated to an official one. This is done on the router, which acts as the gateway between the LAN and the Internet. The underlying principle is a simple one: The router has more than one network interface, typically a network card and a separate interface connecting with the Internet. While the latter links the router with the outside world, one or several others link it with the LAN hosts. With these hosts in the local network connected to the network card (such as <literal>eth0</literal>) of the router, they can send any packets not destined for the local network to their default gateway or router.</para>
       <important>
          <title>Using the correct network mask</title>
          <para>When configuring your network, make sure both the broadcast address and the netmask are the same for all local hosts. Failing to do so prevents packets from being routed properly.</para>
@@ -239,7 +239,10 @@ dhcp
          <sect3 xml:id="sec-security-firewall-firewalld-rpcports-static">
             <title>Configuring static ports</title>
             <para>One possibility is to configure all involved network services to use fixed port numbers. Once this is done, the fixed ports can be opened in <systemitem class="daemon">firewalld</systemitem> and everything should work. The actual port numbers used are at your discretion but should not clash with any well-known port numbers assigned to other services. See <xref linkend="tab-security-firewall-sysconfigports"/> for a list of the available configuration items for NIS and NFSv3 services. Depending on your actual NIS or NFS configuration, not all of these ports may be required for your setup.</para>
-            <table xml:id="tab-security-firewall-sysconfigports">
+            <table xml:id="tab-security-firewall-sysconfigports"
+                   colsep="1"
+                   rowsep="1"
+                   frame="all">
                <title>Important sysconfig variables for static port configuration</title>
                <tgroup cols="3">
                   <colspec colnum="1" colname="1" colwidth="3*"/>

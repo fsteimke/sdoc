@@ -364,7 +364,7 @@ network tcp<co xml:id="co-apparmor-profiles-nac-tcp"/>,
          </varlistentry>
       </variablelist>
       <para>Globbing (or regular expression matching) is when you modify the directory path using wild cards to include a group of files or subdirectories. File resources can be specified with a globbing syntax similar to that used by popular shells, such as csh, Bash and zsh.</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="2">
             <tbody>
                <row>
@@ -493,7 +493,7 @@ alias /home/ -&gt; /mnt/home/</screen>
    <sect1 role="General" xml:id="sec-apparmor-profiles-perm">
       <title>File permission access modes</title>
       <para>File permission access modes consist of combinations of the following modes:</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="2">
             <tbody>
                <row>
@@ -714,7 +714,7 @@ signal set=(rtmin+0 rtmin+32),</screen>
    <sect1 xml:id="sec-apparmor-profiles-exec">
       <title>Execute modes</title>
       <para>Execute modes, also named profile transitions, consist of the following modes:</para>
-      <informaltable>
+      <informaltable colsep="1" rowsep="1" frame="all">
          <tgroup cols="2">
             <tbody>
                <row>

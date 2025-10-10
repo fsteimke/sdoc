@@ -32,10 +32,10 @@
             <title>System Role screen</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt-system-roles.png" width="69%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt-system-roles.png" width="69%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -82,7 +82,7 @@
                <para>After the setup has been finished, you need to reboot the machine with the <emphasis>Xen kernel</emphasis>.</para>
                <tip>
                   <title>Default boot kernel</title>
-                  <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-yast2-config" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If everything works as expected, change the default boot kernel with YaST and make the Xen-enabled kernel the default. For more information about changing the default kernel, see <xref linkend="sec-grub2-yast2-config"/>.</para>
                </tip>
             </step>
          </procedure>

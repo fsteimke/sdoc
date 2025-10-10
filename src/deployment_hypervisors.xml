@@ -11,7 +11,7 @@
          <para>This section describes the support status of <phrase role="productname">SUSE Linux Enterprise Server</phrase><phrase role="productnumber">15 SP7</phrase> running as a guest operating system on top of different virtualization hosts (hypervisors).</para>
       </abstract>
    </info>
-   <table>
+   <table colsep="1" rowsep="1" frame="all">
       <title>The following SUSE host environments are supported</title>
       <tgroup cols="2">
          <colspec colnum="1" colname="1"/>

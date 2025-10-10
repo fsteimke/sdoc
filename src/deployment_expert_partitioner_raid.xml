@@ -7,7 +7,7 @@
        xml:id="sec-yast-system-raid">
    <title>Soft RAID</title>
    <info/>
-   <para>This section describes actions required to create and configure various types of RAID. In case you need background information about RAID, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-raid-intro" xrefstyle="%label &#34;%c&#34;"/>.</para>
+   <para>This section describes actions required to create and configure various types of RAID. In case you need background information about RAID, refer to <xref linkend="sec-raid-intro"/>.</para>
    <sect2 xml:id="sec-yast-system-raid-conf">
       <title>Soft RAID configuration</title>
       <para>The YaST <guimenu>RAID</guimenu> configuration can be reached from the YaST <guimenu>Expert Partitioner</guimenu>, described in <xref linkend="sec-expert-partitioner"/>. This partitioning tool enables you to edit and delete existing partitions and create new ones to be used with soft RAID:</para>
@@ -49,10 +49,10 @@
          <title>RAID partitions</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_raid.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_raid.png" width="69%"/>
+               <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -69,7 +69,7 @@
       <para>Configuration instructions and more details for soft RAID can be found at:</para>
       <itemizedlist mark="bullet" spacing="normal">
          <listitem>
-            <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="part-software-raid" xrefstyle="%label &#34;%c&#34;"/></para>
+            <para><xref linkend="part-software-raid"/></para>
          </listitem>
          <listitem>
             <para><link xlink:href="https://raid.wiki.kernel.org"/></para>

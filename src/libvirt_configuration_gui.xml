@@ -16,10 +16,10 @@
          <guimenu>Details</guimenu> view of a VM Guest</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="69%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="69%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -37,10 +37,10 @@
             <title>Overview details</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -49,10 +49,10 @@
             <title>VM Guest title and description</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_desc.png" width="36%"/>
+                  <imagedata fileref="media/libvirt_vmm_desc.png" width="40%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_desc.png" width="36%"/>
+                  <imagedata fileref="media/libvirt_vmm_desc.png" width="40%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -66,10 +66,10 @@
             <title>Performance</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -81,10 +81,10 @@
             <title>Statistics charts</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="36%"/>
+                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="40%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="36%"/>
+                  <imagedata fileref="media/libvirt_vmm_polling_charts.png" width="40%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -96,10 +96,10 @@
             <title>Processor view</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_processor.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_processor.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_processor.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_processor.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -118,10 +118,10 @@
             <title>Memory view</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_memory.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_memory.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_memory.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_memory.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -161,7 +161,7 @@
             <varlistentry>
                <term>Enable launch security</term>
                <listitem>
-                  <para>If the VM Host Server supports AMD-SEV technology, activating this option enables a secured guest with encrypted memory. This option requires a virtual machine with chipset type Q35. For more details, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Quick Start Guides</quote>, </phrase><xref linkend="article-amd-sev" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                  <para>If the VM Host Server supports AMD-SEV technology, activating this option enables a secured guest with encrypted memory. This option requires a virtual machine with chipset type Q35. For more details, refer to <xref linkend="article-amd-sev"/>.</para>
                </listitem>
             </varlistentry>
          </variablelist>
@@ -177,10 +177,10 @@
             <title>Boot options</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_boot.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_boot.png" width="70%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_boot.png" width="64%"/>
+                  <imagedata fileref="media/libvirt_vmm_boot.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -200,10 +200,10 @@
                <title>Add a new storage</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_storage1.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -255,10 +255,10 @@
                <title>Add a new controller</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_controller.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_controller.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_controller.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_controller.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -285,10 +285,10 @@
                <title>Add a new network interface</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_network.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_network.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_network.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_network.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -318,10 +318,10 @@
                <title>Add a new input device</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_input.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_input.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_input.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_input.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -352,10 +352,10 @@
                <title>Add a new video device</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_video.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_video.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_video.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_video.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -383,10 +383,10 @@
                <title>Add a new USB redirector</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="64%"/>
+                     <imagedata fileref="media/libvirt_vmm_usb_redirector.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -547,10 +547,10 @@
                   <title>Adding a PCI device</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_add_pcidevice.png" width="69%"/>
+                        <imagedata fileref="media/virt_add_pcidevice.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_add_pcidevice.png" width="69%"/>
+                        <imagedata fileref="media/virt_add_pcidevice.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -585,10 +585,10 @@
                   <title>Adding a USB device</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_add_usbdevice.png" width="69%"/>
+                        <imagedata fileref="media/virt_add_usbdevice.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_add_usbdevice.png" width="69%"/>
+                        <imagedata fileref="media/virt_add_usbdevice.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>

@@ -114,10 +114,10 @@
                   <title>Schema of Winbind-based Active Directory authentication</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/sled10_ad_schema.png" width="69%"/>
+                        <imagedata fileref="media/sled10_ad_schema.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/sled10_ad_schema.png" width="69%"/>
+                        <imagedata fileref="media/sled10_ad_schema.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -428,7 +428,7 @@ Kerberos. cschroder, 16-12-2020
                         <imagedata fileref="media/ad-overview.png"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/ad-overview.png" width="59%"/>
+                        <imagedata fileref="media/ad-overview.png" width="65%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -482,7 +482,7 @@ Kerberos. cschroder, 16-12-2020
                               <imagedata fileref="media/ad-enroll.png"/>
                            </imageobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/ad-enroll.png" width="55%"/>
+                              <imagedata fileref="media/ad-enroll.png" width="60%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -502,7 +502,7 @@ Kerberos. cschroder, 16-12-2020
                         <imagedata fileref="media/ad-config.png"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/ad-config.png" width="64%"/>
+                        <imagedata fileref="media/ad-config.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -564,10 +564,10 @@ Kerberos. cschroder, 16-12-2020
                   <title>Determining Windows domain membership</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/ad_sambaclient.png" width="69%"/>
+                        <imagedata fileref="media/ad_sambaclient.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/ad_sambaclient.png" width="69%"/>
+                        <imagedata fileref="media/ad_sambaclient.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -596,10 +596,10 @@ Kerberos. cschroder, 16-12-2020
                   <title>Providing administrator credentials</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/ad_join1.png" width="27%"/>
+                        <imagedata fileref="media/ad_join1.png" width="30%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/ad_join1.png" width="27%"/>
+                        <imagedata fileref="media/ad_join1.png" width="30%"/>
                      </imageobject>
                   </mediaobject>
                </figure>

@@ -19,10 +19,10 @@
          <title>File manager</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/nautilus.png" width="69%"/>
+               <imagedata fileref="media/nautilus.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/nautilus.png" width="69%"/>
+               <imagedata fileref="media/nautilus.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -63,7 +63,7 @@
       <sect2 xml:id="sec-gnomeuser-use-nautilus-shortcuts">
          <title>Key combinations</title>
          <para>The following table lists a selection of key combinations of GNOME Files.</para>
-         <table rowsep="1">
+         <table rowsep="1" colsep="1" frame="all">
             <title>GNOME Files key combinations</title>
             <tgroup cols="2">
                <colspec colnum="1" colname="1" colwidth="41*"/>
@@ -285,8 +285,8 @@
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-connections">
       <title>Managing Internet connections</title>
-      <para>To surf the Web or send and receive e-mail messages, you must have configured an Internet connection. If you have installed <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a laptop or a mobile device, NetworkManager is enabled by default. On the GNOME desktop, you can then establish Internet connections with NetworkManager as described in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-nm-configure" xrefstyle="%label &#34;%c&#34;"/>.</para>
-      <para>Depending on your environment, you can choose in YaST which basic service to use for setting up network connections (either NetworkManager or <productname>wicked</productname>). For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-network-yast-netcard-global" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>To surf the Web or send and receive e-mail messages, you must have configured an Internet connection. If you have installed <phrase role="productname">SUSE Linux Enterprise Server</phrase> on a laptop or a mobile device, NetworkManager is enabled by default. On the GNOME desktop, you can then establish Internet connections with NetworkManager as described in <xref linkend="sec-nm-configure"/>.</para>
+      <para>Depending on your environment, you can choose in YaST which basic service to use for setting up network connections (either NetworkManager or <productname>wicked</productname>). For details, see <xref linkend="sec-network-yast-netcard-global"/>.</para>
    </sect1>
    <sect1 xml:id="sec-gnomeuser-use-internet">
       <title>Exploring the Internet</title>
@@ -300,10 +300,10 @@
       <informalfigure pgwide="0">
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evolution.png" width="92%"/>
+               <imagedata fileref="media/evolution.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evolution.png" width="73%"/>
+               <imagedata fileref="media/evolution.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -349,10 +349,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/file_roller.png" width="64%"/>
+               <imagedata fileref="media/file_roller.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/file_roller.png" width="64%"/>
+               <imagedata fileref="media/file_roller.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -394,7 +394,7 @@
             </step>
             <step>
                <para>Choose from the following extraction options:</para>
-               <informaltable frame="topbot" rowsep="0" pgwide="0">
+               <informaltable frame="topbot" rowsep="0" pgwide="0" colsep="1">
                   <tgroup cols="2">
                      <colspec colnum="1" colname="1" colwidth="35*"/>
                      <colspec colnum="2" colname="2" colwidth="65*"/>
@@ -508,10 +508,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evince.png" width="82%"/>
+               <imagedata fileref="media/evince.png" width="90%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evince.png" width="71%"/>
+               <imagedata fileref="media/evince.png" width="78%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -523,6 +523,6 @@
    <sect1 xml:id="sec-gnomeuser-use-updates">
       <title>Obtaining software updates</title>
       <para>When you connect to the Internet, the updater applet automatically checks whether software updates for your system are available. When important updates are available, you receive a notification on your desktop.</para>
-      <para>For detailed information on how to install software updates with the updater applet and how to configure it, refer to the chapter about installing and removing software in <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-updater" xrefstyle="%label &#34;%c&#34;"/>.</para>
+      <para>For detailed information on how to install software updates with the updater applet and how to configure it, refer to the chapter about installing and removing software in <xref linkend="sec-updater"/>.</para>
    </sect1>
 </chapter>

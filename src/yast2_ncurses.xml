@@ -12,10 +12,10 @@
       <title>Main window of YaST in text mode</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="64%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -69,10 +69,10 @@
          <title>The software installation module</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="64%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -272,7 +272,7 @@
          </sect3>
          <sect3>
             <title>yast audit-laf</title>
-            <para>Displays and configures the Linux Audit Framework. Refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="part-audit" xrefstyle="%label &#34;%c&#34;"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
+            <para>Displays and configures the Linux Audit Framework. Refer to the <xref linkend="part-audit"/> for more details. <command>yast audit-laf</command> accepts the following commands:</para>
             <variablelist>
                <varlistentry>
                   <term>set</term>
@@ -716,7 +716,7 @@ Enabled php5
          </sect3>
          <sect3>
             <title>yast kdump</title>
-            <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="cha-tuning-kdump-basic" xrefstyle="%label &#34;%c&#34;"/>. <command>yast kdump</command> accepts the following commands:</para>
+            <para>Configures <systemitem>kdump</systemitem> settings. For more information on <systemitem>kdump</systemitem>, refer to the <xref linkend="cha-tuning-kdump-basic"/>. <command>yast kdump</command> accepts the following commands:</para>
             <variablelist>
                <varlistentry>
                   <term>copykernel</term>

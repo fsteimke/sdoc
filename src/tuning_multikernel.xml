@@ -160,10 +160,10 @@
                <title>The YaST software manager: multiversion view</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_sw_multiversion.png" width="82%"/>
+                     <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_sw_multiversion.png" width="82%"/>
+                     <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
                   </imageobject>
                </mediaobject>
             </figure>

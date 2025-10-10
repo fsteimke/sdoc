@@ -17,10 +17,10 @@
       <title>The YaST partitioner</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/install_partitioner_expert.png" width="69%"/>
+            <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/install_partitioner_expert.png" width="69%"/>
+            <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -98,7 +98,7 @@
       <sect3 xml:id="sec-yast-btrfs">
          <title>Btrfs partitioning</title>
          <remark>The Btrfs is not only default but mandatory.</remark>
-         <para>The default file system for the root partition is Btrfs. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="cha-snapper" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-filesystems" xrefstyle="%label &#34;%c&#34;"/>. The root file system is the default subvolume and it is not listed in the list of created subvolumes. As a default Btrfs subvolume, it can be mounted as a normal file system.</para>
+         <para>The default file system for the root partition is Btrfs. For details, see <xref linkend="cha-snapper"/> and <xref linkend="cha-filesystems"/>. The root file system is the default subvolume and it is not listed in the list of created subvolumes. As a default Btrfs subvolume, it can be mounted as a normal file system.</para>
          <important>
             <title>Btrfs on an encrypted root partition</title>
             <para>The default partitioning setup suggests the root partition as Btrfs with <filename>/boot</filename> being a directory. To encrypt the root partition, make sure to use the GPT partition table type instead of the default MSDOS type. Otherwise the GRUB2 boot loader may not have enough space for the second stage loader.</para>
@@ -162,10 +162,10 @@
                         <title>Btrfs subvolumes in YaST partitioner</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="69%"/>
+                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="69%"/>
+                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -212,7 +212,7 @@
                <varlistentry>
                   <term>Encrypt Device</term>
                   <listitem>
-                     <para>If you activate the encryption, all data is written to the hard disk in encrypted form. This increases the security of sensitive data, but reduces the system speed, as the encryption takes some time to process. More information about the encryption of file systems is provided in <xref linkend="deployment-encryption"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-cryptofs" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                     <para>If you activate the encryption, all data is written to the hard disk in encrypted form. This increases the security of sensitive data, but reduces the system speed, as the encryption takes some time to process. More information about the encryption of file systems is provided in <xref linkend="deployment-encryption"/> and <xref linkend="cha-security-cryptofs"/>.</para>
                   </listitem>
                </varlistentry>
                <varlistentry>
@@ -231,8 +231,8 @@
                         <para>Since mounting by ID causes problems on IBM Z when using disk-to-disk copying for cloning purposes, devices are mounted by path in <filename>/etc/fstab</filename> on IBM Z by default.</para>
                      </note>
                      <para>If you prefer to mount the partition by its label, you need to define one in the <guimenu>Volume label</guimenu> text entry. For example, you could use the partition label <literal>HOME</literal> for a partition intended to mount to <filename>/home</filename>.</para>
-                     <para>If you intend to use quotas on the file system, use the mount option <guimenu>Enable Quota Support</guimenu>. This must be done before you can define quotas for users in the YaST <guimenu>User Management</guimenu> module. For further information on how to configure user quota, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-yast-userman-adv-quota" xrefstyle="%label &#34;%c&#34;"/>.</para>
-                     <para>If you intend to specify quotas for Btrfs subvolumes, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-quota" xrefstyle="%label &#34;%c&#34;"/>.</para>
+                     <para>If you intend to use quotas on the file system, use the mount option <guimenu>Enable Quota Support</guimenu>. This must be done before you can define quotas for users in the YaST <guimenu>User Management</guimenu> module. For further information on how to configure user quota, refer to <xref linkend="sec-yast-userman-adv-quota"/>.</para>
+                     <para>If you intend to specify quotas for Btrfs subvolumes, refer to <xref linkend="sec-filesystems-major-btrfs-quota"/>.</para>
                   </listitem>
                </varlistentry>
             </variablelist>

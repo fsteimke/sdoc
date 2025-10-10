@@ -77,10 +77,10 @@ mercury.example.com</screen>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
+                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/virt_virt-manager.png" width="73%"/>
+                        <imagedata fileref="media/virt_virt-manager.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -109,10 +109,10 @@ mercury.example.com</screen>
                <informalfigure pgwide="0">
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_vm.png" width="51%"/>
+                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_vm.png" width="51%"/>
+                        <imagedata fileref="media/yast2_vm.png" width="56%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

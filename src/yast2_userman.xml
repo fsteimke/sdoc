@@ -15,10 +15,10 @@
          <title>YaST user and group administration</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="82%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="64%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -111,7 +111,7 @@
          <title>Do not rename the <systemitem class="username">root</systemitem> account</title>
          <para>While it is technically possible to rename the <systemitem class="username">root</systemitem> account, certain applications, scripts or third-party products may rely on the existence of a user called <systemitem class="username">root</systemitem>. While such a configuration always targets individual environments, necessary adjustments could be overwritten by vendor updates, so this becomes an ongoing task rather than a one-time setting. This is especially true in complex setups involving third-party applications, where it needs to be verified with every vendor involved whether a rename of the <systemitem class="username">root</systemitem> account is supported.</para>
          <para>As the implications for renaming the <systemitem class="username">root</systemitem> account cannot be foreseen, SUSE does not support renaming the <systemitem class="username">root</systemitem> account.</para>
-         <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root" xrefstyle="%label &#34;%c&#34;"/> and <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-sec-prot-restrict-root-ssh" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>Usually, the idea behind renaming the <systemitem class="username">root</systemitem> account is to hide it or make it unpredictable. However, <filename>/etc/passwd</filename> requires <literal>644</literal> permissions for regular users, so any user of the system can retrieve the login name for the user ID 0. For better ways to secure the <systemitem class="username">root</systemitem> account, refer to <xref linkend="sec-sec-prot-restrict-root"/> and <xref linkend="sec-sec-prot-restrict-root-ssh"/>.</para>
       </warning>
       <tip>
          <title>Matching user IDs</title>
@@ -215,7 +215,7 @@
        2014-07-17 - fs: According to aschnell, Btrfs quotas are kaputt; this
        will eventually be fixed, so check for each SP if the following
        statement is still true
-      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-filesystems-major-btrfs-quota" xrefstyle="%label &#34;%c&#34;"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
+      </remark>--> Quotas for Btrfs partitions are handled differently. For more information, see <xref linkend="sec-filesystems-major-btrfs-quota"/>. <!--Quotas for Btrfs partitions are handled differently and cannot be
       enabled in the &yast; Expert Partitioner.--><remark>taroth 2014-06-04: todo - after btrfs quotas have been covered in the manuals (Storage Guide?), add link - taroth 2014-12-29: done</remark></para>
             </note>
             <step>
@@ -256,10 +256,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_users_quota_qt.png" width="73%"/>
+                        <imagedata fileref="media/yast2_users_quota_qt.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_users_quota_qt.png" width="64%"/>
+                        <imagedata fileref="media/yast2_users_quota_qt.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -298,7 +298,7 @@
             <para>If you do not want to use <filename>/home/<replaceable>USERNAME</replaceable></filename> as the default path for new users' home directories, modify the <guimenu>Path Prefix for Home Directory</guimenu>.</para>
          </step>
          <step>
-            <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-security-acls" xrefstyle="%label &#34;%c&#34;"/> and to the <command>umask</command> man page.</para>
+            <para>To change the default permission modes for newly created home directories, adjust the umask value in <guimenu>Umask for Home Directory</guimenu>. For more information about umask, refer to <xref linkend="cha-security-acls"/> and to the <command>umask</command> man page.</para>
          </step>
          <step>
             <para>For information about the individual options, click <guimenu>Help</guimenu>.</para>
@@ -356,10 +356,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="73%"/>
+                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="69%"/>
+                     <imagedata fileref="media/yast2_groups_edit_qt.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>
@@ -384,19 +384,19 @@
          <varlistentry>
             <term>NIS</term>
             <listitem>
-               <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="cha-nis" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>Users are administered centrally on a NIS server for all systems in the network. For details, see <xref linkend="cha-nis"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>SSSD</term>
             <listitem>
-               <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/>.</para>
+               <para>The <emphasis>System Security Services Daemon</emphasis> (SSSD) can locally cache user data and then allow users to use the data, even if the real directory service is (temporarily) unreachable. For details, see <xref linkend="sec-security-auth-sssd"/>.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term>Samba</term>
             <listitem>
-               <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="cha-samba" xrefstyle="%label &#34;%c&#34;"/> .</para>
+               <para>SMB authentication is often used in mixed Linux and Windows networks. For details, see <xref linkend="cha-samba"/> .</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -412,19 +412,19 @@
             <para>To change the authentication method, click <guimenu>Configure</guimenu> and select the authentication method you want to modify. This takes you directly to the client configuration modules in YaST. For information about the configuration of the appropriate client, refer to the following sections:</para>
             <formalpara>
                <title>NIS:</title>
-               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-nis-client" xrefstyle="%label &#34;%c&#34;"/></para>
+               <para><xref linkend="sec-nis-client"/></para>
             </formalpara>
             <formalpara>
                <title>LDAP:</title>
-               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-yast-client" xrefstyle="%label &#34;%c&#34;"/></para>
+               <para><xref linkend="sec-security-auth-yast-client"/></para>
             </formalpara>
             <formalpara>
                <title>Samba:</title>
-               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Storage Administration Guide</quote>, </phrase><xref linkend="sec-samba-client-inst-yast" xrefstyle="%label &#34;%c&#34;"/></para>
+               <para><xref linkend="sec-samba-client-inst-yast"/></para>
             </formalpara>
             <formalpara>
                <title>SSSD:</title>
-               <para><phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Security and Hardening Guide</quote>, </phrase><xref linkend="sec-security-auth-sssd" xrefstyle="%label &#34;%c&#34;"/></para>
+               <para><xref linkend="sec-security-auth-sssd"/></para>
             </formalpara>
          </step>
          <step>

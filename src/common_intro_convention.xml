@@ -34,8 +34,8 @@
          <para><guimenu>File</guimenu>, <menuchoice><guimenu>File</guimenu><guimenu>Save As</guimenu></menuchoice>: menu items, buttons</para>
       </listitem>
       <listitem>
-         <para arch="x86_64"><phrase role="arch-start">x86_64 ▶</phrase>This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
-         <para arch="zseries;power"><phrase role="arch-start">zseries;power ▶</phrase>This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.<phrase role="arch-end">◀</phrase></para>
+         <para arch="x86_64">This paragraph is only relevant for the AMD64/Intel 64 architectures. The arrows mark the beginning and the end of the text block.</para>
+         <para arch="zseries;power">This paragraph is only relevant for the architectures <literal>IBM Z</literal> and <literal>POWER</literal>. The arrows mark the beginning and the end of the text block.</para>
       </listitem>
       <listitem>
          <para><citetitle>Chapter 1, <quote>Example chapter</quote></citetitle>: A cross-reference to another chapter in this guide.</para>

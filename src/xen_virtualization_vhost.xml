@@ -81,7 +81,7 @@
             </step>
          </procedure>
          <tip>
-            <para>Refer to <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>Administration Guide</quote>, </phrase><xref linkend="sec-grub2-etc-default-grub" xrefstyle="%label &#34;%c&#34;"/> for more details about Xen-related boot configuration options.</para>
+            <para>Refer to <xref linkend="sec-grub2-etc-default-grub"/> for more details about Xen-related boot configuration options.</para>
          </tip>
          <warning>
             <title>Xen Dom0 memory</title>
@@ -134,7 +134,7 @@ isst_if_pci: probe of 0000:fe:00.1 failed with error -5
          <title>Xen and Kdump</title>
          <para>In Xen, the hypervisor manages the memory resource. If you need to reserve system memory for a recovery kernel in Dom0, this memory needs to be reserved by the hypervisor. Thus, it is necessary to add <option>crashkernel=size</option> to the <varname>GRUB_CMDLINE_XEN_DEFAULT</varname> variable in the <filename>/etc/dfault/grub</filename> file, save it and run the following command:</para>
          <screen><prompt>&gt;</prompt><command>sudo</command> grub2-mkconfig -o /boot/grub2/grub.cfg</screen>
-         <para>For more information on the crashkernel parameter, see <phrase xmlns:l="http://docbook.org/ns/docbook/l10n" role="document-xref">Book <quote>System Analysis and Tuning Guide</quote>, </phrase><xref linkend="sec-tuning-kexec-crashkernel" xrefstyle="%label &#34;%c&#34;"/>.</para>
+         <para>For more information on the crashkernel parameter, see <xref linkend="sec-tuning-kexec-crashkernel"/>.</para>
       </note>
       <para>If the <guimenu>Xen</guimenu> option is not on the GRUB 2 menu, review the steps for installation and verify that the GRUB 2 boot loader has been updated. If the installation has been done without selecting the Xen pattern, run the YaST <guimenu>Software Management</guimenu>, select the filter <guimenu>Patterns</guimenu> and choose <guimenu>Xen Virtual Machine Host Server</guimenu> for installation.</para>
       <para>After booting the hypervisor, the Dom0 virtual machine starts and displays its graphical desktop environment. If you did not install a graphical desktop, the command line environment appears.</para>

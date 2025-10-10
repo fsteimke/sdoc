@@ -37,10 +37,10 @@
                <title>GNOME Background settings</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/preferences_background.png" width="73%"/>
+                     <imagedata fileref="media/preferences_background.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/preferences_background.png" width="73%"/>
+                     <imagedata fileref="media/preferences_background.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -107,10 +107,10 @@
                <title>Enabling the compose key in Tweaks</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/gnome-tweaks-compose.png" width="73%"/>
+                     <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/gnome-tweaks-compose.png" width="73%"/>
+                     <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -200,10 +200,10 @@
             <guimenu>Mouse and Touchpad</guimenu> settings dialog</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/preferences_mouse.png" width="73%"/>
+               <imagedata fileref="media/preferences_mouse.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/preferences_mouse.png" width="73%"/>
+               <imagedata fileref="media/preferences_mouse.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -235,10 +235,10 @@
             <title>Single monitor settings dialog</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/preferences_screen_single.png" width="92%"/>
+                  <imagedata fileref="media/preferences_screen_single.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/preferences_screen_single.png" width="73%"/>
+                  <imagedata fileref="media/preferences_screen_single.png" width="80%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -354,10 +354,10 @@ commented out the screen. Texts taken from GNOME help.
          <title>Configuring sound settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/sound_devices.png" width="92%"/>
+               <imagedata fileref="media/sound_devices.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/sound_devices.png" width="73%"/>
+               <imagedata fileref="media/sound_devices.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -374,10 +374,10 @@ commented out the screen. Texts taken from GNOME help.
                <title>Default Apps</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/preferences_preferred_apps.png" width="92%"/>
+                     <imagedata fileref="media/preferences_preferred_apps.png" width="100%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/preferences_preferred_apps.png" width="73%"/>
+                     <imagedata fileref="media/preferences_preferred_apps.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>

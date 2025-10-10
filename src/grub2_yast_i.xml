@@ -64,10 +64,10 @@
          <title>Boot code options</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="69%"/>
+               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="69%"/>
+               <imagedata fileref="media/yast2_bootloader_boot_code.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -160,10 +160,10 @@
             <title>Boot loader options</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_bootloader_options.png" width="69%"/>
+                  <imagedata fileref="media/yast2_bootloader_options.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_bootloader_options.png" width="69%"/>
+                  <imagedata fileref="media/yast2_bootloader_options.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -218,10 +218,10 @@
             <title>Kernel parameters</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="69%"/>
+                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="75%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="69%"/>
+                  <imagedata fileref="media/yast2_bootloader_kernel_parameters.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>

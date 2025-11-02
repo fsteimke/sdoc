@@ -2,17 +2,22 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+SOURCE=$(realpath doc-sle-15SP7/xml/MAIN.SLEDS.xml)
 CATALOG=$(realpath $XSLTNG/catalog.xml)
 PIPELINE=$(realpath migration/xsltng-migration.xpl)
+CALABASH=$(realpath $XSLTNG/xmlcalabash/xmlcalabash-app-3*.jar)
 
-if [[ -f src/*xml ]]; then
+if [[ $(ls -A "src/*xml" 2>/dev/null) ]]; then
+    echo "remove src"
     rm src/*.xml
 fi
-if [[ -f src/media/* ]]; then
+if [[ $(ls src/media/* 2>/dev/null) ]]; then
+    echo "remove media"
     rm src/media/*
 fi
-if [[ -f src/pdf/* ]]; then
+if [[ $(ls pdf/* 2>/dev/null) ]]; then
+    echo "remove pdf"
     rm pdf/*
 fi
 
-java -jar $CALABASH run --catalog:$CATALOG $PIPELINE
+java -jar $CALABASH run --input:source=$SOURCE --catalog:$CATALOG $PIPELINE

@@ -1,29 +1,29 @@
 :root {
-    --nominal-page-width: 170mm;
-    --body-font-size: 11pt;
-    --body-font-family: Arial, Segoe;
-    --lineheight: 160%;
-    --text-align: justify;
+  --nominal-page-width: 170mm;
+  --body-font-size: 11pt;
+  --body-font-family: Arial, Segoe;
+  --lineheight: 160%;
+  --text-align: justify;
 
-    --on-warning-color: black;
-    --warning-color: white;
-    --warning-border-style: none;
-    --warning-border-color: red;
+  --on-warning-color: black;
+  --warning-color: white;
+  --warning-border-style: none;
+  --warning-border-color: red;
 
-    --on-important-color: black;
-    --important-color: white;
-    --important-border-style: none;
-    --important-border-color: red;
+  --on-important-color: black;
+  --important-color: white;
+  --important-border-style: none;
+  --important-border-color: red;
 
-    --on-note-color: #404040;
-    --note-color: white;
-    --note-border-style: none;
-    --note-border-color: blue;
+  --on-note-color: #404040;
+  --note-color: white;
+  --note-border-style: none;
+  --note-border-color: blue;
 
-    --pre-font-size: 10pt;
-    --pre-background-color: #E3F8F1;
+  --pre-font-size: 10pt;
+  --pre-background-color: #E3F8F1;
 
-    --suse-fg: #008657;
+  --suse-fg: #008657;
 }
 
 h1,
@@ -33,65 +33,94 @@ h4,
 h5,
 h6,
 a {
-    color: var(--suse-fg);
+  color: var(--suse-fg);
 }
 
 /* pre ========================================================================================= */
 pre code {
-    color: #2020A0;
+  color: #2020A0;
 }
 
 .command {
-    color: black;
-    font-weight: bold;
+  color: black;
+  font-weight: bold;
 }
 
 
 .systemitem.username,
 .package {
-    font-family: monospace
+  font-family: monospace
 }
 
 .keycap {
-    font-family: monospace;
-    background-color: #DEDFE0;
+  font-family: monospace;
+  background-color: #DEDFE0;
 }
 
 .keycombo > span::after {
-    content: '—';
-    color:blue;
-    background-color: white;
+  content: '—';
+  color: blue;
+  background-color: white;
 }
 .keycombo > span:last-child::after {
-    content: ''
+  content: ''
 }
 
 .guimenu {
-    font-style: italic
+  font-style: italic
 }
 .menuchoice > .guimenu::after {
-    content: ' > '
+  content: ' > '
 }
 .menuchoice > .guimenu:last-child::after {
-    content: none
+  content: none
 }
 
 
 .arch-start,
 .arch-end {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 1px;
-    border-radius: 6px;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 1px;
+  border-radius: 6px;
 }
 
 .icon {
-    text-align: left
+  text-align: left
 }
 
 .compact .icon {
-    transform:scale(0.7)
+  transform: scale(0.7)
 }
 
 .xref,
-.document-xref {font-style:italic}
+.document-xref {
+  font-style: italic
+}
+
+.part > header > h1 {font-size:22pt;line-height:125%;margin-bottom:35mm}
+
+h1.toc.book {page-break-before:left}
+tr.part p {margin-top:2em;font-variant:small-caps;font-size:14pt;font-weight:normal}
+tr.chapter p {font-size:15pt}
+tr.sect1 p {font-weight:normal;font-size:11pt}
+tr.toc-entry td {vertical-align:top}
+.toc-entry p.sect2 p {font-size:10pt;font-weight:normal;font-style:italic;text-align:left;hyphens:none}
+span.toc-entry {
+  font-style: italic
+}
+
+.toc-entry a:after {
+  content: " " target-counter(attr(href), page);
+}
+.toc-entry.chapter a:after {color:green}
+
+.toc-entry a {color:black;text-decoration:none}
+.toc-entry.part a {
+  color: green;text-decoration:none
+}
+
+table.lot.part tr.chapter td {font-weight:normal;padding-bottom:1em}
+
+.toc-entry td.number  {text-align:right}
+.toc-entry .sep {margin-left:0.2em;margin-right:0.2em;text-align:center}

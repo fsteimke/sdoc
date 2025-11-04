@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://docbook.org/ns/docbook"
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:h="http://www.w3.org/1999/xhtml"
   xmlns:f="http://docbook.org/ns/docbook/functions" xmlns:db="http://docbook.org/ns/docbook"
   xmlns:m="http://docbook.org/ns/docbook/modes"
@@ -12,15 +12,67 @@
   <xsl:import href="https://www.xoev.de/docbook-tng/resources/driver/pdf.xsl"/>
 
   <xsl:include href="driver-common.xsl"/>
-
   <xsl:param name="nominal-page-width" select="'170mm'"/>
 
-  <!-- SUSE TOCs in PDF have a unique style -->
+  <!-- SUSE Book Titlepage (overrides $XSLTNG/resources/driver/pdf.xsl) ======================= -->
+  <xsl:param name="logo-left">
+    <img src="../custom/suselogo.png" style="opacity:0.8"/>
+  </xsl:param>
+  <xsl:param name="logo-right">
+    <p class="DEMO">Experimental version for testing purpose only!</p>
+  </xsl:param>
+
+  <xsl:template match="book" mode="m:generate-titlepage" as="element()+">
+    <div class="recto">
+      <table class="logos">
+        <colgroup>
+          <col class="logo left"/>
+          <col class="logo right"/>
+        </colgroup>
+
+        <tr>
+          <td>
+            <xsl:sequence select="$logo-left"/>
+          </td>
+          <td>
+            <xsl:sequence select="$logo-right"/>
+          </td>
+        </tr>
+      </table>
+      <div class="recto-body">
+        <p class="DEMO">My private, inofficial Version of:</p>
+        <xsl:apply-templates mode="m:titlepage" select="
+            info/productname,
+            info/title">
+          <xsl:with-param name="page" select="'recto'"/>
+        </xsl:apply-templates>
+      </div>
+    </div>
+    <div class="verso">
+      <div class="verso-body">
+        <xsl:apply-templates mode="m:titlepage" select="
+            info/title,
+            info/productname,
+            info/abstract"/>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="productname" mode="m:titlepage">
+    <xsl:variable name="content" as="xs:string"
+      select="normalize-space(. || ' ' || ../productnumber)"/>
+    <p>
+      <span class="productname">
+        <xsl:value-of select="$content"/>
+      </span>
+    </p>
+  </xsl:template>
+
+  <!-- SUSE TOCs in PDF have a unique style, realized as a table ============================== -->
   <xsl:template name="tp:toc">
     <xsl:param name="persistent" as="xs:boolean" tunnel="yes"/>
     <xsl:param name="root-element" as="element()" tunnel="yes"/>
-  
-    
+
     <xsl:if test="$root-element/self::book">
       <h1>
         <xsl:attribute name="class" select="string-join(('toc', local-name($root-element)), ' ')"/>
@@ -28,15 +80,14 @@
       </h1>
     </xsl:if>
 
-    
-    <table >
-      <xsl:attribute name="class" select="string-join(('lot',local-name($root-element)),' ')"/>
+    <table>
+      <xsl:attribute name="class" select="string-join(('lot', local-name($root-element)), ' ')"/>
       <xsl:apply-templates mode="m:toc-entry">
         <xsl:with-param name="persistent" select="$persistent" tunnel="yes"/>
         <xsl:with-param name="root-element" select="$root-element" tunnel="yes"/>
       </xsl:apply-templates>
     </table>
-    
+
   </xsl:template>
 
   <xsl:template match="part" mode="m:toc-entry">

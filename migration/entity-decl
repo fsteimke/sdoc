@@ -1,0 +1,4 @@
+1i<!DOCTYPE book [\
+<!ENTITY % migration SYSTEM 'migration.ent'>\
+%migration;\
+]

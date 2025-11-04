@@ -16,7 +16,7 @@
 
   <!-- SUSE Book Titlepage (overrides $XSLTNG/resources/driver/pdf.xsl) ======================= -->
   <xsl:param name="logo-left">
-    <img src="../custom/suselogo.png" style="opacity:0.8"/>
+    <img src="../custom/suselogo.png" style="opacity:0.33"/>
   </xsl:param>
   <xsl:param name="logo-right">
     <p class="DEMO">Experimental version for testing purpose only!</p>
@@ -54,6 +54,7 @@
             info/title,
             info/productname,
             info/abstract"/>
+        <xsl:call-template name="tp:migration-text-1"/>
       </div>
     </div>
   </xsl:template>
@@ -116,20 +117,20 @@
     <xsl:param name="root-element" as="element()" tunnel="yes"/>
     <tr>
       <xsl:attribute name="class" select="string-join(('toc-entry', local-name(.)), ' ')"/>
-      <p>
+      
         <td class="number">
-          <xsl:apply-templates select="." mode="m:headline-number">
+          <p><xsl:apply-templates select="." mode="m:headline-number">
             <xsl:with-param name="purpose" select="'lot'"/>
-          </xsl:apply-templates>
+          </xsl:apply-templates></p>
         </td>
         <td class="title">
-          <a href="#{f:id(.)}">
+          <p><a href="#{f:id(.)}">
             <xsl:apply-templates select="." mode="m:headline-title">
               <xsl:with-param name="purpose" select="'lot'"/>
             </xsl:apply-templates>
-          </a>
+          </a></p>
         </td>
-      </p>
+      
     </tr>
     <xsl:if test="$root-element/self::book">
       <xsl:apply-templates select="sect1" mode="m:toc-entry">
@@ -173,6 +174,25 @@
         </p>
       </td>
     </tr>
+  </xsl:template>
+
+  <xsl:template name="tp:migration-text-1">
+    <div class="INFO1">
+      <p>File generated at <xsl:value-of select="current-dateTime() => format-dateTime('[Y]-[M]-[D] [H]:[m]')"/></p>
+      <p>This is an <b>experimental version</b> of a Document from SUSE company. <b>It may contain
+          errors.</b> The only purpose is the test of an alternative publishing mechanism. <b>You
+          can find the original version of this document at <a href="https://documentation.suse.com"
+            >documentation.suse.com</a>.</b></p>
+      <p>The books and articles exist as XML sources, conformant to the DocBook standard. SUSE
+        publishes them with the DocBook XSLT 1.0 Stylesheets, which generate XSL-FO, and Apache FOP,
+        which in turn generates PDF.</p>
+      <p>This version is based on the same DocBook sources, but published with the new <a
+          href="https://xsltng.docbook.org/">xslTNG Stylesheets</a>, which produce XHTML+CSS, and an
+        rendering engine like <i>Antenna House</i> or <i>Weasyprint</i> to generate PDF. The only
+        purpose of this version is a <i>"real life test"</i> of the new publishing mechanism,
+        together with an <i>"DocBook TNG Framework"</i> that i wrote. It helps me to use and
+        customize the xslTNG Stylesheets. — <i>Frank Steimke, Bremen, Gemany</i></p>
+    </div>
   </xsl:template>
 
 </xsl:stylesheet>

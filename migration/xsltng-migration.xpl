@@ -2,6 +2,8 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:db="http://docbook.org/ns/docbook" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="3.0">
 
+  <p:input port="source" primary="true"/>
+
   <p:documentation xmlns="http://www.w3.org/1999/xhtml">
     <p>Migration steps of DocBook 5.x with XSL 1.0 Stylesheets to DocBook 5.2 and xslTNG Stylesheets
       for <em>"SUSE Linux Enterprise Desktop (SLED) 15 SP7"</em> Books and Articles</p>

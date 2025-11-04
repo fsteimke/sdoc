@@ -188,7 +188,7 @@ table.lot.part tr.chapter td {
 .book .verso-body .abstract {
   border: none;
   padding: 0pt;
-  font-size:13pt}
+  font-size: 13pt}
 
 .DEMO {
   color: yellow;
@@ -199,6 +199,17 @@ table.lot.part tr.chapter td {
   font-weight: bold;
   hyphens: none;
   padding: 6pt;
-  visibility: hidden;
+  visibility: visible;
   border: 1px dashed gray
+}
+
+.INFO1 {
+  margin-top: 10cm;
+  border-top:1px solid gray;
+  margin-left:15mm;
+  font-size: 9.5pt}
+
+.INFO1 p {
+  margin-top: 0pt;
+  margin-bottom: 3pt;
 }

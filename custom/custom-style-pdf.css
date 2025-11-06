@@ -85,6 +85,10 @@ pre code {
   border-radius: 6px;
 }
 
+.admonition {
+  page-break-inside: avoid
+}
+
 .icon {
   text-align: left
 }
@@ -107,6 +111,15 @@ pre code {
 h1.toc.book {
   page-break-before: left
 }
+
+table.lot {
+  width: 100%
+}
+table.lot td.number {
+  width: 5em;
+  padding-left: 1em
+}
+
 tr.part p {
   margin-top: 2em;
   font-variant: small-caps;
@@ -205,8 +218,8 @@ table.lot.part tr.chapter td {
 
 .INFO1 {
   margin-top: 10cm;
-  border-top:1px solid gray;
-  margin-left:15mm;
+  border-top: 1px solid gray;
+  margin-left: 15mm;
   font-size: 9.5pt}
 
 .INFO1 p {

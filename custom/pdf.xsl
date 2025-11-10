@@ -82,7 +82,7 @@
     </xsl:if>
 
     <table>
-      <xsl:attribute name="class" select="string-join(('lot', local-name($root-element)), ' ')"/>
+      <xsl:attribute name="class" select="string-join(('list-of-titles', local-name($root-element)), ' ')"/>
       <xsl:apply-templates mode="m:toc-entry">
         <xsl:with-param name="persistent" select="$persistent" tunnel="yes"/>
         <xsl:with-param name="root-element" select="$root-element" tunnel="yes"/>
@@ -178,11 +178,13 @@
 
   <xsl:template name="tp:migration-text-1">
     <div class="INFO1">
-      <p>File generated at <xsl:value-of select="current-dateTime() => format-dateTime('[Y]-[M]-[D] [H]:[m]')"/></p>
-      <p>This is an <b>experimental version</b> of a Document from SUSE company. <b>It may contain
-          errors.</b> The only purpose is the test of an alternative publishing mechanism. <b>You
-          can find the original version of this document at <a href="https://documentation.suse.com"
-            >documentation.suse.com</a>.</b></p>
+      <p>File generated at <xsl:value-of
+          select="current-dateTime() => format-dateTime('[Y]-[M]-[D] [H]:[m]')"/></p>
+      <p>This is my own, <b>experimental version</b> of a Document from SUSE company. The only
+        purpose of this document is the test of an alternative publishing mechanism. <b>Errors in
+          the publishing mechanism may lead to wrong content.You can find the original version of
+          this document at <a href="https://documentation.suse.com"
+        >documentation.suse.com</a>.</b></p>
       <p>The books and articles exist as XML sources, conformant to the DocBook standard. SUSE
         publishes them with the DocBook XSLT 1.0 Stylesheets, which generate XSL-FO, and Apache FOP,
         which in turn generates PDF.</p>

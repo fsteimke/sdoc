@@ -41,10 +41,10 @@
          <title>A LibreOffice wizard</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo-wizard.png" width="100%"/>
+               <imagedata fileref="media/oo-wizard.png" width="84%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo-wizard.png" width="85%"/>
+               <imagedata fileref="media/oo-wizard.png" width="71%"/>
             </imageobject>
          </mediaobject>
       </figure>

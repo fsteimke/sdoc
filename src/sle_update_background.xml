@@ -136,7 +136,7 @@
          <title>Major releases and service packs</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/new-maintenance-model.svg" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model.svg" width="38%"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata fileref="media/new-maintenance-model.png" width="95%"/>
@@ -148,7 +148,7 @@
          <title>Long term service pack support</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/new-maintenance-model+ltss.svg" width="95%"/>
+               <imagedata fileref="media/new-maintenance-model+ltss.svg" width="38%"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata fileref="media/new-maintenance-model+ltss.png" width="95%"/>

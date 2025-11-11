@@ -153,10 +153,10 @@ Successfully registered system</screen>
                   <guimenu>XML</guimenu> view of virtual machine configuration</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="64%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
+                     <imagedata fileref="media/vm_security_create_vm_xml.png" width="64%"/>
                   </imageobject>
                </mediaobject>
             </figure>

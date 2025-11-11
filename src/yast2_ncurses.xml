@@ -12,10 +12,10 @@
       <title>Main window of YaST in text mode</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
+            <imagedata fileref="media/yast2_ncurses_main.png" width="74%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -69,10 +69,10 @@
          <title>The software installation module</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
+               <imagedata fileref="media/yast2_ncurses_inst.png" width="74%"/>
             </imageobject>
          </mediaobject>
       </figure>

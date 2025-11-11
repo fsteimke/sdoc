@@ -72,7 +72,7 @@
          <title>iptables: a packet's possible paths</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata width="75%" fileref="media/fire_tables.svg"/>
+               <imagedata width="25%" fileref="media/fire_tables.svg"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata width="100%" fileref="media/fire_tables.png"/>

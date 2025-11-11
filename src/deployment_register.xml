@@ -67,10 +67,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="98%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -136,10 +136,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="98%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -168,10 +168,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="75%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="100%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="98%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

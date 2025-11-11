@@ -506,10 +506,10 @@
             <productname>Evolution</productname> window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evolution.png" width="100%"/>
+               <imagedata fileref="media/evolution.png" width="58%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evolution.png" width="86%"/>
+               <imagedata fileref="media/evolution.png" width="50%"/>
             </imageobject>
          </mediaobject>
       </figure>

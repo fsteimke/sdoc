@@ -395,7 +395,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_keyboard.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_keyboard.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -405,7 +405,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_eula.png"/>
+                        <imagedata width="48%" fileref="media/rpi_first_eula.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -415,7 +415,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_timezone.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_timezone.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -428,7 +428,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_root.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_root.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -438,7 +438,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_root_confirm.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_root_confirm.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -448,7 +448,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_reg.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_reg.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -465,7 +465,7 @@ Password:
                <informalfigure>
                   <mediaobject>
                      <imageobject>
-                        <imagedata width="80%" fileref="media/rpi_first_wifi.png"/>
+                        <imagedata width="49%" fileref="media/rpi_first_wifi.png"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -495,7 +495,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_ssid.png"/>
+                              <imagedata width="49%" fileref="media/rpi_first_wifi_ssid.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -505,7 +505,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_auth.png"/>
+                              <imagedata width="49%" fileref="media/rpi_first_wifi_auth.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -515,7 +515,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="80%" fileref="media/rpi_first_wifi_passwd.png"/>
+                              <imagedata width="49%" fileref="media/rpi_first_wifi_passwd.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>

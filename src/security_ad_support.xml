@@ -502,7 +502,7 @@ Kerberos. cschroder, 16-12-2020
                         <imagedata fileref="media/ad-config.png"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/ad-config.png" width="70%"/>
+                        <imagedata fileref="media/ad-config.png" width="69%"/>
                      </imageobject>
                   </mediaobject>
                </figure>

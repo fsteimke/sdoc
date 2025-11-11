@@ -17,10 +17,10 @@
       <title>The YaST partitioner</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
+            <imagedata fileref="media/install_partitioner_expert.png" width="68%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
+            <imagedata fileref="media/install_partitioner_expert.png" width="68%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -162,10 +162,10 @@
                         <title>Btrfs subvolumes in YaST partitioner</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
+                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="68%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
+                              <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="68%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>

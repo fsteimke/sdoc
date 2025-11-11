@@ -32,10 +32,10 @@
             <title>System Role screen</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="44%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                  <imagedata fileref="media/virt-system-roles.png" width="44%"/>
                </imageobject>
             </mediaobject>
          </figure>

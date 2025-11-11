@@ -1899,10 +1899,10 @@ xterm: DISPLAY is not set
                <title>Main window of YaST in text mode</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="74%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1956,10 +1956,10 @@ xterm: DISPLAY is not set
                   <title>The software installation module</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="74%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -3743,10 +3743,10 @@ UID: 456
                   <title>YaST user and group administration</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="88%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="68%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5003,10 +5003,10 @@ UID: 456
                            <title>Adding a software repository</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="70%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="68%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="65%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="63%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -5098,10 +5098,10 @@ UID: 456
                   <title>Update notification on GNOME desktop</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="68%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="68%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5113,10 +5113,10 @@ UID: 456
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="68%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="68%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -5185,10 +5185,10 @@ UID: 456
                      <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="68%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="68%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -7853,10 +7853,10 @@ ID	gen	top level	path
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/klp.png" width="80%"/>
+                        <imagedata fileref="media/klp.png" width="35%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/klp.png" width="100%"/>
+                        <imagedata fileref="media/klp.png" width="44%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -8494,10 +8494,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Remmina viewing remote session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8642,10 +8642,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>VNC session settings</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="68%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="68%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8717,10 +8717,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Joining a persistent VNC session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -9901,10 +9901,10 @@ output</screen>
                   <title>KVM virtualization architecture</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="55%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="55%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -10067,10 +10067,10 @@ mercury.example.com</screen>
                      <title>System Role screen</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="44%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="44%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>

@@ -49,10 +49,10 @@
          <title>RAID partitions</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
+               <imagedata fileref="media/install_partitioner_raid.png" width="68%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
+               <imagedata fileref="media/install_partitioner_raid.png" width="68%"/>
             </imageobject>
          </mediaobject>
       </figure>

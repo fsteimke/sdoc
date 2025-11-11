@@ -16,10 +16,10 @@
          <guimenu>Details</guimenu> view of a VM Guest</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="68%"/>
          </imageobject>
          <imageobject outputformat="screen">
-            <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
+            <imagedata fileref="media/libvirt_vmm_details.png" width="68%"/>
          </imageobject>
       </mediaobject>
    </figure>
@@ -37,10 +37,10 @@
             <title>Overview details</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="68%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_overview.png" width="68%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -66,10 +66,10 @@
             <title>Performance</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="68%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
+                  <imagedata fileref="media/libvirt_vmm_performance.png" width="68%"/>
                </imageobject>
             </mediaobject>
          </figure>

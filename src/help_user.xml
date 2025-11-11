@@ -50,10 +50,10 @@
          <title>Main window of Help</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="68%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
+               <imagedata fileref="media/gnome_yelp_main.png" width="68%"/>
             </imageobject>
          </mediaobject>
       </figure>

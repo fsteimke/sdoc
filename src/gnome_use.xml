@@ -19,10 +19,10 @@
          <title>File manager</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/nautilus.png" width="75%"/>
+               <imagedata fileref="media/nautilus.png" width="62%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/nautilus.png" width="75%"/>
+               <imagedata fileref="media/nautilus.png" width="62%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -300,10 +300,10 @@
       <informalfigure pgwide="0">
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evolution.png" width="100%"/>
+               <imagedata fileref="media/evolution.png" width="58%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evolution.png" width="80%"/>
+               <imagedata fileref="media/evolution.png" width="47%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>
@@ -508,10 +508,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/evince.png" width="90%"/>
+               <imagedata fileref="media/evince.png" width="64%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/evince.png" width="78%"/>
+               <imagedata fileref="media/evince.png" width="56%"/>
             </imageobject>
          </mediaobject>
       </figure>

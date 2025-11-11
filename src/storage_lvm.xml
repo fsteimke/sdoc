@@ -24,7 +24,7 @@
          <title>Physical partitioning versus LVM</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/lvm.svg" width="80%"/>
+               <imagedata fileref="media/lvm.svg" width="74%"/>
             </imageobject>
             <imageobject outputformat="screen">
                <imagedata fileref="media/lvm.png" width="100%"/>
@@ -482,10 +482,10 @@ root's password:
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_lvm12_a.png" width="80%"/>
+                     <imagedata fileref="media/yast2_lvm12_a.png" width="55%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_lvm12_a.png" width="100%"/>
+                     <imagedata fileref="media/yast2_lvm12_a.png" width="68%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

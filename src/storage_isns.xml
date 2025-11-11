@@ -91,10 +91,10 @@
             <informalfigure>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/isns_config_a.png" width="80%"/>
+                     <imagedata fileref="media/isns_config_a.png" width="69%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/isns_config_a.png" width="100%"/>
+                     <imagedata fileref="media/isns_config_a.png" width="86%"/>
                   </imageobject>
                </mediaobject>
             </informalfigure>

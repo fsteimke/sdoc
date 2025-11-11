@@ -44,10 +44,10 @@
       <informalfigure>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/klp.png" width="80%"/>
+               <imagedata fileref="media/klp.png" width="35%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/klp.png" width="100%"/>
+               <imagedata fileref="media/klp.png" width="44%"/>
             </imageobject>
          </mediaobject>
       </informalfigure>

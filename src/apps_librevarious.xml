@@ -138,10 +138,10 @@
                      <title>LibreOffice Database Wizard</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/oo-wizard-base.png" width="90%"/>
+                           <imagedata fileref="media/oo-wizard-base.png" width="76%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/oo-wizard-base.png" width="85%"/>
+                           <imagedata fileref="media/oo-wizard-base.png" width="72%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -316,10 +316,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_formula.png" width="100%"/>
+               <imagedata fileref="media/oo_formula.png" width="94%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_formula.png" width="80%"/>
+               <imagedata fileref="media/oo_formula.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

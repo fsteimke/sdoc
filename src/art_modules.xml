@@ -680,10 +680,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="88%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_extension_list_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_extension_list_sles.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -727,10 +727,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="88%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -743,10 +743,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_new.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="88%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_new.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_new.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -786,10 +786,10 @@
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="88%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
+                        <imagedata fileref="media/yast2_addon_installed_sles.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>

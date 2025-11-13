@@ -1060,10 +1060,10 @@ lazy refcounts: true</screen>
             <title>Understanding image overlay</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="84%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/qemu-img-overlay.png" width="84%"/>
+                  <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                </imageobject>
             </mediaobject>
          </figure>

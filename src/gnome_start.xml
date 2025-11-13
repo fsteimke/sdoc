@@ -24,10 +24,10 @@
          <title>Default GNOME login screen</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/login_sled.png" width="68%"/>
+               <imagedata fileref="media/login_sled.png" width="90%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/login_sled.png" width="57%"/>
+               <imagedata fileref="media/login_sled.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -54,10 +54,10 @@
                   <title>Default GNOME login screen—session type</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/login_sessiontype_sle.png" width="55%"/>
+                        <imagedata fileref="media/login_sessiontype_sle.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/login_sessiontype_sle.png" width="45%"/>
+                        <imagedata fileref="media/login_sessiontype_sle.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -139,10 +139,10 @@
          <title>GNOME desktop with activities overview</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/desktop_sled_menu.png" width="54%"/>
+               <imagedata fileref="media/desktop_sled_menu.png" width="95%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/desktop_sled_menu.png" width="51%"/>
+               <imagedata fileref="media/desktop_sled_menu.png" width="90%"/>
             </imageobject>
          </mediaobject>
       </figure>

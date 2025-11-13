@@ -448,10 +448,10 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
          <title>powerTOP in interactive mode</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_ncurses.png" width="68%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_ncurses.png" width="68%"/>
+               <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -469,10 +469,10 @@ powerreport-20200108-104431.html
          <title>HTML powerTOP report</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/powertop_html.png" width="63%"/>
+               <imagedata fileref="media/powertop_html.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/powertop_html.png" width="63%"/>
+               <imagedata fileref="media/powertop_html.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

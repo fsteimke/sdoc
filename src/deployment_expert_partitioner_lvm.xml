@@ -55,10 +55,10 @@
          <title>Creating a volume group</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_add_vg.png" width="68%"/>
+               <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_add_vg.png" width="68%"/>
+               <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -71,10 +71,10 @@
          <title>Logical volume management</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_partitioner_volume_management.png" width="68%"/>
+               <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_partitioner_volume_management.png" width="68%"/>
+               <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

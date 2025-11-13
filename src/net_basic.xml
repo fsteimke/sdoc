@@ -45,7 +45,7 @@
       <title>Simplified layer model for TCP/IP</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata width="99%" fileref="media/net_basic_osi.svg"/>
+            <imagedata width="100%" fileref="media/net_basic_osi.svg"/>
          </imageobject>
          <imageobject outputformat="screen">
             <imagedata width="75%" fileref="media/net_basic_osi.png"/>
@@ -59,7 +59,7 @@
       <title>TCP/IP Ethernet packet</title>
       <mediaobject>
          <imageobject outputformat="print">
-            <imagedata width="78%" fileref="media/net_basic_tcppacket.svg"/>
+            <imagedata width="80%" fileref="media/net_basic_tcppacket.svg"/>
          </imageobject>
          <imageobject outputformat="screen">
             <imagedata width="75%" fileref="media/net_basic_tcppacket.png"/>

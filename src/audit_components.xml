@@ -103,10 +103,10 @@
          <title>Introducing the components of Linux audit</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_components.png" width="73%"/>
+               <imagedata fileref="media/audit_components.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_components.png" width="73%"/>
+               <imagedata fileref="media/audit_components.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1239,10 +1239,10 @@ Syscall Report
          <title>Flow graph—program versus system call relationship</title>
          <mediaobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/audit_mkgraph.png" width="64%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="75%"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/audit_mkgraph.png" width="85%"/>
+               <imagedata fileref="media/audit_mkgraph.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>

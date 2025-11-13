@@ -1899,10 +1899,10 @@ xterm: DISPLAY is not set
                <title>Main window of YaST in text mode</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="69%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_ncurses_main.png" width="74%"/>
+                     <imagedata fileref="media/yast2_ncurses_main.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -1956,10 +1956,10 @@ xterm: DISPLAY is not set
                   <title>The software installation module</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="69%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="70%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_ncurses_inst.png" width="74%"/>
+                        <imagedata fileref="media/yast2_ncurses_inst.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -3743,10 +3743,10 @@ UID: 456
                   <title>YaST user and group administration</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="88%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/yast2_users_main_qt.png" width="68%"/>
+                        <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5003,10 +5003,10 @@ UID: 456
                            <title>Adding a software repository</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="68%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="70%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_addon_new.png" width="63%"/>
+                                 <imagedata fileref="media/yast2_addon_new.png" width="65%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -5098,10 +5098,10 @@ UID: 456
                   <title>Update notification on GNOME desktop</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="68%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="68%"/>
+                        <imagedata fileref="media/gnome_update_notification_desktop.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -5113,10 +5113,10 @@ UID: 456
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/gupdater_updates.png" width="68%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/gupdater_updates.png" width="68%"/>
+                              <imagedata fileref="media/gupdater_updates.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -5185,10 +5185,10 @@ UID: 456
                      <guimenu>GNOME Software</guimenu>—<guimenu>Updates</guimenu> view</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/gnome-software-updates.png" width="68%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/gnome-software-updates.png" width="68%"/>
+                        <imagedata fileref="media/gnome-software-updates.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -7853,10 +7853,10 @@ ID	gen	top level	path
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/klp.png" width="35%"/>
+                        <imagedata fileref="media/klp.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/klp.png" width="44%"/>
+                        <imagedata fileref="media/klp.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -8494,10 +8494,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Remmina viewing remote session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
+                              <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8642,10 +8642,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>VNC session settings</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_session.png" width="68%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_session.png" width="68%"/>
+                              <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -8717,10 +8717,10 @@ Activate with: SUSEConnect -p sle-module-live-patching/15.7/x86_64 \
                         <title>Joining a persistent VNC session</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
+                              <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -12419,7 +12419,7 @@ foo - auto mode
                <title>Simplified layer model for TCP/IP</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="99%" fileref="media/net_basic_osi.svg"/>
+                     <imagedata width="100%" fileref="media/net_basic_osi.svg"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata width="75%" fileref="media/net_basic_osi.png"/>
@@ -12433,7 +12433,7 @@ foo - auto mode
                <title>TCP/IP Ethernet packet</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata width="78%" fileref="media/net_basic_tcppacket.svg"/>
+                     <imagedata width="80%" fileref="media/net_basic_tcppacket.svg"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata width="75%" fileref="media/net_basic_tcppacket.png"/>
@@ -13513,7 +13513,7 @@ fe80 :                           : 10 : 1000 : 1a4</screen>
                               <imagedata fileref="media/wicked_scheme.png"/>
                            </imageobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/wicked_scheme.png" width="76%"/>
+                              <imagedata fileref="media/wicked_scheme.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -16522,10 +16522,10 @@ ntfs-3g /dev/<replaceable>DEVICE</replaceable><replaceable>MOUNT POINT</replacea
                         <title>The YaST software manager: multiversion view</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_sw_multiversion.png" width="88%"/>
+                              <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_sw_multiversion.png" width="88%"/>
+                              <imagedata fileref="media/yast2_sw_multiversion.png" width="90%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -19168,10 +19168,10 @@ I/O size (minimum/optimal): 4096 bytes / 4096 bytes</screen>
                <title>YaST service manager</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_servicemanager.png" width="87%"/>
+                     <imagedata fileref="media/yast2_servicemanager.png" width="100%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_servicemanager.png" width="87%"/>
+                     <imagedata fileref="media/yast2_servicemanager.png" width="100%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -24616,10 +24616,10 @@ CPU Load Average:         7 (3%) with 2 CPUs
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_support_conf.png" width="69%"/>
+                                 <imagedata fileref="media/yast2_support_conf.png" width="90%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_support_conf.png" width="61%"/>
+                                 <imagedata fileref="media/yast2_support_conf.png" width="80%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -25191,10 +25191,10 @@ Creating Tar Ball
                      <title>HTML report generated by SCA tool</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/sca_tool_report_html.png" width="52%"/>
+                           <imagedata fileref="media/sca_tool_report_html.png" width="100%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/sca_tool_report_html.png" width="52%"/>
+                           <imagedata fileref="media/sca_tool_report_html.png" width="100%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -25448,10 +25448,10 @@ vsftpd yast2 yast2-ftp-server
                                  <title>HTML report generated by SCA appliance</title>
                                  <mediaobject>
                                     <imageobject outputformat="print">
-                                       <imagedata fileref="media/sca_appl_report_html.png" width="53%"/>
+                                       <imagedata fileref="media/sca_appl_report_html.png" width="100%"/>
                                     </imageobject>
                                     <imageobject outputformat="screen">
-                                       <imagedata fileref="media/sca_appl_report_html.png" width="53%"/>
+                                       <imagedata fileref="media/sca_appl_report_html.png" width="100%"/>
                                     </imageobject>
                                  </mediaobject>
                               </figure>
@@ -30288,7 +30288,7 @@ vlanid=201</screen>
                      <title>The boot screen on machines with UEFI</title>
                      <mediaobject>
                         <imageobject>
-                           <imagedata fileref="media/install_boot_uefi.png" width="54%"/>
+                           <imagedata fileref="media/install_boot_uefi.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -31063,10 +31063,10 @@ DataChannel=0.0.0802</screen>
                   <title>Language, keyboard and product selection</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_product.png" width="68%"/>
+                        <imagedata fileref="media/install_product.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_product.png" width="68%"/>
+                        <imagedata fileref="media/install_product.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31101,10 +31101,10 @@ DataChannel=0.0.0802</screen>
                   <title>License agreement</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_license_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_license_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_license_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_license_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31117,10 +31117,10 @@ DataChannel=0.0.0802</screen>
                   <title>Disk activation</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+                        <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+                        <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31133,10 +31133,10 @@ DataChannel=0.0.0802</screen>
                      <title>DASD disk management</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="68%" fileref="media/install_zseries_dasd.png"/>
+                           <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="68%" fileref="media/install_zseries_dasd.png"/>
+                           <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -31150,10 +31150,10 @@ DataChannel=0.0.0802</screen>
                      <title>Configured zFCP Devices</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata width="68%" fileref="media/install_zseries_zfcp.png"/>
+                           <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata width="68%" fileref="media/install_zseries_zfcp.png"/>
+                           <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -31169,10 +31169,10 @@ DataChannel=0.0.0802</screen>
                   <title>Network settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_network.png" width="68%"/>
+                        <imagedata fileref="media/install_network.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_network.png" width="68%"/>
+                        <imagedata fileref="media/install_network.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31218,10 +31218,10 @@ DataChannel=0.0.0802</screen>
                      <title>SUSE Customer Center registration</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                           <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                           <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -31343,10 +31343,10 @@ sle-live-patching 8c541494</screen>
                   <title>Extension and module selection</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31503,10 +31503,10 @@ sle-live-patching 8c541494</screen>
                   <title>Add-on product</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_addon.png" width="68%"/>
+                        <imagedata fileref="media/install_addon.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_addon.png" width="68%"/>
+                        <imagedata fileref="media/install_addon.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31525,10 +31525,10 @@ sle-live-patching 8c541494</screen>
                   <title>System role</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31690,10 +31690,10 @@ sle-live-patching 8c541494</screen>
                      <title>Suggested partitioning</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner.png" width="100%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner.png" width="100%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -31758,10 +31758,10 @@ sle-live-patching 8c541494</screen>
                   <title>Clock and time zone</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_timezone.png" width="68%"/>
+                        <imagedata fileref="media/install_timezone.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_timezone.png" width="68%"/>
+                        <imagedata fileref="media/install_timezone.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31786,10 +31786,10 @@ sle-live-patching 8c541494</screen>
                   <title>Create new user</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_user.png" width="68%"/>
+                        <imagedata fileref="media/install_user.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_user.png" width="68%"/>
+                        <imagedata fileref="media/install_user.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31835,10 +31835,10 @@ sle-live-patching 8c541494</screen>
                   </title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_root.png" width="68%"/>
+                        <imagedata fileref="media/install_root.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_root.png" width="68%"/>
+                        <imagedata fileref="media/install_root.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31924,10 +31924,10 @@ sle-live-patching 8c541494</screen>
                   <title>Installation settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -31943,10 +31943,10 @@ sle-live-patching 8c541494</screen>
                      <title>Software selection and system tasks</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_software_sles.png" width="68%"/>
+                           <imagedata fileref="media/install_software_sles.png" width="100%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_software_sles.png" width="68%"/>
+                           <imagedata fileref="media/install_software_sles.png" width="100%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -32240,10 +32240,10 @@ sle-live-patching 8c541494</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
+                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="98%"/>
+                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -32309,10 +32309,10 @@ sle-live-patching 8c541494</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="73%"/>
+                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="98%"/>
+                                 <imagedata fileref="media/yast2_extension_list_sles.png" width="100%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -32341,10 +32341,10 @@ sle-live-patching 8c541494</screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/yast2_addon_installed_sles.png" width="73%"/>
+                                 <imagedata fileref="media/yast2_addon_installed_sles.png" width="75%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/yast2_addon_installed_sles.png" width="98%"/>
+                                 <imagedata fileref="media/yast2_addon_installed_sles.png" width="100%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -32512,10 +32512,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
                   <title>The YaST partitioner</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_partitioner_expert.png" width="68%"/>
+                        <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_partitioner_expert.png" width="68%"/>
+                        <imagedata fileref="media/install_partitioner_expert.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -32715,10 +32715,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
                                     <title>Btrfs subvolumes in YaST partitioner</title>
                                     <mediaobject>
                                        <imageobject outputformat="print">
-                                          <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="68%"/>
+                                          <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
                                        </imageobject>
                                        <imageobject outputformat="screen">
-                                          <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="68%"/>
+                                          <imagedata fileref="media/install_partitioner_btrfs_subvolumes.png" width="75%"/>
                                        </imageobject>
                                     </mediaobject>
                                  </figure>
@@ -33095,10 +33095,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
                      <title>Creating a volume group</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_partitioner_add_vg.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_partitioner_add_vg.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_add_vg.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -33111,10 +33111,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
                      <title>Logical volume management</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_partitioner_volume_management.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_partitioner_volume_management.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_volume_management.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -33186,10 +33186,10 @@ https://www.suse.com/products/server/features/modules.html</screen>
                      <title>RAID partitions</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/install_partitioner_raid.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/install_partitioner_raid.png" width="68%"/>
+                           <imagedata fileref="media/install_partitioner_raid.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -35980,7 +35980,7 @@ output</screen>
                <title>Major releases and service packs</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/new-maintenance-model.svg" width="38%"/>
+                     <imagedata fileref="media/new-maintenance-model.svg" width="95%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/new-maintenance-model.png" width="95%"/>
@@ -35992,7 +35992,7 @@ output</screen>
                <title>Long term service pack support</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/new-maintenance-model+ltss.svg" width="38%"/>
+                     <imagedata fileref="media/new-maintenance-model+ltss.svg" width="95%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
                      <imagedata fileref="media/new-maintenance-model+ltss.png" width="95%"/>
@@ -38036,10 +38036,10 @@ output</screen>
                   <title>Default GNOME login screen</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/login_sled.png" width="68%"/>
+                        <imagedata fileref="media/login_sled.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/login_sled.png" width="57%"/>
+                        <imagedata fileref="media/login_sled.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -38066,10 +38066,10 @@ output</screen>
                            <title>Default GNOME login screen—session type</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/login_sessiontype_sle.png" width="55%"/>
+                                 <imagedata fileref="media/login_sessiontype_sle.png" width="90%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/login_sessiontype_sle.png" width="45%"/>
+                                 <imagedata fileref="media/login_sessiontype_sle.png" width="75%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -38151,10 +38151,10 @@ output</screen>
                   <title>GNOME desktop with activities overview</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/desktop_sled_menu.png" width="54%"/>
+                        <imagedata fileref="media/desktop_sled_menu.png" width="95%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/desktop_sled_menu.png" width="51%"/>
+                        <imagedata fileref="media/desktop_sled_menu.png" width="90%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -38345,10 +38345,10 @@ output</screen>
                   <title>File manager</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/nautilus.png" width="62%"/>
+                        <imagedata fileref="media/nautilus.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/nautilus.png" width="62%"/>
+                        <imagedata fileref="media/nautilus.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -38626,10 +38626,10 @@ output</screen>
                <informalfigure pgwide="0">
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/evolution.png" width="58%"/>
+                        <imagedata fileref="media/evolution.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/evolution.png" width="47%"/>
+                        <imagedata fileref="media/evolution.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -38834,10 +38834,10 @@ output</screen>
                   </title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/evince.png" width="64%"/>
+                        <imagedata fileref="media/evince.png" width="90%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/evince.png" width="56%"/>
+                        <imagedata fileref="media/evince.png" width="78%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -38885,10 +38885,10 @@ output</screen>
                         <title>GNOME Background settings</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/preferences_background.png" width="63%"/>
+                              <imagedata fileref="media/preferences_background.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/preferences_background.png" width="63%"/>
+                              <imagedata fileref="media/preferences_background.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -38955,10 +38955,10 @@ output</screen>
                         <title>Enabling the compose key in Tweaks</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/gnome-tweaks-compose.png" width="61%"/>
+                              <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/gnome-tweaks-compose.png" width="61%"/>
+                              <imagedata fileref="media/gnome-tweaks-compose.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -39048,10 +39048,10 @@ output</screen>
                      <guimenu>Mouse and Touchpad</guimenu> settings dialog</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/preferences_mouse.png" width="63%"/>
+                        <imagedata fileref="media/preferences_mouse.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/preferences_mouse.png" width="63%"/>
+                        <imagedata fileref="media/preferences_mouse.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -39083,10 +39083,10 @@ output</screen>
                      <title>Single monitor settings dialog</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/preferences_screen_single.png" width="61%"/>
+                           <imagedata fileref="media/preferences_screen_single.png" width="100%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/preferences_screen_single.png" width="48%"/>
+                           <imagedata fileref="media/preferences_screen_single.png" width="80%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -39202,10 +39202,10 @@ commented out the screen. Texts taken from GNOME help.
                   <title>Configuring sound settings</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/sound_devices.png" width="63%"/>
+                        <imagedata fileref="media/sound_devices.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/sound_devices.png" width="50%"/>
+                        <imagedata fileref="media/sound_devices.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -39222,10 +39222,10 @@ commented out the screen. Texts taken from GNOME help.
                         <title>Default Apps</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/preferences_preferred_apps.png" width="54%"/>
+                              <imagedata fileref="media/preferences_preferred_apps.png" width="100%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/preferences_preferred_apps.png" width="43%"/>
+                              <imagedata fileref="media/preferences_preferred_apps.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -39296,10 +39296,10 @@ commented out the screen. Texts taken from GNOME help.
                         <title>On-screen keyboard</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/gnome_onscreen_kbd.png" width="68%"/>
+                              <imagedata fileref="media/gnome_onscreen_kbd.png" width="100%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/gnome_onscreen_kbd.png" width="54%"/>
+                              <imagedata fileref="media/gnome_onscreen_kbd.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -39437,10 +39437,10 @@ commented out the screen. Texts taken from GNOME help.
                   <title>Network file browser</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/network_browser.png" width="62%"/>
+                        <imagedata fileref="media/network_browser.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/network_browser.png" width="56%"/>
+                        <imagedata fileref="media/network_browser.png" width="90%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -39536,10 +39536,10 @@ commented out the screen. Texts taken from GNOME help.
                            <title>Sharing a folder in GNOME Files</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/folder_sharing_1_a.png" width="61%"/>
+                                 <imagedata fileref="media/folder_sharing_1_a.png" width="85%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/folder_sharing_1_a.png" width="61%"/>
+                                 <imagedata fileref="media/folder_sharing_1_a.png" width="85%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -39758,10 +39758,10 @@ root
                <title>GNOME Backups application</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/gnome_backup.png" width="60%"/>
+                     <imagedata fileref="media/gnome_backup.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/gnome_backup.png" width="60%"/>
+                     <imagedata fileref="media/gnome_backup.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -40557,10 +40557,10 @@ root
                   </title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/oo_customize_main.png" width="78%"/>
+                        <imagedata fileref="media/oo_customize_main.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/oo_customize_main.png" width="78%"/>
+                        <imagedata fileref="media/oo_customize_main.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -40676,10 +40676,10 @@ root
                   <title>The Options window</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/oo_options.png" width="77%"/>
+                        <imagedata fileref="media/oo_options.png" width="95%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/oo_options.png" width="69%"/>
+                        <imagedata fileref="media/oo_options.png" width="85%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -41025,10 +41025,10 @@ root
                   <title>A LibreOffice wizard</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/oo-wizard.png" width="84%"/>
+                        <imagedata fileref="media/oo-wizard.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/oo-wizard.png" width="71%"/>
+                        <imagedata fileref="media/oo-wizard.png" width="85%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -41785,10 +41785,10 @@ root
                               <title>LibreOffice Database Wizard</title>
                               <mediaobject>
                                  <imageobject outputformat="print">
-                                    <imagedata fileref="media/oo-wizard-base.png" width="76%"/>
+                                    <imagedata fileref="media/oo-wizard-base.png" width="90%"/>
                                  </imageobject>
                                  <imageobject outputformat="screen">
-                                    <imagedata fileref="media/oo-wizard-base.png" width="72%"/>
+                                    <imagedata fileref="media/oo-wizard-base.png" width="85%"/>
                                  </imageobject>
                               </mediaobject>
                            </figure>
@@ -41963,10 +41963,10 @@ root
                   </title>
                   <mediaobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/oo_formula.png" width="94%"/>
+                        <imagedata fileref="media/oo_formula.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/oo_formula.png" width="75%"/>
+                        <imagedata fileref="media/oo_formula.png" width="80%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -42018,10 +42018,10 @@ root
                   </title>
                   <mediaobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/firefox_main.png" width="52%"/>
+                        <imagedata fileref="media/firefox_main.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/firefox_main.png" width="52%"/>
+                        <imagedata fileref="media/firefox_main.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -42134,10 +42134,10 @@ root
                         <title>Firefox—manage search engines</title>
                         <mediaobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/firefox_manage_searchengines.png" width="65%"/>
+                              <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
                            </imageobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/firefox_manage_searchengines.png" width="65%"/>
+                              <imagedata fileref="media/firefox_manage_searchengines.png" width="70%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -42312,10 +42312,10 @@ root
                         <productname>Firefox</productname> Page Info—Permissions tab</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/firefox_page_info_permissions.png" width="65%"/>
+                           <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/firefox_page_info_permissions.png" width="65%"/>
+                           <imagedata fileref="media/firefox_page_info_permissions.png" width="90%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -42369,10 +42369,10 @@ root
                      <title>Firefox preferences in General settings</title>
                      <mediaobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/firefox_preferences.png" width="58%"/>
+                           <imagedata fileref="media/firefox_preferences.png" width="90%"/>
                         </imageobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/firefox_preferences.png" width="65%"/>
+                           <imagedata fileref="media/firefox_preferences.png" width="100%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -42404,10 +42404,10 @@ root
                         <title>Installing <productname>Firefox</productname> extensions</title>
                         <mediaobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/firefox_addon_manager.png" width="52%"/>
+                              <imagedata fileref="media/firefox_addon_manager.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/firefox_addon_manager.png" width="65%"/>
+                              <imagedata fileref="media/firefox_addon_manager.png" width="100%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -42946,10 +42946,10 @@ root
                      <productname>Evolution</productname> window</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/evolution.png" width="58%"/>
+                        <imagedata fileref="media/evolution.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/evolution.png" width="50%"/>
+                        <imagedata fileref="media/evolution.png" width="86%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -44083,10 +44083,10 @@ root
                      <guimenu>GNOME Videos</guimenu> start-up window</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/totem_a.png" width="64%"/>
+                        <imagedata fileref="media/totem_a.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/totem_a.png" width="64%"/>
+                        <imagedata fileref="media/totem_a.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -44393,10 +44393,10 @@ root
                <title>Main window of Help</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/gnome_yelp_main.png" width="68%"/>
+                     <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/gnome_yelp_main.png" width="68%"/>
+                     <imagedata fileref="media/gnome_yelp_main.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -54018,7 +54018,7 @@ autoyast=http://10.10.0.1/profile/rules/rules.xml</screen>
                         <imagedata fileref="media/autoyast_rules.png"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/autoyast_rules.png" width="73%"/>
+                        <imagedata fileref="media/autoyast_rules.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -61201,7 +61201,7 @@ Kerberos. cschroder, 16-12-2020
                                  <imagedata fileref="media/ad-config.png"/>
                               </imageobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/ad-config.png" width="69%"/>
+                                 <imagedata fileref="media/ad-config.png" width="70%"/>
                               </imageobject>
                            </mediaobject>
                         </figure>
@@ -65589,7 +65589,7 @@ cd path                            Change remote directory to 'path'
                               <emphasis>jail.local</emphasis>file settings</title>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata width="69%" fileref="media/fail2ban.png"/>
+                                 <imagedata width="75%" fileref="media/fail2ban.png"/>
                               </imageobject>
                               <imageobject outputformat="screen">
                                  <imagedata fileref="media/fail2ban.png"/>
@@ -65719,7 +65719,7 @@ cd path                            Change remote directory to 'path'
                   <title>iptables: a packet's possible paths</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata width="25%" fileref="media/fire_tables.svg"/>
+                        <imagedata width="75%" fileref="media/fire_tables.svg"/>
                      </imageobject>
                      <imageobject outputformat="screen">
                         <imagedata width="100%" fileref="media/fire_tables.png"/>
@@ -73816,10 +73816,10 @@ semodule -i example.pp</screen>
                   <title>Introducing the components of Linux audit</title>
                   <mediaobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/audit_components.png" width="73%"/>
+                        <imagedata fileref="media/audit_components.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/audit_components.png" width="73%"/>
+                        <imagedata fileref="media/audit_components.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -74952,10 +74952,10 @@ Syscall Report
                   <title>Flow graph—program versus system call relationship</title>
                   <mediaobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/audit_mkgraph.png" width="64%"/>
+                        <imagedata fileref="media/audit_mkgraph.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/audit_mkgraph.png" width="85%"/>
+                        <imagedata fileref="media/audit_mkgraph.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -82943,10 +82943,10 @@ CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3
                   <title>powerTOP in interactive mode</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/powertop_ncurses.png" width="68%"/>
+                        <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/powertop_ncurses.png" width="68%"/>
+                        <imagedata fileref="media/powertop_ncurses.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -82964,10 +82964,10 @@ powerreport-20200108-104431.html
                   <title>HTML powerTOP report</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/powertop_html.png" width="63%"/>
+                        <imagedata fileref="media/powertop_html.png" width="75%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/powertop_html.png" width="63%"/>
+                        <imagedata fileref="media/powertop_html.png" width="75%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -87675,10 +87675,10 @@ output</screen>
                <title>RMT pattern</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/rmt_installation.png" width="68%"/>
+                     <imagedata fileref="media/rmt_installation.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/rmt_installation.png" width="68%"/>
+                     <imagedata fileref="media/rmt_installation.png" width="70%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -89551,7 +89551,7 @@ Database changed
             <title>An example of cloud architecture for RMT deployment</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/rmt-architecture-example.png" width="50%"/>
+                  <imagedata fileref="media/rmt-architecture-example.png" width="70%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -89566,7 +89566,7 @@ Database changed
                   <mediaobject>
                      <imageobject outputformat="print">
                         <imagedata fileref="media/gcp-launch-sles-instance-cloud-rmt-marketplace.png"
-                                   width="42%"/>
+                                   width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -89575,7 +89575,7 @@ Database changed
                   <mediaobject>
                      <imageobject outputformat="print">
                         <imagedata fileref="media/aws-launch-sles-instance-cloud-rmt-marketplace.png"
-                                   width="28%"/>
+                                   width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -89584,7 +89584,7 @@ Database changed
                   <mediaobject>
                      <imageobject outputformat="print">
                         <imagedata fileref="media/azure-launch-sles-instance-cloud-rmt-marketplace.png"
-                                   width="41%"/>
+                                   width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -92135,7 +92135,7 @@ origin_lv              vg   Cwi-a-C--- 100.00g cache_data_lv [origin_lv_corig]
                   <title>Physical partitioning versus LVM</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/lvm.svg" width="74%"/>
+                        <imagedata fileref="media/lvm.svg" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
                         <imagedata fileref="media/lvm.png" width="100%"/>
@@ -92593,10 +92593,10 @@ root's password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_lvm12_a.png" width="55%"/>
+                              <imagedata fileref="media/yast2_lvm12_a.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_lvm12_a.png" width="68%"/>
+                              <imagedata fileref="media/yast2_lvm12_a.png" width="100%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -95527,10 +95527,10 @@ ARRAY /dev/md3 UUID=<replaceable>UUID</replaceable></screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/isns_config_a.png" width="69%"/>
+                              <imagedata fileref="media/isns_config_a.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/isns_config_a.png" width="86%"/>
+                              <imagedata fileref="media/isns_config_a.png" width="100%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -95703,10 +95703,10 @@ ARRAY /dev/md3 UUID=<replaceable>UUID</replaceable></screen>
                <title>iSCSI SAN with an iSNS server</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/iscsi_san_a.png" width="74%"/>
+                     <imagedata fileref="media/iscsi_san_a.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/iscsi_san_a.png" width="92%"/>
+                     <imagedata fileref="media/iscsi_san_a.png" width="100%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -95745,10 +95745,10 @@ ARRAY /dev/md3 UUID=<replaceable>UUID</replaceable></screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/lio_service_a.png" width="69%"/>
+                                 <imagedata fileref="media/lio_service_a.png" width="80%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/lio_service_a.png" width="86%"/>
+                                 <imagedata fileref="media/lio_service_a.png" width="100%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -95805,10 +95805,10 @@ ARRAY /dev/md3 UUID=<replaceable>UUID</replaceable></screen>
                         <informalfigure>
                            <mediaobject>
                               <imageobject outputformat="print">
-                                 <imagedata fileref="media/lio_global_noauth_a.png" width="68%"/>
+                                 <imagedata fileref="media/lio_global_noauth_a.png" width="80%"/>
                               </imageobject>
                               <imageobject outputformat="screen">
-                                 <imagedata fileref="media/lio_global_noauth_a.png" width="85%"/>
+                                 <imagedata fileref="media/lio_global_noauth_a.png" width="100%"/>
                               </imageobject>
                            </mediaobject>
                         </informalfigure>
@@ -96092,10 +96092,10 @@ ARRAY /dev/md3 UUID=<replaceable>UUID</replaceable></screen>
                            <informalfigure>
                               <mediaobject>
                                  <imageobject outputformat="print">
-                                    <imagedata fileref="media/iscsi_init_service_a.png" width="69%"/>
+                                    <imagedata fileref="media/iscsi_init_service_a.png" width="80%"/>
                                  </imageobject>
                                  <imageobject outputformat="screen">
-                                    <imagedata fileref="media/iscsi_init_service_a.png" width="86%"/>
+                                    <imagedata fileref="media/iscsi_init_service_a.png" width="100%"/>
                                  </imageobject>
                               </mediaobject>
                            </informalfigure>
@@ -96623,10 +96623,10 @@ mptscsih,scsi_transport_spi</screen>
                <title>Open Fibre channel over Ethernet SAN</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/fcoe_san_a.png" width="74%"/>
+                     <imagedata fileref="media/fcoe_san_a.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/fcoe_san_a.png" width="92%"/>
+                     <imagedata fileref="media/fcoe_san_a.png" width="100%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -96650,10 +96650,10 @@ mptscsih,scsi_transport_spi</screen>
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="60%"/>
+                        <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="80%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="7%"/>
+                        <imagedata fileref="media/fcoe_inst_disk_activation_a.png" width="10%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -96709,10 +96709,10 @@ mptscsih,scsi_transport_spi</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="56%"/>
+                              <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="80%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="70%"/>
+                              <imagedata fileref="media/fcoe_notconfig_interface_a.png" width="100%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -101851,10 +101851,10 @@ output</screen>
                   <title>KVM virtualization architecture</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/kvm_qemu.png" width="55%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/kvm_qemu.png" width="55%"/>
+                        <imagedata fileref="media/kvm_qemu.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -102017,10 +102017,10 @@ mercury.example.com</screen>
                      <title>System Role screen</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/virt-system-roles.png" width="44%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/virt-system-roles.png" width="44%"/>
+                           <imagedata fileref="media/virt-system-roles.png" width="75%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -106433,10 +106433,10 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes</screen>
                   <guimenu>Details</guimenu> view of a VM Guest</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/libvirt_vmm_details.png" width="68%"/>
+                     <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/libvirt_vmm_details.png" width="68%"/>
+                     <imagedata fileref="media/libvirt_vmm_details.png" width="75%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -106454,10 +106454,10 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes</screen>
                      <title>Overview details</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/libvirt_vmm_overview.png" width="68%"/>
+                           <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/libvirt_vmm_overview.png" width="68%"/>
+                           <imagedata fileref="media/libvirt_vmm_overview.png" width="70%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -106483,10 +106483,10 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes</screen>
                      <title>Performance</title>
                      <mediaobject>
                         <imageobject outputformat="print">
-                           <imagedata fileref="media/libvirt_vmm_performance.png" width="68%"/>
+                           <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
                         </imageobject>
                         <imageobject outputformat="screen">
-                           <imagedata fileref="media/libvirt_vmm_performance.png" width="68%"/>
+                           <imagedata fileref="media/libvirt_vmm_performance.png" width="70%"/>
                         </imageobject>
                      </mediaobject>
                   </figure>
@@ -108366,10 +108366,10 @@ Successfully registered system</screen>
                            <guimenu>XML</guimenu> view of virtual machine configuration</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/vm_security_create_vm_xml.png" width="64%"/>
+                              <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/vm_security_create_vm_xml.png" width="64%"/>
+                              <imagedata fileref="media/vm_security_create_vm_xml.png" width="75%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -109375,7 +109375,7 @@ getty@xvc1.service -&gt; /usr/lib/systemd/system/getty@xvc1.service
                         <imagedata fileref="media/virt-disk-cache.png"/>
                      </imageobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/virt-disk-cache.png" width="80%"/>
+                        <imagedata fileref="media/virt-disk-cache.png" width="85%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -113830,10 +113830,10 @@ drwxr-xr-x  15 root root  4096 Nov 16 09:22 var
                         <title>QEMU window with SLES as VM Guest</title>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/qemu_win_sles.png" width="68%"/>
+                              <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/qemu_win_sles.png" width="68%"/>
+                              <imagedata fileref="media/qemu_win_sles.png" width="70%"/>
                            </imageobject>
                         </mediaobject>
                      </figure>
@@ -114805,10 +114805,10 @@ sudo tunctl -d $tap<co xml:id="co-qemu-net-bridge-deltap"/></screen>
                   <title>QEMU VNC session</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/qemu_sles_vnc.png" width="68%"/>
+                        <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/qemu_sles_vnc.png" width="68%"/>
+                        <imagedata fileref="media/qemu_sles_vnc.png" width="70%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -118601,10 +118601,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_product.png" width="68%"/>
+                        <imagedata fileref="media/install_product.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_product.png" width="68%"/>
+                        <imagedata fileref="media/install_product.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118637,10 +118637,10 @@ disk:
                <informalfigure><!-- FIXME cwickert 2025-01-31: Update screenshot for SLE 15 SP7 GA -->
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_license_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_license_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_license_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_license_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118651,10 +118651,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_network.png" width="68%"/>
+                        <imagedata fileref="media/install_network.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_network.png" width="68%"/>
+                        <imagedata fileref="media/install_network.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118668,10 +118668,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+                        <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+                        <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118682,10 +118682,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118737,10 +118737,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118898,10 +118898,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_addon.png" width="68%"/>
+                        <imagedata fileref="media/install_addon.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_addon.png" width="68%"/>
+                        <imagedata fileref="media/install_addon.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118918,10 +118918,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118936,10 +118936,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                        <imagedata fileref="media/install_partitioner.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                        <imagedata fileref="media/install_partitioner.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -118994,10 +118994,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_timezone.png" width="68%"/>
+                        <imagedata fileref="media/install_timezone.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_timezone.png" width="68%"/>
+                        <imagedata fileref="media/install_timezone.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119008,10 +119008,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_user.png" width="68%"/>
+                        <imagedata fileref="media/install_user.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_user.png" width="68%"/>
+                        <imagedata fileref="media/install_user.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119028,10 +119028,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_root.png" width="68%"/>
+                        <imagedata fileref="media/install_root.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_root.png" width="68%"/>
+                        <imagedata fileref="media/install_root.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119049,10 +119049,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_summary_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119155,10 +119155,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_confirm_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_confirm_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_confirm_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119169,10 +119169,10 @@ disk:
                <informalfigure>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/install_perform_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_perform_sles.png" width="100%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/install_perform_sles.png" width="68%"/>
+                        <imagedata fileref="media/install_perform_sles.png" width="100%"/>
                      </imageobject>
                   </mediaobject>
                </informalfigure>
@@ -119977,10 +119977,10 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_extension_list_sles.png" width="88%"/>
+                              <imagedata fileref="media/yast2_extension_list_sles.png" width="90%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_extension_list_sles.png" width="78%"/>
+                              <imagedata fileref="media/yast2_extension_list_sles.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -120024,10 +120024,10 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="88%"/>
+                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="78%"/>
+                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -120040,10 +120040,10 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_addon_new.png" width="88%"/>
+                              <imagedata fileref="media/yast2_addon_new.png" width="90%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_addon_new.png" width="78%"/>
+                              <imagedata fileref="media/yast2_addon_new.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -120083,10 +120083,10 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</screen>
                      <informalfigure>
                         <mediaobject>
                            <imageobject outputformat="print">
-                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="88%"/>
+                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="90%"/>
                            </imageobject>
                            <imageobject outputformat="screen">
-                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="78%"/>
+                              <imagedata fileref="media/yast2_addon_installed_sles.png" width="80%"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -121484,10 +121484,10 @@ lazy refcounts: true</screen>
                   <title>Understanding image overlay</title>
                   <mediaobject>
                      <imageobject outputformat="print">
-                        <imagedata fileref="media/qemu-img-overlay.png" width="84%"/>
+                        <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                      </imageobject>
                      <imageobject outputformat="screen">
-                        <imagedata fileref="media/qemu-img-overlay.png" width="84%"/>
+                        <imagedata fileref="media/qemu-img-overlay.png" width="95%"/>
                      </imageobject>
                   </mediaobject>
                </figure>
@@ -125456,7 +125456,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_keyboard.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_keyboard.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125466,7 +125466,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="48%" fileref="media/rpi_first_eula.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_eula.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125476,7 +125476,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_timezone.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_timezone.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125489,7 +125489,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_root.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_root.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125499,7 +125499,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_root_confirm.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_root_confirm.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125509,7 +125509,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_reg.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_reg.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125526,7 +125526,7 @@ Password:
                      <informalfigure>
                         <mediaobject>
                            <imageobject>
-                              <imagedata width="49%" fileref="media/rpi_first_wifi.png"/>
+                              <imagedata width="80%" fileref="media/rpi_first_wifi.png"/>
                            </imageobject>
                         </mediaobject>
                      </informalfigure>
@@ -125556,7 +125556,7 @@ Password:
                            <informalfigure>
                               <mediaobject>
                                  <imageobject>
-                                    <imagedata width="49%" fileref="media/rpi_first_wifi_ssid.png"/>
+                                    <imagedata width="80%" fileref="media/rpi_first_wifi_ssid.png"/>
                                  </imageobject>
                               </mediaobject>
                            </informalfigure>
@@ -125566,7 +125566,7 @@ Password:
                            <informalfigure>
                               <mediaobject>
                                  <imageobject>
-                                    <imagedata width="49%" fileref="media/rpi_first_wifi_auth.png"/>
+                                    <imagedata width="80%" fileref="media/rpi_first_wifi_auth.png"/>
                                  </imageobject>
                               </mediaobject>
                            </informalfigure>
@@ -125576,7 +125576,7 @@ Password:
                            <informalfigure>
                               <mediaobject>
                                  <imageobject>
-                                    <imagedata width="49%" fileref="media/rpi_first_wifi_passwd.png"/>
+                                    <imagedata width="80%" fileref="media/rpi_first_wifi_passwd.png"/>
                                  </imageobject>
                               </mediaobject>
                            </informalfigure>

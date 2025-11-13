@@ -157,10 +157,10 @@
                <title>Remmina viewing remote session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/remmina_sle15inside.png" width="65%"/>
+                     <imagedata fileref="media/remmina_sle15inside.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -305,10 +305,10 @@
                <title>VNC session settings</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_session.png" width="68%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_session.png" width="68%"/>
+                     <imagedata fileref="media/vncmanager_session.png" width="85%"/>
                   </imageobject>
                </mediaobject>
             </figure>
@@ -380,10 +380,10 @@
                <title>Joining a persistent VNC session</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/vncmanager_whether.png" width="69%"/>
+                     <imagedata fileref="media/vncmanager_whether.png" width="80%"/>
                   </imageobject>
                </mediaobject>
             </figure>

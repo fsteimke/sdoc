@@ -39,7 +39,7 @@ autoyast=http://10.10.0.1/profile/rules/rules.xml</screen>
                <imagedata fileref="media/autoyast_rules.png"/>
             </imageobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/autoyast_rules.png" width="73%"/>
+               <imagedata fileref="media/autoyast_rules.png" width="75%"/>
             </imageobject>
          </mediaobject>
       </figure>

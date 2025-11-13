@@ -28,10 +28,10 @@
                <title>Adding a software repository</title>
                <mediaobject>
                   <imageobject outputformat="print">
-                     <imagedata fileref="media/yast2_addon_new.png" width="68%"/>
+                     <imagedata fileref="media/yast2_addon_new.png" width="70%"/>
                   </imageobject>
                   <imageobject outputformat="screen">
-                     <imagedata fileref="media/yast2_addon_new.png" width="63%"/>
+                     <imagedata fileref="media/yast2_addon_new.png" width="65%"/>
                   </imageobject>
                </mediaobject>
             </figure>

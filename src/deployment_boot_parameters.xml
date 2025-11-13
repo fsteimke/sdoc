@@ -236,7 +236,7 @@
             <title>The boot screen on machines with UEFI</title>
             <mediaobject>
                <imageobject>
-                  <imagedata fileref="media/install_boot_uefi.png" width="54%"/>
+                  <imagedata fileref="media/install_boot_uefi.png" width="75%"/>
                </imageobject>
             </mediaobject>
          </figure>

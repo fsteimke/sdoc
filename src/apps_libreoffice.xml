@@ -276,10 +276,10 @@
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_customize_main.png" width="78%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_customize_main.png" width="78%"/>
+               <imagedata fileref="media/oo_customize_main.png" width="80%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -395,10 +395,10 @@
          <title>The Options window</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/oo_options.png" width="77%"/>
+               <imagedata fileref="media/oo_options.png" width="95%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/oo_options.png" width="69%"/>
+               <imagedata fileref="media/oo_options.png" width="85%"/>
             </imageobject>
          </mediaobject>
       </figure>

@@ -207,10 +207,10 @@
          <title>Language, keyboard and product selection</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_product.png" width="68%"/>
+               <imagedata fileref="media/install_product.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_product.png" width="68%"/>
+               <imagedata fileref="media/install_product.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -245,10 +245,10 @@
          <title>License agreement</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_license_sles.png" width="68%"/>
+               <imagedata fileref="media/install_license_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_license_sles.png" width="68%"/>
+               <imagedata fileref="media/install_license_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -261,10 +261,10 @@
          <title>Disk activation</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+               <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_zseries_disk_activation.png" width="68%"/>
+               <imagedata fileref="media/install_zseries_disk_activation.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -277,10 +277,10 @@
             <title>DASD disk management</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="68%" fileref="media/install_zseries_dasd.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata width="68%" fileref="media/install_zseries_dasd.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_dasd.png"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -294,10 +294,10 @@
             <title>Configured zFCP Devices</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata width="68%" fileref="media/install_zseries_zfcp.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata width="68%" fileref="media/install_zseries_zfcp.png"/>
+                  <imagedata width="100%" fileref="media/install_zseries_zfcp.png"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -313,10 +313,10 @@
          <title>Network settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_network.png" width="68%"/>
+               <imagedata fileref="media/install_network.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_network.png" width="68%"/>
+               <imagedata fileref="media/install_network.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -362,10 +362,10 @@
             <title>SUSE Customer Center registration</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_registration_sles.png" width="68%"/>
+                  <imagedata fileref="media/install_registration_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -487,10 +487,10 @@ sle-live-patching 8c541494</screen>
          <title>Extension and module selection</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+               <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_extensions_sles.png" width="68%"/>
+               <imagedata fileref="media/install_extensions_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -647,10 +647,10 @@ sle-live-patching 8c541494</screen>
          <title>Add-on product</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_addon.png" width="68%"/>
+               <imagedata fileref="media/install_addon.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_addon.png" width="68%"/>
+               <imagedata fileref="media/install_addon.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -669,10 +669,10 @@ sle-live-patching 8c541494</screen>
          <title>System role</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+               <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_system_role_sles.png" width="68%"/>
+               <imagedata fileref="media/install_system_role_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -834,10 +834,10 @@ sle-live-patching 8c541494</screen>
             <title>Suggested partitioning</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_partitioner.png" width="68%"/>
+                  <imagedata fileref="media/install_partitioner.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>
@@ -902,10 +902,10 @@ sle-live-patching 8c541494</screen>
          <title>Clock and time zone</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_timezone.png" width="68%"/>
+               <imagedata fileref="media/install_timezone.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_timezone.png" width="68%"/>
+               <imagedata fileref="media/install_timezone.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -930,10 +930,10 @@ sle-live-patching 8c541494</screen>
          <title>Create new user</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_user.png" width="68%"/>
+               <imagedata fileref="media/install_user.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_user.png" width="68%"/>
+               <imagedata fileref="media/install_user.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -979,10 +979,10 @@ sle-live-patching 8c541494</screen>
          </title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_root.png" width="68%"/>
+               <imagedata fileref="media/install_root.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_root.png" width="68%"/>
+               <imagedata fileref="media/install_root.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1068,10 +1068,10 @@ sle-live-patching 8c541494</screen>
          <title>Installation settings</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+               <imagedata fileref="media/install_summary_sles.png" width="100%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/install_summary_sles.png" width="68%"/>
+               <imagedata fileref="media/install_summary_sles.png" width="100%"/>
             </imageobject>
          </mediaobject>
       </figure>
@@ -1087,10 +1087,10 @@ sle-live-patching 8c541494</screen>
             <title>Software selection and system tasks</title>
             <mediaobject>
                <imageobject outputformat="print">
-                  <imagedata fileref="media/install_software_sles.png" width="68%"/>
+                  <imagedata fileref="media/install_software_sles.png" width="100%"/>
                </imageobject>
                <imageobject outputformat="screen">
-                  <imagedata fileref="media/install_software_sles.png" width="68%"/>
+                  <imagedata fileref="media/install_software_sles.png" width="100%"/>
                </imageobject>
             </mediaobject>
          </figure>

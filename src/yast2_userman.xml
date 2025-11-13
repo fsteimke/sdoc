@@ -15,10 +15,10 @@
          <title>YaST user and group administration</title>
          <mediaobject>
             <imageobject outputformat="print">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="88%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="90%"/>
             </imageobject>
             <imageobject outputformat="screen">
-               <imagedata fileref="media/yast2_users_main_qt.png" width="68%"/>
+               <imagedata fileref="media/yast2_users_main_qt.png" width="70%"/>
             </imageobject>
          </mediaobject>
       </figure>

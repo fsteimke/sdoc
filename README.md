@@ -29,7 +29,7 @@ Transformation is done in an Ubuntu Linux Environment. The current
 configuration is
 
 - DocBook xslTNG 2.7.0
-- CSS to PDF with [Weasyprint 61.1](https://weasyprint.org/))
+- CSS to PDF with [Weasyprint 61.1](https://weasyprint.org/)
 
 Customization is done in a Framework which uses XProc for additional
 steps (e.g. copying media files). It uses [xmlcalabash

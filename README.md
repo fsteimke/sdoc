@@ -1,4 +1,4 @@
-# Real life test of xslTNG tylesheet for publishing DocBook Documents
+a# Real life test of xslTNG Stylesheet for publishing DocBook Documents
 
 Testing the migration of DocBook publishing from XSL Stylesheets 1.0
 to the new xslTNG Stylesheets with a huge DocBook set full of Books.
@@ -23,8 +23,18 @@ with the new [xslTNG Stylesheets](https://xsltng.docbook.org) from
 Norman Walsh, which are based on XSLT 3. They transform DocBook XML
 documents into clean, semantically rich HTML5. Producing high quality
 print output with a paged media capable CSS processor is also
-supported, but a CSS rendering engine is required (in this case
-[Weasyprint](https://weasyprint.org/)).
+supported, but a CSS rendering engine is required.
+
+Transformation is done in an Ubuntu Linux Environment. The current
+configuration is
+
+- DocBook xslTNG 2.7.0
+- CSS to PDF with [Weasyprint 61.1](https://weasyprint.org/))
+
+Customization is done in a Framework which uses XProc for additional
+steps (e.g. copying media files). It uses [xmlcalabash
+3.0.25](https://codeberg.org/xmlcalabash/xmlcalabash3).
+
 
 **Since this is a test, the PDF documents may contain errors. Please
 look at them only as test results, and do not rely on their content.**

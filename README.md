@@ -1,4 +1,4 @@
-a# Real life test of xslTNG Stylesheet for publishing DocBook Documents
+# Real life test of xslTNG Stylesheet for publishing DocBook Documents
 
 Testing the migration of DocBook publishing from XSL Stylesheets 1.0
 to the new xslTNG Stylesheets with a huge DocBook set full of Books.

@@ -23,7 +23,8 @@ with the new [xslTNG Stylesheets](https://xsltng.docbook.org) from
 Norman Walsh, which are based on XSLT 3. They transform DocBook XML
 documents into clean, semantically rich HTML5. Producing high quality
 print output with a paged media capable CSS processor is also
-supported, but a CSS rendering engine is required.
+supported, but a CSS rendering engine is required (in this case
+[Weasyprint](https://weasyprint.org/)).
 
 **Since this is a test, the PDF documents may contain errors. Please
 look at them only as test results, and do not rely on their content.**

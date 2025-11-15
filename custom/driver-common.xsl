@@ -14,8 +14,8 @@
   <xsl:template match="set" mode="m:toc"/>
   <!-- controlling numeration -->
   <xsl:param name="section-numbers" select="true()"/>
-  <xsl:param name="section-toc-depth" select="3"/>
-  <xsl:param name="sections-inherit-from" select="'component'"/> 
+  <xsl:param name="section-toc-depth" select="4"/>
+  <xsl:param name="sections-inherit-from" select="'component section'"/> 
 
   <!-- restart number for co  -->
   <xsl:template match="db:co" mode="m:callout-bug">
